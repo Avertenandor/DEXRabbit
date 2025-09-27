@@ -357,6 +357,117 @@ class SocialIntegration {
         setTimeout(showRandomNotification, 10000);
     }
 
+    // Добавляем интеграцию с отзывами
+    addReviewsIntegration() {
+        this.addSocialProofCounters();
+        this.addInstantReviews();
+        this.addReviewsWidget();
+        console.log('📝 Reviews integration added');
+    }
+
+    addSocialProofCounters() {
+        const counters = document.querySelectorAll('.social-proof-counter');
+        counters.forEach(counter => {
+            const target = parseInt(counter.dataset.target) || 0;
+            const duration = 2000;
+            const step = target / (duration / 16);
+            let current = 0;
+
+            const updateCounter = () => {
+                current += step;
+                if (current < target) {
+                    counter.textContent = Math.floor(current);
+                    requestAnimationFrame(updateCounter);
+                } else {
+                    counter.textContent = target;
+                }
+            };
+
+            // Start animation when element is visible
+            const observer = new IntersectionObserver((entries) => {
+                if (entries[0].isIntersecting) {
+                    updateCounter();
+                    observer.disconnect();
+                }
+            });
+            observer.observe(counter);
+        });
+    }
+
+    addInstantReviews() {
+        const reviewsContainer = document.querySelector('.instant-reviews');
+        if (!reviewsContainer) return;
+
+        const instantReviews = [
+            { name: 'Мария К.', text: 'Отличные кролики! Доставка быстрая.', rating: 5, time: '2 мин назад' },
+            { name: 'Дмитрий В.', text: 'Здоровые животные, хороший сервис.', rating: 5, time: '5 мин назад' },
+            { name: 'Елена С.', text: 'Рекомендую! Качество на высоте.', rating: 4, time: '8 мин назад' }
+        ];
+
+        let currentIndex = 0;
+        const rotateReviews = () => {
+            const review = instantReviews[currentIndex];
+            reviewsContainer.innerHTML = `
+                <div class="instant-review">
+                    <div class="review-header">
+                        <strong>${review.name}</strong>
+                        <div class="stars">${'⭐'.repeat(review.rating)}</div>
+                    </div>
+                    <p>"${review.text}"</p>
+                    <div class="review-time">${review.time}</div>
+                </div>
+            `;
+            currentIndex = (currentIndex + 1) % instantReviews.length;
+        };
+
+        rotateReviews();
+        setInterval(rotateReviews, 8000);
+    }
+
+    addReviewsWidget() {
+        // Добавляем плавающий виджет отзывов
+        const widget = document.createElement('div');
+        widget.className = 'floating-reviews-widget';
+        widget.style.cssText = `
+            position: fixed;
+            bottom: 120px;
+            right: 20px;
+            width: 280px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+            padding: 16px;
+            z-index: 998;
+            transform: translateX(100%);
+            transition: transform 0.3s ease;
+            display: none;
+        `;
+
+        widget.innerHTML = `
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px;">
+                <h4 style="margin: 0; font-size: 16px;">💬 Отзывы клиентов</h4>
+                <button onclick="this.parentElement.parentElement.style.display='none'" 
+                        style="background: none; border: none; font-size: 18px; cursor: pointer;">&times;</button>
+            </div>
+            <div id="floating-reviews-content"></div>
+            <div style="text-align: center; margin-top: 12px;">
+                <a href="/reviews" style="color: #10b981; text-decoration: none; font-size: 14px;">
+                    Все отзывы →
+                </a>
+            </div>
+        `;
+
+        document.body.appendChild(widget);
+
+        // Показываем виджет через некоторое время
+        setTimeout(() => {
+            widget.style.display = 'block';
+            setTimeout(() => {
+                widget.style.transform = 'translateX(0)';
+            }, 100);
+        }, 10000); // Через 10 секунд
+    }
+
     addStockAlerts() {
         const productCards = document.querySelectorAll('.product-card');
         productCards.forEach((card, index) => {

@@ -2,28 +2,28 @@
   "name": "КупитьКролика - Породистые кролики",
   "short_name": "КупитьКролика", 
   "description": "Породистые кролики от надежного заводчика в Подольске",
-  "start_url": "/",
+  "start_url": "https://xn--80apagbbfxgmuj4j.site/",
   "display": "standalone",
   "background_color": "#ffffff",
   "theme_color": "#10b981",
   "orientation": "portrait-primary",
-  "scope": "/",
+  "scope": "https://xn--80apagbbfxgmuj4j.site/",
   "lang": "ru",
   "categories": ["shopping", "pets", "lifestyle"],
   "icons": [
     {
-      "src": "/images/favicon.svg",
+      "src": "https://xn--80apagbbfxgmuj4j.site/images/favicon.svg",
       "sizes": "any",
       "type": "image/svg+xml",
       "purpose": "any maskable"
     },
     {
-      "src": "/images/favicon.svg",
+      "src": "https://xn--80apagbbfxgmuj4j.site/images/favicon.svg",
       "sizes": "16x16",
       "type": "image/svg+xml"
     },
     {
-      "src": "/images/favicon.svg", 
+      "src": "https://xn--80apagbbfxgmuj4j.site/images/favicon.svg", 
       "sizes": "32x32",
       "type": "image/svg+xml"
     },

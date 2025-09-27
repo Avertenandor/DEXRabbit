@@ -298,6 +298,176 @@ class CatalogManager {
             </div>
         `;
     }
+
+    // Инициализация фильтров для каталога
+    initializeFilters() {
+        const filtersContainer = document.querySelector('.catalog-filters');
+        if (!filtersContainer) {
+            console.log('📋 Filters container not found, skipping initialization');
+            return;
+        }
+
+        this.setupBreedFilter();
+        this.setupGenderFilter();
+        this.setupAgeFilter();
+        this.setupStatusFilter();
+        this.setupSortFilter();
+        console.log('📋 Filters initialized');
+    }
+
+    setupBreedFilter() {
+        const breedSelect = document.querySelector('#breed-filter');
+        if (breedSelect) {
+            breedSelect.addEventListener('change', (e) => {
+                this.applyFilter('breed', e.target.value);
+            });
+        }
+    }
+
+    setupGenderFilter() {
+        const genderRadios = document.querySelectorAll('input[name="gender"]');
+        genderRadios.forEach(radio => {
+            radio.addEventListener('change', (e) => {
+                if (e.target.checked) {
+                    this.applyFilter('gender', e.target.value);
+                }
+            });
+        });
+    }
+
+    setupAgeFilter() {
+        const ageSelect = document.querySelector('#age-filter');
+        if (ageSelect) {
+            ageSelect.addEventListener('change', (e) => {
+                this.applyFilter('age', e.target.value);
+            });
+        }
+    }
+
+    setupStatusFilter() {
+        const statusSelect = document.querySelector('#status-filter');
+        if (statusSelect) {
+            statusSelect.addEventListener('change', (e) => {
+                this.applyFilter('status', e.target.value);
+            });
+        }
+    }
+
+    setupSortFilter() {
+        const sortSelect = document.querySelector('#sort-filter');
+        if (sortSelect) {
+            sortSelect.addEventListener('change', (e) => {
+                this.applySorting(e.target.value);
+            });
+        }
+    }
+
+    applyFilter(filterType, value) {
+        if (value === 'all' || !value) {
+            this.filteredRabbits = [...this.rabbits];
+        } else {
+            this.filteredRabbits = this.rabbits.filter(rabbit => {
+                switch (filterType) {
+                    case 'breed':
+                        return rabbit.breed === value;
+                    case 'gender':
+                        return rabbit.gender === value;
+                    case 'age':
+                        const age = parseInt(rabbit.age);
+                        if (value === 'young') return age <= 6;
+                        if (value === 'adult') return age > 6 && age <= 18;
+                        if (value === 'mature') return age > 18;
+                        return true;
+                    case 'status':
+                        return rabbit.status === value;
+                    default:
+                        return true;
+                }
+            });
+        }
+        this.renderFilteredRabbits();
+    }
+
+    applySorting(sortBy) {
+        switch (sortBy) {
+            case 'price-low':
+                this.filteredRabbits.sort((a, b) => a.price - b.price);
+                break;
+            case 'price-high':
+                this.filteredRabbits.sort((a, b) => b.price - a.price);
+                break;
+            case 'age-young':
+                this.filteredRabbits.sort((a, b) => a.age - b.age);
+                break;
+            case 'age-old':
+                this.filteredRabbits.sort((a, b) => b.age - a.age);
+                break;
+            case 'weight-light':
+                this.filteredRabbits.sort((a, b) => a.weight - b.weight);
+                break;
+            case 'weight-heavy':
+                this.filteredRabbits.sort((a, b) => b.weight - a.weight);
+                break;
+            default:
+                // По умолчанию по ID (оригинальный порядок)
+                this.filteredRabbits.sort((a, b) => a.id - b.id);
+        }
+        this.renderFilteredRabbits();
+    }
+
+    renderFilteredRabbits() {
+        const resultsContainer = document.querySelector('.catalog-results');
+        if (!resultsContainer) return;
+
+        if (this.filteredRabbits.length === 0) {
+            resultsContainer.innerHTML = `
+                <div class="no-results">
+                    <div class="no-results-icon">🔍</div>
+                    <h3>Кролики не найдены</h3>
+                    <p>Попробуйте изменить параметры поиска</p>
+                    <button onclick="window.catalog.resetFilters()" class="btn btn-outline">
+                        Сбросить фильтры
+                    </button>
+                </div>
+            `;
+            return;
+        }
+
+        resultsContainer.innerHTML = this.filteredRabbits.map(rabbit => this.createRabbitCard(rabbit)).join('');
+        
+        // Обновляем счетчик результатов
+        const counter = document.querySelector('.results-counter');
+        if (counter) {
+            counter.textContent = `Найдено: ${this.filteredRabbits.length} ${this.getRabbitWord(this.filteredRabbits.length)}`;
+        }
+    }
+
+    resetFilters() {
+        // Сбрасываем все фильтры
+        const breedSelect = document.querySelector('#breed-filter');
+        const ageSelect = document.querySelector('#age-filter');
+        const statusSelect = document.querySelector('#status-filter');
+        const sortSelect = document.querySelector('#sort-filter');
+        const genderRadios = document.querySelectorAll('input[name="gender"]');
+
+        if (breedSelect) breedSelect.value = 'all';
+        if (ageSelect) ageSelect.value = 'all';
+        if (statusSelect) statusSelect.value = 'all';
+        if (sortSelect) sortSelect.value = 'default';
+        
+        genderRadios.forEach(radio => {
+            radio.checked = radio.value === 'all';
+        });
+
+        this.filteredRabbits = [...this.rabbits];
+        this.renderFilteredRabbits();
+    }
+
+    getRabbitWord(count) {
+        if (count % 10 === 1 && count % 100 !== 11) return 'кролик';
+        if ([2, 3, 4].includes(count % 10) && ![12, 13, 14].includes(count % 100)) return 'кролика';
+        return 'кроликов';
+    }
 }
 
 // Инициализация каталога
