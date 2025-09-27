@@ -1,8 +1,32 @@
+# Task 28: Enhanced robots.txt for SEO
 User-agent: *
 Allow: /
 
+# Optimize crawling
+Crawl-delay: 1
+
+# Important pages
+Allow: /catalog
+Allow: /faq
+Allow: /contacts
+Allow: /delivery
+
+# Block low-value pages
+Disallow: /policy
+Disallow: /terms
+Disallow: /404.html
+
 # Sitemap
-Sitemap: https://avertenandor.github.io/DEXRabbit/sitemap.xml
+Sitemap: https://xn--80apagbbfxgmuj4j.site/sitemap.xml
+
+# Additional directives
+User-agent: Googlebot
+Crawl-delay: 1
+Allow: /
+
+User-agent: Yandex
+Crawl-delay: 1
+Allow: /
 
 # Disallow admin areas (if any)
 Disallow: /admin/

@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Доставка и оплата — КупитьКролика</title>
+    <meta name="description" content="Условия доставки кроликов по России. Способы оплаты, стоимость доставки, сроки. Самовывоз из питомника в Подольске.">
+    <link rel="canonical" href="https://xn--80apagbbfxgmuj4j.site/delivery">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/styles/tokens.css">
+    <link rel="stylesheet" href="/styles/global.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="/" class="logo">КупитьКролика</a>
+                
+                <button class="burger" id="burger" aria-label="Открыть меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/catalog">Каталог</a></li>
+                    <li><a href="/#benefits">Преимущества</a></li>
+                    <li><a href="/#reviews">Отзывы</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/contacts">Контакты</a></li>
+                </ul>
+                
+                <div class="header-cta">
+                    <a href="tel:+79991234567" class="contact-link">
+                        <span class="icon">📱</span>
+                        +7 (999) 123-45-67
+                    </a>
+                    <a href="/contacts" class="btn btn-primary">Связаться</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="page-header">
+            <div class="container">
+                <h1>Доставка и оплата</h1>
+                <p>Условия доставки кроликов и способы оплаты</p>
+            </div>
+        </section>
+
+        <section style="padding: var(--space-16) 0;">
+            <div class="container">
+                <div style="display: grid; gap: var(--space-12); max-width: 1000px; margin: 0 auto;">
+                    
+                    <!-- Delivery Options -->
+                    <div style="background-color: var(--color-bg-card); border-radius: var(--radius-2xl); padding: var(--space-8);">
+                        <h2 style="margin-bottom: var(--space-6);">🚚 Способы доставки</h2>
+                        <div style="display: grid; gap: var(--space-6); grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));">
+                            
+                            <!-- Self pickup -->
+                            <div style="border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6);">
+                                <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+                                    <div style="width: var(--space-10); height: var(--space-10); background-color: rgba(16, 185, 129, 0.1); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-size: var(--font-size-lg);">🏠</div>
+                                    <h3 style="margin: 0;">Самовывоз</h3>
+                                </div>
+                                <div style="margin-bottom: var(--space-4);">
+                                    <div style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); color: var(--color-success); margin-bottom: var(--space-2);">Бесплатно</div>
+                                    <div style="color: var(--color-text-muted); margin-bottom: var(--space-3);">Из питомника в Подольске</div>
+                                    <ul style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">
+                                        <li>Удобная парковка</li>
+                                        <li>Показ родителей</li>
+                                        <li>Консультации на месте</li>
+                                        <li>Предварительная запись обязательна</li>
+                                    </ul>
+                                </div>
+                                <a href="/contacts" class="btn btn-primary btn-small" style="width: 100%;">Записаться на просмотр</a>
+                            </div>
+
+                            <!-- Moscow delivery -->
+                            <div style="border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6);">
+                                <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+                                    <div style="width: var(--space-10); height: var(--space-10); background-color: rgba(16, 185, 129, 0.1); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-size: var(--font-size-lg);">🚗</div>
+                                    <h3 style="margin: 0;">По Москве и МО</h3>
+                                </div>
+                                <div style="margin-bottom: var(--space-4);">
+                                    <div style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); color: var(--color-primary); margin-bottom: var(--space-2);">от 1500 ₽</div>
+                                    <div style="color: var(--color-text-muted); margin-bottom: var(--space-3);">Доставка в день заказа</div>
+                                    <ul style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">
+                                        <li>Специальный транспорт</li>
+                                        <li>Доставка до двери</li>
+                                        <li>Оплата при получении</li>
+                                        <li>Все документы в комплекте</li>
+                                    </ul>
+                                </div>
+                                <a href="/contacts" class="btn btn-primary btn-small" style="width: 100%;">Рассчитать доставку</a>
+                            </div>
+
+                            <!-- Regions delivery -->
+                            <div style="border: 1px solid var(--color-border); border-radius: var(--radius-xl); padding: var(--space-6);">
+                                <div style="display: flex; align-items: center; gap: var(--space-3); margin-bottom: var(--space-4);">
+                                    <div style="width: var(--space-10); height: var(--space-10); background-color: rgba(16, 185, 129, 0.1); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-size: var(--font-size-lg);">✈️</div>
+                                    <h3 style="margin: 0;">В регионы</h3>
+                                </div>
+                                <div style="margin-bottom: var(--space-4);">
+                                    <div style="font-size: var(--font-size-2xl); font-weight: var(--font-weight-bold); color: var(--color-secondary); margin-bottom: var(--space-2);">По согласованию</div>
+                                    <div style="color: var(--color-text-muted); margin-bottom: var(--space-3);">Авиа или автоперевозка</div>
+                                    <ul style="color: var(--color-text-secondary); font-size: var(--font-size-sm);">
+                                        <li>Безопасная перевозка</li>
+                                        <li>Ветеринарные сертификаты</li>
+                                        <li>Страхование животных</li>
+                                        <li>Сопровождение до получателя</li>
+                                    </ul>
+                                </div>
+                                <a href="/contacts" class="btn btn-primary btn-small" style="width: 100%;">Обсудить доставку</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Payment Methods -->
+                    <div style="background-color: var(--color-bg-card); border-radius: var(--radius-2xl); padding: var(--space-8);">
+                        <h2 style="margin-bottom: var(--space-6);">💳 Способы оплаты</h2>
+                        <div style="display: grid; gap: var(--space-6); grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));">
+                            
+                            <!-- Cash -->
+                            <div style="display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-lg);">
+                                <div style="width: var(--space-10); height: var(--space-10); background-color: rgba(16, 185, 129, 0.1); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-size: var(--font-size-lg);">💵</div>
+                                <div>
+                                    <div style="font-weight: var(--font-weight-semibold); margin-bottom: var(--space-1);">Наличными</div>
+                                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted);">При самовывозе или доставке</div>
+                                </div>
+                            </div>
+
+                            <!-- Bank transfer -->
+                            <div style="display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-lg);">
+                                <div style="width: var(--space-10); height: var(--space-10); background-color: rgba(16, 185, 129, 0.1); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-size: var(--font-size-lg);">🏦</div>
+                                <div>
+                                    <div style="font-weight: var(--font-weight-semibold); margin-bottom: var(--space-1);">Банковский перевод</div>
+                                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted);">Для юридических лиц</div>
+                                </div>
+                            </div>
+
+                            <!-- Card payment -->
+                            <div style="display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-lg);">
+                                <div style="width: var(--space-10); height: var(--space-10); background-color: rgba(16, 185, 129, 0.1); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-size: var(--font-size-lg);">💳</div>
+                                <div>
+                                    <div style="font-weight: var(--font-weight-semibold); margin-bottom: var(--space-1);">Банковской картой</div>
+                                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted);">Visa, MasterCard, МИР</div>
+                                </div>
+                            </div>
+
+                            <!-- Prepayment -->
+                            <div style="display: flex; align-items: center; gap: var(--space-4); padding: var(--space-4); border: 1px solid var(--color-border); border-radius: var(--radius-lg);">
+                                <div style="width: var(--space-10); height: var(--space-10); background-color: rgba(16, 185, 129, 0.1); border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-size: var(--font-size-lg);">📱</div>
+                                <div>
+                                    <div style="font-weight: var(--font-weight-semibold); margin-bottom: var(--space-1);">СБП и переводы</div>
+                                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted);">Быстрые переводы</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Payment process -->
+                        <div style="margin-top: var(--space-8); padding: var(--space-6); background-color: var(--color-bg-body); border-radius: var(--radius-lg);">
+                            <h3 style="margin-bottom: var(--space-4);">📋 Процесс оплаты</h3>
+                            <div style="display: grid; gap: var(--space-4); grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));">
+                                <div style="text-align: center;">
+                                    <div style="width: var(--space-8); height: var(--space-8); background-color: var(--color-primary); color: white; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-weight: var(--font-weight-bold); margin: 0 auto var(--space-2);">1</div>
+                                    <div style="font-weight: var(--font-weight-semibold); margin-bottom: var(--space-1);">Бронирование</div>
+                                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted);">Предоплата 30%</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="width: var(--space-8); height: var(--space-8); background-color: var(--color-primary); color: white; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-weight: var(--font-weight-bold); margin: 0 auto var(--space-2);">2</div>
+                                    <div style="font-weight: var(--font-weight-semibold); margin-bottom: var(--space-1);">Подготовка</div>
+                                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted);">Документы и осмотр</div>
+                                </div>
+                                <div style="text-align: center;">
+                                    <div style="width: var(--space-8); height: var(--space-8); background-color: var(--color-primary); color: white; border-radius: var(--radius-full); display: flex; align-items: center; justify-content: center; font-weight: var(--font-weight-bold); margin: 0 auto var(--space-2);">3</div>
+                                    <div style="font-weight: var(--font-weight-semibold); margin-bottom: var(--space-1);">Получение</div>
+                                    <div style="font-size: var(--font-size-sm); color: var(--color-text-muted);">Доплата 70%</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Important info -->
+                    <div style="background-color: var(--color-bg-card); border-radius: var(--radius-2xl); padding: var(--space-8);">
+                        <h2 style="margin-bottom: var(--space-6);">⚠️ Важная информация</h2>
+                        <div style="display: grid; gap: var(--space-4);">
+                            <div style="display: flex; gap: var(--space-3);">
+                                <div style="color: var(--color-primary); font-size: var(--font-size-lg);">📋</div>
+                                <div>
+                                    <strong>Документы:</strong> Каждый кролик поставляется с ветеринарной справкой, информацией о прививках и родословной (для племенных особей).
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: var(--space-3);">
+                                <div style="color: var(--color-primary); font-size: var(--font-size-lg);">🛡️</div>
+                                <div>
+                                    <strong>Гарантии:</strong> Предоставляем 14-дневную гарантию здоровья животных и бесплатные консультации по содержанию.
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: var(--space-3);">
+                                <div style="color: var(--color-primary); font-size: var(--color-lg);">📞</div>
+                                <div>
+                                    <strong>Поддержка:</strong> Консультируем по вопросам содержания, кормления и разведения в течение всей жизни животного.
+                                </div>
+                            </div>
+                            <div style="display: flex; gap: var(--space-3);">
+                                <div style="color: var(--color-primary); font-size: var(--font-size-lg);">🔄</div>
+                                <div>
+                                    <strong>Возврат:</strong> Возможен в течение 7 дней при выявлении скрытых дефектов с полным возмещением стоимости.
+                                </div>
+                            </div>
+                        </div>
+
+                        <div style="margin-top: var(--space-8); text-align: center; background-color: var(--color-bg-body); padding: var(--space-6); border-radius: var(--radius-lg);">
+                            <h3 style="margin-bottom: var(--space-4);">Готовы сделать заказ?</h3>
+                            <div style="display: flex; gap: var(--space-4); justify-content: center; flex-wrap: wrap;">
+                                <a href="/catalog" class="btn btn-primary btn-large">Выбрать кролика</a>
+                                <a href="/contacts" class="btn btn-secondary btn-large">Задать вопрос</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">КупитьКролика</div>
+                    <p class="footer-description">
+                        Породистые кролики от надежного заводчика. 
+                        Профессиональное разведение с 2020 года.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Контакты</h4>
+                    <div class="footer-contacts">
+                        <a href="tel:+79991234567" class="footer-contact">
+                            <span class="icon">📱</span>
+                            +7 (999) 123-45-67
+                        </a>
+                        <a href="mailto:info@xn--80apagbbfxgmuj4j.site" class="footer-contact">
+                            <span class="icon">📧</span>
+                            info@купитькролика.рф
+                        </a>
+                        <div class="footer-contact">
+                            <span class="icon">📍</span>
+                            Московская область, г. Подольск
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Режим работы</h4>
+                    <div class="footer-schedule">
+                        <div>Пн-Пт: 9:00 - 18:00</div>
+                        <div>Сб-Вс: 10:00 - 16:00</div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Информация</h4>
+                    <nav class="footer-nav">
+                        <a href="/policy">Политика конфиденциальности</a>
+                        <a href="/terms">Условия использования</a>
+                        <a href="/delivery">Доставка и оплата</a>
+                    </nav>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2025 КупитьКролика. Все права защищены.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/scripts/main.js"></script>
+</body>
+</html>
