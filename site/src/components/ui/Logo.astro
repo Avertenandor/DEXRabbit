@@ -1,0 +1,33 @@
+---
+// Logo component
+export interface Props {
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  variant?: 'default' | 'light';
+  className?: string;
+}
+
+const {
+  size = 'md',
+  variant = 'default',
+  className = ''
+} = Astro.props;
+
+const sizeClasses = {
+  sm: 'w-6 h-6',
+  md: 'w-8 h-8',
+  lg: 'w-12 h-12',
+  xl: 'w-16 h-16'
+};
+
+const logoSrc = variant === 'light' ? '/logo-light.svg' : '/logo.svg';
+---
+
+<div class={`inline-flex items-center justify-center ${sizeClasses[size]} ${className}`}>
+  <img
+    src={logoSrc}
+    alt="DEXRabbit"
+    class="w-full h-full object-contain"
+    loading="eager"
+    decoding="async"
+  />
+</div>

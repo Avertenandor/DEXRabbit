@@ -1,0 +1,157 @@
+---
+// How It Works section component
+---
+
+<section id="how-it-works" class="section bg-[var(--bg-secondary)]">
+  <div class="container mx-auto px-6">
+    <div class="max-w-4xl mx-auto">
+        <!-- Section header -->
+        <div class="text-center mb-16">
+          <h2 class="text-4xl md:text-5xl font-bold mb-6">
+            Как это работает
+          </h2>
+          <p class="text-xl text-[var(--text-secondary)]">
+            USDT-вход, ежедневные PLEX-бонусы, USDT-выплата через ~3 месяца
+          </p>
+          <div class="mt-4 p-3 bg-[var(--bg-tertiary)] rounded-lg border border-[var(--border-primary)] inline-block">
+            <p class="text-sm text-[var(--text-muted)]">
+              Размер ежедневных PLEX-начислений уточняется в боте (TBD)
+            </p>
+          </div>
+        </div>
+
+      <!-- Steps grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <!-- Step 1 -->
+        <div class="card text-center fade-in">
+          <div class="relative w-24 h-24 mx-auto mb-6">
+            <img
+              src="/images/photo_2025-09-15_13-17-50.jpg"
+              alt="Инвестиции в кроликов"
+              class="w-full h-full object-cover rounded-full border-4 border-[var(--accent-primary)]"
+              loading="lazy"
+            />
+            <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-[var(--accent-primary)] rounded-full flex items-center justify-center">
+              <span class="text-white font-bold text-sm">💰</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Вносите USDT</h3>
+          <p class="text-[var(--text-secondary)]">
+            Вносите USDT в Telegram-боте и выбираете кролика или пару для инвестиций
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="card text-center fade-in">
+          <div class="relative w-24 h-24 mx-auto mb-6">
+            <img
+              src="/images/photo_2025-09-15_13-17-51.jpg"
+              alt="Племенная пара кроликов"
+              class="w-full h-full object-cover rounded-full border-4 border-[var(--accent-primary)]"
+              loading="lazy"
+            />
+            <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-[var(--accent-primary)] rounded-full flex items-center justify-center">
+              <span class="text-white font-bold text-sm">🎁</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Получаете ежедневные PLEX-бонусы</h3>
+          <p class="text-[var(--text-secondary)]">
+            Каждый день получаете бонусы в монете PLEX согласно правилам проекта
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="card text-center fade-in">
+          <div class="relative w-24 h-24 mx-auto mb-6">
+            <img
+              src="/images/photo_2025-09-15_13-17-52.jpg"
+              alt="Кормление и уход за кроликами"
+              class="w-full h-full object-cover rounded-full border-4 border-[var(--accent-primary)]"
+              loading="lazy"
+            />
+            <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-[var(--accent-primary)] rounded-full flex items-center justify-center">
+              <span class="text-white font-bold text-sm">🏭</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Ферма выращивает и реализует</h3>
+          <p class="text-[var(--text-secondary)]">
+            Ферма выращивает кроликов и реализует продукцию на рынке
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="card text-center fade-in">
+          <div class="relative w-24 h-24 mx-auto mb-6">
+            <img
+              src="/images/photo_2025-09-15_13-17-50 (2).jpg"
+              alt="Молодые кролики"
+              class="w-full h-full object-cover rounded-full border-4 border-[var(--accent-primary)]"
+              loading="lazy"
+            />
+            <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-[var(--accent-primary)] rounded-full flex items-center justify-center">
+              <span class="text-white font-bold text-sm">🏆</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Получаете выплату в USDT</h3>
+          <p class="text-[var(--text-secondary)]">
+            Через ~3 месяца: возврат тела вклада и прибыль в USDT (штатная модель)
+          </p>
+        </div>
+
+        <!-- Step 5 -->
+        <div class="card text-center fade-in">
+          <div class="relative w-24 h-24 mx-auto mb-6">
+            <img
+              src="/images/photo_2025-09-15_13-17-51 (2).jpg"
+              alt="Выводок кроликов"
+              class="w-full h-full object-cover rounded-full border-4 border-[var(--accent-primary)]"
+              loading="lazy"
+            />
+            <div class="absolute -bottom-2 -right-2 w-8 h-8 bg-[var(--accent-primary)] rounded-full flex items-center justify-center">
+              <span class="text-white font-bold text-sm">🛡️</span>
+            </div>
+          </div>
+          <h3 class="text-xl font-semibold mb-4">Форс-мажор: возврат в PLEX</h3>
+          <p class="text-[var(--text-secondary)]">
+            В случае форс-мажора: возврат тела вклада в монете PLEX (страховой механизм)
+          </p>
+        </div>
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center mt-12">
+        <a
+          href="https://t.me/your_bot"
+          class="btn-primary text-lg px-8 py-4 inline-block"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Начать инвестировать
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .fade-in {
+    animation: fadeIn 0.6s ease-out;
+  }
+
+  .fade-in:nth-child(1) { animation-delay: 0.1s; }
+  .fade-in:nth-child(2) { animation-delay: 0.2s; }
+  .fade-in:nth-child(3) { animation-delay: 0.3s; }
+  .fade-in:nth-child(4) { animation-delay: 0.4s; }
+  .fade-in:nth-child(5) { animation-delay: 0.5s; }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

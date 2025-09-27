@@ -1,0 +1,181 @@
+---
+// Hero section component
+import Button from './ui/Button.astro';
+
+const telegramBotUrl = "https://t.me/your_bot"; // TODO: Replace with actual bot URL
+
+// Best rabbit photos for carousel
+const heroRabbits = [
+  {
+    image: "/images/photo_2025-09-15_13-17-50.jpg",
+    alt: "Кролик Silver - самец серебристой породы"
+  },
+  {
+    image: "/images/photo_2025-09-15_13-17-51.jpg",
+    alt: "Кролик Luna - самка белой породы"
+  },
+  {
+    image: "/images/photo_2025-09-15_13-17-52.jpg",
+    alt: "Кролик Storm - самец голландской породы"
+  },
+  {
+    image: "/images/photo_2025-09-15_13-17-50 (2).jpg",
+    alt: "Кролик Pearl - молодая самка породы Рекс"
+  },
+  {
+    image: "/images/photo_2025-09-15_13-17-51 (2).jpg",
+    alt: "Кролик Max - крупный самец калифорнийской породы"
+  }
+];
+---
+
+<section class="section bg-[var(--bg-primary)] relative overflow-hidden">
+  <!-- Background Image Carousel -->
+  <div class="absolute inset-0 opacity-10">
+    <div id="hero-carousel" class="flex transition-transform duration-1000 ease-in-out h-full">
+      {heroRabbits.map((rabbit, index) => (
+        <div class="min-w-full h-full relative">
+          <img
+            src={rabbit.image}
+            alt={rabbit.alt}
+            class="w-full h-full object-cover filter blur-sm scale-110"
+            loading="eager"
+          />
+          <div class="absolute inset-0 bg-gradient-to-br from-[var(--bg-primary)]/80 via-transparent to-[var(--bg-primary)]/90"></div>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  <div class="container mx-auto px-6 relative z-10">
+    <div class="text-center max-w-4xl mx-auto">
+      <!-- Main heading -->
+      <h1 class="text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight fade-in">
+        USDT-вход, ежедневные PLEX-бонусы, итоговая выплата в USDT
+      </h1>
+
+      <!-- Subtitle -->
+      <p class="text-xl md:text-2xl text-[var(--text-secondary)] mb-12 max-w-3xl mx-auto leading-relaxed fade-in">
+        Форс-мажор — возврат тела в PLEX.
+      </p>
+
+      <!-- CTA Buttons -->
+      <div class="flex flex-col sm:flex-row gap-6 justify-center items-center fade-in">
+        <Button href={telegramBotUrl} variant="primary" size="lg">
+          Открыть Telegram-бот
+        </Button>
+
+        <Button href="#how" variant="secondary" size="lg">
+          Как это работает
+        </Button>
+      </div>
+
+      <!-- Important disclaimer -->
+      <div class="mt-16 p-6 bg-[var(--bg-secondary)] rounded-[var(--radius-xl)] border border-[var(--border-primary)] max-w-2xl mx-auto fade-in">
+        <p class="text-sm text-[var(--text-secondary)] leading-relaxed">
+          <strong class="text-[var(--accent-primary)]">Экономическая модель:</strong> ежедневные начисления — в монете PLEX (параметры публикуются в Telegram-боте).
+          По успешному завершению цикла (~3 мес.) возврат тела и прибыль — в USDT. В случае форс-мажора возврат тела — в монете PLEX.
+        </p>
+      </div>
+
+      <!-- Hero Image with proper constraints -->
+      <div class="mt-12 relative w-full mx-auto max-w-[1100px] rounded-[calc(var(--radius-2xl)*1.4)] ring-1 ring-[color:var(--ring)] overflow-hidden aspect-[16/9]">
+        <picture>
+          <source
+            srcset="/images/photo_2025-09-15_13-17-50.webp"
+            type="image/webp"
+          />
+          <img
+            src="/images/photo_2025-09-15_13-17-50.jpg"
+            class="absolute inset-0 h-full w-full object-cover transition-transform duration-300 hover:scale-105"
+            alt="Кролик в вольере"
+            loading="eager"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </picture>
+      </div>
+    </div>
+  </div>
+
+  <!-- Carousel Navigation Dots -->
+  <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20">
+    <div class="flex space-x-2">
+      {heroRabbits.map((_, index) => (
+        <button
+          onclick={`setSlide(${index})`}
+          class="w-3 h-3 rounded-full transition-all duration-300"
+          class:list={[
+            index === 0 ? 'bg-[var(--accent-primary)]' : 'bg-white/30'
+          ]}
+          id={`dot-${index}`}
+        ></button>
+      ))}
+    </div>
+  </div>
+</section>
+
+<script>
+  let currentSlide = 0;
+  const totalSlides = 5; // heroRabbits.length
+  const carousel = document.getElementById('hero-carousel');
+  const dots = document.querySelectorAll('[id^="dot-"]');
+
+  function updateCarousel() {
+    if (carousel) {
+      carousel.style.transform = `translateX(-${currentSlide * 100}%)`;
+    }
+
+    dots.forEach((dot, index) => {
+      if (index === currentSlide) {
+        dot.classList.remove('bg-white/30');
+        dot.classList.add('bg-[var(--accent-primary)]');
+      } else {
+        dot.classList.remove('bg-[var(--accent-primary)]');
+        dot.classList.add('bg-white/30');
+      }
+    });
+  }
+
+  function nextSlide() {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateCarousel();
+  }
+
+  function setSlide(index) {
+    currentSlide = index;
+    updateCarousel();
+  }
+
+  // Auto-advance carousel every 8 seconds (respects user preferences)
+  if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    setInterval(nextSlide, 8000);
+  }
+
+  // Keyboard navigation
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft') {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      updateCarousel();
+    } else if (e.key === 'ArrowRight') {
+      nextSlide();
+    }
+  });
+</script>
+
+<style>
+  .fade-in {
+    animation: fadeIn 0.8s ease-out;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>

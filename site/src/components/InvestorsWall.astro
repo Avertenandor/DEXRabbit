@@ -1,0 +1,153 @@
+---
+// Investors Wall component
+import { promises as fs } from 'fs';
+import path from 'path';
+
+interface Investor {
+  name: string;
+  telegram: string;
+  investment: string;
+  status: 'active' | 'completed';
+  consent: boolean;
+}
+
+let investors: Investor[] = [];
+
+try {
+  const jsonPath = path.join(process.cwd(), 'public/data/investors.json');
+  const jsonContent = await fs.readFile(jsonPath, 'utf-8');
+  investors = JSON.parse(jsonContent);
+} catch (error) {
+  console.error('Error loading investors data:', error);
+  // Fallback data
+  investors = [
+    {
+      name: "Алексей К.",
+      telegram: "@alex_k",
+      investment: "500 USDT",
+      status: "active",
+      consent: true
+    }
+  ];
+}
+---
+
+<section id="investors" class="section bg-[var(--bg-primary)]">
+  <div class="container mx-auto px-6">
+    <div class="max-w-6xl mx-auto">
+      <!-- Section header -->
+      <div class="text-center mb-16">
+        <h2 class="text-4xl md:text-5xl font-bold mb-6">
+          Наши инвесторы
+        </h2>
+        <p class="text-xl text-[var(--text-secondary)] max-w-3xl mx-auto">
+          Реальные люди, которые уже инвестируют в токенизацию кролиководства
+        </p>
+        <div class="mt-6 p-4 bg-[var(--bg-secondary)] rounded-lg border border-[var(--border-primary)] inline-block">
+          <p class="text-sm text-[var(--text-secondary)]">
+            <strong class="text-[var(--accent-primary)]">Важно:</strong> Все отзывы получены с согласия инвесторов на публикацию
+          </p>
+        </div>
+      </div>
+
+      <!-- Investors Grid -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+        {investors.map((investor) => (
+          <div class="card group hover:border-[var(--accent-primary)] transition-colors">
+            <div class="flex items-start space-x-4 mb-4">
+              <!-- Avatar placeholder -->
+              <div class="w-12 h-12 bg-[var(--accent-primary)] rounded-full flex items-center justify-center flex-shrink-0">
+                <span class="text-white font-bold text-lg">
+                  {investor.name.split(' ').map(n => n[0]).join('')}
+                </span>
+              </div>
+
+              <div class="flex-1">
+                <div class="flex items-center space-x-2 mb-2">
+                  <h3 class="font-semibold text-[var(--text-primary)]">
+                    {investor.name}
+                  </h3>
+                  {investor.verified && (
+                    <span class="px-2 py-1 bg-green-500/20 text-green-400 text-xs rounded-full">
+                      ✓ Проверен
+                    </span>
+                  )}
+                </div>
+                <a
+                  href={`https://t.me/${investor.telegram.replace('@', '')}`}
+                  class="text-[var(--accent-primary)] hover:underline text-sm"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  {investor.telegram}
+                </a>
+              </div>
+            </div>
+
+            <div class="bg-[var(--bg-tertiary)] rounded-lg p-4 border border-[var(--border-primary)]">
+              <p class="text-[var(--text-secondary)] italic">
+                "{investor.comment}"
+              </p>
+              <p class="text-xs text-[var(--text-muted)] mt-3">
+                Участник с {new Date(investor.date).toLocaleDateString('ru-RU')}
+              </p>
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <!-- CTA -->
+      <div class="text-center">
+        <div class="bg-[var(--bg-secondary)] rounded-[var(--radius-xl)] p-8 border border-[var(--border-primary)] mb-8">
+          <h3 class="text-2xl font-semibold text-[var(--accent-primary)] mb-4">
+            Хотите стать частью проекта?
+          </h3>
+          <p class="text-[var(--text-secondary)] mb-6">
+            Присоединяйтесь к инвесторам, которые уже оценили преимущества токенизации кролиководства
+          </p>
+          <a
+            href="https://t.me/your_bot"
+            class="btn-primary text-lg px-8 py-4 inline-block"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Начать инвестировать
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .card {
+    background-color: var(--bg-secondary);
+    border-radius: var(--radius-xl);
+    padding: 1.5rem;
+    border: 1px solid var(--border-primary);
+    transition: all 0.3s ease;
+  }
+
+  .card:hover {
+    border-color: var(--border-secondary);
+    transform: translateY(-2px);
+  }
+
+  .btn-primary {
+    background-color: var(--accent-primary);
+    color: white;
+    padding: 0.75rem 2rem;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    transition: all 0.2s ease;
+    border: none;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+  }
+
+  .btn-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-1px);
+  }
+</style>

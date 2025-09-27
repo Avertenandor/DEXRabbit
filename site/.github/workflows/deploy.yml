@@ -1,0 +1,85 @@
+name: Deploy GH Pages
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+      - run: npm ci
+      - run: npm run build
+      - name: Check dist artifact
+        run: node scripts/check-pages-dist.mjs
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    outputs:
+      page_url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v4
+
+  smoke:
+    needs: deploy
+    runs-on: ubuntu-latest
+    steps:
+      - name: Wait until Pages snapshot is live (GitHub URL)
+        shell: bash
+        env:
+          GITHUB_URL: ${{ needs.deploy.outputs.page_url }}
+        run: |
+          echo "Snapshot: $GITHUB_URL"
+          for i in {1..60}; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" "$GITHUB_URL")
+            if [ "$code" = "200" ]; then echo "OK: $GITHUB_URL"; break; fi
+            sleep 5
+          done
+          [ "$code" = "200" ] || (echo "Snapshot not live" && exit 1)
+
+      - name: Poll custom domain until 200 (max 10 min)
+        shell: bash
+        env:
+          CUSTOM_URL: https://xn--80apagbbfxgmuj4j.site/
+        run: |
+          for i in {1..120}; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" "$CUSTOM_URL")
+            echo "try $i: $code"
+            if [ "$code" = "200" ]; then
+              echo "OK: $CUSTOM_URL"; exit 0
+            fi
+            sleep 5
+          done
+          echo "Custom domain still not 200 after 10m"; exit 1
+
+      - name: Check critical assets on custom domain
+        shell: bash
+        env:
+          CUSTOM_URL: https://xn--80apagbbfxgmuj4j.site
+        run: |
+          for p in / /favicon.ico /site.webmanifest; do
+            code=$(curl -s -o /dev/null -w "%{http_code}" "$CUSTOM_URL$p")
+            [ "$code" = "200" ] || (echo "Asset FAIL: $p $code" && exit 1)
+          done

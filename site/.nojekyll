@@ -1,0 +1,2 @@
+# This file tells GitHub Pages to not use Jekyll
+# Since we're using Astro, we don't need Jekyll processing

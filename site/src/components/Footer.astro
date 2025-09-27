@@ -1,0 +1,160 @@
+---
+// Footer component with legal info and contacts
+import UniversalDisclaimer from './UniversalDisclaimer.astro';
+const telegramBotUrl = "https://t.me/your_bot"; // TODO: Replace with actual bot URL
+---
+
+<footer class="bg-[var(--bg-secondary)] border-t border-[var(--border-primary)] mt-auto">
+  <div class="container py-12">
+    <div class="max-w-6xl mx-auto">
+      <!-- Main footer content -->
+      <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+        <!-- Company info -->
+        <div>
+          <div class="flex items-center space-x-2 mb-4">
+            <img src="/logo.svg" alt="DEXRabbit" class="w-8 h-8" />
+            <span class="font-bold text-lg text-[var(--text-primary)]">DEXRabbit</span>
+          </div>
+          <p class="text-[var(--text-secondary)] mb-4">
+            USDT-вход, ежедневные PLEX-бонусы, USDT-выплата. Прозрачная экономика.
+          </p>
+          <div class="flex space-x-4">
+            <a
+              href="https://rutube.ru/channel/rabbitfarm"
+              class="text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="RuTube канал"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
+              </svg>
+            </a>
+            <a
+              href="https://youtube.com/@rabbitfarm"
+              class="text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="YouTube канал"
+            >
+              <svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
+                <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+              </svg>
+            </a>
+          </div>
+        </div>
+
+        <!-- Legal links -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-[var(--text-primary)]">
+            Правовая информация
+          </h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="/legal" class="text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors">
+                Лицензионное соглашение
+              </a>
+            </li>
+            <li>
+              <a href="/privacy" class="text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors">
+                Политика конфиденциальности
+              </a>
+            </li>
+            <li>
+              <a href="/terms" class="text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors">
+                Условия использования
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Contacts -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-[var(--text-primary)]">
+            Контакты
+          </h3>
+          <ul class="space-y-2">
+            <li>
+              <a href="mailto:info@rabbitfarm.com" class="text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors">
+                📧 info@rabbitfarm.com
+              </a>
+            </li>
+            <li>
+              <a href="https://t.me/manager" class="text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors" target="_blank" rel="noopener noreferrer">
+                📱 Telegram менеджера
+              </a>
+            </li>
+            <li>
+              <a href="https://t.me/rabbitfarm_channel" class="text-[var(--text-secondary)] hover:text-[var(--accent-primary)] transition-colors" target="_blank" rel="noopener noreferrer">
+                📢 Официальный канал
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- CTA -->
+        <div>
+          <h3 class="text-lg font-semibold mb-4 text-[var(--text-primary)]">
+            Начать инвестировать
+          </h3>
+          <p class="text-[var(--text-secondary)] mb-4">
+            Все операции через Telegram-бот
+          </p>
+          <a
+            href={telegramBotUrl}
+            class="btn-primary inline-block text-center w-full"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Открыть Telegram-бот
+          </a>
+        </div>
+      </div>
+
+      <!-- Universal disclaimer -->
+      <div class="border-t border-[var(--border-primary)] pt-8 mb-8">
+        <UniversalDisclaimer />
+      </div>
+
+      <!-- Copyright -->
+      <div class="text-center pt-8 border-t border-[var(--border-primary)]">
+        <p class="text-[var(--text-muted)]">
+          © 2024 DEXRabbit. Все права защищены.
+        </p>
+        <p class="text-[var(--text-muted)] text-sm mt-2">
+          USDT-вход, PLEX-бонусы, USDT-выплата. Проект токенизации кролиководства.
+        </p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .btn-primary {
+    background-color: var(--accent-primary);
+    color: white;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-2xl);
+    font-weight: 600;
+    font-size: 0.875rem;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    border: none;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .btn-primary:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
+  }
+
+  .btn-primary:focus-visible {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+  }
+</style>
