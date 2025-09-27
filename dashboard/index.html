@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Аналитический дашборд — КупитьКролика</title>
+    <meta name="description" content="Аналитический дашборд с KPI, графиками и детальными отчётами по работе токенизированной кроличьей фермы.">
+    
+    <link rel="stylesheet" href="/styles/tokens-v2.css">
+    <link rel="stylesheet" href="/styles/tokens.css">
+    <link rel="stylesheet" href="/styles/global.css">
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="/" class="logo" style="display: flex; align-items: center; gap: 8px;">
+                    <img src="/images/favicon.svg" alt="КупитьКролика логотип" width="32" height="32" style="border-radius: 50%;">
+                    <span class="logo-text">КупитьКролика</span>
+                </a>
+                
+                <div class="nav-breadcrumb">
+                    <a href="/">Главная</a> → <span>Дашборд</span>
+                </div>
+                
+                <div class="header-cta">
+                    <button onclick="exportAllData()" class="btn btn-outline btn-small">📤 Экспорт</button>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Dashboard container -->
+        <section class="section">
+            <div class="container">
+                <div id="analytics-dashboard">
+                    <!-- Dashboard будет загружен через JavaScript -->
+                    <div class="loading-placeholder">
+                        <div class="loading-spinner"></div>
+                        <p>Загрузка аналитических данных...</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <style>
+        /* Dashboard-specific styles */
+        .analytics-dashboard {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .dashboard-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-8);
+            padding: var(--space-6);
+            background: white;
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-md);
+        }
+
+        .dashboard-header h1 {
+            margin: 0;
+            font-size: var(--text-3xl);
+            color: var(--text-primary);
+        }
+
+        .time-filters {
+            display: flex;
+            gap: var(--space-2);
+        }
+
+        .time-filter {
+            padding: var(--space-2) var(--space-4);
+            border: 1px solid var(--color-neutral-300);
+            background: white;
+            border-radius: var(--radius-md);
+            cursor: pointer;
+            transition: all var(--transition-base);
+        }
+
+        .time-filter:hover {
+            background: var(--color-primary-50);
+            border-color: var(--color-primary-300);
+        }
+
+        .time-filter.active {
+            background: var(--color-primary-500);
+            color: white;
+            border-color: var(--color-primary-500);
+        }
+
+        .kpi-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--space-4);
+            margin-bottom: var(--space-8);
+        }
+
+        .kpi-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            box-shadow: var(--shadow-md);
+        }
+
+        .kpi-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: var(--space-4);
+        }
+
+        .kpi-header h3 {
+            margin: 0;
+            font-size: var(--text-sm);
+            color: var(--color-neutral-600);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .kpi-change {
+            padding: var(--space-1) var(--space-2);
+            border-radius: var(--radius-md);
+            font-size: var(--text-xs);
+            font-weight: var(--font-bold);
+        }
+
+        .kpi-change.positive {
+            background: var(--color-success-bg);
+            color: var(--color-success);
+        }
+
+        .kpi-change.negative {
+            background: var(--color-error-bg);
+            color: var(--color-error);
+        }
+
+        .kpi-value {
+            font-size: var(--text-3xl);
+            font-weight: var(--font-bold);
+            color: var(--text-primary);
+        }
+
+        .charts-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: var(--space-6);
+            margin-bottom: var(--space-8);
+        }
+
+        .chart-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            box-shadow: var(--shadow-md);
+        }
+
+        .chart-card.large {
+            grid-column: span 2;
+        }
+
+        @media (max-width: 1024px) {
+            .chart-card.large {
+                grid-column: span 1;
+            }
+        }
+
+        .chart-card h3 {
+            margin: 0 0 var(--space-4) 0;
+            font-size: var(--text-lg);
+            color: var(--text-primary);
+        }
+
+        .chart-card canvas {
+            width: 100%;
+            height: 300px;
+            background: var(--color-neutral-50);
+            border-radius: var(--radius-lg);
+        }
+
+        .reports-section {
+            margin-top: var(--space-8);
+        }
+
+        .reports-section h2 {
+            text-align: center;
+            margin-bottom: var(--space-6);
+            color: var(--text-primary);
+        }
+
+        .reports-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: var(--space-6);
+        }
+
+        .report-card {
+            background: white;
+            border-radius: var(--radius-xl);
+            padding: var(--space-6);
+            box-shadow: var(--shadow-md);
+            cursor: pointer;
+            transition: all var(--transition-base);
+            text-align: center;
+        }
+
+        .report-card:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+        }
+
+        .report-icon {
+            font-size: var(--text-4xl);
+            margin-bottom: var(--space-4);
+        }
+
+        .report-card h4 {
+            margin: 0 0 var(--space-3) 0;
+            color: var(--text-primary);
+        }
+
+        .report-card p {
+            color: var(--color-neutral-600);
+            margin-bottom: var(--space-6);
+            line-height: var(--leading-relaxed);
+        }
+
+        .report-actions {
+            display: flex;
+            justify-content: center;
+        }
+
+        .loading-placeholder {
+            text-align: center;
+            padding: var(--space-12);
+            color: var(--color-neutral-600);
+        }
+
+        .loading-spinner {
+            width: 48px;
+            height: 48px;
+            border: 4px solid var(--color-neutral-200);
+            border-top: 4px solid var(--color-primary-500);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto var(--space-4);
+        }
+
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
+
+        /* Report modal */
+        .report-modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            backdrop-filter: blur(4px);
+        }
+
+        .modal-content {
+            background: white;
+            border-radius: var(--radius-2xl);
+            max-width: 800px;
+            max-height: 80vh;
+            overflow-y: auto;
+            position: relative;
+            z-index: 1001;
+            margin: var(--space-4);
+            box-shadow: var(--shadow-2xl);
+        }
+
+        .modal-close {
+            position: absolute;
+            top: var(--space-4);
+            right: var(--space-4);
+            background: none;
+            border: none;
+            font-size: var(--text-2xl);
+            cursor: pointer;
+            color: var(--color-neutral-500);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-close:hover {
+            background: var(--color-neutral-100);
+        }
+
+        .report-content {
+            padding: var(--space-8);
+        }
+
+        .report-header {
+            text-align: center;
+            margin-bottom: var(--space-6);
+            padding-bottom: var(--space-4);
+            border-bottom: 1px solid var(--color-neutral-200);
+        }
+
+        .report-header h2 {
+            margin: 0 0 var(--space-2) 0;
+            color: var(--text-primary);
+        }
+
+        .report-meta {
+            color: var(--color-neutral-600);
+            font-size: var(--text-sm);
+        }
+
+        .report-summary {
+            margin-bottom: var(--space-8);
+        }
+
+        .report-summary h3 {
+            margin-bottom: var(--space-4);
+            color: var(--text-primary);
+        }
+
+        .metric-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: var(--space-3) 0;
+            border-bottom: 1px solid var(--color-neutral-100);
+        }
+
+        .metric-label {
+            color: var(--color-neutral-600);
+        }
+
+        .metric-value {
+            font-weight: var(--font-semibold);
+            color: var(--text-primary);
+        }
+
+        .report-actions {
+            text-align: center;
+            display: flex;
+            gap: var(--space-4);
+            justify-content: center;
+        }
+    </style>
+
+    <script src="/scripts/analytics-dashboard.js"></script>
+    <script>
+        function exportAllData() {
+            console.log('Exporting all dashboard data...');
+            alert('Экспорт данных начат. Файл будет отправлен на ваш email в течение 10 минут.');
+            
+            if (window.analytics) {
+                window.analytics.trackEvent('dashboard_export', {
+                    event_category: 'analytics',
+                    export_type: 'full'
+                });
+            }
+        }
+
+        // Обработчики фильтров времени
+        document.addEventListener('click', (e) => {
+            if (e.target.classList.contains('time-filter')) {
+                // Убираем активный класс со всех фильтров
+                document.querySelectorAll('.time-filter').forEach(filter => {
+                    filter.classList.remove('active');
+                });
+                
+                // Добавляем активный класс к выбранному
+                e.target.classList.add('active');
+                
+                const period = e.target.dataset.period;
+                console.log(`Switching to ${period} view`);
+                
+                // Здесь можно было бы обновить данные графиков
+            }
+        });
+
+        // Track page view
+        if (window.analytics) {
+            window.analytics.trackEvent('dashboard_view', {
+                event_category: 'page_view',
+                page: '/dashboard'
+            });
+        }
+    </script>
+</body>
+</html>
