@@ -1,0 +1,85 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: 🏗️ Checkout repository
+      uses: actions/checkout@v4
+
+    - name: 🔧 Build site
+      run: |
+        # Ensure CNAME exists in root
+        echo "xn--80apagbbfxgmuj4j.site" > CNAME
+        
+        # Ensure robots.txt is correct
+        echo "User-agent: *" > robots.txt
+        echo "Allow: /" >> robots.txt
+        echo "Sitemap: https://xn--80apagbbfxgmuj4j.site/sitemap.xml" >> robots.txt
+        
+        # Remove archive directory from deployment
+        rm -rf archive || true
+
+    - name: 🔍 Setup Pages
+      uses: actions/configure-pages@v5
+      
+    - name: 📁 Upload Pages artifact
+      uses: actions/upload-pages-artifact@v3
+      with:
+        path: '.'
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+      
+    steps:
+    - name: 🚀 Deploy to GitHub Pages
+      id: deployment
+      uses: actions/deploy-pages@v4
+
+  health-check:
+    needs: deploy
+    runs-on: ubuntu-latest
+    if: github.ref == 'refs/heads/main'
+    
+    steps:
+    - name: 🏥 Health check
+      run: |
+        echo "Waiting for deployment to be ready..."
+        sleep 30
+        
+        # Check if site is accessible
+        if curl -f -s https://xn--80apagbbfxgmuj4j.site > /dev/null; then
+          echo "✅ Site is accessible"
+        else
+          echo "❌ Site is not accessible"
+          exit 1
+        fi
+        
+        # Check if important resources load
+        if curl -f -s https://xn--80apagbbfxgmuj4j.site/styles/global.css > /dev/null; then
+          echo "✅ CSS loads correctly"
+        else
+          echo "⚠️ CSS load warning"
+        fi

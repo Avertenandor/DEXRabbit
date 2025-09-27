@@ -284,64 +284,22 @@
                 </div>
             </div>
         </section>
-        <section class="catalog-preview" id="catalog">
+        <section class="section" id="catalog-preview">
             <div class="container">
-                <h2 class="section-title">Рекомендуемые</h2>
-                <div class="product-grid">
-                    <!-- Task 7: Product card component -->
-                    <article class="product-card">
-                        <div class="product-image">
-                            <img src="/images/photo_2025-09-15_13-17-50.jpg" alt="Белый великан" loading="lazy">
-                            <span class="status-badge status-available">Свободен</span>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Белый великан #001</h3>
-                            <div class="product-specs">
-                                <span>Белый великан</span> · <span>♀</span> · <span>5 мес</span> · <span>3.8 кг</span>
-                            </div>
-                            <div class="product-actions">
-                                <strong class="product-price">8500 ₽</strong>
-                                <a href="/contacts" class="btn btn-primary btn-small">Забронировать</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product-card">
-                        <div class="product-image">
-                            <img src="/images/photo_2025-09-15_13-17-51.jpg" alt="Калифорнийский" loading="lazy">
-                            <span class="status-badge status-available">Свободен</span>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Калифорнийский #002</h3>
-                            <div class="product-specs">
-                                <span>Калифорнийский</span> · <span>♂</span> · <span>4 мес</span> · <span>3.2 кг</span>
-                            </div>
-                            <div class="product-actions">
-                                <strong class="product-price">7500 ₽</strong>
-                                <a href="/contacts" class="btn btn-primary btn-small">Забронировать</a>
-                            </div>
-                        </div>
-                    </article>
-
-                    <article class="product-card">
-                        <div class="product-image">
-                            <img src="/images/photo_2025-09-15_13-17-52.jpg" alt="Советская шиншилла" loading="lazy">
-                            <span class="status-badge status-reserved">Забронирован</span>
-                        </div>
-                        <div class="product-info">
-                            <h3 class="product-title">Советская шиншилла #003</h3>
-                            <div class="product-specs">
-                                <span>Советская шиншилла</span> · <span>♀</span> · <span>6 мес</span> · <span>4.1 кг</span>
-                            </div>
-                            <div class="product-actions">
-                                <strong class="product-price">9000 ₽</strong>
-                                <a href="/contacts" class="btn btn-primary btn-small">Забронировать</a>
-                            </div>
-                        </div>
-                    </article>
+                <div class="section-header">
+                    <h2 class="section-title">Рекомендуемые кролики</h2>
+                    <p class="section-description">
+                        Лучшие предложения для инвестиций — проверенные породы с отличными показателями
+                    </p>
+                </div>
+                <div class="catalog-preview-grid" id="featured-rabbits">
+                    <!-- Карточки будут загружены через JavaScript -->
                 </div>
                 <div class="section-cta">
-                    <a href="/catalog" class="btn btn-secondary">Смотреть весь каталог</a>
+                    <a href="/catalog" class="btn btn-primary btn-large">
+                        <span class="btn-icon">📋</span>
+                        Посмотреть полный каталог
+                    </a>
                 </div>
             </div>
         </section>
@@ -576,6 +534,7 @@
     </footer>
 
     <script src="/scripts/analytics.js"></script>
+    <script src="/scripts/catalog-preview.js"></script>
     <script src="/scripts/main.js"></script>
     <script src="/scripts/consultant.js"></script>
     <script src="/scripts/advanced-features.js"></script>

@@ -1023,3 +1023,318 @@ section {
   border-radius: var(--radius-full);
   display: inline-block;
 }
+
+/* Task 10-12: Catalog preview and cards */
+.catalog-preview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.rabbit-card {
+  background: white;
+  border-radius: var(--radius-2xl);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  transition: all var(--transition-base);
+  border: 1px solid var(--color-neutral-200);
+}
+
+.rabbit-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-xl);
+}
+
+.rabbit-image {
+  position: relative;
+  aspect-ratio: 4/3;
+  overflow: hidden;
+}
+
+.rabbit-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rabbit-badges {
+  position: absolute;
+  top: var(--space-3);
+  right: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.status-badge {
+  padding: var(--space-1) var(--space-3);
+  border-radius: var(--radius-full);
+  font-size: var(--text-xs);
+  font-weight: var(--font-semibold);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.status-available {
+  background: var(--color-success);
+  color: white;
+}
+
+.status-reserved {
+  background: var(--color-warning);
+  color: white;
+}
+
+.gender-badge {
+  padding: var(--space-1) var(--space-2);
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  font-size: var(--text-lg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+}
+
+.rabbit-info {
+  padding: var(--space-6);
+}
+
+.rabbit-name {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  margin-bottom: var(--space-1);
+  color: var(--text-primary);
+}
+
+.rabbit-breed {
+  color: var(--color-primary-600);
+  font-weight: var(--font-medium);
+  margin-bottom: var(--space-4);
+}
+
+.rabbit-specs {
+  display: grid;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.spec-item {
+  display: flex;
+  justify-content: space-between;
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-neutral-100);
+}
+
+.spec-label {
+  color: var(--color-neutral-600);
+  font-size: var(--text-sm);
+}
+
+.spec-value {
+  font-weight: var(--font-medium);
+  color: var(--text-primary);
+}
+
+.rabbit-pricing {
+  background: var(--color-primary-50);
+  padding: var(--space-4);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-4);
+}
+
+.investment-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: var(--space-2);
+}
+
+.price-label {
+  color: var(--color-primary-700);
+  font-weight: var(--font-medium);
+}
+
+.price-value {
+  font-size: var(--text-xl);
+  font-weight: var(--font-bold);
+  color: var(--color-primary-600);
+}
+
+.multiplier-note {
+  font-size: var(--text-xs);
+  color: var(--color-primary-600);
+  text-align: center;
+}
+
+.rabbit-actions {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.btn-block {
+  flex: 1;
+}
+
+.btn-outline {
+  background: transparent;
+  border: 1px solid var(--color-neutral-300);
+  color: var(--color-neutral-600);
+}
+
+.btn-outline:hover {
+  border-color: var(--color-primary-500);
+  color: var(--color-primary-500);
+}
+
+.section-cta {
+  text-align: center;
+  margin-top: var(--space-8);
+}
+
+/* Modal styles */
+.modal-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: var(--z-modal);
+  padding: var(--space-4);
+}
+
+.modal {
+  background: white;
+  border-radius: var(--radius-2xl);
+  max-width: 600px;
+  width: 100%;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-6);
+  border-bottom: 1px solid var(--color-neutral-200);
+}
+
+.modal-header h2 {
+  margin: 0;
+  font-size: var(--text-2xl);
+}
+
+.modal-close {
+  background: none;
+  border: none;
+  font-size: var(--text-2xl);
+  cursor: pointer;
+  color: var(--color-neutral-400);
+  padding: var(--space-2);
+}
+
+.modal-close:hover {
+  color: var(--color-neutral-600);
+}
+
+.modal-body {
+  padding: var(--space-6);
+}
+
+.rabbit-preview {
+  display: flex;
+  gap: var(--space-4);
+  margin-bottom: var(--space-6);
+  padding: var(--space-4);
+  background: var(--color-neutral-50);
+  border-radius: var(--radius-lg);
+}
+
+.preview-image {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: var(--radius-lg);
+}
+
+.preview-info h3 {
+  margin: 0 0 var(--space-2) 0;
+  font-size: var(--text-lg);
+}
+
+.investment-details {
+  margin-bottom: var(--space-6);
+}
+
+.investment-details h4 {
+  margin-bottom: var(--space-3);
+  color: var(--text-primary);
+}
+
+.investment-details ul {
+  list-style: none;
+  padding: 0;
+}
+
+.investment-details li {
+  padding: var(--space-2) 0;
+  border-bottom: 1px solid var(--color-neutral-100);
+}
+
+.form-group {
+  margin-bottom: var(--space-4);
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: var(--space-2);
+  font-weight: var(--font-medium);
+  color: var(--text-primary);
+}
+
+.form-group input {
+  width: 100%;
+  padding: var(--space-3);
+  border: 1px solid var(--color-neutral-300);
+  border-radius: var(--radius-lg);
+  font-size: var(--text-base);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: var(--color-primary-500);
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.1);
+}
+
+.form-actions {
+  margin-top: var(--space-6);
+}
+
+.error-state {
+  text-align: center;
+  padding: var(--space-12);
+  color: var(--color-neutral-600);
+}
+
+.error-icon {
+  font-size: var(--text-6xl);
+  margin-bottom: var(--space-4);
+}
+
+/* Animations */
+@keyframes slideInRight {
+  from { transform: translateX(100%); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes slideOutRight {
+  from { transform: translateX(0); opacity: 1; }
+  to { transform: translateX(100%); opacity: 0; }
+}
