@@ -2,12 +2,37 @@
 User-agent: *
 Allow: /
 
-# Optimize crawling
-Crawl-delay: 1
+# Allow important files
+Allow: /images/
+Allow: /styles/
+Allow: /scripts/
+Allow: /catalog/
+Allow: /blog/
+Allow: /gallery/
+Allow: /faq/
+Allow: /contacts/
+Allow: /delivery/
+Allow: /policy/
+Allow: /terms/
 
-# Important pages
-Allow: /catalog
-Allow: /faq
+# Important files for SEO
+Allow: /sitemap.xml
+Allow: /robots.txt
+Allow: /manifest.json
+Allow: /favicon.ico
+Allow: /images/favicon.svg
+
+# Sitemap location
+Sitemap: https://xn--80apagbbfxgmuj4j.site/sitemap.xml
+
+# Block admin and sensitive areas (if any)
+Disallow: /admin/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /tests/
+
+# Crawl-delay for respectful crawling
+Crawl-delay: 1
 Allow: /contacts
 Allow: /delivery
 

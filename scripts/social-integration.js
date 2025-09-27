@@ -136,6 +136,7 @@ class SocialIntegration {
     addSocialProofs() {
         // Add live counter of satisfied customers
         const proofWidget = document.createElement('div');
+        proofWidget.className = 'social-proof-widget';
         proofWidget.style.cssText = `
             position: fixed;
             bottom: 100px;
@@ -148,15 +149,29 @@ class SocialIntegration {
             z-index: 500;
             max-width: 250px;
             font-size: 14px;
+            display: none;
+            transition: all 0.3s ease;
         `;
 
         proofWidget.innerHTML = `
-            <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 8px;">
-                <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px;">✓</div>
-                <div>
-                    <div style="font-weight: 600; color: #059669;">Довольных клиентов</div>
-                    <div style="font-size: 18px; font-weight: bold;">${this.getRandomCustomerCount()}</div>
+            <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 8px;">
+                <div style="display: flex; align-items: center; gap: 12px;">
+                    <div style="width: 40px; height: 40px; background: linear-gradient(135deg, #10b981, #059669); border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-size: 18px;">✓</div>
+                    <div>
+                        <div style="font-weight: 600; color: #059669;">Довольных клиентов</div>
+                        <div style="font-size: 18px; font-weight: bold;">${this.getRandomCustomerCount()}</div>
+                    </div>
                 </div>
+                <button onclick="this.parentElement.parentElement.style.display='none'" style="
+                    background: none;
+                    border: none;
+                    color: #6b7280;
+                    font-size: 16px;
+                    cursor: pointer;
+                    padding: 2px;
+                    border-radius: 4px;
+                    transition: color 0.2s;
+                " onmouseover="this.style.color='#374151'" onmouseout="this.style.color='#6b7280'">✕</button>
             </div>
             <div style="font-size: 12px; color: #6b7280;">За ${new Date().getFullYear()} год</div>
         `;
@@ -170,6 +185,11 @@ class SocialIntegration {
                 counter.textContent = this.getRandomCustomerCount();
             }
         }, 30000);
+        
+        // Show after 5 seconds
+        setTimeout(() => {
+            proofWidget.style.display = 'block';
+        }, 5000);
     }
 
     // Task 40: Advanced notifications and social proof

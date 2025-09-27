@@ -134,7 +134,20 @@
     <meta property="og:url" content="https://xn--80apagbbfxgmuj4j.site/">
     <meta property="og:image" content="https://xn--80apagbbfxgmuj4j.site/og-cover.jpg">
     
+    <!-- Enhanced Favicon and Icons -->
+    <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon.svg">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon.svg">
+    <link rel="manifest" href="/manifest.json">
+    <meta name="theme-color" content="#10b981">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <meta name="apple-mobile-web-app-title" content="КупитьКролика">
+    <meta name="msapplication-TileColor" content="#10b981">
+    <meta name="msapplication-config" content="/browserconfig.xml">
+    
     <link rel="stylesheet" href="/styles/tokens.css">
     <link rel="stylesheet" href="/styles/global.css">
     <link rel="stylesheet" href="/styles/performance.css">
@@ -144,7 +157,10 @@
     <header class="header">
         <div class="container">
             <nav class="nav">
-                <a href="/" class="logo">КупитьКролика</a>
+                <a href="/" class="logo" style="display: flex; align-items: center; gap: 8px;">
+                    <img src="/images/favicon.svg" alt="КупитьКролика логотип" width="32" height="32" style="border-radius: 50%;">
+                    <span>КупитьКролика</span>
+                </a>
                 
                 <button class="burger" id="burger" aria-label="Открыть меню">
                     <span></span>

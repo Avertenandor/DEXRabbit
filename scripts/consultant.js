@@ -167,7 +167,7 @@ class OnlineConsultant {
             }
             
             .consultant-toggle.active {
-                display: none;
+                display: none !important;
             }
             
             .consultant-badge {
@@ -206,12 +206,11 @@ class OnlineConsultant {
                 border-radius: 16px;
                 box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
                 overflow: hidden;
-                display: flex;
                 flex-direction: column;
             }
             
             .consultant-chat.active {
-                display: flex;
+                display: flex !important;
             }
             
             .consultant-header {
@@ -403,6 +402,23 @@ class OnlineConsultant {
             }
         });
 
+        // Close on ESC key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && this.isOpen) {
+                this.closeChat();
+            }
+        });
+
+        // Close on click outside
+        document.addEventListener('click', (e) => {
+            const chat = document.getElementById('consultant-chat');
+            const toggle_btn = document.getElementById('consultant-toggle');
+            
+            if (this.isOpen && chat && !chat.contains(e.target) && !toggle_btn?.contains(e.target)) {
+                this.closeChat();
+            }
+        });
+
         // Track consultant usage
         toggle?.addEventListener('click', () => {
             if (typeof trackEvent === 'function') {
@@ -415,9 +431,20 @@ class OnlineConsultant {
         const toggle = document.getElementById('consultant-toggle');
         const chat = document.getElementById('consultant-chat');
         
-        toggle?.classList.add('active');
-        chat?.classList.add('active');
+        if (toggle) {
+            toggle.style.display = 'none';
+        }
+        if (chat) {
+            chat.style.display = 'flex';
+            chat.classList.add('active');
+        }
         this.isOpen = true;
+        
+        // Show social proof widget when consultant opens
+        const proofWidget = document.querySelector('.social-proof-widget');
+        if (proofWidget) {
+            proofWidget.style.display = 'block';
+        }
         
         // Focus input
         setTimeout(() => {
@@ -432,6 +459,20 @@ class OnlineConsultant {
         toggle?.classList.remove('active');
         chat?.classList.remove('active');
         this.isOpen = false;
+        
+        // Hide social proof widget when consultant closes
+        const proofWidget = document.querySelector('.social-proof-widget');
+        if (proofWidget) {
+            proofWidget.style.display = 'none';
+        }
+        
+        // Show toggle button
+        if (toggle) {
+            toggle.style.display = 'flex';
+        }
+        if (chat) {
+            chat.style.display = 'none';
+        }
     }
 
     sendMessage() {
