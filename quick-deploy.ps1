@@ -1,2 +1,0 @@
-# Quick Deploy - One-liner solution
-[Console]::OutputEncoding = [System.Text.Encoding]::UTF8; $OutputEncoding = [System.Text.Encoding]::UTF8; Set-Location "C:\Users\konfu\Desktop\Кролики"; git add .; git commit -m "deploy: $(Get-Date -Format 'yyyy-MM-dd HH:mm:ss')"; git push origin main; Write-Host "✅ Deploy completed! Site: https://xn--80apagbbfxgmuj4j.site/" -ForegroundColor Green

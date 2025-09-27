@@ -4,6 +4,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
+# Archive folder (temporary files and build artifacts)
+archive/
+
 # Build outputs
 dist/
 build/
