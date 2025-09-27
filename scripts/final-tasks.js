@@ -126,8 +126,8 @@ class FinalTasks {
             }
 
             // Track subscription
-            if (typeof trackEvent === 'function') {
-                trackEvent('newsletter_subscribe', {
+            if (window.analytics && typeof window.analytics.trackEvent === 'function') {
+                window.analytics.trackEvent('newsletter_subscribe', {
                     event_category: 'engagement',
                     email_domain: email.split('@')[1]
                 });
@@ -216,8 +216,8 @@ class FinalTasks {
         this.showNotification(`${productId} ${this.wishlist.includes(productId) ? 'добавлен в' : 'удален из'} список желаний`);
         
         // Track wishlist actions
-        if (typeof trackEvent === 'function') {
-            trackEvent('wishlist_toggle', {
+        if (window.analytics && typeof window.analytics.trackEvent === 'function') {
+            window.analytics.trackEvent('wishlist_toggle', {
                 event_category: 'engagement',
                 product: productId,
                 action: this.wishlist.includes(productId) ? 'add' : 'remove'
@@ -508,8 +508,8 @@ class FinalTasks {
         this.showNotification('🙏 Спасибо за отзыв! Он будет опубликован после модерации.', 'success');
 
         // Track review submission
-        if (typeof trackEvent === 'function') {
-            trackEvent('review_submit', {
+        if (window.analytics && typeof window.analytics.trackEvent === 'function') {
+            window.analytics.trackEvent('review_submit', {
                 event_category: 'engagement',
                 rating: rating,
                 product: reviewData.product,

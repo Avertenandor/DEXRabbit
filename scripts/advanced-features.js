@@ -57,8 +57,8 @@ class AdvancedFeatures {
         this.showNotification(`${productId} ${this.favorites.includes(productId) ? 'добавлен в' : 'удален из'} избранное`);
         
         // Track favorites
-        if (typeof trackEvent === 'function') {
-            trackEvent('favorite_toggle', {
+        if (window.analytics && typeof window.analytics.trackEvent === 'function') {
+            window.analytics.window.analytics.trackEvent('favorite_toggle', {
                 event_category: 'engagement',
                 product: productId,
                 action: this.favorites.includes(productId) ? 'add' : 'remove'
@@ -112,8 +112,8 @@ class AdvancedFeatures {
         }
         
         // Track comparison
-        if (typeof trackEvent === 'function') {
-            trackEvent('comparison_toggle', {
+        if (window.analytics && typeof window.analytics.trackEvent === 'function') {
+            window.analytics.window.analytics.trackEvent('comparison_toggle', {
                 event_category: 'engagement',
                 product: productId,
                 comparison_count: this.comparison.length
@@ -209,8 +209,8 @@ class AdvancedFeatures {
         document.body.appendChild(modal);
         
         // Track comparison view
-        if (typeof trackEvent === 'function') {
-            trackEvent('comparison_view', {
+        if (window.analytics && typeof window.analytics.trackEvent === 'function') {
+            window.analytics.window.analytics.trackEvent('comparison_view', {
                 event_category: 'engagement',
                 products: this.comparison.join(',')
             });
@@ -373,8 +373,8 @@ class AdvancedFeatures {
         }
 
         // Track calculator usage
-        if (typeof trackEvent === 'function') {
-            trackEvent('calculator_use', {
+        if (window.analytics && typeof window.analytics.trackEvent === 'function') {
+            window.analytics.trackEvent('calculator_use', {
                 event_category: 'tools',
                 rabbit_count: count,
                 breed: breed,
@@ -437,8 +437,8 @@ class AdvancedFeatures {
         }
 
         // Track shares
-        if (typeof trackEvent === 'function') {
-            trackEvent('product_share', {
+        if (window.analytics && typeof window.analytics.trackEvent === 'function') {
+            window.analytics.trackEvent('product_share', {
                 event_category: 'social',
                 product: title
             });

@@ -192,8 +192,8 @@ document.addEventListener('DOMContentLoaded', function() {
         submitBtn.disabled = true;
 
         // Task 32: Track form submission
-        if (typeof trackEvent === 'function') {
-            trackEvent('lead_submit', {
+        if (window.analytics && typeof window.analytics.trackEvent === 'function') {
+            window.analytics.trackEvent('lead_submit', {
                 form: 'contact',
                 interest: formData.get('interest') || 'not_specified'
             });

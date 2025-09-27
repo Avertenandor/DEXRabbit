@@ -421,8 +421,8 @@ class OnlineConsultant {
 
         // Track consultant usage
         toggle?.addEventListener('click', () => {
-            if (typeof trackEvent === 'function') {
-                trackEvent('consultant_open', { event_category: 'engagement' });
+            if (window.analytics && typeof window.analytics.trackEvent === 'function') {
+                window.analytics.trackEvent('consultant_open', { event_category: 'engagement' });
             }
         });
     }
@@ -491,8 +491,8 @@ class OnlineConsultant {
         }, 1000);
         
         // Track message
-        if (typeof trackEvent === 'function') {
-            trackEvent('consultant_message', { 
+        if (window.analytics && typeof window.analytics.trackEvent === 'function') {
+            window.analytics.trackEvent('consultant_message', { 
                 event_category: 'engagement',
                 message_length: text.length 
             });
@@ -508,8 +508,8 @@ class OnlineConsultant {
         }
         
         // Track quick reply usage
-        if (typeof trackEvent === 'function') {
-            trackEvent('consultant_quick_reply', { 
+        if (window.analytics && typeof window.analytics.trackEvent === 'function') {
+            window.analytics.trackEvent('consultant_quick_reply', { 
                 event_category: 'engagement',
                 action: action 
             });

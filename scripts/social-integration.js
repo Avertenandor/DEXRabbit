@@ -124,8 +124,8 @@ class SocialIntegration {
             });
 
             link.addEventListener('click', () => {
-                if (typeof trackEvent === 'function') {
-                    trackEvent('social_click', {
+                if (window.analytics && typeof window.analytics.trackEvent === 'function') {
+                    window.analytics.trackEvent('social_click', {
                         event_category: 'social',
                         platform: social.name.toLowerCase()
                     });
@@ -202,8 +202,8 @@ class SocialIntegration {
         }
         
         // Track sharing
-        if (typeof trackEvent === 'function') {
-            trackEvent('product_share', {
+        if (window.analytics && typeof window.analytics.trackEvent === 'function') {
+            window.analytics.trackEvent('product_share', {
                 event_category: 'engagement',
                 product: productName
             });
@@ -687,8 +687,8 @@ class SocialIntegration {
             console.error('JavaScript Error:', event.error);
             
             // Track error
-            if (typeof trackEvent === 'function') {
-                trackEvent('javascript_error', {
+            if (window.analytics && typeof window.analytics.trackEvent === 'function') {
+                window.analytics.trackEvent('javascript_error', {
                     event_category: 'error',
                     error_message: event.message,
                     error_file: event.filename,
@@ -701,8 +701,8 @@ class SocialIntegration {
         window.addEventListener('unhandledrejection', (event) => {
             console.error('Unhandled Promise Rejection:', event.reason);
             
-            if (typeof trackEvent === 'function') {
-                trackEvent('promise_rejection', {
+            if (window.analytics && typeof window.analytics.trackEvent === 'function') {
+                window.analytics.trackEvent('promise_rejection', {
                     event_category: 'error',
                     reason: event.reason.toString()
                 });
@@ -716,8 +716,8 @@ class SocialIntegration {
             // Track Long Tasks
             const longTaskObserver = new PerformanceObserver((list) => {
                 list.getEntries().forEach((entry) => {
-                    if (typeof trackEvent === 'function') {
-                        trackEvent('long_task', {
+                    if (window.analytics && typeof window.analytics.trackEvent === 'function') {
+                        window.analytics.trackEvent('long_task', {
                             event_category: 'performance',
                             duration: Math.round(entry.duration),
                             start_time: Math.round(entry.startTime)
@@ -742,8 +742,8 @@ class SocialIntegration {
                 });
 
                 if (clsValue > 0.1) { // CLS threshold
-                    if (typeof trackEvent === 'function') {
-                        trackEvent('layout_shift', {
+                    if (window.analytics && typeof window.analytics.trackEvent === 'function') {
+                        window.analytics.trackEvent('layout_shift', {
                             event_category: 'performance',
                             cls_value: clsValue
                         });

@@ -39,7 +39,7 @@ class CatalogManager {
                 gender: "female",
                 age: 6,
                 weight: 2.8,
-                price: 150,
+                price: 15000,
                 status: "available",
                 image: "/images/rabbit-1.webp",
                 description: "Молодая самка калифорнийской породы"
@@ -51,7 +51,7 @@ class CatalogManager {
                 gender: "male", 
                 age: 8,
                 weight: 3.5,
-                price: 250,
+                price: 18000,
                 status: "available",
                 image: "/images/rabbit-2.webp",
                 description: "Племенной самец с отличными показателями"
@@ -63,7 +63,7 @@ class CatalogManager {
                 gender: "male",
                 age: 12,
                 weight: 4.2,
-                price: 300,
+                price: 22000,
                 status: "reserved",
                 image: "/images/rabbit-3.webp",
                 description: "Крупный самец породы Серый великан"
@@ -82,6 +82,23 @@ class CatalogManager {
         ).join('');
 
         container.className = 'catalog-preview-grid';
+    }
+
+    renderError() {
+        const container = document.getElementById('featured-rabbits');
+        if (!container) return;
+
+        container.innerHTML = `
+            <div class="error-message">
+                <div class="error-icon">⚠️</div>
+                <h3>Ошибка загрузки каталога</h3>
+                <p>Не удалось загрузить данные о кроликах. Попробуйте обновить страницу.</p>
+                <button onclick="window.location.reload()" class="btn btn-primary">
+                    🔄 Обновить
+                </button>
+            </div>
+        `;
+        container.className = 'error-container';
     }
 
     createRabbitCard(rabbit) {

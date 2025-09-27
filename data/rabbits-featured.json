@@ -6,7 +6,7 @@
     "gender": "female",
     "age": 6,
     "weight": 2.8,
-    "price": 150,
+    "price": 15000,
     "status": "available",
     "image": "/images/rabbit-1.webp",
     "description": "Молодая самка калифорнийской породы, отличные генетические показатели",
@@ -22,7 +22,7 @@
     "gender": "male",
     "age": 8,
     "weight": 3.5,
-    "price": 250,
+    "price": 18000,
     "status": "available",
     "image": "/images/rabbit-2.webp",
     "description": "Племенной самец с отличными показателями, производитель"
@@ -34,7 +34,7 @@
     "gender": "male", 
     "age": 12,
     "weight": 4.2,
-    "price": 300,
+    "price": 22000,
     "status": "reserved",
     "image": "/images/rabbit-3.webp",
     "description": "Крупный самец породы Серый великан, племенной производитель"
@@ -46,7 +46,7 @@
     "gender": "male",
     "age": 4,
     "weight": 2.1,
-    "price": 180,
+    "price": 16000,
     "status": "available",
     "image": "/images/rabbit-4.webp", 
     "description": "Молодой самец белого великана, перспективный для разведения"
@@ -58,7 +58,7 @@
     "gender": "female",
     "age": 10,
     "weight": 3.1,
-    "price": 200,
+    "price": 17000,
     "status": "available",
     "image": "/images/rabbit-5.webp",
     "description": "Опытная самка, уже давала приплод, проверенная производительница"
@@ -70,7 +70,7 @@
     "gender": "male",
     "age": 6,
     "weight": 3.8,
-    "price": 280,
+    "price": 20000,
     "status": "available",
     "image": "/images/rabbit-6.webp",
     "description": "Молодой племенной самец породы Серый великан"

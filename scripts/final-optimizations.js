@@ -396,10 +396,10 @@ https://xn--80apagbbfxgmuj4j.site
         }
 
         // Final performance check
-        if (typeof trackEvent === 'function') {
+        if (window.analytics && typeof window.analytics.trackEvent === 'function') {
             window.addEventListener('load', () => {
                 const loadTime = performance.now();
-                trackEvent('site_load_complete', {
+                window.analytics.trackEvent('site_load_complete', {
                     event_category: 'performance',
                     load_time: Math.round(loadTime),
                     features_loaded: this.getLoadedFeatures().length
