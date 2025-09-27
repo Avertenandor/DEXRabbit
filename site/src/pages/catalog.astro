@@ -1,0 +1,25 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Header from '../components/Header.astro';
+import { getCollection } from 'astro:content';
+import ProductCard from '../components/ProductCard.astro';
+
+const animals = await getCollection('animals');
+---
+
+<SiteLayout title="Каталог кроликов — купить породистых кроликов">
+  <Header />
+  
+  <main>
+    <section class="container py-8">
+      <h1 class="text-3xl font-bold mb-4">Каталог кроликов</h1>
+      <p class="text-gray-300 mb-8">Выберите кролика из нашего племенного поголовья</p>
+      
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+        {animals.map((animal) => (
+          <ProductCard {...animal.data} />
+        ))}
+      </div>
+    </section>
+  </main>
+</SiteLayout>

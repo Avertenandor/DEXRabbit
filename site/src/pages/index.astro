@@ -1,50 +1,108 @@
 ---
-import Base from '../layouts/Base.astro';
-import Hero from '../components/Hero.astro';
-import HowItWorks from '../components/HowItWorks.astro';
-import RabbitsGallery from '../components/RabbitsGallery.astro';
-import PlexTicker from '../components/PlexTicker.astro';
-import Guarantees from '../components/Guarantees.astro';
-import FaqList from '../components/FaqList.astro';
-import InvestorsWall from '../components/InvestorsWall.astro';
-import Community from '../components/Community.astro';
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Header from '../components/Header.astro';
+import { getCollection } from 'astro:content';
+import ProductCard from '../components/ProductCard.astro';
+
+const animals = await getCollection('animals');
+const featuredAnimals = animals.slice(0, 3);
 ---
 
-<Base title="DEXRabbit — USDT-вход, ежедневные PLEX-бонусы, итоговая выплата в USDT" description="Штатная модель — USDT-выплата по итогу цикла; форс-мажор — возврат тела в PLEX. Все операции — в Telegram-боте.">
-  <Hero />
+<SiteLayout>
+  <Header />
+  
+  <main>
+    <!-- Hero Section -->
+    <section class="container py-16 text-center">
+      <h1 class="text-4xl lg:text-6xl font-bold mb-6">
+        Купить кролика — <br />
+        <span class="text-emerald-400">официальный сайт</span>
+      </h1>
+      <p class="text-xl text-gray-300 mb-8 max-w-2xl mx-auto">
+        Породистые кролики от надежного заводчика. Породы, цены, бронирование. Доставка и консультации.
+      </p>
+      <div class="flex gap-4 justify-center">
+        <a href="/catalog" class="rounded-2xl px-6 py-3 bg-emerald-500 text-lg font-semibold">
+          Смотреть каталог
+        </a>
+        <a href="/contacts" class="rounded-2xl px-6 py-3 border border-gray-600 text-lg">
+          Связаться
+      </div>
+    </section>
 
-  <!-- Section Divider -->
-  <div class="h-px bg-gradient-to-r from-transparent via-[var(--border-primary)] to-transparent"></div>
+    <!-- Featured Animals -->
+    <section class="container py-16" id="featured">
+      <h2 class="text-3xl font-bold mb-8 text-center">Рекомендуемые</h2>
+      <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+        {featuredAnimals.map((animal) => (
+          <ProductCard {...animal.data} />
+        ))}
+      </div>
+    </section>
 
-  <HowItWorks />
+    <!-- Benefits -->
+    <section class="container py-16" id="benefits">
+      <h2 class="text-3xl font-bold mb-12 text-center">Почему выбирают нас</h2>
+      <div class="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div class="text-center">
+          <div class="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            🐰
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Здоровые животные</h3>
+          <p class="text-gray-400">Все кролики проходят ветеринарный осмотр</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            📋
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Документы</h3>
+          <p class="text-gray-400">Полный пакет документов на каждое животное</p>
+        </div>
+        <div class="text-center">
+          <div class="w-16 h-16 bg-emerald-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+            🚚
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Доставка</h3>
+          <p class="text-gray-400">Безопасная доставка по всей России</p>
+        </div>
+      </div>
+    </section>
 
-  <!-- Section Divider -->
-  <div class="h-px bg-gradient-to-r from-transparent via-[var(--border-primary)] to-transparent"></div>
-
-  <RabbitsGallery />
-
-  <!-- Section Divider -->
-  <div class="h-px bg-gradient-to-r from-transparent via-[var(--border-primary)] to-transparent"></div>
-
-  <PlexTicker />
-
-  <!-- Section Divider -->
-  <div class="h-px bg-gradient-to-r from-transparent via-[var(--border-primary)] to-transparent"></div>
-
-  <Guarantees />
-
-  <!-- Section Divider -->
-  <div class="h-px bg-gradient-to-r from-transparent via-[var(--border-primary)] to-transparent"></div>
-
-  <FaqList />
-
-  <!-- Section Divider -->
-  <div class="h-px bg-gradient-to-r from-transparent via-[var(--border-primary)] to-transparent"></div>
-
-  <InvestorsWall />
-
-  <!-- Section Divider -->
-  <div class="h-px bg-gradient-to-r from-transparent via-[var(--border-primary)] to-transparent"></div>
-
-  <Community />
-</Base>
+    <!-- Reviews -->
+    <section class="container py-16" id="reviews">
+      <h2 class="text-3xl font-bold mb-12 text-center">Отзывы</h2>
+      <div class="grid gap-6 grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+        <div class="bg-[#111827] p-6 rounded-2xl">
+          <p class="mb-4">"Отличные кролики! Здоровые, активные. Документы в порядке."</p>
+          <div class="flex items-center">
+            <div class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center mr-3">А</div>
+            <div>
+              <div class="font-semibold">Анна К.</div>
+              <div class="text-sm text-gray-400">Москва</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-[#111827] p-6 rounded-2xl">
+          <p class="mb-4">"Быстрая доставка, кролик приехал в отличном состоянии."</p>
+          <div class="flex items-center">
+            <div class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center mr-3">М</div>
+            <div>
+              <div class="font-semibold">Михаил В.</div>
+              <div class="text-sm text-gray-400">СПб</div>
+            </div>
+          </div>
+        </div>
+        <div class="bg-[#111827] p-6 rounded-2xl">
+          <p class="mb-4">"Профессиональные консультации, помогли с выбором породы."</p>
+          <div class="flex items-center">
+            <div class="w-10 h-10 bg-emerald-500 rounded-full flex items-center justify-center mr-3">Е</div>
+            <div>
+              <div class="font-semibold">Елена Р.</div>
+              <div class="text-sm text-gray-400">Казань</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+</SiteLayout>

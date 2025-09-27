@@ -1,0 +1,17 @@
+---
+const { title, breed, sex, ageMonths, weightKg, price, status, photo } = Astro.props;
+const badge = status === 'free' ? 'Свободен' : 'Забронирован';
+const badgeCls = status === 'free' ? 'bg-emerald-600' : 'bg-gray-600';
+---
+<article class="rounded-2xl bg-[#111827] p-4 shadow">
+  <div class="relative aspect-[3/2] overflow-hidden rounded-xl">
+    <img src={photo} alt={`Кролик ${breed}, ${sex}`} loading="lazy" decoding="async" width="900" height="600" class="w-full h-full object-cover" />
+    <span class={`absolute top-3 left-3 text-sm px-2 py-1 rounded ${badgeCls}`}>{badge}</span>
+  </div>
+  <h3 class="mt-3 text-lg font-medium line-clamp-1">{title}</h3>
+  <p class="text-sm text-gray-300">{breed} · {sex} · {ageMonths} мес · {weightKg} кг</p>
+  <div class="mt-3 flex items-center justify-between">
+    <strong class="text-xl">{price} ₽</strong>
+    <a href="/contacts" class="rounded-xl px-3 py-2 bg-emerald-500">Забронировать</a>
+  </div>
+</article>

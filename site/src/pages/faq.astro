@@ -1,0 +1,25 @@
+---
+import SiteLayout from '../layouts/SiteLayout.astro';
+import Header from '../components/Header.astro';
+import { getCollection } from 'astro:content';
+
+const faqItems = await getCollection('faq');
+const sortedFaq = faqItems.sort((a, b) => a.data.order - b.data.order);
+---
+
+<SiteLayout title="Часто задаваемые вопросы — FAQ">
+  <Header />
+  
+  <main class="container py-8">
+    <h1 class="text-3xl font-bold mb-8">Часто задаваемые вопросы</h1>
+    
+    <div class="space-y-4">
+      {sortedFaq.map((item) => (
+        <details class="bg-[#111827] rounded-2xl p-6">
+          <summary class="font-semibold text-lg cursor-pointer">{item.data.question}</summary>
+          <div class="mt-4 text-gray-300" set:html={item.data.answer} />
+        </details>
+      ))}
+    </div>
+  </main>
+</SiteLayout>
