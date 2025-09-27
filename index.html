@@ -3,17 +3,263 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>КупитьКролика - Официальный сайт</title>
+    <title>КупитьКролика — породистые кролики от заводчика</title>
+    <meta name="description" content="Породы, цены, бронирование. Доставка и консультации по всей России.">
+    <link rel="canonical" href="https://xn--80apagbbfxgmuj4j.site/">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="КупитьКролика — породистые кролики от заводчика">
+    <meta property="og:description" content="Породы, цены, бронирование. Доставка и консультации по всей России.">
+    <meta property="og:url" content="https://xn--80apagbbfxgmuj4j.site/">
+    <meta property="og:image" content="https://xn--80apagbbfxgmuj4j.site/og-cover.jpg">
+    
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="stylesheet" href="/styles/tokens.css">
+    <link rel="stylesheet" href="/styles/global.css">
 </head>
 <body>
-    <h1>🐰 КупитьКролика - Официальный сайт</h1>
-    <p>Сайт успешно работает!</p>
-    <p>Породистые кролики от надежного заводчика.</p>
-    <h2>Тест кодировки:</h2>
-    <ul>
-        <li>Белый великан - 8500₽</li>
-        <li>Калифорнийский - 7500₽</li>
-        <li>Советская шиншилла - 9000₽</li>
-    </ul>
+    <!-- Task 1: Header with navigation and CTA -->
+    <header class="header">
+        <div class="container">
+            <nav class="nav">
+                <a href="/" class="logo">КупитьКролика</a>
+                
+                <button class="burger" id="burger" aria-label="Открыть меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-menu" id="nav-menu">
+                    <li><a href="/catalog">Каталог</a></li>
+                    <li><a href="#benefits">Преимущества</a></li>
+                    <li><a href="#reviews">Отзывы</a></li>
+                    <li><a href="/faq">FAQ</a></li>
+                    <li><a href="/contacts">Контакты</a></li>
+                </ul>
+                
+                <div class="header-cta">
+                    <a href="tel:+79991234567" class="contact-link">
+                        <span class="icon">📱</span>
+                        +7 (999) 123-45-67
+                    </a>
+                    <a href="/contacts" class="btn btn-primary">Связаться</a>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- Task 6: Hero section with offer and CTAs -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        Купить кролика — <br>
+                        <span class="accent">официальный сайт</span>
+                    </h1>
+                    <p class="hero-description">
+                        Породистые кролики от надежного заводчика. 
+                        Породы, цены, бронирование. Доставка и консультации по всей России.
+                    </p>
+                    <div class="hero-actions">
+                        <a href="/catalog" class="btn btn-primary btn-large">Смотреть каталог</a>
+                        <a href="/contacts" class="btn btn-secondary btn-large">Связаться</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Task 10: Preview catalog (6 cards) -->
+        <section class="catalog-preview" id="catalog">
+            <div class="container">
+                <h2 class="section-title">Рекомендуемые</h2>
+                <div class="product-grid">
+                    <!-- Task 7: Product card component -->
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="/images/photo_2025-09-15_13-17-50.jpg" alt="Белый великан" loading="lazy">
+                            <span class="status-badge status-available">Свободен</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Белый великан #001</h3>
+                            <div class="product-specs">
+                                <span>Белый великан</span> · <span>♀</span> · <span>5 мес</span> · <span>3.8 кг</span>
+                            </div>
+                            <div class="product-actions">
+                                <strong class="product-price">8500 ₽</strong>
+                                <a href="/contacts" class="btn btn-primary btn-small">Забронировать</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="/images/photo_2025-09-15_13-17-51.jpg" alt="Калифорнийский" loading="lazy">
+                            <span class="status-badge status-available">Свободен</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Калифорнийский #002</h3>
+                            <div class="product-specs">
+                                <span>Калифорнийский</span> · <span>♂</span> · <span>4 мес</span> · <span>3.2 кг</span>
+                            </div>
+                            <div class="product-actions">
+                                <strong class="product-price">7500 ₽</strong>
+                                <a href="/contacts" class="btn btn-primary btn-small">Забронировать</a>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="product-card">
+                        <div class="product-image">
+                            <img src="/images/photo_2025-09-15_13-17-52.jpg" alt="Советская шиншилла" loading="lazy">
+                            <span class="status-badge status-reserved">Забронирован</span>
+                        </div>
+                        <div class="product-info">
+                            <h3 class="product-title">Советская шиншилла #003</h3>
+                            <div class="product-specs">
+                                <span>Советская шиншилла</span> · <span>♀</span> · <span>6 мес</span> · <span>4.1 кг</span>
+                            </div>
+                            <div class="product-actions">
+                                <strong class="product-price">9000 ₽</strong>
+                                <a href="/contacts" class="btn btn-primary btn-small">Забронировать</a>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+                <div class="section-cta">
+                    <a href="/catalog" class="btn btn-secondary">Смотреть весь каталог</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Task 11: Benefits section -->
+        <section class="benefits" id="benefits">
+            <div class="container">
+                <h2 class="section-title">Почему выбирают нас</h2>
+                <div class="benefits-grid">
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🐰</div>
+                        <h3 class="benefit-title">Здоровые животные</h3>
+                        <p class="benefit-description">Все кролики проходят ветеринарный осмотр</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">📋</div>
+                        <h3 class="benefit-title">Документы</h3>
+                        <p class="benefit-description">Полный пакет документов на каждое животное</p>
+                    </div>
+                    <div class="benefit-item">
+                        <div class="benefit-icon">🚚</div>
+                        <h3 class="benefit-title">Доставка</h3>
+                        <p class="benefit-description">Безопасная доставка по всей России</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Task 12: Reviews section -->
+        <section class="reviews" id="reviews">
+            <div class="container">
+                <h2 class="section-title">Отзывы клиентов</h2>
+                <div class="reviews-grid">
+                    <div class="review-card">
+                        <div class="review-content">
+                            <p>"Отличные кролики! Здоровые, активные. Документы в порядке."</p>
+                        </div>
+                        <div class="review-author">
+                            <div class="author-avatar">А</div>
+                            <div class="author-info">
+                                <div class="author-name">Анна К.</div>
+                                <div class="author-location">Москва</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-content">
+                            <p>"Быстрая доставка, кролик приехал в отличном состоянии."</p>
+                        </div>
+                        <div class="review-author">
+                            <div class="author-avatar">М</div>
+                            <div class="author-info">
+                                <div class="author-name">Михаил В.</div>
+                                <div class="author-location">СПб</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="review-card">
+                        <div class="review-content">
+                            <p>"Профессиональные консультации, помогли с выбором породы."</p>
+                        </div>
+                        <div class="review-author">
+                            <div class="author-avatar">Е</div>
+                            <div class="author-info">
+                                <div class="author-name">Елена Р.</div>
+                                <div class="author-location">Казань</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Task 2: Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <div class="footer-logo">КупитьКролика</div>
+                    <p class="footer-description">
+                        Породистые кролики от надежного заводчика. 
+                        Профессиональное разведение с 2020 года.
+                    </p>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Контакты</h4>
+                    <div class="footer-contacts">
+                        <a href="tel:+79991234567" class="footer-contact">
+                            <span class="icon">📱</span>
+                            +7 (999) 123-45-67
+                        </a>
+                        <a href="mailto:info@xn--80apagbbfxgmuj4j.site" class="footer-contact">
+                            <span class="icon">📧</span>
+                            info@купитькролика.рф
+                        </a>
+                        <div class="footer-contact">
+                            <span class="icon">📍</span>
+                            Московская область, г. Подольск
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Режим работы</h4>
+                    <div class="footer-schedule">
+                        <div>Пн-Пт: 9:00 - 18:00</div>
+                        <div>Сб-Вс: 10:00 - 16:00</div>
+                    </div>
+                </div>
+                
+                <div class="footer-section">
+                    <h4 class="footer-title">Информация</h4>
+                    <nav class="footer-nav">
+                        <a href="/policy">Политика конфиденциальности</a>
+                        <a href="/terms">Условия использования</a>
+                        <a href="/delivery">Доставка и оплата</a>
+                    </nav>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="copyright">
+                    © 2025 КупитьКролика. Все права защищены.
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="/scripts/main.js"></script>
 </body>
 </html>
