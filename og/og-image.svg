@@ -1,0 +1,46 @@
+<svg width="1200" height="630" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1200" height="630" fill="#0a0a0b"/>
+  <rect x="0" y="0" width="1200" height="630" fill="url(#gradient)" opacity="0.1"/>
+
+  <!-- Background pattern -->
+  <defs>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#374151" stroke-width="1"/>
+    </pattern>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.1" />
+      <stop offset="100%" style="stop-color:#22d3ee;stop-opacity:0.1" />
+    </linearGradient>
+  </defs>
+
+  <rect width="1200" height="630" fill="url(#grid)" />
+
+  <!-- Main content -->
+  <g transform="translate(100, 100)">
+    <!-- Logo/Icon placeholder -->
+    <circle cx="80" cy="80" r="60" fill="#10b981" opacity="0.8"/>
+    <text x="80" y="95" text-anchor="middle" fill="white" font-family="Arial, sans-serif" font-size="48" font-weight="bold">🐰</text>
+
+    <!-- Title -->
+    <text x="180" y="60" fill="#e5e7eb" font-family="Arial, sans-serif" font-size="48" font-weight="bold">
+      DEXRabbit
+    </text>
+    <text x="180" y="110" fill="#22d3ee" font-family="Arial, sans-serif" font-size="36" font-weight="600">
+      USDT-вход, PLEX-бонусы, USDT-выплата
+    </text>
+
+    <!-- Description -->
+    <text x="180" y="160" fill="#9ca3af" font-family="Arial, sans-serif" font-size="24">
+      Штатно: прибыль в USDT
+    </text>
+    <text x="180" y="190" fill="#9ca3af" font-family="Arial, sans-serif" font-size="24">
+      Форс-мажор: возврат тела в PLEX
+    </text>
+
+    <!-- Bottom accent -->
+    <rect x="0" y="400" width="1000" height="4" fill="#10b981" opacity="0.5"/>
+    <text x="0" y="440" fill="#22d3ee" font-family="Arial, sans-serif" font-size="20">
+      rabbitfarm.com
+    </text>
+  </g>
+</svg>
