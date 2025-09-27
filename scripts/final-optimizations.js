@@ -428,45 +428,28 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 });
 
-// Service Worker registration for PWA
-if ('serviceWorker' in navigator) {
+// Service Worker registration for PWA (only on production)
+if ('serviceWorker' in navigator && location.hostname !== 'localhost' && !location.hostname.includes('127.0.0.1')) {
     window.addEventListener('load', () => {
-        // Simple service worker for caching
-        const swCode = `
-            const CACHE_NAME = 'kupit-krolika-v1';
-            const urlsToCache = [
-                '/',
-                '/styles/tokens.css',
-                '/styles/global.css', 
-                '/scripts/main.js'
-            ];
-
-            self.addEventListener('install', (event) => {
-                event.waitUntil(
-                    caches.open(CACHE_NAME)
-                        .then((cache) => cache.addAll(urlsToCache))
-                );
-            });
-
-            self.addEventListener('fetch', (event) => {
-                event.respondWith(
-                    caches.match(event.request)
-                        .then((response) => {
-                            return response || fetch(event.request);
-                        })
-                );
-            });
-        `;
-
-        const blob = new Blob([swCode], { type: 'application/javascript' });
-        const swURL = URL.createObjectURL(blob);
-
-        navigator.serviceWorker.register(swURL)
+        navigator.serviceWorker.register('/sw.js')
             .then((registration) => {
-                console.log('ServiceWorker registered:', registration.scope);
+                console.log('✅ ServiceWorker registered successfully:', registration.scope);
+                
+                // Check for updates
+                registration.addEventListener('updatefound', () => {
+                    const newWorker = registration.installing;
+                    newWorker.addEventListener('statechange', () => {
+                        if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
+                            // New content available, notify user
+                            if (confirm('🔄 Доступна новая версия сайта. Обновить?')) {
+                                window.location.reload();
+                            }
+                        }
+                    });
+                });
             })
             .catch((error) => {
-                console.log('ServiceWorker registration failed:', error);
+                console.warn('❌ ServiceWorker registration failed:', error);
             });
     });
 }

@@ -16,7 +16,12 @@ class SocialIntegration {
     addSocialWidgets() {
         this.addFloatingSocialBar();
         this.addSocialProofs();
-        this.setupSocialSharing();
+        // Безопасная инициализация социального шеринга
+        if (typeof this.setupSocialSharing === 'function') {
+            this.setupSocialSharing();
+        } else {
+            console.warn('setupSocialSharing method not implemented yet');
+        }
     }
 
     addFloatingSocialBar() {
@@ -131,6 +136,101 @@ class SocialIntegration {
         });
 
         document.body.appendChild(socialBar);
+    }
+
+    setupSocialSharing() {
+        // Добавляем кнопки "Поделиться" на каждую карточку товара
+        const productCards = document.querySelectorAll('.product-card');
+        productCards.forEach(card => {
+            const shareBtn = document.createElement('button');
+            shareBtn.className = 'share-btn';
+            shareBtn.innerHTML = '📤';
+            shareBtn.title = 'Поделиться';
+            shareBtn.style.cssText = `
+                position: absolute;
+                top: 8px;
+                right: 8px;
+                background: rgba(255,255,255,0.9);
+                border: none;
+                border-radius: 50%;
+                width: 36px;
+                height: 36px;
+                cursor: pointer;
+                font-size: 16px;
+                backdrop-filter: blur(10px);
+                transition: all 0.3s ease;
+                z-index: 10;
+            `;
+            
+            shareBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                e.stopPropagation();
+                const title = card.querySelector('.product-title')?.textContent || 'Кролик';
+                this.shareProduct(title);
+            });
+
+            card.style.position = 'relative';
+            card.appendChild(shareBtn);
+        });
+    }
+
+    shareProduct(productName) {
+        const url = window.location.href;
+        const text = `🐰 Посмотри этого кролика: ${productName} на КупитьКролика!`;
+        
+        if (navigator.share) {
+            // Native share API
+            navigator.share({
+                title: `КупитьКролика - ${productName}`,
+                text: text,
+                url: url
+            }).catch(console.error);
+        } else {
+            // Fallback - copy to clipboard
+            navigator.clipboard.writeText(`${text} ${url}`).then(() => {
+                this.showNotification('🔗 Ссылка скопирована в буфер обмена!');
+            }).catch(() => {
+                // Final fallback
+                const input = document.createElement('input');
+                input.value = `${text} ${url}`;
+                document.body.appendChild(input);
+                input.select();
+                document.execCommand('copy');
+                document.body.removeChild(input);
+                this.showNotification('🔗 Ссылка скопирована!');
+            });
+        }
+        
+        // Track sharing
+        if (typeof trackEvent === 'function') {
+            trackEvent('product_share', {
+                event_category: 'engagement',
+                product: productName
+            });
+        }
+    }
+
+    showNotification(message) {
+        const notification = document.createElement('div');
+        notification.style.cssText = `
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background: #10b981;
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            z-index: 3000;
+            font-size: 14px;
+            animation: slideInRight 0.3s ease;
+        `;
+        notification.textContent = message;
+        document.body.appendChild(notification);
+        
+        setTimeout(() => {
+            notification.style.animation = 'slideOutRight 0.3s ease forwards';
+            setTimeout(() => notification.remove(), 300);
+        }, 3000);
     }
 
     addSocialProofs() {
