@@ -47,7 +47,323 @@ h6 {
   overflow-wrap: break-word;
 }
 
-/* Task 3: Container */
+/* Investment Form Styles */
+.investment-form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.investment-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.investment-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.investment-form label {
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.investment-form input,
+.investment-form select,
+.investment-form textarea {
+    padding: 0.75rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.investment-form input:focus,
+.investment-form select:focus,
+.investment-form textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(255, 182, 0, 0.2);
+}
+
+.investment-form .checkbox-group {
+    margin: 1.5rem 0;
+}
+
+.investment-form .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.investment-form .checkbox-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+    position: relative;
+    margin-top: 2px;
+}
+
+.investment-form input[type="checkbox"]:checked + .checkbox-custom::after {
+    content: "✓";
+    position: absolute;
+    top: -2px;
+    left: 2px;
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+.investment-form input[type="checkbox"] {
+    display: none;
+}
+
+.investment-form a {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+/* Partnership Form Styles */
+.partnership-form {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 2rem;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.partnership-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.partnership-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.partnership-form label {
+    color: white;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.partnership-form input,
+.partnership-form select,
+.partnership-form textarea {
+    padding: 0.75rem;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.9);
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.partnership-form input:focus,
+.partnership-form select:focus,
+.partnership-form textarea:focus {
+    outline: none;
+    border-color: var(--color-accent);
+    box-shadow: 0 0 0 3px rgba(255, 182, 0, 0.2);
+}
+
+.partnership-form .checkbox-group {
+    margin: 1.5rem 0;
+}
+
+.partnership-form .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.partnership-form .checkbox-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 4px;
+    background: rgba(255, 255, 255, 0.1);
+    flex-shrink: 0;
+    position: relative;
+    margin-top: 2px;
+}
+
+.partnership-form input[type="checkbox"]:checked + .checkbox-custom::after {
+    content: "✓";
+    position: absolute;
+    top: -2px;
+    left: 2px;
+    color: var(--color-accent);
+    font-weight: bold;
+}
+
+.partnership-form input[type="checkbox"] {
+    display: none;
+}
+
+.partnership-form a {
+    color: var(--color-accent);
+    text-decoration: underline;
+}
+
+/* Contact Form Styles */
+.contact-form {
+    max-width: 800px;
+    margin: 0 auto;
+    background: white;
+    padding: 2rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form .form-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.contact-form .form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.contact-form label {
+    font-weight: 600;
+    color: var(--color-text-primary);
+    font-size: 0.9rem;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    padding: 0.75rem;
+    border: 2px solid #e0e0e0;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form select:focus,
+.contact-form textarea:focus {
+    outline: none;
+    border-color: var(--color-primary);
+    box-shadow: 0 0 0 3px rgba(33, 150, 243, 0.1);
+}
+
+.contact-form .checkbox-group {
+    margin: 1.5rem 0;
+}
+
+.contact-form .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    cursor: pointer;
+}
+
+.contact-form .checkbox-custom {
+    width: 20px;
+    height: 20px;
+    border: 2px solid #e0e0e0;
+    border-radius: 4px;
+    flex-shrink: 0;
+    position: relative;
+    margin-top: 2px;
+}
+
+.contact-form input[type="checkbox"]:checked + .checkbox-custom {
+    background: var(--color-primary);
+    border-color: var(--color-primary);
+}
+
+.contact-form input[type="checkbox"]:checked + .checkbox-custom::after {
+    content: "✓";
+    position: absolute;
+    top: -2px;
+    left: 2px;
+    color: white;
+    font-weight: bold;
+}
+
+.contact-form input[type="checkbox"] {
+    display: none;
+}
+
+.contact-form a {
+    color: var(--color-primary);
+    text-decoration: underline;
+}
+
+/* Success Message Styles */
+.success-message {
+    background: linear-gradient(135deg, #4caf50, #45a049);
+    color: white;
+    padding: 2rem;
+    border-radius: 16px;
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.success-content {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.success-icon {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.success-content h3 {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.success-content p {
+    margin-bottom: 0.5rem;
+    line-height: 1.6;
+}
+
+/* Mobile Responsiveness for Forms */
+@media (max-width: 768px) {
+    .investment-form .form-row,
+    .partnership-form .form-row,
+    .contact-form .form-row {
+        grid-template-columns: 1fr;
+    }
+    
+    .investment-form,
+    .partnership-form,
+    .contact-form {
+        padding: 1.5rem;
+        margin: 0 1rem;
+    }
+}
 .container {
   max-width: var(--container-max-width);
   margin: 0 auto;

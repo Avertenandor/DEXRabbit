@@ -1,0 +1,19 @@
+{
+  "urls": [
+    "https://xn--80apagbbfxgmuj4j.site/",
+    "https://xn--80apagbbfxgmuj4j.site/restaurants.html",
+    "https://xn--80apagbbfxgmuj4j.site/gifts.html", 
+    "https://xn--80apagbbfxgmuj4j.site/investment-model.html",
+    "https://xn--80apagbbfxgmuj4j.site/development.html",
+    "https://xn--80apagbbfxgmuj4j.site/breeding.html",
+    "https://xn--80apagbbfxgmuj4j.site/logistics.html",
+    "https://xn--80apagbbfxgmuj4j.site/contacts.html"
+  ],
+  "defaults": {
+    "timeout": 30000,
+    "wait": 2000,
+    "chromeLaunchConfig": {
+      "args": ["--no-sandbox", "--disable-dev-shm-usage"]
+    }
+  }
+}

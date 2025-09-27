@@ -348,6 +348,77 @@
             </div>
         </section>
 
+        <!-- Investment Form -->
+        <section class="section section-primary" id="investment-section">
+            <div class="container">
+                <div class="section-header section-header-white">
+                    <h2 class="section-title">💰 Начать инвестировать</h2>
+                    <p class="section-description">
+                        Заполните форму и получите персональную консультацию по инвестиционным программам
+                    </p>
+                </div>
+                
+                <form id="investment-form" class="investment-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="invest-name">Ваше имя *</label>
+                            <input type="text" id="invest-name" name="name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="invest-phone">Телефон *</label>
+                            <input type="tel" id="invest-phone" name="phone" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="invest-email">Email</label>
+                            <input type="email" id="invest-email" name="email">
+                        </div>
+                        <div class="form-group">
+                            <label for="invest-amount">Сумма инвестиций</label>
+                            <select id="invest-amount" name="amount">
+                                <option value="">Выберите сумму</option>
+                                <option value="50000">50 000 ₽ - Стартовый</option>
+                                <option value="150000">150 000 ₽ - Базовый</option>
+                                <option value="500000">500 000 ₽ - Премиум</option>
+                                <option value="1000000">1 000 000 ₽ - VIP</option>
+                                <option value="custom">Другая сумма</option>
+                            </select>
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="invest-interest">Что вас интересует? *</label>
+                        <select id="invest-interest" name="interest" required>
+                            <option value="">Выберите направление</option>
+                            <option value="rabbits">Покупка кроликов для разведения</option>
+                            <option value="plex">Инвестиции в токен PLEX</option>
+                            <option value="partnership">Партнёрская программа</option>
+                            <option value="breeding">Племенная работа</option>
+                            <option value="consultation">Консультация по всем вопросам</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="privacy_agreement" required>
+                            <span class="checkbox-custom"></span>
+                            Согласен с <a href="/policy/privacy.html" target="_blank">политикой конфиденциальности</a>
+                        </label>
+                    </div>
+                    
+                    <input type="hidden" name="form_type" value="investment">
+                    <input type="text" name="honeypot" style="display: none;">
+                    
+                    <button type="submit" class="btn btn-secondary btn-large">
+                        <span class="btn-icon">💰</span>
+                        Получить консультацию
+                    </button>
+                </form>
+            </div>
+        </section>
+
         <!-- Task 12: Reviews section -->
         <section class="reviews" id="reviews">
             <div class="container">

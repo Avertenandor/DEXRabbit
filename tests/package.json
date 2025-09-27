@@ -1,0 +1,35 @@
+{
+  "name": "kupitkrolika-testing",
+  "version": "2.0.0",
+  "description": "Professional testing suite for КупитьКролика.site",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "test": "npm run test:all",
+    "test:all": "npm run test:e2e && npm run test:performance && npm run test:accessibility",
+    "test:e2e": "playwright test",
+    "test:performance": "lighthouse-ci autorun",
+    "test:accessibility": "pa11y-ci",
+    "test:pages": "node page-tests.js",
+    "test:forms": "node form-tests.js",
+    "test:mobile": "playwright test --project=mobile",
+    "test:desktop": "playwright test --project=desktop",
+    "test:quick": "playwright test --project=chromium tests/quick.spec.js",
+    "test:full": "playwright test --reporter=html",
+    "report": "playwright show-report",
+    "install:browsers": "playwright install",
+    "setup": "npm install && npm run install:browsers"
+  },
+  "keywords": ["testing", "e2e", "performance", "accessibility", "playwright"],
+  "author": "КупитьКролика Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.45.0",
+    "@lhci/cli": "^0.13.0",
+    "lighthouse": "^12.0.0",
+    "pa11y": "^8.0.0",
+    "pa11y-ci": "^3.1.0",
+    "axe-core": "^4.9.0",
+    "dotenv": "^16.4.0"
+  }
+}

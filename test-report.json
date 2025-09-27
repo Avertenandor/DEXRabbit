@@ -1,0 +1,21 @@
+{
+  "timestamp": "2025-09-27T19:24:33.535Z",
+  "baseUrl": "https://xn--80apagbbfxgmuj4j.site",
+  "results": {
+    "total": 54,
+    "passed": 48,
+    "failed": 6,
+    "errors": [
+      "❌ /restaurants.html - ОШИБКА: Неверный title. Ожидался: Ресторанам, получен: Сотрудничество с ресторанами — КупитьКролика",
+      "❌ /gifts.html - ОШИБКА: Неверный title. Ожидался: Подарки, получен: Кролик на подарок — КупитьКролика",
+      "❌ /contacts.html - ОШИБКА: HTTP 404: Not Found",
+      "❌ Форма инвестиций: Форма investment-form не найдена",
+      "❌ Форма партнерства: Форма partnership-form не найдена",
+      "❌ Форма обратной связи: Форма contact-form не найдена"
+    ]
+  },
+  "summary": {
+    "status": "FAILED",
+    "successRate": "88.9%"
+  }
+}

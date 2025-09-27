@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Сотрудничество с ресторанами — КупитьКролика</title>
+    <title>Ресторанам — КупитьКролика</title>
     <meta name="description" content="🍽️ Предлагаем партнерство ресторанам. Поставки свежего кроличьего мяса премиум качества от фермы КупитьКролика в Подольске.">
     
     <link rel="stylesheet" href="/styles/tokens-v2.css">
@@ -397,10 +397,85 @@
         </div>
     </footer>
 
+        <!-- Partnership Form -->
+        <section class="section section-primary">
+            <div class="container">
+                <div class="section-header section-header-white">
+                    <h2 class="section-title">🤝 Стать партнером</h2>
+                    <p class="section-description">
+                        Заполните заявку и получите персональное коммерческое предложение
+                    </p>
+                </div>
+                
+                <form id="partnership-form" class="partnership-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="restaurant-name">Название ресторана *</label>
+                            <input type="text" id="restaurant-name" name="restaurant_name" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="contact-person">Контактное лицо *</label>
+                            <input type="text" id="contact-person" name="contact_person" required>
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Телефон *</label>
+                            <input type="tel" id="phone" name="phone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" id="email" name="email">
+                        </div>
+                    </div>
+                    
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="monthly-volume">Планируемый объем в месяц</label>
+                            <select id="monthly-volume" name="monthly_volume">
+                                <option value="">Выберите объем</option>
+                                <option value="10-30">10-30 кг</option>
+                                <option value="30-50">30-50 кг</option>
+                                <option value="50-100">50-100 кг</option>
+                                <option value="100+">Более 100 кг</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="location">Город</label>
+                            <input type="text" id="location" name="location" placeholder="Москва, Подольск...">
+                        </div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">Дополнительная информация</label>
+                        <textarea id="message" name="message" rows="4" placeholder="Тип кухни, особые требования к продукции, предпочтения по разделке..."></textarea>
+                    </div>
+                    
+                    <div class="form-group checkbox-group">
+                        <label class="checkbox-label">
+                            <input type="checkbox" name="privacy_agreement" required>
+                            <span class="checkbox-custom"></span>
+                            Согласен с <a href="/policy/privacy.html" target="_blank">политикой конфиденциальности</a>
+                        </label>
+                    </div>
+                    
+                    <input type="hidden" name="form_type" value="partnership">
+                    <input type="text" name="honeypot" style="display: none;">
+                    
+                    <button type="submit" class="btn btn-secondary btn-large">
+                        <span class="btn-icon">🤝</span>
+                        Отправить заявку
+                    </button>
+                </form>
+            </div>
+        </section>
+    </main>
+
     <script src="/scripts/analytics.js"></script>
     <script>
         // Обработка формы ресторанов
-        document.getElementById('restaurant-form').addEventListener('submit', async (e) => {
+        document.getElementById('partnership-form').addEventListener('submit', async (e) => {
             e.preventDefault();
             
             const formData = new FormData(e.target);

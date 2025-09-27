@@ -1,0 +1,776 @@
+{
+  "config": {
+    "configFile": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\playwright.config.js",
+    "rootDir": "C:/Users/konfu/Desktop/Кролики/tests/tests",
+    "forbidOnly": false,
+    "fullyParallel": true,
+    "globalSetup": null,
+    "globalTeardown": null,
+    "globalTimeout": 0,
+    "grep": {},
+    "grepInvert": null,
+    "maxFailures": 0,
+    "metadata": {
+      "actualWorkers": 10
+    },
+    "preserveOutput": "always",
+    "reporter": [
+      [
+        "html",
+        {
+          "outputFolder": "reports/playwright-report"
+        }
+      ],
+      [
+        "json",
+        {
+          "outputFile": "reports/test-results.json"
+        }
+      ],
+      [
+        "junit",
+        {
+          "outputFile": "reports/junit-results.xml"
+        }
+      ],
+      [
+        "list",
+        null
+      ]
+    ],
+    "reportSlowTests": {
+      "max": 5,
+      "threshold": 300000
+    },
+    "quiet": false,
+    "projects": [
+      {
+        "outputDir": "C:/Users/konfu/Desktop/Кролики/tests/reports/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 10
+        },
+        "id": "chromium",
+        "name": "chromium",
+        "testDir": "C:/Users/konfu/Desktop/Кролики/tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/konfu/Desktop/Кролики/tests/reports/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 10
+        },
+        "id": "firefox",
+        "name": "firefox",
+        "testDir": "C:/Users/konfu/Desktop/Кролики/tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/konfu/Desktop/Кролики/tests/reports/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 10
+        },
+        "id": "webkit",
+        "name": "webkit",
+        "testDir": "C:/Users/konfu/Desktop/Кролики/tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/konfu/Desktop/Кролики/tests/reports/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 10
+        },
+        "id": "mobile",
+        "name": "mobile",
+        "testDir": "C:/Users/konfu/Desktop/Кролики/tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/konfu/Desktop/Кролики/tests/reports/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 10
+        },
+        "id": "tablet",
+        "name": "tablet",
+        "testDir": "C:/Users/konfu/Desktop/Кролики/tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      },
+      {
+        "outputDir": "C:/Users/konfu/Desktop/Кролики/tests/reports/test-results",
+        "repeatEach": 1,
+        "retries": 0,
+        "metadata": {
+          "actualWorkers": 10
+        },
+        "id": "desktop",
+        "name": "desktop",
+        "testDir": "C:/Users/konfu/Desktop/Кролики/tests/tests",
+        "testIgnore": [],
+        "testMatch": [
+          "**/*.@(spec|test).?(c|m)[jt]s?(x)"
+        ],
+        "timeout": 60000
+      }
+    ],
+    "shard": null,
+    "updateSnapshots": "missing",
+    "updateSourceMethod": "patch",
+    "version": "1.55.1",
+    "workers": 10,
+    "webServer": {
+      "command": "python -m http.server 3000",
+      "port": 3000,
+      "reuseExistingServer": true,
+      "cwd": "../"
+    }
+  },
+  "suites": [
+    {
+      "title": "quick.spec.js",
+      "file": "quick.spec.js",
+      "column": 0,
+      "line": 0,
+      "specs": [],
+      "suites": [
+        {
+          "title": "⚡ Quick Smoke Tests",
+          "file": "quick.spec.js",
+          "line": 5,
+          "column": 6,
+          "specs": [
+            {
+              "title": "🚀 Site is Online and Accessible",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 0,
+                      "parallelIndex": 0,
+                      "status": "passed",
+                      "duration": 31439,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "🧪 Testing site availability...\n"
+                        },
+                        {
+                          "text": "✅ Site responds with 200 OK\n"
+                        },
+                        {
+                          "text": "✅ Main page structure is present\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-27T17:27:48.769Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "68a9d9ba73514bda7e4c-f625f5cdbf44f4ffafb6",
+              "file": "quick.spec.js",
+              "line": 7,
+              "column": 3
+            },
+            {
+              "title": "🔗 Critical Pages Load Successfully",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 1,
+                      "parallelIndex": 1,
+                      "status": "failed",
+                      "duration": 23895,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m404\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m404\u001b[39m\n    at C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js:37:33",
+                        "location": {
+                          "file": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js",
+                          "column": 33,
+                          "line": 37
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 35 |\u001b[39m       \n \u001b[90m 36 |\u001b[39m       \u001b[36mconst\u001b[39m response \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m`${BASE_URL}${pagePath}`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 37 |\u001b[39m       expect(response\u001b[33m.\u001b[39mstatus())\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 38 |\u001b[39m       \n \u001b[90m 39 |\u001b[39m       \u001b[90m// Проверка базовых элементов\u001b[39m\n \u001b[90m 40 |\u001b[39m       \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js",
+                            "column": 33,
+                            "line": 37
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBe\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m) // Object.is equality\u001b[22m\n\nExpected: \u001b[32m200\u001b[39m\nReceived: \u001b[31m404\u001b[39m\n\n\u001b[0m \u001b[90m 35 |\u001b[39m       \n \u001b[90m 36 |\u001b[39m       \u001b[36mconst\u001b[39m response \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mgoto(\u001b[32m`${BASE_URL}${pagePath}`\u001b[39m)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 37 |\u001b[39m       expect(response\u001b[33m.\u001b[39mstatus())\u001b[33m.\u001b[39mtoBe(\u001b[35m200\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m    |\u001b[39m                                 \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 38 |\u001b[39m       \n \u001b[90m 39 |\u001b[39m       \u001b[90m// Проверка базовых элементов\u001b[39m\n \u001b[90m 40 |\u001b[39m       \u001b[36mawait\u001b[39m expect(page\u001b[33m.\u001b[39mlocator(\u001b[32m'h1'\u001b[39m))\u001b[33m.\u001b[39mtoBeVisible()\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js:37:33\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "🧪 Testing /...\n"
+                        },
+                        {
+                          "text": "✅ / loads correctly\n"
+                        },
+                        {
+                          "text": "🧪 Testing /restaurants.html...\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-27T17:27:48.925Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\reports\\test-results\\quick-⚡-Quick-Smoke-Tests--17a07-cal-Pages-Load-Successfully-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\reports\\test-results\\quick-⚡-Quick-Smoke-Tests--17a07-cal-Pages-Load-Successfully-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\reports\\test-results\\quick-⚡-Quick-Smoke-Tests--17a07-cal-Pages-Load-Successfully-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js",
+                        "column": 33,
+                        "line": 37
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "68a9d9ba73514bda7e4c-ddbad0cc2062bc48aa02",
+              "file": "quick.spec.js",
+              "line": 24,
+              "column": 3
+            },
+            {
+              "title": "📱 Mobile Responsiveness Quick Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 2,
+                      "parallelIndex": 2,
+                      "status": "failed",
+                      "duration": 31726,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m425\u001b[39m\nReceived:    \u001b[31m426\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m425\u001b[39m\nReceived:    \u001b[31m426\u001b[39m\n    at C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js:59:23",
+                        "location": {
+                          "file": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js",
+                          "column": 23,
+                          "line": 59
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 57 |\u001b[39m     \u001b[36mconst\u001b[39m viewportWidth \u001b[33m=\u001b[39m \u001b[35m375\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 58 |\u001b[39m     \n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 59 |\u001b[39m     expect(bodyWidth)\u001b[33m.\u001b[39mtoBeLessThanOrEqual(viewportWidth \u001b[33m+\u001b[39m \u001b[35m50\u001b[39m)\u001b[33m;\u001b[39m \u001b[90m// Небольшой допуск\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 60 |\u001b[39m     \n \u001b[90m 61 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'✅ Mobile responsiveness check passed'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 62 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js",
+                            "column": 23,
+                            "line": 59
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThanOrEqual\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: <= \u001b[32m425\u001b[39m\nReceived:    \u001b[31m426\u001b[39m\n\n\u001b[0m \u001b[90m 57 |\u001b[39m     \u001b[36mconst\u001b[39m viewportWidth \u001b[33m=\u001b[39m \u001b[35m375\u001b[39m\u001b[33m;\u001b[39m\n \u001b[90m 58 |\u001b[39m     \n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 59 |\u001b[39m     expect(bodyWidth)\u001b[33m.\u001b[39mtoBeLessThanOrEqual(viewportWidth \u001b[33m+\u001b[39m \u001b[35m50\u001b[39m)\u001b[33m;\u001b[39m \u001b[90m// Небольшой допуск\u001b[39m\n \u001b[90m    |\u001b[39m                       \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 60 |\u001b[39m     \n \u001b[90m 61 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'✅ Mobile responsiveness check passed'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 62 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js:59:23\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-27T17:27:49.183Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\reports\\test-results\\quick-⚡-Quick-Smoke-Tests--0ba2c--Responsiveness-Quick-Check-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\reports\\test-results\\quick-⚡-Quick-Smoke-Tests--0ba2c--Responsiveness-Quick-Check-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\reports\\test-results\\quick-⚡-Quick-Smoke-Tests--0ba2c--Responsiveness-Quick-Check-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js",
+                        "column": 23,
+                        "line": 59
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "68a9d9ba73514bda7e4c-2f252bd9d5f3726aecd4",
+              "file": "quick.spec.js",
+              "line": 47,
+              "column": 3
+            },
+            {
+              "title": "⚡ Performance Quick Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 3,
+                      "parallelIndex": 3,
+                      "status": "failed",
+                      "duration": 32058,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m8000\u001b[39m\nReceived:   \u001b[31m24793\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m8000\u001b[39m\nReceived:   \u001b[31m24793\u001b[39m\n    at C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js:75:22",
+                        "location": {
+                          "file": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js",
+                          "column": 22,
+                          "line": 75
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 73 |\u001b[39m     \n \u001b[90m 74 |\u001b[39m     \u001b[90m// Базовая проверка производительности\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 75 |\u001b[39m     expect(loadTime)\u001b[33m.\u001b[39mtoBeLessThan(\u001b[35m8000\u001b[39m)\u001b[33m;\u001b[39m \u001b[90m// Максимум 8 секунд для первой загрузки\u001b[39m\n \u001b[90m    |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 76 |\u001b[39m     \n \u001b[90m 77 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'✅ Performance check passed'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 78 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js",
+                            "column": 22,
+                            "line": 75
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeLessThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: < \u001b[32m8000\u001b[39m\nReceived:   \u001b[31m24793\u001b[39m\n\n\u001b[0m \u001b[90m 73 |\u001b[39m     \n \u001b[90m 74 |\u001b[39m     \u001b[90m// Базовая проверка производительности\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 75 |\u001b[39m     expect(loadTime)\u001b[33m.\u001b[39mtoBeLessThan(\u001b[35m8000\u001b[39m)\u001b[33m;\u001b[39m \u001b[90m// Максимум 8 секунд для первой загрузки\u001b[39m\n \u001b[90m    |\u001b[39m                      \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 76 |\u001b[39m     \n \u001b[90m 77 |\u001b[39m     console\u001b[33m.\u001b[39mlog(\u001b[32m'✅ Performance check passed'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m 78 |\u001b[39m   })\u001b[33m;\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js:75:22\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "⏱️ Page load time: 24793ms\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-27T17:27:48.905Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\reports\\test-results\\quick-⚡-Quick-Smoke-Tests-⚡-Performance-Quick-Check-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\reports\\test-results\\quick-⚡-Quick-Smoke-Tests-⚡-Performance-Quick-Check-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\reports\\test-results\\quick-⚡-Quick-Smoke-Tests-⚡-Performance-Quick-Check-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js",
+                        "column": 22,
+                        "line": 75
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "68a9d9ba73514bda7e4c-148150cf7a3c7856b519",
+              "file": "quick.spec.js",
+              "line": 64,
+              "column": 3
+            },
+            {
+              "title": "🔍 JavaScript Errors Check",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 4,
+                      "parallelIndex": 4,
+                      "status": "passed",
+                      "duration": 34095,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [
+                        {
+                          "text": "⚠️ JavaScript errors detected: [\n  \u001b[32m'process is not defined'\u001b[39m,\n  \u001b[32m'this.addReviewsIntegration is not a function'\u001b[39m,\n  \u001b[32m'Failed to initialize catalog: TypeError: this.initializeFilters is not a function\\n'\u001b[39m +\n    \u001b[32m'    at CatalogManager.init (https://xn--80apagbbfxgmuj4j.site/scripts/catalog-preview.js:13:18)'\u001b[39m\n]\n"
+                        }
+                      ],
+                      "retry": 0,
+                      "startTime": "2025-09-27T17:27:49.091Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "68a9d9ba73514bda7e4c-04d63f195d3dfabbfab6",
+              "file": "quick.spec.js",
+              "line": 80,
+              "column": 3
+            },
+            {
+              "title": "📝 Contact Form Basic Test",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 5,
+                      "parallelIndex": 5,
+                      "status": "passed",
+                      "duration": 43818,
+                      "errors": [],
+                      "stdout": [],
+                      "stderr": [
+                        {
+                          "text": "⚠️ Contact form not found\n"
+                        }
+                      ],
+                      "retry": 0,
+                      "startTime": "2025-09-27T17:27:49.283Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "68a9d9ba73514bda7e4c-471ff0deed0099044370",
+              "file": "quick.spec.js",
+              "line": 113,
+              "column": 3
+            },
+            {
+              "title": "🎨 CSS Styles Loading Check",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 6,
+                      "parallelIndex": 6,
+                      "status": "passed",
+                      "duration": 27094,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "✅ CSS styles are loading correctly\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-27T17:27:49.284Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "68a9d9ba73514bda7e4c-b9e0bc6ff440063a0195",
+              "file": "quick.spec.js",
+              "line": 143,
+              "column": 3
+            },
+            {
+              "title": "🔗 Navigation Menu Check",
+              "ok": true,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 7,
+                      "parallelIndex": 7,
+                      "status": "passed",
+                      "duration": 31810,
+                      "errors": [],
+                      "stdout": [
+                        {
+                          "text": "✅ Navigation menu found with 9 links\n"
+                        }
+                      ],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-27T17:27:48.819Z",
+                      "annotations": [],
+                      "attachments": []
+                    }
+                  ],
+                  "status": "expected"
+                }
+              ],
+              "id": "68a9d9ba73514bda7e4c-dab3ff535515233e5a57",
+              "file": "quick.spec.js",
+              "line": 166,
+              "column": 3
+            },
+            {
+              "title": "🖼️ Images Loading Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 8,
+                      "parallelIndex": 8,
+                      "status": "failed",
+                      "duration": 14047,
+                      "error": {
+                        "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0.8\u001b[39m\nReceived:   \u001b[31m0.4444444444444444\u001b[39m",
+                        "stack": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0.8\u001b[39m\nReceived:   \u001b[31m0.4444444444444444\u001b[39m\n    at C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js:226:27",
+                        "location": {
+                          "file": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js",
+                          "column": 27,
+                          "line": 226
+                        },
+                        "snippet": "\u001b[0m \u001b[90m 224 |\u001b[39m     \u001b[36mif\u001b[39m (loadedImages \u001b[33m+\u001b[39m failedImages \u001b[33m>\u001b[39m \u001b[35m0\u001b[39m) {\n \u001b[90m 225 |\u001b[39m       \u001b[36mconst\u001b[39m successRate \u001b[33m=\u001b[39m loadedImages \u001b[33m/\u001b[39m (loadedImages \u001b[33m+\u001b[39m failedImages)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 226 |\u001b[39m       expect(successRate)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0.8\u001b[39m)\u001b[33m;\u001b[39m \u001b[90m// 80% успешно загруженных\u001b[39m\n \u001b[90m     |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 227 |\u001b[39m     }\n \u001b[90m 228 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 229 |\u001b[39m   \u001b[0m"
+                      },
+                      "errors": [
+                        {
+                          "location": {
+                            "file": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js",
+                            "column": 27,
+                            "line": 226
+                          },
+                          "message": "Error: \u001b[2mexpect(\u001b[22m\u001b[31mreceived\u001b[39m\u001b[2m).\u001b[22mtoBeGreaterThan\u001b[2m(\u001b[22m\u001b[32mexpected\u001b[39m\u001b[2m)\u001b[22m\n\nExpected: > \u001b[32m0.8\u001b[39m\nReceived:   \u001b[31m0.4444444444444444\u001b[39m\n\n\u001b[0m \u001b[90m 224 |\u001b[39m     \u001b[36mif\u001b[39m (loadedImages \u001b[33m+\u001b[39m failedImages \u001b[33m>\u001b[39m \u001b[35m0\u001b[39m) {\n \u001b[90m 225 |\u001b[39m       \u001b[36mconst\u001b[39m successRate \u001b[33m=\u001b[39m loadedImages \u001b[33m/\u001b[39m (loadedImages \u001b[33m+\u001b[39m failedImages)\u001b[33m;\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 226 |\u001b[39m       expect(successRate)\u001b[33m.\u001b[39mtoBeGreaterThan(\u001b[35m0.8\u001b[39m)\u001b[33m;\u001b[39m \u001b[90m// 80% успешно загруженных\u001b[39m\n \u001b[90m     |\u001b[39m                           \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 227 |\u001b[39m     }\n \u001b[90m 228 |\u001b[39m   })\u001b[33m;\u001b[39m\n \u001b[90m 229 |\u001b[39m   \u001b[0m\n\u001b[2m    at C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js:226:27\u001b[22m"
+                        }
+                      ],
+                      "stdout": [
+                        {
+                          "text": "🖼️ Images status: 4 loaded, 5 failed\n"
+                        }
+                      ],
+                      "stderr": [
+                        {
+                          "text": "⚠️ Image failed to load: /images/photo_2025-09-15_13-17-51.jpg\n"
+                        },
+                        {
+                          "text": "⚠️ Image failed to load: /images/photo_2025-09-15_13-17-52.jpg\n"
+                        },
+                        {
+                          "text": "⚠️ Image failed to load: /images/photo_2025-09-15_13-17-51.jpg\n"
+                        },
+                        {
+                          "text": "⚠️ Image failed to load: /images/photo_2025-09-15_13-17-52.jpg\n"
+                        },
+                        {
+                          "text": "⚠️ Image failed to load: /images/photo_2025-09-15_13-17-51.jpg\n"
+                        }
+                      ],
+                      "retry": 0,
+                      "startTime": "2025-09-27T17:27:48.749Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\reports\\test-results\\quick-⚡-Quick-Smoke-Tests-🖼️-Images-Loading-Check-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\reports\\test-results\\quick-⚡-Quick-Smoke-Tests-🖼️-Images-Loading-Check-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\reports\\test-results\\quick-⚡-Quick-Smoke-Tests-🖼️-Images-Loading-Check-chromium\\error-context.md"
+                        }
+                      ],
+                      "errorLocation": {
+                        "file": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js",
+                        "column": 27,
+                        "line": 226
+                      }
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "68a9d9ba73514bda7e4c-4768577d25461c02a92f",
+              "file": "quick.spec.js",
+              "line": 193,
+              "column": 3
+            },
+            {
+              "title": "📄 Page Metadata Check",
+              "ok": false,
+              "tags": [],
+              "tests": [
+                {
+                  "timeout": 60000,
+                  "annotations": [],
+                  "expectedStatus": "passed",
+                  "projectId": "chromium",
+                  "projectName": "chromium",
+                  "results": [
+                    {
+                      "workerIndex": 9,
+                      "parallelIndex": 9,
+                      "status": "timedOut",
+                      "duration": 60509,
+                      "error": {
+                        "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m",
+                        "stack": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                      },
+                      "errors": [
+                        {
+                          "message": "\u001b[31mTest timeout of 60000ms exceeded.\u001b[39m"
+                        },
+                        {
+                          "location": {
+                            "file": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js",
+                            "column": 72,
+                            "line": 239
+                          },
+                          "message": "Error: locator.getAttribute: Test timeout of 60000ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('meta[name=\"description\"]')\u001b[22m\n\n\n\u001b[0m \u001b[90m 237 |\u001b[39m     \n \u001b[90m 238 |\u001b[39m     \u001b[90m// Проверка meta description\u001b[39m\n\u001b[31m\u001b[1m>\u001b[22m\u001b[39m\u001b[90m 239 |\u001b[39m     \u001b[36mconst\u001b[39m description \u001b[33m=\u001b[39m \u001b[36mawait\u001b[39m page\u001b[33m.\u001b[39mlocator(\u001b[32m'meta[name=\"description\"]'\u001b[39m)\u001b[33m.\u001b[39mgetAttribute(\u001b[32m'content'\u001b[39m)\u001b[33m;\u001b[39m\n \u001b[90m     |\u001b[39m                                                                        \u001b[31m\u001b[1m^\u001b[22m\u001b[39m\n \u001b[90m 240 |\u001b[39m     expect(description)\u001b[33m.\u001b[39mtoBeTruthy()\u001b[33m;\u001b[39m\n \u001b[90m 241 |\u001b[39m     \n \u001b[90m 242 |\u001b[39m     \u001b[90m// Проверка charset\u001b[39m\u001b[0m\n\u001b[2m    at C:\\Users\\konfu\\Desktop\\Кролики\\tests\\tests\\quick.spec.js:239:72\u001b[22m"
+                        }
+                      ],
+                      "stdout": [],
+                      "stderr": [],
+                      "retry": 0,
+                      "startTime": "2025-09-27T17:27:49.092Z",
+                      "annotations": [],
+                      "attachments": [
+                        {
+                          "name": "screenshot",
+                          "contentType": "image/png",
+                          "path": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\reports\\test-results\\quick-⚡-Quick-Smoke-Tests-📄-Page-Metadata-Check-chromium\\test-failed-1.png"
+                        },
+                        {
+                          "name": "video",
+                          "contentType": "video/webm",
+                          "path": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\reports\\test-results\\quick-⚡-Quick-Smoke-Tests-📄-Page-Metadata-Check-chromium\\video.webm"
+                        },
+                        {
+                          "name": "error-context",
+                          "contentType": "text/markdown",
+                          "path": "C:\\Users\\konfu\\Desktop\\Кролики\\tests\\reports\\test-results\\quick-⚡-Quick-Smoke-Tests-📄-Page-Metadata-Check-chromium\\error-context.md"
+                        }
+                      ]
+                    }
+                  ],
+                  "status": "unexpected"
+                }
+              ],
+              "id": "68a9d9ba73514bda7e4c-915a0eb4022531b30f34",
+              "file": "quick.spec.js",
+              "line": 230,
+              "column": 3
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "errors": [],
+  "stats": {
+    "startTime": "2025-09-27T17:27:42.295Z",
+    "duration": 73635.166,
+    "expected": 5,
+    "skipped": 0,
+    "unexpected": 5,
+    "flaky": 0
+  }
+}

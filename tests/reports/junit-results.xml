@@ -1,0 +1,251 @@
+<testsuites id="" name="" tests="10" failures="5" skipped="0" errors="0" time="73.635166">
+<testsuite name="quick.spec.js" timestamp="2025-09-27T17:27:43.416Z" hostname="chromium" tests="10" failures="5" skipped="0" time="330.491" errors="0">
+<testcase name="⚡ Quick Smoke Tests › 🚀 Site is Online and Accessible" classname="quick.spec.js" time="31.439">
+<system-out>
+<![CDATA[🧪 Testing site availability...
+✅ Site responds with 200 OK
+✅ Main page structure is present
+]]>
+</system-out>
+</testcase>
+<testcase name="⚡ Quick Smoke Tests › 🔗 Critical Pages Load Successfully" classname="quick.spec.js" time="23.895">
+<failure message="quick.spec.js:24:3 🔗 Critical Pages Load Successfully" type="FAILURE">
+<![CDATA[  [chromium] › quick.spec.js:24:3 › ⚡ Quick Smoke Tests › 🔗 Critical Pages Load Successfully ──────
+
+    Error: expect(received).toBe(expected) // Object.is equality
+
+    Expected: 200
+    Received: 404
+
+      35 |       
+      36 |       const response = await page.goto(`${BASE_URL}${pagePath}`);
+    > 37 |       expect(response.status()).toBe(200);
+         |                                 ^
+      38 |       
+      39 |       // Проверка базовых элементов
+      40 |       await expect(page.locator('h1')).toBeVisible();
+        at C:\Users\konfu\Desktop\Кролики\tests\tests\quick.spec.js:37:33
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\reports\test-results\quick-⚡-Quick-Smoke-Tests--17a07-cal-Pages-Load-Successfully-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\reports\test-results\quick-⚡-Quick-Smoke-Tests--17a07-cal-Pages-Load-Successfully-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\reports\test-results\quick-⚡-Quick-Smoke-Tests--17a07-cal-Pages-Load-Successfully-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[🧪 Testing /...
+✅ / loads correctly
+🧪 Testing /restaurants.html...
+
+[[ATTACHMENT|test-results\quick-⚡-Quick-Smoke-Tests--17a07-cal-Pages-Load-Successfully-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\quick-⚡-Quick-Smoke-Tests--17a07-cal-Pages-Load-Successfully-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\quick-⚡-Quick-Smoke-Tests--17a07-cal-Pages-Load-Successfully-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="⚡ Quick Smoke Tests › 📱 Mobile Responsiveness Quick Check" classname="quick.spec.js" time="31.726">
+<failure message="quick.spec.js:47:3 📱 Mobile Responsiveness Quick Check" type="FAILURE">
+<![CDATA[  [chromium] › quick.spec.js:47:3 › ⚡ Quick Smoke Tests › 📱 Mobile Responsiveness Quick Check ─────
+
+    Error: expect(received).toBeLessThanOrEqual(expected)
+
+    Expected: <= 425
+    Received:    426
+
+      57 |     const viewportWidth = 375;
+      58 |     
+    > 59 |     expect(bodyWidth).toBeLessThanOrEqual(viewportWidth + 50); // Небольшой допуск
+         |                       ^
+      60 |     
+      61 |     console.log('✅ Mobile responsiveness check passed');
+      62 |   });
+        at C:\Users\konfu\Desktop\Кролики\tests\tests\quick.spec.js:59:23
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\reports\test-results\quick-⚡-Quick-Smoke-Tests--0ba2c--Responsiveness-Quick-Check-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\reports\test-results\quick-⚡-Quick-Smoke-Tests--0ba2c--Responsiveness-Quick-Check-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\reports\test-results\quick-⚡-Quick-Smoke-Tests--0ba2c--Responsiveness-Quick-Check-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\quick-⚡-Quick-Smoke-Tests--0ba2c--Responsiveness-Quick-Check-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\quick-⚡-Quick-Smoke-Tests--0ba2c--Responsiveness-Quick-Check-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\quick-⚡-Quick-Smoke-Tests--0ba2c--Responsiveness-Quick-Check-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="⚡ Quick Smoke Tests › ⚡ Performance Quick Check" classname="quick.spec.js" time="32.058">
+<failure message="quick.spec.js:64:3 ⚡ Performance Quick Check" type="FAILURE">
+<![CDATA[  [chromium] › quick.spec.js:64:3 › ⚡ Quick Smoke Tests › ⚡ Performance Quick Check ────────────────
+
+    Error: expect(received).toBeLessThan(expected)
+
+    Expected: < 8000
+    Received:   24793
+
+      73 |     
+      74 |     // Базовая проверка производительности
+    > 75 |     expect(loadTime).toBeLessThan(8000); // Максимум 8 секунд для первой загрузки
+         |                      ^
+      76 |     
+      77 |     console.log('✅ Performance check passed');
+      78 |   });
+        at C:\Users\konfu\Desktop\Кролики\tests\tests\quick.spec.js:75:22
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\reports\test-results\quick-⚡-Quick-Smoke-Tests-⚡-Performance-Quick-Check-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\reports\test-results\quick-⚡-Quick-Smoke-Tests-⚡-Performance-Quick-Check-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\reports\test-results\quick-⚡-Quick-Smoke-Tests-⚡-Performance-Quick-Check-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[⏱️ Page load time: 24793ms
+
+[[ATTACHMENT|test-results\quick-⚡-Quick-Smoke-Tests-⚡-Performance-Quick-Check-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\quick-⚡-Quick-Smoke-Tests-⚡-Performance-Quick-Check-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\quick-⚡-Quick-Smoke-Tests-⚡-Performance-Quick-Check-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+<testcase name="⚡ Quick Smoke Tests › 🔍 JavaScript Errors Check" classname="quick.spec.js" time="34.095">
+<system-err>
+<![CDATA[⚠️ JavaScript errors detected: [
+  [32m'process is not defined'[39m,
+  [32m'this.addReviewsIntegration is not a function'[39m,
+  [32m'Failed to initialize catalog: TypeError: this.initializeFilters is not a function\n'[39m +
+    [32m'    at CatalogManager.init (https://xn--80apagbbfxgmuj4j.site/scripts/catalog-preview.js:13:18)'[39m
+]
+]]>
+</system-err>
+</testcase>
+<testcase name="⚡ Quick Smoke Tests › 📝 Contact Form Basic Test" classname="quick.spec.js" time="43.818">
+<system-err>
+<![CDATA[⚠️ Contact form not found
+]]>
+</system-err>
+</testcase>
+<testcase name="⚡ Quick Smoke Tests › 🎨 CSS Styles Loading Check" classname="quick.spec.js" time="27.094">
+<system-out>
+<![CDATA[✅ CSS styles are loading correctly
+]]>
+</system-out>
+</testcase>
+<testcase name="⚡ Quick Smoke Tests › 🔗 Navigation Menu Check" classname="quick.spec.js" time="31.81">
+<system-out>
+<![CDATA[✅ Navigation menu found with 9 links
+]]>
+</system-out>
+</testcase>
+<testcase name="⚡ Quick Smoke Tests › 🖼️ Images Loading Check" classname="quick.spec.js" time="14.047">
+<failure message="quick.spec.js:193:3 🖼️ Images Loading Check" type="FAILURE">
+<![CDATA[  [chromium] › quick.spec.js:193:3 › ⚡ Quick Smoke Tests › 🖼️ Images Loading Check ────────────────
+
+    Error: expect(received).toBeGreaterThan(expected)
+
+    Expected: > 0.8
+    Received:   0.4444444444444444
+
+      224 |     if (loadedImages + failedImages > 0) {
+      225 |       const successRate = loadedImages / (loadedImages + failedImages);
+    > 226 |       expect(successRate).toBeGreaterThan(0.8); // 80% успешно загруженных
+          |                           ^
+      227 |     }
+      228 |   });
+      229 |   
+        at C:\Users\konfu\Desktop\Кролики\tests\tests\quick.spec.js:226:27
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\reports\test-results\quick-⚡-Quick-Smoke-Tests-🖼️-Images-Loading-Check-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\reports\test-results\quick-⚡-Quick-Smoke-Tests-🖼️-Images-Loading-Check-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\reports\test-results\quick-⚡-Quick-Smoke-Tests-🖼️-Images-Loading-Check-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[🖼️ Images status: 4 loaded, 5 failed
+
+[[ATTACHMENT|test-results\quick-⚡-Quick-Smoke-Tests-🖼️-Images-Loading-Check-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\quick-⚡-Quick-Smoke-Tests-🖼️-Images-Loading-Check-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\quick-⚡-Quick-Smoke-Tests-🖼️-Images-Loading-Check-chromium\error-context.md]]
+]]>
+</system-out>
+<system-err>
+<![CDATA[⚠️ Image failed to load: /images/photo_2025-09-15_13-17-51.jpg
+⚠️ Image failed to load: /images/photo_2025-09-15_13-17-52.jpg
+⚠️ Image failed to load: /images/photo_2025-09-15_13-17-51.jpg
+⚠️ Image failed to load: /images/photo_2025-09-15_13-17-52.jpg
+⚠️ Image failed to load: /images/photo_2025-09-15_13-17-51.jpg
+]]>
+</system-err>
+</testcase>
+<testcase name="⚡ Quick Smoke Tests › 📄 Page Metadata Check" classname="quick.spec.js" time="60.509">
+<failure message="quick.spec.js:230:3 📄 Page Metadata Check" type="FAILURE">
+<![CDATA[  [chromium] › quick.spec.js:230:3 › ⚡ Quick Smoke Tests › 📄 Page Metadata Check ──────────────────
+
+    Test timeout of 60000ms exceeded.
+
+    Error: locator.getAttribute: Test timeout of 60000ms exceeded.
+    Call log:
+      - waiting for locator('meta[name="description"]')
+
+
+      237 |     
+      238 |     // Проверка meta description
+    > 239 |     const description = await page.locator('meta[name="description"]').getAttribute('content');
+          |                                                                        ^
+      240 |     expect(description).toBeTruthy();
+      241 |     
+      242 |     // Проверка charset
+        at C:\Users\konfu\Desktop\Кролики\tests\tests\quick.spec.js:239:72
+
+    attachment #1: screenshot (image/png) ──────────────────────────────────────────────────────────
+    ..\reports\test-results\quick-⚡-Quick-Smoke-Tests-📄-Page-Metadata-Check-chromium\test-failed-1.png
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    attachment #2: video (video/webm) ──────────────────────────────────────────────────────────────
+    ..\reports\test-results\quick-⚡-Quick-Smoke-Tests-📄-Page-Metadata-Check-chromium\video.webm
+    ────────────────────────────────────────────────────────────────────────────────────────────────
+
+    Error Context: ..\reports\test-results\quick-⚡-Quick-Smoke-Tests-📄-Page-Metadata-Check-chromium\error-context.md
+]]>
+</failure>
+<system-out>
+<![CDATA[
+[[ATTACHMENT|test-results\quick-⚡-Quick-Smoke-Tests-📄-Page-Metadata-Check-chromium\test-failed-1.png]]
+
+[[ATTACHMENT|test-results\quick-⚡-Quick-Smoke-Tests-📄-Page-Metadata-Check-chromium\video.webm]]
+
+[[ATTACHMENT|test-results\quick-⚡-Quick-Smoke-Tests-📄-Page-Metadata-Check-chromium\error-context.md]]
+]]>
+</system-out>
+</testcase>
+</testsuite>
+</testsuites>
