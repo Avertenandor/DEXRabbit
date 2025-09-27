@@ -1,5 +1,57 @@
-// Task 22: Mobile menu functionality
+// Task 22, 30, 32: Mobile menu functionality + Performance + Analytics
 document.addEventListener('DOMContentLoaded', function() {
+    // Task 32: Analytics tracking
+    function trackEvent(eventName, properties = {}) {
+        // Google Analytics 4 (gtag)
+        if (typeof gtag !== 'undefined') {
+            gtag('event', eventName, properties);
+        }
+        
+        // Yandex.Metrica
+        if (typeof ym !== 'undefined') {
+            ym(95441234, 'reachGoal', eventName, properties);
+        }
+        
+        // Console logging for development
+        console.log('Event tracked:', eventName, properties);
+    }
+
+    // Task 30: Performance optimizations
+    function setupLazyLoading() {
+        if ('IntersectionObserver' in window) {
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src || img.src;
+                        img.classList.remove('lazy');
+                        observer.unobserve(img);
+                    }
+                });
+            });
+
+            document.querySelectorAll('img[loading="lazy"]').forEach(img => {
+                imageObserver.observe(img);
+            });
+        }
+    }
+
+    // Performance monitoring
+    function setupPerformanceMonitoring() {
+        window.addEventListener('load', () => {
+            setTimeout(() => {
+                const perfData = performance.getEntriesByType('navigation')[0];
+                if (perfData) {
+                    trackEvent('performance', {
+                        load_time: Math.round(perfData.loadEventEnd - perfData.loadEventStart),
+                        dom_content_loaded: Math.round(perfData.domContentLoadedEventEnd - perfData.domContentLoadedEventStart),
+                        page_load: Math.round(perfData.loadEventEnd - perfData.fetchStart)
+                    });
+                }
+            }, 0);
+        });
+    }
+
     // Mobile menu toggle
     const burger = document.getElementById('burger');
     const navMenu = document.getElementById('nav-menu');
@@ -7,6 +59,11 @@ document.addEventListener('DOMContentLoaded', function() {
     if (burger && navMenu) {
         burger.addEventListener('click', function() {
             navMenu.classList.toggle('active');
+            
+            // Track menu usage
+            if (navMenu.classList.contains('active')) {
+                trackEvent('menu_open', { event_category: 'navigation' });
+            }
             
             // Animate burger icon
             const spans = burger.querySelectorAll('span');

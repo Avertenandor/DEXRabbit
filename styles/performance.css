@@ -1,0 +1,74 @@
+/* Task 30: Performance optimizations */
+/* Critical rendering path optimizations */
+.hero {
+    contain: layout style paint; /* Optimize for LCP */
+}
+
+.product-card {
+    contain: layout style; /* Optimize card rendering */
+}
+
+/* Lazy loading improvements */
+img[loading="lazy"] {
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+}
+
+img[loading="lazy"].loaded {
+    opacity: 1;
+}
+
+/* Optimize animations for 60fps */
+@media (prefers-reduced-motion: no-preference) {
+    .btn,
+    .product-card,
+    .faq-item {
+        will-change: transform;
+    }
+}
+
+/* Reduce motion for accessibility */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* Print styles */
+@media print {
+    .header,
+    .footer,
+    .btn,
+    #burger {
+        display: none !important;
+    }
+    
+    .hero {
+        background: none !important;
+        min-height: auto;
+        color: black;
+    }
+    
+    .container {
+        max-width: 100% !important;
+        padding: 0 !important;
+    }
+}
+
+/* High DPI displays optimization */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .hero {
+        background-image: url('/images/photo_2025-09-15_13-17-50.jpg'); /* Use high-res version */
+    }
+}
+
+/* Dark mode support (future enhancement) */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --color-bg-body: #1a1a1a;
+        --color-text-primary: #ffffff;
+        --color-bg-card: #2a2a2a;
+    }
+}
