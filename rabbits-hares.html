@@ -40,14 +40,25 @@
                 </a>
                 
                 <div class="nav-links" id="nav-menu">
-                    <a href="/#about">О проекте</a>
-                    <a href="/#how-it-works">Как работает</a>
-                    <a href="/#investment">Инвестиции</a>
-                    <a href="/#tokenization">Токенизация</a>
-                    <a href="/#partners">Партнерам</a>
-                    <a href="/#guarantees">Гарантии</a>
-                    <a href="/rabbits-hares.html" style="color: var(--color-accent-strong);">🐰 Кролики и зайцы</a>
-                    <a href="https://t.me/dexrabbit_bot" class="btn btn-ghost">💬 Telegram Bot</a>
+                    <div class="nav-group">
+                        <a href="/">🏠 Главная</a>
+                        <a href="/#investment">Инвестиции</a>
+                        <a href="/#tokenization">Токенизация</a>
+                    </div>
+                    
+                    <div class="nav-group nav-dropdown">
+                        <button class="nav-dropdown-toggle">Ещё <span class="dropdown-arrow">▾</span></button>
+                        <div class="nav-dropdown-content">
+                            <a href="/#gallery">📷 Галерея</a>
+                            <a href="/#partners">🤝 Партнерам</a>
+                            <a href="/#guarantees">🛡️ Гарантии</a>
+                            <a href="/rabbits-hares.html" class="active">🐰 Кролики и зайцы</a>
+                            <a href="/cats-rabbits.html">🐱 Коты и кролики</a>
+                            <a href="/docs/DEXRabbit_presentation.pdf" target="_blank">📄 Презентация</a>
+                        </div>
+                    </div>
+                    
+                    <a href="https://t.me/dexrabbit_bot" class="btn btn-primary nav-cta">💬 Начать инвестировать</a>
                 </div>
                 
                 <button class="mobile-nav-toggle" aria-label="Меню" onclick="toggleMenu()">☰</button>
@@ -841,6 +852,31 @@
             const isExpanded = menu.getAttribute('aria-expanded') === 'true';
             menu.setAttribute('aria-expanded', !isExpanded);
         }
+
+        // Dropdown menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownToggle = document.querySelector('.nav-dropdown-toggle');
+            const dropdown = document.querySelector('.nav-dropdown');
+            
+            if (dropdownToggle && dropdown) {
+                dropdownToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    dropdown.classList.toggle('active');
+                });
+                
+                document.addEventListener('click', function(e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('active');
+                    }
+                });
+                
+                document.addEventListener('keydown', function(e) {
+                    if (e.key === 'Escape') {
+                        dropdown.classList.remove('active');
+                    }
+                });
+            }
+        });
 
         // Smooth scroll
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
