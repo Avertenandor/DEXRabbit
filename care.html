@@ -1,0 +1,841 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Уход за кроликами — DEXRabbit | Профессиональный уход на ферме</title>
+    <meta name="description" content="Профессиональный уход за кроликами на ферме DEXRabbit. Кормление, содержание, ветеринарный контроль, гигиена. Забота о каждом животном 24/7.">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#7c8cff">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Уход за кроликами — DEXRabbit">
+    <meta property="og:description" content="Профессиональный уход за кроликами. Кормление, содержание, ветеринарный контроль.">
+    <meta property="og:url" content="https://xn--80apagbbfxgmuj4j.site/care.html">
+    <meta property="og:image" content="https://xn--80apagbbfxgmuj4j.site/og/og-rabbit.jpg">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/variables.css">
+    
+    <style>
+        /* Дополнительные стили для страницы ухода */
+        .care-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1rem;
+            margin: 2rem 0;
+        }
+        
+        .care-stat {
+            background: rgba(124, 140, 255, 0.1);
+            padding: 1rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+            border: 1px solid rgba(124, 140, 255, 0.2);
+        }
+        
+        .care-stat-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--color-accent-strong);
+        }
+        
+        .care-stat-label {
+            font-size: 0.85rem;
+            color: var(--color-text-tertiary);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-top: 0.25rem;
+        }
+        
+        .care-schedule {
+            background: rgba(16, 21, 33, 0.85);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .schedule-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid rgba(124, 140, 255, 0.1);
+        }
+        
+        .schedule-item:last-child {
+            border-bottom: none;
+        }
+        
+        .schedule-time {
+            background: rgba(124, 140, 255, 0.15);
+            padding: 0.25rem 0.75rem;
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            color: var(--color-accent-strong);
+            min-width: 70px;
+            text-align: center;
+        }
+        
+        .care-process {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .process-card {
+            background: rgba(13, 18, 30, 0.88);
+            border-radius: var(--radius-lg);
+            padding: 1.5rem;
+            border: 1px solid rgba(124, 140, 255, 0.15);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .process-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, var(--color-accent), #4cc9f0);
+        }
+        
+        .process-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+        
+        .standards-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .standard-card {
+            background: rgba(16, 21, 33, 0.9);
+            padding: 1.25rem;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+            transition: all var(--transition-fast);
+        }
+        
+        .standard-card:hover {
+            transform: translateY(-2px);
+            border-color: rgba(74, 222, 128, 0.4);
+            box-shadow: 0 8px 20px rgba(74, 222, 128, 0.15);
+        }
+        
+        .standard-icon {
+            color: #4ade80;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .monitoring-system {
+            background: linear-gradient(135deg, rgba(124, 140, 255, 0.1), rgba(76, 201, 240, 0.05));
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin: 2rem 0;
+            border: 1px solid rgba(124, 140, 255, 0.2);
+        }
+        
+        .monitoring-feature {
+            display: flex;
+            align-items: start;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .monitoring-icon {
+            background: rgba(124, 140, 255, 0.2);
+            padding: 0.5rem;
+            border-radius: var(--radius-sm);
+            min-width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <!-- Logo Section -->
+            <div class="navbar-header">
+                <div class="logo-wrapper">
+                    <a href="/" class="site-logo">
+                        <img src="/favicon.svg" alt="DEXRabbit">
+                        <div class="logo-text">
+                            <span class="logo-title">DEXRabbit</span>
+                            <span class="logo-slogan">Твой пассивный доход на кроликах</span>
+                        </div>
+                    </a>
+                </div>
+                <button class="mobile-nav-toggle" aria-label="Меню" onclick="toggleMenu()">☰</button>
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="navbar-inner">
+                <div class="nav-links" id="nav-menu">
+                    <!-- Основные разделы -->
+                    <div class="nav-group">
+                        <a href="/">Главная</a>
+                        <a href="/#how-it-works">Как работает</a>
+                        <a href="/#investment">Инвестиции</a>
+                        <a href="/care.html" class="active">Уход</a>
+                    </div>
+                    
+                    <!-- Дополнительные разделы -->
+                    <div class="nav-group nav-dropdown">
+                        <button class="nav-dropdown-toggle">Ещё <span class="dropdown-arrow">▾</span></button>
+                        <div class="nav-dropdown-content">
+                            <a href="/breeding.html">🧬 Племенная работа</a>
+                            <a href="/gifts.html">🎁 Кролик в подарок</a>
+                            <a href="/restaurants.html">🍽️ Ресторанам</a>
+                            <a href="/logistics.html">🚚 Логистика</a>
+                            <a href="/#gallery">📷 Галерея</a>
+                            <a href="/docs/DEXRabbit_presentation.pdf" target="_blank">📄 Презентация</a>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA кнопка -->
+                    <a href="https://t.me/dexrabbit_bot" class="btn btn-primary nav-cta">💬 Начать инвестировать</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" style="padding: 4rem 0;">
+            <div class="container">
+                <div class="hero-content" style="text-align: center;">
+                    <h1 class="hero-title" style="max-width: 100%;">
+                        🌿 Профессиональный уход за кроликами
+                    </h1>
+                    <p class="hero-subtitle" style="max-width: 700px; margin: 0 auto;">
+                        Обеспечиваем идеальные условия содержания, сбалансированное питание 
+                        и круглосуточный ветеринарный контроль для здоровья и продуктивности животных
+                    </p>
+                    
+                    <div class="care-stats">
+                        <div class="care-stat">
+                            <div class="care-stat-value">24/7</div>
+                            <div class="care-stat-label">Наблюдение</div>
+                        </div>
+                        <div class="care-stat">
+                            <div class="care-stat-value">3x</div>
+                            <div class="care-stat-label">Кормление в день</div>
+                        </div>
+                        <div class="care-stat">
+                            <div class="care-stat-value">2x</div>
+                            <div class="care-stat-label">Уборка в день</div>
+                        </div>
+                        <div class="care-stat">
+                            <div class="care-stat-value">98%</div>
+                            <div class="care-stat-label">Выживаемость</div>
+                        </div>
+                        <div class="care-stat">
+                            <div class="care-stat-value">100%</div>
+                            <div class="care-stat-label">Экологичность</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Daily Schedule -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="overline">Режим дня</span>
+                    <h2>📅 Ежедневный график ухода</h2>
+                    <p>Строгое соблюдение распорядка — залог здоровья кроликов</p>
+                </div>
+
+                <div class="care-schedule">
+                    <div class="schedule-item">
+                        <span class="schedule-time">06:00</span>
+                        <span>🌅</span>
+                        <div>
+                            <strong>Утренний обход</strong>
+                            <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">Проверка состояния животных, температуры в помещениях</p>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <span class="schedule-time">07:00</span>
+                        <span>🥕</span>
+                        <div>
+                            <strong>Первое кормление</strong>
+                            <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">Сено, комбикорм, свежие овощи по рациону</p>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <span class="schedule-time">09:00</span>
+                        <span>🧹</span>
+                        <div>
+                            <strong>Утренняя уборка</strong>
+                            <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">Чистка клеток, замена подстилки, дезинфекция поилок</p>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <span class="schedule-time">12:00</span>
+                        <span>💊</span>
+                        <div>
+                            <strong>Ветеринарный осмотр</strong>
+                            <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">Проверка здоровья, вакцинация по графику, лечение при необходимости</p>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <span class="schedule-time">14:00</span>
+                        <span>🌾</span>
+                        <div>
+                            <strong>Второе кормление</strong>
+                            <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">Зерновые, витаминные добавки, свежая зелень</p>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <span class="schedule-time">17:00</span>
+                        <span>🧼</span>
+                        <div>
+                            <strong>Вечерняя уборка</strong>
+                            <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">Очистка кормушек, проверка поилок, удаление остатков корма</p>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <span class="schedule-time">19:00</span>
+                        <span>🌙</span>
+                        <div>
+                            <strong>Вечернее кормление</strong>
+                            <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">Сено на ночь, гранулированный корм, проверка воды</p>
+                        </div>
+                    </div>
+                    
+                    <div class="schedule-item">
+                        <span class="schedule-time">21:00</span>
+                        <span>🔦</span>
+                        <div>
+                            <strong>Ночной контроль</strong>
+                            <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">Финальная проверка, включение ночного освещения, контроль температуры</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Care Processes -->
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="overline">Основные процессы</span>
+                    <h2>🏥 Комплексный уход</h2>
+                    <p>Все аспекты содержания под строгим контролем специалистов</p>
+                </div>
+
+                <div class="care-process">
+                    <div class="process-card">
+                        <div class="process-icon">🥗</div>
+                        <h3>Кормление</h3>
+                        <p>Сбалансированный рацион из натуральных кормов:</p>
+                        <ul class="checklist" style="margin-top: 1rem;">
+                            <li>Свежее сено люцерны и тимофеевки</li>
+                            <li>Гранулированный комбикорм</li>
+                            <li>Морковь, капуста, свекла</li>
+                            <li>Зерновые смеси (овес, ячмень)</li>
+                            <li>Витаминно-минеральные добавки</li>
+                            <li>Веточный корм для стачивания зубов</li>
+                        </ul>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-icon">🏠</div>
+                        <h3>Содержание</h3>
+                        <p>Оптимальные условия проживания:</p>
+                        <ul class="checklist" style="margin-top: 1rem;">
+                            <li>Просторные клетки 80×60×50 см</li>
+                            <li>Температура 16-20°C круглый год</li>
+                            <li>Влажность воздуха 60-70%</li>
+                            <li>Приточно-вытяжная вентиляция</li>
+                            <li>Мягкая соломенная подстилка</li>
+                            <li>Игровые вольеры для прогулок</li>
+                        </ul>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-icon">💊</div>
+                        <h3>Ветеринария</h3>
+                        <p>Профессиональная медицинская помощь:</p>
+                        <ul class="checklist" style="margin-top: 1rem;">
+                            <li>Еженедельный осмотр ветеринара</li>
+                            <li>Вакцинация по графику</li>
+                            <li>Профилактика паразитов</li>
+                            <li>Контроль веса и развития</li>
+                            <li>Витаминизация в период роста</li>
+                            <li>Карантин для новых животных</li>
+                        </ul>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-icon">🧹</div>
+                        <h3>Гигиена</h3>
+                        <p>Поддержание чистоты и санитарии:</p>
+                        <ul class="checklist" style="margin-top: 1rem;">
+                            <li>Ежедневная уборка клеток</li>
+                            <li>Смена подстилки 2 раза в день</li>
+                            <li>Дезинфекция раз в неделю</li>
+                            <li>Мытье поилок и кормушек</li>
+                            <li>Обработка от насекомых</li>
+                            <li>Проветривание помещений</li>
+                        </ul>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-icon">👶</div>
+                        <h3>Уход за молодняком</h3>
+                        <p>Особое внимание крольчатам:</p>
+                        <ul class="checklist" style="margin-top: 1rem;">
+                            <li>Отдельные ясли-клетки</li>
+                            <li>Усиленное питание матерей</li>
+                            <li>Контроль набора веса</li>
+                            <li>Ранняя социализация</li>
+                            <li>Постепенный переход на твердый корм</li>
+                            <li>Профилактика кокцидиоза</li>
+                        </ul>
+                    </div>
+
+                    <div class="process-card">
+                        <div class="process-icon">📊</div>
+                        <h3>Мониторинг</h3>
+                        <p>Постоянное наблюдение за состоянием:</p>
+                        <ul class="checklist" style="margin-top: 1rem;">
+                            <li>Видеонаблюдение 24/7</li>
+                            <li>Датчики температуры и влажности</li>
+                            <li>Учет потребления корма</li>
+                            <li>Взвешивание раз в неделю</li>
+                            <li>Ведение карточек на каждого кролика</li>
+                            <li>Фиксация всех процедур</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Standards -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="overline">Стандарты качества</span>
+                    <h2>✅ Наши стандарты ухода</h2>
+                    <p>Соответствие международным нормам содержания животных</p>
+                </div>
+
+                <div class="standards-grid">
+                    <div class="standard-card">
+                        <div class="standard-icon">🌡️</div>
+                        <h4>Микроклимат</h4>
+                        <p>Поддержание оптимальной температуры 16-20°C и влажности 60-70% круглый год</p>
+                    </div>
+
+                    <div class="standard-card">
+                        <div class="standard-icon">🥕</div>
+                        <h4>Питание</h4>
+                        <p>Только натуральные корма без ГМО, антибиотиков и стимуляторов роста</p>
+                    </div>
+
+                    <div class="standard-card">
+                        <div class="standard-icon">🏥</div>
+                        <h4>Здоровье</h4>
+                        <p>Регулярные ветеринарные осмотры и своевременная вакцинация</p>
+                    </div>
+
+                    <div class="standard-card">
+                        <div class="standard-icon">🛡️</div>
+                        <h4>Безопасность</h4>
+                        <p>Защита от хищников, грызунов и неблагоприятных погодных условий</p>
+                    </div>
+
+                    <div class="standard-card">
+                        <div class="standard-icon">♻️</div>
+                        <h4>Экология</h4>
+                        <p>Переработка отходов в органическое удобрение, минимальный углеродный след</p>
+                    </div>
+
+                    <div class="standard-card">
+                        <div class="standard-icon">❤️</div>
+                        <h4>Гуманность</h4>
+                        <p>Бережное обращение, отсутствие стресса, комфортные условия жизни</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Care -->
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="overline">Особенности</span>
+                    <h2>🌟 Индивидуальный подход</h2>
+                    <p>Каждый кролик получает персональное внимание</p>
+                </div>
+
+                <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div class="card">
+                        <h3>🎯 Персональные карточки</h3>
+                        <p>На каждого кролика ведется индивидуальная карточка с полной историей:</p>
+                        <ul class="checklist" style="margin-top: 1rem;">
+                            <li>Дата рождения и происхождение</li>
+                            <li>Вес при рождении и динамика роста</li>
+                            <li>История вакцинаций и лечения</li>
+                            <li>Особенности характера и поведения</li>
+                            <li>Продуктивные показатели</li>
+                            <li>Родословная и потомство</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>💝 Забота о комфорте</h3>
+                        <p>Создаем максимально комфортные условия для каждого животного:</p>
+                        <ul class="checklist" style="margin-top: 1rem;">
+                            <li>Индивидуальный подбор рациона</li>
+                            <li>Учет предпочтений в кормах</li>
+                            <li>Социализация с раннего возраста</li>
+                            <li>Игрушки и развлечения в клетках</li>
+                            <li>Прогулки в вольерах</li>
+                            <li>Ласковое обращение персонала</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="monitoring-system">
+                    <h3 style="margin-bottom: 1.5rem;">📱 Система мониторинга для инвесторов</h3>
+                    
+                    <div class="monitoring-feature">
+                        <div class="monitoring-icon">📹</div>
+                        <div>
+                            <strong>Видеонаблюдение онлайн</strong>
+                            <p style="margin: 0.25rem 0; opacity: 0.9;">Доступ к камерам 24/7 через личный кабинет</p>
+                        </div>
+                    </div>
+
+                    <div class="monitoring-feature">
+                        <div class="monitoring-icon">📊</div>
+                        <div>
+                            <strong>Отчеты о состоянии</strong>
+                            <p style="margin: 0.25rem 0; opacity: 0.9;">Еженедельные отчеты с фото и показателями роста</p>
+                        </div>
+                    </div>
+
+                    <div class="monitoring-feature">
+                        <div class="monitoring-icon">🔔</div>
+                        <div>
+                            <strong>Уведомления</strong>
+                            <p style="margin: 0.25rem 0; opacity: 0.9;">SMS и email о важных событиях (вакцинация, взвешивание, потомство)</p>
+                        </div>
+                    </div>
+
+                    <div class="monitoring-feature">
+                        <div class="monitoring-icon">💬</div>
+                        <div>
+                            <strong>Связь с фермером</strong>
+                            <p style="margin: 0.25rem 0; opacity: 0.9;">Возможность задать вопросы и получить консультацию</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seasonal Care -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="overline">Сезонность</span>
+                    <h2>🌦️ Уход в разные сезоны</h2>
+                    <p>Адаптация условий содержания к времени года</p>
+                </div>
+
+                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div class="card">
+                        <h3>🌸 Весна</h3>
+                        <p style="font-size: 0.9rem; opacity: 0.8;">Март - Май</p>
+                        <ul style="margin-top: 1rem; list-style: none; padding: 0;">
+                            <li style="margin: 0.5rem 0;">🌱 Переход на свежую зелень</li>
+                            <li style="margin: 0.5rem 0;">💉 Весенняя вакцинация</li>
+                            <li style="margin: 0.5rem 0;">🧹 Генеральная уборка помещений</li>
+                            <li style="margin: 0.5rem 0;">☀️ Организация прогулок на свежем воздухе</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>☀️ Лето</h3>
+                        <p style="font-size: 0.9rem; opacity: 0.8;">Июнь - Август</p>
+                        <ul style="margin-top: 1rem; list-style: none; padding: 0;">
+                            <li style="margin: 0.5rem 0;">❄️ Усиленная вентиляция и охлаждение</li>
+                            <li style="margin: 0.5rem 0;">💧 Увеличение объема воды</li>
+                            <li style="margin: 0.5rem 0;">🥬 Максимум свежих овощей и зелени</li>
+                            <li style="margin: 0.5rem 0;">🦟 Защита от насекомых</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>🍂 Осень</h3>
+                        <p style="font-size: 0.9rem; opacity: 0.8;">Сентябрь - Ноябрь</p>
+                        <ul style="margin-top: 1rem; list-style: none; padding: 0;">
+                            <li style="margin: 0.5rem 0;">🌾 Заготовка кормов на зиму</li>
+                            <li style="margin: 0.5rem 0;">🏠 Утепление помещений</li>
+                            <li style="margin: 0.5rem 0;">💊 Профилактика сезонных болезней</li>
+                            <li style="margin: 0.5rem 0;">🥕 Увеличение калорийности рациона</li>
+                        </ul>
+                    </div>
+
+                    <div class="card">
+                        <h3>❄️ Зима</h3>
+                        <p style="font-size: 0.9rem; opacity: 0.8;">Декабрь - Февраль</p>
+                        <ul style="margin-top: 1rem; list-style: none; padding: 0;">
+                            <li style="margin: 0.5rem 0;">🔥 Поддержание температуры 16-18°C</li>
+                            <li style="margin: 0.5rem 0;">💡 Дополнительное освещение</li>
+                            <li style="margin: 0.5rem 0;">🌾 Качественное сено и комбикорм</li>
+                            <li style="margin: 0.5rem 0;">💉 Витаминные добавки</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Team -->
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="overline">Наша команда</span>
+                    <h2>👨‍⚕️ Специалисты по уходу</h2>
+                    <p>Профессионалы с многолетним опытом работы</p>
+                </div>
+
+                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 2rem;">
+                    <div class="card" style="text-align: center;">
+                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #7c8cff, #4cc9f0); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                            👨‍⚕️
+                        </div>
+                        <h3>Александр Петрович</h3>
+                        <p style="color: var(--color-accent-strong); margin: 0.5rem 0;">Главный ветеринар</p>
+                        <p style="font-size: 0.9rem; opacity: 0.8;">15 лет опыта, кандидат ветеринарных наук</p>
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(124, 140, 255, 0.1);">
+                            <p style="font-size: 0.85rem;">Специализация: репродукция, инфекционные болезни кроликов</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="text-align: center;">
+                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #4ade80, #22d3ee); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                            👩‍🌾
+                        </div>
+                        <h3>Мария Ивановна</h3>
+                        <p style="color: var(--color-accent-strong); margin: 0.5rem 0;">Старший зоотехник</p>
+                        <p style="font-size: 0.9rem; opacity: 0.8;">12 лет опыта работы с кроликами</p>
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(124, 140, 255, 0.1);">
+                            <p style="font-size: 0.85rem;">Специализация: кормление, селекция, уход за молодняком</p>
+                        </div>
+                    </div>
+
+                    <div class="card" style="text-align: center;">
+                        <div style="width: 100px; height: 100px; background: linear-gradient(135deg, #f472b6, #c084fc); border-radius: 50%; margin: 0 auto 1rem; display: flex; align-items: center; justify-content: center; font-size: 3rem;">
+                            👨‍🔬
+                        </div>
+                        <h3>Сергей Николаевич</h3>
+                        <p style="color: var(--color-accent-strong); margin: 0.5rem 0;">Лаборант-диагност</p>
+                        <p style="font-size: 0.9rem; opacity: 0.8;">8 лет опыта в ветеринарной диагностике</p>
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(124, 140, 255, 0.1);">
+                            <p style="font-size: 0.85rem;">Специализация: лабораторная диагностика, профилактика заболеваний</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="overline">Вопросы и ответы</span>
+                    <h2>❓ Часто задаваемые вопросы об уходе</h2>
+                    <p>Ответы на популярные вопросы инвесторов</p>
+                </div>
+
+                <div class="grid" style="grid-template-columns: 1fr; gap: 1rem;">
+                    <div class="card">
+                        <h3>Как часто кроликов осматривает ветеринар?</h3>
+                        <p>Плановый осмотр проводится еженедельно. При необходимости ветеринар доступен круглосуточно. Все животные проходят обязательную вакцинацию согласно графику.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Чем кормят кроликов на ферме?</h3>
+                        <p>Рацион состоит из качественного сена, гранулированного комбикорма, свежих овощей (морковь, капуста, свекла), зерновых смесей и витаминно-минеральных добавок. Все корма натуральные, без ГМО и стимуляторов роста.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Какие условия содержания на ферме?</h3>
+                        <p>Кролики содержатся в просторных клетках размером не менее 80×60×50 см. Поддерживается оптимальная температура 16-20°C и влажность 60-70%. Обеспечена хорошая вентиляция, регулярная уборка и дезинфекция.</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Могу ли я следить за своим кроликом?</h3>
+                        <p>Да! Инвесторы получают доступ к системе видеонаблюдения 24/7, еженедельные отчеты с фотографиями и показателями роста, а также уведомления о важных событиях (вакцинация, взвешивание, появление потомства).</p>
+                    </div>
+
+                    <div class="card">
+                        <h3>Что происходит, если кролик заболел?</h3>
+                        <p>При первых признаках недомогания животное изолируется и получает квалифицированную ветеринарную помощь. Инвестор немедленно уведомляется о состоянии животного. В случае гибели по болезни предоставляется замена из резервного фонда.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section section-alt">
+            <div class="container">
+                <div style="text-align: center; padding: 3rem 0;">
+                    <h2 style="margin-bottom: 1rem;">🐰 Доверьте своих кроликов профессионалам</h2>
+                    <p style="margin-bottom: 2rem; opacity: 0.9;">
+                        Наш опыт и забота обеспечат здоровье и высокую продуктивность ваших инвестиций
+                    </p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="https://t.me/dexrabbit_bot" class="btn">
+                            💰 Начать инвестировать
+                        </a>
+                        <a href="/#gallery" class="btn btn-outline">
+                            📷 Посмотреть фото фермы
+                        </a>
+                        <a href="/docs/DEXRabbit_presentation.pdf" class="btn btn-ghost">
+                            📄 Скачать презентацию
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>О проекте</h4>
+                    <nav>
+                        <a href="/#about">Что это</a>
+                        <a href="/#how-it-works">Как работает</a>
+                        <a href="/#tokenization">Токенизация</a>
+                        <a href="/care.html">Уход за кроликами</a>
+                    </nav>
+                </div>
+                
+                <div>
+                    <h4>Инвесторам</h4>
+                    <nav>
+                        <a href="/#investment">Инвестиции</a>
+                        <a href="/#partners">Партнерство</a>
+                        <a href="/#guarantees">Гарантии</a>
+                        <a href="/breeding.html">Разведение</a>
+                    </nav>
+                </div>
+                
+                <div>
+                    <h4>Услуги</h4>
+                    <nav>
+                        <a href="/gifts.html">Подарки</a>
+                        <a href="/restaurants.html">Ресторанам</a>
+                        <a href="/logistics.html">Доставка</a>
+                        <a href="/development.html">Развитие</a>
+                    </nav>
+                </div>
+                
+                <div>
+                    <h4>Контакты</h4>
+                    <nav>
+                        <a href="https://t.me/dexrabbit_bot">Telegram Bot</a>
+                        <a href="https://t.me/dexrabbit_channel">Канал</a>
+                        <a href="https://t.me/dexrabbit_group">Группа</a>
+                        <a href="mailto:info@dexrabbit.com">Email</a>
+                    </nav>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(124, 140, 255, 0.1); opacity: 0.7;">
+                <p>© 2025 DEXRabbit. Все права защищены.</p>
+                <p style="margin-top: 0.5rem;">
+                    <a href="/legal/agreement.html" style="color: var(--color-text-secondary); margin: 0 1rem;">Лицензионное соглашение</a>
+                    <a href="/legal/privacy.html" style="color: var(--color-text-secondary); margin: 0 1rem;">Политика конфиденциальности</a>
+                    <a href="/legal/terms.html" style="color: var(--color-text-secondary); margin: 0 1rem;">Условия использования</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            const isExpanded = menu.getAttribute('aria-expanded') === 'true';
+            menu.setAttribute('aria-expanded', !isExpanded);
+        }
+
+        // Dropdown menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownToggle = document.querySelector('.nav-dropdown-toggle');
+            const dropdown = document.querySelector('.nav-dropdown');
+            
+            if (dropdownToggle && dropdown) {
+                dropdownToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    dropdown.classList.toggle('active');
+                });
+                
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('active');
+                    }
+                });
+            }
+        });
+
+        // Service Worker registration
+        if ('serviceWorker' in navigator && location.hostname !== 'localhost') {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').catch(err => {
+                    console.error('Service Worker registration failed:', err);
+                });
+            });
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        console.log('🌿 Welcome to DEXRabbit Care Page!');
+    </script>
+</body>
+</html>
