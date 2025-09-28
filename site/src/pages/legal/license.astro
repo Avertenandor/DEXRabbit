@@ -1,0 +1,102 @@
+﻿---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Пользовательское соглашение  DEXRabbit"
+           description=" Правовые условия участия в проекте DEXRabbit: гарантии, обязательства, условия визита фермы, возврат средств">
+    
+    <section class="section">
+        <div class="container">
+            <h1> Пользовательское соглашение DEXRabbit</h1>
+            
+            <div class="legal-content">
+                <section class="legal-section">
+                    <h2> Гарантии и обязательства</h2>
+                    <ul>
+                        <li><strong>Гарантирован возврат вклада, но НЕ гарантирована прибыль</strong></li>
+                        <li>Все риски касаются исключительно потенциального дохода</li>
+                        <li>Ферма обязуется к гуманному обращению с животными</li>
+                        <li>Соблюдение ветеринарных норм и требований</li>
+                    </ul>
+                </section>
+
+                <section class="legal-section">
+                    <h2> Условия посещения фермы</h2>
+                    <ul>
+                        <li>Посещение возможно за PLEX токены</li>
+                        <li>Обязательное предварительное согласование даты и времени</li>
+                        <li>Соблюдение санитарных требований</li>
+                        <li>Запрещено беспокоить животных без разрешения</li>
+                    </ul>
+                </section>
+
+                <section class="legal-section">
+                    <h2> Условия возврата средств</h2>
+                    <ul>
+                        <li>Возврат осуществляется в PLEX токенах или USDT при наличии</li>
+                        <li>Возврат возможен в случае форс-мажорных обстоятельств</li>
+                        <li>Срок возврата зависит от текущей ликвидности фермы</li>
+                    </ul>
+                </section>
+
+                <section class="legal-section">
+                    <h2> Выкуп ценных животных</h2>
+                    <ul>
+                        <li>Фермер имеет право выкупить ценных производителей</li>
+                        <li>Выкуп производится по стартовой цене животного</li>
+                        <li>Владелец получает справедливую компенсацию</li>
+                    </ul>
+                </section>
+
+                <section class="legal-section">
+                    <h2> Ограничения ответственности</h2>
+                    <ul>
+                        <li>Ферма не несёт ответственности за рыночные риски</li>
+                        <li>Природные и техногенные форс-мажоры могут повлиять на результат</li>
+                        <li>Инвестиции связаны с рисками реальной экономики</li>
+                    </ul>
+                </section>
+            </div>
+        </div>
+    </section>
+
+</BaseLayout>
+
+<style>
+.legal-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.legal-section {
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+.legal-section h2 {
+    margin-bottom: 1rem;
+    color: var(--color-primary);
+}
+
+.legal-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.legal-section li {
+    margin-bottom: 0.75rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.legal-section li::before {
+    content: "";
+    position: absolute;
+    left: 0;
+    color: var(--color-primary);
+    font-weight: bold;
+}
+</style>
