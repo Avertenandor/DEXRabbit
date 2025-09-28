@@ -63,6 +63,11 @@ self.addEventListener("fetch", (event) => {
   const { request } = event;
   const url = new URL(request.url);
   
+  // Не кэшируем OG-ресурсы
+  if (url.pathname.startsWith('/og/')) {
+    return; // прямо в сеть, без кэша
+  }
+  
   // Пропускаем внешние запросы
   if (!url.origin.includes(self.location.origin)) {
     return;

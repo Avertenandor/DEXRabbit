@@ -4,6 +4,7 @@
   "description": "DEXRabbit - Платформа для токенизированного разведения кроликов",
   "main": "index.html",
   "scripts": {
+    "build:og": "node scripts/build-og.js",
     "format": "prettier -w .",
     "lint:html": "htmlhint \"**/*.html\"",
     "lint:css": "stylelint \"assets/css/**/*.css\"",
@@ -31,16 +32,23 @@
   },
   "homepage": "https://xn--80apagbbfxgmuj4j.site/",
   "devDependencies": {
-    "prettier": "^3.0.0",
+    "@napi-rs/canvas": "^0.1.80",
+    "canvas": "^3.2.0",
     "eslint": "^8.50.0",
-    "stylelint": "^15.10.0",
     "htmlhint": "^1.1.4",
-    "linkinator": "^5.0.0",
-    "lighthouse": "^11.0.0",
     "husky": "^8.0.0",
-    "lint-staged": "^14.0.0",
-    "imagemin": "^8.0.0",
+    "imagemin": "^8.0.1",
     "imagemin-mozjpeg": "^10.0.0",
-    "imagemin-pngquant": "^9.0.0"
-  }
+    "imagemin-pngquant": "^9.0.2",
+    "lighthouse": "^11.0.0",
+    "linkinator": "^5.0.0",
+    "lint-staged": "^14.0.0",
+    "prettier": "^3.0.0",
+    "sharp": "^0.34.4",
+    "stylelint": "^15.10.0"
+  },
+  "directories": {
+    "doc": "docs"
+  },
+  "type": "commonjs"
 }

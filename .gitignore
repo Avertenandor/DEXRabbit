@@ -72,6 +72,8 @@ jspm_packages/
 # Gatsby files
 .cache/
 public
+# Исключение для OG изображений
+!public/og/
 
 # Storybook build outputs
 .out
