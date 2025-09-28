@@ -8,22 +8,22 @@ const ASSETS = [
 ];
 
 self.addEventListener("install", (e) => {
-  console.log(" SW: Installing...");
+  console.log("🔧 SW: Installing...");
   e.waitUntil(
     caches.open(CACHE).then((cache) => {
-      console.log(" SW: Caching assets");
+      console.log("📦 SW: Caching assets");
       return cache.addAll(ASSETS);
     })
   );
 });
 
 self.addEventListener("activate", (e) => {
-  console.log(" SW: Activating...");
+  console.log("⚡ SW: Activating...");
   e.waitUntil(
     caches.keys().then(keys =>
       Promise.all(
         keys.filter(k => k !== CACHE).map(k => {
-          console.log(" SW: Deleting old cache:", k);
+          console.log("🗑️ SW: Deleting old cache:", k);
           return caches.delete(k);
         })
       )

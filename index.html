@@ -3,16 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>DEXRabbit  токенизированная ферма кроликов</title>
-    <meta name="description" content=" Инвестируйте в токенизированных кроликов, получайте PLEX токены и участвуйте в реальной экономике фермы в Подольске">
+    <title>DEXRabbit — токенизированная ферма кроликов</title>
+    <meta name="description" content="🐰 Инвестируйте в токенизированных кроликов, получайте PLEX токены и участвуйте в реальной экономике фермы в Подольске">
     
     <link rel="manifest" href="/manifest.webmanifest">
     <meta name="theme-color" content="#4a90e2">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     
-    <meta property="og:title" content="DEXRabbit  токенизированная ферма кроликов">
-    <meta property="og:description" content=" Инвестируйте в токенизированных кроликов, получайте PLEX токены">
+    <meta property="og:title" content="DEXRabbit — токенизированная ферма кроликов">
+    <meta property="og:description" content="🐰 Инвестируйте в токенизированных кроликов, получайте PLEX токены">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="DEXRabbit">
     
@@ -85,7 +85,7 @@
 <body>
     <section class="hero">
         <div class="container">
-            <h1> DEXRabbit</h1>
+            <h1>🐰 DEXRabbit</h1>
             <p>Первая в мире токенизированная ферма кроликов.<br>Инвестируйте в реальных животных, получайте PLEX токены</p>
             
             <div class="stats-grid">
@@ -108,12 +108,13 @@
     <section class="section">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title"> Курс PLEX Token</h2>
+                <h2 class="section-title">📊 Курс PLEX Token</h2>
                 <p>Реальное время, BSC сеть</p>
             </div>
             
             <div class="widget-container">
                 <iframe
+                    id="geckoterminal-embed"
                     title="GeckoTerminal PLEX/WBNB"
                     src="https://www.geckoterminal.com/ru/bsc/pools/0x41d9650faf3341cbf8947fd8063a1fc88dbf1889?embed=1&info=1&swaps=1&grayscale=0&light_chart=0&chart_type=price&resolution=15m"
                     frameborder="0" loading="lazy" referrerpolicy="no-referrer"
@@ -128,26 +129,26 @@
     <section class="section" style="background: #f8f9fa;">
         <div class="container">
             <div class="section-header">
-                <h2 class="section-title"> Как это работает</h2>
+                <h2 class="section-title">🎯 Как это работает</h2>
             </div>
             
             <div class="features-grid">
                 <div class="feature-card">
-                    <div class="feature-icon"></div>
+                    <div class="feature-icon">💰</div>
                     <h3>Инвестиции</h3>
                     <p>Вкладывайте от 100 до 2000 USDT в Круг А, получайте долю от прибыли фермы</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon"></div>
+                    <div class="feature-icon">🐰</div>
                     <h3>Персональный кролик</h3>
                     <p>Покупка животного с правом на прибыль от продажи потомства</p>
                 </div>
                 
                 <div class="feature-card">
-                    <div class="feature-icon"></div>
+                    <div class="feature-icon">🤝</div>
                     <h3>Партнёрство</h3>
-                    <p>3 уровня  5% от вложений и прибыли ваших рефералов</p>
+                    <p>3 уровня × 5% от вложений и прибыли ваших рефералов</p>
                 </div>
             </div>
         </div>
@@ -155,26 +156,34 @@
 
     <section class="hero" style="padding: 3rem 0;">
         <div class="container">
-            <h2> Начать инвестировать</h2>
+            <h2>🚀 Начать инвестировать</h2>
             <p>Гарантирован возврат вклада. Прибыль зависит от результатов фермы</p>
             
             <div style="margin-top: 2rem;">
-                <a href="https://t.me/dexrabbit_bot" class="btn btn-primary"> Инвестировать</a>
-                <a href="https://t.me/dexrabbit_channel" class="btn btn-outline" style="color: white; border-color: white;"> Связаться</a>
+                <a href="https://t.me/dexrabbit_bot" class="btn btn-primary">💰 Инвестировать</a>
+                <a href="https://t.me/dexrabbit_channel" class="btn btn-outline" style="color: white; border-color: white;">📞 Связаться</a>
             </div>
         </div>
     </section>
 
     <script>
-        window.analytics = { trackEvent: (e, d) => console.log('', e, d) };
+        // Продакшн оптимизации
+        window.analytics = { trackEvent: (e, d) => console.log('📊', e, d) };
+        
+        // Service Worker registration
         if ('serviceWorker' in navigator && location.hostname !== 'localhost') {
             window.addEventListener('load', () => {
                 navigator.serviceWorker.register('/sw.js')
-                    .then(reg => console.log(' SW:', reg.scope))
-                    .catch(err => console.log(' SW error:', err));
+                    .then(reg => console.log('✅ SW:', reg.scope))
+                    .catch(err => console.log('❌ SW error:', err));
             });
         }
+        
+        // Базовые события
         analytics.trackEvent('page_view', { page: 'home', timestamp: Date.now() });
     </script>
+    
+    <!-- Production Optimizer -->
+    <script src="/production-optimizer.js"></script>
 </body>
 </html>
