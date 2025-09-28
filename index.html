@@ -1,0 +1,180 @@
+﻿<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEXRabbit  токенизированная ферма кроликов</title>
+    <meta name="description" content=" Инвестируйте в токенизированных кроликов, получайте PLEX токены и участвуйте в реальной экономике фермы в Подольске">
+    
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#4a90e2">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    
+    <meta property="og:title" content="DEXRabbit  токенизированная ферма кроликов">
+    <meta property="og:description" content=" Инвестируйте в токенизированных кроликов, получайте PLEX токены">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="DEXRabbit">
+    
+    <style>
+        :root {
+            --color-primary: #4a90e2;
+            --color-secondary: #7b68ee;
+        }
+        * { box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            margin: 0; padding: 0; line-height: 1.6; color: #333; background: #f8f9fa;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1rem; }
+        .hero {
+            background: linear-gradient(135deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+            color: white; padding: 4rem 0; text-align: center;
+        }
+        .hero h1 { font-size: 3rem; margin-bottom: 1rem; font-weight: 700; }
+        .hero p { font-size: 1.3rem; opacity: 0.9; max-width: 600px; margin: 0 auto 2rem; }
+        .stats-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem; margin-top: 3rem;
+        }
+        .stat-card {
+            background: rgba(255,255,255,0.1); padding: 2rem; border-radius: 16px; 
+            backdrop-filter: blur(10px);
+        }
+        .stat-number { font-size: 2.5rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .section { padding: 4rem 0; }
+        .widget-container {
+            background: white; border-radius: 16px; padding: 1rem; 
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1); overflow: hidden; 
+            aspect-ratio: 16/9; margin: 2rem 0;
+        }
+        .features-grid {
+            display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem; margin-top: 2rem;
+        }
+        .feature-card {
+            background: white; padding: 2rem; border-radius: 16px; 
+            box-shadow: 0 4px 16px rgba(0,0,0,0.1); text-align: center;
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover { transform: translateY(-4px); }
+        .feature-icon { font-size: 3rem; margin-bottom: 1rem; }
+        .btn {
+            display: inline-block; padding: 1rem 2rem; border-radius: 12px;
+            text-decoration: none; font-weight: 500; transition: all 0.3s ease;
+            border: none; cursor: pointer; font-size: 1.1rem; margin: 0.5rem;
+        }
+        .btn-primary { background: var(--color-primary); color: white; }
+        .btn-primary:hover { background: #3a7bc8; transform: translateY(-2px); }
+        .btn-outline { 
+            background: transparent; color: var(--color-primary); 
+            border: 2px solid var(--color-primary); 
+        }
+        .section-header { text-align: center; margin-bottom: 3rem; }
+        .section-title { 
+            font-size: 2.5rem; font-weight: 700; margin-bottom: 1rem; 
+            color: var(--color-primary); 
+        }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .stats-grid { grid-template-columns: 1fr; gap: 1rem; }
+            .features-grid { grid-template-columns: 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <section class="hero">
+        <div class="container">
+            <h1> DEXRabbit</h1>
+            <p>Первая в мире токенизированная ферма кроликов.<br>Инвестируйте в реальных животных, получайте PLEX токены</p>
+            
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">150+</div>
+                    <div>Кроликов на ферме</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div>Активных инвесторов</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">₽2.5М+</div>
+                    <div>Общий объём</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"> Курс PLEX Token</h2>
+                <p>Реальное время, BSC сеть</p>
+            </div>
+            
+            <div class="widget-container">
+                <iframe
+                    title="GeckoTerminal PLEX/WBNB"
+                    src="https://www.geckoterminal.com/ru/bsc/pools/0x41d9650faf3341cbf8947fd8063a1fc88dbf1889?embed=1&info=1&swaps=1&grayscale=0&light_chart=0&chart_type=price&resolution=15m"
+                    frameborder="0" loading="lazy" referrerpolicy="no-referrer"
+                    sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+                    allow="clipboard-write"
+                    style="width:100%;height:100%;border-radius:16px;">
+                </iframe>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" style="background: #f8f9fa;">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"> Как это работает</h2>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>Инвестиции</h3>
+                    <p>Вкладывайте от 100 до 2000 USDT в Круг А, получайте долю от прибыли фермы</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>Персональный кролик</h3>
+                    <p>Покупка животного с правом на прибыль от продажи потомства</p>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>Партнёрство</h3>
+                    <p>3 уровня  5% от вложений и прибыли ваших рефералов</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="hero" style="padding: 3rem 0;">
+        <div class="container">
+            <h2> Начать инвестировать</h2>
+            <p>Гарантирован возврат вклада. Прибыль зависит от результатов фермы</p>
+            
+            <div style="margin-top: 2rem;">
+                <a href="https://t.me/dexrabbit_bot" class="btn btn-primary"> Инвестировать</a>
+                <a href="https://t.me/dexrabbit_channel" class="btn btn-outline" style="color: white; border-color: white;"> Связаться</a>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        window.analytics = { trackEvent: (e, d) => console.log('', e, d) };
+        if ('serviceWorker' in navigator && location.hostname !== 'localhost') {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(reg => console.log(' SW:', reg.scope))
+                    .catch(err => console.log(' SW error:', err));
+            });
+        }
+        analytics.trackEvent('page_view', { page: 'home', timestamp: Date.now() });
+    </script>
+</body>
+</html>
