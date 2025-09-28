@@ -43,6 +43,7 @@
                 
                 <div class="nav-links" id="nav-menu">
                     <a href="#about">О проекте</a>
+                    <a href="#gallery">📷 Галерея</a>
                     <a href="#how-it-works">Как работает</a>
                     <a href="#investment">Инвестиции</a>
                     <a href="#tokenization">Токенизация</a>
@@ -147,6 +148,65 @@
                             <li>Создание франшизы модели</li>
                         </ul>
                     </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery -->
+        <section class="gallery-section" id="gallery">
+            <div class="container">
+                <div class="section-header">
+                    <span class="overline">Галерея</span>
+                    <h2>📸 Наши кролики</h2>
+                    <p>Познакомьтесь с обитателями нашей фермы — здоровые, счастливые кролики различных пород</p>
+                </div>
+
+                <div class="gallery-grid">
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="/gallery/photo_1_2025-09-28_18-05-40.jpg" alt="Белый кролик породы Новозеландская" loading="lazy">
+                        <div class="gallery-caption">Новозеландский белый — отличная мясная порода</div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="/gallery/photo_2_2025-09-28_18-05-40.jpg" alt="Серый кролик Фландр" loading="lazy">
+                        <div class="gallery-caption">Фландр — гигантская порода до 10 кг</div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="/gallery/photo_3_2025-09-28_18-07-54.jpg" alt="Кролики в вольере" loading="lazy">
+                        <div class="gallery-caption">Просторные вольеры для комфортной жизни</div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="/gallery/photo_4_2025-09-28_18-05-40.jpg" alt="Калифорнийский кролик" loading="lazy">
+                        <div class="gallery-caption">Калифорнийская порода — высокая продуктивность</div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="/gallery/photo_5_2025-09-28_18-07-54.jpg" alt="Кормление кроликов" loading="lazy">
+                        <div class="gallery-caption">Сбалансированное питание — залог здоровья</div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="/gallery/photo_6_2025-09-28_18-05-40.jpg" alt="Крольчата" loading="lazy">
+                        <div class="gallery-caption">Малыши в возрасте 3 недель</div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="/gallery/photo_7_2025-09-28_18-07-54.jpg" alt="Племенной кролик" loading="lazy">
+                        <div class="gallery-caption">Племенной самец-производитель</div>
+                    </div>
+                    
+                    <div class="gallery-item" onclick="openLightbox(this)">
+                        <img src="/gallery/photo_8_2025-09-28_18-05-40.jpg" alt="Рекс кролик" loading="lazy">
+                        <div class="gallery-caption">Рекс — ценная меховая порода</div>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 2rem; text-align: center;">
+                    <p>Все животные содержатся в чистых, просторных клетках с постоянным доступом к свежей воде и качественному корму. 
+                    Ветеринарный контроль осуществляется еженедельно.</p>
+                    <a href="#investment" class="btn" style="margin-top: 1rem;">Выбрать кролика для инвестирования</a>
                 </div>
             </div>
         </section>
@@ -932,6 +992,28 @@
 
         // Simple analytics
         console.log('🐰 Welcome to DEXRabbit - Tokenized Rabbit Farm!');
+
+        // Lightbox functionality
+        function openLightbox(element) {
+            const img = element.querySelector('img');
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox active';
+            lightbox.innerHTML = `
+                <span class="lightbox-close" onclick="closeLightbox(this)">&times;</span>
+                <img src="${img.src}" alt="${img.alt}">
+            `;
+            document.body.appendChild(lightbox);
+            lightbox.onclick = function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox(this);
+                }
+            };
+        }
+
+        function closeLightbox(element) {
+            const lightbox = element.closest ? element.closest('.lightbox') : element;
+            lightbox.remove();
+        }
     </script>
 </body>
 </html>
