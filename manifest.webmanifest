@@ -1,21 +1,47 @@
 ﻿{
   "name": "DEXRabbit — токенизированная ферма кроликов",
   "short_name": "DEXRabbit",
+  "description": "🐰 Инвестируйте в токенизированных кроликов, получайте PLEX токены",
   "start_url": "/",
   "scope": "/",
   "display": "standalone",
-  "background_color": "#0b0f14",
-  "theme_color": "#0b0f14",
+  "background_color": "#4a90e2",
+  "theme_color": "#4a90e2",
+  "orientation": "portrait-primary",
+  "categories": ["finance", "business", "lifestyle"],
+  "lang": "ru",
   "icons": [
     {
       "src": "/favicon.ico",
-      "sizes": "16x16 32x32",
-      "type": "image/x-icon"
+      "sizes": "16x16 32x32 48x48",
+      "type": "image/x-icon",
+      "purpose": "any"
     },
     {
       "src": "/favicon.svg",
       "sizes": "any",
-      "type": "image/svg+xml"
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "192x192",
+      "type": "image/svg+xml",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon.svg",
+      "sizes": "512x512", 
+      "type": "image/svg+xml",
+      "purpose": "any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "1280x720",
+      "type": "image/svg+xml",
+      "form_factor": "wide"
     }
   ]
 }
