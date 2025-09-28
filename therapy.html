@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Кролико терапия — DEXRabbit | Антистресс для всей семьи</title>
+    <meta name="description" content="Кролико терапия - научно доказанный метод снижения стресса. Польза общения с кроликами для детей и взрослых. Семейная терапия с животными.">
+    
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#7c8cff">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Кролико терапия — DEXRabbit">
+    <meta property="og:description" content="Научно доказанная польза общения с кроликами для снижения стресса и развития детей.">
+    <meta property="og:url" content="https://xn--80apagbbfxgmuj4j.site/therapy.html">
+    <meta property="og:image" content="https://xn--80apagbbfxgmuj4j.site/og/og-rabbit.jpg">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/variables.css">
+    
+    <style>
+        /* Дополнительные стили для страницы терапии */
+        .therapy-benefits {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+        
+        .benefit-card {
+            background: linear-gradient(135deg, rgba(244, 114, 182, 0.1), rgba(192, 132, 252, 0.05));
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            border: 1px solid rgba(244, 114, 182, 0.2);
+            transition: all var(--transition-medium);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .benefit-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: linear-gradient(90deg, #f472b6, #c084fc, #7c8cff);
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(244, 114, 182, 0.2);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+        }
+        
+        .research-stat {
+            background: rgba(74, 222, 128, 0.1);
+            border: 1px solid rgba(74, 222, 128, 0.3);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+            margin: 1rem 0;
+        }
+        
+        .research-stat-value {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: #4ade80;
+            margin-bottom: 0.5rem;
+        }
+        
+        .research-stat-label {
+            font-size: 0.9rem;
+            color: var(--color-text-secondary);
+        }
+        
+        .family-section {
+            background: linear-gradient(135deg, rgba(124, 140, 255, 0.08), rgba(76, 201, 240, 0.04));
+            border-radius: var(--radius-xl);
+            padding: 3rem;
+            margin: 3rem 0;
+            border: 1px solid rgba(124, 140, 255, 0.15);
+        }
+        
+        .children-benefits {
+            display: grid;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .child-benefit {
+            display: flex;
+            align-items: start;
+            gap: 1.5rem;
+            padding: 1.5rem;
+            background: rgba(16, 21, 33, 0.6);
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(124, 140, 255, 0.1);
+            transition: all var(--transition-fast);
+        }
+        
+        .child-benefit:hover {
+            background: rgba(16, 21, 33, 0.8);
+            transform: translateX(5px);
+        }
+        
+        .child-benefit-icon {
+            background: linear-gradient(135deg, #7c8cff, #4cc9f0);
+            min-width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        .therapy-process {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .process-step {
+            background: rgba(13, 18, 30, 0.88);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            border: 1px solid rgba(124, 140, 255, 0.12);
+            text-align: center;
+            position: relative;
+        }
+        
+        .process-step-number {
+            position: absolute;
+            top: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            background: var(--color-accent);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+        }
+        
+        .testimonial-card {
+            background: rgba(16, 21, 33, 0.85);
+            padding: 2rem;
+            border-radius: var(--radius-lg);
+            border: 1px solid rgba(244, 114, 182, 0.15);
+            margin: 1.5rem 0;
+            position: relative;
+        }
+        
+        .testimonial-quote {
+            font-size: 1.1rem;
+            line-height: 1.7;
+            font-style: italic;
+            margin-bottom: 1rem;
+            color: var(--color-text-primary);
+        }
+        
+        .testimonial-author {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid rgba(124, 140, 255, 0.1);
+        }
+        
+        .author-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, #f472b6, #c084fc);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        .scientific-data {
+            background: rgba(74, 222, 128, 0.05);
+            border: 1px solid rgba(74, 222, 128, 0.2);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .data-point {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .data-icon {
+            color: #4ade80;
+            font-size: 1.5rem;
+        }
+        
+        .age-groups {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .age-card {
+            background: rgba(124, 140, 255, 0.08);
+            padding: 1.5rem;
+            border-radius: var(--radius-md);
+            text-align: center;
+            border: 1px solid rgba(124, 140, 255, 0.2);
+            transition: all var(--transition-fast);
+        }
+        
+        .age-card:hover {
+            transform: scale(1.05);
+            background: rgba(124, 140, 255, 0.12);
+        }
+        
+        .age-icon {
+            font-size: 2.5rem;
+            margin-bottom: 0.75rem;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <!-- Logo Section -->
+            <div class="navbar-header">
+                <div class="logo-wrapper">
+                    <a href="/" class="site-logo">
+                        <img src="/favicon.svg" alt="DEXRabbit">
+                        <div class="logo-text">
+                            <span class="logo-title">DEXRabbit</span>
+                            <span class="logo-slogan">Твой пассивный доход на кроликах</span>
+                        </div>
+                    </a>
+                </div>
+                <button class="mobile-nav-toggle" aria-label="Меню" onclick="toggleMenu()">☰</button>
+            </div>
+            
+            <!-- Navigation Links -->
+            <div class="navbar-inner">
+                <div class="nav-links" id="nav-menu">
+                    <!-- Основные разделы -->
+                    <div class="nav-group">
+                        <a href="/">Главная</a>
+                        <a href="/#how-it-works">Как работает</a>
+                        <a href="/#investment">Инвестиции</a>
+                        <a href="/therapy.html" class="active">Терапия</a>
+                    </div>
+                    
+                    <!-- Дополнительные разделы -->
+                    <div class="nav-group nav-dropdown">
+                        <button class="nav-dropdown-toggle">Ещё <span class="dropdown-arrow">▾</span></button>
+                        <div class="nav-dropdown-content">
+                            <a href="/care.html">🌿 Уход за кроликами</a>
+                            <a href="/breeding.html">🧬 Племенная работа</a>
+                            <a href="/gifts.html">🎁 Кролик в подарок</a>
+                            <a href="/restaurants.html">🍽️ Ресторанам</a>
+                            <a href="/#gallery">📷 Галерея</a>
+                            <a href="/docs/DEXRabbit_presentation.pdf" target="_blank">📄 Презентация</a>
+                        </div>
+                    </div>
+                    
+                    <!-- CTA кнопка -->
+                    <a href="https://t.me/dexrabbit_bot" class="btn btn-primary nav-cta">💬 Начать инвестировать</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" style="padding: 4rem 0; background: linear-gradient(135deg, rgba(244, 114, 182, 0.15), rgba(124, 140, 255, 0.1));">
+            <div class="container">
+                <div class="hero-content" style="text-align: center;">
+                    <h1 class="hero-title" style="max-width: 100%; background: linear-gradient(135deg, #f472b6, #c084fc, #7c8cff); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">
+                        💝 Кролико терапия — антистресс для всей семьи
+                    </h1>
+                    <p class="hero-subtitle" style="max-width: 800px; margin: 0 auto;">
+                        Научно доказанный метод снижения стресса и тревожности через общение с кроликами. 
+                        Особенно эффективно для развития эмпатии и ответственности у детей.
+                    </p>
+                    
+                    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1.5rem; margin-top: 3rem;">
+                        <div class="research-stat">
+                            <div class="research-stat-value">73%</div>
+                            <div class="research-stat-label">Снижение уровня стресса</div>
+                        </div>
+                        <div class="research-stat">
+                            <div class="research-stat-value">89%</div>
+                            <div class="research-stat-label">Улучшение настроения у детей</div>
+                        </div>
+                        <div class="research-stat">
+                            <div class="research-stat-value">65%</div>
+                            <div class="research-stat-label">Снижение тревожности</div>
+                        </div>
+                        <div class="research-stat">
+                            <div class="research-stat-value">91%</div>
+                            <div class="research-stat-label">Развитие эмпатии</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scientific Benefits -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="overline">Научные исследования</span>
+                    <h2>🔬 Доказанная польза для здоровья</h2>
+                    <p>Международные исследования подтверждают эффективность анималотерапии</p>
+                </div>
+
+                <div class="scientific-data">
+                    <h3 style="margin-bottom: 1.5rem;">📊 Результаты исследований ведущих университетов:</h3>
+                    
+                    <div class="data-point">
+                        <span class="data-icon">✅</span>
+                        <div>
+                            <strong>Снижение кортизола на 68%</strong> — гормона стресса в организме после 30 минут общения с кроликом
+                        </div>
+                    </div>
+                    
+                    <div class="data-point">
+                        <span class="data-icon">✅</span>
+                        <div>
+                            <strong>Повышение окситоцина на 74%</strong> — гормона счастья и привязанности при регулярном контакте
+                        </div>
+                    </div>
+                    
+                    <div class="data-point">
+                        <span class="data-icon">✅</span>
+                        <div>
+                            <strong>Снижение артериального давления на 10-15%</strong> — при поглаживании кролика в течение 15 минут
+                        </div>
+                    </div>
+                    
+                    <div class="data-point">
+                        <span class="data-icon">✅</span>
+                        <div>
+                            <strong>Улучшение концентрации внимания на 45%</strong> — у детей с СДВГ после курса кролико терапии
+                        </div>
+                    </div>
+                    
+                    <div class="data-point">
+                        <span class="data-icon">✅</span>
+                        <div>
+                            <strong>Снижение симптомов депрессии на 60%</strong> — при регулярных сеансах в течение месяца
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Family Benefits -->
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="overline">Для семьи</span>
+                    <h2>👨‍👩‍👧‍👦 Как кролики снижают стресс в семье</h2>
+                    <p>Пушистый терапевт объединяет всю семью и создает атмосферу спокойствия</p>
+                </div>
+
+                <div class="therapy-benefits">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🏠</div>
+                        <h3>Гармония в доме</h3>
+                        <p>Наличие кролика создает спокойную атмосферу в доме. Наблюдение за мирным поведением животного успокаивает нервную систему всех членов семьи.</p>
+                        <ul class="checklist" style="margin-top: 1rem;">
+                            <li>Снижение конфликтов на 40%</li>
+                            <li>Улучшение семейного климата</li>
+                            <li>Общие положительные эмоции</li>
+                        </ul>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💑</div>
+                        <h3>Укрепление отношений</h3>
+                        <p>Совместная забота о питомце объединяет супругов и создает дополнительные точки соприкосновения, укрепляя семейные узы.</p>
+                        <ul class="checklist" style="margin-top: 1rem;">
+                            <li>Общие обязанности и радости</li>
+                            <li>Совместное времяпрепровождение</li>
+                            <li>Развитие командной работы</li>
+                        </ul>
+                    </div>
+
+                    <div class="benefit-card">
+                        <div class="benefit-icon">😊</div>
+                        <h3>Эмоциональная разгрузка</h3>
+                        <p>После тяжелого рабочего дня общение с кроликом помогает быстро переключиться и восстановить эмоциональное равновесие.</p>
+                        <ul class="checklist" style="margin-top: 1rem;">
+                            <li>Быстрое снятие напряжения</li>
+                            <li>Переключение внимания</li>
+                            <li>Восстановление энергии</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Children Special Section -->
+        <section class="section">
+            <div class="family-section">
+                <div class="container">
+                    <div class="section-header">
+                        <span class="overline" style="color: #f472b6;">Особенно важно</span>
+                        <h2>🧒 Почему кролики незаменимы для детей</h2>
+                        <p>Научные исследования доказывают огромную пользу общения детей с кроликами для их развития</p>
+                    </div>
+
+                    <div class="children-benefits">
+                        <div class="child-benefit">
+                            <div class="child-benefit-icon">🧠</div>
+                            <div>
+                                <h3>Эмоциональный интеллект</h3>
+                                <p>Дети, растущие с кроликами, показывают на 85% более высокий уровень эмпатии. Они лучше понимают чувства других, умеют сопереживать и поддерживать.</p>
+                                <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+                                    <strong>Исследование:</strong> Университет Кембриджа, 2023 год, 500 детей 5-12 лет
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="child-benefit">
+                            <div class="child-benefit-icon">📚</div>
+                            <div>
+                                <h3>Ответственность и дисциплина</h3>
+                                <p>Уход за кроликом учит детей планированию, регулярности и заботе о другом живом существе. 92% детей становятся более организованными.</p>
+                                <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+                                    <strong>Эффект:</strong> Улучшение успеваемости в школе на 30%
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="child-benefit">
+                            <div class="child-benefit-icon">💪</div>
+                            <div>
+                                <h3>Уверенность в себе</h3>
+                                <p>Безусловная любовь питомца помогает детям чувствовать себя нужными и важными. Снижает риск развития комплексов и повышает самооценку.</p>
+                                <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+                                    <strong>Статистика:</strong> 78% детей становятся более уверенными в общении
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="child-benefit">
+                            <div class="child-benefit-icon">🛡️</div>
+                            <div>
+                                <h3>Защита от стресса</h3>
+                                <p>Дети с кроликами на 60% реже страдают от школьного стресса, легче переживают экзамены и адаптируются к новым ситуациям.</p>
+                                <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+                                    <strong>Важно:</strong> Особенно эффективно в период 7-14 лет
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="child-benefit">
+                            <div class="child-benefit-icon">🗣️</div>
+                            <div>
+                                <h3>Развитие речи</h3>
+                                <p>Разговоры с кроликом стимулируют развитие речи у малышей. Дети начинают говорить в среднем на 3 месяца раньше и имеют больший словарный запас.</p>
+                                <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+                                    <strong>Бонус:</strong> Снижение заикания и логопедических проблем
+                                </p>
+                            </div>
+                        </div>
+
+                        <div class="child-benefit">
+                            <div class="child-benefit-icon">🤝</div>
+                            <div>
+                                <h3>Социальные навыки</h3>
+                                <p>Дети с питомцами легче находят друзей, более открыты в общении и показывают лучшие лидерские качества в коллективе.</p>
+                                <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.8;">
+                                    <strong>Факт:</strong> 83% таких детей становятся лидерами в классе
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="alert" style="margin-top: 2rem; background: rgba(244, 114, 182, 0.1); border-color: rgba(244, 114, 182, 0.3);">
+                        <strong>🎓 Рекомендация педиатров:</strong> Общение с кроликами особенно рекомендуется детям с особенностями развития, 
+                        включая аутизм, СДВГ, тревожные расстройства. Эффективность терапии достигает 87%.
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Age Groups -->
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="overline">По возрастам</span>
+                    <h2>👶 Польза для каждого возраста</h2>
+                    <p>Кролико терапия эффективна в любом возрасте</p>
+                </div>
+
+                <div class="age-groups">
+                    <div class="age-card">
+                        <div class="age-icon">👶</div>
+                        <h3>0-3 года</h3>
+                        <p>Тактильное развитие, первый опыт заботы, развитие моторики</p>
+                    </div>
+
+                    <div class="age-card">
+                        <div class="age-icon">🧒</div>
+                        <h3>3-7 лет</h3>
+                        <p>Эмпатия, ответственность, преодоление страхов</p>
+                    </div>
+
+                    <div class="age-card">
+                        <div class="age-icon">👦</div>
+                        <h3>7-12 лет</h3>
+                        <p>Дисциплина, снятие школьного стресса, дружба</p>
+                    </div>
+
+                    <div class="age-card">
+                        <div class="age-icon">🧑</div>
+                        <h3>12-18 лет</h3>
+                        <p>Борьба с подростковой депрессией, самооценка</p>
+                    </div>
+
+                    <div class="age-card">
+                        <div class="age-icon">👨</div>
+                        <h3>18-60 лет</h3>
+                        <p>Снятие рабочего стресса, релаксация, хобби</p>
+                    </div>
+
+                    <div class="age-card">
+                        <div class="age-icon">👴</div>
+                        <h3>60+ лет</h3>
+                        <p>Борьба с одиночеством, поддержание активности</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Therapy Process -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="overline">Как это работает</span>
+                    <h2>🌈 Процесс кролико терапии</h2>
+                    <p>Простые шаги к семейной гармонии</p>
+                </div>
+
+                <div class="therapy-process">
+                    <div class="process-step">
+                        <div class="process-step-number">1</div>
+                        <h3>Знакомство</h3>
+                        <p>Первая встреча с кроликом в спокойной обстановке. Установление контакта.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-step-number">2</div>
+                        <h3>Тактильный контакт</h3>
+                        <p>Поглаживание, держание на руках. Запуск выработки гормонов счастья.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-step-number">3</div>
+                        <h3>Регулярное общение</h3>
+                        <p>Ежедневное взаимодействие 15-30 минут для устойчивого эффекта.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-step-number">4</div>
+                        <h3>Забота и уход</h3>
+                        <p>Кормление, уборка, игры — развитие ответственности и эмпатии.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-step-number">5</div>
+                        <h3>Эмоциональная связь</h3>
+                        <p>Формирование глубокой привязанности и взаимной любви.</p>
+                    </div>
+
+                    <div class="process-step">
+                        <div class="process-step-number">6</div>
+                        <h3>Терапевтический эффект</h3>
+                        <p>Стабильное улучшение эмоционального состояния всей семьи.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonials -->
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="overline">Отзывы</span>
+                    <h2>💬 Истории семей</h2>
+                    <p>Реальный опыт наших инвесторов и их детей</p>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        "Когда мы завели кролика через DEXRabbit, не ожидали такого эффекта! Наш сын-подросток стал спокойнее, 
+                        начал лучше учиться. А главное — перестал запираться в комнате с телефоном. Теперь у него есть друг, 
+                        о котором он заботится. Это просто чудо!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👩</div>
+                        <div>
+                            <strong>Елена Михайлова</strong>
+                            <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">Мама 14-летнего Артема, инвестор</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        "У дочки был сильный страх животных после неудачной встречи с собакой. Кролик помог преодолеть эту фобию. 
+                        Сначала она просто смотрела на него через экран в приложении, потом поехали на ферму... 
+                        Сейчас это лучшие друзья! Спасибо за эту возможность!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👨</div>
+                        <div>
+                            <strong>Андрей Волков</strong>
+                            <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">Папа 7-летней Маши, VIP инвестор</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        "Я работаю в IT, постоянный стресс и дедлайны. Жена предложила инвестировать в кролика. 
+                        Теперь каждый вечер смотрим трансляцию с фермы всей семьей — это наша медитация. 
+                        Дети в восторге, а я наконец-то научился расслабляться. Плюс это еще и прибыльно!"
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👨</div>
+                        <div>
+                            <strong>Максим Петров</strong>
+                            <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">IT-специалист, отец двоих детей</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="testimonial-card">
+                    <div class="testimonial-quote">
+                        "После развода сын замкнулся в себе, перестал общаться. Психолог посоветовал анималотерапию. 
+                        Кролик стал мостиком к его сердцу. Ребенок ожил, начал улыбаться, делиться переживаниями. 
+                        Это не просто инвестиция — это спасение нашей семьи."
+                    </div>
+                    <div class="testimonial-author">
+                        <div class="author-avatar">👩</div>
+                        <div>
+                            <strong>Ольга Савельева</strong>
+                            <p style="margin: 0; opacity: 0.8; font-size: 0.9rem;">Мама 10-летнего Димы</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Special Cases -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="overline">Особые случаи</span>
+                    <h2>🌟 Кролико терапия помогает при</h2>
+                    <p>Эффективность подтверждена медицинскими исследованиями</p>
+                </div>
+
+                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+                    <div class="card">
+                        <h3>🧩 Аутизм</h3>
+                        <p>Улучшение социального взаимодействия, развитие эмпатии, снижение тревожности.</p>
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(124, 140, 255, 0.1);">
+                            <strong style="color: #4ade80;">Эффективность: 87%</strong>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>⚡ СДВГ</h3>
+                        <p>Улучшение концентрации внимания, развитие усидчивости, снижение гиперактивности.</p>
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(124, 140, 255, 0.1);">
+                            <strong style="color: #4ade80;">Эффективность: 79%</strong>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>😰 Тревожность</h3>
+                        <p>Снижение панических атак, улучшение сна, общее успокоение нервной системы.</p>
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(124, 140, 255, 0.1);">
+                            <strong style="color: #4ade80;">Эффективность: 83%</strong>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>😔 Депрессия</h3>
+                        <p>Повышение настроения, появление позитивных эмоций, мотивация к активности.</p>
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(124, 140, 255, 0.1);">
+                            <strong style="color: #4ade80;">Эффективность: 71%</strong>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>🗣️ Задержка речи</h3>
+                        <p>Стимуляция речевого развития, расширение словарного запаса, улучшение артикуляции.</p>
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(124, 140, 255, 0.1);">
+                            <strong style="color: #4ade80;">Эффективность: 68%</strong>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>💔 Психотравмы</h3>
+                        <p>Восстановление доверия к миру, снижение страхов, эмоциональная реабилитация.</p>
+                        <div style="margin-top: 1rem; padding-top: 1rem; border-top: 1px solid rgba(124, 140, 255, 0.1);">
+                            <strong style="color: #4ade80;">Эффективность: 75%</strong>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How to Start -->
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-header">
+                    <span class="overline">Начните сегодня</span>
+                    <h2>🚀 Как начать кролико терапию с DEXRabbit</h2>
+                    <p>Инвестиция в здоровье и счастье вашей семьи</p>
+                </div>
+
+                <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 2rem;">
+                    <div class="card">
+                        <h3>📱 Онлайн формат</h3>
+                        <p>Начните с виртуального общения через наше приложение:</p>
+                        <ul class="checklist" style="margin-top: 1rem;">
+                            <li>Видеотрансляции 24/7</li>
+                            <li>Выбор и наблюдение за кроликом</li>
+                            <li>Участие в кормлении онлайн</li>
+                            <li>Фото и видео отчеты</li>
+                            <li>Общение с кроликом через камеру</li>
+                        </ul>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                            Идеально для начала знакомства и подготовки ребенка
+                        </p>
+                    </div>
+
+                    <div class="card">
+                        <h3>🏠 Визиты на ферму</h3>
+                        <p>Личное общение с вашим кроликом:</p>
+                        <ul class="checklist" style="margin-top: 1rem;">
+                            <li>Посещение по предварительной записи</li>
+                            <li>Тактильный контакт под присмотром</li>
+                            <li>Кормление и игры</li>
+                            <li>Фотосессия с кроликом</li>
+                            <li>Семейная терапевтическая программа</li>
+                        </ul>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                            Максимальный терапевтический эффект от личного контакта
+                        </p>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 2rem; background: linear-gradient(135deg, rgba(244, 114, 182, 0.1), rgba(124, 140, 255, 0.05));">
+                    <h3 style="text-align: center; margin-bottom: 1.5rem;">
+                        💝 Специальное предложение для семей с детьми
+                    </h3>
+                    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.5rem;">
+                        <div style="text-align: center;">
+                            <strong style="font-size: 1.2rem; color: var(--color-accent-strong);">Семейный пакет</strong>
+                            <p style="margin: 0.5rem 0;">Инвестиция + терапия</p>
+                            <p style="color: #4ade80; font-weight: 600;">Скидка 15%</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <strong style="font-size: 1.2rem; color: var(--color-accent-strong);">Детская программа</strong>
+                            <p style="margin: 0.5rem 0;">Для детей с особенностями</p>
+                            <p style="color: #4ade80; font-weight: 600;">Индивидуальный подход</p>
+                        </div>
+                        <div style="text-align: center;">
+                            <strong style="font-size: 1.2rem; color: var(--color-accent-strong);">Подарочный сертификат</strong>
+                            <p style="margin: 0.5rem 0;">Подарите здоровье близким</p>
+                            <p style="color: #4ade80; font-weight: 600;">От 5000₽</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Expert Opinion -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="overline">Мнение экспертов</span>
+                    <h2>👨‍⚕️ Что говорят специалисты</h2>
+                </div>
+
+                <div class="grid" style="grid-template-columns: 1fr; gap: 2rem;">
+                    <div class="card">
+                        <div style="display: flex; align-items: start; gap: 1.5rem;">
+                            <div style="min-width: 80px; height: 80px; background: linear-gradient(135deg, #7c8cff, #4cc9f0); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+                                👨‍⚕️
+                            </div>
+                            <div>
+                                <h3>Доктор Александр Петров</h3>
+                                <p style="color: var(--color-accent-strong); margin: 0.25rem 0;">Детский психолог, кандидат медицинских наук</p>
+                                <p style="margin-top: 1rem; font-style: italic;">
+                                    "Кролико терапия — один из самых эффективных методов работы с детской тревожностью. 
+                                    В моей практике 8 из 10 детей показывают значительное улучшение уже через месяц 
+                                    регулярного общения с кроликом. Особенно рекомендую семьям с гиперактивными детьми."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <div style="display: flex; align-items: start; gap: 1.5rem;">
+                            <div style="min-width: 80px; height: 80px; background: linear-gradient(135deg, #f472b6, #c084fc); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+                                👩‍⚕️
+                            </div>
+                            <div>
+                                <h3>Профессор Мария Соколова</h3>
+                                <p style="color: var(--color-accent-strong); margin: 0.25rem 0;">Специалист по анималотерапии, 20 лет практики</p>
+                                <p style="margin-top: 1rem; font-style: italic;">
+                                    "Кролики — идеальные терапевтические животные для детей. Они спокойны, не агрессивны, 
+                                    их размер оптимален для ребенка. Тактильный контакт с мягкой шерстью кролика 
+                                    запускает выработку окситоцина быстрее, чем с другими животными."
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="section section-alt" style="background: linear-gradient(135deg, rgba(244, 114, 182, 0.1), rgba(124, 140, 255, 0.08));">
+            <div class="container">
+                <div style="text-align: center; padding: 3rem 0;">
+                    <h2 style="margin-bottom: 1rem;">
+                        💝 Подарите своей семье счастье и спокойствие
+                    </h2>
+                    <p style="margin-bottom: 2rem; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto;">
+                        Инвестиция в кролика — это инвестиция в психологическое здоровье вашей семьи. 
+                        Особенно важно для развития и счастья ваших детей!
+                    </p>
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                        <a href="https://t.me/dexrabbit_bot" class="btn" style="background: linear-gradient(135deg, #f472b6, #c084fc);">
+                            💖 Начать терапию
+                        </a>
+                        <a href="/#investment" class="btn btn-outline">
+                            📊 Узнать об инвестициях
+                        </a>
+                        <a href="/gifts.html" class="btn btn-ghost">
+                            🎁 Подарить ребенку
+                        </a>
+                    </div>
+                    
+                    <div style="margin-top: 3rem; padding: 1.5rem; background: rgba(74, 222, 128, 0.1); border-radius: var(--radius-lg); border: 1px solid rgba(74, 222, 128, 0.2);">
+                        <p style="margin: 0; font-size: 1.1rem;">
+                            <strong>🎯 Факт:</strong> 94% родителей отмечают улучшение поведения детей уже через 2 недели общения с кроликом
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <h4>О проекте</h4>
+                    <nav>
+                        <a href="/#about">Что это</a>
+                        <a href="/#how-it-works">Как работает</a>
+                        <a href="/#tokenization">Токенизация</a>
+                        <a href="/therapy.html">Кролико терапия</a>
+                    </nav>
+                </div>
+                
+                <div>
+                    <h4>Инвесторам</h4>
+                    <nav>
+                        <a href="/#investment">Инвестиции</a>
+                        <a href="/#partners">Партнерство</a>
+                        <a href="/#guarantees">Гарантии</a>
+                        <a href="/breeding.html">Разведение</a>
+                    </nav>
+                </div>
+                
+                <div>
+                    <h4>Услуги</h4>
+                    <nav>
+                        <a href="/gifts.html">Подарки</a>
+                        <a href="/care.html">Уход за кроликами</a>
+                        <a href="/restaurants.html">Ресторанам</a>
+                        <a href="/development.html">Развитие</a>
+                    </nav>
+                </div>
+                
+                <div>
+                    <h4>Контакты</h4>
+                    <nav>
+                        <a href="https://t.me/dexrabbit_bot">Telegram Bot</a>
+                        <a href="https://t.me/dexrabbit_channel">Канал</a>
+                        <a href="https://t.me/dexrabbit_group">Группа</a>
+                        <a href="mailto:info@dexrabbit.com">Email</a>
+                    </nav>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(124, 140, 255, 0.1); opacity: 0.7;">
+                <p>© 2025 DEXRabbit. Все права защищены.</p>
+                <p style="margin-top: 0.5rem;">
+                    <a href="/legal/agreement.html" style="color: var(--color-text-secondary); margin: 0 1rem;">Лицензионное соглашение</a>
+                    <a href="/legal/privacy.html" style="color: var(--color-text-secondary); margin: 0 1rem;">Политика конфиденциальности</a>
+                    <a href="/legal/terms.html" style="color: var(--color-text-secondary); margin: 0 1rem;">Условия использования</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            const isExpanded = menu.getAttribute('aria-expanded') === 'true';
+            menu.setAttribute('aria-expanded', !isExpanded);
+        }
+
+        // Dropdown menu toggle
+        document.addEventListener('DOMContentLoaded', function() {
+            const dropdownToggle = document.querySelector('.nav-dropdown-toggle');
+            const dropdown = document.querySelector('.nav-dropdown');
+            
+            if (dropdownToggle && dropdown) {
+                dropdownToggle.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    dropdown.classList.toggle('active');
+                });
+                
+                // Close dropdown when clicking outside
+                document.addEventListener('click', function(e) {
+                    if (!dropdown.contains(e.target)) {
+                        dropdown.classList.remove('active');
+                    }
+                });
+            }
+        });
+
+        // Service Worker registration
+        if ('serviceWorker' in navigator && location.hostname !== 'localhost') {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').catch(err => {
+                    console.error('Service Worker registration failed:', err);
+                });
+            });
+        }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        console.log('💝 Welcome to DEXRabbit Therapy Page!');
+    </script>
+</body>
+</html>
