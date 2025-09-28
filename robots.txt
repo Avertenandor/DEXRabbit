@@ -1,24 +1,80 @@
-﻿User-agent: *
+User-agent: *
 Allow: /
 
 # Sitemap
 Sitemap: https://xn--80apagbbfxgmuj4j.site/sitemap.xml
-Sitemap: https://xn--80apagbbfxgmuj4j.site/sitemap-index.xml
-Sitemap: https://xn--80apagbbfxgmuj4j.site/sitemap-0.xml
 
 # Crawl-delay
 Crawl-delay: 1
 
+# Allow important pages explicitly
+Allow: /
+Allow: /index.html
+Allow: /investment-model.html
+Allow: /partnership.html
+Allow: /contacts.html
+Allow: /breeding.html
+Allow: /gifts.html
+Allow: /restaurants.html
+Allow: /care.html
+Allow: /therapy.html
+Allow: /development.html
+Allow: /logistics.html
+Allow: /rabbits-hares.html
+Allow: /cats-rabbits.html
+Allow: /reports.html
+Allow: /investors.html
+Allow: /faq/
+Allow: /legal/
+Allow: /policy/
+Allow: /terms/
+Allow: /docs/
+Allow: /assets/
+Allow: /gallery/
+Allow: /og/
+
 # Disallow admin and private areas
 Disallow: /admin/
 Disallow: /private/
-Disallow: /*.json$
 Disallow: /api/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /scripts/
+Disallow: /src/
+Disallow: /.github/
 
-# Allow important pages
+# Allow search engines to index images
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.png$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$
+
+# Allow CSS and JS files
+Allow: /*.css$
+Allow: /*.js$
+
+# Block certain file types
+Disallow: /*.json$
+Disallow: /*.xml$
+Disallow: /*.txt$
+Disallow: /*.log$
+
+# Special rules for Googlebot
+User-agent: Googlebot
 Allow: /
-Allow: /investment-model
-Allow: /partnership  
-Allow: /contacts
-Allow: /catalog
-Allow: /legal/license
+Crawl-delay: 0
+
+# Special rules for Yandexbot
+User-agent: Yandexbot
+Allow: /
+Crawl-delay: 1
+
+# Special rules for Bingbot
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+# Host directive for Yandex
+Host: https://xn--80apagbbfxgmuj4j.site

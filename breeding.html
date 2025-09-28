@@ -3,308 +3,283 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Племенная ценность — КупитьКролика</title>
-    <meta name="description" content="🧬 Племенная работа на ферме КупитьКролика. Генетическая селекция, родословные, улучшение пород. 100-балльная система оценки племенных качеств.">
+    <title>Племенная работа и разведение — DEXRabbit | Токенизированная ферма</title>
+    <meta name="description" content="🧬 Племенная работа и селекция кроликов на ферме DEXRabbit. Генетический отбор, улучшение пород, участие в селекции через NFT и PLEX токены.">
+    <meta name="keywords" content="племенная работа, разведение кроликов, селекция, генетика кроликов, NFT кролики, PLEX токен, DEXRabbit">
     
-    <link rel="stylesheet" href="/styles/tokens-v2.css">
-    <link rel="stylesheet" href="/styles/tokens.css">
-    <link rel="stylesheet" href="/styles/global.css">
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="manifest" href="/manifest.webmanifest">
+    <meta name="theme-color" content="#7c8cff">
+    
+    <!-- Open Graph -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Племенная работа — DEXRabbit">
+    <meta property="og:description" content="Участвуйте в селекции и разведении элитных кроликов через блокчейн">
+    <meta property="og:url" content="https://xn--80apagbbfxgmuj4j.site/breeding.html">
+    <meta property="og:image" content="https://xn--80apagbbfxgmuj4j.site/og/og-rabbit.jpg?v=20250928-05">
+    
+    <!-- Twitter / X -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Племенная работа — DEXRabbit">
+    <meta name="twitter:description" content="Участвуйте в селекции и разведении элитных кроликов через блокчейн">
+    <meta name="twitter:image" content="https://xn--80apagbbfxgmuj4j.site/og/og-rabbit.jpg?v=20250928-05">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/variables.css">
 </head>
 <body>
-    <header class="header">
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation">
         <div class="container">
-            <nav class="nav">
-                <a href="/" class="logo" style="display: flex; align-items: center; gap: 8px;">
-                    <img src="/images/favicon.svg" alt="КупитьКролика логотип" width="32" height="32" style="border-radius: 50%;">
-                    <span class="logo-text">КупитьКролика</span>
-                </a>
-                
-                <div class="nav-breadcrumb">
-                    <a href="/">Главная</a> → <span>Племенная работа</span>
+            <div class="navbar-header">
+                <div class="logo-wrapper">
+                    <a href="/" class="site-logo">
+                        <img src="/favicon.svg" alt="DEXRabbit">
+                        <div class="logo-text">
+                            <span class="logo-title">DEXRabbit</span>
+                            <span class="logo-slogan">Твой пассивный доход на кроликах</span>
+                        </div>
+                    </a>
                 </div>
-                
-                <div class="header-cta">
-                    <a href="#breeding-program" class="btn btn-primary">🧬 Участвовать в программе</a>
+                <button class="mobile-nav-toggle" aria-label="Меню" onclick="toggleMenu()">☰</button>
+            </div>
+            
+            <div class="navbar-inner">
+                <div class="nav-links" id="nav-menu">
+                    <div class="nav-group">
+                        <a href="/">Главная</a>
+                        <a href="/#investment">Инвестиции</a>
+                        <a href="/#tokenization">Токенизация</a>
+                        <a href="/#contacts">Контакты</a>
+                    </div>
+                    
+                    <a href="https://t.me/dexrabbit_bot" class="btn btn-primary nav-cta">💬 Начать инвестировать</a>
                 </div>
-            </nav>
+            </div>
         </div>
-    </header>
+    </nav>
 
     <main>
         <!-- Hero Section -->
-        <section class="section section-primary">
+        <section class="hero">
             <div class="container">
-                <div class="section-header section-header-white">
-                    <h1 class="section-title">🧬 Племенная ценность</h1>
-                    <p class="section-description">
-                        Научный подход к селекции и разведению для получения кроликов высшего качества
+                <div class="hero-content">
+                    <h1 class="hero-title">
+                        🧬 Племенная работа и селекция
+                    </h1>
+                    <p class="hero-subtitle">
+                        Участвуйте в создании элитных линий кроликов через NFT и блокчейн технологии.
+                        Каждый племенной кролик — это уникальный цифровой актив с генетической ценностью.
                     </p>
-                    <div class="breeding-highlights">
-                        <div class="highlight-item">
-                            <span class="highlight-icon">🏆</span>
-                            <span>15 линий селекции</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-icon">📊</span>
-                            <span>100-балльная система оценки</span>
-                        </div>
-                        <div class="highlight-item">
-                            <span class="highlight-icon">🧪</span>
-                            <span>Генетический анализ ДНК</span>
-                        </div>
+                    
+                    <div class="hero-cta">
+                        <a href="#breeding-program" class="btn">
+                            🧬 Участвовать в селекции
+                        </a>
+                        <a href="#genetic-lines" class="btn btn-outline">
+                            📊 Наши линии
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Breeding Philosophy -->
+        <!-- Philosophy Section -->
         <section class="section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">🎯 Философия племенной работы</h2>
-                    <p class="section-description">
-                        Каждый кролик на нашей ферме — результат многолетней селекционной работы
+                    <span class="overline">Философия</span>
+                    <h2>🎯 Наш подход к племенной работе</h2>
+                    <p>
+                        Сочетание вековых традиций кролиководства с современными 
+                        блокчейн технологиями для прозрачной селекции
                     </p>
                 </div>
-                
-                <div class="breeding-principles">
-                    <div class="principle-card">
-                        <div class="principle-icon">🧬</div>
-                        <h3>Генетическое разнообразие</h3>
-                        <p>Поддерживаем широкую генетическую базу для предотвращения инбридинга и сохранения здоровья популяции</p>
-                        <div class="principle-metric">
-                            <span class="metric-label">Генетических линий:</span>
-                            <span class="metric-value">15 активных</span>
+
+                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div class="card">
+                        <h3>🧬 Генетическая ценность в NFT</h3>
+                        <p>
+                            Каждый племенной кролик получает уникальный NFT с записью 
+                            его генетических характеристик, родословной и показателей продуктивности.
+                        </p>
+                        <div class="metric-card" style="margin-top: 1rem;">
+                            <strong>15</strong>
+                            <span>Племенных линий</span>
                         </div>
                     </div>
                     
-                    <div class="principle-card">
-                        <div class="principle-icon">📈</div>
-                        <h3>Продуктивность</h3>
-                        <p>Отбираем животных по комплексу продуктивных качеств: скорость роста, конверсия корма, плодовитость</p>
-                        <div class="principle-metric">
-                            <span class="metric-label">Улучшение за поколение:</span>
-                            <span class="metric-value">+12% продуктивности</span>
+                    <div class="card">
+                        <h3>📈 Токенизация селекции</h3>
+                        <p>
+                            Владельцы элитных производителей получают дополнительные PLEX токены 
+                            за каждого проданного потомка с высокими показателями.
+                        </p>
+                        <div class="metric-card" style="margin-top: 1rem;">
+                            <strong>+25%</strong>
+                            <span>Бонус PLEX за элиту</span>
                         </div>
                     </div>
                     
-                    <div class="principle-card">
-                        <div class="principle-icon">❤️</div>
-                        <h3>Здоровье и устойчивость</h3>
-                        <p>Приоритет отдаём животным с крепким иммунитетом и высокой жизнеспособностью потомства</p>
-                        <div class="principle-metric">
-                            <span class="metric-label">Выживаемость молодняка:</span>
-                            <span class="metric-value">98.5%</span>
+                    <div class="card">
+                        <h3>🔬 Научный подход</h3>
+                        <p>
+                            100-балльная система оценки племенных качеств, генетическое тестирование 
+                            и контроль инбридинга через блокчейн.
+                        </p>
+                        <div class="metric-card" style="margin-top: 1rem;">
+                            <strong>98.5%</strong>
+                            <span>Выживаемость молодняка</span>
                         </div>
                     </div>
                     
-                    <div class="principle-card">
-                        <div class="principle-icon">🎨</div>
-                        <h3>Экстерьер и качество</h3>
-                        <p>Внешние данные и качество мяса также играют важную роль в селекционном отборе</p>
-                        <div class="principle-metric">
-                            <span class="metric-label">Соответствие стандарту:</span>
-                            <span class="metric-value">95%+ наших кроликов</span>
+                    <div class="card">
+                        <h3>🏆 Рейтинг производителей</h3>
+                        <p>
+                            Публичный блокчейн-рейтинг лучших производителей с историей 
+                            их потомства и генетическим вкладом в породу.
+                        </p>
+                        <div class="metric-card" style="margin-top: 1rem;">
+                            <strong>TOP-100</strong>
+                            <span>Элитных производителей</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Breeds and Lines -->
-        <section class="section section-gray">
+        <!-- Genetic Lines -->
+        <section class="section section-alt" id="genetic-lines">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">🐰 Породы и линии</h2>
-                    <p class="section-description">
-                        Наша коллекция лучших мировых пород с уникальными характеристиками
+                    <span class="overline">Породы</span>
+                    <h2>🐰 Наши племенные линии</h2>
+                    <p>
+                        Лучшие мировые породы с NFT-сертификацией и блокчейн-родословной
                     </p>
                 </div>
-                
-                <div class="breeds-catalog">
-                    <div class="breed-card premium">
-                        <div class="breed-badge">Элитная линия</div>
-                        <div class="breed-image">🐰👑</div>
-                        <div class="breed-info">
-                            <h3>Калифорнийская (Линия А+)</h3>
-                            <div class="breed-origin">🇺🇸 США, селекция 15 поколений</div>
-                            
-                            <div class="breed-characteristics">
-                                <div class="characteristic">
-                                    <span class="char-label">Вес взрослого:</span>
-                                    <span class="char-value">4.5-5.2 кг</span>
-                                </div>
-                                <div class="characteristic">
-                                    <span class="char-label">Скорость роста:</span>
-                                    <span class="char-value">45-50г/день</span>
-                                </div>
-                                <div class="characteristic">
-                                    <span class="char-label">Плодовитость:</span>
-                                    <span class="char-value">9-12 крольчат</span>
-                                </div>
-                                <div class="characteristic">
-                                    <span class="char-label">Выход мяса:</span>
-                                    <span class="char-value">62-65%</span>
-                                </div>
-                            </div>
-                            
-                            <div class="breeding-score">
-                                <div class="score-label">Племенная оценка:</div>
-                                <div class="score-value">96/100</div>
-                                <div class="score-breakdown">
-                                    <div class="score-item">
-                                        <span>Продуктивность</span>
-                                        <div class="score-bar"><div class="score-fill" style="width: 95%"></div></div>
-                                    </div>
-                                    <div class="score-item">
-                                        <span>Здоровье</span>
-                                        <div class="score-bar"><div class="score-fill" style="width: 98%"></div></div>
-                                    </div>
-                                    <div class="score-item">
-                                        <span>Экстерьер</span>
-                                        <div class="score-bar"><div class="score-fill" style="width: 94%"></div></div>
-                                    </div>
-                                </div>
-                            </div>
+
+                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                    <!-- Калифорнийская линия -->
+                    <div class="card">
+                        <div class="badge" style="background: linear-gradient(135deg, #fbbf24, #f59e0b);">
+                            Элитная линия A+
+                        </div>
+                        <h3>🐰 Калифорнийская</h3>
+                        <p style="opacity: 0.8; margin: 0.5rem 0;">NFT Collection: California Elite</p>
+                        
+                        <div class="table-wrapper" style="margin-top: 1rem;">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Вес взрослого</td>
+                                        <td><strong>4.5-5.2 кг</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Скорость роста</td>
+                                        <td><strong>45-50 г/день</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Плодовитость</td>
+                                        <td><strong>9-12 крольчат</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Племенная оценка</td>
+                                        <td><strong>96/100</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>NFT Floor Price</td>
+                                        <td><strong>500 PLEX</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="margin-top: 1rem; padding: 1rem; background: rgba(74, 222, 128, 0.1); border-radius: 8px;">
+                            <strong>Бонус владельцу NFT:</strong> +30% PLEX за потомство
                         </div>
                     </div>
 
-                    <div class="breed-card">
-                        <div class="breed-image">🐰⚪</div>
-                        <div class="breed-info">
-                            <h3>Белый великан (Линия Б)</h3>
-                            <div class="breed-origin">🇷🇺 Россия, селекция 12 поколений</div>
-                            
-                            <div class="breed-characteristics">
-                                <div class="characteristic">
-                                    <span class="char-label">Вес взрослого:</span>
-                                    <span class="char-value">5.0-6.5 кг</span>
-                                </div>
-                                <div class="characteristic">
-                                    <span class="char-label">Скорость роста:</span>
-                                    <span class="char-value">42-47г/день</span>
-                                </div>
-                                <div class="characteristic">
-                                    <span class="char-label">Плодовитость:</span>
-                                    <span class="char-value">8-11 крольчат</span>
-                                </div>
-                                <div class="characteristic">
-                                    <span class="char-label">Выход мяса:</span>
-                                    <span class="char-value">58-62%</span>
-                                </div>
-                            </div>
-                            
-                            <div class="breeding-score">
-                                <div class="score-label">Племенная оценка:</div>
-                                <div class="score-value">89/100</div>
-                                <div class="score-breakdown">
-                                    <div class="score-item">
-                                        <span>Продуктивность</span>
-                                        <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                                    </div>
-                                    <div class="score-item">
-                                        <span>Здоровье</span>
-                                        <div class="score-bar"><div class="score-fill" style="width: 92%"></div></div>
-                                    </div>
-                                    <div class="score-item">
-                                        <span>Экстерьер</span>
-                                        <div class="score-bar"><div class="score-fill" style="width: 85%"></div></div>
-                                    </div>
-                                </div>
-                            </div>
+                    <!-- Новозеландская линия -->
+                    <div class="card">
+                        <div class="badge" style="background: linear-gradient(135deg, #60a5fa, #3b82f6);">
+                            Премиум линия B
+                        </div>
+                        <h3>⚪ Новозеландская белая</h3>
+                        <p style="opacity: 0.8; margin: 0.5rem 0;">NFT Collection: New Zealand Premium</p>
+                        
+                        <div class="table-wrapper" style="margin-top: 1rem;">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Вес взрослого</td>
+                                        <td><strong>5.0-6.5 кг</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Скорость роста</td>
+                                        <td><strong>42-47 г/день</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Плодовитость</td>
+                                        <td><strong>8-11 крольчат</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Племенная оценка</td>
+                                        <td><strong>89/100</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>NFT Floor Price</td>
+                                        <td><strong>350 PLEX</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="margin-top: 1rem; padding: 1rem; background: rgba(74, 222, 128, 0.1); border-radius: 8px;">
+                            <strong>Бонус владельцу NFT:</strong> +20% PLEX за потомство
                         </div>
                     </div>
 
-                    <div class="breed-card">
-                        <div class="breed-image">🐰🟤</div>
-                        <div class="breed-info">
-                            <h3>Советская шиншилла (Линия В)</h3>
-                            <div class="breed-origin">🇷🇺 СССР, селекция 18 поколений</div>
-                            
-                            <div class="breed-characteristics">
-                                <div class="characteristic">
-                                    <span class="char-label">Вес взрослого:</span>
-                                    <span class="char-value">4.8-5.8 кг</span>
-                                </div>
-                                <div class="characteristic">
-                                    <span class="char-label">Скорость роста:</span>
-                                    <span class="char-value">40-45г/день</span>
-                                </div>
-                                <div class="characteristic">
-                                    <span class="char-label">Плодовитость:</span>
-                                    <span class="char-value">7-10 крольчат</span>
-                                </div>
-                                <div class="characteristic">
-                                    <span class="char-label">Выход мяса:</span>
-                                    <span class="char-value">60-64%</span>
-                                </div>
-                            </div>
-                            
-                            <div class="breeding-score">
-                                <div class="score-label">Племенная оценка:</div>
-                                <div class="score-value">85/100</div>
-                                <div class="score-breakdown">
-                                    <div class="score-item">
-                                        <span>Продуктивность</span>
-                                        <div class="score-bar"><div class="score-fill" style="width: 82%"></div></div>
-                                    </div>
-                                    <div class="score-item">
-                                        <span>Здоровье</span>
-                                        <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                                    </div>
-                                    <div class="score-item">
-                                        <span>Экстерьер</span>
-                                        <div class="score-bar"><div class="score-fill" style="width: 83%"></div></div>
-                                    </div>
-                                </div>
-                            </div>
+                    <!-- Гибрид DEXRabbit -->
+                    <div class="card">
+                        <div class="badge" style="background: linear-gradient(135deg, #c084fc, #a855f7);">
+                            Экспериментальная X
                         </div>
-                    </div>
-
-                    <div class="breed-card experimental">
-                        <div class="breed-badge">Экспериментальная</div>
-                        <div class="breed-image">🐰🧪</div>
-                        <div class="breed-info">
-                            <h3>Гибрид КупитьКролика (Линия X)</h3>
-                            <div class="breed-origin">🧬 Собственная селекция, 3 поколения</div>
-                            
-                            <div class="breed-characteristics">
-                                <div class="characteristic">
-                                    <span class="char-label">Вес взрослого:</span>
-                                    <span class="char-value">5.2-6.0 кг</span>
-                                </div>
-                                <div class="characteristic">
-                                    <span class="char-label">Скорость роста:</span>
-                                    <span class="char-value">52-58г/день</span>
-                                </div>
-                                <div class="characteristic">
-                                    <span class="char-label">Плодовитость:</span>
-                                    <span class="char-value">10-14 крольчат</span>
-                                </div>
-                                <div class="characteristic">
-                                    <span class="char-label">Выход мяса:</span>
-                                    <span class="char-value">65-68%</span>
-                                </div>
-                            </div>
-                            
-                            <div class="breeding-score">
-                                <div class="score-label">Племенная оценка:</div>
-                                <div class="score-value">92/100</div>
-                                <div class="score-breakdown">
-                                    <div class="score-item">
-                                        <span>Продуктивность</span>
-                                        <div class="score-bar"><div class="score-fill" style="width: 98%"></div></div>
-                                    </div>
-                                    <div class="score-item">
-                                        <span>Здоровье</span>
-                                        <div class="score-bar"><div class="score-fill" style="width: 88%"></div></div>
-                                    </div>
-                                    <div class="score-item">
-                                        <span>Экстерьер</span>
-                                        <div class="score-bar"><div class="score-fill" style="width: 90%"></div></div>
-                                    </div>
-                                </div>
-                            </div>
+                        <h3>🧪 Гибрид DEXRabbit</h3>
+                        <p style="opacity: 0.8; margin: 0.5rem 0;">NFT Collection: DEX Hybrid Genesis</p>
+                        
+                        <div class="table-wrapper" style="margin-top: 1rem;">
+                            <table class="table">
+                                <tbody>
+                                    <tr>
+                                        <td>Вес взрослого</td>
+                                        <td><strong>5.2-6.0 кг</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Скорость роста</td>
+                                        <td><strong>52-58 г/день</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Плодовитость</td>
+                                        <td><strong>10-14 крольчат</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Племенная оценка</td>
+                                        <td><strong>92/100</strong></td>
+                                    </tr>
+                                    <tr>
+                                        <td>NFT Floor Price</td>
+                                        <td><strong>1000 PLEX</strong></td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        
+                        <div style="margin-top: 1rem; padding: 1rem; background: rgba(74, 222, 128, 0.1); border-radius: 8px;">
+                            <strong>Бонус владельцу NFT:</strong> +50% PLEX за потомство
                         </div>
                     </div>
                 </div>
@@ -315,442 +290,288 @@
         <section class="section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">📊 Система оценки</h2>
-                    <p class="section-description">
-                        100-балльная система комплексной оценки племенных качеств
+                    <span class="overline">Оценка</span>
+                    <h2>📊 Система оценки племенных качеств</h2>
+                    <p>
+                        100-балльная система с записью в блокчейн и влиянием на стоимость NFT
                     </p>
                 </div>
-                
-                <div class="evaluation-system">
-                    <div class="evaluation-category">
-                        <div class="category-header">
-                            <h3>🏃‍♂️ Продуктивность (40 баллов)</h3>
-                        </div>
-                        <div class="category-criteria">
-                            <div class="criterion">
-                                <div class="criterion-name">Скорость роста</div>
-                                <div class="criterion-weight">15 баллов</div>
-                                <div class="criterion-description">Прирост живой массы в граммах за сутки</div>
-                            </div>
-                            <div class="criterion">
-                                <div class="criterion-name">Конверсия корма</div>
-                                <div class="criterion-weight">10 баллов</div>
-                                <div class="criterion-description">Расход корма на 1 кг прироста</div>
-                            </div>
-                            <div class="criterion">
-                                <div class="criterion-name">Убойная масса</div>
-                                <div class="criterion-weight">10 баллов</div>
-                                <div class="criterion-description">Живая масса в возрасте 90 дней</div>
-                            </div>
-                            <div class="criterion">
-                                <div class="criterion-name">Выход мяса</div>
-                                <div class="criterion-weight">5 баллов</div>
-                                <div class="criterion-description">Процент мяса от живой массы</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="evaluation-category">
-                        <div class="category-header">
-                            <h3>👨‍👩‍👧‍👦 Репродуктивность (25 баллов)</h3>
-                        </div>
-                        <div class="category-criteria">
-                            <div class="criterion">
-                                <div class="criterion-name">Плодовитость самок</div>
-                                <div class="criterion-weight">12 баллов</div>
-                                <div class="criterion-description">Количество крольчат в помёте</div>
-                            </div>
-                            <div class="criterion">
-                                <div class="criterion-name">Выживаемость молодняка</div>
-                                <div class="criterion-weight">8 баллов</div>
-                                <div class="criterion-description">Процент доживших до отъёма</div>
-                            </div>
-                            <div class="criterion">
-                                <div class="criterion-name">Молочность самок</div>
-                                <div class="criterion-weight">5 баллов</div>
-                                <div class="criterion-description">Масса помёта в возрасте 21 день</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="evaluation-category">
-                        <div class="category-header">
-                            <h3>💪 Здоровье (20 баллов)</h3>
-                        </div>
-                        <div class="category-criteria">
-                            <div class="criterion">
-                                <div class="criterion-name">Устойчивость к болезням</div>
-                                <div class="criterion-weight">10 баллов</div>
-                                <div class="criterion-description">Отсутствие заболеваний за жизнь</div>
-                            </div>
-                            <div class="criterion">
-                                <div class="criterion-name">Конституция</div>
-                                <div class="criterion-weight">5 баллов</div>
-                                <div class="criterion-description">Общее телосложение и крепость</div>
-                            </div>
-                            <div class="criterion">
-                                <div class="criterion-name">Жизнеспособность</div>
-                                <div class="criterion-weight">5 баллов</div>
-                                <div class="criterion-description">Продолжительность продуктивной жизни</div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="evaluation-category">
-                        <div class="category-header">
-                            <h3>🎨 Экстерьер (15 баллов)</h3>
-                        </div>
-                        <div class="category-criteria">
-                            <div class="criterion">
-                                <div class="criterion-name">Соответствие стандарту породы</div>
-                                <div class="criterion-weight">8 баллов</div>
-                                <div class="criterion-description">Внешние признаки породы</div>
-                            </div>
-                            <div class="criterion">
-                                <div class="criterion-name">Качество волосяного покрова</div>
-                                <div class="criterion-weight">4 баллов</div>
-                                <div class="criterion-description">Густота, окраска, блеск</div>
-                            </div>
-                            <div class="criterion">
-                                <div class="criterion-name">Пороки развития</div>
-                                <div class="criterion-weight">3 балла</div>
-                                <div class="criterion-description">Отсутствие дефектов экстерьера</div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Genetic Testing -->
-        <section class="section section-gray">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">🧪 Генетическое тестирование</h2>
-                    <p class="section-description">
-                        Современные методы анализа ДНК для точной селекции
-                    </p>
-                </div>
-                
-                <div class="genetic-testing">
-                    <div class="testing-method">
-                        <div class="method-icon">🔬</div>
-                        <h3>ДНК-маркеры продуктивности</h3>
-                        <p>Анализируем генетические маркеры, связанные со скоростью роста, качеством мяса и конверсией корма</p>
-                        <div class="method-stats">
-                            <div class="stat-item">
-                                <span class="stat-label">Точность прогноза:</span>
-                                <span class="stat-value">87%</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-label">Изученных генов:</span>
-                                <span class="stat-value">45</span>
-                            </div>
-                        </div>
+                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem;">
+                    <div class="card">
+                        <h3>🏃 Продуктивность (40 баллов)</h3>
+                        <ul class="checklist">
+                            <li>Скорость роста — 15 баллов</li>
+                            <li>Конверсия корма — 10 баллов</li>
+                            <li>Убойная масса — 10 баллов</li>
+                            <li>Выход мяса — 5 баллов</li>
+                        </ul>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                            Данные фиксируются в смарт-контракте
+                        </p>
                     </div>
                     
-                    <div class="testing-method">
-                        <div class="method-icon">🧬</div>
-                        <h3>Анализ инбридинга</h3>
-                        <p>Контролируем степень родственности для предотвращения негативных последствий близкородственного скрещивания</p>
-                        <div class="method-stats">
-                            <div class="stat-item">
-                                <span class="stat-label">Коэффициент инбридинга:</span>
-                                <span class="stat-value">&lt;3%</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-label">Глубина родословной:</span>
-                                <span class="stat-value">8 поколений</span>
-                            </div>
-                        </div>
+                    <div class="card">
+                        <h3>👶 Репродуктивность (25 баллов)</h3>
+                        <ul class="checklist">
+                            <li>Плодовитость — 12 баллов</li>
+                            <li>Выживаемость потомства — 8 баллов</li>
+                            <li>Молочность самок — 5 баллов</li>
+                        </ul>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                            Влияет на бонусы PLEX токенов
+                        </p>
                     </div>
                     
-                    <div class="testing-method">
-                        <div class="method-icon">🛡️</div>
-                        <h3>Генетическая устойчивость</h3>
-                        <p>Выявляем носителей генов устойчивости к основным заболеваниям кроликов</p>
-                        <div class="method-stats">
-                            <div class="stat-item">
-                                <span class="stat-label">Проверяемых болезней:</span>
-                                <span class="stat-value">12</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-label">Устойчивых линий:</span>
-                                <span class="stat-value">85%</span>
-                            </div>
-                        </div>
+                    <div class="card">
+                        <h3>💪 Здоровье (20 баллов)</h3>
+                        <ul class="checklist">
+                            <li>Устойчивость к болезням — 10 баллов</li>
+                            <li>Конституция — 5 баллов</li>
+                            <li>Жизнеспособность — 5 баллов</li>
+                        </ul>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                            Подтверждается ветеринарными NFT
+                        </p>
                     </div>
                     
-                    <div class="testing-method">
-                        <div class="method-icon">📊</div>
-                        <h3>Геномная селекция</h3>
-                        <p>Используем полногеномные данные для точного прогнозирования племенной ценности молодых животных</p>
-                        <div class="method-stats">
-                            <div class="stat-item">
-                                <span class="stat-label">Точность оценки:</span>
-                                <span class="stat-value">92%</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-label">Ускорение селекции:</span>
-                                <span class="stat-value">в 2.3 раза</span>
-                            </div>
-                        </div>
+                    <div class="card">
+                        <h3>🎨 Экстерьер (15 баллов)</h3>
+                        <ul class="checklist">
+                            <li>Соответствие стандарту — 8 баллов</li>
+                            <li>Качество меха — 4 балла</li>
+                            <li>Отсутствие дефектов — 3 балла</li>
+                        </ul>
+                        <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8;">
+                            Определяет редкость NFT
+                        </p>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- Breeding Program -->
-        <section id="breeding-program" class="section section-primary">
+        <section class="section section-alt" id="breeding-program">
             <div class="container">
-                <div class="section-header section-header-white">
-                    <h2 class="section-title">🎯 Программа участия в селекции</h2>
-                    <p class="section-description">
-                        Станьте частью племенной работы и получите доступ к элитным линиям
+                <div class="section-header">
+                    <span class="overline">Программы</span>
+                    <h2>🎯 Участие в племенной работе</h2>
+                    <p>
+                        Станьте совладельцем элитных производителей через NFT и получайте пассивный доход в PLEX
                     </p>
                 </div>
-                
-                <div class="breeding-programs">
-                    <div class="program-card">
-                        <div class="program-header">
-                            <h3>🥉 Базовая программа</h3>
-                            <div class="program-price">от 25,000₽</div>
-                        </div>
-                        <div class="program-content">
-                            <h4>Что включает:</h4>
-                            <ul class="program-features">
-                                <li>✅ Кролик с родословной (3 поколения)</li>
-                                <li>✅ Базовая племенная оценка</li>
-                                <li>✅ Рекомендации по разведению</li>
-                                <li>✅ Доступ к 5 племенным линиям</li>
-                                <li>✅ Ежемесячные консультации</li>
-                                <li>❌ Генетическое тестирование</li>
-                                <li>❌ Элитные линии</li>
-                            </ul>
-                            <div class="program-benefit">
-                                <strong>Бонус:</strong> Скидка 10% на племенных животных
-                            </div>
-                        </div>
-                    </div>
 
-                    <div class="program-card featured">
-                        <div class="program-badge">Популярная</div>
-                        <div class="program-header">
-                            <h3>🥈 Премиум программа</h3>
-                            <div class="program-price">от 45,000₽</div>
-                        </div>
-                        <div class="program-content">
-                            <h4>Что включает:</h4>
-                            <ul class="program-features">
-                                <li>✅ Племенная пара (самец + самка)</li>
-                                <li>✅ Полная родословная (8 поколений)</li>
-                                <li>✅ Профессиональная оценка 100 баллов</li>
-                                <li>✅ Доступ к 10 племенным линиям</li>
-                                <li>✅ Базовый генетический анализ</li>
-                                <li>✅ Еженедельные консультации</li>
-                                <li>✅ Участие в выставках</li>
-                            </ul>
-                            <div class="program-benefit">
-                                <strong>Бонус:</strong> Скидка 20% + приоритетный выбор
-                            </div>
-                        </div>
+                <div class="invest-steps">
+                    <div class="invest-step">
+                        <span>Базовая</span>
+                        <strong>Племенной кролик</strong>
+                        <p>2000-5000 USDT</p>
+                        <ul style="margin-top: 0.5rem; font-size: 0.9rem;">
+                            <li>• NFT сертификат породы</li>
+                            <li>• +15% бонус PLEX</li>
+                            <li>• Доступ к 5 линиям</li>
+                        </ul>
                     </div>
-
-                    <div class="program-card">
-                        <div class="program-header">
-                            <h3>🥇 Элитная программа</h3>
-                            <div class="program-price">от 85,000₽</div>
-                        </div>
-                        <div class="program-content">
-                            <h4>Что включает:</h4>
-                            <ul class="program-features">
-                                <li>✅ Элитная племенная группа (1+3)</li>
-                                <li>✅ Чемпионская родословная</li>
-                                <li>✅ Полное ДНК-тестирование</li>
-                                <li>✅ Доступ ко всем 15 линиям</li>
-                                <li>✅ Персональный селекционер</li>
-                                <li>✅ Еженедельные выезды на ферму</li>
-                                <li>✅ Участие в создании новых линий</li>
-                            </ul>
-                            <div class="program-benefit">
-                                <strong>Бонус:</strong> Эксклюзивный доступ к экспериментальным линиям
-                            </div>
-                        </div>
+                    
+                    <div class="invest-step">
+                        <span>Премиум</span>
+                        <strong>Племенная пара</strong>
+                        <p>5000-10000 USDT</p>
+                        <ul style="margin-top: 0.5rem; font-size: 0.9rem;">
+                            <li>• 2 NFT элитных кроликов</li>
+                            <li>• +30% бонус PLEX</li>
+                            <li>• Доступ к 10 линиям</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="invest-step">
+                        <span>VIP</span>
+                        <strong>Селекционная группа</strong>
+                        <p>От 10000 USDT</p>
+                        <ul style="margin-top: 0.5rem; font-size: 0.9rem;">
+                            <li>• Коллекция NFT (1+3)</li>
+                            <li>• +50% бонус PLEX</li>
+                            <li>• Создание новой линии</li>
+                        </ul>
                     </div>
                 </div>
-                
-                <div class="program-cta">
-                    <h3>Присоединиться к племенной программе</h3>
-                    <p>Станьте соучастником создания новых высокопродуктивных линий кроликов</p>
+
+                <div class="card" style="margin-top: 2rem;">
+                    <h3>🧬 Преимущества участия в селекции</h3>
                     
-                    <form id="breeding-form" class="breeding-form">
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="program-type">Программа *</label>
-                                <select id="program-type" name="program_type" required>
-                                    <option value="">Выберите программу</option>
-                                    <option value="basic">Базовая программа</option>
-                                    <option value="premium">Премиум программа</option>
-                                    <option value="elite">Элитная программа</option>
-                                    <option value="custom">Индивидуальная программа</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="breeding-experience">Опыт в разведении</label>
-                                <select id="breeding-experience" name="breeding_experience">
-                                    <option value="">Ваш опыт</option>
-                                    <option value="beginner">Начинающий</option>
-                                    <option value="intermediate">Средний уровень</option>
-                                    <option value="advanced">Продвинутый</option>
-                                    <option value="professional">Профессиональный</option>
-                                </select>
-                            </div>
+                    <div class="grid" style="grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem;">
+                        <div>
+                            <h4>Для инвесторов:</h4>
+                            <ul class="checklist">
+                                <li>Увеличенная доходность (до +50% PLEX)</li>
+                                <li>NFT растет в цене с улучшением породы</li>
+                                <li>Приоритет на элитное потомство</li>
+                                <li>Участие в генетических аукционах</li>
+                                <li>Доступ к закрытому клубу селекционеров</li>
+                            </ul>
                         </div>
                         
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="interested-breeds">Интересующие породы</label>
-                                <select id="interested-breeds" name="interested_breeds">
-                                    <option value="">Выберите породы</option>
-                                    <option value="californian">Калифорнийская</option>
-                                    <option value="white-giant">Белый великан</option>
-                                    <option value="soviet-chinchilla">Советская шиншилла</option>
-                                    <option value="hybrid-x">Гибрид КупитьКролика</option>
-                                    <option value="all">Все породы</option>
-                                </select>
-                            </div>
-                            <div class="form-group">
-                                <label for="breeding-goals">Цели разведения</label>
-                                <select id="breeding-goals" name="breeding_goals">
-                                    <option value="">Ваши цели</option>
-                                    <option value="meat">Мясное направление</option>
-                                    <option value="breeding">Племенная работа</option>
-                                    <option value="show">Выставочная деятельность</option>
-                                    <option value="investment">Инвестиционные цели</option>
-                                    <option value="hobby">Хобби</option>
-                                </select>
-                            </div>
+                        <div>
+                            <h4>Для экосистемы:</h4>
+                            <ul class="checklist">
+                                <li>Улучшение генофонда фермы</li>
+                                <li>Прозрачная история селекции в блокчейне</li>
+                                <li>Повышение стоимости токена PLEX</li>
+                                <li>Создание уникальных NFT коллекций</li>
+                                <li>Научный подход к разведению</li>
+                            </ul>
                         </div>
-                        
-                        <div class="form-row">
-                            <div class="form-group">
-                                <label for="contact-name">Ваше имя *</label>
-                                <input type="text" id="contact-name" name="contact_name" required>
-                            </div>
-                            <div class="form-group">
-                                <label for="contact-phone">Телефон *</label>
-                                <input type="tel" id="contact-phone" name="phone" required>
-                            </div>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label for="additional-info">Дополнительная информация</label>
-                            <textarea id="additional-info" name="additional_info" rows="3" placeholder="Расскажите о своих планах, опыте, особых требованиях..."></textarea>
-                        </div>
-                        
-                        <div class="form-group checkbox-group">
-                            <label class="checkbox-label">
-                                <input type="checkbox" name="breeding_agreement" required>
-                                <span class="checkbox-custom"></span>
-                                Согласен с <a href="/breeding-terms" target="_blank">условиями племенной программы</a> и обработкой данных
-                            </label>
-                        </div>
-                        
-                        <input type="hidden" name="form_type" value="breeding">
-                        <input type="text" name="honeypot" style="display: none;">
-                        
-                        <button type="submit" class="btn btn-secondary btn-large">
-                            <span class="btn-icon">🧬</span>
-                            Подать заявку на участие
-                        </button>
-                    </form>
+                    </div>
+
+                    <div class="alert" style="margin-top: 2rem;">
+                        <strong>🔬 Генетическое тестирование:</strong> Все племенные животные проходят ДНК-анализ 
+                        с записью результатов в блокчейн. Это гарантирует чистоту породы и отсутствие близкородственного скрещивания.
+                    </div>
+                </div>
+
+                <div style="text-align: center; margin-top: 2rem;">
+                    <a href="https://t.me/dexrabbit_bot" class="btn">
+                        🧬 Стать селекционером
+                    </a>
+                    <p style="margin-top: 1rem; opacity: 0.8;">
+                        Минимальная инвестиция в племенную программу: 2000 USDT
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <!-- NFT Marketplace Preview -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header">
+                    <span class="overline">Маркетплейс</span>
+                    <h2>🎨 NFT племенных кроликов</h2>
+                    <p>
+                        Торгуйте генетическими правами на OpenSea и PancakeSwap NFT
+                    </p>
+                </div>
+
+                <div class="card">
+                    <h3>Скоро: DEXRabbit NFT Collection</h3>
+                    <p style="margin: 1rem 0;">
+                        Первая в мире коллекция NFT с реальными племенными кроликами. 
+                        Каждый токен дает право на владение животным и долю от его потомства.
+                    </p>
+                    
+                    <div class="table-wrapper">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Редкость</th>
+                                    <th>Количество</th>
+                                    <th>Бонус PLEX</th>
+                                    <th>Начальная цена</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>🟦 Common</td>
+                                    <td>1000 NFT</td>
+                                    <td>+10%</td>
+                                    <td>100 PLEX</td>
+                                </tr>
+                                <tr>
+                                    <td>🟩 Uncommon</td>
+                                    <td>500 NFT</td>
+                                    <td>+20%</td>
+                                    <td>250 PLEX</td>
+                                </tr>
+                                <tr>
+                                    <td>🟪 Rare</td>
+                                    <td>200 NFT</td>
+                                    <td>+35%</td>
+                                    <td>500 PLEX</td>
+                                </tr>
+                                <tr>
+                                    <td>🟨 Epic</td>
+                                    <td>50 NFT</td>
+                                    <td>+50%</td>
+                                    <td>1000 PLEX</td>
+                                </tr>
+                                <tr>
+                                    <td>🟧 Legendary</td>
+                                    <td>10 NFT</td>
+                                    <td>+100%</td>
+                                    <td>5000 PLEX</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4 class="footer-title">Племенная работа</h4>
-                    <nav class="footer-nav">
-                        <a href="/breeding">Племенная ценность</a>
-                        <a href="/breeds">Породы и линии</a>
-                        <a href="/genetic-testing">Генетическое тестирование</a>
-                        <a href="/breeding-programs">Программы участия</a>
+            <div class="footer-grid">
+                <div>
+                    <h4>Племенная работа</h4>
+                    <nav>
+                        <a href="/breeding.html">Селекция</a>
+                        <a href="/#investment">Инвестиции</a>
+                        <a href="/#tokenization">NFT кролики</a>
                     </nav>
                 </div>
-                <div class="footer-section">
-                    <h4 class="footer-title">Контакты</h4>
-                    <div class="footer-contacts">
-                        <a href="tel:+79991234567" class="footer-contact">
-                            <span class="icon">📞</span>
-                            +7 (999) 123-45-67
-                        </a>
-                        <a href="mailto:breeding@kupitkrolika.ru" class="footer-contact">
-                            <span class="icon">📧</span>
-                            breeding@kupitkrolika.ru
-                        </a>
-                    </div>
+                
+                <div>
+                    <h4>Документы</h4>
+                    <nav>
+                        <a href="/docs/breeding-program.pdf">Программа селекции</a>
+                        <a href="/docs/genetic-passport.pdf">Генетический паспорт</a>
+                        <a href="/docs/nft-whitepaper.pdf">NFT Whitepaper</a>
+                    </nav>
                 </div>
+                
+                <div>
+                    <h4>Маркетплейсы</h4>
+                    <nav>
+                        <a href="#">OpenSea (скоро)</a>
+                        <a href="#">PancakeSwap NFT (скоро)</a>
+                        <a href="#">Binance NFT (скоро)</a>
+                    </nav>
+                </div>
+                
+                <div>
+                    <h4>Контакты</h4>
+                    <nav>
+                        <a href="https://t.me/dexrabbit_bot">Telegram Bot</a>
+                        <a href="https://t.me/dexrabbit_channel">Канал</a>
+                        <a href="mailto:breeding@dexrabbit.com">breeding@dexrabbit.com</a>
+                    </nav>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(124, 140, 255, 0.1); opacity: 0.7;">
+                <p>© 2025 DEXRabbit. Все права защищены.</p>
             </div>
         </div>
     </footer>
 
-    <script src="/scripts/analytics.js"></script>
     <script>
-        // Обработка формы племенной программы
-        document.getElementById('breeding-form').addEventListener('submit', async (e) => {
-            e.preventDefault();
-            
-            const formData = new FormData(e.target);
-            const data = Object.fromEntries(formData.entries());
-            
-            // Анти-спам проверка
-            if (data.honeypot) return;
-            
-            try {
-                // Имитация отправки
-                console.log('Заявка на племенную программу:', data);
-                
-                // Показать сообщение об успехе
-                const successMessage = document.createElement('div');
-                successMessage.className = 'success-message';
-                successMessage.innerHTML = `
-                    <div class="success-content">
-                        <div class="success-icon">🧬</div>
-                        <h3>Заявка принята!</h3>
-                        <p>Наш селекционер свяжется с вами в течение 24 часов для обсуждения программы и подбора подходящих животных.</p>
-                        <p><strong>Добро пожаловать в мир профессиональной селекции!</strong></p>
-                    </div>
-                `;
-                
-                e.target.style.display = 'none';
-                e.target.parentNode.insertBefore(successMessage, e.target);
-                
-                // Трекинг
-                if (window.analytics) {
-                    window.analytics.trackEvent('breeding_form_submit', {
-                        event_category: 'breeding',
-                        program_type: data.program_type,
-                        experience: data.breeding_experience
-                    });
-                }
-                
-            } catch (error) {
-                console.error('Ошибка отправки:', error);
-                alert('Произошла ошибка. Попробуйте позже или позвоните нам напрямую.');
-            }
-        });
-
-        // Track page view
-        if (window.analytics) {
-            window.analytics.trackEvent('breeding_page_view', {
-                event_category: 'page_view',
-                page: '/breeding'
-            });
+        // Mobile menu toggle
+        function toggleMenu() {
+            const menu = document.getElementById('nav-menu');
+            const isExpanded = menu.getAttribute('aria-expanded') === 'true';
+            menu.setAttribute('aria-expanded', !isExpanded);
         }
+
+        // Smooth scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
     </script>
 </body>
 </html>

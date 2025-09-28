@@ -5,7 +5,7 @@
     <!-- Homepage - highest priority -->
     <url>
         <loc>https://xn--80apagbbfxgmuj4j.site/</loc>
-        <lastmod>2025-09-28</lastmod>
+        <lastmod>2025-09-29</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
@@ -34,12 +34,28 @@
         <priority>0.8</priority>
     </url>
     
-    <!-- Breeding Program - medium priority -->
+    <!-- Breeding Program - high priority (updated) -->
     <url>
         <loc>https://xn--80apagbbfxgmuj4j.site/breeding.html</loc>
-        <lastmod>2025-09-28</lastmod>
+        <lastmod>2025-09-29</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Gifts - high priority (updated) -->
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/gifts.html</loc>
+        <lastmod>2025-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <!-- Restaurant Partnership - high priority (updated) -->
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/restaurants.html</loc>
+        <lastmod>2025-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
     </url>
     
     <!-- Reports - medium priority -->
@@ -50,20 +66,20 @@
         <priority>0.7</priority>
     </url>
     
-    <!-- Restaurant Partnership - medium priority -->
+    <!-- Care Guide - medium priority -->
     <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/restaurants.html</loc>
-        <lastmod>2025-09-28</lastmod>
+        <loc>https://xn--80apagbbfxgmuj4j.site/care.html</loc>
+        <lastmod>2025-09-29</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <priority>0.7</priority>
     </url>
     
-    <!-- Gifts - medium priority -->
+    <!-- Therapy - medium priority -->
     <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/gifts.html</loc>
-        <lastmod>2025-09-28</lastmod>
+        <loc>https://xn--80apagbbfxgmuj4j.site/therapy.html</loc>
+        <lastmod>2025-09-29</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <priority>0.7</priority>
     </url>
     
     <!-- Development Plans - medium priority -->
@@ -90,12 +106,44 @@
         <priority>0.7</priority>
     </url>
     
+    <!-- Rabbits vs Hares - medium priority -->
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/rabbits-hares.html</loc>
+        <lastmod>2025-09-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- Cats and Rabbits - medium priority -->
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/cats-rabbits.html</loc>
+        <lastmod>2025-09-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
     <!-- FAQ - medium priority -->
     <url>
         <loc>https://xn--80apagbbfxgmuj4j.site/faq/</loc>
         <lastmod>2025-09-28</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.5</priority>
+    </url>
+    
+    <!-- Policy - low priority -->
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/policy/</loc>
+        <lastmod>2025-09-27</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+    
+    <!-- Terms - low priority -->
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/terms/</loc>
+        <lastmod>2025-09-27</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
     </url>
     
     <!-- Legal License - low priority -->
@@ -105,73 +153,28 @@
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
-
-</urlset>
-    <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/faq</loc>
-        <lastmod>2025-09-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
     
-    <!-- Contacts - high priority -->
+    <!-- Legal Agreement - low priority -->
     <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/contacts</loc>
-        <lastmod>2025-09-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- Delivery info - medium priority -->
-    <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/delivery</loc>
-        <lastmod>2025-09-27</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- Service pages - lower priority -->
-    <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/policy</loc>
-        <lastmod>2025-09-27</lastmod>
+        <loc>https://xn--80apagbbfxgmuj4j.site/legal/agreement.html</loc>
+        <lastmod>2025-09-28</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     
+    <!-- Legal Terms - low priority -->
     <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/terms</loc>
-        <lastmod>2025-09-27</lastmod>
+        <loc>https://xn--80apagbbfxgmuj4j.site/legal/terms.html</loc>
+        <lastmod>2025-09-28</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     
-    <!-- Educational Pages -->
+    <!-- Legal Privacy - low priority -->
     <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/care.html</loc>
-        <lastmod>2025-09-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/therapy.html</loc>
-        <lastmod>2025-09-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/rabbits-hares.html</loc>
+        <loc>https://xn--80apagbbfxgmuj4j.site/legal/privacy.html</loc>
         <lastmod>2025-09-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
     </url>
-    
-    <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/cats-rabbits.html</loc>
-        <lastmod>2025-09-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
 </urlset>
