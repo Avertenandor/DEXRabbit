@@ -1,64 +1,23 @@
-# Task 28: Enhanced robots.txt for SEO
-User-agent: *
+﻿User-agent: *
 Allow: /
-
-# Allow important files
-Allow: /images/
-Allow: /styles/
-Allow: /scripts/
-Allow: /catalog/
-Allow: /blog/
-Allow: /gallery/
-Allow: /faq/
-Allow: /contacts/
-Allow: /delivery/
-Allow: /policy/
-Allow: /terms/
-
-# Important files for SEO
-Allow: /sitemap.xml
-Allow: /robots.txt
-Allow: /manifest.json
-Allow: /favicon.ico
-Allow: /images/favicon.svg
-
-# Sitemap location
-Sitemap: https://xn--80apagbbfxgmuj4j.site/sitemap.xml
-
-# Block admin and sensitive areas (if any)
-Disallow: /admin/
-Disallow: /.git/
-Disallow: /node_modules/
-Disallow: /tests/
-
-# Crawl-delay for respectful crawling
-Crawl-delay: 1
-Allow: /contacts
-Allow: /delivery
-
-# Block low-value pages
-Disallow: /policy
-Disallow: /terms
-Disallow: /404.html
 
 # Sitemap
-Sitemap: https://xn--80apagbbfxgmuj4j.site/sitemap.xml
+Sitemap: https://xn--80apagbbfxgmuj4j.site/sitemap-index.xml
+Sitemap: https://xn--80apagbbfxgmuj4j.site/sitemap-0.xml
 
-# Additional directives
-User-agent: Googlebot
+# Crawl-delay
 Crawl-delay: 1
-Allow: /
 
-User-agent: Yandex
-Crawl-delay: 1
-Allow: /
-
-# Disallow admin areas (if any)
+# Disallow admin and private areas
 Disallow: /admin/
+Disallow: /private/
+Disallow: /*.json$
 Disallow: /api/
-Disallow: /_astro/
 
-# Allow all other content
-Allow: /images/
-Allow: /og/
-Allow: /data/
+# Allow important pages
+Allow: /
+Allow: /investment-model
+Allow: /partnership  
+Allow: /contacts
+Allow: /catalog
+Allow: /legal/license
