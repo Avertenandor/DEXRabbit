@@ -145,4 +145,33 @@
         <priority>0.3</priority>
     </url>
     
+    <!-- Educational Pages -->
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/care.html</loc>
+        <lastmod>2025-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/therapy.html</loc>
+        <lastmod>2025-09-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/rabbits-hares.html</loc>
+        <lastmod>2025-09-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/cats-rabbits.html</loc>
+        <lastmod>2025-09-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
 </urlset>

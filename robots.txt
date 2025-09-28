@@ -2,6 +2,7 @@
 Allow: /
 
 # Sitemap
+Sitemap: https://xn--80apagbbfxgmuj4j.site/sitemap.xml
 Sitemap: https://xn--80apagbbfxgmuj4j.site/sitemap-index.xml
 Sitemap: https://xn--80apagbbfxgmuj4j.site/sitemap-0.xml
 
