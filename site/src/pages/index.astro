@@ -1,0 +1,115 @@
+﻿---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="DEXRabbit  токенизированная ферма кроликов" 
+           description=" Инвестируйте в токенизированных кроликов, получайте PLEX токены и участвуйте в реальной экономике фермы в Подольске">
+    
+    <!-- Hero Section -->
+    <section class="section section-primary">
+        <div class="container">
+            <div class="section-header section-header-white">
+                <h1 class="section-title"> DEXRabbit</h1>
+                <p class="section-description">
+                    Первая в мире токенизированная ферма кроликов.<br>
+                    Инвестируйте в реальных животных, получайте PLEX токены
+                </p>
+            </div>
+            
+            <div class="hero-stats">
+                <div class="stat-card">
+                    <div class="stat-number">150+</div>
+                    <div class="stat-label">Кроликов на ферме</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">50+</div>
+                    <div class="stat-label">Активных инвесторов</div>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number">₽2.5М+</div>
+                    <div class="stat-label">Общий объём</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLEX Widget Section -->
+    <section class="section" id="plex-widget">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"> Курс PLEX Token</h2>
+                <p class="section-description">
+                    Реальное время, BSC сеть
+                </p>
+            </div>
+            
+            <div class="widget-container" style="aspect-ratio:16/9">
+                <iframe
+                    id="geckoterminal-embed"
+                    title="GeckoTerminal PLEX/WBNB"
+                    src="https://www.geckoterminal.com/ru/bsc/pools/0x41d9650faf3341cbf8947fd8063a1fc88dbf1889?embed=1&info=1&swaps=1&grayscale=0&light_chart=0&chart_type=price&resolution=15m"
+                    frameborder="0"
+                    loading="lazy"
+                    referrerpolicy="no-referrer"
+                    sandbox="allow-scripts allow-same-origin allow-popups allow-forms"
+                    allow="clipboard-write"
+                    style="width:100%;height:100%;border-radius:16px;"
+                ></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Grid -->
+    <section class="section section-gray">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title"> Как это работает</h2>
+            </div>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>Инвестиции</h3>
+                    <p>Вкладывайте от 100 до 2000 USDT в Круг А, получайте долю от прибыли фермы</p>
+                    <a href="/investment-model" class="feature-link">Подробнее </a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>Персональный кролик</h3>
+                    <p>Покупка животного с правом на прибыль от продажи потомства</p>
+                    <a href="/breeding" class="feature-link">Подробнее </a>
+                </div>
+                
+                <div class="feature-card">
+                    <div class="feature-icon"></div>
+                    <h3>Партнёрство</h3>
+                    <p>3 уровня  5% от вложений и прибыли ваших рефералов</p>
+                    <a href="/partnership" class="feature-link">Подробнее </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Investment CTA -->
+    <section class="section section-primary">
+        <div class="container">
+            <div class="section-header section-header-white">
+                <h2 class="section-title"> Начать инвестировать</h2>
+                <p class="section-description">
+                    Гарантирован возврат вклада. Прибыль зависит от результатов фермы
+                </p>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="/investment-model" class="btn btn-secondary btn-large">
+                     Инвестиционная модель
+                </a>
+                <a href="/contacts" class="btn btn-outline btn-large">
+                     Связаться с нами
+                </a>
+            </div>
+        </div>
+    </section>
+
+</BaseLayout>
