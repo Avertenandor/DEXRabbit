@@ -35,12 +35,22 @@
     <!-- Navigation -->
     <nav class="navbar" role="navigation">
         <div class="container">
+            <!-- Logo Section -->
+            <div class="navbar-header">
+                <div class="logo-wrapper">
+                    <a href="/" class="site-logo">
+                        <img src="/favicon.svg" alt="DEXRabbit">
+                        <div class="logo-text">
+                            <span class="logo-title">DEXRabbit</span>
+                            <span class="logo-slogan">Твой пассивный доход на кроликах</span>
+                        </div>
+                    </a>
+                </div>
+                <button class="mobile-nav-toggle" aria-label="Меню" onclick="toggleMenu()">☰</button>
+            </div>
+            
+            <!-- Navigation Links -->
             <div class="navbar-inner">
-                <a href="/" class="site-logo">
-                    <img src="/favicon.svg" alt="DEXRabbit">
-                    <span>DEXRabbit</span>
-                </a>
-                
                 <div class="nav-links" id="nav-menu">
                     <!-- Основные разделы -->
                     <div class="nav-group">
@@ -66,8 +76,6 @@
                     <!-- CTA кнопка -->
                     <a href="https://t.me/dexrabbit_bot" class="btn btn-primary nav-cta">💬 Начать инвестировать</a>
                 </div>
-                
-                <button class="mobile-nav-toggle" aria-label="Меню" onclick="toggleMenu()">☰</button>
             </div>
         </div>
     </nav>
