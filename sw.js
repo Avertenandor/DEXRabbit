@@ -1,6 +1,6 @@
 // Service Worker с обновленной версией кэша
 // ВАЖНО: Меняйте CACHE_VERSION при каждом обновлении!
-const CACHE_VERSION = 'v2025-09-29-OG-FIX';
+const CACHE_VERSION = 'v2025-09-29-FIX-BROKEN-LINKS';
 const STATIC_CACHE = `dexrabbit-static-${CACHE_VERSION}`;
 const DYNAMIC_CACHE = `dexrabbit-dynamic-${CACHE_VERSION}`;
 
