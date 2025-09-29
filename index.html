@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>DEXRabbit — Кроличий фарм токенизирован | Инвестиции в ферму</title>
     <meta name="description" content="Инвестируй в ферму, отслеживай доходность, владей долей. Токенизированное разведение кроликов с прозрачной отчетностью.">
     
@@ -34,6 +34,12 @@
     <!-- Styles -->
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/variables.css">
+    <link rel="stylesheet" href="/assets/css/avatars.css">
+    <link rel="stylesheet" href="/assets/css/responsive-extreme.css">
+    
+    <!-- Mobile Navigation Script -->
+    <script defer src="/assets/js/nav.js"></script>
+    <script defer src="/assets/js/responsive-utils.js"></script>
 </head>
 <body>
     <!-- Navigation -->
@@ -50,12 +56,12 @@
                         </div>
                     </a>
                 </div>
-                <button class="mobile-nav-toggle" aria-label="Меню" onclick="toggleMenu()">☰</button>
+                <button class="mobile-nav-toggle burger" aria-label="Меню" data-burger>☰</button>
             </div>
             
             <!-- Navigation Links -->
             <div class="navbar-inner">
-                <div class="nav-links" id="nav-menu">
+                <div class="nav-links" id="nav-menu" data-menu>
                     <!-- Основные разделы -->
                     <div class="nav-group">
                         <a href="#about">О проекте</a>
@@ -782,8 +788,8 @@
                     <!-- Реальные инвесторы проекта -->
                     <div class="card" style="text-align: center; position: relative; padding: 1.5rem;">
                         <div style="position: absolute; top: 10px; right: 10px; background: linear-gradient(135deg, #facc15, #f97316); color: #1a1a1a; padding: 4px 12px; border-radius: 20px; font-size: 0.7rem; font-weight: 600;">VIP</div>
-                        <div style="width: 120px; height: 120px; border-radius: 50%; margin: 0 auto 1rem; overflow: hidden; border: 3px solid #7c8cff;">
-                            <img src="/assets/img/avatars/natder.jpg" alt="Наталья" style="width: 100%; height: 100%; object-fit: cover; background: white;">
+                        <div class="avatar avatar--sm">
+                            <img class="avatar__img" src="/assets/img/avatars/natder.jpg" alt="Наталья">
                         </div>
                         <h4>Наталья</h4>
                         <a href="https://t.me/natder" target="_blank" style="color: #4cc9f0; text-decoration: none; font-size: 0.9rem;">@natder</a>

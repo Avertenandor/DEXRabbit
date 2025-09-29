@@ -1,0 +1,356 @@
+/**
+ * DEXRabbit - Дополнительные медиа-запросы
+ * Для экстремальных размеров экранов
+ */
+
+/* ==== Очень маленькие экраны (часы, мини-телефоны) ==== */
+@media (max-width: 320px) {
+    :root {
+        --container-pad: 12px;
+        --fz-hero: 22px;
+        --fz-h2: 18px;
+        --fz-h3: 16px;
+        --fz-body: 14px;
+    }
+    
+    .hero-title {
+        font-size: 1.5rem;
+        line-height: 1.2;
+    }
+    
+    .btn {
+        font-size: 13px;
+        padding: 10px 12px;
+        min-height: 40px;
+    }
+    
+    .avatar {
+        width: 80px;
+    }
+    
+    .card {
+        padding: 1rem;
+    }
+    
+    /* Скрываем некритичные элементы */
+    .hide-xs {
+        display: none !important;
+    }
+}
+
+/* ==== Складные телефоны (Galaxy Fold) ==== */
+@media (max-width: 280px) {
+    .navbar .logo-text {
+        display: none;
+    }
+    
+    .navbar .site-logo img {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .grid,
+    .investors-grid,
+    .feature-grid {
+        grid-template-columns: 1fr !important;
+    }
+}
+
+/* ==== Большие планшеты (iPad Pro) ==== */
+@media (min-width: 1024px) and (max-width: 1366px) {
+    .container {
+        max-width: 960px;
+    }
+    
+    .grid-4 {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* ==== Ультраширокие мониторы (21:9) ==== */
+@media (min-width: 2560px) {
+    :root {
+        --container-max: 1440px;
+        --container-wide: 1680px;
+        --container-ultrawide: 2200px;
+    }
+    
+    .container {
+        max-width: var(--container-wide);
+    }
+    
+    .container.wide {
+        max-width: var(--container-ultrawide);
+    }
+    
+    /* Увеличиваем размеры для 4K */
+    html {
+        font-size: 18px;
+    }
+    
+    .hero {
+        min-height: 60vh;
+        padding-block: 8rem;
+    }
+    
+    .section {
+        padding-block: 6rem;
+    }
+    
+    /* 5-колоночная сетка на больших экранах */
+    .grid-5 {
+        grid-template-columns: repeat(5, 1fr);
+    }
+    
+    @media (min-width: 3440px) {
+        /* Ультраширокие 34" мониторы */
+        .grid-6 {
+            grid-template-columns: repeat(6, 1fr);
+        }
+        
+        .hero-content {
+            max-width: 50%;
+        }
+    }
+}
+
+/* ==== 4K и 5K мониторы ==== */
+@media (min-width: 3840px) {
+    :root {
+        --container-ultrawide: 2800px;
+    }
+    
+    html {
+        font-size: 20px;
+    }
+    
+    .container.ultrawide {
+        max-width: 3200px;
+    }
+    
+    /* Масштабируем элементы для 4K */
+    .avatar {
+        width: 220px;
+    }
+    
+    .avatar--lg {
+        width: 280px;
+    }
+}
+
+/* ==== Режим печати ==== */
+@media print {
+    /* Скрываем ненужное при печати */
+    .navbar,
+    .footer,
+    .mobile-nav-toggle,
+    .btn,
+    .cta-row,
+    .hero-cta,
+    .widget-frame,
+    video,
+    iframe {
+        display: none !important;
+    }
+    
+    /* Убираем фоны */
+    * {
+        background: white !important;
+        color: black !important;
+        box-shadow: none !important;
+        text-shadow: none !important;
+    }
+    
+    /* Показываем ссылки */
+    a[href]:after {
+        content: " (" attr(href) ")";
+        font-size: 0.8em;
+    }
+    
+    /* Разрывы страниц */
+    .section {
+        page-break-after: auto;
+        page-break-inside: avoid;
+    }
+    
+    h1, h2, h3 {
+        page-break-after: avoid;
+    }
+    
+    img {
+        max-width: 100% !important;
+        page-break-inside: avoid;
+    }
+}
+
+/* ==== Dark mode поддержка ==== */
+@media (prefers-color-scheme: dark) {
+    /* Уже реализовано в основном CSS */
+}
+
+/* ==== Режим высокой контрастности ==== */
+@media (prefers-contrast: high) {
+    :root {
+        --color-text-primary: #ffffff;
+        --color-text-secondary: #e0e0e0;
+        --color-bg-primary: #000000;
+        --color-border: #ffffff;
+    }
+    
+    .btn {
+        border: 2px solid currentColor;
+    }
+    
+    a {
+        text-decoration: underline;
+    }
+}
+
+/* ==== Режим уменьшенной анимации ==== */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+    
+    .hero,
+    .section {
+        scroll-behavior: auto;
+    }
+}
+
+/* ==== Ландшафтная ориентация на мобильных ==== */
+@media (max-width: 900px) and (orientation: landscape) {
+    .hero {
+        min-height: 100vh;
+        padding-block: 2rem;
+    }
+    
+    .navbar {
+        position: fixed;
+        padding-block: 0.5rem;
+    }
+    
+    /* Компактный режим */
+    .hero-title {
+        font-size: 1.75rem;
+    }
+    
+    .hero-subtitle {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+    }
+    
+    /* Горизонтальное расположение кнопок */
+    .hero-cta {
+        flex-direction: row;
+    }
+    
+    .hero-cta .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ==== Специальные размеры устройств ==== */
+
+/* iPhone SE (старый) */
+@media (width: 320px) and (height: 568px) {
+    .hero {
+        padding-top: 3rem;
+    }
+}
+
+/* iPhone 12/13/14 Pro */
+@media (width: 390px) and (height: 844px) {
+    /* Учитываем Dynamic Island */
+    .navbar {
+        padding-top: calc(env(safe-area-inset-top) + 0.5rem);
+    }
+}
+
+/* iPad Mini */
+@media (width: 768px) and (height: 1024px) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Surface Duo (двойной экран) */
+@media (min-width: 540px) and (max-width: 720px) {
+    .container {
+        padding-inline: 24px;
+    }
+}
+
+/* ==== Retina и высокая плотность пикселей ==== */
+@media (-webkit-min-device-pixel-ratio: 2),
+       (min-resolution: 192dpi) {
+    /* Используем более четкие изображения */
+    .site-logo img {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+}
+
+/* ==== TV и большие экраны (для презентаций) ==== */
+@media (min-width: 1920px) and (min-height: 1080px) {
+    /* Увеличиваем все для читаемости с расстояния */
+    .presentation-mode {
+        font-size: 1.5em;
+    }
+    
+    .presentation-mode .btn {
+        padding: 1.5rem 3rem;
+        font-size: 1.25rem;
+    }
+    
+    .presentation-mode .hero-title {
+        font-size: 4rem;
+    }
+}
+
+/* ==== Финальные корректировки ==== */
+
+/* Фикс для Samsung Internet */
+@supports (-webkit-appearance: none) and (not (-moz-appearance: none)) {
+    .container {
+        padding-inline: max(env(safe-area-inset-left), var(--container-pad));
+    }
+}
+
+/* Фикс для старых Edge */
+@supports (-ms-ime-align: auto) {
+    .grid {
+        display: -ms-grid;
+    }
+}
+
+/* Специальная адаптация для DEXRabbit */
+.widget-frame {
+    min-height: 300px;
+}
+
+@media (max-width: 768px) {
+    .widget-frame {
+        min-height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .widget-frame {
+        min-height: 200px;
+    }
+    
+    /* Скрываем сложные таблицы на очень маленьких экранах */
+    .table-complex {
+        display: none;
+    }
+    
+    .table-simple {
+        display: block;
+    }
+}

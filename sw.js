@@ -1,6 +1,6 @@
 // Service Worker с обновленной версией кэша
 // ВАЖНО: Меняйте CACHE_VERSION при каждом обновлении!
-const CACHE_VERSION = 'v2025-09-29-ALEXANDER-FIX-' + Date.now();
+const CACHE_VERSION = 'v2025-09-29-RESPONSIVE-' + Date.now();
 const STATIC_CACHE = `dexrabbit-static-${CACHE_VERSION}`;
 const DYNAMIC_CACHE = `dexrabbit-dynamic-${CACHE_VERSION}`;
 
@@ -11,6 +11,9 @@ const ASSETS = [
   "/assets/css/main.css",
   "/assets/css/variables.css",
   "/assets/css/avatars.css",
+  "/assets/css/responsive-extreme.css",
+  "/assets/js/nav.js",
+  "/assets/js/responsive-utils.js",
   "/favicon.ico",
   "/favicon.svg",
   "/manifest.webmanifest"

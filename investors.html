@@ -2,7 +2,7 @@
 <html lang="ru">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     <title>Наши инвесторы — DEXRabbit | Реальные владельцы кроликов</title>
     <meta name="description" content="Инвесторы DEXRabbit. Реальные люди, которые доверили нам свои инвестиции в токенизированную ферму кроликов.">
     
@@ -34,6 +34,11 @@
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/variables.css">
     <link rel="stylesheet" href="/assets/css/avatars.css">
+    <link rel="stylesheet" href="/assets/css/responsive-extreme.css">
+    
+    <!-- Mobile Navigation Script -->
+    <script defer src="/assets/js/nav.js"></script>
+    <script defer src="/assets/js/responsive-utils.js"></script>
     
     <style>
         .investors-grid {
@@ -195,7 +200,7 @@
                 </div>
                 <div style="display: flex; align-items: center; gap: 1rem;">
                     <a href="/" class="btn btn-ghost" style="padding: 0.5rem 1rem; font-size: 0.9rem;">🏠 На главную</a>
-                    <button class="mobile-nav-toggle" aria-label="Меню" onclick="toggleMenu()">☰</button>
+                    <button class="mobile-nav-toggle burger" aria-label="Меню" data-burger>☰</button>
                 </div>
             </div>
         </div>
