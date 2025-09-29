@@ -197,24 +197,25 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // 10. Performance: отложенная загрузка некритичных стилей
     function loadDeferredStyles() {
-        // Закомментировано до создания этих файлов
-        // const deferredStyles = [
-        //     '/assets/css/animations.css',
-        //     '/assets/css/print.css'
-        // ];
+        const deferredStyles = [
+            '/assets/css/animations.css',
+            '/assets/css/print.css'
+        ];
         
-        // deferredStyles.forEach(href => {
-        //     fetch(href, { method: 'HEAD' })
-        //         .then(response => {
-        //             if (response.ok) {
-        //                 const link = document.createElement('link');
-        //                 link.rel = 'stylesheet';
-        //                 link.href = href;
-        //                 document.head.appendChild(link);
-        //             }
-        //         })
-        //         .catch(() => {});
-        // });
+        deferredStyles.forEach(href => {
+            fetch(href, { method: 'HEAD' })
+                .then(response => {
+                    if (response.ok) {
+                        const link = document.createElement('link');
+                        link.rel = 'stylesheet';
+                        link.href = href;
+                        document.head.appendChild(link);
+                    }
+                })
+                .catch(() => {
+                    console.warn(`Failed to load deferred style: ${href}`);
+                });
+        });
     }
     
     // 11. Добавляем классы для определения возможностей
@@ -267,8 +268,8 @@ document.addEventListener('DOMContentLoaded', function() {
         preventZoomOnFocus();
         adaptInvestorCards();
         
-        // Отложенная загрузка (временно отключена)
-        // setTimeout(loadDeferredStyles, 2000);
+        // Отложенная загрузка стилей
+        setTimeout(loadDeferredStyles, 2000);
     }
     
     // Запуск

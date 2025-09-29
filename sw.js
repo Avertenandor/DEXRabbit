@@ -12,6 +12,8 @@ const ASSETS = [
   "/assets/css/variables.css",
   "/assets/css/avatars.css",
   "/assets/css/responsive-extreme.css",
+  "/assets/css/animations.css",
+  "/assets/css/print.css",
   "/assets/js/nav.js",
   "/assets/js/responsive-utils.js",
   "/favicon.ico",
