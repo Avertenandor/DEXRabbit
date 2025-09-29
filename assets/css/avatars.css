@@ -1,0 +1,177 @@
+/* === AVATAR SYSTEM: Универсальные правила для круглых фото === */
+:root {
+  --avatar-xl: 176px;   /* десктоп */
+  --avatar-lg: 160px;   /* планшеты */
+  --avatar-md: 144px;   /* мобильные планшеты */
+  --avatar-sm: 120px;   /* мобильные телефоны */
+}
+
+/* Базовый контейнер для аватарки */
+.avatar {
+  position: relative;
+  display: inline-block;
+  width: var(--avatar-xl);
+  aspect-ratio: 1 / 1;
+  border-radius: 9999px;
+  overflow: hidden;
+  background: #0f1420;
+  flex-shrink: 0;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* Hover эффект для контейнера */
+.avatar:hover {
+  transform: scale(1.05);
+  box-shadow: 0 10px 30px rgba(124, 140, 255, 0.3);
+}
+
+/* Само изображение */
+.avatar__img,
+.avatar img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: 50% 35%;  /* Фокус на верхней части для лиц */
+  image-rendering: auto;
+  transform: translateZ(0);  /* Оптимизация для GPU */
+}
+
+/* Специальные модификаторы позиционирования */
+.avatar--center .avatar__img,
+.avatar--center img {
+  object-position: 50% 50%;
+}
+
+.avatar--top .avatar__img,
+.avatar--top img {
+  object-position: 50% 25%;  /* Для очень высоких портретов */
+}
+
+.avatar--bottom .avatar__img,
+.avatar--bottom img {
+  object-position: 50% 60%;  /* Если нужно опустить фокус */
+}
+
+/* Размеры для разных контекстов */
+.avatar--large {
+  width: 224px;
+}
+
+.avatar--medium {
+  width: var(--avatar-lg);
+}
+
+.avatar--small {
+  width: var(--avatar-sm);
+}
+
+/* Специальный стиль для страницы инвесторов */
+.investor-avatar {
+  width: 200px;
+  margin: 0 auto 1.5rem;
+  border: 3px solid rgba(124, 140, 255, 0.2);
+  box-shadow: 0 8px 24px rgba(124, 140, 255, 0.15);
+}
+
+.investor-avatar img {
+  object-position: 50% 30%;  /* Оптимально для портретов инвесторов */
+}
+
+/* Градиентный фон как фоллбэк */
+.avatar--gradient {
+  background: linear-gradient(135deg, #7c8cff, #4cc9f0);
+}
+
+/* Инициалы как фоллбэк */
+.avatar__initials {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: white;
+  font-size: 2rem;
+  font-weight: bold;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.avatar--no-image .avatar__initials {
+  opacity: 1;
+}
+
+/* Адаптивность */
+@media (max-width: 1024px) {
+  .avatar {
+    width: var(--avatar-lg);
+  }
+  
+  .investor-avatar {
+    width: 180px;
+  }
+  
+  .avatar--large {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .avatar {
+    width: var(--avatar-md);
+  }
+  
+  .investor-avatar {
+    width: 160px;
+  }
+  
+  .avatar--large {
+    width: 180px;
+  }
+}
+
+@media (max-width: 640px) {
+  .avatar {
+    width: var(--avatar-sm);
+  }
+  
+  .investor-avatar {
+    width: 140px;
+  }
+  
+  .avatar--large {
+    width: 160px;
+  }
+  
+  .avatar__initials {
+    font-size: 1.5rem;
+  }
+}
+
+/* Анимация загрузки */
+@keyframes avatar-pulse {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.7;
+  }
+}
+
+.avatar--loading {
+  animation: avatar-pulse 1.5s ease-in-out infinite;
+  background: linear-gradient(135deg, #374151, #4b5563);
+}
+
+/* Специальные стили для конкретных инвесторов (тонкая настройка) */
+.avatar[data-investor="natder"] img {
+  object-position: 50% 20%;  /* Поднимаем фокус для Натальи */
+}
+
+.avatar[data-investor="vlad"] img {
+  object-position: 50% 35%;  /* Стандартное положение для Влада */
+}
+
+.avatar[data-investor="alexander"] img {
+  object-position: 50% 30%;  /* Оптимально для Александра */
+}

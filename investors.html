@@ -33,6 +33,7 @@
     <!-- Styles -->
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/variables.css">
+    <link rel="stylesheet" href="/assets/css/avatars.css">
     
     <style>
         .investors-grid {
@@ -68,27 +69,7 @@
             box-shadow: 0 10px 30px rgba(124, 140, 255, 0.2);
             border-color: rgba(124, 140, 255, 0.4);
         }
-        
-        .investor-avatar {
-            width: 179px;
-            height: 179px;
-            border-radius: 50%;
-            margin: 0 auto 1.5rem;
-            background: linear-gradient(135deg, #7c8cff, #4cc9f0);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 2rem;
-            font-weight: bold;
-            overflow: hidden;
-        }
-        
-        .investor-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+        /* Аватарки инвесторов теперь управляются через avatars.css */
         
         .investor-name {
             font-size: 1.5rem;
@@ -272,8 +253,8 @@
                     <!-- Investor 1: Наталья -->
                     <div class="investor-card">
                         <div class="investor-badge">VIP инвестор</div>
-                        <div class="investor-avatar" style="width: 224px; height: 224px; margin: 0 auto 1.5rem;">
-                            <img src="/assets/img/avatars/natder.jpg" alt="Наталья" style="width: 100%; height: 100%; object-fit: cover; background: white; border-radius: 50%;">
+                        <div class="avatar investor-avatar" data-investor="natder">
+                            <img class="avatar__img" src="/assets/img/avatars/natder.jpg" alt="Наталья" loading="lazy">
                         </div>
                         <h3 class="investor-name">Наталья</h3>
                         <a href="https://t.me/natder" class="investor-username" target="_blank">@natder</a>
@@ -309,8 +290,9 @@
                     <!-- Investor 2: Влад (Дед в тапках) -->
                     <div class="investor-card">
                         <div class="investor-badge">VIP инвестор</div>
-                        <div class="investor-avatar" style="background: linear-gradient(135deg, #4ade80, #22d3ee); position: relative; overflow: hidden;">
-                            <img src="/assets/img/avatars/vlad.png?v=20250929-vlad" alt="Влад" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; position: absolute; top: 0; left: 0;" onerror="this.style.opacity='0';" onload="this.style.opacity='1'; this.parentElement.style.background='none';">
+                        <div class="avatar investor-avatar avatar--gradient" data-investor="vlad">
+                            <img class="avatar__img" src="/assets/img/avatars/vlad.png" alt="Влад" loading="lazy" onerror="this.style.opacity='0';">
+                            <span class="avatar__initials">ВД</span>
                         </div>
                         <h3 class="investor-name">Влад</h3>
                         <a href="https://t.me/ded_vtapkax" class="investor-username" target="_blank">@ded_vtapkax</a>
@@ -346,8 +328,8 @@
                     <!-- Investor 3: Александр -->
                     <div class="investor-card">
                         <div class="investor-badge">VIP инвестор</div>
-                        <div class="investor-avatar" style="background: linear-gradient(135deg, #a78bfa, #7c3aed); position: relative; overflow: hidden;">
-                            <img src="/assets/img/avatars/alexander.jpg?v=20250929-final" alt="Александр" style="width: 100%; height: 100%; object-fit: cover; border-radius: 50%; position: absolute; top: 0; left: 0;" onerror="this.style.opacity='0';" onload="this.style.opacity='1'; this.parentElement.style.background='none';">
+                        <div class="avatar investor-avatar" data-investor="alexander">
+                            <img class="avatar__img" src="/assets/img/avatars/alexander.jpg" alt="Александр" loading="lazy">
                         </div>
                         <h3 class="investor-name">Александр</h3>
                         <a href="https://t.me/AlexGenom8515" class="investor-username" target="_blank">@AlexGenom8515</a>

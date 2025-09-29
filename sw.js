@@ -10,6 +10,7 @@ const ASSETS = [
   "/index.html",
   "/assets/css/main.css",
   "/assets/css/variables.css",
+  "/assets/css/avatars.css",
   "/favicon.ico",
   "/favicon.svg",
   "/manifest.webmanifest"
