@@ -78,10 +78,9 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 3rem;
             color: white;
+            font-size: 2rem;
             font-weight: bold;
-            position: relative;
             overflow: hidden;
         }
         
@@ -89,9 +88,7 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-        }
-        
-        .investor-name {
+        }        .investor-name {
             font-size: 1.5rem;
             font-weight: 600;
             margin-bottom: 0.5rem;
@@ -346,7 +343,8 @@
                     <div class="investor-card">
                         <div class="investor-badge">VIP инвестор</div>
                         <div class="investor-avatar">
-                            <img src="/assets/img/avatars/alexander.jpg" alt="Александр" style="width: 100%; height: 100%; object-fit: cover;">
+                            <img src="/assets/img/avatars/alexander.jpg?v=20250929-fix" alt="Александр" style="position: absolute;" onerror="this.style.display='none';" onload="this.parentElement.style.fontSize='0';">
+                            АГ
                         </div>
                         <h3 class="investor-name">Александр</h3>
                         <a href="https://t.me/AlexGenom8515" class="investor-username" target="_blank">@AlexGenom8515</a>
