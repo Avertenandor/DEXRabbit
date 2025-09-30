@@ -1,131 +1,1015 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Партнерская программа — DEXRabbit | Зарабатывайте с нами</title>
-    <meta name="description" content="Партнерская программа DEXRabbit. 3 уровня по 5%, выплаты в USDT и PLEX. Зарабатывайте на привлечении инвесторов в токенизированную ферму кроликов.">
-    
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Партнерская программа DEXRabbit | До 15% с каждого инвестора</title>
+    <meta
+      name="description"
+      content="Партнерская программа DEXRabbit. 3 уровня по 5% от вложений и дохода. Моментальные выплаты в USDT BSC. Регистрация через @dexrabbit_bot."
+    />
+
     <!-- Favicons -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <link rel="manifest" href="/manifest.webmanifest">
-    <meta name="theme-color" content="#7c8cff">
-    
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#7c8cff" />
+
     <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Партнерская программа — DEXRabbit">
-    <meta property="og:description" content="Зарабатывайте на привлечении инвесторов. 3 уровня по 5%, выплаты в USDT и PLEX.">
-    <meta property="og:url" content="https://xn--80apagbbfxgmuj4j.site/partnership.html">
-    <meta property="og:image" content="https://xn--80apagbbfxgmuj4j.site/og/og-rabbit.jpg?v=20250929">
-    <meta property="og:site_name" content="DEXRabbit">
-    <meta property="og:locale" content="ru_RU">
-    
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Партнерская программа DEXRabbit — Заработок до 15%" />
+    <meta
+      property="og:description"
+      content="Зарабатывайте на привлечении инвесторов. 3 уровня по 5%. Моментальные выплаты в USDT BSC."
+    />
+    <meta property="og:url" content="https://xn--80apagbbfxgmuj4j.site/partnership.html" />
+    <meta property="og:image" content="https://xn--80apagbbfxgmuj4j.site/og/og-partnership.jpg" />
+    <meta property="og:site_name" content="DEXRabbit" />
+    <meta property="og:locale" content="ru_RU" />
+
     <!-- Twitter / X -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Партнерская программа — DEXRabbit">
-    <meta name="twitter:description" content="Зарабатывайте на привлечении инвесторов. 3 уровня по 5%, выплаты в USDT и PLEX.">
-    <meta name="twitter:image" content="https://xn--80apagbbfxgmuj4j.site/og/og-rabbit.jpg?v=20250929">
-    
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Партнерская программа DEXRabbit" />
+    <meta name="twitter:description" content="3 уровня по 5%. Моментальные выплаты в USDT BSC." />
+    <meta name="twitter:image" content="https://xn--80apagbbfxgmuj4j.site/og/og-partnership.jpg" />
+
     <!-- Canonical -->
-    <link rel="canonical" href="https://xn--80apagbbfxgmuj4j.site/partnership.html">
-    
+    <link rel="canonical" href="https://xn--80apagbbfxgmuj4j.site/partnership.html" />
+
     <!-- Styles -->
-    <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/variables.css">
-</head>
-<body>
-    <!-- Navigation (копируем с главной) -->
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/animations.css" />
+    <link rel="stylesheet" href="/assets/css/print.css" media="print" />
+
+    <style>
+      /* Специальные стили для партнерской страницы */
+      .telegram-cta {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.75rem;
+        padding: 1rem 2rem;
+        background: linear-gradient(135deg, #229ed9 0%, #2aabee 100%);
+        color: white;
+        border-radius: 12px;
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 1.1rem;
+        transition:
+          transform 0.3s ease,
+          box-shadow 0.3s ease;
+        box-shadow: 0 4px 15px rgba(34, 158, 217, 0.3);
+      }
+
+      .telegram-cta:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 8px 25px rgba(34, 158, 217, 0.5);
+      }
+
+      .telegram-cta-large {
+        padding: 1.25rem 2.5rem;
+        font-size: 1.2rem;
+      }
+
+      .telegram-icon {
+        width: 24px;
+        height: 24px;
+      }
+
+      .partner-flow {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+        margin: 3rem 0;
+      }
+
+      .flow-card {
+        background: linear-gradient(135deg, rgba(124, 140, 255, 0.05), rgba(74, 222, 128, 0.05));
+        border: 1px solid rgba(124, 140, 255, 0.2);
+        border-radius: 16px;
+        padding: 2rem;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .flow-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 4px;
+        background: linear-gradient(90deg, #7c8cff, #4cc9f0, #4ade80);
+      }
+
+      .flow-number {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 48px;
+        height: 48px;
+        background: linear-gradient(135deg, #7c8cff, #4cc9f0);
+        color: white;
+        border-radius: 50%;
+        font-size: 1.25rem;
+        font-weight: bold;
+        margin-bottom: 1rem;
+      }
+
+      .commission-table {
+        background: rgba(124, 140, 255, 0.05);
+        border-radius: 16px;
+        padding: 2rem;
+        margin: 2rem 0;
+      }
+
+      .commission-row {
+        display: grid;
+        grid-template-columns: auto 1fr auto;
+        align-items: center;
+        gap: 2rem;
+        padding: 1.5rem;
+        margin: 1rem 0;
+        background: rgba(0, 0, 0, 0.3);
+        border-radius: 12px;
+        border: 1px solid rgba(124, 140, 255, 0.2);
+      }
+
+      .level-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0.5rem 1rem;
+        background: linear-gradient(135deg, #7c8cff, #4cc9f0);
+        color: white;
+        border-radius: 8px;
+        font-weight: bold;
+      }
+
+      .percentage-display {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        font-size: 1.5rem;
+        font-weight: bold;
+      }
+
+      .percentage-display .plus {
+        color: #facc15;
+      }
+
+      .income-type {
+        font-size: 0.9rem;
+        opacity: 0.8;
+        margin-top: 0.25rem;
+      }
+
+      .how-it-works {
+        background: linear-gradient(135deg, rgba(34, 158, 217, 0.05), rgba(42, 171, 238, 0.05));
+        border-radius: 20px;
+        padding: 3rem;
+        margin: 3rem 0;
+        border: 2px solid rgba(34, 158, 217, 0.2);
+      }
+
+      .example-card {
+        background: linear-gradient(135deg, rgba(250, 204, 21, 0.1), rgba(249, 115, 22, 0.1));
+        border: 1px solid rgba(250, 204, 21, 0.3);
+        border-radius: 16px;
+        padding: 2rem;
+        margin: 2rem 0;
+      }
+
+      .earning-preview {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .earning-item {
+        text-align: center;
+        padding: 1.5rem;
+        background: rgba(74, 222, 128, 0.1);
+        border-radius: 12px;
+        border: 1px solid rgba(74, 222, 128, 0.3);
+      }
+
+      .earning-amount {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #4ade80;
+        margin: 0.5rem 0;
+      }
+
+      .important-note {
+        background: linear-gradient(135deg, rgba(239, 68, 68, 0.1), rgba(248, 113, 113, 0.1));
+        border: 2px solid rgba(239, 68, 68, 0.3);
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .important-note h4 {
+        color: #f87171;
+        margin-bottom: 1rem;
+      }
+
+      .registration-block {
+        background: linear-gradient(135deg, rgba(34, 158, 217, 0.1), rgba(42, 171, 238, 0.1));
+        border-radius: 20px;
+        padding: 3rem;
+        text-align: center;
+        margin: 3rem 0;
+        border: 2px solid rgba(34, 158, 217, 0.3);
+      }
+
+      .faq-simple {
+        display: grid;
+        gap: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .faq-item {
+        background: rgba(124, 140, 255, 0.05);
+        border-radius: 12px;
+        padding: 1.5rem;
+        border: 1px solid rgba(124, 140, 255, 0.2);
+      }
+
+      .faq-item h4 {
+        color: #7c8cff;
+        margin-bottom: 1rem;
+        font-size: 1.1rem;
+      }
+
+      @media (max-width: 768px) {
+        .telegram-cta {
+          font-size: 1rem;
+          padding: 0.875rem 1.5rem;
+        }
+
+        .commission-row {
+          grid-template-columns: 1fr;
+          text-align: center;
+        }
+
+        .percentage-display {
+          justify-content: center;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
     <nav class="navbar" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <div class="logo-wrapper">
-                    <a href="/" class="site-logo">
-                        <img src="/favicon.svg" alt="DEXRabbit">
-                        <div class="logo-text">
-                            <span class="logo-title">DEXRabbit</span>
-                            <span class="logo-slogan">Твой пассивный доход на кроликах</span>
-                        </div>
-                    </a>
-                </div>
-                <div style="display: flex; align-items: center; gap: 1rem;">
-                    <a href="/" class="btn btn-ghost" style="padding: 0.5rem 1rem; font-size: 0.9rem;">🏠 На главную</a>
-                    <button class="mobile-nav-toggle" aria-label="Меню" onclick="toggleMenu()">☰</button>
-                </div>
-            </div>
+      <div class="container">
+        <div class="navbar-header">
+          <div class="logo-wrapper">
+            <a href="/" class="site-logo">
+              <img src="/favicon.svg" alt="DEXRabbit" />
+              <div class="logo-text">
+                <span class="logo-title">DEXRabbit</span>
+                <span class="logo-slogan">Твой пассивный доход на кроликах</span>
+              </div>
+            </a>
+          </div>
+          <div style="display: flex; align-items: center; gap: 1rem">
+            <a href="https://t.me/dexrabbit_bot" class="telegram-cta" target="_blank">
+              <svg class="telegram-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.85 5.18-4.68c.223-.198-.054-.308-.346-.111l-6.4 4.02-2.76-.918c-.6-.187-.612-.6.125-.89l10.782-4.156c.5-.18.94.12.78.88z"
+                />
+              </svg>
+              Начать зарабатывать
+            </a>
+          </div>
         </div>
+      </div>
     </nav>
 
     <main>
-        <!-- Hero Section -->
-        <section class="hero" style="min-height: 60vh; display: flex; align-items: center;">
-            <div class="container">
-                <div class="hero-content" style="text-align: center;">
-                    <h1 class="hero-title">🤝 Партнерская программа</h1>
-                    <p class="hero-subtitle">
-                        Зарабатывайте на привлечении инвесторов в DEXRabbit
-                    </p>
-                </div>
-            </div>
-        </section>
+      <!-- Hero Section -->
+      <section class="hero" style="padding: 4rem 0">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title animate-fadeInUp">💰 Партнерская программа DEXRabbit</h1>
+            <p class="hero-subtitle animate-fadeInUp">
+              Зарабатывайте до <strong style="color: #facc15">15% комиссии</strong> с каждого
+              привлеченного инвестора. <br />Выплаты
+              <strong style="color: #4ade80">моментально</strong> в USDT на Binance Smart Chain.
+            </p>
 
-        <!-- Content Section -->
-        <section class="section">
-            <div class="container">
-                <div class="card" style="max-width: 800px; margin: 0 auto; text-align: center; padding: 3rem;">
-                    <h2 style="color: #facc15; margin-bottom: 2rem;">⚠️ Страница в разработке</h2>
-                    <p style="font-size: 1.2rem; margin-bottom: 1.5rem;">
-                        Раздел с детальной информацией о партнерской программе находится в разработке.
-                    </p>
-                    <p style="margin-bottom: 2rem; opacity: 0.8;">
-                        Здесь будет информация о:
-                    </p>
-                    <ul style="text-align: left; max-width: 500px; margin: 0 auto 2rem;">
-                        <li>• Структура вознаграждений (3 уровня по 5%)</li>
-                        <li>• Калькулятор партнерского дохода</li>
-                        <li>• Условия выплат в USDT и PLEX</li>
-                        <li>• Партнерские материалы и промо</li>
-                        <li>• Статистика и отчетность</li>
-                        <li>• Специальные условия для блогеров</li>
-                    </ul>
-                    <p style="margin-bottom: 2rem;">
-                        Пока вы можете узнать основную информацию о партнерской программе на главной странице.
-                    </p>
-                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
-                        <a href="/#partners" class="btn">
-                            📖 Основная информация
-                        </a>
-                        <a href="https://t.me/dexrabbit_bot" class="btn btn-primary">
-                            🤖 Стать партнером
-                        </a>
-                    </div>
-                </div>
+            <div class="hero-cta animate-fadeInUp" style="margin: 2rem 0">
+              <a
+                href="https://t.me/dexrabbit_bot"
+                class="telegram-cta telegram-cta-large"
+                target="_blank"
+              >
+                <svg
+                  class="telegram-icon"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  style="width: 28px; height: 28px"
+                >
+                  <path
+                    d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.85 5.18-4.68c.223-.198-.054-.308-.346-.111l-6.4 4.02-2.76-.918c-.6-.187-.612-.6.125-.89l10.782-4.156c.5-.18.94.12.78.88z"
+                  />
+                </svg>
+                Получить партнерскую ссылку
+              </a>
             </div>
-        </section>
+
+            <p style="font-size: 0.9rem; opacity: 0.8">
+              Регистрация в боте <strong>@dexrabbit_bot</strong> занимает 1 минуту
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- How Partnership Works -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <span class="overline">Как это работает</span>
+            <h2>🎯 Полная ясность работы партнерской программы</h2>
+            <p>Простая схема заработка, которую поймет каждый</p>
+          </div>
+
+          <div class="how-it-works">
+            <h3 style="text-align: center; margin-bottom: 2rem">
+              📋 Пошаговая инструкция как начать зарабатывать
+            </h3>
+
+            <div class="partner-flow">
+              <div class="flow-card">
+                <div class="flow-number">1</div>
+                <h4>Регистрация в боте</h4>
+                <p>
+                  Переходите в Telegram-бот <strong>@dexrabbit_bot</strong> и нажимаете /start. Бот
+                  попросит указать ваш BSC кошелек для получения выплат.
+                </p>
+              </div>
+
+              <div class="flow-card">
+                <div class="flow-number">2</div>
+                <h4>Получение ссылки</h4>
+                <p>
+                  Сразу после регистрации бот выдает вашу уникальную партнерскую ссылку. Она
+                  выглядит так: <code>t.me/dexrabbit_bot?start=ВАШ_КОД</code>
+                </p>
+              </div>
+
+              <div class="flow-card">
+                <div class="flow-number">3</div>
+                <h4>Привлечение инвесторов</h4>
+                <p>
+                  Делитесь ссылкой в соцсетях, мессенджерах, на форумах. Все переходы автоматически
+                  привязываются к вам.
+                </p>
+              </div>
+
+              <div class="flow-card">
+                <div class="flow-number">4</div>
+                <h4>Автоматические выплаты</h4>
+                <p>
+                  Как только ваш партнер инвестирует - вы <strong>моментально</strong> получаете
+                  комиссию в USDT на указанный кошелек.
+                </p>
+              </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem">
+              <a href="https://t.me/dexrabbit_bot" class="telegram-cta" target="_blank">
+                <svg class="telegram-icon" viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.85 5.18-4.68c.223-.198-.054-.308-.346-.111l-6.4 4.02-2.76-.918c-.6-.187-.612-.6.125-.89l10.782-4.156c.5-.18.94.12.78.88z"
+                  />
+                </svg>
+                Зарегистрироваться в @dexrabbit_bot
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Commission Structure -->
+      <section class="section section-alt">
+        <div class="container">
+          <div class="section-header">
+            <span class="overline">Структура комиссий</span>
+            <h2>💎 Сколько вы будете зарабатывать</h2>
+            <p>3 уровня партнеров × 2 типа выплат = 6 источников дохода</p>
+          </div>
+
+          <div class="commission-table">
+            <h3 style="text-align: center; margin-bottom: 2rem">
+              📊 Ваши комиссионные на каждом уровне
+            </h3>
+
+            <div class="commission-row">
+              <div class="level-badge">1 уровень</div>
+              <div>
+                <div class="percentage-display">
+                  <span style="color: #4ade80">5%</span>
+                  <span class="plus">+</span>
+                  <span style="color: #4ade80">5%</span>
+                </div>
+                <div class="income-type">от вложений + от дохода</div>
+              </div>
+              <div style="text-align: right">
+                <strong style="color: #facc15">Ваши личные партнеры</strong>
+                <div style="font-size: 0.9rem; opacity: 0.8">Те, кого привели лично вы</div>
+              </div>
+            </div>
+
+            <div class="commission-row">
+              <div class="level-badge">2 уровень</div>
+              <div>
+                <div class="percentage-display">
+                  <span style="color: #4ade80">5%</span>
+                  <span class="plus">+</span>
+                  <span style="color: #4ade80">5%</span>
+                </div>
+                <div class="income-type">от вложений + от дохода</div>
+              </div>
+              <div style="text-align: right">
+                <strong style="color: #4cc9f0">Партнеры ваших партнеров</strong>
+                <div style="font-size: 0.9rem; opacity: 0.8">Те, кого привели ваши рефералы</div>
+              </div>
+            </div>
+
+            <div class="commission-row">
+              <div class="level-badge">3 уровень</div>
+              <div>
+                <div class="percentage-display">
+                  <span style="color: #4ade80">5%</span>
+                  <span class="plus">+</span>
+                  <span style="color: #4ade80">5%</span>
+                </div>
+                <div class="income-type">от вложений + от дохода</div>
+              </div>
+              <div style="text-align: right">
+                <strong style="color: #a78bfa">Третье поколение</strong>
+                <div style="font-size: 0.9rem; opacity: 0.8">Партнеры 2-го уровня привели их</div>
+              </div>
+            </div>
+          </div>
+
+          <div
+            class="alert"
+            style="background: rgba(74, 222, 128, 0.1); border-color: #4ade80; margin-top: 2rem"
+          >
+            <h4 style="color: #4ade80">💡 Два типа выплат с каждого партнера:</h4>
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1rem">
+              <div>
+                <strong>1️⃣ От вложений (5%)</strong>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem">
+                  Выплачивается <strong>моментально</strong> когда партнер инвестирует в кроликов
+                </p>
+              </div>
+              <div>
+                <strong>2️⃣ От дохода (5%)</strong>
+                <p style="margin-top: 0.5rem; font-size: 0.9rem">
+                  Выплачивается когда партнер получает прибыль от продажи потомства
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Important Currency Info -->
+      <section class="section">
+        <div class="container">
+          <div class="important-note">
+            <h4>⚠️ ВАЖНО: Валюта партнерской программы</h4>
+
+            <div
+              style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem; margin-top: 1.5rem"
+            >
+              <div style="padding: 1rem; background: rgba(74, 222, 128, 0.1); border-radius: 12px">
+                <h5 style="color: #4ade80; margin-bottom: 0.5rem">
+                  ✅ УЧАСТВУЕТ в партнерской программе:
+                </h5>
+                <p style="font-size: 1.1rem; font-weight: bold">USDT (BEP-20)</p>
+                <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem">
+                  Все инвестиции в USDT на сети Binance Smart Chain приносят вам комиссию
+                </p>
+              </div>
+
+              <div style="padding: 1rem; background: rgba(239, 68, 68, 0.1); border-radius: 12px">
+                <h5 style="color: #ef4444; margin-bottom: 0.5rem">
+                  ❌ НЕ УЧАСТВУЕТ в партнерской программе:
+                </h5>
+                <p style="font-size: 1.1rem; font-weight: bold">PLEX токены</p>
+                <p style="font-size: 0.9rem; opacity: 0.8; margin-top: 0.5rem">
+                  Операции с PLEX не приносят партнерских комиссий
+                </p>
+              </div>
+            </div>
+
+            <p
+              style="
+                text-align: center;
+                margin-top: 1.5rem;
+                padding: 1rem;
+                background: rgba(0, 0, 0, 0.3);
+                border-radius: 8px;
+              "
+            >
+              <strong>📍 Запомните:</strong> Партнерская программа работает только с USDT на BSC.
+              Выплаты происходят моментально на ваш BSC кошелек.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Real Yield Information -->
+      <section class="section section-alt">
+        <div class="container">
+          <div class="section-header">
+            <span class="overline">Реальная доходность</span>
+            <h2>💎 Почему это выгодно вашим партнерам</h2>
+            <p>Уникальная доходность делает привлечение инвесторов максимально простым</p>
+          </div>
+
+          <div
+            class="card"
+            style="
+              background: linear-gradient(135deg, rgba(250, 204, 21, 0.1), rgba(74, 222, 128, 0.1));
+              border: 2px solid rgba(250, 204, 21, 0.3);
+            "
+          >
+            <h3 style="text-align: center; font-size: 2rem; color: #facc15; margin-bottom: 2rem">
+              🚀 800-1000% за 4 месяца
+            </h3>
+
+            <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2rem">
+              <div style="padding: 1.5rem; background: rgba(0, 0, 0, 0.3); border-radius: 12px">
+                <h4 style="color: #4ade80; margin-bottom: 1rem">📈 Как это работает:</h4>
+                <p style="line-height: 1.8">
+                  С учетом особенностей размножения кроликов, любая привлеченная сумма
+                  <strong>умножается на 8-10 раз</strong>. Это биологически обоснованная модель:
+                  одна пара кроликов дает потомство, которое при правильном уходе и продаже приносит
+                  доход в 800-1000% от первоначальных инвестиций.
+                </p>
+              </div>
+
+              <div style="padding: 1.5rem; background: rgba(0, 0, 0, 0.3); border-radius: 12px">
+                <h4 style="color: #4cc9f0; margin-bottom: 1rem">💰 Ваши комиссии:</h4>
+                <p style="line-height: 1.8">
+                  Основные выплаты вы получаете именно тогда, когда наступает время выплат от дохода
+                  — когда кролики подросли и продаются. Если партнер инвестировал 1000 USDT и
+                  получил 8000-10000 USDT прибыли, ваши 5% составят
+                  <strong>400-500 USDT</strong> только от прибыли!
+                </p>
+              </div>
+            </div>
+
+            <div
+              class="alert"
+              style="background: rgba(167, 139, 250, 0.1); border-color: #a78bfa; margin-top: 2rem"
+            >
+              <h4 style="color: #a78bfa">🔒 Пожизненное закрепление партнеров</h4>
+              <p style="margin-top: 1rem; line-height: 1.6">
+                <strong>Важнейшее преимущество нашей партнерской программы:</strong> система
+                закрепляется навсегда. Переход реферала под другого спонсора в нашей системе
+                <strong>НЕВОЗМОЖЕН</strong>. Это значит, что каждый привлеченный вами инвестор
+                остается вашим партнером навсегда, принося вам доход с каждого нового цикла
+                инвестирования.
+              </p>
+              <p style="margin-top: 1rem; font-size: 0.95rem; opacity: 0.9">
+                ⚠️ <strong>Поэтому критически важно:</strong> переходить в Telegram Bot строго по
+                ссылке вашего спонсора. Один раз зарегистрировавшись, партнер уже не сможет сменить
+                спонсора.
+              </p>
+            </div>
+          </div>
+
+          <div
+            style="
+              display: grid;
+              grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+              gap: 1.5rem;
+              margin-top: 2rem;
+            "
+          >
+            <div class="card hover-lift" style="text-align: center">
+              <div
+                style="font-size: 3rem; font-weight: bold; color: #facc15; margin-bottom: 0.5rem"
+              >
+                4
+              </div>
+              <div style="font-size: 1.1rem">месяца</div>
+              <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8">
+                Полный цикл от инвестиции до получения прибыли
+              </p>
+            </div>
+
+            <div class="card hover-lift" style="text-align: center">
+              <div
+                style="font-size: 3rem; font-weight: bold; color: #4ade80; margin-bottom: 0.5rem"
+              >
+                8-10x
+              </div>
+              <div style="font-size: 1.1rem">увеличение капитала</div>
+              <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8">
+                Реальный множитель роста инвестиций
+              </p>
+            </div>
+
+            <div class="card hover-lift" style="text-align: center">
+              <div
+                style="font-size: 3rem; font-weight: bold; color: #7c8cff; margin-bottom: 0.5rem"
+              >
+                ∞
+              </div>
+              <div style="font-size: 1.1rem">пожизненно</div>
+              <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8">
+                Партнер закреплен за вами навсегда
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Real Example -->
+      <section class="section section-alt">
+        <div class="container">
+          <div class="section-header">
+            <span class="overline">Реальный пример</span>
+            <h2>📈 Давайте посчитаем ваш доход</h2>
+            <p>Конкретные цифры на простом примере</p>
+          </div>
+
+          <div class="example-card">
+            <h3>🎯 Пример: Вы привели 5 человек</h3>
+
+            <div style="margin: 2rem 0">
+              <p style="font-size: 1.1rem; margin-bottom: 1.5rem">
+                Допустим, каждый из ваших 5 партнеров инвестировал по <strong>500 USDT</strong>:
+              </p>
+
+              <div class="earning-preview">
+                <div class="earning-item">
+                  <div style="opacity: 0.8">Сразу при инвестировании</div>
+                  <div class="earning-amount">125 USDT</div>
+                  <div style="font-size: 0.9rem">5 человек × 500 × 5%</div>
+                </div>
+
+                <div class="earning-item">
+                  <div style="opacity: 0.8">После продажи кроликов</div>
+                  <div class="earning-amount">187 USDT</div>
+                  <div style="font-size: 0.9rem">5 человек × 750 × 5%</div>
+                </div>
+
+                <div
+                  class="earning-item"
+                  style="background: rgba(250, 204, 21, 0.1); border-color: #facc15"
+                >
+                  <div style="opacity: 0.8">Ваш доход с 1 уровня</div>
+                  <div class="earning-amount" style="color: #facc15">312 USDT</div>
+                  <div style="font-size: 0.9rem">Только с 5 человек!</div>
+                </div>
+              </div>
+            </div>
+
+            <div class="alert" style="background: rgba(167, 139, 250, 0.1); border-color: #a78bfa">
+              <strong>🚀 А теперь представьте:</strong> Каждый из ваших 5 партнеров привел еще по 3
+              человека (15 на 2 уровне), а те - еще по 2 (30 на 3 уровне). Это уже
+              <strong>50 человек в вашей структуре</strong>, каждый приносит вам по 5% + 5%. Доход
+              может достигать <strong>нескольких тысяч USDT</strong>!
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 2rem">
+            <p style="margin-bottom: 1rem">Хотите начать строить свою партнерскую сеть?</p>
+            <a
+              href="https://t.me/dexrabbit_bot"
+              class="telegram-cta telegram-cta-large"
+              target="_blank"
+            >
+              <svg
+                class="telegram-icon"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                style="width: 28px; height: 28px"
+              >
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.85 5.18-4.68c.223-.198-.054-.308-.346-.111l-6.4 4.02-2.76-.918c-.6-.187-.612-.6.125-.89l10.782-4.156c.5-.18.94.12.78.88z"
+                />
+              </svg>
+              Стать партнером в @dexrabbit_bot
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Registration Block -->
+      <section class="section">
+        <div class="container">
+          <div class="registration-block">
+            <h2>🎯 Как получить партнерскую ссылку</h2>
+            <p style="font-size: 1.1rem; margin: 1.5rem 0">
+              Всё максимально просто - нужен только Telegram и 1 минута времени
+            </p>
+
+            <ol
+              style="
+                text-align: left;
+                max-width: 600px;
+                margin: 2rem auto;
+                font-size: 1.05rem;
+                line-height: 1.8;
+              "
+            >
+              <li>Откройте Telegram на телефоне или компьютере</li>
+              <li>Найдите бота <strong>@dexrabbit_bot</strong> или нажмите кнопку ниже</li>
+              <li>Нажмите кнопку "Начать" или отправьте /start</li>
+              <li>Укажите адрес вашего BSC кошелька для выплат</li>
+              <li>Получите вашу уникальную партнерскую ссылку</li>
+            </ol>
+
+            <a
+              href="https://t.me/dexrabbit_bot"
+              class="telegram-cta telegram-cta-large"
+              target="_blank"
+            >
+              <svg
+                class="telegram-icon"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                style="width: 28px; height: 28px"
+              >
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.85 5.18-4.68c.223-.198-.054-.308-.346-.111l-6.4 4.02-2.76-.918c-.6-.187-.612-.6.125-.89l10.782-4.156c.5-.18.94.12.78.88z"
+                />
+              </svg>
+              Открыть @dexrabbit_bot
+            </a>
+
+            <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.8">
+              После регистрации вы также получите доступ к личному кабинету, где сможете отслеживать
+              всех партнеров и заработанные комиссии
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- What You Get -->
+      <section class="section section-alt">
+        <div class="container">
+          <div class="section-header">
+            <span class="overline">Что вы получаете</span>
+            <h2>🎁 Инструменты для успешной работы</h2>
+            <p>Мы даем всё необходимое для привлечения инвесторов</p>
+          </div>
+
+          <div
+            class="grid"
+            style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem"
+          >
+            <div class="card hover-lift">
+              <div style="font-size: 2.5rem; margin-bottom: 1rem">🔗</div>
+              <h3>Уникальная ссылка</h3>
+              <p>
+                Персональная партнерская ссылка, которая навсегда привязывает партнеров к вашему
+                аккаунту
+              </p>
+            </div>
+
+            <div class="card hover-lift">
+              <div style="font-size: 2.5rem; margin-bottom: 1rem">📊</div>
+              <h3>Личный кабинет</h3>
+              <p>
+                Статистика в реальном времени: количество партнеров, их инвестиции, ваши комиссии
+              </p>
+            </div>
+
+            <div class="card hover-lift">
+              <div style="font-size: 2.5rem; margin-bottom: 1rem">💰</div>
+              <h3>Моментальные выплаты</h3>
+              <p>Автоматические выплаты на ваш BSC кошелек сразу после инвестиций партнеров</p>
+            </div>
+
+            <div class="card hover-lift">
+              <div style="font-size: 2.5rem; margin-bottom: 1rem">📚</div>
+              <h3>Обучающие материалы</h3>
+              <p>Готовые тексты, презентации и инструкции для привлечения инвесторов</p>
+            </div>
+
+            <div class="card hover-lift">
+              <div style="font-size: 2.5rem; margin-bottom: 1rem">🤝</div>
+              <h3>Поддержка 24/7</h3>
+              <p>Помощь менеджеров и опытных партнеров в чате для партнеров</p>
+            </div>
+
+            <div class="card hover-lift">
+              <div style="font-size: 2.5rem; margin-bottom: 1rem">🚀</div>
+              <h3>Без ограничений</h3>
+              <p>Нет лимитов на количество партнеров и сумму заработка</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- FAQ Section -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <span class="overline">Ответы на вопросы</span>
+            <h2>❓ Частые вопросы партнеров</h2>
+          </div>
+
+          <div class="faq-simple">
+            <div class="faq-item">
+              <h4>Когда я получу первую выплату?</h4>
+              <p>
+                Выплата приходит <strong>моментально</strong> после того, как ваш партнер сделает
+                инвестицию. Обычно это 1-2 минуты после подтверждения транзакции в блокчейне.
+              </p>
+            </div>
+
+            <div class="faq-item">
+              <h4>Нужно ли мне самому инвестировать?</h4>
+              <p>
+                Нет, это не обязательно. Вы можете зарабатывать только на партнерской программе,
+                привлекая инвесторов. Но если вы сами инвестор - это повышает доверие партнеров.
+              </p>
+            </div>
+
+            <div class="faq-item">
+              <h4>Как я буду получать выплаты?</h4>
+              <p>
+                Все выплаты происходят автоматически в USDT на сеть Binance Smart Chain (BEP-20). Вы
+                указываете адрес кошелька при регистрации в боте <strong>@dexrabbit_bot</strong>.
+              </p>
+            </div>
+
+            <div class="faq-item">
+              <h4>Что если мой партнер инвестирует в PLEX?</h4>
+              <p>
+                Операции с токенами PLEX <strong>не участвуют</strong> в партнерской программе.
+                Комиссия начисляется только с инвестиций в USDT.
+              </p>
+            </div>
+
+            <div class="faq-item">
+              <h4>Могу ли я иметь несколько аккаунтов?</h4>
+              <p>
+                Нет, один человек может иметь только один партнерский аккаунт. Мультиаккаунтинг
+                запрещен и приводит к блокировке.
+              </p>
+            </div>
+
+            <div class="faq-item">
+              <h4>Как отслеживать моих партнеров?</h4>
+              <p>
+                В боте <strong>@dexrabbit_bot</strong> есть команда /stats, которая показывает
+                полную статистику: сколько партнеров на каждом уровне, их инвестиции и ваши
+                комиссии.
+              </p>
+            </div>
+          </div>
+
+          <div style="text-align: center; margin-top: 2rem">
+            <p style="margin-bottom: 1rem">Остались вопросы? Получите все ответы в боте!</p>
+            <a href="https://t.me/dexrabbit_bot" class="telegram-cta" target="_blank">
+              <svg class="telegram-icon" viewBox="0 0 24 24" fill="currentColor">
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.85 5.18-4.68c.223-.198-.054-.308-.346-.111l-6.4 4.02-2.76-.918c-.6-.187-.612-.6.125-.89l10.782-4.156c.5-.18.94.12.78.88z"
+                />
+              </svg>
+              Задать вопрос в @dexrabbit_bot
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <!-- Final CTA -->
+      <section class="section section-alt">
+        <div class="container">
+          <div class="cta-block">
+            <h2>🚀 Начните зарабатывать прямо сейчас!</h2>
+            <p style="font-size: 1.1rem; margin: 1.5rem auto; max-width: 700px">
+              Каждая минута промедления - это упущенные партнеры и комиссии. Регистрация занимает 60
+              секунд, а доход может быть постоянным!
+            </p>
+
+            <div
+              style="
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+                gap: 1rem;
+                max-width: 600px;
+                margin: 2rem auto;
+              "
+            >
+              <div
+                style="
+                  text-align: center;
+                  padding: 1rem;
+                  background: rgba(124, 140, 255, 0.1);
+                  border-radius: 12px;
+                "
+              >
+                <div style="font-size: 2rem; font-weight: bold; color: #7c8cff">3 уровня</div>
+                <div style="font-size: 0.9rem; opacity: 0.8">глубина структуры</div>
+              </div>
+              <div
+                style="
+                  text-align: center;
+                  padding: 1rem;
+                  background: rgba(74, 222, 128, 0.1);
+                  border-radius: 12px;
+                "
+              >
+                <div style="font-size: 2rem; font-weight: bold; color: #4ade80">10%</div>
+                <div style="font-size: 0.9rem; opacity: 0.8">с каждого партнера</div>
+              </div>
+              <div
+                style="
+                  text-align: center;
+                  padding: 1rem;
+                  background: rgba(250, 204, 21, 0.1);
+                  border-radius: 12px;
+                "
+              >
+                <div style="font-size: 2rem; font-weight: bold; color: #facc15">∞</div>
+                <div style="font-size: 0.9rem; opacity: 0.8">без ограничений</div>
+              </div>
+            </div>
+
+            <a
+              href="https://t.me/dexrabbit_bot"
+              class="telegram-cta telegram-cta-large"
+              target="_blank"
+              style="display: inline-flex; margin-top: 1rem"
+            >
+              <svg
+                class="telegram-icon"
+                viewBox="0 0 24 24"
+                fill="currentColor"
+                style="width: 32px; height: 32px"
+              >
+                <path
+                  d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.85 5.18-4.68c.223-.198-.054-.308-.346-.111l-6.4 4.02-2.76-.918c-.6-.187-.612-.6.125-.89l10.782-4.156c.5-.18.94.12.78.88z"
+                />
+              </svg>
+              Начать зарабатывать в @dexrabbit_bot
+            </a>
+
+            <p style="margin-top: 1.5rem; font-size: 0.9rem; opacity: 0.7">
+              Присоединяйтесь к сотням партнеров, которые уже зарабатывают с DEXRabbit
+            </p>
+          </div>
+        </div>
+      </section>
     </main>
 
     <!-- Footer -->
     <footer class="footer">
-        <div class="container">
-            <div style="text-align: center; padding: 2rem 0;">
-                <p>© 2025 DEXRabbit. Все права защищены.</p>
-                <p style="margin-top: 0.5rem;">
-                    <a href="/" style="color: var(--color-text-secondary); margin: 0 1rem;">Главная</a>
-                    <a href="https://t.me/dexrabbit_bot" style="color: var(--color-text-secondary); margin: 0 1rem;">Telegram Bot</a>
-                    <a href="mailto:info@dexrabbit.com" style="color: var(--color-text-secondary); margin: 0 1rem;">Email</a>
-                </p>
-            </div>
-        </div>
-    </footer>
+      <div class="container">
+        <div style="text-align: center; padding: 3rem 0">
+          <h4 style="margin-bottom: 1.5rem">🤝 Партнерская программа DEXRabbit</h4>
 
-    <script>
-        function toggleMenu() {
-            const menu = document.getElementById('nav-menu');
-            if(menu) {
-                const isExpanded = menu.getAttribute('aria-expanded') === 'true';
-                menu.setAttribute('aria-expanded', !isExpanded);
-            }
-        }
-    </script>
-</body>
+          <a
+            href="https://t.me/dexrabbit_bot"
+            class="telegram-cta"
+            target="_blank"
+            style="margin-bottom: 2rem; display: inline-flex"
+          >
+            <svg class="telegram-icon" viewBox="0 0 24 24" fill="currentColor">
+              <path
+                d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.894 8.221l-1.97 9.28c-.145.658-.537.818-1.084.508l-3-2.21-1.446 1.394c-.14.18-.357.223-.548.223l.188-2.85 5.18-4.68c.223-.198-.054-.308-.346-.111l-6.4 4.02-2.76-.918c-.6-.187-.612-.6.125-.89l10.782-4.156c.5-.18.94.12.78.88z"
+              />
+            </svg>
+            @dexrabbit_bot
+          </a>
+
+          <div style="margin: 2rem 0">
+            <a href="/" style="color: var(--color-text-secondary); margin: 0 1rem">Главная</a>
+            <a
+              href="/investment-model.html"
+              style="color: var(--color-text-secondary); margin: 0 1rem"
+              >Инвестиции</a
+            >
+            <a href="/guarantees.html" style="color: var(--color-text-secondary); margin: 0 1rem"
+              >Гарантии</a
+            >
+            <a
+              href="https://t.me/dexrabbit_channel"
+              style="color: var(--color-text-secondary); margin: 0 1rem"
+              >Telegram канал</a
+            >
+          </div>
+
+          <p style="opacity: 0.7">© 2025 DEXRabbit. Все права защищены.</p>
+          <p style="margin-top: 0.5rem; font-size: 0.9rem; opacity: 0.6">
+            Партнерская программа работает только с USDT на Binance Smart Chain
+          </p>
+        </div>
+      </div>
+    </footer>
+  </body>
 </html>
