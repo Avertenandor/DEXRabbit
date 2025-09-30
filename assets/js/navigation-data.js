@@ -1,9 +1,42 @@
 /**
  * DEXRabbit - Единый источник данных навигации
  * Централизованное управление всеми пунктами меню
- * Версия 2.0 - Полная автоматизация
+ * Версия 3.0 - Унификация согласно плейбуку
  */
 
+export const CONTACTS = {
+  bot:  "https://t.me/dexrabbit_bot",
+  channel: "https://t.me/DexRebbitOfficial",
+  group: "https://t.me/DEXRabbitOfficialGroupInfo",
+};
+
+export const NAV = {
+  // основной набор пунктов
+  primary: [
+    {href: "/index.html", label: "Главная"},
+    {href: "/investment-model.html", label: "Инвестиционная модель"},
+    {href: "/partnership.html", label: "Партнёрам"},
+    {href: "/contacts.html", label: "Контакты"},
+  ],
+  more: [
+    {href: "/breeding.html", label: "Племенная работа"},
+    {href: "/gifts.html", label: "Кролик в подарок"},
+    {href: "/restaurants.html", label: "Ресторанам"},
+    {href: "/rabbits-hares.html", label: "Кролики и зайцы"},
+    {href: "/cats-rabbits.html", label: "Кролики и кошки"},
+    {href: "/care.html", label: "Уход за кроликами"},
+    {href: "/therapy.html", label: "Кроликотерапия"},
+    {href: "/guarantees.html", label: "Гарантии и обязательства"},
+    {href: "/development.html", label: "Развитие и планы"},
+    {href: "/logistics.html", label: "Логистика и регионы"},
+    {href: "/investors.html", label: "Инвесторы"},
+    {href: "/wallet-instructions.html", label: "Инструкции кошельков"},
+    {href: "/docs/presentation.html", label: "Презентация"},
+  ]
+};
+
+
+// Для обратной совместимости с существующим кодом
 window.DEXRabbitNav = {
   // Основные разделы навигации
   primary: [
