@@ -274,10 +274,11 @@
 
             <style>
               .investment-flow-chart {
-                margin: 3rem 0;
-                padding: 2rem 0;
+                margin: 2rem 0 8rem;
+                padding: 2rem 0 12rem;
                 position: relative;
                 overflow: visible;
+                min-height: 400px;
               }
 
               .flow-container {
@@ -393,7 +394,7 @@
               /* Central Box */
               .flow-box-center {
                 position: absolute;
-                bottom: -120px;
+                bottom: 20px;
                 left: 50%;
                 transform: translateX(-50%);
                 background: linear-gradient(135deg, #7c8cff, #4cc9f0);
@@ -527,9 +528,15 @@
 
               /* Responsive */
               @media (max-width: 768px) {
+                .investment-flow-chart {
+                  margin-bottom: 2rem;
+                  padding-bottom: 2rem;
+                }
+
                 .flow-container {
                   flex-direction: column;
                   gap: 1.5rem;
+                  padding-bottom: 0;
                 }
 
                 .flow-box {
@@ -549,6 +556,7 @@
                   left: auto;
                   transform: none;
                   margin-top: 2rem;
+                  margin-bottom: 0;
                   width: 100%;
                 }
 
@@ -573,13 +581,13 @@
               }
             </style>
 
-            <div class="hero-cta">
+            <div class="hero-cta" style="margin-top: 2rem">
               <a href="https://t.me/dexrabbit_bot" class="btn"> 💰 Начать инвестировать </a>
               <a href="#how-it-works" class="btn btn-outline"> 📖 Узнать подробнее </a>
               <a href="https://t.me/DexRebbitOfficial" class="btn btn-ghost"> 📢 Telegram канал </a>
             </div>
 
-            <div class="hero-metrics">
+            <div class="hero-metrics" style="margin-top: 2rem">
               <div class="metric-card">
                 <strong>100-2000 USDT</strong>
                 <span>Размер инвестиции</span>
