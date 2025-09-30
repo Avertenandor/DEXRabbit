@@ -1,14 +1,14 @@
+# DEXRabbit Robots.txt
+# UTF-8 encoding
+
 User-agent: *
 Allow: /
+Crawl-delay: 1
 
 # Sitemap
 Sitemap: https://xn--80apagbbfxgmuj4j.site/sitemap.xml
 
-# Crawl-delay
-Crawl-delay: 1
-
-# Allow important pages explicitly
-Allow: /
+# Main pages
 Allow: /index.html
 Allow: /investment-model.html
 Allow: /partnership.html
@@ -24,6 +24,10 @@ Allow: /rabbits-hares.html
 Allow: /cats-rabbits.html
 Allow: /reports.html
 Allow: /investors.html
+Allow: /guarantees.html
+Allow: /careers.html
+
+# Directories
 Allow: /faq/
 Allow: /legal/
 Allow: /policy/
@@ -33,7 +37,7 @@ Allow: /assets/
 Allow: /gallery/
 Allow: /og/
 
-# Disallow admin and private areas
+# Disallow private areas
 Disallow: /admin/
 Disallow: /private/
 Disallow: /api/
@@ -42,39 +46,40 @@ Disallow: /node_modules/
 Disallow: /scripts/
 Disallow: /src/
 Disallow: /.github/
+Disallow: /.husky/
 
-# Allow search engines to index images
+# Static files
+Allow: /*.css$
+Allow: /*.js$
 Allow: /*.jpg$
 Allow: /*.jpeg$
 Allow: /*.png$
 Allow: /*.gif$
 Allow: /*.svg$
 Allow: /*.webp$
+Allow: /*.pdf$
+Allow: /robots.txt
+Allow: /sitemap.xml
+Allow: /manifest.webmanifest
 
-# Allow CSS and JS files
-Allow: /*.css$
-Allow: /*.js$
-
-# Block certain file types
-Disallow: /*.json$
-Disallow: /*.xml$
-Disallow: /*.txt$
+# Block specific file types
 Disallow: /*.log$
+Disallow: /*.bak$
+Disallow: /*.tmp$
+Disallow: /.env
 
-# Special rules for Googlebot
+# Googlebot
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
 
-# Special rules for Yandexbot
+# Yandexbot
 User-agent: Yandexbot
 Allow: /
 Crawl-delay: 1
+Host: xn--80apagbbfxgmuj4j.site
 
-# Special rules for Bingbot
+# Bingbot
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
-
-# Host directive for Yandex
-Host: https://xn--80apagbbfxgmuj4j.site
