@@ -1,0 +1,372 @@
+/* DEXRabbit Investor Cards Styles
+ * Унифицированные стили для карточек инвесторов
+ * Version: 1.0.0
+ */
+
+/* ============================================
+   INVESTOR CARD STYLES
+   ============================================ */
+
+.investor-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  position: relative;
+  text-align: center;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  box-shadow: 0 2px 10px rgba(124, 140, 255, 0.1);
+}
+
+.investor-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 30px rgba(124, 140, 255, 0.2);
+}
+
+/* VIP Badge */
+.investor-vip-badge {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  background: linear-gradient(135deg, #facc15, #f97316);
+  color: #1a1a1a;
+  padding: 4px 12px;
+  border-radius: 20px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  z-index: 2;
+}
+
+/* Avatar Container - увеличен на 9% (131px -> 143px) */
+.investor-avatar {
+  width: 143px;
+  height: 143px;
+  margin: 0 auto 1rem;
+  position: relative;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.investor-avatar:hover {
+  transform: scale(1.05);
+}
+
+.investor-avatar-wrapper {
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, #7c8cff, #4cc9f0);
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+}
+
+.investor-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: opacity 0.3s ease;
+}
+
+.investor-avatar img[src=''] {
+  opacity: 0;
+}
+
+/* Investor Info */
+.investor-name {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin: 0.5rem 0;
+  color: #1a1a1a;
+}
+
+.investor-telegram {
+  display: inline-block;
+  color: #4cc9f0;
+  text-decoration: none;
+  font-size: 0.9rem;
+  margin: 0.25rem 0;
+  transition: color 0.3s ease;
+}
+
+.investor-telegram:hover {
+  color: #229ed9;
+}
+
+.investor-stats {
+  margin: 0.5rem 0;
+}
+
+.investor-rabbits {
+  font-size: 0.85rem;
+  margin: 0.25rem 0;
+}
+
+.investor-status {
+  font-size: 0.8rem;
+  opacity: 0.7;
+  margin: 0.5rem 0 1rem;
+}
+
+/* Action Buttons */
+.investor-actions {
+  display: flex;
+  gap: 0.3rem;
+  margin-top: 1rem;
+}
+
+.investor-action-btn {
+  flex: 1;
+  padding: 0.5rem;
+  background: linear-gradient(135deg, #7c8cff, #4cc9f0);
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  font-size: 0.8rem;
+  transition:
+    transform 0.3s ease,
+    box-shadow 0.3s ease;
+  text-align: center;
+}
+
+.investor-action-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(124, 140, 255, 0.3);
+}
+
+.investor-action-btn.secondary {
+  background: linear-gradient(135deg, #4ade80, #22d3ee);
+}
+
+.investor-action-btn.tertiary {
+  background: linear-gradient(135deg, #f472b6, #c084fc);
+}
+
+/* ============================================
+   MODAL STYLES FOR PHOTO PREVIEW
+   ============================================ */
+
+.investor-photo-modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.9);
+  z-index: 10000;
+  cursor: pointer;
+  animation: fadeIn 0.3s ease;
+  align-items: center;
+  justify-content: center;
+}
+
+.investor-photo-modal.active {
+  display: flex;
+}
+
+.investor-photo-modal-content {
+  max-width: 90%;
+  max-height: 90%;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  animation: zoomIn 0.3s ease;
+}
+
+.investor-photo-modal img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.investor-photo-modal-close {
+  position: absolute;
+  top: 20px;
+  right: 40px;
+  color: white;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  z-index: 10001;
+  width: 50px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.5);
+  border-radius: 50%;
+  transition: background 0.3s ease;
+}
+
+.investor-photo-modal-close:hover {
+  background: rgba(255, 255, 255, 0.2);
+}
+
+.investor-modal-info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.9), transparent);
+  color: white;
+  padding: 2rem;
+  text-align: center;
+}
+
+.investor-modal-name {
+  font-size: 1.5rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.investor-modal-telegram {
+  color: #4cc9f0;
+  text-decoration: none;
+  font-size: 1.1rem;
+}
+
+.investor-modal-stats {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+  opacity: 0.9;
+}
+
+/* ============================================
+   GRID LAYOUT
+   ============================================ */
+
+.investors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin: 2rem 0;
+}
+
+/* ============================================
+   RESPONSIVE DESIGN
+   ============================================ */
+
+@media (max-width: 768px) {
+  .investor-avatar {
+    width: 120px; /* увеличено на 9% от 110px */
+    height: 120px;
+  }
+
+  .investor-card {
+    padding: 1.25rem;
+  }
+
+  .investor-name {
+    font-size: 1.1rem;
+  }
+
+  .investor-actions {
+    flex-direction: column;
+  }
+
+  .investors-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .investor-photo-modal-content {
+    max-width: 95%;
+    max-height: 80%;
+  }
+
+  .investor-photo-modal-close {
+    top: 10px;
+    right: 10px;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .investors-grid {
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  }
+}
+
+/* ============================================
+   ANIMATIONS
+   ============================================ */
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes zoomIn {
+  from {
+    transform: scale(0.8);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+/* ============================================
+   SPECIAL STYLES FOR PARTNERSHIP PAGE
+   ============================================ */
+
+.partnership-investors-section {
+  background: linear-gradient(135deg, rgba(124, 140, 255, 0.05), rgba(74, 222, 128, 0.05));
+  border-radius: 20px;
+  padding: 3rem;
+  margin: 3rem 0;
+}
+
+.partnership-investors-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.partnership-investors-header h2 {
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.partnership-investors-header p {
+  font-size: 1.1rem;
+  opacity: 0.8;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* ============================================
+   UTILITY CLASSES
+   ============================================ */
+
+.investor-card.featured {
+  border: 2px solid #7c8cff;
+  box-shadow: 0 4px 20px rgba(124, 140, 255, 0.2);
+}
+
+.investor-card.new {
+  position: relative;
+}
+
+.investor-card.new::before {
+  content: 'NEW';
+  position: absolute;
+  top: -10px;
+  left: 20px;
+  background: linear-gradient(135deg, #4ade80, #22d3ee);
+  color: white;
+  padding: 4px 12px;
+  border-radius: 12px;
+  font-size: 0.7rem;
+  font-weight: bold;
+}

@@ -55,6 +55,8 @@
     <link rel="stylesheet" href="/assets/css/performance.css" />
     <!-- Unified Navigation Styles -->
     <link rel="stylesheet" href="/assets/css/navigation.css" />
+    <!-- Investor Cards Styles -->
+    <link rel="stylesheet" href="/assets/css/investor-cards.css" />
 
     <!-- Unified Navigation Data -->
     <script defer src="/assets/js/navigation-data.js?v=2.0"></script>
@@ -62,6 +64,8 @@
     <script defer src="/assets/js/nav.js?v=20250930"></script>
     <!-- Ultra-Optimized Responsive Utilities - 0 forced reflow -->
     <script defer src="/assets/js/responsive-utils-optimized.js?v=3.0"></script>
+    <!-- Avatar Modal Script -->
+    <script defer src="/assets/js/avatar-modal.js"></script>
   </head>
   <body>
     <!-- Navigation -->
@@ -971,7 +975,10 @@
             style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 1.5rem"
           >
             <!-- Реальные инвесторы проекта -->
-            <div class="card" style="text-align: center; position: relative; padding: 1.5rem">
+            <div
+              class="card investor-card"
+              style="text-align: center; position: relative; padding: 1.5rem"
+            >
               <div
                 style="
                   position: absolute;
@@ -987,7 +994,7 @@
               >
                 VIP
               </div>
-              <div class="avatar avatar--sm">
+              <div class="avatar avatar--sm investor-avatar">
                 <img class="avatar__img" src="/assets/img/avatars/natder.jpg" alt="Наталья" />
               </div>
               <h4>Наталья</h4>
@@ -1033,7 +1040,10 @@
               </div>
             </div>
 
-            <div class="card" style="text-align: center; position: relative; padding: 1.5rem">
+            <div
+              class="card investor-card"
+              style="text-align: center; position: relative; padding: 1.5rem"
+            >
               <div
                 style="
                   position: absolute;
@@ -1050,6 +1060,7 @@
                 VIP
               </div>
               <div
+                class="avatar investor-avatar"
                 style="
                   width: 120px;
                   height: 120px;
@@ -1117,7 +1128,10 @@
               </div>
             </div>
 
-            <div class="card" style="text-align: center; position: relative; padding: 1.5rem">
+            <div
+              class="card investor-card"
+              style="text-align: center; position: relative; padding: 1.5rem"
+            >
               <div
                 style="
                   position: absolute;
@@ -1134,6 +1148,7 @@
                 VIP
               </div>
               <div
+                class="avatar investor-avatar"
                 style="
                   width: 120px;
                   height: 120px;
