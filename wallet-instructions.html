@@ -1,0 +1,683 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Добавление PLEX токена в кошелек — DEXRabbit | Инструкции</title>
+    <meta
+      name="description"
+      content="🪙 Подробные инструкции по добавлению токена PLEX в различные криптовалютные кошельки: Trust Wallet, SafePal, MetaMask, TokenPocket и другие."
+    />
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#7c8cff" />
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Добавление PLEX токена в кошелек — DEXRabbit" />
+    <meta
+      property="og:description"
+      content="Инструкции по добавлению токена PLEX в Trust Wallet, SafePal, MetaMask и другие кошельки"
+    />
+    <meta property="og:url" content="https://xn--80apagbbfxgmuj4j.site/wallet-instructions.html" />
+    <meta property="og:image" content="https://xn--80apagbbfxgmuj4j.site/og/og-rabbit.jpg" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/variables.css" />
+    <link rel="stylesheet" href="/assets/css/navigation.css" />
+
+    <!-- Scripts -->
+    <script defer src="/assets/js/navigation-data.js?v=2.0"></script>
+    <script defer src="/assets/js/nav.js?v=20250930"></script>
+
+    <style>
+      .wallet-card {
+        background: white;
+        border-radius: 12px;
+        padding: 2rem;
+        margin-bottom: 2rem;
+        box-shadow: 0 2px 10px rgba(124, 140, 255, 0.1);
+        border-left: 4px solid #7c8cff;
+      }
+
+      .wallet-card h3 {
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .wallet-icon {
+        width: 32px;
+        height: 32px;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        background: linear-gradient(135deg, #7c8cff, #4cc9f0);
+        border-radius: 8px;
+        font-size: 1.2rem;
+      }
+
+      .token-info {
+        background: rgba(124, 140, 255, 0.1);
+        border-radius: 8px;
+        padding: 1.5rem;
+        margin: 2rem 0;
+      }
+
+      .token-info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 1rem;
+        margin-top: 1rem;
+      }
+
+      .token-info-item {
+        background: white;
+        padding: 1rem;
+        border-radius: 6px;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+      }
+
+      .token-info-item strong {
+        display: block;
+        color: #7c8cff;
+        margin-bottom: 0.5rem;
+        font-size: 0.9rem;
+      }
+
+      .token-info-item code {
+        font-family: monospace;
+        font-size: 0.85rem;
+        word-break: break-all;
+        background: rgba(0, 0, 0, 0.05);
+        padding: 2px 4px;
+        border-radius: 3px;
+      }
+
+      .copy-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        background: #7c8cff;
+        color: white;
+        padding: 0.5rem 1rem;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-size: 0.9rem;
+        transition: all 0.3s ease;
+      }
+
+      .copy-button:hover {
+        background: #6b7cff;
+        transform: translateY(-2px);
+      }
+
+      .copy-button.copied {
+        background: #4ade80;
+      }
+
+      .step-list {
+        list-style: none;
+        padding: 0;
+        counter-reset: step;
+      }
+
+      .step-list li {
+        counter-increment: step;
+        position: relative;
+        padding-left: 3rem;
+        margin-bottom: 1.5rem;
+        line-height: 1.6;
+      }
+
+      .step-list li::before {
+        content: counter(step);
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 2rem;
+        height: 2rem;
+        background: linear-gradient(135deg, #7c8cff, #4cc9f0);
+        color: white;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: bold;
+      }
+
+      .warning-box {
+        background: rgba(250, 204, 21, 0.1);
+        border-left: 4px solid #facc15;
+        padding: 1rem;
+        margin: 2rem 0;
+        border-radius: 6px;
+      }
+
+      .success-box {
+        background: rgba(74, 222, 128, 0.1);
+        border-left: 4px solid #4ade80;
+        padding: 1rem;
+        margin: 2rem 0;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation">
+      <div class="container">
+        <!-- Logo Section -->
+        <div class="navbar-header">
+          <div class="logo-wrapper">
+            <a href="/" class="site-logo">
+              <img src="/favicon.svg" alt="DEXRabbit" />
+              <div class="logo-text">
+                <span class="logo-title">DEXRabbit</span>
+                <span class="logo-slogan">Твой пассивный доход на кроликах</span>
+              </div>
+            </a>
+          </div>
+          <button class="mobile-nav-toggle burger" aria-label="Меню" data-burger>☰</button>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="navbar-inner">
+          <div class="nav-links" id="nav-menu" data-menu>
+            <div class="nav-group nav-primary"></div>
+            <div class="nav-group nav-dropdown">
+              <button
+                class="nav-dropdown-toggle"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="nav-dropdown-menu"
+              >
+                Ещё <span class="dropdown-arrow" aria-hidden="true">▾</span>
+              </button>
+              <div class="nav-dropdown-content" id="nav-dropdown-menu" role="menu" hidden></div>
+            </div>
+            <a href="https://t.me/dexrabbit_bot" class="btn btn-primary nav-cta"
+              >💬 Начать инвестировать</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="container">
+          <div class="hero-content">
+            <h1 class="hero-title">📱 Добавление PLEX токена в кошелек</h1>
+            <p class="hero-subtitle">
+              Подробные инструкции по добавлению токена PLEX в популярные криптовалютные кошельки
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Token Information -->
+      <section class="section">
+        <div class="container">
+          <div class="section-header">
+            <span class="overline">Информация о токене</span>
+            <h2>🪙 Данные токена PLEX</h2>
+            <p>Используйте эти данные для добавления токена в любой кошелек</p>
+          </div>
+
+          <div class="token-info">
+            <h3>Официальные адреса и параметры</h3>
+            <div class="token-info-grid">
+              <div class="token-info-item">
+                <strong>Сеть</strong>
+                Binance Smart Chain (BSC/BEP-20)
+              </div>
+              <div class="token-info-item">
+                <strong>Адрес контракта токена</strong>
+                <code>0xdf179b6cadbc61ffd86a3d2e55f6d6e083ade6c1</code>
+                <button
+                  class="copy-button"
+                  onclick="copyToClipboard('0xdf179b6cadbc61ffd86a3d2e55f6d6e083ade6c1', this)"
+                >
+                  📋 Копировать
+                </button>
+              </div>
+              <div class="token-info-item">
+                <strong>Название</strong>
+                PLEX
+              </div>
+              <div class="token-info-item">
+                <strong>Символ</strong>
+                PLEX
+              </div>
+              <div class="token-info-item">
+                <strong>Десятичные знаки</strong>
+                18
+              </div>
+              <div class="token-info-item">
+                <strong>Адрес пула ликвидности</strong>
+                <code>0x41d9650faf3341cbf8947fd8063a1fc88dbf1889</code>
+              </div>
+            </div>
+          </div>
+
+          <div class="warning-box">
+            <strong>⚠️ ВАЖНО:</strong> Всегда проверяйте адрес контракта! Мошенники могут создавать
+            поддельные токены с похожими названиями. Используйте только официальный адрес с нашего
+            сайта. Никогда не вводите адрес вручную — всегда копируйте его.
+          </div>
+        </div>
+      </section>
+
+      <!-- Trust Wallet -->
+      <section class="section section-alt">
+        <div class="container">
+          <div class="wallet-card">
+            <h3>
+              <span class="wallet-icon">🔵</span>
+              Trust Wallet
+            </h3>
+
+            <ol class="step-list">
+              <li>Откройте приложение Trust Wallet на вашем устройстве</li>
+              <li>
+                На главном экране нажмите на иконку настроек (шестеренка) в правом верхнем углу
+              </li>
+              <li>В меню найдите и выберите пункт "Поиск токена" или нажмите на знак "+"</li>
+              <li>Переключитесь на вкладку "Пользовательский токен" (Custom Token)</li>
+              <li>
+                Выберите сеть: <strong>Smart Chain</strong> (может также называться BEP-20 или BSC)
+              </li>
+              <li>
+                В поле "Адрес контракта" вставьте:<br />
+                <code style="background: #f0f0f0; padding: 5px; border-radius: 4px"
+                  >0xdf179b6cadbc61ffd86a3d2e55f6d6e083ade6c1</code
+                >
+              </li>
+              <li>
+                Поля "Имя", "Символ" и "Знаки после запятой" должны заполниться автоматически как
+                PLEX, PLEX, 18
+              </li>
+              <li>
+                Если не заполнились, введите вручную:
+                <ul style="margin-top: 0.5rem">
+                  <li>Имя токена: <strong>PLEX</strong></li>
+                  <li>Символ: <strong>PLEX</strong></li>
+                  <li>Десятичные знаки: <strong>18</strong></li>
+                </ul>
+              </li>
+              <li>Нажмите кнопку "Сохранить" или "Готово"</li>
+              <li>Токен PLEX появится в вашем списке активов с балансом 0</li>
+            </ol>
+
+            <div class="success-box">
+              <strong>✅ Готово!</strong> Теперь вы можете получать и отправлять токены PLEX через
+              Trust Wallet.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- SafePal -->
+      <section class="section">
+        <div class="container">
+          <div class="wallet-card">
+            <h3>
+              <span class="wallet-icon">🟢</span>
+              SafePal Wallet
+            </h3>
+
+            <ol class="step-list">
+              <li>Откройте приложение SafePal Wallet</li>
+              <li>На главном экране в разделе "Активы" нажмите на знак "+" справа</li>
+              <li>Выберите опцию "Добавить токен вручную" (Add Custom Token)</li>
+              <li>Выберите блокчейн: <strong>BSC (Binance Smart Chain)</strong></li>
+              <li>
+                В поле "Contract Address" вставьте адрес контракта:<br />
+                <code style="background: #f0f0f0; padding: 5px; border-radius: 4px"
+                  >0xdf179b6cadbc61ffd86a3d2e55f6d6e083ade6c1</code
+                >
+              </li>
+              <li>
+                Приложение должно автоматически определить токен и показать:
+                <ul style="margin-top: 0.5rem">
+                  <li>Token Name: PLEX</li>
+                  <li>Token Symbol: PLEX</li>
+                  <li>Decimals: 18</li>
+                </ul>
+              </li>
+              <li>Если информация не подтянулась автоматически, введите данные вручную</li>
+              <li>Нажмите кнопку "Add" или "Добавить"</li>
+              <li>Подтвердите добавление токена</li>
+            </ol>
+
+            <div class="success-box">
+              <strong>✅ Успешно!</strong> PLEX токен добавлен в ваш SafePal кошелек и готов к
+              использованию.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- MetaMask -->
+      <section class="section section-alt">
+        <div class="container">
+          <div class="wallet-card">
+            <h3>
+              <span class="wallet-icon">🦊</span>
+              MetaMask
+            </h3>
+
+            <ol class="step-list">
+              <li>Откройте MetaMask (браузерное расширение или мобильное приложение)</li>
+              <li>
+                Убедитесь, что вы подключены к сети <strong>BNB Smart Chain</strong>
+                <ul style="margin-top: 0.5rem">
+                  <li>Если нет BSC сети, добавьте её через chainlist.org или вручную</li>
+                  <li>RPC URL: https://bsc-dataseed.binance.org/</li>
+                  <li>Chain ID: 56</li>
+                </ul>
+              </li>
+              <li>На главном экране нажмите "Import tokens" или "Импорт токенов"</li>
+              <li>Выберите вкладку "Custom Token" или "Пользовательский токен"</li>
+              <li>
+                В поле "Token Contract Address" вставьте:<br />
+                <code style="background: #f0f0f0; padding: 5px; border-radius: 4px"
+                  >0xdf179b6cadbc61ffd86a3d2e55f6d6e083ade6c1</code
+                >
+              </li>
+              <li>
+                MetaMask автоматически заполнит:
+                <ul style="margin-top: 0.5rem">
+                  <li>Token Symbol: PLEX</li>
+                  <li>Token Decimal: 18</li>
+                </ul>
+              </li>
+              <li>Нажмите "Add Custom Token" или "Добавить пользовательский токен"</li>
+              <li>Проверьте информацию и нажмите "Import Tokens" или "Импортировать"</li>
+            </ol>
+
+            <div class="success-box">
+              <strong>✅ Отлично!</strong> PLEX токен добавлен в MetaMask. Вы можете использовать
+              его для DeFi операций.
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- TokenPocket -->
+      <section class="section">
+        <div class="container">
+          <div class="wallet-card">
+            <h3>
+              <span class="wallet-icon">💙</span>
+              TokenPocket
+            </h3>
+
+            <ol class="step-list">
+              <li>Откройте приложение TokenPocket</li>
+              <li>Выберите кошелек BSC (Binance Smart Chain)</li>
+              <li>На главном экране нажмите на "+" или "Добавить токен"</li>
+              <li>Выберите "Добавить токен вручную"</li>
+              <li>
+                Вставьте адрес контракта:<br />
+                <code style="background: #f0f0f0; padding: 5px; border-radius: 4px"
+                  >0xdf179b6cadbc61ffd86a3d2e55f6d6e083ade6c1</code
+                >
+              </li>
+              <li>Токен будет найден автоматически</li>
+              <li>Нажмите "Добавить" для подтверждения</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Math Wallet -->
+      <section class="section section-alt">
+        <div class="container">
+          <div class="wallet-card">
+            <h3>
+              <span class="wallet-icon">Ⓜ️</span>
+              Math Wallet
+            </h3>
+
+            <ol class="step-list">
+              <li>Откройте Math Wallet</li>
+              <li>Выберите BNB Chain (BSC)</li>
+              <li>Нажмите на "+" в списке токенов</li>
+              <li>Выберите "Add Custom Token"</li>
+              <li>
+                Введите адрес контракта:<br />
+                <code style="background: #f0f0f0; padding: 5px; border-radius: 4px"
+                  >0xdf179b6cadbc61ffd86a3d2e55f6d6e083ade6c1</code
+                >
+              </li>
+              <li>Подтвердите добавление</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- Binance Wallet -->
+      <section class="section">
+        <div class="container">
+          <div class="wallet-card">
+            <h3>
+              <span class="wallet-icon">🟡</span>
+              Binance Web3 Wallet
+            </h3>
+
+            <ol class="step-list">
+              <li>Откройте приложение Binance</li>
+              <li>Перейдите в раздел Web3 Wallet</li>
+              <li>Выберите сеть BNB Smart Chain</li>
+              <li>Нажмите "Manage Tokens" или "Управление токенами"</li>
+              <li>Нажмите "+" и выберите "Add Custom Token"</li>
+              <li>
+                Введите адрес контракта:<br />
+                <code style="background: #f0f0f0; padding: 5px; border-radius: 4px"
+                  >0xdf179b6cadbc61ffd86a3d2e55f6d6e083ade6c1</code
+                >
+              </li>
+              <li>Проверьте данные и подтвердите</li>
+            </ol>
+          </div>
+        </div>
+      </section>
+
+      <!-- After Adding Token -->
+      <section class="section section-alt">
+        <div class="container">
+          <div class="section-header">
+            <span class="overline">Что дальше?</span>
+            <h2>🚀 После добавления токена</h2>
+            <p>Возможности использования PLEX в экосистеме DEXRabbit</p>
+          </div>
+
+          <div
+            class="grid"
+            style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem"
+          >
+            <div class="card">
+              <h3>💸 Получение PLEX</h3>
+              <p>
+                Инвесторы получают PLEX токены ежедневно как дополнительный доход от владения
+                кроликами
+              </p>
+            </div>
+
+            <div class="card">
+              <h3>🔄 Обмен на PancakeSwap</h3>
+              <p>Обменивайте PLEX на другие токены через децентрализованную биржу PancakeSwap</p>
+              <a
+                href="https://pancakeswap.finance/swap"
+                target="_blank"
+                class="btn btn-ghost"
+                style="margin-top: 1rem"
+              >
+                Открыть PancakeSwap →
+              </a>
+            </div>
+
+            <div class="card">
+              <h3>💎 Стейкинг и фарминг</h3>
+              <p>Участвуйте в программах стейкинга для получения дополнительной прибыли</p>
+            </div>
+
+            <div class="card">
+              <h3>🛒 Оплата услуг</h3>
+              <p>Используйте PLEX для оплаты услуг на ферме и покупки NFT кроликов</p>
+            </div>
+
+            <div class="card">
+              <h3>📊 Отслеживание курса</h3>
+              <p>Следите за курсом PLEX в реальном времени на GeckoTerminal</p>
+              <a
+                href="https://www.geckoterminal.com/ru/bsc/pools/0x41d9650faf3341cbf8947fd8063a1fc88dbf1889"
+                target="_blank"
+                class="btn btn-ghost"
+                style="margin-top: 1rem"
+              >
+                График PLEX/WBNB →
+              </a>
+            </div>
+
+            <div class="card">
+              <h3>🗳️ Управление</h3>
+              <p>Участвуйте в голосованиях по развитию фермы с помощью PLEX токенов</p>
+            </div>
+          </div>
+
+          <div class="warning-box" style="margin-top: 2rem">
+            <h3>🔒 Безопасность</h3>
+            <ul style="margin-top: 1rem">
+              <li>Никогда не делитесь вашей seed-фразой или приватным ключом</li>
+              <li>Всегда проверяйте адрес контракта перед добавлением токена</li>
+              <li>Используйте только официальные источники информации</li>
+              <li>Остерегайтесь фишинговых сайтов и поддельных токенов</li>
+              <li>Храните резервные копии ваших кошельков в безопасном месте</li>
+            </ul>
+          </div>
+
+          <div style="text-align: center; margin-top: 3rem">
+            <h3>Нужна помощь?</h3>
+            <p style="margin: 1rem 0">
+              Если у вас возникли вопросы по добавлению токена, обратитесь в нашу поддержку
+            </p>
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap">
+              <a href="https://t.me/dexrabbit_bot" class="btn"> 🤖 Telegram Bot </a>
+              <a href="https://t.me/DEXRabbitOfficialGroupInfo" class="btn btn-outline">
+                👥 Группа поддержки
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+      <div class="container">
+        <div class="footer-grid">
+          <div>
+            <h4>Инструкции</h4>
+            <nav>
+              <a href="/wallet-instructions.html">Добавление токена</a>
+              <a href="/#how-it-works">Как работает</a>
+              <a href="/#tokenization">Токенизация</a>
+            </nav>
+          </div>
+
+          <div>
+            <h4>PLEX Token</h4>
+            <nav>
+              <a
+                href="https://bscscan.com/token/0xdf179b6cadbc61ffd86a3d2e55f6d6e083ade6c1"
+                target="_blank"
+                >BscScan</a
+              >
+              <a
+                href="https://www.geckoterminal.com/ru/bsc/pools/0x41d9650faf3341cbf8947fd8063a1fc88dbf1889"
+                target="_blank"
+                >График цены</a
+              >
+              <a href="https://pancakeswap.finance/swap" target="_blank">PancakeSwap</a>
+            </nav>
+          </div>
+
+          <div>
+            <h4>Поддержка</h4>
+            <nav>
+              <a href="https://t.me/dexrabbit_bot">Telegram Bot</a>
+              <a href="https://t.me/DexRebbitOfficial">Канал</a>
+              <a href="https://t.me/DEXRabbitOfficialGroupInfo">Группа</a>
+            </nav>
+          </div>
+
+          <div>
+            <h4>Кошельки</h4>
+            <nav>
+              <a href="https://trustwallet.com" target="_blank">Trust Wallet</a>
+              <a href="https://safepal.com" target="_blank">SafePal</a>
+              <a href="https://metamask.io" target="_blank">MetaMask</a>
+            </nav>
+          </div>
+        </div>
+
+        <div
+          style="
+            text-align: center;
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(124, 140, 255, 0.1);
+            opacity: 0.7;
+          "
+        >
+          <p>© 2025 DEXRabbit. Все права защищены.</p>
+          <p style="margin-top: 0.5rem">
+            Адрес токена PLEX: 0xdf179b6cadbc61ffd86a3d2e55f6d6e083ade6c1
+          </p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function copyToClipboard(text, button) {
+        navigator.clipboard.writeText(text).then(
+          function () {
+            const originalText = button.innerHTML;
+            button.innerHTML = '✅ Скопировано';
+            button.classList.add('copied');
+
+            setTimeout(() => {
+              button.innerHTML = originalText;
+              button.classList.remove('copied');
+            }, 2000);
+          },
+          function (err) {
+            console.error('Не удалось скопировать: ', err);
+          }
+        );
+      }
+
+      // Smooth scroll
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+          e.preventDefault();
+          const target = document.querySelector(this.getAttribute('href'));
+          if (target) {
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
