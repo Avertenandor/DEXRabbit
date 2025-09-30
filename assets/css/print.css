@@ -1,31 +1,23 @@
-/**
- * DEXRabbit - Print Styles
- * Стили для печати страниц
- */
-
+/* DEXRabbit - Print Styles */
 @media print {
   /* Скрываем элементы при печати */
   .navbar,
   .footer,
+  .hero-cta,
   .btn,
-  .hero-bg,
-  .widget-frame,
-  iframe,
+  .mobile-nav-toggle,
+  .nav-dropdown,
   video,
-  .social-links,
-  .telegram-float,
-  .cookie-consent,
-  .mobile-menu-toggle {
+  iframe {
     display: none !important;
   }
 
-  /* Основные стили для печати */
+  /* Оптимизация для печати */
   body {
-    font-family: Arial, sans-serif;
     font-size: 12pt;
     line-height: 1.5;
     color: #000;
-    background: white;
+    background: #fff;
   }
 
   .container {
@@ -34,101 +26,28 @@
     padding: 0;
   }
 
-  /* Заголовки */
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    color: #000;
     page-break-after: avoid;
-    margin-top: 1em;
+    color: #000;
   }
 
-  h1 {
-    font-size: 20pt;
-  }
-  h2 {
-    font-size: 18pt;
-  }
-  h3 {
-    font-size: 16pt;
-  }
-  h4 {
-    font-size: 14pt;
+  img {
+    max-width: 100%;
+    page-break-inside: avoid;
   }
 
-  /* Параграфы и текст */
-  p {
-    margin: 0.5em 0;
-    text-align: justify;
-  }
-
-  /* Ссылки */
   a {
     color: #000;
     text-decoration: underline;
   }
 
-  a[href]:after {
+  a[href^='http']:after {
     content: ' (' attr(href) ')';
-    font-size: 10pt;
-  }
-
-  /* Карточки */
-  .card {
-    border: 1px solid #ccc;
-    padding: 10px;
-    margin: 10px 0;
-    page-break-inside: avoid;
-  }
-
-  /* Таблицы */
-  table {
-    border-collapse: collapse;
-    width: 100%;
-  }
-
-  th,
-  td {
-    border: 1px solid #ccc;
-    padding: 5px;
-    text-align: left;
-  }
-
-  th {
-    background-color: #f0f0f0;
-    font-weight: bold;
-  }
-
-  /* Изображения */
-  img {
-    max-width: 100%;
-    height: auto;
-    page-break-inside: avoid;
-  }
-
-  /* Списки */
-  ul,
-  ol {
-    margin-left: 20px;
-  }
-
-  /* Разрывы страниц */
-  .section {
-    page-break-before: auto;
-    page-break-after: auto;
-  }
-
-  /* Информация о проекте для печати */
-  .print-only {
-    display: block !important;
-  }
-
-  /* QR код для мобильного доступа */
-  .qr-code {
-    display: block;
-    margin: 20px 0;
+    font-size: 0.8em;
   }
 }
