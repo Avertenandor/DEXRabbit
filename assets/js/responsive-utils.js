@@ -334,8 +334,8 @@
 
     // Загружаем стили через link tags без предварительной проверки
     const deferredStyles = [
-      { href: '/assets/css/animations.css', media: 'all' },
-      { href: '/assets/css/print.css', media: 'print' },
+      { href: './assets/css/animations.css', media: 'all' },
+      { href: './assets/css/print.css', media: 'print' },
     ];
 
     requestAnimationFrame(() => {
