@@ -153,6 +153,17 @@ window.DEXRabbitNav = {
       return;
     }
 
+    // Создаем dropdown контейнер если его нет
+    if (!dropdown) {
+      // Если нет готового dropdown контейнера, используем родительский элемент
+      const dropdownParent = dropdownToggle.parentElement;
+      if (!dropdownParent) {
+        console.warn('⚠️ Не найден родительский элемент для dropdown');
+        return;
+      }
+      dropdownParent.classList.add('nav-dropdown');
+    }
+
     console.log('🎯 Инициализация dropdown меню...');
 
     // Добавляем ARIA атрибуты, если их нет
@@ -172,16 +183,23 @@ window.DEXRabbitNav = {
       dropdownContent.setAttribute('role', 'menu');
     }
 
+    // Получаем актуальный dropdown контейнер
+    const dropdownContainer = dropdown || dropdownToggle.parentElement;
+
     // Функции управления состоянием
     const openDropdown = () => {
-      dropdown.classList.add('active');
+      if (dropdownContainer) {
+        dropdownContainer.classList.add('active');
+      }
       dropdownToggle.setAttribute('aria-expanded', 'true');
       dropdownContent.removeAttribute('hidden');
       console.log('📂 Dropdown открыт');
     };
 
     const closeDropdown = () => {
-      dropdown.classList.remove('active');
+      if (dropdownContainer) {
+        dropdownContainer.classList.remove('active');
+      }
       dropdownToggle.setAttribute('aria-expanded', 'false');
       dropdownContent.setAttribute('hidden', '');
       console.log('📁 Dropdown закрыт');
@@ -209,7 +227,8 @@ window.DEXRabbitNav = {
 
     // Закрытие при клике вне меню
     document.addEventListener('click', e => {
-      if (!dropdown.contains(e.target)) {
+      const container = dropdownContainer || dropdownToggle.parentElement;
+      if (container && !container.contains(e.target)) {
         closeDropdown();
       }
     });
@@ -264,15 +283,15 @@ window.DEXRabbitNav = {
     // Поддержка hover для десктопа
     const mediaQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
 
-    if (mediaQuery.matches) {
+    if (mediaQuery.matches && dropdownContainer) {
       let hoverTimeout;
 
-      dropdown.addEventListener('mouseenter', () => {
+      dropdownContainer.addEventListener('mouseenter', () => {
         clearTimeout(hoverTimeout);
         openDropdown();
       });
 
-      dropdown.addEventListener('mouseleave', () => {
+      dropdownContainer.addEventListener('mouseleave', () => {
         hoverTimeout = setTimeout(() => {
           closeDropdown();
         }, 200);

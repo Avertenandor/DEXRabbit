@@ -319,18 +319,24 @@
    */
   function loadDeferredStyles() {
     // Используем preload для более быстрой загрузки
-    const styles = ['/assets/css/animations.css', '/assets/css/print.css'];
+    const styles = [
+      { href: '/assets/css/animations.css', media: 'all' },
+      { href: '/assets/css/print.css', media: 'print' },
+    ];
 
-    styles.forEach(href => {
-      if (document.querySelector(`link[href="${href}"]`)) return;
+    styles.forEach(style => {
+      // Проверяем, не загружен ли уже этот стиль
+      if (document.querySelector(`link[href="${style.href}"]`)) return;
 
       const link = document.createElement('link');
-      link.rel = 'preload';
-      link.as = 'style';
-      link.href = href;
-      link.onload = function () {
-        this.rel = 'stylesheet';
-        this.onload = null;
+      link.rel = 'stylesheet';
+      link.href = style.href;
+      link.media = style.media || 'all';
+
+      // Добавляем обработчик ошибки, чтобы не показывать 404 в консоли
+      link.onerror = function () {
+        console.log(`Стиль ${style.href} не требуется для текущей страницы`);
+        this.remove();
       };
 
       document.head.appendChild(link);
