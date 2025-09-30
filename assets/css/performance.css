@@ -1,0 +1,288 @@
+/**
+ * DEXRabbit - Оптимизации производительности CSS
+ * Предотвращение layout thrashing и оптимизация рендеринга
+ */
+
+/* ========== GPU Acceleration ========== */
+.navbar,
+.hero,
+.card,
+.btn,
+.timeline-item,
+.gallery-item,
+.dropdown-menu,
+.modal {
+  /* Включаем GPU ускорение для элементов с анимациями */
+  transform: translateZ(0);
+  will-change: transform;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* ========== Оптимизация анимаций ========== */
+.btn,
+.card,
+.feature-card,
+.gallery-item img {
+  /* Оптимизируем hover эффекты */
+  transition:
+    transform 0.3s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition-delay: 0s;
+  will-change: auto;
+}
+
+.btn:hover,
+.card:hover,
+.feature-card:hover {
+  /* При hover включаем will-change */
+  will-change: transform, box-shadow;
+}
+
+/* ========== Оптимизация изображений ========== */
+img {
+  /* Предотвращаем layout shift при загрузке */
+  aspect-ratio: attr(width) / attr(height);
+  object-fit: cover;
+  /* Оптимизация рендеринга */
+  image-rendering: -webkit-optimize-contrast;
+  image-rendering: crisp-edges;
+}
+
+img.loading {
+  /* Placeholder для загружающихся изображений */
+  background: linear-gradient(
+    90deg,
+    rgba(124, 140, 255, 0.1) 0%,
+    rgba(124, 140, 255, 0.2) 50%,
+    rgba(124, 140, 255, 0.1) 100%
+  );
+  background-size: 200% 100%;
+  animation: shimmer 1.5s infinite;
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+/* ========== Оптимизация текста ========== */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.hero-title,
+.section-header {
+  /* Предотвращаем мерцание текста при загрузке шрифтов */
+  font-display: swap;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ========== Оптимизация прокрутки ========== */
+html {
+  /* Плавная прокрутка с GPU ускорением */
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  /* Предотвращаем случайные перерисовки */
+  overflow-anchor: none;
+}
+
+/* Оптимизация прокрутки для контейнеров */
+.table-wrapper,
+.gallery-grid,
+.nav-dropdown-content {
+  -webkit-overflow-scrolling: touch;
+  overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+/* ========== Оптимизация мобильных устройств ========== */
+@media (max-width: 768px) {
+  /* Отключаем сложные эффекты на мобильных */
+  .card::after,
+  .timeline::before,
+  .hero::before {
+    display: none;
+  }
+
+  /* Упрощаем тени */
+  .card,
+  .btn {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+
+  /* Отключаем hover эффекты на touch устройствах */
+  @media (hover: none) {
+    .btn:hover,
+    .card:hover,
+    .feature-card:hover {
+      transform: none;
+      box-shadow: inherit;
+    }
+  }
+}
+
+/* ========== Оптимизация iframe ========== */
+iframe {
+  /* Предотвращаем layout shift */
+  aspect-ratio: 16 / 9;
+  width: 100%;
+  height: auto;
+}
+
+.widget-frame {
+  /* Резервируем место для iframe */
+  min-height: 500px;
+  background: rgba(124, 140, 255, 0.05);
+  position: relative;
+}
+
+.widget-frame::before {
+  content: 'Загрузка виджета...';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--color-text-tertiary);
+  font-size: 0.9rem;
+  opacity: 0.6;
+}
+
+.widget-frame iframe {
+  position: relative;
+  z-index: 1;
+}
+
+/* ========== Оптимизация форм ========== */
+input,
+textarea,
+select,
+button {
+  /* Предотвращаем зум на iOS */
+  font-size: 16px !important;
+  /* Оптимизация touch */
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* ========== Lazy Loading индикаторы ========== */
+[loading='lazy'] {
+  /* Резервируем место для lazy-loaded элементов */
+  min-height: 100px;
+  background: rgba(124, 140, 255, 0.05);
+}
+
+[loading='lazy'].loaded {
+  min-height: auto;
+  background: none;
+}
+
+/* ========== Критический CSS для above-the-fold ========== */
+.hero {
+  /* Оптимизируем первый экран */
+  contain: layout style;
+  isolation: isolate;
+}
+
+.navbar {
+  /* Фиксированная высота для предотвращения reflow */
+  height: var(--navbar-height, 70px);
+  contain: layout style;
+}
+
+/* ========== CSS Containment ========== */
+.section,
+.card,
+.feature-card,
+.timeline-item {
+  /* Изолируем перерисовки */
+  contain: layout style;
+}
+
+.gallery-item {
+  /* Изолируем каждый элемент галереи */
+  contain: layout style paint;
+}
+
+/* ========== Оптимизация градиентов ========== */
+.hero::before,
+.section-alt::before,
+.card::after {
+  /* Используем transform вместо изменения размеров */
+  transform-origin: center;
+  will-change: opacity;
+}
+
+/* ========== Отключение анимаций при prefers-reduced-motion ========== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* ========== Оптимизация печати ========== */
+@media print {
+  /* Отключаем все декоративные элементы при печати */
+  .hero::before,
+  .section::before,
+  .card::after,
+  .navbar,
+  .footer {
+    display: none !important;
+  }
+
+  /* Упрощаем стили */
+  * {
+    background: white !important;
+    color: black !important;
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+}
+
+/* ========== Финальные оптимизации ========== */
+* {
+  /* Предотвращаем выделение текста где не нужно */
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+/* Разрешаем выделение только для текстового контента */
+p,
+span,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+li,
+td,
+.content {
+  -webkit-user-select: text;
+  user-select: text;
+}
+
+/* Оптимизация для 120Hz дисплеев */
+@media (min-resolution: 2dppx) {
+  * {
+    -webkit-font-smoothing: subpixel-antialiased;
+  }
+}

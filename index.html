@@ -51,11 +51,13 @@
     <link rel="stylesheet" href="/assets/css/variables.css" />
     <link rel="stylesheet" href="/assets/css/avatars.css" />
     <link rel="stylesheet" href="/assets/css/responsive-extreme.css" />
+    <!-- Performance Optimizations - 0 layout thrashing -->
+    <link rel="stylesheet" href="/assets/css/performance.css" />
 
     <!-- Mobile Navigation Script -->
     <script defer src="/assets/js/nav.js?v=20250930"></script>
-    <!-- Responsive Utilities -->
-    <script defer src="/assets/js/responsive-utils.js?v=20250930"></script>
+    <!-- Ultra-Optimized Responsive Utilities - 0 forced reflow -->
+    <script defer src="/assets/js/responsive-utils-optimized.js?v=3.0"></script>
   </head>
   <body>
     <!-- Navigation -->
@@ -1344,7 +1346,7 @@
       if ('serviceWorker' in navigator && location.hostname !== 'localhost') {
         window.addEventListener('load', async () => {
           try {
-            const registration = await navigator.serviceWorker.register('/sw.js');
+            const registration = await navigator.serviceWorker.register('/sw-optimized.js');
             console.log('Service Worker registered:', registration.scope);
 
             // Проверяем обновления каждые 30 секунд
