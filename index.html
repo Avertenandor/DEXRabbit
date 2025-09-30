@@ -53,7 +53,11 @@
     <link rel="stylesheet" href="/assets/css/responsive-extreme.css" />
     <!-- Performance Optimizations - 0 layout thrashing -->
     <link rel="stylesheet" href="/assets/css/performance.css" />
+    <!-- Unified Navigation Styles -->
+    <link rel="stylesheet" href="/assets/css/navigation.css" />
 
+    <!-- Unified Navigation Data -->
+    <script defer src="/assets/js/navigation-data.js?v=1.0"></script>
     <!-- Mobile Navigation Script -->
     <script defer src="/assets/js/nav.js?v=20250930"></script>
     <!-- Ultra-Optimized Responsive Utilities - 0 forced reflow -->
@@ -90,22 +94,36 @@
 
             <!-- Дополнительные разделы -->
             <div class="nav-group nav-dropdown">
-              <button class="nav-dropdown-toggle">Ещё <span class="dropdown-arrow">▾</span></button>
-              <div class="nav-dropdown-content">
-                <a href="#gallery">📷 Галерея</a>
-                <a href="/investors.html">👥 Инвесторы</a>
-                <a href="#partners">🤝 Партнерам</a>
-                <a href="/partnership.html">💵 Партнерская программа</a>
-                <a href="#guarantees">🛡️ Гарантии</a>
-                <a href="/reports.html">📹 Отчеты</a>
-                <a href="/breeding.html">🧬 Племенная работа</a>
-                <a href="/gifts.html">🎁 Кролик в подарок</a>
-                <a href="/restaurants.html">🍽️ Ресторанам</a>
-                <a href="/rabbits-hares.html">🐰 Кролики и зайцы</a>
-                <a href="/cats-rabbits.html">🐱 Коты и кролики</a>
-                <a href="/care.html">🏥 Уход за кроликами</a>
-                <a href="/therapy.html">🧠 Кроликотерапия</a>
-                <a href="/docs/DEXRabbit_presentation.pdf" target="_blank">📄 Презентация</a>
+              <button
+                class="nav-dropdown-toggle"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="nav-dropdown-menu"
+              >
+                Ещё <span class="dropdown-arrow" aria-hidden="true">▾</span>
+              </button>
+              <div class="nav-dropdown-content" id="nav-dropdown-menu" role="menu" hidden>
+                <a href="/#gallery" role="menuitem">📷 Галерея</a>
+                <a href="/investors.html" role="menuitem">👥 Инвесторы</a>
+                <a href="/#partners" role="menuitem">🤝 Партнерам</a>
+                <a href="/partnership.html" role="menuitem">💵 Партнерская программа</a>
+                <a href="/#guarantees" role="menuitem">🛡️ Гарантии</a>
+                <a href="/reports.html" role="menuitem">📹 Отчеты</a>
+                <a href="/breeding.html" role="menuitem">🧬 Племенная работа</a>
+                <a href="/gifts.html" role="menuitem">🎁 Кролик в подарок</a>
+                <a href="/restaurants.html" role="menuitem">🍽️ Ресторанам</a>
+                <a href="/rabbits-hares.html" role="menuitem">🐰 Кролики и зайцы</a>
+                <a href="/cats-rabbits.html" role="menuitem">🐱 Коты и кролики</a>
+                <a href="/care.html" role="menuitem">🏥 Уход за кроликами</a>
+                <a href="/therapy.html" role="menuitem">🧠 Кроликотерапия</a>
+                <a
+                  href="/docs/DEXRabbit_presentation.pdf"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  role="menuitem"
+                  >📄 Презентация</a
+                >
               </div>
             </div>
 
