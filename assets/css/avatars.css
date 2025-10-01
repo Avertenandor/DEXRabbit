@@ -34,7 +34,7 @@
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: 50% 35%; /* Фокус на верхней части для лиц */
+  object-position: 50% 20%; /* Фокус на верхней части для лиц - улучшено */
   image-rendering: auto;
   transform: translateZ(0); /* Оптимизация для GPU */
 }
@@ -79,7 +79,7 @@
 }
 
 .investor-avatar img {
-  object-position: 50% 30%; /* Оптимально для портретов инвесторов */
+  object-position: 50% 15%; /* Оптимально для портретов инвесторов - улучшено */
 }
 
 /* Градиентный фон как фоллбэк */
@@ -170,15 +170,15 @@
 
 /* Специальные стили для конкретных инвесторов (тонкая настройка) */
 .avatar[data-investor='natder'] img {
-  object-position: 50% 20%; /* Поднимаем фокус для Натальи */
+  object-position: 50% 10%; /* Поднимаем фокус для Натальи - улучшено */
 }
 
 .avatar[data-investor='vlad'] img {
-  object-position: 50% 35%; /* Стандартное положение для Влада */
+  object-position: 50% 15%; /* Поднимаем фокус для Влада - улучшено */
 }
 
 .avatar[data-investor='alexander'] img {
-  object-position: 50% 30%; /* Оптимально для Александра */
+  object-position: 50% 12%; /* Поднимаем фокус для Александра - улучшено */
 }
 
 /* === МОДАЛЬНОЕ ОКНО ДЛЯ ФОТО === */
