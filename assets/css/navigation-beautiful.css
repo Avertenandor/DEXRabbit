@@ -1,0 +1,432 @@
+/* ========== КРАСИВАЯ НАВИГАЦИЯ (КАК В ФУТЕРЕ) ========== */
+/* Версия: 2025-10-01 - Полный редизайн */
+
+/* ========== ОСНОВНОЙ КОНТЕЙНЕР ========== */
+.nav-beautiful {
+  position: sticky;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 30, 0.95) 100%);
+  backdrop-filter: saturate(180%) blur(30px);
+  border-bottom: 1px solid rgba(124, 140, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  padding: 0;
+}
+
+.nav-beautiful__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ========== LOGO ========== */
+.nav-beautiful__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+}
+
+.nav-beautiful__logo:hover {
+  transform: translateY(-2px);
+}
+
+.nav-beautiful__logo-img {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 2px 8px rgba(124, 140, 255, 0.4));
+}
+
+.nav-beautiful__logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-beautiful__logo-title {
+  font-size: 20px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff 0%, #e0e0ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.nav-beautiful__logo-slogan {
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(124, 140, 255, 0.9);
+  letter-spacing: 0.3px;
+}
+
+/* ========== МЕНЮ ========== */
+.nav-beautiful__menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ========== КНОПКИ МЕНЮ (КАК В ФУТЕРЕ) ========== */
+.nav-beautiful__btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, rgba(124, 140, 255, 0.1), rgba(76, 201, 240, 0.05));
+  border: 1px solid rgba(124, 140, 255, 0.3);
+  border-radius: 24px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Shimmer effect */
+.nav-beautiful__btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: left 0.6s ease;
+}
+
+.nav-beautiful__btn:hover::before {
+  left: 100%;
+}
+
+.nav-beautiful__btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: linear-gradient(135deg, rgba(124, 140, 255, 0.2), rgba(76, 201, 240, 0.1));
+  border-color: rgba(124, 140, 255, 0.5);
+  box-shadow: 0 8px 24px rgba(124, 140, 255, 0.3),
+              0 4px 12px rgba(76, 201, 240, 0.2);
+  color: #fff;
+}
+
+.nav-beautiful__btn:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* Иконка стрелки вниз */
+.nav-beautiful__arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid currentColor;
+  margin-left: 4px;
+  transition: transform 0.3s ease;
+}
+
+.nav-beautiful__btn:hover .nav-beautiful__arrow {
+  transform: translateY(2px);
+}
+
+/* ========== DROPDOWN МЕНЮ ========== */
+.nav-beautiful__dropdown-wrapper {
+  position: relative;
+}
+
+.nav-beautiful__dropdown {
+  position: absolute;
+  top: calc(100% + 12px);
+  left: 50%;
+  transform: translateX(-50%);
+  min-width: 320px;
+  max-width: 400px;
+  background: linear-gradient(135deg, rgba(15, 15, 25, 0.98) 0%, rgba(25, 25, 35, 0.98) 100%);
+  backdrop-filter: saturate(180%) blur(40px);
+  border-radius: 20px;
+  box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6),
+              0 0 0 1px rgba(124, 140, 255, 0.2);
+  padding: 16px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transform: translateX(-50%) translateY(-10px) scale(0.98);
+  z-index: 100;
+  border: 1px solid rgba(124, 140, 255, 0.2);
+}
+
+.nav-beautiful__dropdown-wrapper:hover .nav-beautiful__dropdown {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0) scale(1);
+}
+
+/* Список в dropdown */
+.nav-beautiful__dropdown-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+/* Элементы dropdown */
+.nav-beautiful__dropdown-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 16px;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 1px solid transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-beautiful__dropdown-item::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(135deg, rgba(124, 140, 255, 0.08), rgba(76, 201, 240, 0.08));
+  border-radius: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.nav-beautiful__dropdown-item:hover::before {
+  opacity: 1;
+}
+
+.nav-beautiful__dropdown-item:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(124, 140, 255, 0.4);
+  transform: translateX(6px);
+}
+
+.nav-beautiful__dropdown-icon {
+  font-size: 20px;
+  line-height: 1;
+  transition: transform 0.3s ease;
+}
+
+.nav-beautiful__dropdown-item:hover .nav-beautiful__dropdown-icon {
+  transform: scale(1.15) rotate(5deg);
+}
+
+.nav-beautiful__dropdown-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.nav-beautiful__dropdown-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #fff;
+  transition: color 0.2s ease;
+}
+
+.nav-beautiful__dropdown-item:hover .nav-beautiful__dropdown-title {
+  color: rgba(124, 140, 255, 1);
+}
+
+.nav-beautiful__dropdown-desc {
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.3;
+}
+
+/* ========== CTA КНОПКА ========== */
+.nav-beautiful__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, #7c8cff 0%, #4cc9f0 100%);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 28px;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 4px 20px rgba(124, 140, 255, 0.4),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.nav-beautiful__cta::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  transition: left 0.6s ease;
+}
+
+.nav-beautiful__cta:hover::before {
+  left: 100%;
+}
+
+.nav-beautiful__cta:hover {
+  transform: translateY(-3px) scale(1.05);
+  box-shadow: 0 8px 32px rgba(124, 140, 255, 0.6),
+              0 4px 16px rgba(76, 201, 240, 0.4),
+              inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+.nav-beautiful__cta:active {
+  transform: translateY(-1px) scale(1.02);
+}
+
+/* ========== МОБИЛЬНОЕ МЕНЮ ========== */
+.nav-beautiful__mobile-toggle {
+  display: none;
+  width: 44px;
+  height: 44px;
+  align-items: center;
+  justify-content: center;
+  background: rgba(124, 140, 255, 0.1);
+  border: 1px solid rgba(124, 140, 255, 0.3);
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.nav-beautiful__mobile-toggle:hover {
+  background: rgba(124, 140, 255, 0.2);
+  border-color: rgba(124, 140, 255, 0.5);
+}
+
+.nav-beautiful__mobile-icon {
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+.nav-beautiful__mobile-icon::before,
+.nav-beautiful__mobile-icon::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  width: 24px;
+  height: 2px;
+  background: #fff;
+  transition: all 0.3s ease;
+}
+
+.nav-beautiful__mobile-icon::before {
+  top: -7px;
+}
+
+.nav-beautiful__mobile-icon::after {
+  top: 7px;
+}
+
+/* ========== АДАПТИВНОСТЬ ========== */
+@media (max-width: 1024px) {
+  .nav-beautiful__menu {
+    gap: 8px;
+  }
+
+  .nav-beautiful__btn {
+    padding: 8px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 768px) {
+  .nav-beautiful__mobile-toggle {
+    display: flex;
+  }
+
+  .nav-beautiful__menu {
+    position: fixed;
+    top: 70px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.98);
+    backdrop-filter: blur(40px);
+    padding: 20px;
+    overflow-y: auto;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .nav-beautiful.open .nav-beautiful__menu {
+    transform: translateX(0);
+  }
+
+  .nav-beautiful__dropdown-wrapper {
+    width: 100%;
+  }
+
+  .nav-beautiful__btn {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .nav-beautiful__dropdown {
+    position: static;
+    transform: none;
+    max-width: none;
+    margin-top: 8px;
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.3s ease;
+  }
+
+  .nav-beautiful__dropdown-wrapper.open .nav-beautiful__dropdown {
+    max-height: 1000px;
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+
+  .nav-beautiful__logo-slogan {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .nav-beautiful__container {
+    padding: 10px 12px;
+  }
+
+  .nav-beautiful__logo-img {
+    width: 32px;
+    height: 32px;
+  }
+
+  .nav-beautiful__logo-title {
+    font-size: 16px;
+  }
+}
+
