@@ -33,28 +33,59 @@
     <!-- Styles -->
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/variables.css">
+        <!-- Performance Optimizations - 0 layout thrashing -->
+    <link rel="stylesheet" href="/assets/css/performance.css" />
+    <!-- Unified Navigation Styles -->
+    <link rel="stylesheet" href="/assets/css/navigation.css?v=20251001-fix" />
+    <!-- Mega Menu Styles -->
+    <link rel="stylesheet" href="/assets/css/mega-menu.css?v=20251001-nav-container" />
+    <!-- Navigation Fix Styles -->
+    <link rel="stylesheet" href="/assets/css/nav-fix.css?v=20251001-nav-fixed" />
+    <!-- Investor Cards Styles -->
+    <link rel="stylesheet" href="/assets/css/investor-cards.css" />
+    <!-- Copy Button Styles -->
+    <link rel="stylesheet" href="/assets/css/copy-button.css" />
+    <!-- Copy Contract Styles -->
+    <link rel="stylesheet" href="/assets/css/copy-contract.css" />
+    <!-- Footer Styles -->
+    <link rel="stylesheet" href="/assets/css/footer.css" />
+    <!-- Print Styles -->
+    <link rel="stylesheet" href="/assets/css/print.css" />
 </head>
 <body>
     <!-- Navigation -->
-    <nav class="navbar" role="navigation">
-        <div class="container">
-            <div class="navbar-header">
-                <div class="logo-wrapper">
-                    <a href="/" class="site-logo">
-                        <img src="/favicon.svg" alt="DEXRabbit">
-                        <div class="logo-text">
-                            <span class="logo-title">DEXRabbit</span>
-                            <span class="logo-slogan">Твой пассивный доход на кроликах</span>
-                        </div>
-                    </a>
-                </div>
-                <div style="display: flex; align-items: center; gap: 1rem;">
-                    <a href="/" class="btn btn-ghost" style="padding: 0.5rem 1rem; font-size: 0.9rem;">🏠 На главную</a>
-                    <button class="mobile-nav-toggle" aria-label="Меню" onclick="toggleMenu()">☰</button>
-                </div>
-            </div>
+        <!-- Navigation -->
+    <header class="navbar" role="navigation">
+      <div class="nav-wrapper">
+        <!-- Logo Section -->
+        <div class="navbar-header">
+          <div class="logo-wrapper">
+            <a href="/" class="site-logo">
+              <img src="/favicon.svg" alt="DEXRabbit" />
+              <div class="logo-text">
+                <span class="logo-title">DEXRabbit</span>
+                <span class="logo-slogan">Твой пассивный доход на кроликах</span>
+              </div>
+            </a>
+          </div>
+          <button class="mobile-nav-toggle burger" aria-label="Меню" data-burger>☰</button>
         </div>
-    </nav>
+
+        <!-- Navigation Links -->
+        <div class="navbar-inner">
+          <div class="nav-links" id="nav-menu" data-menu>
+            <!-- Навигация генерируется динамически из navigation-data.js -->
+            <!-- Primary Navigation -->
+            <div class="nav-group nav-primary">
+              <div class="mega-nav-container"></div>
+            </div>
+
+            <!-- CTA Button -->
+            <div class="nav-cta-wrapper"></div>
+          </div>
+        </div>
+      </div>
+    </header>
 
     <main>
         <!-- Hero Section -->

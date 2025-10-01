@@ -385,11 +385,30 @@
         }
       }
     </style>
-  </head>
+          <!-- Performance Optimizations - 0 layout thrashing -->
+    <link rel="stylesheet" href="/assets/css/performance.css" />
+    <!-- Unified Navigation Styles -->
+    <link rel="stylesheet" href="/assets/css/navigation.css?v=20251001-fix" />
+    <!-- Mega Menu Styles -->
+    <link rel="stylesheet" href="/assets/css/mega-menu.css?v=20251001-nav-container" />
+    <!-- Navigation Fix Styles -->
+    <link rel="stylesheet" href="/assets/css/nav-fix.css?v=20251001-nav-fixed" />
+    <!-- Investor Cards Styles -->
+    <link rel="stylesheet" href="/assets/css/investor-cards.css" />
+    <!-- Copy Button Styles -->
+    <link rel="stylesheet" href="/assets/css/copy-button.css" />
+    <!-- Copy Contract Styles -->
+    <link rel="stylesheet" href="/assets/css/copy-contract.css" />
+    <!-- Footer Styles -->
+    <link rel="stylesheet" href="/assets/css/footer.css" />
+    <!-- Print Styles -->
+    <link rel="stylesheet" href="/assets/css/print.css" />
+</head>
   <body>
     <!-- Navigation -->
-    <nav class="navbar" role="navigation">
-      <div class="container">
+        <!-- Navigation -->
+    <header class="navbar" role="navigation">
+      <div class="nav-wrapper">
         <!-- Logo Section -->
         <div class="navbar-header">
           <div class="logo-wrapper">
@@ -409,30 +428,16 @@
           <div class="nav-links" id="nav-menu" data-menu>
             <!-- Навигация генерируется динамически из navigation-data.js -->
             <!-- Primary Navigation -->
-            <div class="nav-group nav-primary"></div>
-
-            <!-- Дополнительные разделы -->
-            <div class="nav-group nav-dropdown">
-              <button
-                class="nav-dropdown-toggle"
-                type="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-                aria-controls="nav-dropdown-menu"
-              >
-                Ещё <span class="dropdown-arrow" aria-hidden="true">▾</span>
-              </button>
-              <div class="nav-dropdown-content" id="nav-dropdown-menu" role="menu" hidden></div>
+            <div class="nav-group nav-primary">
+              <div class="mega-nav-container"></div>
             </div>
 
-            <!-- CTA кнопка -->
-            <a href="https://t.me/dexrabbit_bot" class="btn btn-primary nav-cta"
-              >💬 Начать инвестировать</a
-            >
+            <!-- CTA Button -->
+            <div class="nav-cta-wrapper"></div>
           </div>
         </div>
       </div>
-    </nav>
+    </header>
 
     <main>
       <!-- Hero Section -->
