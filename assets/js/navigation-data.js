@@ -83,12 +83,7 @@ window.DEXRabbitNav = {
           description: '3 уровня, 5% на каждом',
           icon: '💵',
         },
-        {
-          title: 'Для ресторанов',
-          href: '/restaurants.html',
-          description: 'Прямые поставки мяса',
-          icon: '🍽️',
-        },
+
         {
           title: 'Для блогеров',
           href: '/#contacts',

@@ -1,0 +1,144 @@
+/* ========== СТАБИЛЬНАЯ НАВИГАЦИЯ БЕЗ ФЛИКЕРА ========== */
+/* Версия: 20251001-stable */
+
+/* ========== ЯКОРЬ И ГРУППЫ ========== */
+.nav-wrapper { 
+  position: relative; 
+  max-width: 1200px; 
+  margin-inline: auto; 
+  padding-inline: 16px; 
+}
+
+/* Группа управляет состоянием */
+.mega-group { 
+  position: relative; 
+  display: inline-block; 
+}
+
+/* ========== СТАБИЛЬНАЯ ГЕОМЕТРИЯ ПАНЕЛИ ========== */
+.mega-panel {
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: min(1100px, 96vw);
+  z-index: 1000;
+  display: none;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.12s ease, transform 0.12s ease;
+  will-change: opacity, transform;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.95));
+  border: 1px solid rgba(124, 140, 255, 0.2);
+  border-radius: 16px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(20px);
+  max-height: min(600px, 70vh);
+  overflow: auto;
+}
+
+/* Включение панели — только классом .open на .mega-group */
+.mega-group.open > .mega-panel {
+  display: block;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateX(-50%) translateY(0);
+}
+
+/* ========== НЕВИДИМАЯ МОСТОВАЯ ЗОНА ========== */
+.mega-group::after {
+  content: "";
+  position: absolute;
+  left: 0; 
+  right: 0;
+  top: 100%;
+  height: 10px;              /* мост 8–12px — подбирается */
+  z-index: 999;
+}
+
+/* ========== АДАПТИВНОСТЬ ========== */
+@media (max-width: 1024px) {
+  .mega-panel { 
+    left: 0; 
+    transform: none; 
+    width: 100%; 
+    border-radius: 0 0 14px 14px; 
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .mega-panel {
+    max-height: min(500px, 60vh);
+  }
+}
+
+/* ========== СТАБИЛЬНЫЕ ЭЛЕМЕНТЫ ПАНЕЛИ ========== */
+.mega-panel-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding: 1rem;
+  border-radius: 12px;
+  background: rgba(124, 140, 255, 0.03);
+  border: 1px solid rgba(124, 140, 255, 0.08);
+  text-decoration: none;
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+  position: relative;
+  backdrop-filter: blur(10px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  /* СТАБИЛЬНОСТЬ: никаких transform */
+  transform: none;
+  will-change: auto;
+  backface-visibility: hidden;
+}
+
+.mega-panel-item:hover {
+  background: rgba(124, 140, 255, 0.08);
+  border-color: rgba(124, 140, 255, 0.3);
+  color: #facc15;
+  /* СТАБИЛЬНОСТЬ: никаких transform */
+  transform: none;
+}
+
+/* ========== ИКОНКИ БЕЗ ШЕВЕЛЕНИЯ ========== */
+.mega-item-icon {
+  font-size: 2rem;
+  line-height: 1;
+  flex-shrink: 0;
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.2));
+  transition: filter 0.2s ease;
+}
+
+.mega-panel-item:hover .mega-item-icon {
+  /* СТАБИЛЬНОСТЬ: только filter, никаких transform */
+  transform: none;
+  filter: drop-shadow(0 2px 8px rgba(250, 204, 21, 0.3));
+}
+
+/* ========== САНИТАРНАЯ ЧИСТКА ========== */
+/* Убираем все старые анимации и позиционирование */
+.nav-links, .header__inner { 
+  justify-content: space-between !important; 
+}
+
+/* Запрещаем старые правила */
+.mega-panel[style*="position: fixed"],
+.mega-panel[style*="right: 0"],
+.mega-panel[style*="transform: translateX"] {
+  position: absolute !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+}
+
+/* ========== БЕЗОПАСНЫЕ ЗОНЫ ========== */
+@supports (padding: max(0px)) {
+  .navbar {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+  
+  .footer {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+}

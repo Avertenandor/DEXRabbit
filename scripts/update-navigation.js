@@ -44,6 +44,8 @@ const fullStylesHTML = `    <!-- Performance Optimizations - 0 layout thrashing 
     <link rel="stylesheet" href="/assets/css/mega-menu.css?v=20251001-no-wiggle" />
     <!-- Navigation Refactor Styles -->
     <link rel="stylesheet" href="/assets/css/nav-refactor.css?v=20251001-stable" />
+    <!-- Stable Navigation - Anti-Flicker -->
+    <link rel="stylesheet" href="/assets/css/mega-menu-stable.css?v=20251001-anti-flicker" />
     <!-- Investor Cards Styles -->
     <link rel="stylesheet" href="/assets/css/investor-cards.css" />
     <!-- Copy Button Styles -->
@@ -58,6 +60,8 @@ const fullStylesHTML = `    <!-- Performance Optimizations - 0 layout thrashing 
 // JavaScript для навигации
 const navigationJS = `    <!-- Navigation Data & Logic -->
     <script src="/assets/js/navigation-data.js?v=20251001-full-nav"></script>
+    <!-- Stable Navigation - Anti-Flicker -->
+    <script defer src="/assets/js/mega-menu-stable.js?v=20251001-anti-flicker"></script>
     <script src="/assets/js/nav.js"></script>`;
 
 // Функция для обновления HTML файла
