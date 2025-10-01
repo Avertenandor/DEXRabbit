@@ -62,7 +62,8 @@ DEXRabbit/
 
 - 🌐 Сайт: [кролики.site](https://xn--80apagbbfxgmuj4j.site/)
 - 📱 Telegram Bot: [@dexrabbit_bot](https://t.me/dexrabbit_bot)
-- 📢 Telegram Канал: [@dexrabbit_channel](https://t.me/dexrabbit_channel)
+- 📢 Telegram Канал: [@DexRebbitOfficial](https://t.me/DexRebbitOfficial)
+- 👥 Telegram Группа: [@DEXRabbitOfficialGroupInfo](https://t.me/DEXRabbitOfficialGroupInfo)
 - 📧 Email: info@dexrabbit.com
 
 ## 📄 Лицензия
