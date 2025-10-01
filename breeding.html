@@ -104,6 +104,18 @@
     </nav>
 
     <main>
+      <!-- Кнопка "На главную" -->
+      <div class="back-to-home-wrapper">
+        <div class="container">
+          <a href="/" class="btn-back-home">
+            <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <path d="M10 3L3 10L10 17M3 10H17" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            На главную
+          </a>
+        </div>
+      </div>
+
       <!-- Hero Section -->
       <section class="hero">
         <div class="container">
@@ -671,6 +683,54 @@
     </footer>
 
     <link rel="stylesheet" href="/assets/css/footer.css">
+
+    <style>
+      /* Кнопка "На главную" */
+      .back-to-home-wrapper {
+        padding: 1rem 0;
+        background: rgba(124, 140, 255, 0.05);
+        border-bottom: 1px solid rgba(124, 140, 255, 0.1);
+      }
+
+      .btn-back-home {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.5rem;
+        padding: 0.75rem 1.5rem;
+        background: linear-gradient(135deg, rgba(124, 140, 255, 0.1), rgba(76, 201, 240, 0.1));
+        border: 1px solid rgba(124, 140, 255, 0.3);
+        border-radius: 8px;
+        color: var(--color-text);
+        text-decoration: none;
+        font-weight: 500;
+        transition: all 0.3s ease;
+      }
+
+      .btn-back-home:hover {
+        background: linear-gradient(135deg, rgba(124, 140, 255, 0.2), rgba(76, 201, 240, 0.2));
+        border-color: rgba(124, 140, 255, 0.5);
+        transform: translateX(-3px);
+      }
+
+      .btn-back-home svg {
+        transition: transform 0.3s ease;
+      }
+
+      .btn-back-home:hover svg {
+        transform: translateX(-3px);
+      }
+
+      @media (max-width: 768px) {
+        .back-to-home-wrapper {
+          padding: 0.75rem 0;
+        }
+
+        .btn-back-home {
+          padding: 0.6rem 1.2rem;
+          font-size: 0.9rem;
+        }
+      }
+    </style>
 
     <script>
       // Smooth scroll
