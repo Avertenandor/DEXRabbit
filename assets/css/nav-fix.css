@@ -1,9 +1,22 @@
 /* ========== ЕДИНАЯ ГЕОМЕТРИЯ ПАНЕЛЕЙ - ТОЛЬКО ЗДЕСЬ ========== */
 .nav-wrapper{position:relative;max-width:1200px;margin-inline:auto;padding-inline:16px}
 
-/* ========== ЦЕНТРИРОВАНИЕ НАВИГАЦИИ ========== */
+/* ========== СМЕЩЕНИЕ ВСЕГО КОНТЕЙНЕРА НАВИГАЦИИ ВЛЕВО ========== */
+.nav-wrapper {
+  margin-inline: 0 !important; /* ✅ Убираем центрирование wrapper */
+  padding-inline: 0 !important; /* ✅ Убираем отступы wrapper */
+  max-width: none !important; /* ✅ Убираем ограничение ширины */
+}
+
+.navbar-inner {
+  justify-content: flex-start !important; /* ✅ Смещаем весь контейнер влево */
+  padding-left: 1rem !important; /* ✅ Добавляем отступ слева */
+  padding-block: 2rem !important; /* ✅ УВЕЛИЧЕНО: высота контейнера в 2 раза */
+  min-height: 80px !important; /* ✅ Минимальная высота контейнера */
+}
+
 .mega-nav-container {
-  justify-content: flex-start !important; /* ✅ Смещаем влево */
+  justify-content: flex-start !important; /* ✅ Смещаем навигацию влево */
   margin: 0 !important; /* ✅ Убираем центрирование */
   padding-left: 0 !important; /* ✅ Убираем отступы */
 }
