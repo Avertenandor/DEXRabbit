@@ -1,4 +1,5 @@
 /* ========== КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ ПОЗИЦИОНИРОВАНИЯ МЕГА-ПАНЕЛИ ========== */
+/* Версия: 20251001-real-nav */
 
 /* Якорь */
 .nav-wrapper {
@@ -35,5 +36,6 @@
 /* Убираем все конфликтующие правила */
 .mega-nav-container {
   margin-left: 0 !important;
-  justify-content: flex-start !important;
+  justify-content: center !important; /* ✅ ИСПРАВЛЕНО: Центрируем меню */
+  margin: 0 auto !important; /* ✅ ДОБАВЛЕНО: Центрирование контейнера */
 }
