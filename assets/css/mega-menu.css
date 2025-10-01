@@ -7,11 +7,11 @@
 .mega-nav-container {
   display: flex;
   align-items: center;
-  gap: clamp(0.5rem, 1.5vw, 1.5rem);
+  gap: clamp(0.75rem, 1.5vw, 1.5rem);
   flex-wrap: nowrap; /* Запрещаем перенос элементов */
-  justify-content: center; /* Центрируем навигацию */
-  flex: 1; /* Позволяем контейнеру растягиваться */
-  max-width: 100%; /* Ограничение ширины */
+  flex: 1 1 auto; /* ✅ Растягивается, занимая доступное пространство */
+  max-width: 100%;
+  justify-content: flex-start; /* ✅ Прижать к левому краю */
 }
 
 /* ========== Элементы меню ========== */
