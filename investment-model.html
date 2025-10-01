@@ -3,557 +3,323 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Инвестиционная модель — КупитьКролика</title>
-    <meta name="description" content="💰 Инвестиции в токенизированную кроличью ферму. Доходность 30-50% годовых, ежедневные PLEX-бонусы, прозрачность через блокчейн. Минимум 100 USDT.">
+    <title>Инвестиционная модель — DEXRabbit</title>
+    <meta name="description" content="💰 Инвестиции в токенизированную кроличью ферму. Доходность 135-190% за 6 месяцев, ежедневные PLEX-бонусы, прозрачность через блокчейн. Минимум 100 USDT.">
     
-    <link rel="stylesheet" href="/styles/tokens-v2.css">
-    <link rel="stylesheet" href="/styles/tokens.css">
-    <link rel="stylesheet" href="/styles/global.css">
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#0B0F17">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="Инвестиционная модель — DEXRabbit">
+    <meta property="og:description" content="Инвестируйте 100–2000 USDT, владейте реальным кроликом, получайте PLEX ежедневно.">
+    <meta property="og:image" content="/og/og-rabbit.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/variables.css">
+    <link rel="stylesheet" href="/assets/css/navigation.css">
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <nav class="nav">
-                <a href="/" class="logo" style="display: flex; align-items: center; gap: 8px;">
-                    <img src="/images/favicon.svg" alt="КупитьКролика логотип" width="32" height="32" style="border-radius: 50%;">
-                    <span class="logo-text">КупитьКролика</span>
-                </a>
-                
-                <div class="nav-breadcrumb">
-                    <a href="/">Главная</a> → <span>Инвестиции</span>
-                </div>
-                
-                <div class="header-cta">
-                    <a href="https://t.me/dexrabbit_bot" class="btn btn-primary">💰 Начать инвестировать</a>
-                </div>
-            </nav>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation">
+      <div class="container">
+        <!-- Logo Section -->
+        <div class="navbar-header">
+          <div class="logo-wrapper">
+            <a href="/" class="site-logo">
+              <img src="/favicon.svg" alt="DEXRabbit" />
+              <div class="logo-text">
+                <span class="logo-title">DEXRabbit</span>
+                <span class="logo-slogan">Твой пассивный доход на кроликах</span>
+              </div>
+            </a>
+          </div>
+          <button class="mobile-nav-toggle burger" aria-label="Меню" data-burger>☰</button>
         </div>
-    </header>
+
+        <!-- Navigation Links -->
+        <div class="navbar-inner">
+          <div class="nav-links" id="nav-menu" data-menu>
+            <!-- Навигация генерируется динамически из navigation-data.js -->
+            <!-- Primary Navigation -->
+            <div class="nav-group nav-primary"></div>
+
+            <!-- Дополнительные разделы -->
+            <div class="nav-group nav-dropdown">
+              <button
+                class="nav-dropdown-toggle"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="nav-dropdown-menu"
+              >
+                Ещё <span class="dropdown-arrow" aria-hidden="true">▾</span>
+              </button>
+              <div class="nav-dropdown-content" id="nav-dropdown-menu" role="menu" hidden></div>
+            </div>
+
+            <!-- CTA кнопка -->
+            <a href="https://t.me/dexrabbit_bot" class="btn btn-primary nav-cta" target="_blank" rel="noopener noreferrer">
+              💬 Начать инвестировать
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <main>
         <!-- Hero Section -->
-        <section class="section section-primary">
+        <section class="hero">
             <div class="container">
-                <div class="section-header section-header-white">
-                    <h1 class="section-title">💰 Инвестиционная модель</h1>
-                    <p class="section-description">
-                        Первая токенизированная кроличья ферма в России с доходностью 30-50% годовых
+                <div class="hero-content" style="text-align: center">
+                    <h1 class="hero-title">💰 Инвестиционная модель</h1>
+                    <p class="hero-subtitle">
+                        Первая токенизированная кроличья ферма с доходностью 135-190% за 6 месяцев
                     </p>
-                    <div class="hero-stats">
-                        <div class="stat-item">
-                            <div class="stat-value">1,250,000₽</div>
-                            <div class="stat-label">Привлечено инвестиций</div>
+                    <div class="hero-metrics">
+                        <div class="metric-card">
+                            <strong>100-2000 USDT</strong>
+                            <span>Размер инвестиции</span>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-value">387</div>
-                            <div class="stat-label">Активных инвесторов</div>
+                        <div class="metric-card">
+                            <strong>3 месяца</strong>
+                            <span>Цикл разведения</span>
                         </div>
-                        <div class="stat-item">
-                            <div class="stat-value">42.3%</div>
-                            <div class="stat-label">Средняя доходность</div>
+                        <div class="metric-card">
+                            <strong>PLEX</strong>
+                            <span>Ежедневные токены</span>
+                        </div>
+                        <div class="metric-card">
+                            <strong>135-190%</strong>
+                            <span>ROI за 6 месяцев</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- How Investment Works -->
+        <!-- Investment Model -->
         <section class="section">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">🔄 Как работают инвестиции</h2>
-                    <p class="section-description">
-                        Простая и понятная схема заработка на разведении кроликов
-                    </p>
+                    <h2>💎 Инвестиционная модель</h2>
+                    <p>Детальная информация о кругах финансирования и условиях</p>
                 </div>
-                
-                <div class="investment-flow">
-                    <div class="flow-step">
-                        <div class="step-number">1</div>
-                        <div class="step-icon">💵</div>
-                        <h3>Инвестируете USDT</h3>
-                        <p>Вы передаёте сумму от 100 до 50,000 USDT на развитие фермы и покупку кроликов</p>
-                    </div>
-                    
-                    <div class="flow-arrow">→</div>
-                    
-                    <div class="flow-step">
-                        <div class="step-number">2</div>
-                        <div class="step-icon">🐰</div>
-                        <h3>Выбираете кроликов</h3>
-                        <p>Фермер предоставляет выбор кроликов, вы выбираете понравившихся для инвестирования</p>
-                    </div>
-                    
-                    <div class="flow-arrow">→</div>
-                    
-                    <div class="flow-step">
-                        <div class="step-number">3</div>
-                        <div class="step-icon">🪙</div>
-                        <h3>Получаете PLEX</h3>
-                        <p>Ежедневно на ваш кошелёк поступают PLEX-токены как бонус к основной прибыли</p>
-                    </div>
-                    
-                    <div class="flow-arrow">→</div>
-                    
-                    <div class="flow-step">
-                        <div class="step-number">4</div>
-                        <div class="step-icon">👶</div>
-                        <h3>Ждёте потомство</h3>
-                        <p>Кролики растут и размножаются, цикл разведения составляет 87 дней</p>
-                    </div>
-                    
-                    <div class="flow-arrow">→</div>
-                    
-                    <div class="flow-step">
-                        <div class="step-number">5</div>
-                        <div class="step-icon">💰</div>
-                        <h3>Получаете прибыль</h3>
-                        <p>70% от продажи потомства поступает вам, 30% остаётся фермеру на развитие</p>
-                    </div>
-                </div>
-            </div>
-        </section>
 
-        <!-- Investment Rounds -->
-        <section class="section section-gray">
-            <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">🎯 Круги инвестирования</h2>
-                    <p class="section-description">
-                        Два круга с разными условиями и возможностями
-                    </p>
-                </div>
-                
-                <div class="investment-rounds">
-                    <div class="round-card">
-                        <div class="round-header">
-                            <h3>🥉 Круг А</h3>
-                            <div class="round-subtitle">Начальный уровень</div>
-                        </div>
-                        <div class="round-content">
-                            <div class="round-range">
-                                <div class="range-label">Сумма инвестиции</div>
-                                <div class="range-value">100 - 2,000 USDT</div>
-                            </div>
-                            
-                            <div class="round-benefits">
-                                <h4>Условия и выгоды:</h4>
-                                <ul>
-                                    <li>✅ Доступ к стандартным кроликам</li>
-                                    <li>✅ Ежедневные PLEX-бонусы 0.15%</li>
-                                    <li>✅ 70% от продажи потомства</li>
-                                    <li>✅ Цикл разведения 87 дней</li>
-                                    <li>✅ Ежедневные видео-отчёты</li>
-                                    <li>✅ Доступ к общей Telegram-группе</li>
-                                    <li>❌ Нет доступа к элитным породам</li>
-                                    <li>❌ Нет персональных консультаций</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="round-returns">
-                                <div class="return-item">
-                                    <span class="return-label">Ожидаемая доходность:</span>
-                                    <span class="return-value">30-35% годовых</span>
-                                </div>
-                                <div class="return-item">
-                                    <span class="return-label">PLEX за 87 дней:</span>
-                                    <span class="return-value">≈13% от суммы</span>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="round-action">
-                            <button class="btn btn-primary btn-large">
-                                <span class="btn-icon">🥉</span>
-                                Инвестировать в Круг А
-                            </button>
-                        </div>
+                <div class="invest-steps">
+                    <div class="invest-step">
+                        <span>Круг А</span>
+                        <strong>Первичные инвестиции</strong>
+                        <p>100-2000 USDT на инвестора</p>
+                        <ul style="margin-top: 0.5rem; font-size: 0.9rem">
+                            <li>• Доступен всем</li>
+                            <li>• Выбор из молодых кроликов</li>
+                            <li>• Максимальная доходность</li>
+                        </ul>
                     </div>
 
-                    <div class="round-card featured">
-                        <div class="round-badge">Рекомендуем</div>
-                        <div class="round-header">
-                            <h3>🥇 Круг Б</h3>
-                            <div class="round-subtitle">VIP-уровень</div>
-                        </div>
-                        <div class="round-content">
-                            <div class="round-range">
-                                <div class="range-label">Сумма инвестиции</div>
-                                <div class="range-value">от 2,000 USDT</div>
-                            </div>
-                            
-                            <div class="round-benefits">
-                                <h4>Условия и выгоды:</h4>
-                                <ul>
-                                    <li>✅ Доступ к элитным породам</li>
-                                    <li>✅ Ежедневные PLEX-бонусы 0.25%</li>
-                                    <li>✅ 70% от продажи потомства</li>
-                                    <li>✅ Ускоренный цикл 75 дней</li>
-                                    <li>✅ Персональные видео-отчёты</li>
-                                    <li>✅ VIP Telegram-группа</li>
-                                    <li>✅ Персональные консультации</li>
-                                    <li>✅ Возможность посещения фермы</li>
-                                </ul>
-                            </div>
-                            
-                            <div class="round-returns">
-                                <div class="return-item">
-                                    <span class="return-label">Ожидаемая доходность:</span>
-                                    <span class="return-value">45-55% годовых</span>
-                                </div>
-                                <div class="return-item">
-                                    <span class="return-label">PLEX за 75 дней:</span>
-                                    <span class="return-value">≈18% от суммы</span>
-                                </div>
-                            </div>
-                            
-                            <div class="vip-note">
-                                <strong>Важно:</strong> Доступ к Кругу Б открывается только после успешного завершения инвестиции в Круге А
-                            </div>
-                        </div>
-                        <div class="round-action">
-                            <button class="btn btn-secondary btn-large">
-                                <span class="btn-icon">🥇</span>
-                                Инвестировать в Круг Б
-                            </button>
-                        </div>
+                    <div class="invest-step">
+                        <span>Круг Б</span>
+                        <strong>Расширение фермы</strong>
+                        <p>От 2000 USDT</p>
+                        <ul style="margin-top: 0.5rem; font-size: 0.9rem">
+                            <li>• Только после Круга А</li>
+                            <li>• Элитные породы</li>
+                            <li>• Увеличенные выплаты PLEX</li>
+                        </ul>
                     </div>
+
+                    <div class="invest-step">
+                        <span>VIP</span>
+                        <strong>Персональная ферма</strong>
+                        <p>От 10,000 USDT</p>
+                        <ul style="margin-top: 0.5rem; font-size: 0.9rem">
+                            <li>• Отдельный вольер</li>
+                            <li>• Именные кролики</li>
+                            <li>• Личный менеджер</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="card" style="margin-top: 2rem">
+                    <h3>📈 Расчет доходности (пример для 1000 USDT)</h3>
+                    <div class="table-wrapper" style="margin-top: 1rem">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Период</th>
+                                    <th>Источник дохода</th>
+                                    <th>Сумма</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1-90 дней</td>
+                                    <td>PLEX токены (ежедневно)</td>
+                                    <td>~150-200 USDT</td>
+                                </tr>
+                                <tr>
+                                    <td>3 месяц</td>
+                                    <td>Продажа первого потомства (10 крольчат)</td>
+                                    <td>~400-600 USDT</td>
+                                </tr>
+                                <tr>
+                                    <td>6 месяц</td>
+                                    <td>Продажа второго потомства (12 крольчат)</td>
+                                    <td>~500-700 USDT</td>
+                                </tr>
+                                <tr>
+                                    <td>1-180 дней</td>
+                                    <td>PLEX токены (накопленные)</td>
+                                    <td>~300-400 USDT</td>
+                                </tr>
+                                <tr style="font-weight: bold">
+                                    <td>ИТОГО</td>
+                                    <td>Общая прибыль за 6 месяцев</td>
+                                    <td>1350-1900 USDT</td>
+                                </tr>
+                                <tr style="color: #4ade80">
+                                    <td colspan="2">ROI (возврат инвестиций)</td>
+                                    <td>135-190%</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p style="margin-top: 1rem; font-size: 0.9rem; opacity: 0.8">
+                        * Расчеты приблизительные и зависят от рыночных условий, курса PLEX и спроса на кроликов
+                    </p>
                 </div>
             </div>
         </section>
 
         <!-- PLEX Token -->
-        <section class="section">
+        <section class="section section-alt">
             <div class="container">
                 <div class="section-header">
-                    <h2 class="section-title">🪙 Токен PLEX</h2>
-                    <p class="section-description">
-                        Внутренний токен экосистемы с реальной ценностью и множественным применением
+                    <span class="overline">Курс токена</span>
+                    <h2>📊 PLEX Token в реальном времени</h2>
+                    <p>Следите за курсом токена на бирже PancakeSwap (BSC сеть)</p>
+                </div>
+
+                <div class="widget-frame">
+                    <iframe
+                        id="geckoterminal-embed"
+                        title="GeckoTerminal PLEX/WBNB"
+                        src="https://www.geckoterminal.com/bsc/pools/0x41d9650faf3341cbf8947fd8063a1fc88dbf1889?embed=1&info=1&swaps=1"
+                        width="100%"
+                        height="420"
+                        frameborder="0"
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade"
+                        allow="clipboard-write">
+                    </iframe>
+                    <p class="chart-fallback" style="margin-top: 1rem; text-align: center">
+                        Если график не загрузился:
+                        <a href="https://www.geckoterminal.com/bsc/pools/0x41d9650faf3341cbf8947fd8063a1fc88dbf1889"
+                           target="_blank" rel="noopener">Открыть график на GeckoTerminal</a>
                     </p>
                 </div>
-                
-                <div class="plex-info">
-                    <div class="plex-card">
-                        <div class="plex-header">
-                            <div class="token-logo">🪙</div>
-                            <div class="token-info">
-                                <h3>PLEX Token</h3>
-                                <div class="token-address">0x41d9...1889</div>
-                            </div>
-                            <div class="token-price">
-                                <div class="price-value" id="plex-price">Loading...</div>
-                                <div class="price-change" id="plex-change">+0.00%</div>
-                            </div>
-                        </div>
-                        
-                        <div class="plex-features">
-                            <h4>Применение PLEX:</h4>
-                            <div class="feature-grid">
-                                <div class="feature-item">
-                                    <span class="feature-icon">💰</span>
-                                    <div>
-                                        <strong>Ежедневные бонусы</strong>
-                                        <p>0.15-0.25% от суммы инвестиции</p>
-                                    </div>
-                                </div>
-                                <div class="feature-item">
-                                    <span class="feature-icon">🏪</span>
-                                    <div>
-                                        <strong>Оплата услуг</strong>
-                                        <p>Консультации, посещения фермы</p>
-                                    </div>
-                                </div>
-                                <div class="feature-item">
-                                    <span class="feature-icon">🔄</span>
-                                    <div>
-                                        <strong>Обмен на USDT</strong>
-                                        <p>Через DEX или у нас напрямую</p>
-                                    </div>
-                                </div>
-                                <div class="feature-item">
-                                    <span class="feature-icon">🔒</span>
-                                    <div>
-                                        <strong>Стейкинг</strong>
-                                        <p>Заморозка с дополнительным доходом</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <div class="plex-chart">
-                            <h4>График курса PLEX/USDT:</h4>
-                            <iframe 
-                                src="https://www.geckoterminal.com/ru/bsc/pools/0x41d9650faf3341cbf8947fd8063a1fc88dbf1889?embed=1&info=0&swaps=0&grayscale=0&light_chart=0"
-                                width="100%" 
-                                height="300"
-                                frameborder="0"
-                                style="border-radius: 8px;">
-                            </iframe>
-                        </div>
-                    </div>
+
+                <div class="alert" style="margin-top: 2rem">
+                    <strong>🪙 Адрес токена PLEX:</strong>
+                    <code style="font-family: monospace; background: rgba(0, 0, 0, 0.1); padding: 2px 6px; border-radius: 4px">
+                        0xdf179b6cadbc61ffd86a3d2e55f6d6e083ade6c1
+                    </code>
+                    (BSC Network) <br /><br />
+                    <strong>📍 Адрес пула ликвидности PLEX/WBNB на PancakeSwap:</strong>
+                    <code style="font-family: monospace; background: rgba(0, 0, 0, 0.1); padding: 2px 6px; border-radius: 4px">
+                        0x41d9650faf3341cbf8947fd8063a1fc88dbf1889
+                    </code>
                 </div>
             </div>
         </section>
 
-        <!-- Risks and Guarantees -->
+        <!-- CTA Section -->
         <section class="section">
             <div class="container">
-                <div class="section-header">
-                    <h2 class="section-title">⚖️ Риски и гарантии</h2>
-                </div>
-                
-                <div class="risks-guarantees">
-                    <div class="risks-card">
-                        <h3>⚠️ Возможные риски</h3>
-                        <ul class="risks-list">
-                            <li>
-                                <strong>Биологические риски:</strong>
-                                Болезни животных, эпидемии, природные катастрофы
-                            </li>
-                            <li>
-                                <strong>Рыночные риски:</strong>
-                                Изменение спроса на мясо кролика, ценовые колебания
-                            </li>
-                            <li>
-                                <strong>Операционные риски:</strong>
-                                Технические проблемы, кадровые вопросы
-                            </li>
-                            <li>
-                                <strong>Регулятивные риски:</strong>
-                                Изменения в законодательстве о животноводстве
-                            </li>
-                        </ul>
-                    </div>
-                    
-                    <div class="guarantees-card">
-                        <h3>✅ Наши гарантии</h3>
-                        <ul class="guarantees-list">
-                            <li>
-                                <strong>100% возврат инвестиций</strong>
-                                в токенах PLEX при форс-мажорных обстоятельствах
-                            </li>
-                            <li>
-                                <strong>Ветеринарная страховка</strong>
-                                всех животных на ферме от основных заболеваний
-                            </li>
-                            <li>
-                                <strong>Ежедневная отчётность</strong>
-                                с видео подтверждением состояния животных
-                            </li>
-                            <li>
-                                <strong>Прозрачность операций</strong>
-                                через блокчейн и смарт-контракты
-                            </li>
-                            <li>
-                                <strong>Юридическая защита</strong>
-                                через официальный договор участия
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="guarantee-notice">
-                    <h4>🔒 Важная информация о гарантиях</h4>
-                    <p>
-                        Мы гарантируем возврат первоначальных инвестиций, но не гарантируем конкретный размер прибыли, 
-                        так как он зависит от рыночных факторов. Все риски, касающиеся прибыльности, несёт инвестор. 
-                        Возврат средств при форс-мажоре осуществляется в токенах PLEX по текущему курсу.
+                <div style="text-align: center; padding: 3rem 0">
+                    <h2 style="margin-bottom: 1rem">🚀 Начать инвестировать</h2>
+                    <p style="margin-bottom: 2rem; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto">
+                        Присоединяйтесь к первой токенизированной кроличьей ферме
                     </p>
-                </div>
-            </div>
-        </section>
-
-        <!-- Get Started -->
-        <section class="section section-primary">
-            <div class="container">
-                <div class="section-header section-header-white">
-                    <h2 class="section-title">🚀 Начать инвестировать</h2>
-                    <p class="section-description">
-                        Присоединяйтесь к первой токенизированной кроличьей ферме в России
-                    </p>
-                </div>
-                
-                <div class="investment-cta">
-                    <div class="cta-benefits">
-                        <div class="benefit-item">
-                            <span class="benefit-icon">⚡</span>
-                            <span>Быстрый старт за 24 часа</span>
-                        </div>
-                        <div class="benefit-item">
-                            <span class="benefit-icon">📊</span>
-                            <span>Прозрачная отчётность</span>
-                        </div>
-                        <div class="benefit-item">
-                            <span class="benefit-icon">💎</span>
-                            <span>Ежедневные PLEX-бонусы</span>
-                        </div>
-                        <div class="benefit-item">
-                            <span class="benefit-icon">🏆</span>
-                            <span>Доходность выше рынка</span>
-                        </div>
-                    </div>
-                    
-                    <div class="cta-actions">
-                        <a href="/invest" class="btn btn-secondary btn-large">
-                            <span class="btn-icon">💰</span>
-                            Инвестировать сейчас
+                    <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap">
+                        <a href="https://t.me/dexrabbit_bot" class="btn">
+                            💰 Начать инвестировать
                         </a>
-                        <a href="/consultation" class="btn btn-outline btn-large">
-                            <span class="btn-icon">👨‍💼</span>
-                            Получить консультацию
+                        <a href="/#investment" class="btn btn-outline">
+                            📊 Узнать подробнее
                         </a>
-                    </div>
-                    
-                    <div class="cta-contacts">
-                        <p>Остались вопросы? Свяжитесь с нами:</p>
-                        <div class="contact-methods">
-                            <a href="https://t.me/kupitkrolika_invest" target="_blank" class="contact-method">
-                                <span class="icon">💬</span>
-                                Telegram для инвесторов
-                            </a>
-                            <a href="mailto:invest@kupitkrolika.ru" class="contact-method">
-                                <span class="icon">📧</span>
-                                invest@kupitkrolika.ru
-                            </a>
-                        </div>
+                        <a href="https://t.me/DexRebbitOfficial" class="btn btn-ghost">
+                            📢 Telegram канал
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
     </main>
 
+    <!-- Footer -->
     <footer class="footer">
         <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4 class="footer-title">Инвестиции</h4>
-                    <nav class="footer-nav">
-                        <a href="/investment-model">Инвестиционная модель</a>
-                        <a href="/contacts.html">Контакты</a>
-                        <a href="/plex-token">Токен PLEX</a>
-                        <a href="/guarantees">Гарантии</a>
+            <div class="footer-grid">
+                <div>
+                    <h4>О проекте</h4>
+                    <nav>
+                        <a href="/#about">Что это</a>
+                        <a href="/#how-it-works">Как работает</a>
+                        <a href="/#tokenization">Токенизация</a>
+                        <a href="/docs/DEXRabbit_presentation.pdf">Презентация</a>
                     </nav>
                 </div>
-                <div class="footer-section">
-                    <h4 class="footer-title">Контакты</h4>
-                    <div class="footer-contacts">
-                        <a href="https://t.me/kupitkrolika_invest" class="footer-contact" target="_blank">
-                            <span class="icon">💬</span>
-                            Telegram для инвесторов
-                        </a>
-                        <a href="mailto:invest@kupitkrolika.ru" class="footer-contact">
-                            <span class="icon">📧</span>
-                            invest@kupitkrolika.ru
-                        </a>
-                    </div>
+
+                <div>
+                    <h4>Инвесторам</h4>
+                    <nav>
+                        <a href="#investment">Инвестиции</a>
+                        <a href="/#partners">Партнерство</a>
+                        <a href="/#guarantees">Гарантии</a>
+                        <a href="/breeding.html">Разведение</a>
+                    </nav>
                 </div>
+
+                <div>
+                    <h4>Услуги</h4>
+                    <nav>
+                        <a href="/gifts.html">Подарки</a>
+                        <a href="/care.html">Уход за кроликами</a>
+                        <a href="/restaurants.html">Ресторанам</a>
+                        <a href="/development.html">Развитие</a>
+                    </nav>
+                </div>
+
+                <div>
+                    <h4>Контакты</h4>
+                    <nav>
+                        <a href="https://t.me/dexrabbit_bot" target="_blank" rel="noopener">Telegram Bot</a>
+                        <a href="https://t.me/DexRebbitOfficial" target="_blank" rel="noopener">Канал</a>
+                        <a href="https://t.me/DEXRabbitOfficialGroupInfo" target="_blank" rel="noopener">Группа</a>
+                    </nav>
+                </div>
+            </div>
+
+            <div style="text-align: center; margin-top: 2rem; padding-top: 2rem; border-top: 1px solid rgba(124, 140, 255, 0.1); opacity: 0.7">
+                <p>© 2025 DEXRabbit. Все права защищены.</p>
             </div>
         </div>
     </footer>
 
-    <script src="/scripts/analytics.js"></script>
-    <script src="/scripts/plex-token.js"></script>
-    <script>
-        // Калькулятор инвестиций
-        class InvestmentCalculator {
-            constructor() {
-                this.initCalculator();
-                this.setupEventListeners();
-            }
-            
-            initCalculator() {
-                this.amountInput = document.getElementById('investment-amount');
-                this.roundSelect = document.getElementById('investment-round');
-                this.cyclesInput = document.getElementById('cycles-count');
-                
-                this.calculate();
-            }
-            
-            setupEventListeners() {
-                [this.amountInput, this.roundSelect, this.cyclesInput].forEach(element => {
-                    element.addEventListener('change', () => this.calculate());
-                    element.addEventListener('input', () => this.calculate());
-                });
-            }
-            
-            calculate() {
-                const amount = parseFloat(this.amountInput.value) || 1000;
-                const round = this.roundSelect.value;
-                const cycles = parseInt(this.cyclesInput.value) || 2;
-                
-                // Проверяем ограничения по кругам
-                if (round === 'a' && amount > 2000) {
-                    this.roundSelect.value = 'b';
-                }
-                if (round === 'b' && amount < 2000) {
-                    this.roundSelect.value = 'a';
-                }
-                
-                // Параметры расчёта
-                const params = round === 'b' ? {
-                    cycleDays: 75,
-                    dailyPlexRate: 0.0025, // 0.25%
-                    breedingProfitRate: 0.35, // 35% за цикл
-                } : {
-                    cycleDays: 87,
-                    dailyPlexRate: 0.0015, // 0.15%
-                    breedingProfitRate: 0.25, // 25% за цикл
-                };
-                
-                // Расчёты
-                const totalDays = params.cycleDays * cycles;
-                const dailyPlex = amount * params.dailyPlexRate;
-                const totalPlex = dailyPlex * totalDays;
-                const breedingProfit = amount * params.breedingProfitRate * cycles;
-                const totalProfit = totalPlex + breedingProfit;
-                const yearlyReturn = (totalProfit / amount) * (365 / totalDays) * 100;
-                
-                // Обновляем интерфейс
-                document.getElementById('cycle-duration').textContent = `${params.cycleDays} дней`;
-                document.getElementById('daily-plex').textContent = `${dailyPlex.toFixed(2)} PLEX`;
-                document.getElementById('total-plex').textContent = `${totalPlex.toFixed(0)} PLEX`;
-                document.getElementById('breeding-profit').textContent = `${breedingProfit.toFixed(0)} USDT`;
-                document.getElementById('total-profit').textContent = `${totalProfit.toFixed(0)} USDT`;
-                document.getElementById('yearly-return').textContent = `${yearlyReturn.toFixed(1)}%`;
-                
-                // Обновляем временную линию
-                const timeline = document.querySelector('.timeline');
-                timeline.innerHTML = `
-                    <div class="timeline-item">
-                        <div class="timeline-date">День 0</div>
-                        <div class="timeline-event">Инвестиция ${amount} USDT</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">День ${params.cycleDays}</div>
-                        <div class="timeline-event">Первая прибыль ~${(breedingProfit/cycles).toFixed(0)} USDT</div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-date">День ${totalDays}</div>
-                        <div class="timeline-event">Общая прибыль ${totalProfit.toFixed(0)} USDT</div>
-                    </div>
-                `;
-                
-                // Трекинг использования калькулятора
-                if (window.analytics) {
-                    window.analytics.trackEvent('calculator_used', {
-                        event_category: 'investment',
-                        amount: amount,
-                        round: round,
-                        cycles: cycles,
-                        yearly_return: yearlyReturn.toFixed(1)
-                    });
-                }
-            }
-        }
-        
-        // Инициализация калькулятора
-        new InvestmentCalculator();
+    <!-- Navigation scripts -->
+    <script type="module" src="/assets/js/navigation-data.js"></script>
+    <script src="/assets/js/nav.js" defer></script>
 
-        // Track page view
-        if (window.analytics) {
-            window.analytics.trackEvent('investment_model_view', {
-                event_category: 'page_view',
-                page: '/investment-model'
-            });
+    <!-- Service Worker -->
+    <script>
+        if ('serviceWorker' in navigator && location.hostname !== 'localhost') {
+            navigator.serviceWorker.register('/sw.js').catch(()=>{});
         }
     </script>
 </body>
