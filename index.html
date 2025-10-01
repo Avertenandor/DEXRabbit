@@ -303,7 +303,8 @@
                 border-radius: 12px;
                 padding: 1.2rem;
                 width: 160px;
-                min-height: 140px;
+                height: 160px;
+                min-height: 160px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
@@ -367,9 +368,11 @@
               .flow-arrow {
                 display: flex;
                 align-items: center;
+                justify-content: center;
                 animation: fadeIn 1s ease-out;
                 animation-fill-mode: both;
                 margin: 0 0.25rem;
+                align-self: center;
               }
 
               .arrow-1 {
@@ -385,18 +388,10 @@
               .arrow-path {
                 stroke-dasharray: 100;
                 stroke-dashoffset: 100;
-                animation: drawArrow 1s ease-out forwards;
+                animation: drawArrow 1s ease-out forwards, fillArrow 4s ease-in-out infinite;
               }
 
-              .arrow-1 .arrow-path {
-                animation-delay: 0.3s;
-              }
-              .arrow-2 .arrow-path {
-                animation-delay: 0.5s;
-              }
-              .arrow-3 .arrow-path {
-                animation-delay: 0.7s;
-              }
+
 
               /* Central Box */
               .flow-box-center {
@@ -412,7 +407,7 @@
                   0 0 0 1px rgba(250, 204, 21, 0.2),
                   inset 0 1px 0 rgba(255, 255, 255, 0.1);
                 animation: slideInUp 1s ease-out 0.9s both;
-                margin: 2rem auto 0 auto;
+                margin: 0.5rem auto 0 auto;
                 flex-basis: 100%;
                 align-self: center;
                 overflow: hidden;
@@ -523,13 +518,13 @@
 
               .center-text {
                 color: white;
-                font-size: 0.9rem;
+                font-size: 1.125rem;
                 line-height: 1.5;
                 text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
               }
 
               .center-text strong {
-                font-size: 1.1rem;
+                font-size: 1.375rem;
                 color: #fbbf24;
                 text-transform: uppercase;
                 display: block;
@@ -544,7 +539,7 @@
               .highlight-plex {
                 color: #fbbf24;
                 font-weight: bold;
-                font-size: 1.15rem;
+                font-size: 1.44rem;
                 text-shadow: 
                   0 0 10px rgba(251, 191, 36, 0.8),
                   0 0 20px rgba(250, 204, 21, 0.4),
@@ -645,6 +640,41 @@
                 }
               }
 
+              /* Анимация заливки стрелочек последовательно */
+              @keyframes fillArrow {
+                0%, 15% {
+                  stroke: #4ade80;
+                  stroke-width: 2;
+                  filter: drop-shadow(0 0 0px rgba(74, 222, 128, 0));
+                }
+                20%, 35% {
+                  stroke: #22c55e;
+                  stroke-width: 4;
+                  filter: drop-shadow(0 0 8px rgba(74, 222, 128, 0.8));
+                }
+                40%, 100% {
+                  stroke: #4ade80;
+                  stroke-width: 2;
+                  filter: drop-shadow(0 0 0px rgba(74, 222, 128, 0));
+                }
+              }
+
+              /* Задержки для последовательной заливки */
+              .arrow-1 .arrow-path {
+                animation: drawArrow 1s ease-out 0.3s forwards, fillArrow 12s ease-in-out infinite;
+                animation-delay: 0.3s, 0s;
+              }
+
+              .arrow-2 .arrow-path {
+                animation: drawArrow 1s ease-out 0.5s forwards, fillArrow 12s ease-in-out infinite;
+                animation-delay: 0.5s, 4s;
+              }
+
+              .arrow-3 .arrow-path {
+                animation: drawArrow 1s ease-out 0.7s forwards, fillArrow 12s ease-in-out infinite;
+                animation-delay: 0.7s, 8s;
+              }
+
               @keyframes pulse {
                 0%,
                 100% {
@@ -705,7 +735,8 @@
 
                 .flow-box {
                   width: 180px;
-                  min-height: 150px;
+                  height: 160px;
+                  min-height: 160px;
                   padding: 1.2rem;
                 }
 
@@ -729,7 +760,8 @@
               @media (max-width: 480px) {
                 .flow-box {
                   width: 160px;
-                  min-height: 140px;
+                  height: 160px;
+                  min-height: 160px;
                   padding: 1rem;
                 }
 
