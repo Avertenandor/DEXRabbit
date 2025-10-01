@@ -1,0 +1,400 @@
+/* ========== КРИТИЧЕСКИЙ ФИКС ДЛЯ МОБИЛЬНЫХ УСТРОЙСТВ ========== */
+/* Версия: 2025-10-01 - Исправление обрезки на Sony Xperia, Galaxy Fold и других */
+
+/* ========== БАЗОВЫЕ НАСТРОЙКИ ========== */
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+html {
+  /* Запрет горизонтального скролла */
+  overflow-x: hidden;
+  width: 100%;
+  /* Smooth scroll */
+  -webkit-overflow-scrolling: touch;
+  scroll-behavior: smooth;
+}
+
+body {
+  /* Запрет переполнения */
+  overflow-x: hidden;
+  width: 100%;
+  max-width: 100vw;
+  min-height: 100vh;
+  min-height: 100dvh; /* Dynamic viewport для мобильных */
+  position: relative;
+  /* Улучшенная прокрутка на iOS */
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ========== КОНТЕЙНЕРЫ ========== */
+.container,
+.nav-v2__wrapper,
+.navbar-inner,
+.hero,
+.section {
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* ========== ИЗОБРАЖЕНИЯ И МЕДИА ========== */
+img,
+video,
+iframe,
+svg {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* ========== НАВИГАЦИЯ V2 - МОБИЛЬНЫЕ ИСПРАВЛЕНИЯ ========== */
+@media (max-width: 768px) {
+  .nav-v2 {
+    position: sticky;
+    width: 100%;
+    max-width: 100vw;
+    overflow-x: hidden;
+  }
+
+  .nav-v2__wrapper {
+    width: 100%;
+    max-width: 100vw;
+    padding: 0 12px;
+    height: 56px;
+  }
+
+  .nav-v2__logo {
+    max-width: 60%;
+    overflow: hidden;
+  }
+
+  .nav-v2__logo-title {
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .nav-v2__logo-slogan {
+    font-size: 9px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .nav-v2__menu {
+    position: fixed;
+    top: 56px;
+    left: 0;
+    right: 0;
+    width: 100%;
+    max-width: 100vw;
+    height: calc(100vh - 56px);
+    height: calc(100dvh - 56px); /* Dynamic viewport */
+    overflow-y: auto;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .nav-v2__dropdown {
+    position: static;
+    width: 100%;
+    max-width: 100%;
+    transform: none;
+    left: auto;
+    right: auto;
+  }
+
+  .nav-v2__cta-button {
+    padding: 8px 14px;
+    font-size: 12px;
+    white-space: nowrap;
+  }
+}
+
+/* ========== SONY XPERIA (узкие экраны 360-412px) ========== */
+@media (min-width: 360px) and (max-width: 412px) {
+  .nav-v2__wrapper {
+    padding: 0 8px;
+  }
+
+  .nav-v2__logo-icon {
+    width: 28px;
+    height: 28px;
+  }
+
+  .nav-v2__logo-title {
+    font-size: 15px;
+  }
+
+  .nav-v2__logo-slogan {
+    font-size: 8px;
+  }
+
+  .nav-v2__cta-button {
+    padding: 6px 10px;
+    font-size: 11px;
+  }
+
+  /* Уменьшаем отступы в секциях */
+  .hero,
+  .section {
+    padding-left: 12px;
+    padding-right: 12px;
+  }
+
+  /* Карточки */
+  .card,
+  .investor-card {
+    padding: 12px;
+  }
+
+  /* Кнопки */
+  .btn,
+  .cta-button {
+    padding: 10px 16px;
+    font-size: 14px;
+  }
+}
+
+/* ========== GALAXY FOLD И УЗКИЕ СКЛАДНЫЕ (280-320px) ========== */
+@media (max-width: 320px) {
+  .nav-v2__wrapper {
+    padding: 0 6px;
+    height: 48px;
+  }
+
+  .nav-v2__logo-icon {
+    width: 24px;
+    height: 24px;
+  }
+
+  .nav-v2__logo-title {
+    font-size: 13px;
+  }
+
+  .nav-v2__logo-slogan {
+    display: none; /* Прячем слоган на очень узких */
+  }
+
+  .nav-v2__cta {
+    display: none; /* Прячем CTA на очень узких */
+  }
+
+  .nav-v2__menu {
+    top: 48px;
+    height: calc(100vh - 48px);
+    height: calc(100dvh - 48px);
+  }
+
+  /* Секции */
+  .hero,
+  .section {
+    padding-left: 8px;
+    padding-right: 8px;
+  }
+
+  .hero-title {
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 13px;
+  }
+
+  /* Карточки */
+  .card,
+  .investor-card {
+    padding: 10px;
+  }
+
+  /* Кнопки */
+  .btn,
+  .cta-button {
+    padding: 8px 12px;
+    font-size: 13px;
+    min-height: 36px;
+  }
+
+  /* Таблицы */
+  table {
+    font-size: 12px;
+  }
+
+  /* Формы */
+  input,
+  textarea,
+  select {
+    font-size: 14px;
+    padding: 8px;
+  }
+}
+
+/* ========== ОЧЕНЬ УЗКИЕ ЭКРАНЫ (<280px) ========== */
+@media (max-width: 280px) {
+  .nav-v2__logo-text {
+    display: none;
+  }
+
+  .nav-v2__logo-icon {
+    width: 32px;
+    height: 32px;
+    margin: 0 auto;
+  }
+
+  .hero-title {
+    font-size: 18px;
+  }
+
+  .hero-subtitle {
+    font-size: 12px;
+  }
+}
+
+/* ========== ИСПРАВЛЕНИЕ ВЕРТИКАЛЬНОЙ ОБРЕЗКИ ========== */
+@media (max-height: 600px) {
+  .nav-v2__menu {
+    height: calc(100vh - 56px);
+    height: calc(100dvh - 56px);
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+
+  .section {
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+/* ========== ЛАНДШАФТНАЯ ОРИЕНТАЦИЯ НА МОБИЛЬНЫХ ========== */
+@media (max-width: 768px) and (orientation: landscape) {
+  .nav-v2__wrapper {
+    height: 48px;
+  }
+
+  .nav-v2__menu {
+    top: 48px;
+    height: calc(100vh - 48px);
+    height: calc(100dvh - 48px);
+  }
+
+  .hero {
+    min-height: auto;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .nav-v2__logo-slogan {
+    display: none;
+  }
+}
+
+/* ========== SAFE AREA (ВЫРЕЗЫ НА ЭКРАНЕ) ========== */
+.nav-v2 {
+  padding-left: env(safe-area-inset-left);
+  padding-right: env(safe-area-inset-right);
+}
+
+.nav-v2__menu {
+  padding-bottom: env(safe-area-inset-bottom);
+}
+
+.footer {
+  padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+}
+
+/* ========== ИСПРАВЛЕНИЕ ПЕРЕПОЛНЕНИЯ ТЕКСТА ========== */
+h1, h2, h3, h4, h5, h6,
+p, span, a, button {
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+}
+
+/* ========== ИСПРАВЛЕНИЕ СКРОЛЛА ========== */
+.nav-v2__menu,
+.nav-v2__dropdown {
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+/* ========== TOUCH TARGETS (минимум 44x44px) ========== */
+@media (max-width: 768px) {
+  .nav-v2__link,
+  .nav-v2__cta-button,
+  .nav-v2__mobile-toggle,
+  .nav-v2__dropdown-item,
+  .btn,
+  a {
+    min-height: 44px;
+    min-width: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .nav-v2__dropdown-item {
+    padding: 12px 16px;
+  }
+}
+
+/* ========== PREVENT ZOOM ON INPUT FOCUS (iOS) ========== */
+@media (max-width: 768px) {
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="number"],
+  textarea,
+  select {
+    font-size: 16px; /* Минимум 16px чтобы iOS не зумил */
+  }
+}
+
+/* ========== ИСПРАВЛЕНИЕ ВИДЕО И IFRAME ========== */
+@media (max-width: 768px) {
+  iframe {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .gecko-terminal-widget {
+    width: 100% !important;
+    max-width: 100% !important;
+    overflow: hidden;
+  }
+}
+
+/* ========== GRID LAYOUTS ========== */
+@media (max-width: 768px) {
+  .grid,
+  .flow-container,
+  .investors-grid {
+    grid-template-columns: 1fr !important;
+    gap: 16px;
+  }
+}
+
+/* ========== FLEXBOX WRAP ========== */
+@media (max-width: 768px) {
+  .flex,
+  .navbar-inner,
+  .nav-v2__wrapper {
+    flex-wrap: wrap;
+  }
+}
+
+/* ========== DEBUGGING (удалить в продакшене) ========== */
+/* Uncomment для отладки переполнения */
+/*
+* {
+  outline: 1px solid rgba(255, 0, 0, 0.3) !important;
+}
+*/
+
