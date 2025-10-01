@@ -142,7 +142,7 @@
   opacity: 1;
   visibility: visible;
   display: block;
-  /* transform остается translateX(-50%) по умолчанию */
+  transform: translateX(-50%); /* ✅ Явно указываем центрирование */
 }
 
 .mega-nav-dropdown.active .mega-panel::before {
@@ -301,7 +301,7 @@
   }
   
   .mega-nav-dropdown.active .mega-panel:not([hidden]) {
-    transform: none;
+    transform: none; /* ✅ Явно убираем transform для планшетов */
   }
 }
 
