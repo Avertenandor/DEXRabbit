@@ -4,9 +4,9 @@
 (function () {
   'use strict';
   
-  var WRAPPER = document.querySelector('.nav-wrapper');
+  var WRAPPER = document.querySelector('.navbar-inner');
   if (!WRAPPER) {
-    console.warn('⚠️ Контейнер .nav-wrapper не найден');
+    console.warn('⚠️ Контейнер .navbar-inner не найден');
     return;
   }
 

@@ -45,7 +45,7 @@ const fullStylesHTML = `    <!-- Performance Optimizations - 0 layout thrashing 
     <!-- Navigation Refactor Styles -->
     <link rel="stylesheet" href="/assets/css/nav-refactor.css?v=20251001-stable" />
     <!-- Click-Only Navigation -->
-    <link rel="stylesheet" href="/assets/css/mega-menu-click-only.css?v=20251001-click-only" />
+    <link rel="stylesheet" href="/assets/css/mega-menu-click-only.css?v=20251001-click-fixed" />
     <!-- Investor Cards Styles -->
     <link rel="stylesheet" href="/assets/css/investor-cards.css" />
     <!-- Copy Button Styles -->
@@ -61,7 +61,7 @@ const fullStylesHTML = `    <!-- Performance Optimizations - 0 layout thrashing 
 const navigationJS = `    <!-- Navigation Data & Logic -->
     <script src="/assets/js/navigation-data.js?v=20251001-full-nav"></script>
     <!-- Click-Only Navigation -->
-    <script defer src="/assets/js/mega-menu-click-only.js?v=20251001-click-only"></script>
+    <script defer src="/assets/js/mega-menu-click-only.js?v=20251001-click-fixed"></script>
     <script src="/assets/js/nav.js"></script>`;
 
 // Функция для обновления HTML файла

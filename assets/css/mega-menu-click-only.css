@@ -2,7 +2,7 @@
 /* Версия: 20251001-click-only */
 
 /* ========== ЯКОРЬ И ГРУППЫ ========== */
-.nav-wrapper { 
+.navbar-inner { 
   position: relative; 
   max-width: 1200px; 
   margin-inline: auto; 
