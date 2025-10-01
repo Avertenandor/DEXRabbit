@@ -87,13 +87,13 @@
 
 /* ========== Мега-панель (выпадающее меню) ========== */
 .mega-panel {
-  /* КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ: Центрирование относительно nav-wrapper */
-  position: absolute;
-  top: 100%;
+  /* ✅ ИСПРАВЛЕНО: Центрирование относительно viewport с fixed */
+  position: fixed;
+  top: 70px; /* Высота navbar */
   left: 50%;
   transform: translateX(-50%);
   width: min(1100px, 96vw);
-  max-height: 80vh;
+  max-height: calc(80vh - 70px);
   overflow: auto;
   background: linear-gradient(
     135deg,
@@ -142,7 +142,7 @@
   opacity: 1;
   visibility: visible;
   display: block;
-  transform: translateX(-50%);
+  /* transform остается translateX(-50%) по умолчанию */
 }
 
 .mega-nav-dropdown.active .mega-panel::before {
@@ -290,11 +290,14 @@
 @media (max-width: 1024px) {
   /* Мегапанель на всю ширину, без translate */
   .mega-panel {
+    position: absolute; /* Возврат к absolute для планшетов */
+    top: 100%; /* Относительно navbar-inner */
     left: 0;
     transform: none;
     inset-inline: 0;
     width: 100%;
     border-radius: 0 0 14px 14px;
+    max-height: 80vh;
   }
   
   .mega-nav-dropdown.active .mega-panel:not([hidden]) {
