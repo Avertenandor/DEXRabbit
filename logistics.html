@@ -3,32 +3,67 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Логистика и регионы — КупитьКролика</title>
-    <meta name="description" content="🚚 Доставка кроликов по всей России. Логистика КупитьКролика: регионы доставки, условия транспортировки, сроки и стоимость. Специальный транспорт для животных.">
+    <title>Логистика и регионы — DEXRabbit</title>
+    <meta name="description" content="🚚 Доставка кроликов по всей России. Логистика DEXRabbit: регионы доставки, условия транспортировки, сроки и стоимость. Специальный транспорт для животных.">
     
-    <link rel="stylesheet" href="/styles/tokens-v2.css">
-    <link rel="stylesheet" href="/styles/tokens.css">
-    <link rel="stylesheet" href="/styles/global.css">
+    <!-- Favicons -->
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="icon" type="image/x-icon" href="/favicon.ico" />
+    <link rel="manifest" href="/manifest.webmanifest" />
+    <meta name="theme-color" content="#7c8cff" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/variables.css" />
+    <link rel="stylesheet" href="/assets/css/navigation.css" />
 </head>
 <body>
-    <header class="header">
-        <div class="container">
-            <nav class="nav">
-                <a href="/" class="logo" style="display: flex; align-items: center; gap: 8px;">
-                    <img src="/images/favicon.svg" alt="КупитьКролика логотип" width="32" height="32" style="border-radius: 50%;">
-                    <span class="logo-text">КупитьКролика</span>
-                </a>
-                
-                <div class="nav-breadcrumb">
-                    <a href="/">Главная</a> → <span>Доставка</span>
-                </div>
-                
-                <div class="header-cta">
-                    <a href="#delivery-calculator" class="btn btn-primary">🧮 Рассчитать доставку</a>
-                </div>
-            </nav>
+    <!-- Navigation -->
+    <nav class="navbar" role="navigation">
+      <div class="container">
+        <!-- Logo Section -->
+        <div class="navbar-header">
+          <div class="logo-wrapper">
+            <a href="/" class="site-logo">
+              <img src="/favicon.svg" alt="DEXRabbit" />
+              <div class="logo-text">
+                <span class="logo-title">DEXRabbit</span>
+                <span class="logo-slogan">Твой пассивный доход на кроликах</span>
+              </div>
+            </a>
+          </div>
+          <button class="mobile-nav-toggle burger" aria-label="Меню" data-burger>☰</button>
         </div>
-    </header>
+
+        <!-- Navigation Links -->
+        <div class="navbar-inner">
+          <div class="nav-links" id="nav-menu" data-menu>
+            <!-- Навигация генерируется динамически из navigation-data.js -->
+            <!-- Primary Navigation -->
+            <div class="nav-group nav-primary"></div>
+
+            <!-- Дополнительные разделы -->
+            <div class="nav-group nav-dropdown">
+              <button
+                class="nav-dropdown-toggle"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="nav-dropdown-menu"
+              >
+                Ещё <span class="dropdown-arrow" aria-hidden="true">▾</span>
+              </button>
+              <div class="nav-dropdown-content" id="nav-dropdown-menu" role="menu" hidden></div>
+            </div>
+
+            <!-- CTA кнопка -->
+            <a href="https://t.me/dexrabbit_bot" class="btn btn-primary nav-cta" target="_blank" rel="noopener noreferrer">
+              💬 Начать инвестировать
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
 
     <main>
         <!-- Hero Section -->
@@ -596,18 +631,18 @@
                     <h3>📞 Экстренная связь</h3>
                     <p>Если у вас возникли вопросы о доставке или нужна помощь:</p>
                     <div class="emergency-contacts">
-                        <a href="tel:+79991234567" class="emergency-contact">
-                            <span class="contact-icon">📞</span>
-                            <div>
-                                <strong>+7 (999) 123-45-67</strong>
-                                <small>Служба логистики 24/7</small>
-                            </div>
-                        </a>
-                        <a href="https://t.me/kupitkrolika_delivery" class="emergency-contact" target="_blank">
+                        <a href="https://t.me/DexRebbitOfficial" class="emergency-contact" target="_blank" rel="noopener noreferrer">
                             <span class="contact-icon">💬</span>
                             <div>
-                                <strong>@kupitkrolika_delivery</strong>
-                                <small>Telegram-поддержка</small>
+                                <strong>@DexRebbitOfficial</strong>
+                                <small>Telegram-канал</small>
+                            </div>
+                        </a>
+                        <a href="https://t.me/DEXRabbitOfficialGroupInfo" class="emergency-contact" target="_blank" rel="noopener noreferrer">
+                            <span class="contact-icon">👥</span>
+                            <div>
+                                <strong>@DEXRabbitOfficialGroupInfo</strong>
+                                <small>Telegram-группа</small>
                             </div>
                         </a>
                     </div>
@@ -722,7 +757,9 @@
 
     <link rel="stylesheet" href="/assets/css/footer.css">
 
-    <script src="/scripts/analytics.js"></script>
+    <!-- Navigation scripts -->
+    <script type="module" src="/assets/js/navigation-data.js"></script>
+    <script src="/assets/js/nav.js" defer></script>
     <script>
         // Калькулятор доставки
         class DeliveryCalculator {

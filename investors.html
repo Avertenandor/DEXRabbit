@@ -51,6 +51,11 @@
     <link rel="stylesheet" href="/assets/css/avatars.css" />
     <link rel="stylesheet" href="/assets/css/responsive-extreme.css" />
 
+    <!-- Unified Navigation Styles -->
+    <link rel="stylesheet" href="/assets/css/navigation.css" />
+    <!-- Performance Optimizations -->
+    <link rel="stylesheet" href="/assets/css/performance.css" />
+
     <!-- Navigation scripts -->
     <script type="module" src="/assets/js/navigation-data.js"></script>
     <script defer src="/assets/js/nav.js"></script>
@@ -205,6 +210,7 @@
     <!-- Navigation -->
     <nav class="navbar" role="navigation">
       <div class="container">
+        <!-- Logo Section -->
         <div class="navbar-header">
           <div class="logo-wrapper">
             <a href="/" class="site-logo">
@@ -215,11 +221,34 @@
               </div>
             </a>
           </div>
-          <div style="display: flex; align-items: center; gap: 1rem">
-            <a href="/" class="btn btn-ghost" style="padding: 0.5rem 1rem; font-size: 0.9rem"
-              >🏠 На главную</a
-            >
-            <button class="mobile-nav-toggle burger" aria-label="Меню" data-burger>☰</button>
+          <button class="mobile-nav-toggle burger" aria-label="Меню" data-burger>☰</button>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="navbar-inner">
+          <div class="nav-links" id="nav-menu" data-menu>
+            <!-- Навигация генерируется динамически из navigation-data.js -->
+            <!-- Primary Navigation -->
+            <div class="nav-group nav-primary"></div>
+
+            <!-- Дополнительные разделы -->
+            <div class="nav-group nav-dropdown">
+              <button
+                class="nav-dropdown-toggle"
+                type="button"
+                aria-haspopup="true"
+                aria-expanded="false"
+                aria-controls="nav-dropdown-menu"
+              >
+                Ещё <span class="dropdown-arrow" aria-hidden="true">▾</span>
+              </button>
+              <div class="nav-dropdown-content" id="nav-dropdown-menu" role="menu" hidden></div>
+            </div>
+
+            <!-- CTA кнопка -->
+            <a href="https://t.me/dexrabbit_bot" class="btn btn-primary nav-cta" target="_blank" rel="noopener noreferrer">
+              💬 Начать инвестировать
+            </a>
           </div>
         </div>
       </div>

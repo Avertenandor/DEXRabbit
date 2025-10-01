@@ -1,6 +1,6 @@
 // Service Worker с обновленной версией кэша
 // ВАЖНО: Меняйте CACHE_VERSION при каждом обновлении!
-const CACHE_VERSION = 'v2025-09-29-FIX-404-' + Date.now();
+const CACHE_VERSION = 'v20251001-logistics-investors-fix';
 const STATIC_CACHE = `dexrabbit-static-${CACHE_VERSION}`;
 const DYNAMIC_CACHE = `dexrabbit-dynamic-${CACHE_VERSION}`;
 
@@ -24,6 +24,7 @@ const ASSETS = [
 // Установка Service Worker
 self.addEventListener("install", (event) => {
   console.log(`🔧 SW ${CACHE_VERSION}: Installing...`);
+  console.log('🔄 Fixing: Logistics & Investors pages updated to DEXRabbit brand');
   
   // Сразу активируем новую версию
   self.skipWaiting();
