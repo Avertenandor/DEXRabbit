@@ -1,4 +1,12 @@
 /* ========== ЕДИНАЯ ГЕОМЕТРИЯ ПАНЕЛЕЙ - ТОЛЬКО ЗДЕСЬ ========== */
 .nav-wrapper{position:relative;max-width:1200px;margin-inline:auto;padding-inline:16px}
+
+/* ========== ЦЕНТРИРОВАНИЕ НАВИГАЦИИ ========== */
+.mega-nav-container {
+  justify-content: flex-start !important; /* ✅ Смещаем влево */
+  margin: 0 !important; /* ✅ Убираем центрирование */
+  padding-left: 0 !important; /* ✅ Убираем отступы */
+}
+
 .mega-panel{position:absolute!important;top:100%!important;left:50%!important;transform:translateX(-50%)!important;width:min(1100px,96vw)!important;z-index:1000!important;max-height:80vh;overflow:auto;display:none}
 @media (max-width:1024px){.mega-panel{left:0!important;transform:none!important;width:100%!important;border-radius:0 0 14px 14px}}
