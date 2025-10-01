@@ -131,7 +131,6 @@ window.DEXRabbitNav = {
     {
       title: 'О нас',
       category: 'about',
-      icon: 'ℹ️',
       items: [
         {
           title: 'О проекте',
@@ -209,7 +208,7 @@ window.DEXRabbitNav = {
               aria-haspopup="true" 
               aria-expanded="false"
             >
-              ${category.icon} ${category.title}
+              ${category.icon ? category.icon + ' ' : ''}${category.title}
               <span class="mega-arrow">▾</span>
             </button>
           </div>
