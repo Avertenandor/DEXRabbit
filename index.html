@@ -61,6 +61,8 @@
     <link rel="stylesheet" href="/assets/css/investor-cards.css" />
     <!-- Copy Button Styles -->
     <link rel="stylesheet" href="/assets/css/copy-button.css" />
+    <!-- Copy Contract Styles -->
+    <link rel="stylesheet" href="/assets/css/copy-contract.css" />
 
     <!-- Unified Navigation Data -->
     <script defer src="/assets/js/navigation-data.js?v=2.0"></script>
@@ -74,6 +76,8 @@
     <script defer src="/assets/js/perf/sanitize-message.js"></script>
     <!-- Copy Address Script -->
     <script defer src="/assets/js/copy-address.js"></script>
+    <!-- Copy Contract Script -->
+    <script defer src="/assets/js/copy-contract.js"></script>
   </head>
   <body>
     <!-- Navigation with Mega Menu -->
@@ -1002,26 +1006,21 @@
 
           <div class="alert" style="margin-top: 2rem">
             <strong>🪙 Адрес токена PLEX:</strong>
-            <code
-              style="
-                font-family: monospace;
-                background: rgba(0, 0, 0, 0.1);
-                padding: 2px 6px;
-                border-radius: 4px;
-              "
-              >0xdf179b6cadbc61ffd86a3d2e55f6d6e083ade6c1</code
-            >
-            (BSC Network) <br /><br />
+            <div class="contract-address-wrapper">
+              <code class="contract-address-code">0xdf179b6cadbc61ffd86a3d2e55f6d6e083ade6c1</code>
+              <button class="copy-contract-btn" data-copy-contract="plex" aria-label="Копировать адрес токена PLEX">
+                Копировать
+              </button>
+            </div>
+            <small style="opacity: 0.8">(BSC Network)</small>
+            <br /><br />
             <strong>📍 Адрес пула ликвидности PLEX/WBNB на PancakeSwap:</strong>
-            <code
-              style="
-                font-family: monospace;
-                background: rgba(0, 0, 0, 0.1);
-                padding: 2px 6px;
-                border-radius: 4px;
-              "
-              >0x41d9650faf3341cbf8947fd8063a1fc88dbf1889</code
-            >
+            <div class="contract-address-wrapper">
+              <code class="contract-address-code">0x41d9650faf3341cbf8947fd8063a1fc88dbf1889</code>
+              <button class="copy-contract-btn" data-copy-contract="pool" aria-label="Копировать адрес пула ликвидности">
+                Копировать
+              </button>
+            </div>
           </div>
 
           <!-- Инструкции по добавлению токена в кошельки -->
