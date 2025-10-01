@@ -253,13 +253,12 @@
   background: rgba(124, 140, 255, 0.03);
   border: 1px solid rgba(124, 140, 255, 0.08);
   text-decoration: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
   position: relative;
-  /* ✅ СТАБИЛЬНОСТЬ: Кнопки не шевелятся */
-  transform: translateZ(0);
+  /* ✅ СТАБИЛЬНОСТЬ: Убираем все transform */
+  transform: none;
   will-change: auto;
   backface-visibility: hidden;
-  overflow: hidden;
 }
 
 /* Градиентный фон при hover */
@@ -280,7 +279,8 @@
 .mega-panel-item:focus {
   background: rgba(124, 140, 255, 0.08);
   border-color: rgba(124, 140, 255, 0.3);
-  transform: translateY(-2px);
+  /* Убираем translateY - он вызывает шевеление */
+  transform: none;
   box-shadow: 
     0 8px 20px rgba(124, 140, 255, 0.2),
     0 0 20px rgba(250, 204, 21, 0.1);
@@ -302,7 +302,9 @@
 }
 
 .mega-panel-item:hover .mega-item-icon {
-  transform: scale(1.1) rotate(-5deg);
+  /* Убираем scale и rotate - они вызывают шевеление */
+  transform: none;
+  filter: drop-shadow(0 2px 8px rgba(250, 204, 21, 0.3));
 }
 
 /* Контент элемента */
@@ -481,18 +483,7 @@ html {
   }
 }
 
-@keyframes glowPulse {
-  0%, 100% {
-    box-shadow: 
-      0 25px 50px rgba(0, 0, 0, 0.4),
-      0 10px 20px rgba(124, 140, 255, 0.15);
-  }
-  50% {
-    box-shadow: 
-      0 30px 60px rgba(0, 0, 0, 0.5),
-      0 15px 30px rgba(124, 140, 255, 0.25);
-  }
-}
+/* Убираем glowPulse - вызывает моргание */
 
 /* Анимация для активной панели */
 .mega-panel.active {
@@ -501,7 +492,7 @@ html {
 
 /* Эффект пульсации для активных элементов */
 .mega-panel-item:hover {
-  animation: glowPulse 2s ease-in-out infinite;
+  /* Убираем glowPulse - вызывает моргание */
 }
 
 /* ========== Оптимизация производительности ========== */

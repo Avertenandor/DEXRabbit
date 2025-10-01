@@ -41,9 +41,9 @@ const fullStylesHTML = `    <!-- Performance Optimizations - 0 layout thrashing 
     <!-- Unified Navigation Styles -->
     <link rel="stylesheet" href="/assets/css/navigation.css?v=20251001-fix" />
     <!-- Mega Menu Styles -->
-    <link rel="stylesheet" href="/assets/css/mega-menu.css?v=20251001-nav-container" />
+    <link rel="stylesheet" href="/assets/css/mega-menu.css?v=20251001-no-wiggle" />
     <!-- Navigation Refactor Styles -->
-    <link rel="stylesheet" href="/assets/css/nav-refactor.css?v=20251001-refactor" />
+    <link rel="stylesheet" href="/assets/css/nav-refactor.css?v=20251001-stable" />
     <!-- Investor Cards Styles -->
     <link rel="stylesheet" href="/assets/css/investor-cards.css" />
     <!-- Copy Button Styles -->

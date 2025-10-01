@@ -166,13 +166,23 @@
   contain: layout style;
 }
 
-/* ========== УБИРАЕМ ШЕВЕЛЕНИЕ ========== */
+/* ========== УБИРАЕМ ШЕВЕЛЕНИЕ И МОРГАНИЕ ========== */
 .mega-panel-item {
-  transform: translateZ(0);
+  /* Убираем все transform для стабильности */
+  transform: none;
   backface-visibility: hidden;
-  transition: all 0.2s ease;
+  will-change: auto;
+  transition: background-color 0.2s ease, color 0.2s ease;
+  /* Фиксируем позицию */
+  position: relative;
+  display: block;
+  width: 100%;
 }
 
 .mega-panel-item:hover {
-  transform: translateZ(0) scale(1.02);
+  /* ТОЛЬКО цветовые изменения, БЕЗ transform */
+  background-color: rgba(124, 140, 255, 0.1);
+  color: #facc15;
+  /* Убираем scale и translate - они вызывают шевеление */
+  transform: none;
 }
