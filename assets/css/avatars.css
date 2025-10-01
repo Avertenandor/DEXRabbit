@@ -183,7 +183,7 @@
 
 /* === МОДАЛЬНОЕ ОКНО ДЛЯ ФОТО === */
 
-/* Модальное окно при наведении */
+/* Модальное окно при наведении - СКРЫТО ПО УМОЛЧАНИЮ */
 .avatar-modal {
   position: fixed;
   top: 50%;
@@ -195,6 +195,8 @@
   z-index: 10000;
   pointer-events: none;
   opacity: 0;
+  visibility: hidden;
+  display: none;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   border-radius: 16px;
   overflow: hidden;
@@ -206,6 +208,8 @@
 .avatar-modal--active {
   transform: translate(-50%, -50%) scale(1);
   opacity: 1;
+  visibility: visible;
+  display: block;
   pointer-events: auto;
 }
 
@@ -216,7 +220,7 @@
   object-position: center;
 }
 
-/* Overlay за модалкой */
+/* Overlay за модалкой - СКРЫТ ПО УМОЛЧАНИЮ */
 .avatar-modal-overlay {
   position: fixed;
   top: 0;
@@ -227,12 +231,16 @@
   backdrop-filter: blur(10px);
   z-index: 9999;
   opacity: 0;
+  visibility: hidden;
+  display: none;
   pointer-events: none;
-  transition: opacity 0.3s ease;
+  transition: all 0.3s ease;
 }
 
 .avatar-modal-overlay--active {
   opacity: 1;
+  visibility: visible;
+  display: block;
   pointer-events: auto;
 }
 
@@ -269,6 +277,6 @@
   }
 
   .investor-avatar::after {
-    display: none; /* Скрываем лупу на мобильных */
+    display: none !important; /* Скрываем лупу на мобильных */
   }
 }
