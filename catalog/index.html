@@ -2,7 +2,216 @@
     <link rel="stylesheet" href="/assets/css/navigation-v2.css?v=20251001-v2" />
 <link rel="stylesheet" href="/styles/global.css">    <!-- Mobile Critical Fix -->
     <link rel="stylesheet" href="/assets/css/mobile-critical-fix.css?v=20251001-mobile-fix" />
-  </head> <body class="bg-[#0b0f14] text-white">  <header class="sticky top-0 z-50 backdrop-blur bg-black/40"> <nav class="max-w-[1200px] mx-auto px-4 h-14 flex items-center justify-between"> <a href="/" class="font-semibold">КупитьКролика</a> <button class="lg:hidden" aria-label="Открыть меню" id="navBtn">☰</button> <ul id="nav" class="hidden lg:flex gap-6"> <li><a href="/catalog">Каталог</a></li> <li><a href="/#benefits">Преимущества</a></li> <li><a href="/#reviews">Отзывы</a></li> <li><a href="/faq">FAQ</a></li> <li><a href="/contacts">Контакты</a></li> </ul> <a href="/contacts" class="hidden lg:inline-block rounded-2xl px-4 py-2 bg-emerald-500">Связаться</a> </nav> </header>     <!-- Navigation V2 Script -->
+      <!-- Beautiful Navigation -->
+    <link rel="stylesheet" href="/assets/css/navigation-beautiful.css?v=20251001-stable-hover" />
+    <!-- Mobile Critical Fix -->
+    <link rel="stylesheet" href="/assets/css/mobile-critical-fix.css?v=20251001-android-fix" />
+    <!-- Ultimate Responsive (All Devices) -->
+    <link rel="stylesheet" href="/assets/css/ultimate-responsive.css?v=20251001-ultimate" />
+      <!-- Beautiful Navigation Script -->
+    <script defer src="/assets/js/navigation-beautiful.js?v=20251001-stable-hover"></script>
+  </head> <body class="bg-[#0b0f14] text-white">
+    <!-- Beautiful Navigation -->
+    <nav class="nav-beautiful">
+      <div class="nav-beautiful__container">
+        <!-- Logo -->
+        <a href="/" class="nav-beautiful__logo">
+          <img src="/favicon.svg" alt="DEXRabbit" class="nav-beautiful__logo-img">
+          <div class="nav-beautiful__logo-text">
+            <span class="nav-beautiful__logo-title">DEXRabbit</span>
+            <span class="nav-beautiful__logo-slogan">Твой пассивный доход на кроликах</span>
+          </div>
+        </a>
+
+        <!-- Mobile Toggle -->
+        <button class="nav-beautiful__mobile-toggle" aria-label="Меню">
+          <span class="nav-beautiful__mobile-icon"></span>
+        </button>
+
+        <!-- Menu -->
+        <div class="nav-beautiful__menu">
+          <!-- Инвестиции -->
+          <div class="nav-beautiful__dropdown-wrapper">
+            <button class="nav-beautiful__btn">
+              Инвестиции
+              <span class="nav-beautiful__arrow"></span>
+            </button>
+            <div class="nav-beautiful__dropdown">
+              <ul class="nav-beautiful__dropdown-list">
+                <li><a href="/investment-model.html" class="nav-beautiful__dropdown-item">
+                  <span class="nav-beautiful__dropdown-icon">💰</span>
+                  <div class="nav-beautiful__dropdown-text">
+                    <span class="nav-beautiful__dropdown-title">Модель инвестирования</span>
+                    <span class="nav-beautiful__dropdown-desc">Как работает инвестиция</span>
+                  </div>
+                </a></li>
+                <li><a href="/#investment" class="nav-beautiful__dropdown-item">
+                  <span class="nav-beautiful__dropdown-icon">🚀</span>
+                  <div class="nav-beautiful__dropdown-text">
+                    <span class="nav-beautiful__dropdown-title">Стать инвестором</span>
+                    <span class="nav-beautiful__dropdown-desc">Начните зарабатывать</span>
+                  </div>
+                </a></li>
+                <li><a href="/guarantees.html" class="nav-beautiful__dropdown-item">
+                  <span class="nav-beautiful__dropdown-icon">🛡️</span>
+                  <div class="nav-beautiful__dropdown-text">
+                    <span class="nav-beautiful__dropdown-title">Гарантии</span>
+                    <span class="nav-beautiful__dropdown-desc">Защита инвестиций</span>
+                  </div>
+                </a></li>
+                <li><a href="/investors.html" class="nav-beautiful__dropdown-item">
+                  <span class="nav-beautiful__dropdown-icon">👥</span>
+                  <div class="nav-beautiful__dropdown-text">
+                    <span class="nav-beautiful__dropdown-title">Наши инвесторы</span>
+                    <span class="nav-beautiful__dropdown-desc">Отзывы и истории</span>
+                  </div>
+                </a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Партнёрство -->
+          <div class="nav-beautiful__dropdown-wrapper">
+            <button class="nav-beautiful__btn">
+              Партнёрство
+              <span class="nav-beautiful__arrow"></span>
+            </button>
+            <div class="nav-beautiful__dropdown">
+              <ul class="nav-beautiful__dropdown-list">
+                <li><a href="/partnership.html" class="nav-beautiful__dropdown-item">
+                  <span class="nav-beautiful__dropdown-icon">🤝</span>
+                  <div class="nav-beautiful__dropdown-text">
+                    <span class="nav-beautiful__dropdown-title">Программа партнёрства</span>
+                    <span class="nav-beautiful__dropdown-desc">3 уровня рефералки</span>
+                  </div>
+                </a></li>
+                <li><a href="/partners/" class="nav-beautiful__dropdown-item">
+                  <span class="nav-beautiful__dropdown-icon">⭐</span>
+                  <div class="nav-beautiful__dropdown-text">
+                    <span class="nav-beautiful__dropdown-title">Стать партнёром</span>
+                    <span class="nav-beautiful__dropdown-desc">Наши партнёры</span>
+                  </div>
+                </a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Услуги -->
+          <div class="nav-beautiful__dropdown-wrapper">
+            <button class="nav-beautiful__btn">
+              Услуги
+              <span class="nav-beautiful__arrow"></span>
+            </button>
+            <div class="nav-beautiful__dropdown">
+              <ul class="nav-beautiful__dropdown-list">
+                <li><a href="/gifts.html" class="nav-beautiful__dropdown-item">
+                  <span class="nav-beautiful__dropdown-icon">🎁</span>
+                  <div class="nav-beautiful__dropdown-text">
+                    <span class="nav-beautiful__dropdown-title">Подарки</span>
+                    <span class="nav-beautiful__dropdown-desc">Сертификаты</span>
+                  </div>
+                </a></li>
+                <li><a href="/breeding.html" class="nav-beautiful__dropdown-item">
+                  <span class="nav-beautiful__dropdown-icon">🐰</span>
+                  <div class="nav-beautiful__dropdown-text">
+                    <span class="nav-beautiful__dropdown-title">Разведение</span>
+                    <span class="nav-beautiful__dropdown-desc">Консультации</span>
+                  </div>
+                </a></li>
+                <li><a href="/therapy.html" class="nav-beautiful__dropdown-item">
+                  <span class="nav-beautiful__dropdown-icon">❤️</span>
+                  <div class="nav-beautiful__dropdown-text">
+                    <span class="nav-beautiful__dropdown-title">Терапия</span>
+                    <span class="nav-beautiful__dropdown-desc">Pet-therapy</span>
+                  </div>
+                </a></li>
+                <li><a href="/catalog/" class="nav-beautiful__dropdown-item">
+                  <span class="nav-beautiful__dropdown-icon">📋</span>
+                  <div class="nav-beautiful__dropdown-text">
+                    <span class="nav-beautiful__dropdown-title">Каталог</span>
+                    <span class="nav-beautiful__dropdown-desc">Доступные кролики</span>
+                  </div>
+                </a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Породы -->
+          <div class="nav-beautiful__dropdown-wrapper">
+            <button class="nav-beautiful__btn">
+              Породы
+              <span class="nav-beautiful__arrow"></span>
+            </button>
+            <div class="nav-beautiful__dropdown">
+              <ul class="nav-beautiful__dropdown-list">
+                <li><a href="/rabbits-hares.html" class="nav-beautiful__dropdown-item">
+                  <span class="nav-beautiful__dropdown-icon">🐇</span>
+                  <div class="nav-beautiful__dropdown-text">
+                    <span class="nav-beautiful__dropdown-title">Кролики vs Зайцы</span>
+                    <span class="nav-beautiful__dropdown-desc">В чём разница</span>
+                  </div>
+                </a></li>
+                <li><a href="/cats-rabbits.html" class="nav-beautiful__dropdown-item">
+                  <span class="nav-beautiful__dropdown-icon">🐱</span>
+                  <div class="nav-beautiful__dropdown-text">
+                    <span class="nav-beautiful__dropdown-title">Кролики vs Коты</span>
+                    <span class="nav-beautiful__dropdown-desc">Сравнение</span>
+                  </div>
+                </a></li>
+                <li><a href="/care.html" class="nav-beautiful__dropdown-item">
+                  <span class="nav-beautiful__dropdown-icon">💚</span>
+                  <div class="nav-beautiful__dropdown-text">
+                    <span class="nav-beautiful__dropdown-title">Уход</span>
+                    <span class="nav-beautiful__dropdown-desc">Особенности</span>
+                  </div>
+                </a></li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- О нас -->
+          <div class="nav-beautiful__dropdown-wrapper">
+            <button class="nav-beautiful__btn">
+              О нас
+              <span class="nav-beautiful__arrow"></span>
+            </button>
+            <div class="nav-beautiful__dropdown">
+              <ul class="nav-beautiful__dropdown-list">
+                <li><a href="/#about" class="nav-beautiful__dropdown-item">
+                  <span class="nav-beautiful__dropdown-icon">ℹ️</span>
+                  <div class="nav-beautiful__dropdown-text">
+                    <span class="nav-beautiful__dropdown-title">О проекте</span>
+                    <span class="nav-beautiful__dropdown-desc">История</span>
+                  </div>
+                </a></li>
+                <li><a href="/contacts.html" class="nav-beautiful__dropdown-item">
+                  <span class="nav-beautiful__dropdown-icon">✉️</span>
+                  <div class="nav-beautiful__dropdown-text">
+                    <span class="nav-beautiful__dropdown-title">Контакты</span>
+                    <span class="nav-beautiful__dropdown-desc">Связь</span>
+                  </div>
+                </a></li>
+                <li><a href="/faq/" class="nav-beautiful__dropdown-item">
+                  <span class="nav-beautiful__dropdown-icon">❓</span>
+                  <div class="nav-beautiful__dropdown-text">
+                    <span class="nav-beautiful__dropdown-title">FAQ</span>
+                    <span class="nav-beautiful__dropdown-desc">Вопросы</span>
+                  </div>
+                </a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- CTA -->
+        <a href="/#investment" class="nav-beautiful__cta">
+          <span>🚀</span>
+          <span>Начать инвестировать</span>
+        </a>
+      </div>
+    </nav>
+
+  <header class="sticky top-0 z-50 backdrop-blur bg-black/40"> <nav class="max-w-[1200px] mx-auto px-4 h-14 flex items-center justify-between"> <a href="/" class="font-semibold">КупитьКролика</a> <button class="lg:hidden" aria-label="Открыть меню" id="navBtn">☰</button> <ul id="nav" class="hidden lg:flex gap-6"> <li><a href="/catalog">Каталог</a></li> <li><a href="/#benefits">Преимущества</a></li> <li><a href="/#reviews">Отзывы</a></li> <li><a href="/faq">FAQ</a></li> <li><a href="/contacts">Контакты</a></li> </ul> <a href="/contacts" class="hidden lg:inline-block rounded-2xl px-4 py-2 bg-emerald-500">Связаться</a> </nav> </header>     <!-- Navigation V2 Script -->
     <script defer src="/assets/js/navigation-v2.js?v=20251001-hover-fix"></script>
 <script type="module">const n=document.getElementById("navBtn"),t=document.getElementById("nav");n?.addEventListener("click",()=>{t?.classList.toggle("hidden")});</script> <main> <section class="container py-8"> <h1 class="text-3xl font-bold mb-4">Каталог кроликов</h1> <p class="text-gray-300 mb-8">Выберите кролика из нашего племенного поголовья</p> <div class="grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4"> <article class="rounded-2xl bg-[#111827] p-4 shadow"> <div class="relative aspect-[3/2] overflow-hidden rounded-xl"> <img src="/images/photo_2025-09-15_13-17-50.jpg" alt="Кролик Белый великан, ж" loading="lazy" decoding="async" width="900" height="600" class="w-full h-full object-cover"> <span class="absolute top-3 left-3 text-sm px-2 py-1 rounded bg-emerald-600">Свободен</span> </div> <h3 class="mt-3 text-lg font-medium line-clamp-1">Белый великан #001</h3> <p class="text-sm text-gray-300">Белый великан · ж · 5 мес · 3.8 кг</p> <div class="mt-3 flex items-center justify-between"> <strong class="text-xl">8500 ₽</strong> <a href="/contacts" class="rounded-xl px-3 py-2 bg-emerald-500">Забронировать</a> </div> </article><article class="rounded-2xl bg-[#111827] p-4 shadow"> <div class="relative aspect-[3/2] overflow-hidden rounded-xl"> <img src="/images/photo_2025-09-15_13-17-51.jpg" alt="Кролик Калифорнийский, м" loading="lazy" decoding="async" width="900" height="600" class="w-full h-full object-cover"> <span class="absolute top-3 left-3 text-sm px-2 py-1 rounded bg-emerald-600">Свободен</span> </div> <h3 class="mt-3 text-lg font-medium line-clamp-1">Калифорнийский #002</h3> <p class="text-sm text-gray-300">Калифорнийский · м · 4 мес · 3.2 кг</p> <div class="mt-3 flex items-center justify-between"> <strong class="text-xl">7500 ₽</strong> <a href="/contacts" class="rounded-xl px-3 py-2 bg-emerald-500">Забронировать</a> </div> </article><article class="rounded-2xl bg-[#111827] p-4 shadow"> <div class="relative aspect-[3/2] overflow-hidden rounded-xl"> <img src="/images/photo_2025-09-15_13-17-52.jpg" alt="Кролик Советская шиншилла, ж" loading="lazy" decoding="async" width="900" height="600" class="w-full h-full object-cover"> <span class="absolute top-3 left-3 text-sm px-2 py-1 rounded bg-gray-600">Забронирован</span> </div> <h3 class="mt-3 text-lg font-medium line-clamp-1">Советская шиншилла #003</h3> <p class="text-sm text-gray-300">Советская шиншилла · ж · 6 мес · 4.1 кг</p> <div class="mt-3 flex items-center justify-between"> <strong class="text-xl">9000 ₽</strong> <a href="/contacts" class="rounded-xl px-3 py-2 bg-emerald-500">Забронировать</a> </div> </article><article class="rounded-2xl bg-[#111827] p-4 shadow"> <div class="relative aspect-[3/2] overflow-hidden rounded-xl"> <img src="/images/photo_2025-09-15_13-17-52 (2).jpg" alt="Кролик Рекс, м" loading="lazy" decoding="async" width="900" height="600" class="w-full h-full object-cover"> <span class="absolute top-3 left-3 text-sm px-2 py-1 rounded bg-gray-600">Забронирован</span> </div> <h3 class="mt-3 text-lg font-medium line-clamp-1">Рекс #006</h3> <p class="text-sm text-gray-300">Рекс · м · 5 мес · 3.5 кг</p> <div class="mt-3 flex items-center justify-between"> <strong class="text-xl">8000 ₽</strong> <a href="/contacts" class="rounded-xl px-3 py-2 bg-emerald-500">Забронировать</a> </div> </article><article class="rounded-2xl bg-[#111827] p-4 shadow"> <div class="relative aspect-[3/2] overflow-hidden rounded-xl"> <img src="/images/photo_2025-09-15_13-17-50 (2).jpg" alt="Кролик Новозеландский белый, м" loading="lazy" decoding="async" width="900" height="600" class="w-full h-full object-cover"> <span class="absolute top-3 left-3 text-sm px-2 py-1 rounded bg-emerald-600">Свободен</span> </div> <h3 class="mt-3 text-lg font-medium line-clamp-1">Новозеландский белый #004</h3> <p class="text-sm text-gray-300">Новозеландский белый · м · 3 мес · 2.8 кг</p> <div class="mt-3 flex items-center justify-between"> <strong class="text-xl">6800 ₽</strong> <a href="/contacts" class="rounded-xl px-3 py-2 bg-emerald-500">Забронировать</a> </div> </article><article class="rounded-2xl bg-[#111827] p-4 shadow"> <div class="relative aspect-[3/2] overflow-hidden rounded-xl"> <img src="/images/photo_2025-09-15_13-17-51 (2).jpg" alt="Кролик Фландр, ж" loading="lazy" decoding="async" width="900" height="600" class="w-full h-full object-cover"> <span class="absolute top-3 left-3 text-sm px-2 py-1 rounded bg-emerald-600">Свободен</span> </div> <h3 class="mt-3 text-lg font-medium line-clamp-1">Фландр #005</h3> <p class="text-sm text-gray-300">Фландр · ж · 7 мес · 5.2 кг</p> <div class="mt-3 flex items-center justify-between"> <strong class="text-xl">12000 ₽</strong> <a href="/contacts" class="rounded-xl px-3 py-2 bg-emerald-500">Забронировать</a> </div> </article><article class="rounded-2xl bg-[#111827] p-4 shadow"> <div class="relative aspect-[3/2] overflow-hidden rounded-xl"> <img src="/images/photo_2025-09-15_13-17-52 (4).jpg" alt="Кролик Серый великан, м" loading="lazy" decoding="async" width="900" height="600" class="w-full h-full object-cover"> <span class="absolute top-3 left-3 text-sm px-2 py-1 rounded bg-emerald-600">Свободен</span> </div> <h3 class="mt-3 text-lg font-medium line-clamp-1">Серый великан #008</h3> <p class="text-sm text-gray-300">Серый великан · м · 6 мес · 4.5 кг</p> <div class="mt-3 flex items-center justify-between"> <strong class="text-xl">9500 ₽</strong> <a href="/contacts" class="rounded-xl px-3 py-2 bg-emerald-500">Забронировать</a> </div> </article><article class="rounded-2xl bg-[#111827] p-4 shadow"> <div class="relative aspect-[3/2] overflow-hidden rounded-xl"> <img src="/images/photo_2025-09-15_13-17-52 (3).jpg" alt="Кролик Ангорский, ж" loading="lazy" decoding="async" width="900" height="600" class="w-full h-full object-cover"> <span class="absolute top-3 left-3 text-sm px-2 py-1 rounded bg-emerald-600">Свободен</span> </div> <h3 class="mt-3 text-lg font-medium line-clamp-1">Ангорский #007</h3> <p class="text-sm text-gray-300">Ангорский · ж · 4 мес · 2.9 кг</p> <div class="mt-3 flex items-center justify-between"> <strong class="text-xl">11000 ₽</strong> <a href="/contacts" class="rounded-xl px-3 py-2 bg-emerald-500">Забронировать</a> </div> </article><article class="rounded-2xl bg-[#111827] p-4 shadow"> <div class="relative aspect-[3/2] overflow-hidden rounded-xl"> <img src="/images/photo_2025-09-15_13-17-50 (3).jpg" alt="Кролик Бабочка, ж" loading="lazy" decoding="async" width="900" height="600" class="w-full h-full object-cover"> <span class="absolute top-3 left-3 text-sm px-2 py-1 rounded bg-gray-600">Забронирован</span> </div> <h3 class="mt-3 text-lg font-medium line-clamp-1">Бабочка #009</h3> <p class="text-sm text-gray-300">Бабочка · ж · 5 мес · 3.3 кг</p> <div class="mt-3 flex items-center justify-between"> <strong class="text-xl">7800 ₽</strong> <a href="/contacts" class="rounded-xl px-3 py-2 bg-emerald-500">Забронировать</a> </div> </article> </div> </section> </main>  </body></html>
 <html lang="ru">

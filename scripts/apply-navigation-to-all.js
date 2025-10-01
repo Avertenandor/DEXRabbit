@@ -1,64 +1,8 @@
-<!DOCTYPE html>
-<html lang="ru">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лицензионное соглашение — DEXRabbit</title>
-    <meta name="description" content="Лицензионное соглашение DEXRabbit. Условия использования платформы токенизированной фермы кроликов.">
-    
-    <!-- Favicons -->
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
-    <meta name="theme-color" content="#7c8cff">
-    
-    <!-- Open Graph -->
-    <meta property="og:type" content="website">
-    <meta property="og:title" content="Лицензионное соглашение — DEXRabbit">
-    <meta property="og:description" content="Условия использования платформы токенизированной фермы кроликов.">
-    <meta property="og:url" content="https://xn--80apagbbfxgmuj4j.site/legal/license.html">
-    <meta property="og:image" content="https://xn--80apagbbfxgmuj4j.site/og/og-rabbit.jpg?v=20250929">
-    
-    <!-- Canonical -->
-    <link rel="canonical" href="https://xn--80apagbbfxgmuj4j.site/legal/license.html">
-    
-    <!-- Styles -->
-        <!-- Navigation V2 - Apple/Amazon Style -->
-    <link rel="stylesheet" href="/assets/css/navigation-v2.css?v=20251001-v2" />
-<link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/variables.css">
-        <!-- Performance Optimizations - 0 layout thrashing -->
-    <link rel="stylesheet" href="/assets/css/performance.css" />
-    
-    
-    
-    
-    
-    
-    <!-- Investor Cards Styles -->
-    <link rel="stylesheet" href="/assets/css/investor-cards.css" />
-    <!-- Copy Button Styles -->
-    <link rel="stylesheet" href="/assets/css/copy-button.css" />
-    <!-- Copy Contract Styles -->
-    <link rel="stylesheet" href="/assets/css/copy-contract.css" />
-    <!-- Footer Styles -->
-    <link rel="stylesheet" href="/assets/css/footer.css" />
-    <!-- Print Styles -->
-    <link rel="stylesheet" href="/assets/css/print.css" />
-    <!-- Navigation V2 Script -->
-    <script defer src="/assets/js/navigation-v2.js?v=20251001-hover-fix"></script>
-      <!-- Mobile Critical Fix -->
-    <link rel="stylesheet" href="/assets/css/mobile-critical-fix.css?v=20251001-mobile-fix" />
-      <!-- Beautiful Navigation -->
-    <link rel="stylesheet" href="/assets/css/navigation-beautiful.css?v=20251001-stable-hover" />
-    <!-- Mobile Critical Fix -->
-    <link rel="stylesheet" href="/assets/css/mobile-critical-fix.css?v=20251001-android-fix" />
-    <!-- Ultimate Responsive (All Devices) -->
-    <link rel="stylesheet" href="/assets/css/ultimate-responsive.css?v=20251001-ultimate" />
-      <!-- Beautiful Navigation Script -->
-    <script defer src="/assets/js/navigation-beautiful.js?v=20251001-stable-hover"></script>
-  </head>
-<body>
-    <!-- Beautiful Navigation -->
+const fs = require('fs');
+const path = require('path');
+
+// HTML навигации из index.html (строки 85-283)
+const NAVIGATION_HTML = `    <!-- Beautiful Navigation -->
     <nav class="nav-beautiful">
       <div class="nav-beautiful__container">
         <!-- Logo -->
@@ -257,81 +201,83 @@
         </a>
       </div>
     </nav>
+`;
 
+// CSS links
+const CSS_LINKS = `    <!-- Beautiful Navigation -->
+    <link rel="stylesheet" href="/assets/css/navigation-beautiful.css?v=20251001-stable-hover" />
+    <!-- Mobile Critical Fix -->
+    <link rel="stylesheet" href="/assets/css/mobile-critical-fix.css?v=20251001-android-fix" />
+    <!-- Ultimate Responsive (All Devices) -->
+    <link rel="stylesheet" href="/assets/css/ultimate-responsive.css?v=20251001-ultimate" />`;
 
-        
-    <header class="navbar" role="navigation">
-      <div class="nav-wrapper">
-        <!-- Logo Section -->
-        <div class="navbar-header">
-          <div class="logo-wrapper">
-            <a href="/" class="site-logo">
-              <img src="/favicon.svg" alt="DEXRabbit" />
-              <div class="logo-text">
-                <span class="logo-title">DEXRabbit</span>
-                <span class="logo-slogan">Твой пассивный доход на кроликах</span>
-              </div>
-            </a>
-          </div>
-          <button class="mobile-nav-toggle burger" aria-label="Меню" data-burger>☰</button>
-        </div>
+// JS links
+const JS_LINKS = `    <!-- Beautiful Navigation Script -->
+    <script defer src="/assets/js/navigation-beautiful.js?v=20251001-stable-hover"></script>`;
 
-        
-        <div class="navbar-inner">
-          <div class="nav-links" id="nav-menu" data-menu>
-            <!-- Навигация генерируется динамически из navigation-data.js -->
-            <!-- Primary Navigation -->
-            <div class="nav-group nav-primary">
-              <div class="mega-nav-container"></div>
-            </div>
+// Рекурсивно находим все HTML файлы
+function findHTMLFiles(dir, fileList = []) {
+  const files = fs.readdirSync(dir);
+  
+  files.forEach((file) => {
+    const filePath = path.join(dir, file);
+    const stat = fs.statSync(filePath);
+    
+    if (stat.isDirectory()) {
+      if (!['archive', 'templates', 'node_modules', '.git'].includes(file)) {
+        findHTMLFiles(filePath, fileList);
+      }
+    } else if (file.endsWith('.html') && file !== 'demo-megamenu.html') {
+      fileList.push(filePath);
+    }
+  });
+  
+  return fileList;
+}
 
-            <!-- CTA Button -->
-            <div class="nav-cta-wrapper"></div>
-          </div>
-        </div>
-      </div>
-    </header>
+console.log('🔧 Применяю навигацию на все страницы...\n');
 
-    <main>
-        <section class="section">
-            <div class="container">
-                <div class="card" style="max-width: 900px; margin: 0 auto;">
-                    <h1>📜 Лицензионное соглашение</h1>
-                    <p style="opacity: 0.8; margin-bottom: 2rem;">Дата обновления: 29 сентября 2025</p>
-                    
-                    <div style="background: rgba(250, 204, 21, 0.1); padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
-                        <h2 style="color: #facc15;">⚠️ Страница в разработке</h2>
-                        <p>Полный текст лицензионного соглашения находится в разработке.</p>
-                    </div>
-                    
-                    <p>Здесь будут размещены:</p>
-                    <ul style="margin: 1.5rem 0;">
-                        <li>• Условия использования сайта</li>
-                        <li>• Права и обязанности сторон</li>
-                        <li>• Условия инвестирования</li>
-                        <li>• Ограничения ответственности</li>
-                        <li>• Интеллектуальная собственность</li>
-                        <li>• Юрисдикция и применимое право</li>
-                    </ul>
-                    
-                    <p style="margin-top: 2rem;">
-                        По вопросам обращайтесь: <a href="mailto:kupitkrolika@gmail.com">kupitkrolika@gmail.com</a>
-                    </p>
-                    
-                    <div style="margin-top: 2rem;">
-                        <a href="/" class="btn">← Вернуться на главную</a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
+const htmlFiles = findHTMLFiles(process.cwd());
+let updatedCount = 0;
 
-    <footer class="footer">
-        <div class="container">
-            <div style="text-align: center; padding: 2rem 0;">
-                <p>© 2025 DEXRabbit. Все права защищены.</p>
-            </div>
-        </div>
-    </footer>
-</body>
-</html>
+htmlFiles.forEach((filePath) => {
+  const relativePath = path.relative(process.cwd(), filePath);
+  let content = fs.readFileSync(filePath, 'utf8');
+  
+  // Проверяем, есть ли уже навигация
+  if (content.includes('class="nav-beautiful"')) {
+    console.log(`⚪ ${relativePath} - навигация уже есть`);
+    return;
+  }
+  
+  // Проверяем наличие </head> и <body>
+  if (!content.includes('</head>') || !content.includes('<body>')) {
+    console.log(`⚠️  ${relativePath} - нет тегов </head> или <body>, пропускаем`);
+    return;
+  }
+  
+  // Добавляем CSS перед </head>
+  if (!content.includes('navigation-beautiful.css')) {
+    content = content.replace('</head>', CSS_LINKS + '\n  </head>');
+  }
+  
+  // Добавляем JS перед </head>
+  if (!content.includes('navigation-beautiful.js')) {
+    content = content.replace('</head>', JS_LINKS + '\n  </head>');
+  }
+  
+  // Добавляем навигацию после <body>
+  content = content.replace(/<body[^>]*>/, (match) => match + '\n' + NAVIGATION_HTML + '\n');
+  
+  fs.writeFileSync(filePath, content, 'utf8');
+  updatedCount++;
+  console.log(`✅ ${relativePath} - навигация добавлена`);
+});
+
+console.log(`\n📊 ИТОГО:`);
+console.log(`   Обработано файлов: ${htmlFiles.length}`);
+console.log(`   Добавлена навигация: ${updatedCount}`);
+console.log(`   Уже была: ${htmlFiles.length - updatedCount}`);
+
+console.log('\n✅ ДОБАВЛЕНИЕ ЗАВЕРШЕНО!');
+
