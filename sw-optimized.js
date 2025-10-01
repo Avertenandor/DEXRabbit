@@ -1,11 +1,11 @@
 /**
  * DEXRabbit - Оптимизированный Service Worker
- * Версия: 3.0
+ * Версия: 20251001-iframe
  * Кэширование и оптимизация производительности
  */
 
-const CACHE_NAME = 'dexrabbit-v3.0';
-const RUNTIME_CACHE = 'dexrabbit-runtime-v3.0';
+const CACHE_NAME = 'dexrabbit-v20251001-iframe';
+const RUNTIME_CACHE = 'dexrabbit-runtime-v20251001-iframe';
 
 // Критические ресурсы для первой загрузки
 const CRITICAL_ASSETS = [
@@ -103,7 +103,7 @@ const CACHE_STRATEGIES = {
 
 // Установка Service Worker
 self.addEventListener('install', event => {
-  console.log('[SW] Installing Service Worker v3.0');
+  console.log('[SW] Installing Service Worker v20251001-iframe');
 
   event.waitUntil(
     caches
@@ -127,7 +127,7 @@ self.addEventListener('install', event => {
 
 // Активация Service Worker
 self.addEventListener('activate', event => {
-  console.log('[SW] Activating Service Worker v3.0');
+  console.log('[SW] Activating Service Worker v20251001-iframe');
 
   event.waitUntil(
     Promise.all([
@@ -291,4 +291,4 @@ self.addEventListener('message', event => {
   }
 });
 
-console.log('[SW] Service Worker v3.0 loaded successfully');
+console.log('[SW] Service Worker v20251001-iframe loaded successfully');
