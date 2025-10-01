@@ -9,9 +9,9 @@
   align-items: center;
   gap: clamp(0.75rem, 1.5vw, 1.5rem);
   flex-wrap: nowrap; /* Запрещаем перенос элементов */
-  flex: 1 1 auto; /* ✅ Растягивается, занимая доступное пространство */
-  max-width: 100%;
-  justify-content: flex-start; /* ✅ Прижать к левому краю */
+  flex: 1; /* Занимает доступное пространство между логотипом и CTA */
+  /* НЕТ max-width: 100% - удалено */
+  /* НЕТ justify-content - по умолчанию flex-start */
 }
 
 /* ========== Элементы меню ========== */
@@ -87,12 +87,14 @@
 
 /* ========== Мега-панель (выпадающее меню) ========== */
 .mega-panel {
+  /* КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ: Центрирование относительно nav-wrapper */
   position: absolute;
-  top: calc(100% + 1rem);
+  top: 100%;
   left: 50%;
   transform: translateX(-50%);
-  min-width: 600px;
-  max-width: 800px;
+  width: min(1100px, 96vw);
+  max-height: 80vh;
+  overflow: auto;
   background: linear-gradient(
     135deg,
     rgba(16, 21, 33, 0.98) 0%,
@@ -111,9 +113,8 @@
   /* Анимация появления */
   opacity: 0;
   visibility: hidden;
-  transform: translateX(-50%) translateY(-20px);
+  display: none; /* По умолчанию скрыта */
   transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-  pointer-events: none;
 }
 
 /* Золотой glow эффект */
@@ -140,8 +141,8 @@
 .mega-nav-dropdown.active .mega-panel:not([hidden]) {
   opacity: 1;
   visibility: visible;
-  transform: translateX(-50%) translateY(0);
-  pointer-events: auto;
+  display: block;
+  transform: translateX(-50%);
 }
 
 .mega-nav-dropdown.active .mega-panel::before {
@@ -276,13 +277,28 @@
   }
 
   .mega-panel {
-    min-width: 500px;
-    max-width: 700px;
+    width: min(1000px, 94vw);
     padding: 1.5rem;
   }
 
   .mega-panel-grid {
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  }
+}
+
+/* ========== Адаптив для планшетов (полноширинная панель) ========== */
+@media (max-width: 1024px) {
+  /* Мегапанель на всю ширину, без translate */
+  .mega-panel {
+    left: 0;
+    transform: none;
+    inset-inline: 0;
+    width: 100%;
+    border-radius: 0 0 14px 14px;
+  }
+  
+  .mega-nav-dropdown.active .mega-panel:not([hidden]) {
+    transform: none;
   }
 }
 

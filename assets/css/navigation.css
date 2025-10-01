@@ -22,10 +22,18 @@
   padding-block: 0.75rem;
 }
 
+/* ========== Обёртка для правильного якоря ========== */
+.nav-wrapper {
+  position: relative;
+  max-width: 1200px;
+  margin-inline: auto;
+  padding-inline: 16px;
+}
+
 .navbar-inner {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Прижимаем к левому краю */
+  justify-content: space-between; /* Логотип слева, меню справа */
   gap: clamp(1rem, 2vw, 2rem);
   padding-block: 1rem;
   width: 100%;
@@ -33,12 +41,12 @@
 
 .logo-wrapper {
   flex-shrink: 0;
-  /* margin-right: auto; - удалено, больше не отталкивает меню */
+  /* НЕТ margin-right: auto - не отталкиваем меню */
 }
 
 .nav-cta-wrapper {
   flex-shrink: 0;
-  margin-left: auto; /* ✅ CTA теперь прижимается к правому краю */
+  margin-left: auto; /* CTA прижимается к правому краю */
 }
 
 .nav-links {
