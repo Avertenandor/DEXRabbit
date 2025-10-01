@@ -402,6 +402,37 @@
       mobileToggle.setAttribute('aria-expanded', isOpen);
     });
     
+    // ========== DESKTOP HOVER DROPDOWN ==========
+    const navItems = nav.querySelectorAll('.nav-v2__item');
+    
+    navItems.forEach(item => {
+      const link = item.querySelector('.nav-v2__link');
+      const dropdown = item.querySelector('.nav-v2__dropdown');
+      
+      if (!dropdown || !link) return;
+      
+      // Hover для desktop
+      if (window.matchMedia('(hover: hover)').matches) {
+        let hoverTimeout;
+        
+        const showDropdown = () => {
+          clearTimeout(hoverTimeout);
+          link.setAttribute('aria-expanded', 'true');
+        };
+        
+        const hideDropdown = () => {
+          hoverTimeout = setTimeout(() => {
+            link.setAttribute('aria-expanded', 'false');
+          }, 200);
+        };
+        
+        item.addEventListener('mouseenter', showDropdown);
+        item.addEventListener('mouseleave', hideDropdown);
+        dropdown.addEventListener('mouseenter', () => clearTimeout(hoverTimeout));
+        dropdown.addEventListener('mouseleave', hideDropdown);
+      }
+    });
+    
     // Dropdown для mobile (только на клик)
     const dropdownButtons = nav.querySelectorAll('.nav-v2__link[aria-haspopup]');
     
