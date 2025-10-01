@@ -545,4 +545,19 @@ if (document.readyState === 'loading') {
   }, 100);
 }
 
+// ========== ФИНАЛЬНЫЙ ФИКС: ВЫНОС ПАНЕЛЕЙ ИЗ НАВИГАЦИИ ==========
+(function () {
+  var WRAPPER = document.querySelector('.nav-wrapper');
+  var NAVBOX  = document.querySelector('.mega-nav-container');
+  if (!WRAPPER || !NAVBOX) return;
+
+  // один раз вынести всё, что умудрилось оказаться внутри навигации
+  NAVBOX.querySelectorAll('.mega-panel').forEach(function (p) { WRAPPER.appendChild(p); });
+
+  // на будущее: если кто-то опять подсунет панели в NAVBOX — тут же вытянуть назад
+  new MutationObserver(function () {
+    NAVBOX.querySelectorAll('.mega-panel').forEach(function (p) { WRAPPER.appendChild(p); });
+  }).observe(NAVBOX, {childList:true, subtree:true});
+})();
+
 console.log('✅ navigation-data.js v3.0 (Mega Menu) загружен');

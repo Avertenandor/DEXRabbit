@@ -225,8 +225,7 @@
   opacity: 1;
   visibility: visible;
   display: block;
-  transform: translateX(-50%) translateY(0) scale(1);
-  /* ✅ УЛУЧШЕНО: плавная анимация появления */
+  /* ✅ УДАЛЕНО: transform - управляется nav-fix.css */
 }
 
 .mega-nav-dropdown.active .mega-panel::before {
@@ -453,11 +452,11 @@
 @keyframes fadeInUp {
   from {
     opacity: 0;
-    transform: translateX(-50%) translateY(-20px);
+    transform: translateY(-20px);
   }
   to {
     opacity: 1;
-    transform: translateX(-50%) translateY(0);
+    transform: translateY(0);
   }
 }
 
@@ -470,11 +469,11 @@ html {
 @keyframes slideInFromTop {
   from {
     opacity: 0;
-    transform: translateX(-50%) translateY(-30px) scale(0.9);
+    transform: translateY(-30px) scale(0.9);
   }
   to {
     opacity: 1;
-    transform: translateX(-50%) translateY(0) scale(1);
+    transform: translateY(0) scale(1);
   }
 }
 
