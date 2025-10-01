@@ -181,7 +181,7 @@ window.DEXRabbitNav = {
   },
 
   /**
-   * Генерирует HTML для мега-меню
+   * Генерирует HTML для мега-меню (только триггеры)
    */
   renderMegaMenu() {
     const currentPath = window.location.pathname;
@@ -200,49 +200,61 @@ window.DEXRabbitNav = {
           `;
         }
 
-        // Иначе это категория с подразделами
+        // Иначе это категория с подразделами - ТОЛЬКО ТРИГГЕР
         return `
-          <div class="mega-nav-item mega-nav-dropdown" data-category="${category.category}">
+          <div class="mega-nav-item">
             <button 
-              class="mega-nav-link" 
+              class="mega-trigger" 
+              data-target="#mega-panel-${category.category}"
               aria-haspopup="true" 
               aria-expanded="false"
-              aria-controls="mega-panel-${category.category}"
             >
               ${category.icon} ${category.title}
               <span class="mega-arrow">▾</span>
             </button>
-            <div 
-              class="mega-panel" 
-              id="mega-panel-${category.category}"
-              role="menu"
-              hidden
-            >
-              <div class="mega-panel-content">
-                <div class="mega-panel-grid">
-                  ${category.items
-                    .map(
-                      item => `
-                    <a 
-                      href="${item.href}" 
-                      class="mega-panel-item" 
-                      role="menuitem"
-                    >
-                      <span class="mega-item-icon">${item.icon}</span>
-                      <div class="mega-item-content">
-                        <span class="mega-item-title">${item.title}</span>
-                        <span class="mega-item-desc">${item.description}</span>
-                      </div>
-                    </a>
-                  `
-                    )
-                    .join('')}
-                </div>
-              </div>
-            </div>
           </div>
         `;
       })
+      .join('');
+  },
+
+  /**
+   * Генерирует HTML для панелей (отдельно от триггеров)
+   */
+  renderMegaPanels() {
+    return this.megaMenu
+      .filter(category => !category.single) // Только категории с подразделами
+      .map(category => `
+        <div 
+          class="mega-panel" 
+          id="mega-panel-${category.category}"
+          role="menu"
+          aria-hidden="true"
+          style="display: none;"
+        >
+          <div class="mega-panel-content">
+            <div class="mega-panel-grid">
+              ${category.items
+                .map(
+                  item => `
+                <a 
+                  href="${item.href}" 
+                  class="mega-panel-item" 
+                  role="menuitem"
+                >
+                  <span class="mega-item-icon">${item.icon}</span>
+                  <div class="mega-item-content">
+                    <span class="mega-item-title">${item.title}</span>
+                    <span class="mega-item-desc">${item.description}</span>
+                  </div>
+                </a>
+              `
+                )
+                .join('')}
+            </div>
+          </div>
+        </div>
+      `)
       .join('');
   },
 
@@ -267,13 +279,22 @@ window.DEXRabbitNav = {
     console.log('🚀 Инициализация DEXRabbitNav Mega Menu...');
 
     const navContainer = document.querySelector('.mega-nav-container');
+    const navWrapper = document.querySelector('.nav-wrapper');
 
     if (navContainer) {
+      // 1) Рендерим только триггеры в навигацию
       navContainer.innerHTML = this.renderMegaMenu();
-      console.log('✅ Мега-меню создано');
-      this.initMegaMenuInteractions();
+      console.log('✅ Триггеры мега-меню созданы');
     } else {
       console.warn('⚠️ Контейнер .mega-nav-container не найден');
+    }
+
+    if (navWrapper) {
+      // 2) Рендерим панели СРАЗУ в .nav-wrapper
+      navWrapper.insertAdjacentHTML('beforeend', this.renderMegaPanels());
+      console.log('✅ Панели мега-меню созданы в .nav-wrapper');
+    } else {
+      console.warn('⚠️ Контейнер .nav-wrapper не найден');
     }
 
     // Обновляем CTA кнопку
@@ -282,127 +303,69 @@ window.DEXRabbitNav = {
       ctaContainer.innerHTML = this.renderCTA();
       console.log('✅ CTA кнопка добавлена');
     }
+
+    // Инициализируем интерактивность
+    this.initMegaMenuInteractions();
   },
 
   /**
    * Инициализирует интерактивность мега-меню
    */
   initMegaMenuInteractions() {
-    const dropdowns = document.querySelectorAll('.mega-nav-dropdown');
-
-    dropdowns.forEach(dropdown => {
-      const button = dropdown.querySelector('.mega-nav-link');
-      const panel = dropdown.querySelector('.mega-panel');
-      let closeTimeout;
-
-      // Функции управления
-      const open = () => {
-        clearTimeout(closeTimeout);
-        dropdown.classList.add('active');
-        button.setAttribute('aria-expanded', 'true');
-        panel.removeAttribute('hidden');
-      };
-
-      const close = () => {
-        dropdown.classList.remove('active');
-        button.setAttribute('aria-expanded', 'false');
-        panel.setAttribute('hidden', '');
-      };
-
-      const delayedClose = () => {
-        closeTimeout = setTimeout(close, 200);
-      };
-
-      // Desktop hover
-      if (window.matchMedia('(hover: hover)').matches) {
-        dropdown.addEventListener('mouseenter', open);
-        dropdown.addEventListener('mouseleave', delayedClose);
-      }
-
-      // Click для всех устройств
-      button.addEventListener('click', e => {
-        e.preventDefault();
-        const isOpen = button.getAttribute('aria-expanded') === 'true';
-        if (isOpen) {
-          close();
-        } else {
-          // Закрываем другие панели
-          document.querySelectorAll('.mega-nav-dropdown.active').forEach(other => {
-            if (other !== dropdown) {
-              const otherBtn = other.querySelector('.mega-nav-link');
-              const otherPanel = other.querySelector('.mega-panel');
-              other.classList.remove('active');
-              otherBtn.setAttribute('aria-expanded', 'false');
-              otherPanel.setAttribute('hidden', '');
-            }
-          });
-          open();
-        }
-      });
-
-      // Закрытие при клике вне
-      document.addEventListener('click', e => {
-        if (!dropdown.contains(e.target)) {
-          close();
-        }
-      });
-
-      // Keyboard navigation
-      button.addEventListener('keydown', e => {
-        if (e.key === 'Enter' || e.key === ' ') {
-          e.preventDefault();
-          const isOpen = button.getAttribute('aria-expanded') === 'true';
-          if (isOpen) {
-            close();
-          } else {
-            open();
-            // Фокус на первом элементе
-            const firstItem = panel.querySelector('.mega-panel-item');
-            if (firstItem) firstItem.focus();
-          }
-        } else if (e.key === 'Escape') {
-          close();
-          button.focus();
-        }
-      });
-    });
-
-    console.log('✅ Интерактивность мега-меню настроена');
-    
-    // ✅ КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ: Перемещаем панели в .nav-wrapper
-    this.fixMegaPanelPositioning();
-  },
-
-  /**
-   * Исправляет позиционирование мега-панелей
-   */
-  fixMegaPanelPositioning() {
     const WRAPPER = document.querySelector('.nav-wrapper');
     if (!WRAPPER) {
       console.warn('⚠️ .nav-wrapper не найден');
       return;
     }
 
-    // 1) Вытащить панели из .mega-nav-container и переместить в .nav-wrapper
-    document.querySelectorAll('.mega-nav-container .mega-panel').forEach(panel => {
-      WRAPPER.appendChild(panel);
-      console.log('✅ Панель перемещена в .nav-wrapper');
-    });
-
-    // 2) Страховка от «повторной сборки» меню где-то ещё
-    const observer = new MutationObserver(() => {
-      document.querySelectorAll('.mega-nav-container .mega-panel').forEach(panel => {
-        WRAPPER.appendChild(panel);
-        console.log('🔄 Панель повторно перемещена в .nav-wrapper');
-      });
-    });
-    
+    // 1) ВЫРЕЗАЕМ ПАНЕЛИ ИЗ НАВИГАЦИИ (если там остались) И ПЕРЕНОСИМ В WRAPPER
     const navContainer = document.querySelector('.mega-nav-container');
     if (navContainer) {
-      observer.observe(navContainer, { childList: true, subtree: true });
+      navContainer.querySelectorAll('.mega-panel').forEach(panel => {
+        WRAPPER.appendChild(panel);
+        console.log('✅ Панель перемещена из навигации в .nav-wrapper');
+      });
     }
-    
-    console.log('✅ Система мониторинга панелей активирована');
+
+    // 2) СВЯЗЫВАЕМ ТРИГГЕРЫ С ПАНЕЛЯМИ ПО data-target
+    WRAPPER.addEventListener('click', (e) => {
+      const trigger = e.target.closest('.mega-trigger');
+      if (!trigger) return;
+      
+      const targetId = trigger.getAttribute('data-target');
+      const panel = targetId ? document.querySelector(targetId) : null;
+      if (!panel) return;
+
+      // Закрыть все панели
+      WRAPPER.querySelectorAll('.mega-panel[aria-hidden="false"]').forEach(p => {
+        p.setAttribute('aria-hidden', 'true');
+        p.style.display = 'none';
+      });
+
+      // Открыть нужную панель
+      panel.style.display = 'block';
+      panel.setAttribute('aria-hidden', 'false');
+      trigger.setAttribute('aria-expanded', 'true');
+      
+      console.log('✅ Панель открыта:', targetId);
+    });
+
+    // 3) Клик вне — закрыть все
+    document.addEventListener('click', (e) => {
+      if (e.target.closest('.mega-trigger') || e.target.closest('.mega-panel')) return;
+      
+      WRAPPER.querySelectorAll('.mega-panel').forEach(panel => {
+        panel.setAttribute('aria-hidden', 'true');
+        panel.style.display = 'none';
+      });
+      
+      // Сбросить состояние триггеров
+      document.querySelectorAll('.mega-trigger').forEach(trigger => {
+        trigger.setAttribute('aria-expanded', 'false');
+      });
+    });
+
+    console.log('✅ Интерактивность мега-меню настроена (новая система)');
   },
 };
 

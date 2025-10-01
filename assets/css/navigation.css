@@ -203,7 +203,7 @@
 /* Индикатор внешней ссылки */
 .nav-dropdown-content a[target='_blank']::after {
   content: '↗';
-  margin-left: auto;
+  /* ✅ УДАЛЕНО: margin-left: auto - не нужен для иконки */
   opacity: 0.5;
   font-size: 0.8em;
 }

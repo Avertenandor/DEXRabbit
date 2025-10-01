@@ -279,23 +279,7 @@
 }
 
 /* ========== Адаптив для планшетов (полноширинная панель) ========== */
-@media (max-width: 1024px) {
-  /* Мегапанель на всю ширину, без translate */
-  .mega-panel {
-    position: absolute; /* Возврат к absolute для планшетов */
-    top: 100%; /* Относительно navbar-inner */
-    left: 0;
-    transform: none;
-    inset-inline: 0;
-    width: 100%;
-    border-radius: 0 0 14px 14px;
-    max-height: 80vh;
-  }
-  
-  .mega-nav-dropdown.active .mega-panel:not([hidden]) {
-    transform: none; /* ✅ Явно убираем transform для планшетов */
-  }
-}
+/* ✅ УДАЛЕНО: позиционирование панели - теперь управляется nav-fix.css */
 
 /* ========== Адаптив для мобильных ========== */
 @media (max-width: 900px) {
@@ -338,10 +322,7 @@
   }
 
   .mega-panel {
-    position: static;
-    transform: none;
-    min-width: auto;
-    max-width: none;
+    /* ✅ УДАЛЕНО: позиционирование - управляется nav-fix.css */
     margin-top: 0.5rem;
     padding: 1rem;
     box-shadow: none;
@@ -357,7 +338,7 @@
     display: block;
     opacity: 1;
     visibility: visible;
-    transform: none;
+    /* ✅ УДАЛЕНО: transform - управляется nav-fix.css */
   }
 
   .mega-panel-grid {
