@@ -57,6 +57,8 @@
     <link rel="stylesheet" href="/assets/css/navigation.css?v=20251001-fix" />
     <!-- Mega Menu Styles -->
     <link rel="stylesheet" href="/assets/css/mega-menu.css?v=20251001-fix" />
+    <!-- Navigation Fix Styles -->
+    <link rel="stylesheet" href="/assets/css/nav-fix.css?v=20251001-final" />
     <!-- Investor Cards Styles -->
     <link rel="stylesheet" href="/assets/css/investor-cards.css" />
     <!-- Copy Button Styles -->
@@ -83,7 +85,7 @@
     <!-- Navigation with Mega Menu -->
     <nav class="navbar" role="navigation">
       <div class="container">
-        <div class="navbar-inner">
+        <div class="navbar-inner nav-wrapper">
           <!-- Logo Section -->
           <div class="logo-wrapper">
             <a href="/" class="site-logo">
@@ -129,6 +131,39 @@
           if (megaNav && megaNav.classList.contains('open')) {
             megaNav.classList.remove('open');
           }
+        }
+      });
+
+      // ✅ ИСПРАВЛЕНИЕ: Правильная логика мега-панели
+      document.addEventListener('DOMContentLoaded', function() {
+        const trigger = document.querySelector('.mega-trigger');
+        const panel = document.querySelector('.mega-panel');
+        
+        if (trigger && panel) {
+          trigger.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+            
+            const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+            trigger.setAttribute('aria-expanded', String(!isOpen));
+            
+            // Переключаем класс active на dropdown
+            const dropdown = trigger.closest('.mega-nav-dropdown');
+            if (dropdown) {
+              dropdown.classList.toggle('active');
+            }
+          });
+
+          // Закрытие при клике вне панели
+          document.addEventListener('click', (e) => {
+            if (!panel.contains(e.target) && !trigger.contains(e.target)) {
+              trigger.setAttribute('aria-expanded', 'false');
+              const dropdown = trigger.closest('.mega-nav-dropdown');
+              if (dropdown) {
+                dropdown.classList.remove('active');
+              }
+            }
+          });
         }
       });
     </script>
