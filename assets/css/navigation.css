@@ -377,3 +377,17 @@
     display: none !important;
   }
 }
+
+/* ========== Performance Optimizations ========== */
+/* Touch action оптимизация для быстрого отклика */
+.burger, 
+.more-btn,
+.mobile-nav-toggle,
+.nav-dropdown-toggle {
+  touch-action: manipulation;
+}
+
+/* Предотвращение чрезмерной прокрутки */
+body {
+  overscroll-behavior: contain;
+}

@@ -1,0 +1,95 @@
+<!-- ИСПРАВЛЕННЫЙ БЛОК ДЛЯ ЗАМЕНЫ В INDEX.HTML -->
+<!-- Investment Process Flow Chart - Исправленная версия без ошибок SVG -->
+
+<div class="investment-flow-chart">
+  <div class="flow-container">
+    <!-- Step 1 -->
+    <div class="flow-box flow-box-1" data-step="1">
+      <div class="flow-icon">💰</div>
+      <div class="flow-text">Инвестор<br />выбрал и<br />купил<br />кроликов</div>
+      <div class="flow-glow"></div>
+    </div>
+
+    <!-- Arrow 1 - ИСПРАВЛЕНО -->
+    <div class="flow-arrow arrow-1">
+      <svg width="60" height="40" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrowhead1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#4ade80" />
+          </marker>
+        </defs>
+        <path d="M 5 20 L 55 20" stroke="#4ade80" stroke-width="2" fill="none" marker-end="url(#arrowhead1)" class="arrow-path" />
+      </svg>
+    </div>
+
+    <!-- Step 2 -->
+    <div class="flow-box flow-box-2" data-step="2">
+      <div class="flow-icon">🐰</div>
+      <div class="flow-text">Купленные<br />кролики<br />производят<br />потомство</div>
+      <div class="flow-glow"></div>
+    </div>
+
+    <!-- Arrow 2 - ИСПРАВЛЕНО -->
+    <div class="flow-arrow arrow-2">
+      <svg width="60" height="40" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#4ade80" />
+          </marker>
+        </defs>
+        <path d="M 5 20 L 55 20" stroke="#4ade80" stroke-width="2" fill="none" marker-end="url(#arrowhead2)" class="arrow-path" />
+      </svg>
+    </div>
+
+    <!-- Step 3 -->
+    <div class="flow-box flow-box-3" data-step="3">
+      <div class="flow-icon">📈</div>
+      <div class="flow-text">Потомство<br />подрастает и<br />продаётся</div>
+      <div class="flow-glow"></div>
+    </div>
+
+    <!-- Arrow 3 - ИСПРАВЛЕНО -->
+    <div class="flow-arrow arrow-3">
+      <svg width="60" height="40" viewBox="0 0 60 40" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+          <marker id="arrowhead3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+            <polygon points="0 0, 10 3.5, 0 7" fill="#4ade80" />
+          </marker>
+        </defs>
+        <path d="M 5 20 L 55 20" stroke="#4ade80" stroke-width="2" fill="none" marker-end="url(#arrowhead3)" class="arrow-path" />
+      </svg>
+    </div>
+
+    <!-- Step 4 -->
+    <div class="flow-box flow-box-4" data-step="4">
+      <div class="flow-icon">💵</div>
+      <div class="flow-text">Инвестор<br />получает<br />прибыль в<br />USDT</div>
+      <div class="flow-glow"></div>
+    </div>
+
+    <!-- Central Bonus Box -->
+    <div class="flow-box-center">
+      <div class="center-icon">🪙</div>
+      <div class="center-text">
+        <strong>Пока растёт потомство</strong> инвестор<br />
+        получает прибыль в монете <span class="highlight-plex">PLEX</span><br />
+        дополнительно к своему основному доходу<br />
+        как <span class="highlight-bonus">приятный бонус</span>
+      </div>
+      <div class="center-glow"></div>
+    </div>
+  </div>
+</div>
+
+<!-- 
+ИНСТРУКЦИЯ ПО ЗАМЕНЕ:
+1. Найти в index.html секцию "Investment Process Flow Chart"
+2. Заменить весь блок <div class="investment-flow-chart"> на этот код
+3. Проверить, что в <style> секции есть все CSS стили для flow-chart
+4. Сохранить и протестировать
+
+ИСПРАВЛЕНО:
+- Все SVG теперь имеют правильный viewBox="0 0 60 40"
+- Добавлен xmlns="http://www.w3.org/2000/svg" для валидности
+- Удалены проблемные шаблонные переменные
+-->
