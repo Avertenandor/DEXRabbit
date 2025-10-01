@@ -14,6 +14,10 @@
   padding-block: 2rem !important; /* ✅ УВЕЛИЧЕНО: высота контейнера в 2 раза */
   min-height: 80px !important; /* ✅ Минимальная высота контейнера */
   gap: 2rem !important; /* ✅ Уменьшаем разрыв между логотипом и меню */
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)) !important; /* ✅ ТЕМНЫЙ ФОН НА ВСЮ ПАНЕЛЬ */
+  border-radius: 16px !important; /* ✅ Скругленные края */
+  backdrop-filter: blur(10px) !important; /* ✅ Эффект размытия */
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important; /* ✅ Тень */
 }
 
 /* ========== ИСПРАВЛЕНИЕ РАСПОЛОЖЕНИЯ ЭЛЕМЕНТОВ ========== */
