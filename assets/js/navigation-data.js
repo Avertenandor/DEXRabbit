@@ -326,45 +326,127 @@ window.DEXRabbitNav = {
       });
     }
 
-    // 2) СВЯЗЫВАЕМ ТРИГГЕРЫ С ПАНЕЛЯМИ ПО data-target
-    WRAPPER.addEventListener('click', (e) => {
-      const trigger = e.target.closest('.mega-trigger');
-      if (!trigger) return;
-      
-      const targetId = trigger.getAttribute('data-target');
-      const panel = targetId ? document.querySelector(targetId) : null;
-      if (!panel) return;
+    // 2) УЛУЧШЕННАЯ HOVER-ФУНКЦИОНАЛЬНОСТЬ
+    const triggers = WRAPPER.querySelectorAll('.mega-trigger');
+    let hoverTimeout;
+    let isHovering = false;
 
-      // Закрыть все панели
-      WRAPPER.querySelectorAll('.mega-panel[aria-hidden="false"]').forEach(p => {
-        p.setAttribute('aria-hidden', 'true');
-        p.style.display = 'none';
+    // Функции управления
+    const closeAllPanels = () => {
+      WRAPPER.querySelectorAll('.mega-panel').forEach(panel => {
+        panel.setAttribute('aria-hidden', 'true');
+        panel.style.display = 'none';
+        panel.classList.remove('active');
       });
+      triggers.forEach(trigger => {
+        trigger.setAttribute('aria-expanded', 'false');
+        trigger.classList.remove('active');
+      });
+    };
 
+    const openPanel = (trigger, panel) => {
+      clearTimeout(hoverTimeout);
+      closeAllPanels();
+      
       // Открыть нужную панель
       panel.style.display = 'block';
       panel.setAttribute('aria-hidden', 'false');
+      panel.classList.add('active');
       trigger.setAttribute('aria-expanded', 'true');
+      trigger.classList.add('active');
       
-      console.log('✅ Панель открыта:', targetId);
+      console.log('✅ Панель открыта:', trigger.textContent.trim());
+    };
+
+    const closePanel = (trigger, panel) => {
+      if (!isHovering) {
+        hoverTimeout = setTimeout(() => {
+          panel.setAttribute('aria-hidden', 'true');
+          panel.style.display = 'none';
+          panel.classList.remove('active');
+          trigger.setAttribute('aria-expanded', 'false');
+          trigger.classList.remove('active');
+        }, 150); // Уменьшена задержка для лучшего UX
+      }
+    };
+
+    // Настройка для каждого триггера
+    triggers.forEach(trigger => {
+      const targetId = trigger.getAttribute('data-target');
+      const panel = targetId ? document.querySelector(targetId) : null;
+      
+      if (!panel) return;
+
+      // Desktop hover - улучшенная логика
+      if (window.matchMedia('(hover: hover)').matches) {
+        trigger.addEventListener('mouseenter', () => {
+          isHovering = true;
+          clearTimeout(hoverTimeout);
+          openPanel(trigger, panel);
+        });
+
+        trigger.addEventListener('mouseleave', () => {
+          isHovering = false;
+          closePanel(trigger, panel);
+        });
+        
+        // Hover на панель - не закрывать
+        panel.addEventListener('mouseenter', () => {
+          isHovering = true;
+          clearTimeout(hoverTimeout);
+        });
+        
+        panel.addEventListener('mouseleave', () => {
+          isHovering = false;
+          closePanel(trigger, panel);
+        });
+      }
+
+      // Click для всех устройств
+      trigger.addEventListener('click', (e) => {
+        e.preventDefault();
+        const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+        if (isOpen) {
+          closeAllPanels();
+        } else {
+          openPanel(trigger, panel);
+        }
+      });
+
+      // Keyboard navigation
+      trigger.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault();
+          const isOpen = trigger.getAttribute('aria-expanded') === 'true';
+          if (isOpen) {
+            closeAllPanels();
+          } else {
+            openPanel(trigger, panel);
+            // Фокус на первом элементе панели
+            const firstItem = panel.querySelector('.mega-panel-item');
+            if (firstItem) firstItem.focus();
+          }
+        } else if (e.key === 'Escape') {
+          closeAllPanels();
+          trigger.focus();
+        }
+      });
     });
 
     // 3) Клик вне — закрыть все
     document.addEventListener('click', (e) => {
       if (e.target.closest('.mega-trigger') || e.target.closest('.mega-panel')) return;
-      
-      WRAPPER.querySelectorAll('.mega-panel').forEach(panel => {
-        panel.setAttribute('aria-hidden', 'true');
-        panel.style.display = 'none';
-      });
-      
-      // Сбросить состояние триггеров
-      document.querySelectorAll('.mega-trigger').forEach(trigger => {
-        trigger.setAttribute('aria-expanded', 'false');
-      });
+      closeAllPanels();
     });
 
-    console.log('✅ Интерактивность мега-меню настроена (новая система)');
+    // 4) Закрытие при нажатии Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeAllPanels();
+      }
+    });
+
+    console.log('✅ Улучшенная интерактивность мега-меню настроена');
   },
 };
 
