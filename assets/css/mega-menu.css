@@ -88,12 +88,12 @@
 /* ========== Мега-панель (выпадающее меню) ========== */
 .mega-panel {
   /* ✅ ИСПРАВЛЕНО: Центрирование относительно viewport с fixed */
-  position: fixed;
-  top: 70px; /* Высота navbar */
-  left: 50%;
-  transform: translateX(-50%);
-  width: min(1100px, 96vw);
-  max-height: calc(80vh - 70px);
+  position: fixed !important;
+  top: 70px !important; /* Высота navbar */
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: min(1100px, 96vw) !important;
+  max-height: calc(80vh - 70px) !important;
   overflow: auto;
   background: linear-gradient(
     135deg,
