@@ -1,0 +1,182 @@
+/**
+ * DEXRabbit - Стили для кнопок копирования адресов контрактов
+ * Версия 1.0
+ */
+
+/* ========== Кнопка копирования ========== */
+.copy-contract-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem 1rem;
+  background: linear-gradient(135deg, rgba(124, 140, 255, 0.15), rgba(76, 201, 240, 0.15));
+  border: 1px solid rgba(124, 140, 255, 0.3);
+  border-radius: 8px;
+  color: var(--color-text, #e0e0e0);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  white-space: nowrap;
+  text-decoration: none;
+  font-family: inherit;
+}
+
+.copy-contract-btn:hover {
+  background: linear-gradient(135deg, rgba(124, 140, 255, 0.25), rgba(76, 201, 240, 0.25));
+  border-color: rgba(124, 140, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(124, 140, 255, 0.3);
+}
+
+.copy-contract-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 6px rgba(124, 140, 255, 0.2);
+}
+
+/* Иконка копирования */
+.copy-contract-btn::before {
+  content: '📋';
+  font-size: 1.1em;
+}
+
+/* Состояние после копирования */
+.copy-contract-btn.copied {
+  background: linear-gradient(135deg, rgba(74, 222, 128, 0.2), rgba(34, 197, 94, 0.2));
+  border-color: rgba(74, 222, 128, 0.5);
+}
+
+.copy-contract-btn.copied::before {
+  content: '✓';
+  color: #4ade80;
+}
+
+/* ========== Контейнер с адресом и кнопкой ========== */
+.contract-address-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  margin: 0.5rem 0;
+}
+
+.contract-address-code {
+  font-family: 'Courier New', monospace;
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.2);
+  padding: 0.5rem 0.75rem;
+  border-radius: 6px;
+  border: 1px solid rgba(124, 140, 255, 0.2);
+  color: #4cc9f0;
+  word-break: break-all;
+  flex: 1;
+  min-width: 200px;
+}
+
+/* ========== Уведомление о копировании ========== */
+.copy-notification {
+  position: fixed;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: 600;
+  font-size: 0.9rem;
+  z-index: 10000;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-50%) translateY(-10px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+}
+
+.copy-notification.show {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+.copy-notification.success {
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  color: white;
+}
+
+.copy-notification.error {
+  background: linear-gradient(135deg, #ef4444, #dc2626);
+  color: white;
+}
+
+/* ========== Компактная версия кнопки ========== */
+.copy-contract-btn--compact {
+  padding: 0.35rem 0.75rem;
+  font-size: 0.85rem;
+  gap: 0.35rem;
+}
+
+.copy-contract-btn--compact::before {
+  font-size: 1em;
+}
+
+/* ========== Адаптивность ========== */
+@media (max-width: 768px) {
+  .contract-address-wrapper {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  
+  .contract-address-code {
+    min-width: auto;
+  }
+  
+  .copy-contract-btn {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .copy-notification {
+    left: 50% !important;
+    top: auto !important;
+    bottom: 2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .copy-contract-btn {
+    padding: 0.6rem 1rem;
+    font-size: 0.85rem;
+  }
+  
+  .contract-address-code {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+/* ========== Доступность ========== */
+.copy-contract-btn:focus {
+  outline: 2px solid rgba(124, 140, 255, 0.5);
+  outline-offset: 2px;
+}
+
+.copy-contract-btn:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ========== Темная тема (для совместимости) ========== */
+@media (prefers-color-scheme: dark) {
+  .contract-address-code {
+    background: rgba(0, 0, 0, 0.3);
+  }
+}
+
+/* ========== Анимация пульсации для новых кнопок ========== */
+@keyframes pulse-highlight {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(124, 140, 255, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(124, 140, 255, 0);
+  }
+}
+
+.copy-contract-btn.highlight {
+  animation: pulse-highlight 2s ease-in-out 3;
+}
