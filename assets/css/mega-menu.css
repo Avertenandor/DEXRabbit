@@ -87,14 +87,7 @@
 
 /* ========== Мега-панель (выпадающее меню) ========== */
 .mega-panel {
-  /* ✅ ИСПРАВЛЕНО: Центрирование относительно viewport с fixed */
-  position: fixed !important;
-  top: 70px !important; /* Высота navbar */
-  left: 50% !important;
-  transform: translateX(-50%) !important;
-  width: min(1100px, 96vw) !important;
-  max-height: calc(80vh - 70px) !important;
-  overflow: auto;
+  /* ✅ УДАЛЕНО: position: fixed - теперь управляется nav-fix.css */
   background: linear-gradient(
     135deg,
     rgba(16, 21, 33, 0.98) 0%,
@@ -103,7 +96,6 @@
   border: 1px solid rgba(124, 140, 255, 0.2);
   border-radius: 16px;
   padding: 2rem;
-  z-index: 1000;
   box-shadow: 
     0 20px 60px rgba(0, 0, 0, 0.5),
     0 0 0 1px rgba(124, 140, 255, 0.1),
@@ -142,7 +134,7 @@
   opacity: 1;
   visibility: visible;
   display: block;
-  transform: translateX(-50%); /* ✅ Явно указываем центрирование */
+  /* ✅ УДАЛЕНО: transform - теперь управляется nav-fix.css */
 }
 
 .mega-nav-dropdown.active .mega-panel::before {

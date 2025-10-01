@@ -1,27 +1,11 @@
-/* ========== ИСПРАВЛЕНИЕ ПОЗИЦИОНИРОВАНИЯ МЕГА-ПАНЕЛИ ========== */
+/* ========== КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ ПОЗИЦИОНИРОВАНИЯ МЕГА-ПАНЕЛИ ========== */
 
 /* Базовый центрирующий контейнер шапки */
-.navbar,
-.navbar .container,
 .nav-wrapper {
-  max-width: 1200px;
-  margin-inline: auto;
-  padding-inline: 16px;
-}
-
-.nav-wrapper {
-  display: flex;
-  align-items: center;
-  justify-content: space-between; /* логотип слева, меню справа */
-  gap: 16px;
-  position: relative; /* якорь для absolute-панели */
-}
-
-.mega-nav-container {
-  display: flex;
-  align-items: center;
-  gap: 20px;
-  /* ВАЖНО: никаких margin-left:auto здесь */
+  position: relative !important;
+  max-width: 1200px !important;
+  margin-inline: auto !important;
+  padding-inline: 16px !important;
 }
 
 /* Мегапанель — строгий центр относительно всей шапки */
@@ -32,11 +16,11 @@
   transform: translateX(-50%) !important;
   width: min(1100px, 96vw) !important;
   max-height: 80vh !important;
-  overflow: auto;
-  border-radius: 16px;
-  box-shadow: 0 20px 60px rgba(0,0,0,.18);
-  z-index: 1000;
-  display: none;
+  overflow: auto !important;
+  border-radius: 16px !important;
+  box-shadow: 0 20px 60px rgba(0,0,0,.18) !important;
+  z-index: 1000 !important;
+  display: none !important;
 }
 
 /* Открытие панели */
@@ -44,17 +28,32 @@
   display: block !important;
   opacity: 1 !important;
   visibility: visible !important;
-  transform: translateX(-50%) !important; /* ✅ Явно указываем центрирование */
+  transform: translateX(-50%) !important;
 }
 
-/* Мобайл — полноширинный режим без translate */
+/* Десктоп — строгое центрирование */
+@media (min-width: 1025px) {
+  .mega-panel {
+    position: absolute !important;
+    top: 100% !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    width: min(1100px, 96vw) !important;
+  }
+  
+  .mega-nav-dropdown.active .mega-panel:not([hidden]) {
+    transform: translateX(-50%) !important;
+  }
+}
+
+/* Планшет и мобайл — полноширинный режим без translate */
 @media (max-width: 1024px) {
   .mega-panel {
     left: 0 !important;
     transform: none !important;
-    inset-inline: 0;
+    inset-inline: 0 !important;
     width: 100% !important;
-    border-radius: 0 0 14px 14px;
+    border-radius: 0 0 14px 14px !important;
   }
   
   .mega-nav-dropdown.active .mega-panel:not([hidden]) {
@@ -64,24 +63,6 @@
 
 /* Убираем все конфликтующие правила */
 .mega-nav-container {
-  /* Убираем любые margin-left:auto */
   margin-left: 0 !important;
-}
-
-/* Убираем justify-content:flex-end на любых брейкпоинтах */
-@media (min-width: 1025px) {
-  .mega-nav-container {
-    justify-content: flex-start !important;
-  }
-}
-
-/* Принудительное центрирование для всех экранов */
-@media (min-width: 1025px) {
-  .mega-panel {
-    position: absolute !important;
-    top: 100% !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    width: min(1100px, 96vw) !important;
-  }
+  justify-content: flex-start !important;
 }

@@ -368,6 +368,41 @@ window.DEXRabbitNav = {
     });
 
     console.log('✅ Интерактивность мега-меню настроена');
+    
+    // ✅ КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ: Перемещаем панели в .nav-wrapper
+    this.fixMegaPanelPositioning();
+  },
+
+  /**
+   * Исправляет позиционирование мега-панелей
+   */
+  fixMegaPanelPositioning() {
+    const WRAPPER = document.querySelector('.nav-wrapper');
+    if (!WRAPPER) {
+      console.warn('⚠️ .nav-wrapper не найден');
+      return;
+    }
+
+    // 1) Вытащить панели из .mega-nav-container и переместить в .nav-wrapper
+    document.querySelectorAll('.mega-nav-container .mega-panel').forEach(panel => {
+      WRAPPER.appendChild(panel);
+      console.log('✅ Панель перемещена в .nav-wrapper');
+    });
+
+    // 2) Страховка от «повторной сборки» меню где-то ещё
+    const observer = new MutationObserver(() => {
+      document.querySelectorAll('.mega-nav-container .mega-panel').forEach(panel => {
+        WRAPPER.appendChild(panel);
+        console.log('🔄 Панель повторно перемещена в .nav-wrapper');
+      });
+    });
+    
+    const navContainer = document.querySelector('.mega-nav-container');
+    if (navContainer) {
+      observer.observe(navContainer, { childList: true, subtree: true });
+    }
+    
+    console.log('✅ Система мониторинга панелей активирована');
   },
 };
 

@@ -47,7 +47,7 @@
 
 .nav-cta-wrapper {
   flex-shrink: 0;
-  margin-left: auto; /* CTA прижимается к правому краю */
+  /* ✅ УДАЛЕНО: margin-left: auto - используем justify-content: space-between */
 }
 
 .nav-links {
@@ -363,6 +363,7 @@
     text-align: center;
     justify-content: center;
     margin-top: 1rem;
+    /* ✅ УДАЛЕНО: margin-left: auto - не нужен в мобильной версии */
   }
 }
 
