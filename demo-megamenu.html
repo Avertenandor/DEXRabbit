@@ -4,11 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DEXRabbit - Демо мега-меню</title>
-    <link rel="stylesheet" href="/assets/css/variables.css">
+        <!-- Navigation V2 - Apple/Amazon Style -->
+    <link rel="stylesheet" href="/assets/css/navigation-v2.css?v=20251001-v2" />
+<link rel="stylesheet" href="/assets/css/variables.css">
     <link rel="stylesheet" href="/assets/css/main.css">
-    <link rel="stylesheet" href="/assets/css/navigation.css">
-    <link rel="stylesheet" href="/assets/css/mega-menu.css">
-    <script defer src="/assets/js/navigation-data.js"></script>
+    
+    
+    
     <style>
         body {
             min-height: 200vh;
@@ -81,38 +83,8 @@
     </style>
 </head>
 <body>
-    <!-- Navigation with Mega Menu -->
-    <nav class="navbar" role="navigation">
-        <div class="container">
-            <div class="navbar-inner">
-                <!-- Logo -->
-                <div class="logo-wrapper">
-                    <a href="/" class="site-logo">
-                        <img src="/favicon.svg" alt="DEXRabbit" width="50" height="50" />
-                        <div class="logo-text">
-                            <span class="logo-title">DEXRabbit</span>
-                            <span class="logo-slogan">Твой пассивный доход на кроликах</span>
-                        </div>
-                    </a>
-                </div>
-
-                <!-- Mega Menu -->
-                <div class="mega-nav-container">
-                    <!-- Генерируется динамически -->
-                </div>
-
-                <!-- CTA Button -->
-                <div class="nav-cta-wrapper">
-                    <!-- Генерируется динамически -->
-                </div>
-
-                <!-- Mobile Toggle -->
-                <button class="mobile-nav-toggle" aria-label="Меню" onclick="toggleMegaMenu()">
-                    ☰
-                </button>
-            </div>
-        </div>
-    </nav>
+    
+    
 
     <!-- Demo Content -->
     <div class="demo-section">
@@ -197,7 +169,9 @@
         </div>
     </div>
 
-    <script>
+        <!-- Navigation V2 Script -->
+    <script defer src="/assets/js/navigation-v2.js?v=20251001-v2"></script>
+<script>
         function toggleMegaMenu() {
             const megaNav = document.querySelector('.mega-nav-container');
             if (megaNav) {

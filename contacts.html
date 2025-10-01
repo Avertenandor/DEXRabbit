@@ -10,12 +10,14 @@
     <meta name="theme-color" content="#4a90e2">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
         <!-- Performance Optimizations - 0 layout thrashing -->
-    <link rel="stylesheet" href="/assets/css/performance.css" />
-    <!-- Unified Navigation Styles -->
-    <link rel="stylesheet" href="/assets/css/navigation.css?v=20251001-fix" />
-    <!-- Mega Menu Styles -->
-    <link rel="stylesheet" href="/assets/css/mega-menu.css?v=20251001-nav-container" />
-    <!-- Navigation Fix Styles -->
+        <!-- Navigation V2 - Apple/Amazon Style -->
+    <link rel="stylesheet" href="/assets/css/navigation-v2.css?v=20251001-v2" />
+<link rel="stylesheet" href="/assets/css/performance.css" />
+    
+    
+    
+    
+    
     <link rel="stylesheet" href="/assets/css/nav-fix.css?v=20251001-nav-fixed" />
     <!-- Investor Cards Styles -->
     <link rel="stylesheet" href="/assets/css/investor-cards.css" />
@@ -29,7 +31,7 @@
     <link rel="stylesheet" href="/assets/css/print.css" />
 </head>
 <body>
-    <!-- Navigation -->
+    
     <header class="navbar" role="navigation">
       <div class="nav-wrapper">
         <!-- Logo Section -->
@@ -46,7 +48,7 @@
           <button class="mobile-nav-toggle burger" aria-label="Меню" data-burger>☰</button>
         </div>
 
-        <!-- Navigation Links -->
+        
         <div class="navbar-inner">
           <div class="nav-links" id="nav-menu" data-menu>
             <!-- Навигация генерируется динамически из navigation-data.js -->
@@ -599,7 +601,9 @@
 
     <link rel="stylesheet" href="/assets/css/footer.css">
 
-    <script src="/scripts/analytics.js"></script>
+        <!-- Navigation V2 Script -->
+    <script defer src="/assets/js/navigation-v2.js?v=20251001-v2"></script>
+<script src="/scripts/analytics.js"></script>
     <script>
         // Обработка формы обратной связи
         document.getElementById('contact-form').addEventListener('submit', async (e) => {

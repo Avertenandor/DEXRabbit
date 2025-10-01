@@ -53,14 +53,8 @@
     <link rel="stylesheet" href="/assets/css/responsive-extreme.css" />
     <!-- Performance Optimizations - 0 layout thrashing -->
     <link rel="stylesheet" href="/assets/css/performance.css" />
-    <!-- Unified Navigation Styles -->
-    <link rel="stylesheet" href="/assets/css/navigation.css?v=20251001-fix" />
-    <!-- Mega Menu Styles -->
-    <link rel="stylesheet" href="/assets/css/mega-menu.css?v=20251001-no-wiggle" />
-    <!-- Navigation Refactor Styles -->
-    <link rel="stylesheet" href="/assets/css/nav-refactor.css?v=20251001-stable" />
-    <!-- Click-Only Navigation -->
-    <link rel="stylesheet" href="/assets/css/mega-menu-click-only.css?v=20251001-click-fixed" />
+    <!-- Navigation V2 - Apple/Amazon Style -->
+    <link rel="stylesheet" href="/assets/css/navigation-v2.css?v=20251001-v2" />
     <!-- Investor Cards Styles -->
     <link rel="stylesheet" href="/assets/css/investor-cards.css" />
     <!-- Copy Button Styles -->
@@ -68,12 +62,8 @@
     <!-- Copy Contract Styles -->
     <link rel="stylesheet" href="/assets/css/copy-contract.css" />
 
-    <!-- Unified Navigation Data -->
-    <script defer src="/assets/js/navigation-data.js?v=2.0"></script>
-    <!-- Click-Only Navigation -->
-    <script defer src="/assets/js/mega-menu-click-only.js?v=20251001-click-fixed"></script>
-    <!-- Mobile Navigation Script -->
-    <script defer src="/assets/js/nav.js?v=20250930"></script>
+    <!-- Navigation V2 Script -->
+    <script defer src="/assets/js/navigation-v2.js?v=20251001-v2"></script>
     <!-- Ultra-Optimized Responsive Utilities - 0 forced reflow -->
     <script defer src="/assets/js/responsive-utils-optimized.js?v=3.0"></script>
     <!-- Avatar Modal Script -->
@@ -86,38 +76,8 @@
     <script defer src="/assets/js/copy-contract.js"></script>
   </head>
   <body>
-    <!-- Navigation with Mega Menu -->
-    <nav class="navbar" role="navigation">
-      <div class="container">
-        <div class="navbar-inner nav-wrapper">
-          <!-- Logo Section -->
-          <div class="logo-wrapper">
-            <a href="/" class="site-logo">
-              <img src="/favicon.svg" alt="DEXRabbit" width="50" height="50" />
-              <div class="logo-text">
-                <span class="logo-title">DEXRabbit</span>
-                <span class="logo-slogan">Твой пассивный доход на кроликах</span>
-              </div>
-            </a>
-          </div>
-
-          <!-- Mega Menu Navigation -->
-          <div class="mega-nav-container">
-            <!-- Мега-меню генерируется динамически из navigation-data.js -->
-          </div>
-
-          <!-- CTA Button -->
-          <div class="nav-cta-wrapper">
-            <!-- CTA кнопка генерируется динамически -->
-          </div>
-
-          <!-- Mobile Menu Toggle -->
-          <button class="mobile-nav-toggle" aria-label="Меню" onclick="toggleMegaMenu()">
-            ☰
-          </button>
-        </div>
-      </div>
-    </nav>
+    
+    
 
     <script>
       // Функция для мобильного меню
@@ -437,8 +397,6 @@
                 stroke-dashoffset: 100;
                 animation: drawArrow 1s ease-out forwards, fillArrow 4s ease-in-out infinite;
               }
-
-
 
               /* Central Box */
               .flow-box-center {
