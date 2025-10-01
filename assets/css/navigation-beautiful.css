@@ -148,6 +148,18 @@
   position: relative;
 }
 
+/* Невидимый "мостик" между кнопкой и dropdown */
+.nav-beautiful__dropdown-wrapper::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  height: 16px; /* Высота мостика */
+  background: transparent;
+  z-index: 99;
+}
+
 .nav-beautiful__dropdown {
   position: absolute;
   top: calc(100% + 12px);
@@ -164,17 +176,21 @@
   opacity: 0;
   visibility: hidden;
   pointer-events: none;
-  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: opacity 0.25s ease, visibility 0s linear 0.25s, transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translateX(-50%) translateY(-10px) scale(0.98);
   z-index: 100;
   border: 1px solid rgba(124, 140, 255, 0.2);
 }
 
-.nav-beautiful__dropdown-wrapper:hover .nav-beautiful__dropdown {
+/* Открытие dropdown при наведении на wrapper */
+.nav-beautiful__dropdown-wrapper:hover .nav-beautiful__dropdown,
+.nav-beautiful__dropdown-wrapper:focus-within .nav-beautiful__dropdown,
+.nav-beautiful__dropdown-wrapper.is-open .nav-beautiful__dropdown {
   opacity: 1;
   visibility: visible;
   pointer-events: auto;
   transform: translateX(-50%) translateY(0) scale(1);
+  transition: opacity 0.25s ease, visibility 0s linear 0s, transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* Список в dropdown */

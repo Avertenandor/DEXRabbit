@@ -1,5 +1,5 @@
 // ========== КРАСИВАЯ НАВИГАЦИЯ - JAVASCRIPT ========== //
-// Версия: 2025-10-01
+// Версия: 2025-10-01-stable
 
 (function() {
   'use strict';
@@ -25,7 +25,43 @@
       });
     }
 
-    // ========== DROPDOWN ДЛЯ МОБИЛЬНЫХ ========== //
+    // ========== DROPDOWN С ЗАДЕРЖКОЙ (DESKTOP) ========== //
+    if (window.innerWidth > 768) {
+      let closeTimer = null;
+      const CLOSE_DELAY = 300; // 300ms задержка перед закрытием
+
+      dropdownWrappers.forEach(wrapper => {
+        const dropdown = wrapper.querySelector('.nav-beautiful__dropdown');
+        if (!dropdown) return;
+
+        // При входе курсора на wrapper - открыть
+        wrapper.addEventListener('mouseenter', function() {
+          clearTimeout(closeTimer);
+          wrapper.classList.add('is-open');
+        });
+
+        // При выходе курсора - закрыть с задержкой
+        wrapper.addEventListener('mouseleave', function() {
+          closeTimer = setTimeout(function() {
+            wrapper.classList.remove('is-open');
+          }, CLOSE_DELAY);
+        });
+
+        // При входе на dropdown - отменить закрытие
+        dropdown.addEventListener('mouseenter', function() {
+          clearTimeout(closeTimer);
+        });
+
+        // При выходе из dropdown - закрыть с задержкой
+        dropdown.addEventListener('mouseleave', function() {
+          closeTimer = setTimeout(function() {
+            wrapper.classList.remove('is-open');
+          }, CLOSE_DELAY);
+        });
+      });
+    }
+
+    // ========== DROPDOWN ДЛЯ МОБИЛЬНЫХ (CLICK) ========== //
     if (window.innerWidth <= 768) {
       dropdownWrappers.forEach(wrapper => {
         const btn = wrapper.querySelector('.nav-beautiful__btn');
@@ -45,7 +81,7 @@
       });
     }
 
-    console.log('✅ Beautiful Navigation инициализирована');
+    console.log('✅ Beautiful Navigation с задержкой 300ms инициализирована');
   });
 })();
 
