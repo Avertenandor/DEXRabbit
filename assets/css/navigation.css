@@ -26,8 +26,18 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: clamp(1rem, 2vw, 1.75rem);
+  gap: clamp(1rem, 2vw, 2rem);
   padding-block: 1rem;
+  width: 100%;
+}
+
+.logo-wrapper {
+  flex-shrink: 0;
+}
+
+.nav-cta-wrapper {
+  flex-shrink: 0;
+  margin-left: auto;
 }
 
 .nav-links {
@@ -228,6 +238,8 @@
   justify-content: center;
   cursor: pointer;
   transition: all var(--transition-fast);
+  flex-shrink: 0;
+  margin-left: 1rem;
 }
 
 .mobile-nav-toggle:hover,
@@ -268,6 +280,10 @@
 @media (max-width: 900px) {
   .mobile-nav-toggle {
     display: inline-flex;
+  }
+
+  .logo-slogan {
+    display: none;
   }
 
   .nav-links {

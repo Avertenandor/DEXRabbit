@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DEXRabbit - Демо мега-меню</title>
+    <link rel="stylesheet" href="/assets/css/variables.css">
+    <link rel="stylesheet" href="/assets/css/main.css">
+    <link rel="stylesheet" href="/assets/css/navigation.css">
+    <link rel="stylesheet" href="/assets/css/mega-menu.css">
+    <script defer src="/assets/js/navigation-data.js"></script>
+    <style>
+        body {
+            min-height: 200vh;
+            background: linear-gradient(180deg, #0a0e16 0%, #0f1419 100%);
+        }
+        .demo-section {
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+        .demo-title {
+            font-size: 3rem;
+            color: #facc15;
+            margin-bottom: 1rem;
+            text-shadow: 0 0 20px rgba(250, 204, 21, 0.5);
+        }
+        .demo-subtitle {
+            font-size: 1.5rem;
+            color: #b0b0b0;
+            margin-bottom: 3rem;
+        }
+        .demo-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .demo-feature {
+            background: rgba(124, 140, 255, 0.05);
+            border: 1px solid rgba(124, 140, 255, 0.2);
+            border-radius: 12px;
+            padding: 2rem;
+            transition: all 0.3s ease;
+        }
+        .demo-feature:hover {
+            background: rgba(124, 140, 255, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(124, 140, 255, 0.3);
+        }
+        .demo-feature-icon {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+        }
+        .demo-feature-title {
+            font-size: 1.25rem;
+            color: #ffffff;
+            margin-bottom: 0.5rem;
+        }
+        .demo-feature-desc {
+            color: #b0b0b0;
+            line-height: 1.6;
+        }
+        .demo-instructions {
+            background: rgba(250, 204, 21, 0.1);
+            border: 2px solid rgba(250, 204, 21, 0.3);
+            border-radius: 16px;
+            padding: 2rem;
+            margin: 3rem auto;
+            max-width: 800px;
+        }
+        .demo-instructions h3 {
+            color: #facc15;
+            margin-bottom: 1rem;
+        }
+        .demo-instructions ul {
+            text-align: left;
+            line-height: 2;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation with Mega Menu -->
+    <nav class="navbar" role="navigation">
+        <div class="container">
+            <div class="navbar-inner">
+                <!-- Logo -->
+                <div class="logo-wrapper">
+                    <a href="/" class="site-logo">
+                        <img src="/favicon.svg" alt="DEXRabbit" width="50" height="50" />
+                        <div class="logo-text">
+                            <span class="logo-title">DEXRabbit</span>
+                            <span class="logo-slogan">Твой пассивный доход на кроликах</span>
+                        </div>
+                    </a>
+                </div>
+
+                <!-- Mega Menu -->
+                <div class="mega-nav-container">
+                    <!-- Генерируется динамически -->
+                </div>
+
+                <!-- CTA Button -->
+                <div class="nav-cta-wrapper">
+                    <!-- Генерируется динамически -->
+                </div>
+
+                <!-- Mobile Toggle -->
+                <button class="mobile-nav-toggle" aria-label="Меню" onclick="toggleMegaMenu()">
+                    ☰
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Demo Content -->
+    <div class="demo-section">
+        <h1 class="demo-title">🎉 Мега-меню DEXRabbit</h1>
+        <p class="demo-subtitle">Премиальная навигация с фиолетово-золотым дизайном</p>
+
+        <div class="demo-instructions">
+            <h3>📋 Как протестировать:</h3>
+            <ul>
+                <li>✨ Наведите курсор на категории "Инвестиции", "Партнёрство", "Услуги" или "О нас"</li>
+                <li>🖱️ Кликните на категорию - откроется панель с подразделами</li>
+                <li>👆 На мобильных - нажмите бургер-меню (☰) справа</li>
+                <li>⌨️ Попробуйте клавиатуру: Enter, Escape, стрелки</li>
+                <li>📱 Измените размер окна браузера для проверки адаптивности</li>
+            </ul>
+        </div>
+
+        <div class="demo-features">
+            <div class="demo-feature">
+                <div class="demo-feature-icon">🎨</div>
+                <div class="demo-feature-title">Премиум дизайн</div>
+                <div class="demo-feature-desc">
+                    Фиолетово-золотая цветовая схема с градиентами и glow эффектами
+                </div>
+            </div>
+
+            <div class="demo-feature">
+                <div class="demo-feature-icon">✨</div>
+                <div class="demo-feature-title">Плавные анимации</div>
+                <div class="demo-feature-desc">
+                    Красивые transitions при открытии панелей и hover эффекты
+                </div>
+            </div>
+
+            <div class="demo-feature">
+                <div class="demo-feature-icon">📱</div>
+                <div class="demo-feature-title">Адаптивность</div>
+                <div class="demo-feature-desc">
+                    Отлично работает на всех устройствах - от смартфонов до 4K мониторов
+                </div>
+            </div>
+
+            <div class="demo-feature">
+                <div class="demo-feature-icon">⌨️</div>
+                <div class="demo-feature-title">Доступность</div>
+                <div class="demo-feature-desc">
+                    Полная поддержка клавиатуры и ARIA атрибутов для скринридеров
+                </div>
+            </div>
+
+            <div class="demo-feature">
+                <div class="demo-feature-icon">🚀</div>
+                <div class="demo-feature-title">Производительность</div>
+                <div class="demo-feature-desc">
+                    Оптимизированные CSS с will-change и contain для быстрой работы
+                </div>
+            </div>
+
+            <div class="demo-feature">
+                <div class="demo-feature-icon">🎯</div>
+                <div class="demo-feature-title">Организация</div>
+                <div class="demo-feature-desc">
+                    Все 20+ разделов сайта логично разделены по 5 категориям
+                </div>
+            </div>
+        </div>
+
+        <div style="margin-top: 4rem; padding: 2rem; background: rgba(124, 140, 255, 0.05); border-radius: 16px; max-width: 800px; margin-left: auto; margin-right: auto;">
+            <h3 style="color: #7c8cff; margin-bottom: 1rem;">🔥 Особенности мега-меню:</h3>
+            <div style="text-align: left; color: #ffffff; line-height: 2;">
+                ✅ 5 основных категорий с подразделами<br>
+                ✅ Иконки и описания для каждого пункта<br>
+                ✅ Hover для открытия на desktop<br>
+                ✅ Click для всех устройств<br>
+                ✅ Автозакрытие при клике вне меню<br>
+                ✅ Золотой glow на hover<br>
+                ✅ Градиентные фоны<br>
+                ✅ Поддержка клавиатурной навигации<br>
+                ✅ Мобильное бургер-меню<br>
+                ✅ Плавные анимации появления/исчезновения
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function toggleMegaMenu() {
+            const megaNav = document.querySelector('.mega-nav-container');
+            if (megaNav) {
+                megaNav.classList.toggle('open');
+            }
+        }
+        
+        document.addEventListener('click', function(e) {
+            if (e.target.closest('.mega-panel-item') || e.target.closest('.mega-nav-link:not([aria-haspopup])')) {
+                const megaNav = document.querySelector('.mega-nav-container');
+                if (megaNav && megaNav.classList.contains('open')) {
+                    megaNav.classList.remove('open');
+                }
+            }
+        });
+
+        // Информация о загрузке
+        window.addEventListener('load', () => {
+            console.log('🎉 Демо мега-меню загружено!');
+            console.log('✨ Наведите курсор на категории для просмотра подразделов');
+        });
+    </script>
+</body>
+</html>

@@ -1,35 +1,176 @@
 /**
- * DEXRabbit - Единый источник данных навигации
- * Централизованное управление всеми пунктами меню
- * Версия 2.0 - Полная автоматизация
+ * DEXRabbit - Единый источник данных навигации с мега-меню
+ * Версия 3.0 - Мега-меню с категориями
  */
 
 window.DEXRabbitNav = {
-  // Основные разделы навигации
-  primary: [
-    { title: 'О проекте', href: '/#about' },
-    { title: 'Как работает', href: '/#how-it-works' },
-    { title: 'Инвестиции', href: '/#investment' },
-    { title: 'Токенизация', href: '/#tokenization' },
-  ],
-
-  // Выпадающее меню "Ещё"
-  more: [
-    { title: '📷 Галерея', href: '/#gallery' },
-    { title: '👥 Инвесторы', href: '/investors.html' },
-    { title: '🤝 Партнерам', href: '/#partners' },
-    { title: '💵 Партнерская программа', href: '/partnership.html' },
-    { title: '🛡️ Гарантии', href: '/#guarantees' },
-    { title: '📹 Отчеты', href: '/reports.html' },
-    { title: '🧬 Племенная работа', href: '/breeding.html' },
-    { title: '🎁 Кролик в подарок', href: '/gifts.html' },
-    { title: '🍽️ Ресторанам', href: '/restaurants.html' },
-    { title: '🐰 Кролики и зайцы', href: '/rabbits-hares.html' },
-    { title: '🐱 Коты и кролики', href: '/cats-rabbits.html' },
-    { title: '🏥 Уход за кроликами', href: '/care.html' },
-    { title: '🧠 Кроликотерапия', href: '/therapy.html' },
-    { title: '🚚 Логистика и регионы', href: '/logistics.html' },
-    { title: '📄 Презентация', href: '/docs/DEXRabbit_presentation.pdf', external: true },
+  // Структура мега-меню с категориями
+  megaMenu: [
+    {
+      title: 'Главная',
+      href: '/',
+      single: true, // Без подразделов
+    },
+    {
+      title: 'Инвестиции',
+      category: 'investment',
+      icon: '💰',
+      items: [
+        {
+          title: 'Инвестиционная модель',
+          href: '/investment-model.html',
+          description: 'Круги финансирования А и Б',
+          icon: '📊',
+        },
+        {
+          title: 'Доходность',
+          href: '/#investment',
+          description: 'Расчет прибыли и ROI',
+          icon: '📈',
+        },
+        {
+          title: 'Гарантии',
+          href: '/#guarantees',
+          description: 'Защита ваших вложений',
+          icon: '🛡️',
+        },
+        {
+          title: 'PLEX токен',
+          href: '/#tokenization',
+          description: 'Курс и экономика токена',
+          icon: '🪙',
+        },
+        {
+          title: 'Наши инвесторы',
+          href: '/investors.html',
+          description: 'Реальные отзывы',
+          icon: '👥',
+        },
+      ],
+    },
+    {
+      title: 'Партнёрство',
+      category: 'partnership',
+      icon: '🤝',
+      items: [
+        {
+          title: 'Партнерская программа',
+          href: '/partnership.html',
+          description: '3 уровня, 5% на каждом',
+          icon: '💵',
+        },
+        {
+          title: 'Для ресторанов',
+          href: '/restaurants.html',
+          description: 'Прямые поставки мяса',
+          icon: '🍽️',
+        },
+        {
+          title: 'Для блогеров',
+          href: '/#contacts',
+          description: 'Повышенные комиссии',
+          icon: '📹',
+        },
+        {
+          title: 'Активные партнеры',
+          href: '/#partners',
+          description: 'Наши партнеры',
+          icon: '🤝',
+        },
+      ],
+    },
+    {
+      title: 'Услуги',
+      category: 'services',
+      icon: '🐰',
+      items: [
+        {
+          title: 'Кролик в подарок',
+          href: '/gifts.html',
+          description: 'Оригинальный подарок',
+          icon: '🎁',
+        },
+        {
+          title: 'Племенная работа',
+          href: '/breeding.html',
+          description: 'Селекция и разведение',
+          icon: '🧬',
+        },
+        {
+          title: 'Кроликотерапия',
+          href: '/therapy.html',
+          description: 'Терапия с кроликами',
+          icon: '💆',
+        },
+        {
+          title: 'Уход за кроликами',
+          href: '/care.html',
+          description: 'Профессиональный уход',
+          icon: '🏥',
+        },
+        {
+          title: 'Логистика',
+          href: '/logistics.html',
+          description: 'Доставка по России',
+          icon: '🚚',
+        },
+        {
+          title: 'Кролики и зайцы',
+          href: '/rabbits-hares.html',
+          description: 'Отличия и особенности',
+          icon: '🐰',
+        },
+        {
+          title: 'Кролики и кошки',
+          href: '/cats-rabbits.html',
+          description: 'Совместимость',
+          icon: '🐱',
+        },
+      ],
+    },
+    {
+      title: 'О нас',
+      category: 'about',
+      icon: 'ℹ️',
+      items: [
+        {
+          title: 'О проекте',
+          href: '/#about',
+          description: 'Миссия и цели',
+          icon: '🏆',
+        },
+        {
+          title: 'Как работает',
+          href: '/#how-it-works',
+          description: 'Механика инвестирования',
+          icon: '⚙️',
+        },
+        {
+          title: 'Галерея',
+          href: '/#gallery',
+          description: 'Фото наших кроликов',
+          icon: '📷',
+        },
+        {
+          title: 'Отчеты',
+          href: '/reports.html',
+          description: 'Видео с фермы',
+          icon: '📹',
+        },
+        {
+          title: 'Развитие',
+          href: '/#development',
+          description: 'Планы на будущее',
+          icon: '🚀',
+        },
+        {
+          title: 'Контакты',
+          href: '/#contacts',
+          description: 'Связаться с нами',
+          icon: '📞',
+        },
+      ],
+    },
   ],
 
   // CTA кнопка
@@ -40,35 +181,67 @@ window.DEXRabbitNav = {
   },
 
   /**
-   * Генерирует HTML для основного меню
+   * Генерирует HTML для мега-меню
    */
-  renderPrimaryMenu() {
+  renderMegaMenu() {
     const currentPath = window.location.pathname;
 
-    return this.primary
-      .map(item => {
-        const isActive =
-          currentPath === item.href || (item.href.startsWith('/#') && currentPath === '/');
-        const ariaCurrent = isActive ? 'aria-current="page"' : '';
+    return this.megaMenu
+      .map(category => {
+        // Если это одиночная ссылка без подразделов
+        if (category.single) {
+          const isActive = currentPath === category.href || currentPath === '/index.html';
+          return `
+            <div class="mega-nav-item">
+              <a href="${category.href}" class="mega-nav-link${isActive ? ' active' : ''}">
+                ${category.title}
+              </a>
+            </div>
+          `;
+        }
 
-        return `<a href="${item.href}" ${ariaCurrent}>${item.title}</a>`;
-      })
-      .join('');
-  },
-
-  /**
-   * Генерирует HTML для dropdown меню
-   */
-  renderDropdownMenu() {
-    const currentPath = window.location.pathname;
-
-    return this.more
-      .map(item => {
-        const isActive = currentPath === item.href.replace(/\/$/, '') || currentPath === item.href;
-        const ariaCurrent = isActive ? 'aria-current="page"' : '';
-        const external = item.external ? 'target="_blank" rel="noopener noreferrer"' : '';
-
-        return `<a href="${item.href}" ${ariaCurrent} ${external} role="menuitem">${item.title}</a>`;
+        // Иначе это категория с подразделами
+        return `
+          <div class="mega-nav-item mega-nav-dropdown" data-category="${category.category}">
+            <button 
+              class="mega-nav-link" 
+              aria-haspopup="true" 
+              aria-expanded="false"
+              aria-controls="mega-panel-${category.category}"
+            >
+              ${category.icon} ${category.title}
+              <span class="mega-arrow">▾</span>
+            </button>
+            <div 
+              class="mega-panel" 
+              id="mega-panel-${category.category}"
+              role="menu"
+              hidden
+            >
+              <div class="mega-panel-content">
+                <div class="mega-panel-grid">
+                  ${category.items
+                    .map(
+                      item => `
+                    <a 
+                      href="${item.href}" 
+                      class="mega-panel-item" 
+                      role="menuitem"
+                    >
+                      <span class="mega-item-icon">${item.icon}</span>
+                      <div class="mega-item-content">
+                        <span class="mega-item-title">${item.title}</span>
+                        <span class="mega-item-desc">${item.description}</span>
+                      </div>
+                    </a>
+                  `
+                    )
+                    .join('')}
+                </div>
+              </div>
+            </div>
+          </div>
+        `;
       })
       .join('');
   },
@@ -78,7 +251,6 @@ window.DEXRabbitNav = {
    */
   renderCTA() {
     const external = this.cta.external ? 'target="_blank" rel="noopener noreferrer"' : '';
-
     return `
       <a href="${this.cta.href}" 
          class="btn btn-primary nav-cta" 
@@ -89,214 +261,125 @@ window.DEXRabbitNav = {
   },
 
   /**
-   * Инициализирует навигацию на странице
+   * Инициализирует мега-меню на странице
    */
   init() {
-    console.log('🚀 Инициализация DEXRabbitNav...');
+    console.log('🚀 Инициализация DEXRabbitNav Mega Menu...');
 
-    // Находим контейнеры по новым селекторам
-    const primaryContainer = document.querySelector('.nav-primary');
-    const dropdownContent = document.querySelector('.nav-dropdown-content');
-    const ctaContainer = document.querySelector('.nav-cta-wrapper');
+    const navContainer = document.querySelector('.mega-nav-container');
 
-    // Если новые селекторы не найдены, пробуем старые
-    const fallbackPrimary = !primaryContainer
-      ? document.querySelector('.nav-group:first-child')
-      : null;
-    const fallbackCTA = !ctaContainer ? document.querySelector('.nav-links') : null;
-
-    // Обновляем основное меню
-    if (primaryContainer) {
-      primaryContainer.innerHTML = this.renderPrimaryMenu();
-      console.log('✅ Primary меню обновлено');
-    } else if (fallbackPrimary && !fallbackPrimary.querySelector('.nav-dropdown-toggle')) {
-      fallbackPrimary.innerHTML = this.renderPrimaryMenu();
-      console.log('✅ Primary меню обновлено (fallback)');
-    }
-
-    // Обновляем dropdown меню
-    if (dropdownContent) {
-      dropdownContent.innerHTML = this.renderDropdownMenu();
-      console.log('✅ Dropdown меню обновлено');
+    if (navContainer) {
+      navContainer.innerHTML = this.renderMegaMenu();
+      console.log('✅ Мега-меню создано');
+      this.initMegaMenuInteractions();
+    } else {
+      console.warn('⚠️ Контейнер .mega-nav-container не найден');
     }
 
     // Обновляем CTA кнопку
+    const ctaContainer = document.querySelector('.nav-cta-wrapper');
     if (ctaContainer) {
       ctaContainer.innerHTML = this.renderCTA();
       console.log('✅ CTA кнопка добавлена');
-    } else if (fallbackCTA) {
-      const existingCTA = fallbackCTA.querySelector('.nav-cta');
-      if (existingCTA) {
-        existingCTA.outerHTML = this.renderCTA();
-        console.log('✅ CTA кнопка обновлена (fallback)');
-      } else {
-        // Добавляем CTA в конец nav-links
-        fallbackCTA.insertAdjacentHTML('beforeend', this.renderCTA());
-        console.log('✅ CTA кнопка добавлена в конец');
-      }
     }
-
-    // Инициализируем доступный dropdown
-    this.initAccessibleDropdown();
   },
 
   /**
-   * Инициализирует доступный dropdown с ARIA
+   * Инициализирует интерактивность мега-меню
    */
-  initAccessibleDropdown() {
-    const dropdownToggle = document.querySelector('.nav-dropdown-toggle');
-    const dropdownContent = document.querySelector('.nav-dropdown-content');
-    const dropdown = document.querySelector('.nav-dropdown');
+  initMegaMenuInteractions() {
+    const dropdowns = document.querySelectorAll('.mega-nav-dropdown');
 
-    if (!dropdownToggle || !dropdownContent) {
-      console.warn('⚠️ Dropdown элементы не найдены');
-      return;
-    }
+    dropdowns.forEach(dropdown => {
+      const button = dropdown.querySelector('.mega-nav-link');
+      const panel = dropdown.querySelector('.mega-panel');
+      let closeTimeout;
 
-    console.log('🎯 Инициализация dropdown меню...');
+      // Функции управления
+      const open = () => {
+        clearTimeout(closeTimeout);
+        dropdown.classList.add('active');
+        button.setAttribute('aria-expanded', 'true');
+        panel.removeAttribute('hidden');
+      };
 
-    // Добавляем ARIA атрибуты, если их нет
-    if (!dropdownToggle.hasAttribute('aria-haspopup')) {
-      dropdownToggle.setAttribute('aria-haspopup', 'true');
-    }
-    if (!dropdownToggle.hasAttribute('aria-expanded')) {
-      dropdownToggle.setAttribute('aria-expanded', 'false');
-    }
-    if (!dropdownToggle.hasAttribute('aria-controls')) {
-      dropdownToggle.setAttribute('aria-controls', 'nav-dropdown-menu');
-    }
-    if (!dropdownContent.hasAttribute('id')) {
-      dropdownContent.setAttribute('id', 'nav-dropdown-menu');
-    }
-    if (!dropdownContent.hasAttribute('role')) {
-      dropdownContent.setAttribute('role', 'menu');
-    }
+      const close = () => {
+        dropdown.classList.remove('active');
+        button.setAttribute('aria-expanded', 'false');
+        panel.setAttribute('hidden', '');
+      };
 
-    // Функции управления состоянием
-    const openDropdown = () => {
-      dropdown.classList.add('active');
-      dropdownToggle.setAttribute('aria-expanded', 'true');
-      dropdownContent.removeAttribute('hidden');
-      console.log('📂 Dropdown открыт');
-    };
+      const delayedClose = () => {
+        closeTimeout = setTimeout(close, 200);
+      };
 
-    const closeDropdown = () => {
-      dropdown.classList.remove('active');
-      dropdownToggle.setAttribute('aria-expanded', 'false');
-      dropdownContent.setAttribute('hidden', '');
-      console.log('📁 Dropdown закрыт');
-    };
-
-    const toggleDropdown = () => {
-      const isOpen = dropdownToggle.getAttribute('aria-expanded') === 'true';
-      if (isOpen) {
-        closeDropdown();
-      } else {
-        openDropdown();
-      }
-    };
-
-    // Удаляем старые обработчики (если есть)
-    const newToggle = dropdownToggle.cloneNode(true);
-    dropdownToggle.parentNode.replaceChild(newToggle, dropdownToggle);
-
-    // Обработчик клика на кнопку
-    newToggle.addEventListener('click', e => {
-      e.stopPropagation();
-      e.preventDefault();
-      toggleDropdown();
-    });
-
-    // Закрытие при клике вне меню
-    document.addEventListener('click', e => {
-      if (!dropdown.contains(e.target)) {
-        closeDropdown();
-      }
-    });
-
-    // Навигация с клавиатуры
-    document.addEventListener('keydown', e => {
-      const isOpen = newToggle.getAttribute('aria-expanded') === 'true';
-
-      // Escape закрывает меню
-      if (e.key === 'Escape' && isOpen) {
-        closeDropdown();
-        newToggle.focus();
+      // Desktop hover
+      if (window.matchMedia('(hover: hover)').matches) {
+        dropdown.addEventListener('mouseenter', open);
+        dropdown.addEventListener('mouseleave', delayedClose);
       }
 
-      // Arrow Down открывает меню и переходит к первому пункту
-      if (e.key === 'ArrowDown' && e.target === newToggle && !isOpen) {
+      // Click для всех устройств
+      button.addEventListener('click', e => {
         e.preventDefault();
-        openDropdown();
-        const firstItem = dropdownContent.querySelector('a');
-        if (firstItem) firstItem.focus();
-      }
-
-      // Навигация внутри меню
-      if (isOpen && dropdownContent.contains(e.target)) {
-        const items = Array.from(dropdownContent.querySelectorAll('a'));
-        const currentIndex = items.indexOf(e.target);
-
-        if (e.key === 'ArrowDown') {
-          e.preventDefault();
-          const nextIndex = (currentIndex + 1) % items.length;
-          items[nextIndex].focus();
+        const isOpen = button.getAttribute('aria-expanded') === 'true';
+        if (isOpen) {
+          close();
+        } else {
+          // Закрываем другие панели
+          document.querySelectorAll('.mega-nav-dropdown.active').forEach(other => {
+            if (other !== dropdown) {
+              const otherBtn = other.querySelector('.mega-nav-link');
+              const otherPanel = other.querySelector('.mega-panel');
+              other.classList.remove('active');
+              otherBtn.setAttribute('aria-expanded', 'false');
+              otherPanel.setAttribute('hidden', '');
+            }
+          });
+          open();
         }
+      });
 
-        if (e.key === 'ArrowUp') {
-          e.preventDefault();
-          const prevIndex = currentIndex === 0 ? items.length - 1 : currentIndex - 1;
-          items[prevIndex].focus();
+      // Закрытие при клике вне
+      document.addEventListener('click', e => {
+        if (!dropdown.contains(e.target)) {
+          close();
         }
+      });
 
-        if (e.key === 'Home') {
+      // Keyboard navigation
+      button.addEventListener('keydown', e => {
+        if (e.key === 'Enter' || e.key === ' ') {
           e.preventDefault();
-          items[0].focus();
+          const isOpen = button.getAttribute('aria-expanded') === 'true';
+          if (isOpen) {
+            close();
+          } else {
+            open();
+            // Фокус на первом элементе
+            const firstItem = panel.querySelector('.mega-panel-item');
+            if (firstItem) firstItem.focus();
+          }
+        } else if (e.key === 'Escape') {
+          close();
+          button.focus();
         }
-
-        if (e.key === 'End') {
-          e.preventDefault();
-          items[items.length - 1].focus();
-        }
-      }
+      });
     });
 
-    // Поддержка hover для десктопа
-    const mediaQuery = window.matchMedia('(hover: hover) and (pointer: fine)');
-
-    if (mediaQuery.matches) {
-      let hoverTimeout;
-
-      dropdown.addEventListener('mouseenter', () => {
-        clearTimeout(hoverTimeout);
-        openDropdown();
-      });
-
-      dropdown.addEventListener('mouseleave', () => {
-        hoverTimeout = setTimeout(() => {
-          closeDropdown();
-        }, 200);
-      });
-    }
-
-    // Изначально скрываем меню
-    dropdownContent.setAttribute('hidden', '');
-    console.log('✅ Dropdown инициализирован');
+    console.log('✅ Интерактивность мега-меню настроена');
   },
 };
 
-// Автоинициализация при загрузке DOM
+// Автоинициализация
 if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', () => {
-    console.log('📄 DOM загружен, инициализирую навигацию...');
     window.DEXRabbitNav.init();
   });
 } else {
-  console.log('📄 DOM уже загружен, инициализирую навигацию сразу...');
-  // Небольшая задержка для гарантии загрузки всех элементов
   setTimeout(() => {
     window.DEXRabbitNav.init();
   }, 100);
 }
 
-console.log('✅ navigation-data.js загружен');
+console.log('✅ navigation-data.js v3.0 (Mega Menu) загружен');

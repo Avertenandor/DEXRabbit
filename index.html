@@ -55,6 +55,8 @@
     <link rel="stylesheet" href="/assets/css/performance.css" />
     <!-- Unified Navigation Styles -->
     <link rel="stylesheet" href="/assets/css/navigation.css" />
+    <!-- Mega Menu Styles -->
+    <link rel="stylesheet" href="/assets/css/mega-menu.css" />
     <!-- Investor Cards Styles -->
     <link rel="stylesheet" href="/assets/css/investor-cards.css" />
 
@@ -70,52 +72,58 @@
     <script defer src="/assets/js/perf/sanitize-message.js"></script>
   </head>
   <body>
-    <!-- Navigation -->
+    <!-- Navigation with Mega Menu -->
     <nav class="navbar" role="navigation">
       <div class="container">
-        <!-- Logo Section -->
-        <div class="navbar-header">
+        <div class="navbar-inner">
+          <!-- Logo Section -->
           <div class="logo-wrapper">
             <a href="/" class="site-logo">
-              <img src="/favicon.svg" alt="DEXRabbit" />
+              <img src="/favicon.svg" alt="DEXRabbit" width="50" height="50" />
               <div class="logo-text">
                 <span class="logo-title">DEXRabbit</span>
                 <span class="logo-slogan">Твой пассивный доход на кроликах</span>
               </div>
             </a>
           </div>
-          <button class="mobile-nav-toggle burger" aria-label="Меню" data-burger>☰</button>
-        </div>
 
-        <!-- Navigation Links -->
-        <div class="navbar-inner">
-          <div class="nav-links" id="nav-menu" data-menu>
-            <!-- Навигация генерируется динамически из navigation-data.js -->
-            <!-- Primary Navigation -->
-            <div class="nav-group nav-primary"></div>
-
-            <!-- Дополнительные разделы -->
-            <div class="nav-group nav-dropdown">
-              <button
-                class="nav-dropdown-toggle"
-                type="button"
-                aria-haspopup="true"
-                aria-expanded="false"
-                aria-controls="nav-dropdown-menu"
-              >
-                Ещё <span class="dropdown-arrow" aria-hidden="true">▾</span>
-              </button>
-              <div class="nav-dropdown-content" id="nav-dropdown-menu" role="menu" hidden></div>
-            </div>
-
-            <!-- CTA кнопка -->
-            <a href="https://t.me/dexrabbit_bot" class="btn btn-primary nav-cta"
-              >💬 Начать инвестировать</a
-            >
+          <!-- Mega Menu Navigation -->
+          <div class="mega-nav-container">
+            <!-- Мега-меню генерируется динамически из navigation-data.js -->
           </div>
+
+          <!-- CTA Button -->
+          <div class="nav-cta-wrapper">
+            <!-- CTA кнопка генерируется динамически -->
+          </div>
+
+          <!-- Mobile Menu Toggle -->
+          <button class="mobile-nav-toggle" aria-label="Меню" onclick="toggleMegaMenu()">
+            ☰
+          </button>
         </div>
       </div>
     </nav>
+
+    <script>
+      // Функция для мобильного меню
+      function toggleMegaMenu() {
+        const megaNav = document.querySelector('.mega-nav-container');
+        if (megaNav) {
+          megaNav.classList.toggle('open');
+        }
+      }
+      
+      // Закрытие мобильного меню при клике на ссылку
+      document.addEventListener('click', function(e) {
+        if (e.target.closest('.mega-panel-item') || e.target.closest('.mega-nav-link:not([aria-haspopup])')) {
+          const megaNav = document.querySelector('.mega-nav-container');
+          if (megaNav && megaNav.classList.contains('open')) {
+            megaNav.classList.remove('open');
+          }
+        }
+      });
+    </script>
 
     <main>
       <!-- Hero Section -->
