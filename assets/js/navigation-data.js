@@ -511,12 +511,20 @@ window.DEXRabbitNav = {
       clearTimeout(hoverTimeout);
       closeAllPanels();
       
+      // Добавляем will-change перед анимацией
+      panel.classList.add('animating');
+      
       // Открыть нужную панель
       panel.style.display = 'block';
       panel.setAttribute('aria-hidden', 'false');
       panel.classList.add('active');
       trigger.setAttribute('aria-expanded', 'true');
       trigger.classList.add('active');
+      
+      // Убираем will-change после анимации
+      setTimeout(() => {
+        panel.classList.remove('animating');
+      }, 300);
       
       console.log('✅ Панель открыта:', trigger.textContent.trim());
     };
