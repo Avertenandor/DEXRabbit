@@ -42,5 +42,20 @@
 }
 
 
-.mega-panel{position:absolute!important;top:100%!important;left:50%!important;transform:translateX(-50%)!important;width:min(1100px,96vw)!important;z-index:1000!important;max-height:80vh;overflow:auto;display:none}
+.mega-panel{
+  position:absolute!important;
+  top:100%!important;
+  left:50%!important;
+  transform:translateX(-50%)!important;
+  width:min(1100px,96vw)!important;
+  z-index:1000!important;
+  max-height:80vh;
+  overflow:auto;
+  display:none;
+  /* ✅ ИСПРАВЛЕНИЕ: Строго вниз, без шевеления */
+  margin-top: 8px!important;
+  border-radius: 16px!important;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.3)!important;
+  backdrop-filter: blur(20px)!important;
+}
 @media (max-width:1024px){.mega-panel{left:0!important;transform:none!important;width:100%!important;border-radius:0 0 14px 14px}}

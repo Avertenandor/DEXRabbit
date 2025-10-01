@@ -529,7 +529,7 @@ window.DEXRabbitNav = {
           panel.classList.remove('active');
           trigger.setAttribute('aria-expanded', 'false');
           trigger.classList.remove('active');
-        }, 150); // Уменьшена задержка для лучшего UX
+        }, 300); // ✅ УВЕЛИЧЕНО: Больше времени для наведения на кнопки
       }
     };
 
