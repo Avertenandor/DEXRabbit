@@ -1,18 +1,18 @@
 /* ========== КРАСИВАЯ НАВИГАЦИЯ (КАК В ФУТЕРЕ) ========== */
-/* Версия: 2025-10-01 - Полный редизайн */
+/* Версия: 2025-10-02-FIXED - Исправлены z-index и hover */
 
 /* ========== ОТСТУП ДЛЯ BODY ========== */
 body {
-  padding-top: 70px !important;
+  padding-top: 70px;
 }
 
 /* ========== ОСНОВНОЙ КОНТЕЙНЕР ========== */
 .nav-beautiful {
-  position: fixed !important;
+  position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000 !important;
+  z-index: 9999;
   width: 100%;
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 30, 0.95) 100%);
   backdrop-filter: saturate(180%) blur(30px);
@@ -39,6 +39,7 @@ body {
   gap: 12px;
   text-decoration: none;
   transition: transform 0.3s ease;
+  z-index: 10001;
 }
 
 .nav-beautiful__logo:hover {
@@ -145,7 +146,8 @@ body {
   transition: transform 0.3s ease;
 }
 
-.nav-beautiful__btn:hover .nav-beautiful__arrow {
+.nav-beautiful__dropdown-wrapper:hover .nav-beautiful__arrow,
+.nav-beautiful__dropdown-wrapper.is-open .nav-beautiful__arrow {
   transform: translateY(2px);
 }
 
@@ -154,23 +156,23 @@ body {
   position: relative;
 }
 
-/* Невидимый "мостик" между кнопкой и dropdown */
+/* Увеличенный "мостик" между кнопкой и dropdown */
 .nav-beautiful__dropdown-wrapper::after {
   content: '';
   position: absolute;
   top: 100%;
   left: 0;
   right: 0;
-  height: 16px; /* Высота мостика */
+  height: 20px;
   background: transparent;
-  z-index: 99;
+  z-index: 9998;
 }
 
 .nav-beautiful__dropdown {
   position: absolute;
-  top: calc(100% + 12px);
+  top: calc(100% + 16px);
   left: 50%;
-  transform: translateX(-50%);
+  transform: translateX(-50%) translateY(-10px) scale(0.98);
   min-width: 320px;
   max-width: 400px;
   background: linear-gradient(135deg, rgba(15, 15, 25, 0.98) 0%, rgba(25, 25, 35, 0.98) 100%);
@@ -183,8 +185,7 @@ body {
   visibility: hidden;
   pointer-events: none;
   transition: opacity 0.25s ease, visibility 0s linear 0.25s, transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
-  transform: translateX(-50%) translateY(-10px) scale(0.98);
-  z-index: 100;
+  z-index: 10000;
   border: 1px solid rgba(124, 140, 255, 0.2);
 }
 
@@ -295,6 +296,7 @@ body {
               inset 0 1px 0 rgba(255, 255, 255, 0.2);
   position: relative;
   overflow: hidden;
+  z-index: 10001;
 }
 
 .nav-beautiful__cta::before {
@@ -336,6 +338,7 @@ body {
   border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
+  z-index: 10001;
 }
 
 .nav-beautiful__mobile-toggle:hover {
@@ -370,6 +373,21 @@ body {
   top: 7px;
 }
 
+/* Анимация бургера при открытии */
+.nav-beautiful.open .nav-beautiful__mobile-icon {
+  background: transparent;
+}
+
+.nav-beautiful.open .nav-beautiful__mobile-icon::before {
+  top: 0;
+  transform: rotate(45deg);
+}
+
+.nav-beautiful.open .nav-beautiful__mobile-icon::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
 /* ========== АДАПТИВНОСТЬ ========== */
 @media (max-width: 1024px) {
   .nav-beautiful__menu {
@@ -400,6 +418,7 @@ body {
     overflow-y: auto;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
+    z-index: 9999;
   }
 
   .nav-beautiful.open .nav-beautiful__menu {
@@ -422,7 +441,8 @@ body {
     margin-top: 8px;
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.3s ease;
+    transition: max-height 0.3s ease, opacity 0.3s ease;
+    opacity: 0;
   }
 
   .nav-beautiful__dropdown-wrapper.open .nav-beautiful__dropdown {
@@ -435,9 +455,19 @@ body {
   .nav-beautiful__logo-slogan {
     display: none;
   }
+  
+  .nav-beautiful__cta {
+    width: 100%;
+    justify-content: center;
+    margin-top: 16px;
+  }
 }
 
 @media (max-width: 480px) {
+  body {
+    padding-top: 60px;
+  }
+  
   .nav-beautiful__container {
     padding: 10px 12px;
   }
@@ -451,4 +481,3 @@ body {
     font-size: 16px;
   }
 }
-

@@ -1,5 +1,5 @@
 /* ========== НОРМАЛИЗАЦИЯ SPACING - BEST PRACTICES ========== */
-/* Версия: 2025-10-02 - Единые расстояния на всём сайте */
+/* Версия: 2025-10-02-FIXED - Единые расстояния на всём сайте */
 
 /* ========== БАЗОВАЯ СИСТЕМА SPACING ========== */
 :root {
@@ -13,20 +13,18 @@
 
 /* ========== СЕКЦИИ ========== */
 .section {
-  padding-top: var(--spacing-xl) !important;
-  padding-bottom: var(--spacing-xl) !important;
-  margin: 0 !important;
+  padding-top: var(--spacing-xl);
+  padding-bottom: var(--spacing-xl);
 }
 
 .section + .section {
-  padding-top: var(--spacing-lg) !important;
+  padding-top: var(--spacing-lg);
 }
 
 /* Первая секция (hero) */
 .hero {
-  padding-top: var(--spacing-2xl) !important;
-  padding-bottom: var(--spacing-xl) !important;
-  margin-bottom: 0 !important;
+  padding-top: var(--spacing-2xl);
+  padding-bottom: var(--spacing-xl);
 }
 
 /* Секция с альтернативным фоном */
@@ -54,22 +52,22 @@
 /* ========== ЗАГОЛОВКИ СЕКЦИЙ ========== */
 .section-header {
   text-align: center;
-  margin-bottom: var(--spacing-lg) !important;
+  margin-bottom: var(--spacing-lg);
 }
 
 .section-header h2 {
-  margin-bottom: var(--spacing-sm) !important;
-  margin-top: 0 !important;
+  margin-bottom: var(--spacing-sm);
+  margin-top: 0;
 }
 
 .section-header p {
-  margin-top: var(--spacing-xs) !important;
-  margin-bottom: 0 !important;
+  margin-top: var(--spacing-xs);
+  margin-bottom: 0;
 }
 
 .overline {
   display: block;
-  margin-bottom: var(--spacing-xs) !important;
+  margin-bottom: var(--spacing-xs);
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 1.5px;
@@ -82,61 +80,67 @@
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid rgba(124, 140, 255, 0.2);
   border-radius: 16px;
-  padding: var(--spacing-md) !important;
-  margin-bottom: var(--spacing-md) !important;
+  padding: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
 }
 
 .card + .card {
-  margin-top: var(--spacing-md) !important;
+  margin-top: var(--spacing-md);
 }
 
 .card h3 {
-  margin-top: 0 !important;
-  margin-bottom: var(--spacing-sm) !important;
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
 }
 
 .card p {
-  margin-bottom: var(--spacing-sm) !important;
+  margin-bottom: var(--spacing-sm);
 }
 
 .card p:last-child {
-  margin-bottom: 0 !important;
+  margin-bottom: 0;
 }
 
 /* ========== GRID СИСТЕМЫ ========== */
 .grid {
   display: grid;
   gap: var(--spacing-md);
-  margin-top: var(--spacing-md) !important;
-  margin-bottom: var(--spacing-md) !important;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
 }
 
-/* ========== УБИРАЕМ ОГРОМНЫЕ ПРОВАЛЫ ========== */
-/* Максимальные отступы между блоками */
-* + * {
-  margin-top: 0;
-}
-
+/* ========== ЗАГОЛОВКИ ========== */
 h1, h2, h3, h4, h5, h6 {
-  margin-top: var(--spacing-md) !important;
-  margin-bottom: var(--spacing-sm) !important;
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-sm);
 }
 
 h1:first-child,
 h2:first-child,
 h3:first-child {
-  margin-top: 0 !important;
+  margin-top: 0;
 }
 
+/* ========== ПАРАГРАФЫ ========== */
 p {
-  margin-top: 0 !important;
-  margin-bottom: var(--spacing-sm) !important;
+  margin-top: 0;
+  margin-bottom: var(--spacing-sm);
 }
 
+p:last-child {
+  margin-bottom: 0;
+}
+
+/* ========== СПИСКИ ========== */
 ul, ol {
-  margin-top: var(--spacing-sm) !important;
-  margin-bottom: var(--spacing-sm) !important;
-  padding-left: var(--spacing-md) !important;
+  margin-top: var(--spacing-sm);
+  margin-bottom: var(--spacing-sm);
+  padding-left: var(--spacing-md);
+}
+
+ul:last-child,
+ol:last-child {
+  margin-bottom: 0;
 }
 
 /* ========== HERO CONTENT ========== */
@@ -146,29 +150,39 @@ ul, ol {
 }
 
 .hero-title {
-  margin-bottom: var(--spacing-md) !important;
+  margin-bottom: var(--spacing-md);
 }
 
 .hero-subtitle {
-  margin-bottom: var(--spacing-lg) !important;
+  margin-bottom: var(--spacing-lg);
 }
 
 /* ========== FLOW CHART ========== */
 .investment-flow-chart {
-  margin-top: var(--spacing-lg) !important;
-  margin-bottom: var(--spacing-lg) !important;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
 }
 
 .flow-container {
-  gap: var(--spacing-md) !important;
+  gap: var(--spacing-md);
 }
 
 /* ========== КНОПКИ ========== */
 .hero-cta-buttons,
 .bot-cta-wrapper {
-  margin-top: var(--spacing-lg) !important;
-  margin-bottom: var(--spacing-md) !important;
-  gap: var(--spacing-sm) !important;
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+  gap: var(--spacing-sm);
+}
+
+.btn {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+/* ========== FOOTER ОТСТУП ========== */
+.footer {
+  margin-top: var(--spacing-2xl);
 }
 
 /* ========== АДАПТИВНОСТЬ ========== */
@@ -180,13 +194,13 @@ ul, ol {
   }
 
   .section {
-    padding-top: var(--spacing-lg) !important;
-    padding-bottom: var(--spacing-lg) !important;
+    padding-top: var(--spacing-lg);
+    padding-bottom: var(--spacing-lg);
   }
 
   .hero {
-    padding-top: var(--spacing-xl) !important;
-    padding-bottom: var(--spacing-lg) !important;
+    padding-top: var(--spacing-xl);
+    padding-bottom: var(--spacing-lg);
   }
 }
 
@@ -197,21 +211,42 @@ ul, ol {
   }
 }
 
-/* ========== УБИРАЕМ INLINE ПРОВАЛЫ ========== */
-[style*="margin-top: 2rem"],
-[style*="margin-top: 3rem"],
-[style*="margin-top: 4rem"] {
-  margin-top: var(--spacing-lg) !important;
+/* ========== СПЕЦИФИЧНЫЕ ФИКСЫ ========== */
+/* Убираем двойные отступы между элементами */
+.card + .alert,
+.alert + .card {
+  margin-top: var(--spacing-md);
 }
 
-[style*="margin-bottom: 2rem"],
-[style*="margin-bottom: 3rem"],
-[style*="margin-bottom: 4rem"] {
-  margin-bottom: var(--spacing-lg) !important;
+/* Отступы для inline элементов с style */
+[style*="margin"] {
+  /* Не переопределяем inline стили агрессивно */
 }
 
-/* ========== FOOTER ОТСТУП ========== */
-.footer {
-  margin-top: var(--spacing-2xl) !important;
+/* Отступы для timeline */
+.timeline {
+  margin-top: var(--spacing-md);
+  margin-bottom: var(--spacing-md);
 }
 
+.timeline-item + .timeline-item {
+  margin-top: 0; /* gap уже есть в .timeline */
+}
+
+/* ========== ГАЛЕРЕЯ ========== */
+.gallery-grid {
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-lg);
+}
+
+/* ========== ИНВЕСТОРЫ ========== */
+.investors-grid {
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+}
+
+/* ========== ФИЧИ ========== */
+.feature-grid {
+  margin-top: var(--spacing-lg);
+  margin-bottom: var(--spacing-md);
+}
