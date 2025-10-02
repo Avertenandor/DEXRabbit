@@ -1,0 +1,166 @@
+/* ========== ЖИВЫЕ КНОПКИ (КАК В НАВИГАЦИИ) ========== */
+/* Версия: 2025-10-02 - Универсальные эффекты для всех кнопок */
+
+/* ========== БАЗОВЫЕ КНОПКИ ========== */
+.btn,
+.cta-button,
+.contact-button,
+button[type="submit"],
+a[class*="btn"],
+a[class*="button"] {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  background: linear-gradient(135deg, rgba(124, 140, 255, 0.1), rgba(76, 201, 240, 0.05));
+  border: 1px solid rgba(124, 140, 255, 0.3);
+  border-radius: 24px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Shimmer effect для ВСЕХ кнопок */
+.btn::before,
+.cta-button::before,
+.contact-button::before,
+button[type="submit"]::before,
+a[class*="btn"]::before,
+a[class*="button"]::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: left 0.6s ease;
+  z-index: 1;
+}
+
+/* Hover эффекты */
+.btn:hover::before,
+.cta-button:hover::before,
+.contact-button:hover::before,
+button[type="submit"]:hover::before,
+a[class*="btn"]:hover::before,
+a[class*="button"]:hover::before {
+  left: 100%;
+}
+
+.btn:hover,
+.cta-button:hover,
+.contact-button:hover,
+button[type="submit"]:hover,
+a[class*="btn"]:hover,
+a[class*="button"]:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: linear-gradient(135deg, rgba(124, 140, 255, 0.2), rgba(76, 201, 240, 0.1));
+  border-color: rgba(124, 140, 255, 0.5);
+  box-shadow: 0 8px 24px rgba(124, 140, 255, 0.3),
+              0 4px 12px rgba(76, 201, 240, 0.2);
+  color: #fff;
+}
+
+.btn:active,
+.cta-button:active,
+.contact-button:active,
+button[type="submit"]:active,
+a[class*="btn"]:active,
+a[class*="button"]:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* ========== ПЕРВИЧНЫЕ КНОПКИ (PRIMARY) ========== */
+.btn-primary,
+.cta-primary,
+.bot-cta-primary {
+  background: linear-gradient(135deg, #7c8cff 0%, #4cc9f0 100%) !important;
+  border: 2px solid rgba(255, 255, 255, 0.3) !important;
+  color: #fff !important;
+  box-shadow: 0 4px 20px rgba(124, 140, 255, 0.4),
+              inset 0 1px 0 rgba(255, 255, 255, 0.2) !important;
+}
+
+.btn-primary:hover,
+.cta-primary:hover,
+.bot-cta-primary:hover {
+  box-shadow: 0 8px 32px rgba(124, 140, 255, 0.6),
+              0 4px 16px rgba(76, 201, 240, 0.4),
+              inset 0 1px 0 rgba(255, 255, 255, 0.3) !important;
+  border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+/* ========== ВТОРИЧНЫЕ КНОПКИ (SECONDARY) ========== */
+.btn-secondary,
+.cta-secondary {
+  background: rgba(124, 140, 255, 0.15) !important;
+  border: 2px solid rgba(124, 140, 255, 0.5) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.btn-secondary:hover,
+.cta-secondary:hover {
+  background: rgba(124, 140, 255, 0.25) !important;
+  border-color: rgba(124, 140, 255, 0.7) !important;
+  color: #fff !important;
+}
+
+/* ========== OUTLINE КНОПКИ ========== */
+.btn-outline {
+  background: transparent !important;
+  border: 2px solid rgba(124, 140, 255, 0.5) !important;
+  color: rgba(255, 255, 255, 0.9) !important;
+}
+
+.btn-outline:hover {
+  background: rgba(124, 140, 255, 0.1) !important;
+  border-color: rgba(124, 140, 255, 0.7) !important;
+}
+
+/* ========== КНОПКИ В КАРТОЧКАХ ИНВЕСТОРОВ ========== */
+.investor-card .contact-button {
+  background: linear-gradient(135deg, rgba(124, 140, 255, 0.15), rgba(76, 201, 240, 0.1));
+  border: 1px solid rgba(124, 140, 255, 0.4);
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.investor-card .contact-button:hover {
+  background: linear-gradient(135deg, rgba(124, 140, 255, 0.3), rgba(76, 201, 240, 0.2));
+  border-color: rgba(124, 140, 255, 0.6);
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 20px rgba(124, 140, 255, 0.4);
+}
+
+/* ========== АДАПТИВНОСТЬ ========== */
+@media (max-width: 768px) {
+  .btn,
+  .cta-button,
+  .contact-button {
+    min-height: 48px;
+    padding: 12px 20px;
+  }
+}
+
+/* ========== Z-INDEX ДЛЯ ТЕКСТА НАД SHIMMER ========== */
+.btn > *,
+.cta-button > *,
+.contact-button > *,
+button[type="submit"] > *,
+a[class*="btn"] > *,
+a[class*="button"] > * {
+  position: relative;
+  z-index: 2;
+}
+
