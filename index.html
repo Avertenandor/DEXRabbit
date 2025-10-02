@@ -531,12 +531,23 @@
 
               .flow-container {
                 display: grid;
-                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-                gap: 1.5rem;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 2rem;
                 position: relative;
                 max-width: 1000px;
                 margin: 0 auto;
                 padding: 0;
+              }
+              
+              .flow-arrow {
+                display: none !important;
+              }
+              
+              @media (max-width: 1024px) {
+                .flow-container {
+                  grid-template-columns: repeat(2, 1fr);
+                  gap: 1.5rem;
+                }
               }
               
               @media (max-width: 768px) {
@@ -544,19 +555,16 @@
                   grid-template-columns: 1fr;
                   gap: 1rem;
                 }
-                .flow-arrow {
-                  display: none;
-                }
               }
 
               .flow-box {
                 background: linear-gradient(135deg, #22c55e, #4ade80);
                 border: 2px solid rgba(74, 222, 128, 0.3);
-                border-radius: 12px;
-                padding: 1.2rem;
-                width: 160px;
-                height: 160px;
-                min-height: 160px;
+                border-radius: 16px;
+                padding: 1.5rem;
+                width: 100%;
+                height: 180px;
+                min-height: 180px;
                 display: flex;
                 flex-direction: column;
                 align-items: center;
