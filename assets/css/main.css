@@ -210,7 +210,7 @@ main {
 
 .section {
   position: relative;
-  padding-block: clamp(4rem, 6vw, 6.5rem);
+  padding-block: clamp(2.5rem, 4vw, 3.5rem);
 }
 
 .section::before {
