@@ -1,0 +1,257 @@
+[
+  {
+    "file": "404.html",
+    "issues": [
+      "Добавлен main.css"
+    ]
+  },
+  {
+    "file": "blog\\index.html",
+    "issues": [
+      "Добавлен main.css",
+      "Удалены дубликаты header",
+      "Удалён неверный телефон",
+      "Заменён Подольск"
+    ]
+  },
+  {
+    "file": "breeding\\index.html",
+    "issues": [
+      "Добавлен main.css",
+      "Удалены дубликаты header",
+      "Удалён неверный телефон"
+    ]
+  },
+  {
+    "file": "breeding.html",
+    "issues": [
+      "Удалены старые header.navbar"
+    ]
+  },
+  {
+    "file": "care.html",
+    "issues": [
+      "Удалены старые header.navbar"
+    ]
+  },
+  {
+    "file": "careers.html",
+    "issues": [
+      "Удалены старые header.navbar"
+    ]
+  },
+  {
+    "file": "catalog\\index.html",
+    "issues": [
+      "Добавлен main.css",
+      "Удалены дубликаты header",
+      "Удалён неверный телефон",
+      "Заменён Подольск"
+    ]
+  },
+  {
+    "file": "cats-rabbits.html",
+    "issues": [
+      "Удалены старые header.navbar"
+    ]
+  },
+  {
+    "file": "contacts\\index.html",
+    "issues": [
+      "Добавлен main.css",
+      "Удалены дубликаты header",
+      "Удалён неверный телефон",
+      "Заменён Подольск"
+    ]
+  },
+  {
+    "file": "contacts.html",
+    "issues": [
+      "Удалены дубликаты header",
+      "Заменён @kupitkrolika",
+      "Удалён неверный телефон",
+      "Заменён Подольск"
+    ]
+  },
+  {
+    "file": "dashboard\\index.html",
+    "issues": [
+      "Добавлен main.css",
+      "Удалены дубликаты header"
+    ]
+  },
+  {
+    "file": "delivery\\index.html",
+    "issues": [
+      "Добавлен main.css",
+      "Удалены дубликаты header",
+      "Удалён неверный телефон",
+      "Заменён Подольск"
+    ]
+  },
+  {
+    "file": "development.html",
+    "issues": [
+      "Добавлен main.css",
+      "Удалены старые header.navbar",
+      "Удалены дубликаты header",
+      "Заменён Подольск"
+    ]
+  },
+  {
+    "file": "docs\\presentation.html",
+    "issues": [
+      "Добавлен main.css",
+      "Удалены старые header.navbar",
+      "Заменён Подольск"
+    ]
+  },
+  {
+    "file": "faq\\index.html",
+    "issues": [
+      "Добавлен main.css",
+      "Удалены дубликаты header",
+      "Удалён неверный телефон",
+      "Заменён Подольск"
+    ]
+  },
+  {
+    "file": "gallery\\index.html",
+    "issues": [
+      "Добавлен main.css",
+      "Удалены дубликаты header",
+      "Удалён неверный телефон",
+      "Заменён Подольск"
+    ]
+  },
+  {
+    "file": "gifts.html",
+    "issues": [
+      "Удалены старые header.navbar"
+    ]
+  },
+  {
+    "file": "guarantees.html",
+    "issues": [
+      "Удалены старые header.navbar"
+    ]
+  },
+  {
+    "file": "investment\\index.html",
+    "issues": [
+      "Добавлен main.css",
+      "Удалены дубликаты header",
+      "Удалён неверный телефон"
+    ]
+  },
+  {
+    "file": "investment-model.html",
+    "issues": [
+      "Удалены старые header.navbar"
+    ]
+  },
+  {
+    "file": "investors.html",
+    "issues": [
+      "Удалены старые header.navbar"
+    ]
+  },
+  {
+    "file": "legal\\agreement.html",
+    "issues": [
+      "Удалены старые header.navbar"
+    ]
+  },
+  {
+    "file": "legal\\contract.html",
+    "issues": [
+      "Добавлен main.css",
+      "Удалены старые header.navbar",
+      "Удалены дубликаты header",
+      "Заменён @kupitkrolika",
+      "Удалён неверный телефон"
+    ]
+  },
+  {
+    "file": "legal\\license.html",
+    "issues": [
+      "Удалены старые header.navbar"
+    ]
+  },
+  {
+    "file": "legal\\privacy.html",
+    "issues": [
+      "Удалены старые header.navbar"
+    ]
+  },
+  {
+    "file": "legal\\terms.html",
+    "issues": [
+      "Удалены старые header.navbar"
+    ]
+  },
+  {
+    "file": "logistics.html",
+    "issues": [
+      "Удалены старые header.navbar",
+      "Удалён неверный телефон",
+      "Заменён Подольск"
+    ]
+  },
+  {
+    "file": "partners\\index.html",
+    "issues": [
+      "Добавлен main.css",
+      "Удалены дубликаты header",
+      "Заменён @kupitkrolika"
+    ]
+  },
+  {
+    "file": "partnership.html",
+    "issues": [
+      "Удалены старые header.navbar"
+    ]
+  },
+  {
+    "file": "policy\\index.html",
+    "issues": [
+      "Добавлен main.css",
+      "Удалены дубликаты header",
+      "Удалён неверный телефон",
+      "Заменён Подольск"
+    ]
+  },
+  {
+    "file": "rabbits-hares.html",
+    "issues": [
+      "Удалены старые header.navbar"
+    ]
+  },
+  {
+    "file": "reports.html",
+    "issues": [
+      "Удалены старые header.navbar"
+    ]
+  },
+  {
+    "file": "terms\\index.html",
+    "issues": [
+      "Добавлен main.css",
+      "Удалены дубликаты header",
+      "Удалён неверный телефон",
+      "Заменён Подольск"
+    ]
+  },
+  {
+    "file": "therapy.html",
+    "issues": [
+      "Удалены старые header.navbar"
+    ]
+  },
+  {
+    "file": "wallet-instructions.html",
+    "issues": [
+      "Удалены старые header.navbar"
+    ]
+  }
+]
