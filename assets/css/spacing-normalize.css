@@ -1,0 +1,217 @@
+/* ========== НОРМАЛИЗАЦИЯ SPACING - BEST PRACTICES ========== */
+/* Версия: 2025-10-02 - Единые расстояния на всём сайте */
+
+/* ========== БАЗОВАЯ СИСТЕМА SPACING ========== */
+:root {
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 40px;
+  --spacing-xl: 64px;
+  --spacing-2xl: 96px;
+}
+
+/* ========== СЕКЦИИ ========== */
+.section {
+  padding-top: var(--spacing-xl) !important;
+  padding-bottom: var(--spacing-xl) !important;
+  margin: 0 !important;
+}
+
+.section + .section {
+  padding-top: var(--spacing-lg) !important;
+}
+
+/* Первая секция (hero) */
+.hero {
+  padding-top: var(--spacing-2xl) !important;
+  padding-bottom: var(--spacing-xl) !important;
+  margin-bottom: 0 !important;
+}
+
+/* Секция с альтернативным фоном */
+.section-alt {
+  background: rgba(124, 140, 255, 0.03);
+  border-top: 1px solid rgba(124, 140, 255, 0.1);
+  border-bottom: 1px solid rgba(124, 140, 255, 0.1);
+}
+
+/* ========== КОНТЕЙНЕРЫ ========== */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-left: var(--spacing-md);
+  padding-right: var(--spacing-md);
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-left: var(--spacing-sm);
+    padding-right: var(--spacing-sm);
+  }
+}
+
+/* ========== ЗАГОЛОВКИ СЕКЦИЙ ========== */
+.section-header {
+  text-align: center;
+  margin-bottom: var(--spacing-lg) !important;
+}
+
+.section-header h2 {
+  margin-bottom: var(--spacing-sm) !important;
+  margin-top: 0 !important;
+}
+
+.section-header p {
+  margin-top: var(--spacing-xs) !important;
+  margin-bottom: 0 !important;
+}
+
+.overline {
+  display: block;
+  margin-bottom: var(--spacing-xs) !important;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: rgba(124, 140, 255, 0.8);
+  font-weight: 600;
+}
+
+/* ========== КАРТОЧКИ ========== */
+.card {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(124, 140, 255, 0.2);
+  border-radius: 16px;
+  padding: var(--spacing-md) !important;
+  margin-bottom: var(--spacing-md) !important;
+}
+
+.card + .card {
+  margin-top: var(--spacing-md) !important;
+}
+
+.card h3 {
+  margin-top: 0 !important;
+  margin-bottom: var(--spacing-sm) !important;
+}
+
+.card p {
+  margin-bottom: var(--spacing-sm) !important;
+}
+
+.card p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* ========== GRID СИСТЕМЫ ========== */
+.grid {
+  display: grid;
+  gap: var(--spacing-md);
+  margin-top: var(--spacing-md) !important;
+  margin-bottom: var(--spacing-md) !important;
+}
+
+/* ========== УБИРАЕМ ОГРОМНЫЕ ПРОВАЛЫ ========== */
+/* Максимальные отступы между блоками */
+* + * {
+  margin-top: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin-top: var(--spacing-md) !important;
+  margin-bottom: var(--spacing-sm) !important;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child {
+  margin-top: 0 !important;
+}
+
+p {
+  margin-top: 0 !important;
+  margin-bottom: var(--spacing-sm) !important;
+}
+
+ul, ol {
+  margin-top: var(--spacing-sm) !important;
+  margin-bottom: var(--spacing-sm) !important;
+  padding-left: var(--spacing-md) !important;
+}
+
+/* ========== HERO CONTENT ========== */
+.hero-content {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.hero-title {
+  margin-bottom: var(--spacing-md) !important;
+}
+
+.hero-subtitle {
+  margin-bottom: var(--spacing-lg) !important;
+}
+
+/* ========== FLOW CHART ========== */
+.investment-flow-chart {
+  margin-top: var(--spacing-lg) !important;
+  margin-bottom: var(--spacing-lg) !important;
+}
+
+.flow-container {
+  gap: var(--spacing-md) !important;
+}
+
+/* ========== КНОПКИ ========== */
+.hero-cta-buttons,
+.bot-cta-wrapper {
+  margin-top: var(--spacing-lg) !important;
+  margin-bottom: var(--spacing-md) !important;
+  gap: var(--spacing-sm) !important;
+}
+
+/* ========== АДАПТИВНОСТЬ ========== */
+@media (max-width: 768px) {
+  :root {
+    --spacing-lg: 32px;
+    --spacing-xl: 48px;
+    --spacing-2xl: 64px;
+  }
+
+  .section {
+    padding-top: var(--spacing-lg) !important;
+    padding-bottom: var(--spacing-lg) !important;
+  }
+
+  .hero {
+    padding-top: var(--spacing-xl) !important;
+    padding-bottom: var(--spacing-lg) !important;
+  }
+}
+
+@media (min-width: 1200px) {
+  :root {
+    --spacing-xl: 80px;
+    --spacing-2xl: 120px;
+  }
+}
+
+/* ========== УБИРАЕМ INLINE ПРОВАЛЫ ========== */
+[style*="margin-top: 2rem"],
+[style*="margin-top: 3rem"],
+[style*="margin-top: 4rem"] {
+  margin-top: var(--spacing-lg) !important;
+}
+
+[style*="margin-bottom: 2rem"],
+[style*="margin-bottom: 3rem"],
+[style*="margin-bottom: 4rem"] {
+  margin-bottom: var(--spacing-lg) !important;
+}
+
+/* ========== FOOTER ОТСТУП ========== */
+.footer {
+  margin-top: var(--spacing-2xl) !important;
+}
+
