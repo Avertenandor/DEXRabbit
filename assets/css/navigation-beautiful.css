@@ -12,7 +12,7 @@ body {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 9999 !important;
+  z-index: 1000 !important;
   width: 100%;
   background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 30, 0.95) 100%);
   backdrop-filter: saturate(180%) blur(30px);
