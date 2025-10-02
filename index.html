@@ -523,23 +523,30 @@
 
             <style>
               .investment-flow-chart {
-                margin: 2rem 0 0.5rem 0;
-                padding: 1.5rem 0 0 0;
+                margin: 2rem 0 1rem 0;
+                padding: 0;
                 position: relative;
                 overflow: visible;
               }
 
               .flow-container {
-                display: flex;
-                align-items: flex-start;
-                justify-content: center;
-                gap: 1rem;
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+                gap: 1.5rem;
                 position: relative;
-                max-width: 1100px;
+                max-width: 1000px;
                 margin: 0 auto;
-                flex-wrap: wrap;
-                padding-bottom: 0;
-                min-height: auto;
+                padding: 0;
+              }
+              
+              @media (max-width: 768px) {
+                .flow-container {
+                  grid-template-columns: 1fr;
+                  gap: 1rem;
+                }
+                .flow-arrow {
+                  display: none;
+                }
               }
 
               .flow-box {
