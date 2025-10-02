@@ -382,17 +382,204 @@
             </div>
 
             <!-- Investment Process Flow Chart -->
-            <div class="investment-flow-chart">
+            <div class="investment-flow-chart" style="margin: 3rem 0;">
               <div class="flow-container">
                 <!-- Step 1 -->
-                <div class="flow-box flow-box-1" data-step="1">
+                <div class="flow-box">
                   <div class="flow-icon">💰</div>
-                  <div class="flow-text">Инвестор<br />выбрал и<br />купил<br />кроликов</div>
-                  <div class="flow-glow"></div>
+                  <div class="flow-text">Инвестор выбрал и купил кроликов</div>
                 </div>
 
-                <!-- Arrow 1 -->
-                <div class="flow-arrow arrow-1">
+                <!-- Step 2 -->
+                <div class="flow-box">
+                  <div class="flow-icon">🐰</div>
+                  <div class="flow-text">Купленные кролики производят потомство</div>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="flow-box">
+                  <div class="flow-icon">📈</div>
+                  <div class="flow-text">Потомство подрастает и продаётся</div>
+                </div>
+
+                <!-- Step 4 -->
+                <div class="flow-box">
+                  <div class="flow-icon">💵</div>
+                  <div class="flow-text">Инвестор получает прибыль в USDT</div>
+                </div>
+
+                <!-- Central Bonus Box -->
+                <div class="flow-box-center">
+                  <div class="center-icon">🪙</div>
+                  <div class="center-text">
+                    <strong style="color: #facc15;">Пока растёт потомство</strong> инвестор получает прибыль в монете <strong style="color: #4ade80;">PLEX</strong> дополнительно к своему основному доходу как <strong style="color: #4ade80;">приятный бонус</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <style>
+              .investment-flow-chart {
+                position: relative;
+                overflow: visible;
+              }
+
+              .flow-container {
+                display: grid;
+                grid-template-columns: repeat(4, 1fr);
+                gap: 1.5rem;
+                max-width: 1000px;
+                margin: 0 auto;
+              }
+
+              .flow-box {
+                background: linear-gradient(135deg, #22c55e, #4ade80);
+                border: 2px solid rgba(74, 222, 128, 0.4);
+                border-radius: 16px;
+                padding: 1.5rem;
+                min-height: 160px;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                gap: 12px;
+                transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+                box-shadow: 0 4px 16px rgba(34, 197, 94, 0.3);
+                position: relative;
+                overflow: hidden;
+              }
+
+              .flow-box::before {
+                content: '';
+                position: absolute;
+                top: 0;
+                left: -100%;
+                width: 100%;
+                height: 100%;
+                background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+                transition: left 0.6s ease;
+              }
+
+              .flow-box:hover::before {
+                left: 100%;
+              }
+
+              .flow-box:hover {
+                transform: translateY(-6px) scale(1.03);
+                box-shadow: 0 12px 32px rgba(34, 197, 94, 0.5);
+                border-color: rgba(74, 222, 128, 0.6);
+              }
+
+              .flow-icon {
+                font-size: 3rem;
+                margin-bottom: 8px;
+                filter: drop-shadow(0 2px 8px rgba(0, 0, 0, 0.3));
+              }
+
+              .flow-text {
+                color: #fff;
+                font-weight: 600;
+                font-size: 0.95rem;
+                line-height: 1.4;
+              }
+
+              .flow-box-center {
+                grid-column: 1 / -1;
+                background: linear-gradient(135deg, #6d28d9, #7c3aed, #a78bfa);
+                border: 3px solid rgba(167, 139, 250, 0.5);
+                border-radius: 20px;
+                padding: 2rem;
+                text-align: center;
+                margin-top: 1.5rem;
+                box-shadow: 0 12px 40px rgba(124, 58, 237, 0.5);
+                position: relative;
+                overflow: hidden;
+              }
+
+              .flow-box-center::before {
+                content: '';
+                position: absolute;
+                inset: -2px;
+                background: linear-gradient(45deg, #facc15, #fbbf24, #facc15);
+                background-size: 200% 200%;
+                animation: borderGlow 3s linear infinite;
+                border-radius: 20px;
+                opacity: 0.4;
+                z-index: -1;
+              }
+
+              @keyframes borderGlow {
+                0%, 100% { background-position: 0% 50%; }
+                50% { background-position: 100% 50%; }
+              }
+
+              .center-icon {
+                font-size: 3rem;
+                margin-bottom: 12px;
+              }
+
+              .center-text {
+                color: #fff;
+                font-size: 1.05rem;
+                line-height: 1.6;
+              }
+
+              /* Адаптивность */
+              @media (max-width: 1024px) {
+                .flow-container {
+                  grid-template-columns: repeat(2, 1fr);
+                }
+              }
+
+              @media (max-width: 768px) {
+                .flow-container {
+                  grid-template-columns: 1fr;
+                  gap: 1rem;
+                }
+                .flow-box {
+                  min-height: 140px;
+                  padding: 1.2rem;
+                }
+                .flow-icon {
+                  font-size: 2.5rem;
+                }
+                .flow-text {
+                  font-size: 0.9rem;
+                }
+                .flow-box-center {
+                  padding: 1.5rem;
+                  margin-top: 1rem;
+                }
+                .center-text {
+                  font-size: 0.95rem;
+                }
+              }
+
+              @media (max-width: 480px) {
+                .flow-box {
+                  min-height: 120px;
+                  padding: 1rem;
+                }
+                .flow-icon {
+                  font-size: 2rem;
+                }
+                .flow-text {
+                  font-size: 0.85rem;
+                }
+                .flow-box-center {
+                  padding: 1.2rem;
+                }
+                .center-text {
+                  font-size: 0.85rem;
+                }
+                .center-icon {
+                  font-size: 2.5rem;
+                }
+              }
+            </style>
+
+            <!-- Old arrow markup removed -->
                   <svg width="60" height="40" viewBox="0 0 60 40">
                     <defs>
                       <marker
