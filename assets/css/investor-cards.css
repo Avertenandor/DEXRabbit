@@ -4,8 +4,37 @@
  */
 
 /* ============================================
-   INVESTOR CARD STYLES
+   INVESTOR CARD STYLES - ТЁМНАЯ ТЕМА
    ============================================ */
+
+/* Grid для карточек */
+.investors-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 28px;
+  margin-top: 2rem;
+}
+
+@media (max-width: 768px) {
+  .investors-grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .investors-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+  }
+}
+
+@media (min-width: 1025px) {
+  .investors-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 28px;
+  }
+}
 
 .investor-card {
   background: linear-gradient(135deg, rgba(124, 140, 255, 0.08), rgba(76, 201, 240, 0.05));
