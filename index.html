@@ -645,21 +645,18 @@
 
               /* Central Box */
               .flow-box-center {
+                grid-column: 1 / -1;
                 position: relative;
                 background: linear-gradient(135deg, #1e1b4b 0%, #4c1d95 25%, #6d28d9 50%, #7c3aed 75%, #a78bfa 100%);
                 border-radius: 18px;
-                padding: 2rem;
-                width: calc(100% - 2rem);
-                max-width: 650px;
+                padding: 1.5rem;
                 text-align: center;
                 box-shadow: 
                   0 10px 40px rgba(124, 58, 237, 0.4),
                   0 0 0 1px rgba(250, 204, 21, 0.2),
                   inset 0 1px 0 rgba(255, 255, 255, 0.1);
                 animation: slideInUp 1s ease-out 0.9s both;
-                margin: 0.5rem auto 0 auto;
-                flex-basis: 100%;
-                align-self: center;
+                margin: 1rem 0 0 0;
                 overflow: hidden;
                 transition: all 0.4s ease;
                 cursor: pointer;
