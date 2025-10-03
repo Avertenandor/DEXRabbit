@@ -1,5 +1,6 @@
-# DEXRabbit Robots.txt
+# DEXRabbit Robots.txt - ПОЛНАЯ SEO ОПТИМИЗАЦИЯ
 # UTF-8 encoding
+# Updated: 03.10.2025
 
 User-agent: *
 Allow: /
@@ -8,24 +9,35 @@ Crawl-delay: 1
 # Sitemap
 Sitemap: https://xn--80apagbbfxgmuj4j.site/sitemap.xml
 
-# Main pages
+# Main pages - высокий приоритет
 Allow: /index.html
 Allow: /investment-model.html
 Allow: /partnership.html
+Allow: /guarantees.html
+Allow: /investors.html
 Allow: /contacts.html
+
+# Услуги
 Allow: /breeding.html
 Allow: /gifts.html
-Allow: /restaurants.html
-Allow: /care.html
 Allow: /therapy.html
-Allow: /development.html
-Allow: /logistics.html
+Allow: /care.html
+Allow: /breeding-value.html
+Allow: /my-rabbit-breeder.html
+Allow: /feeds-treats.html
+
+# Информационные страницы
 Allow: /rabbits-hares.html
 Allow: /cats-rabbits.html
+Allow: /selective-breeding.html
+Allow: /bloggers.html
+Allow: /belarus-office.html
+Allow: /development.html
+Allow: /logistics.html
 Allow: /reports.html
-Allow: /investors.html
-Allow: /guarantees.html
 Allow: /careers.html
+Allow: /how-it-works-new.html
+Allow: /wallet-instructions.html
 
 # Directories
 Allow: /faq/
@@ -36,6 +48,13 @@ Allow: /docs/
 Allow: /assets/
 Allow: /gallery/
 Allow: /og/
+Allow: /partners/
+Allow: /catalog/
+Allow: /delivery/
+Allow: /contacts/
+Allow: /dashboard/
+Allow: /investment/
+Allow: /blog/
 
 # Disallow private areas
 Disallow: /admin/
@@ -47,6 +66,8 @@ Disallow: /scripts/
 Disallow: /src/
 Disallow: /.github/
 Disallow: /.husky/
+Disallow: /archive/
+Disallow: /templates/
 
 # Static files
 Allow: /*.css$
@@ -57,29 +78,69 @@ Allow: /*.png$
 Allow: /*.gif$
 Allow: /*.svg$
 Allow: /*.webp$
+Allow: /*.avif$
 Allow: /*.pdf$
+Allow: /*.webmanifest$
 Allow: /robots.txt
 Allow: /sitemap.xml
 Allow: /manifest.webmanifest
+Allow: /browserconfig.xml
 
 # Block specific file types
 Disallow: /*.log$
 Disallow: /*.bak$
 Disallow: /*.tmp$
+Disallow: /*.md$
 Disallow: /.env
+Disallow: /*.json$
 
-# Googlebot
+# Googlebot - максимальный приоритет
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 0
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
 
-# Yandexbot
+# Yandexbot - второй по приоритету
 User-agent: Yandexbot
 Allow: /
 Crawl-delay: 1
 Host: xn--80apagbbfxgmuj4j.site
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
 
 # Bingbot
 User-agent: Bingbot
 Allow: /
 Crawl-delay: 1
+Disallow: /admin/
+Disallow: /private/
+Disallow: /.git/
+
+# Запрет плохих ботов
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Allow social media crawlers
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /

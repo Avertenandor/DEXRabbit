@@ -1,212 +1,224 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!-- DEXRabbit sitemap.xml for SEO optimization - Updated 30.09.2025 -->
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<!-- DEXRabbit sitemap.xml - ПОЛНАЯ SEO ОПТИМИЗАЦИЯ - Updated 03.10.2025 -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
     
-    <!-- Homepage - highest priority -->
+    <!-- ==================== ГЛАВНАЯ СТРАНИЦА ==================== -->
     <url>
         <loc>https://xn--80apagbbfxgmuj4j.site/</loc>
-        <lastmod>2025-09-30</lastmod>
+        <lastmod>2025-10-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>1.0</priority>
     </url>
     
-    <!-- Investment Model - high priority -->
+    <!-- ==================== ИНВЕСТИЦИИ ==================== -->
     <url>
         <loc>https://xn--80apagbbfxgmuj4j.site/investment-model.html</loc>
-        <lastmod>2025-09-28</lastmod>
+        <lastmod>2025-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     
-    <!-- Guarantees - high priority (NEW) -->
     <url>
         <loc>https://xn--80apagbbfxgmuj4j.site/guarantees.html</loc>
-        <lastmod>2025-09-30</lastmod>
+        <lastmod>2025-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
     
-    <!-- Partnership Program - high priority -->
     <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/partnership.html</loc>
-        <lastmod>2025-09-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- Contacts - high priority -->
-    <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/contacts.html</loc>
-        <lastmod>2025-09-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- Breeding Program - high priority -->
-    <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/breeding.html</loc>
-        <lastmod>2025-09-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- Gifts - high priority -->
-    <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/gifts.html</loc>
-        <lastmod>2025-09-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- Restaurant Partnership - high priority -->
-    <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/restaurants.html</loc>
-        <lastmod>2025-09-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-    
-    <!-- Careers - high priority (NEW) -->
-    <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/careers.html</loc>
-        <lastmod>2025-09-30</lastmod>
+        <loc>https://xn--80apagbbfxgmuj4j.site/investors.html</loc>
+        <lastmod>2025-10-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
     
-    <!-- Reports - medium priority -->
+    <!-- ==================== ПАРТНЕРСТВО ==================== -->
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/partnership.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/bloggers.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/belarus-office.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- ==================== УСЛУГИ ==================== -->
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/gifts.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/breeding.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/therapy.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/my-rabbit-breeder.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/feeds-treats.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <!-- ==================== ПОРОДЫ И РАЗВЕДЕНИЕ ==================== -->
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/breeding-value.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/rabbits-hares.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/cats-rabbits.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/care.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/selective-breeding.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <!-- ==================== О ПРОЕКТЕ ==================== -->
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/contacts.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/development.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/logistics.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
+    </url>
+    
     <url>
         <loc>https://xn--80apagbbfxgmuj4j.site/reports.html</loc>
-        <lastmod>2025-09-28</lastmod>
+        <lastmod>2025-10-03</lastmod>
         <changefreq>daily</changefreq>
         <priority>0.7</priority>
     </url>
     
-    <!-- Investors - medium priority -->
     <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/investors.html</loc>
-        <lastmod>2025-09-28</lastmod>
+        <loc>https://xn--80apagbbfxgmuj4j.site/careers.html</loc>
+        <lastmod>2025-10-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     
-    <!-- Care Guide - medium priority -->
     <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/care.html</loc>
-        <lastmod>2025-09-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- Therapy - medium priority -->
-    <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/therapy.html</loc>
-        <lastmod>2025-09-29</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
-    
-    <!-- Development Plans - medium priority -->
-    <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/development.html</loc>
-        <lastmod>2025-09-28</lastmod>
+        <loc>https://xn--80apagbbfxgmuj4j.site/wallet-instructions.html</loc>
+        <lastmod>2025-10-03</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.6</priority>
     </url>
     
-    <!-- Logistics - medium priority -->
     <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/logistics.html</loc>
-        <lastmod>2025-09-28</lastmod>
+        <loc>https://xn--80apagbbfxgmuj4j.site/how-it-works-new.html</loc>
+        <lastmod>2025-10-03</lastmod>
         <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
+        <priority>0.8</priority>
     </url>
     
-    <!-- Rabbits vs Hares - medium priority -->
-    <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/rabbits-hares.html</loc>
-        <lastmod>2025-09-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <!-- Cats and Rabbits - medium priority -->
-    <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/cats-rabbits.html</loc>
-        <lastmod>2025-09-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.6</priority>
-    </url>
-    
-    <!-- OG Preview Test - low priority -->
-    <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/og-preview-test.html</loc>
-        <lastmod>2025-09-30</lastmod>
-        <changefreq>never</changefreq>
-        <priority>0.1</priority>
-    </url>
-    
-    <!-- FAQ - medium priority -->
-    <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/faq/</loc>
-        <lastmod>2025-09-28</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.5</priority>
-    </url>
-    
-    <!-- Policy - low priority -->
-    <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/policy/</loc>
-        <lastmod>2025-09-27</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    
-    <!-- Terms - low priority -->
-    <url>
-        <loc>https://xn--80apagbbfxgmuj4j.site/terms/</loc>
-        <lastmod>2025-09-27</lastmod>
-        <changefreq>yearly</changefreq>
-        <priority>0.3</priority>
-    </url>
-    
-    <!-- Legal License - low priority -->
+    <!-- ==================== ЮРИДИЧЕСКИЕ СТРАНИЦЫ ==================== -->
     <url>
         <loc>https://xn--80apagbbfxgmuj4j.site/legal/license.html</loc>
-        <lastmod>2025-09-28</lastmod>
+        <lastmod>2025-10-03</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     
-    <!-- Legal Agreement - low priority -->
     <url>
         <loc>https://xn--80apagbbfxgmuj4j.site/legal/agreement.html</loc>
-        <lastmod>2025-09-28</lastmod>
+        <lastmod>2025-10-03</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     
-    <!-- Legal Terms - low priority -->
     <url>
         <loc>https://xn--80apagbbfxgmuj4j.site/legal/terms.html</loc>
-        <lastmod>2025-09-28</lastmod>
+        <lastmod>2025-10-03</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     
-    <!-- Legal Privacy - low priority -->
     <url>
         <loc>https://xn--80apagbbfxgmuj4j.site/legal/privacy.html</loc>
-        <lastmod>2025-09-28</lastmod>
+        <lastmod>2025-10-03</lastmod>
         <changefreq>yearly</changefreq>
         <priority>0.3</priority>
     </url>
     
-    <!-- 404 Page - low priority -->
+    <!-- ==================== СПЕЦИАЛЬНЫЕ СТРАНИЦЫ ==================== -->
     <url>
         <loc>https://xn--80apagbbfxgmuj4j.site/404.html</loc>
-        <lastmod>2025-09-27</lastmod>
+        <lastmod>2025-10-03</lastmod>
         <changefreq>never</changefreq>
         <priority>0.1</priority>
     </url>
+    
+    <url>
+        <loc>https://xn--80apagbbfxgmuj4j.site/demo-megamenu.html</loc>
+        <lastmod>2025-10-03</lastmod>
+        <changefreq>never</changefreq>
+        <priority>0.1</priority>
+    </url>
+    
 </urlset>
