@@ -47,6 +47,14 @@ main {
 .grid {
   display: grid;
   gap: clamp(1.5rem, 2.5vw, 2.5rem);
+  align-items: stretch;
+}
+
+.grid > .card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  height: 100%;
 }
 
 .flex {
@@ -277,7 +285,7 @@ main {
 
 .timeline {
   position: relative;
-  padding-left: clamp(1.75rem, 2.5vw, 2.75rem);
+  padding-left: 2.5rem;
   display: grid;
   gap: clamp(1.5rem, 2vw, 2rem);
 }
@@ -286,7 +294,7 @@ main {
   content: "";
   position: absolute;
   inset-block: 0;
-  left: clamp(0.75rem, 1.2vw, 1rem);
+  left: 1rem;
   width: 2px;
   background: linear-gradient(180deg, rgba(124, 140, 255, 0.58), transparent);
 }
@@ -304,13 +312,14 @@ main {
 .timeline-item::before {
   content: "";
   position: absolute;
-  left: clamp(-1.2rem, -1vw, -1rem);
-  top: 1.1rem;
+  left: calc(-2.5rem + 1rem + 1px - 6px);
+  top: 1.5rem;
   width: 12px;
   height: 12px;
   border-radius: 50%;
   border: 2px solid var(--color-accent-strong);
   background: var(--color-bg-primary);
+  z-index: 1;
 }
 
 .checklist {
@@ -870,7 +879,8 @@ main {
 .gallery-item img {
   width: 100%;
   height: 250px;
-  object-fit: cover;
+  object-fit: contain;
+  background-color: rgba(16, 21, 33, 0.5);
   transition: transform var(--transition-medium);
 }
 
@@ -930,7 +940,8 @@ main {
 .photo-grid img {
   width: 100%;
   height: 200px;
-  object-fit: cover;
+  object-fit: contain;
+  background-color: rgba(16, 21, 33, 0.5);
   border-radius: var(--radius-md);
   border: 1px solid var(--color-border);
   transition: transform var(--transition-fast);

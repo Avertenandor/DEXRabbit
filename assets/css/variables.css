@@ -16,8 +16,8 @@
   --color-danger: #f87171;
 
   --color-text-primary: #f5f7ff;
-  --color-text-secondary: rgba(245, 247, 255, 0.72);
-  --color-text-tertiary: rgba(245, 247, 255, 0.52);
+  --color-text-secondary: rgba(245, 247, 255, 0.85);
+  --color-text-tertiary: rgba(245, 247, 255, 0.68);
 
   /* Typography */
   --font-sans: "Inter", "Segoe UI", "Roboto", system-ui, -apple-system, sans-serif;
