@@ -358,36 +358,7 @@ main {
   margin-top: 0.2rem;
 }
 
-.footer {
-  border-top: 1px solid rgba(124, 140, 255, 0.12);
-  background: rgba(10, 13, 20, 0.95);
-  backdrop-filter: blur(16px);
-  padding: clamp(2.5rem, 4vw, 4rem) 0;
-}
-
-.footer-grid {
-  display: grid;
-  gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-}
-
-.footer h4 {
-  font-size: var(--font-size-sm);
-  text-transform: uppercase;
-  letter-spacing: 0.18em;
-  color: var(--color-text-tertiary);
-  margin-bottom: 1rem;
-}
-
-.footer a {
-  color: var(--color-text-secondary);
-  text-decoration: none;
-  transition: color var(--transition-fast);
-}
-
-.footer a:hover {
-  color: var(--color-accent-strong);
-}
+/* Footer styles moved to footer.css */
 
 .navbar {
   position: sticky;
