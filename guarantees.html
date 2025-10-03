@@ -255,342 +255,310 @@
     </nav>
 
     <main>
-      <!-- Hero Section - ИСПРАВЛЕНО: добавлен padding для предотвращения обрезания -->
-      <section class="hero-section" style="padding: 8rem 0 4rem; overflow: visible;">
-        <div class="container" style="overflow: visible;">
-          <div class="hero-content" style="overflow: visible;">
-            <span class="overline animate-fadeIn" style="display: inline-block; padding: 8px 20px; margin-bottom: 16px; white-space: nowrap;">Защита инвестиций</span>
-            <h1 class="animate-fadeInUp" style="margin-bottom: 20px;">🛡️ Гарантии и обязательства</h1>
-            <p class="lead animate-fadeInUp" style="max-width: 700px; margin: 0 auto;">
-              Полная защита ваших инвестиций через смарт-контракты, страхование и юридические
-              гарантии
+      <!-- Hero Section -->
+      <section class="hero-guarantee">
+        <div class="container">
+          <div class="hero-content">
+            <div class="hero-badge">
+              <span class="hero-badge__icon">🛡️</span>
+              <span class="hero-badge__text">Защита инвестиций</span>
+            </div>
+            <h1 class="hero-title">Гарантии безопасности<br>ваших инвестиций</h1>
+            <p class="hero-subtitle">
+              100% возврат вложений защищен блокчейном, страхованием<br class="hide-mobile">
+              и юридическими гарантиями
             </p>
+            <div class="hero-stats">
+              <div class="hero-stat">
+                <span class="hero-stat__value">100%</span>
+                <span class="hero-stat__label">Возврат средств</span>
+              </div>
+              <div class="hero-stat">
+                <span class="hero-stat__value">15%</span>
+                <span class="hero-stat__label">Страховой фонд</span>
+              </div>
+              <div class="hero-stat">
+                <span class="hero-stat__value">24/7</span>
+                <span class="hero-stat__label">Мониторинг фермы</span>
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- Main Guarantees - УЛУЧШЕННАЯ ВЕРСИЯ -->
-      <section class="section" id="guarantees" style="padding: 5rem 0;">
-        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 20px;">
-          <!-- Заголовок секции -->
-          <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
-            <span class="overline" style="display: inline-block; padding: 8px 20px; background: linear-gradient(135deg, #7c8cff, #4cc9f0); border-radius: 20px; font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 16px; box-shadow: 0 6px 20px rgba(124, 140, 255, 0.4);">БЕЗОПАСНОСТЬ</span>
-            <h2 style="font-size: clamp(32px, 5vw, 48px); margin-bottom: 16px; background: linear-gradient(135deg, #7c8cff, #4cc9f0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">ОСНОВНЫЕ ГАРАНТИИ</h2>
-            <p style="font-size: clamp(16px, 2.5vw, 20px); max-width: 700px; margin: 0 auto; opacity: 0.9; line-height: 1.6;">100% защита инвестора</p>
+      <!-- Main Guarantees -->
+      <section class="section guarantees-main">
+        <div class="container">
+          <div class="section-intro">
+            <span class="section-overline">Основные гарантии</span>
+            <h2 class="section-title">Три уровня защиты</h2>
+            <p class="section-description">
+              Многоуровневая система гарантий обеспечивает полную безопасность ваших инвестиций
+            </p>
           </div>
 
-          <!-- Две основные карточки гарантий -->
-          <div class="guarantees-main-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 2rem; margin-bottom: 3rem;">
-            
-            <!-- Гарантия возврата вложений -->
-            <div class="guarantee-card" style="background: linear-gradient(135deg, rgba(124, 140, 255, 0.12), rgba(76, 201, 240, 0.08)); border: 2px solid rgba(124, 140, 255, 0.35); border-radius: 24px; padding: clamp(1.5rem, 4vw, 2.5rem); position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
-              
-              <!-- Иконка -->
-              <div style="width: clamp(56px, 10vw, 72px); height: clamp(56px, 10vw, 72px); background: linear-gradient(135deg, #7c8cff, #4cc9f0); border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: clamp(28px, 5vw, 36px); margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(124, 140, 255, 0.4); animation: floatIcon 3s ease-in-out infinite;">
-                💰
+          <div class="guarantees-grid">
+            <!-- Гарантия 1: Возврат вложений -->
+            <div class="guarantee-card guarantee-card--primary">
+              <div class="guarantee-card__header">
+                <div class="guarantee-card__icon">💰</div>
+                <div class="guarantee-card__number">01</div>
               </div>
-
-              <!-- Заголовок -->
-              <h3 style="font-size: clamp(20px, 3vw, 28px); font-weight: 700; margin-bottom: 1.25rem; color: #fff; line-height: 1.3;">
-                Гарантия возврата вложений
-              </h3>
-
-              <!-- Описание -->
-              <p style="font-size: clamp(14px, 2vw, 16px); line-height: 1.7; opacity: 0.95; margin-bottom: 1.5rem; color: rgba(255, 255, 255, 0.9);">
-                100% возврат основной суммы гарантирован вне зависимости от результатов. В случае форс-мажора возврат осуществляется токенами PLEX по текущему курсу или USDT.
+              <h3 class="guarantee-card__title">Возврат вложений</h3>
+              <p class="guarantee-card__desc">
+                Полный возврат основной суммы гарантирован независимо от результатов работы фермы
               </p>
-
-              <!-- Список преимуществ -->
-              <div class="guarantee-features">
-                <div class="guarantee-feature" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: rgba(124, 140, 255, 0.08); border-radius: 12px; margin-bottom: 10px; transition: all 0.3s ease;">
-                  <span style="font-size: 20px; flex-shrink: 0;">✅</span>
-                  <span style="font-size: clamp(13px, 1.8vw, 15px); line-height: 1.6;">Возврат в течение 3 рабочих дней</span>
-                </div>
-                
-                <div class="guarantee-feature" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: rgba(124, 140, 255, 0.08); border-radius: 12px; margin-bottom: 10px; transition: all 0.3s ease;">
-                  <span style="font-size: 20px; flex-shrink: 0;">✅</span>
-                  <span style="font-size: clamp(13px, 1.8vw, 15px); line-height: 1.6;">Выбор валюты возврата (USDT/PLEX)</span>
-                </div>
-                
-                <div class="guarantee-feature" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: rgba(124, 140, 255, 0.08); border-radius: 12px; margin-bottom: 10px; transition: all 0.3s ease;">
-                  <span style="font-size: 20px; flex-shrink: 0;">✅</span>
-                  <span style="font-size: clamp(13px, 1.8vw, 15px); line-height: 1.6;">Без скрытых комиссий</span>
-                </div>
+              <ul class="guarantee-card__features">
+                <li>
+                  <span class="feature-icon">✓</span>
+                  <span>Возврат в течение 3 рабочих дней</span>
+                </li>
+                <li>
+                  <span class="feature-icon">✓</span>
+                  <span>Выбор валюты: USDT или PLEX</span>
+                </li>
+                <li>
+                  <span class="feature-icon">✓</span>
+                  <span>Без скрытых комиссий</span>
+                </li>
+              </ul>
+              <div class="guarantee-card__note">
+                Гарантируется возврат даже в случае форс-мажора
               </div>
-
-              <!-- Декоративный элемент -->
-              <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(124, 140, 255, 0.2), transparent); border-radius: 50%; pointer-events: none;"></div>
             </div>
 
-            <!-- Блокчейн гарантии -->
-            <div class="guarantee-card" style="background: linear-gradient(135deg, rgba(76, 201, 240, 0.12), rgba(34, 197, 94, 0.08)); border: 2px solid rgba(76, 201, 240, 0.35); border-radius: 24px; padding: clamp(1.5rem, 4vw, 2.5rem); position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
-              
-              <!-- Иконка -->
-              <div style="width: clamp(56px, 10vw, 72px); height: clamp(56px, 10vw, 72px); background: linear-gradient(135deg, #4cc9f0, #00C896); border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: clamp(28px, 5vw, 36px); margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(76, 201, 240, 0.4); animation: floatIcon 3s ease-in-out infinite 0.5s;">
-                🔒
+            <!-- Гарантия 2: Блокчейн защита -->
+            <div class="guarantee-card guarantee-card--secondary">
+              <div class="guarantee-card__header">
+                <div class="guarantee-card__icon">🔒</div>
+                <div class="guarantee-card__number">02</div>
               </div>
-
-              <!-- Заголовок -->
-              <h3 style="font-size: clamp(20px, 3vw, 28px); font-weight: 700; margin-bottom: 1.25rem; color: #fff; line-height: 1.3;">
-                Блокчейн гарантии
-              </h3>
-
-              <!-- Описание -->
-              <p style="font-size: clamp(14px, 2vw, 16px); line-height: 1.7; opacity: 0.95; margin-bottom: 1.5rem; color: rgba(255, 255, 255, 0.9);">
-                Смарт-контракт на BSC автоматически защищает ваши средства. Все операции записываются в блокчейн и не могут быть изменены.
+              <h3 class="guarantee-card__title">Блокчейн защита</h3>
+              <p class="guarantee-card__desc">
+                Смарт-контракт на BSC автоматически защищает средства и исполняет условия
               </p>
-
-              <!-- Список преимуществ -->
-              <div class="guarantee-features">
-                <div class="guarantee-feature" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: rgba(76, 201, 240, 0.08); border-radius: 12px; margin-bottom: 10px; transition: all 0.3s ease;">
-                  <span style="font-size: 20px; flex-shrink: 0;">✅</span>
-                  <span style="font-size: clamp(13px, 1.8vw, 15px); line-height: 1.6;">Неизменяемые условия контракта</span>
-                </div>
-                
-                <div class="guarantee-feature" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: rgba(76, 201, 240, 0.08); border-radius: 12px; margin-bottom: 10px; transition: all 0.3s ease;">
-                  <span style="font-size: 20px; flex-shrink: 0;">✅</span>
-                  <span style="font-size: clamp(13px, 1.8vw, 15px); line-height: 1.6;">Публичный аудит кода</span>
-                </div>
-                
-                <div class="guarantee-feature" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: rgba(76, 201, 240, 0.08); border-radius: 12px; margin-bottom: 10px; transition: all 0.3s ease;">
-                  <span style="font-size: 20px; flex-shrink: 0;">✅</span>
-                  <span style="font-size: clamp(13px, 1.8vw, 15px); line-height: 1.6;">Автоматическое исполнение</span>
-                </div>
+              <ul class="guarantee-card__features">
+                <li>
+                  <span class="feature-icon">✓</span>
+                  <span>Неизменяемые условия контракта</span>
+                </li>
+                <li>
+                  <span class="feature-icon">✓</span>
+                  <span>Публичный аудит кода</span>
+                </li>
+                <li>
+                  <span class="feature-icon">✓</span>
+                  <span>Автоматическое исполнение</span>
+                </li>
+              </ul>
+              <div class="guarantee-card__note">
+                Все операции записаны в блокчейн навсегда
               </div>
-
-              <!-- Декоративный элемент -->
-              <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(76, 201, 240, 0.2), transparent); border-radius: 50%; pointer-events: none;"></div>
             </div>
-          </div>
 
-          <!-- Блок с дополнительными гарантиями -->
-          <div class="additional-guarantees" style="background: linear-gradient(135deg, rgba(250, 204, 21, 0.08), rgba(251, 191, 36, 0.04)); border: 2px solid rgba(250, 204, 21, 0.3); border-radius: 20px; padding: clamp(1.5rem, 4vw, 2.5rem); margin-bottom: 2rem;">
-            
-            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
-              
-              <!-- Заголовок блока -->
-              <div style="text-align: center; margin-bottom: 1rem;">
-                <div style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 24px; background: rgba(250, 204, 21, 0.15); border-radius: 16px; margin-bottom: 16px;">
-                  <span style="font-size: clamp(24px, 4vw, 32px);">⚠️</span>
-                  <h3 style="font-size: clamp(18px, 2.5vw, 24px); font-weight: 700; margin: 0; color: #facc15;">Важная информация</h3>
-                </div>
+            <!-- Гарантия 3: Страховой фонд -->
+            <div class="guarantee-card guarantee-card--tertiary">
+              <div class="guarantee-card__header">
+                <div class="guarantee-card__icon">🛡️</div>
+                <div class="guarantee-card__number">03</div>
               </div>
-
-              <!-- Текст информации -->
-              <p style="font-size: clamp(14px, 2vw, 17px); line-height: 1.8; text-align: center; max-width: 900px; margin: 0 auto; color: rgba(255, 255, 255, 0.95);">
-                <strong style="color: #facc15;">Каждый инвестор гарантирован по вкладу</strong>, но не по прибыли. Форс-мажоры и риски касаются <strong style="color: #fff;">только прибыли</strong>. Возврат вложений в случае любых рисков предусмотрен монетой PLEX и/или USDT по наличию.
+              <h3 class="guarantee-card__title">Страховой фонд</h3>
+              <p class="guarantee-card__desc">
+                15% от оборота резервируется для покрытия непредвиденных ситуаций
               </p>
-
-              <!-- Сетка с дополнительными гарантиями -->
-              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1rem; margin-top: 1rem;">
-                
-                <div style="background: rgba(74, 222, 128, 0.08); border: 1px solid rgba(74, 222, 128, 0.3); border-radius: 12px; padding: 1rem;">
-                  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-                    <span style="font-size: 24px;">🛡️</span>
-                    <strong style="font-size: clamp(14px, 2vw, 16px); color: #4ade80;">Страховой фонд</strong>
-                  </div>
-                  <p style="font-size: clamp(12px, 1.8vw, 14px); opacity: 0.9; line-height: 1.6; margin: 0;">15% от оборота зарезервировано на случай форс-мажоров</p>
-                </div>
-
-                <div style="background: rgba(124, 140, 255, 0.08); border: 1px solid rgba(124, 140, 255, 0.3); border-radius: 12px; padding: 1rem;">
-                  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-                    <span style="font-size: 24px;">📋</span>
-                    <strong style="font-size: clamp(14px, 2vw, 16px); color: #7c8cff;">Прозрачность</strong>
-                  </div>
-                  <p style="font-size: clamp(12px, 1.8vw, 14px); opacity: 0.9; line-height: 1.6; margin: 0;">Еженедельные отчеты о состоянии фермы и финансах</p>
-                </div>
-
-                <div style="background: rgba(76, 201, 240, 0.08); border: 1px solid rgba(76, 201, 240, 0.3); border-radius: 12px; padding: 1rem;">
-                  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
-                    <span style="font-size: 24px;">🏥</span>
-                    <strong style="font-size: clamp(14px, 2vw, 16px); color: #4cc9f0;">Ветконтроль</strong>
-                  </div>
-                  <p style="font-size: clamp(12px, 1.8vw, 14px); opacity: 0.9; line-height: 1.6; margin: 0;">Круглосуточный мониторинг здоровья всех животных</p>
-                </div>
-
+              <ul class="guarantee-card__features">
+                <li>
+                  <span class="feature-icon">✓</span>
+                  <span>Резерв для форс-мажоров</span>
+                </li>
+                <li>
+                  <span class="feature-icon">✓</span>
+                  <span>Ветеринарное страхование</span>
+                </li>
+                <li>
+                  <span class="feature-icon">✓</span>
+                  <span>Прозрачное управление</span>
+                </li>
+              </ul>
+              <div class="guarantee-card__note">
+                Публичная отчетность по использованию фонда
               </div>
             </div>
           </div>
-
         </div>
+      </section>
 
-        <!-- Стили и анимации -->
-        <style>
-          @keyframes floatIcon {
-            0%, 100% {
-              transform: translateY(0px);
-            }
-            50% {
-              transform: translateY(-10px);
-            }
-          }
-
-          .guarantee-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(124, 140, 255, 0.35);
-            border-color: rgba(124, 140, 255, 0.6);
-          }
-
-          .guarantee-feature:hover {
-            background: rgba(124, 140, 255, 0.15) !important;
-            transform: translateX(5px);
-          }
-
-          @media (max-width: 1024px) {
-            .guarantees-main-grid {
-              gap: 1.5rem !important;
-            }
-          }
-
-          @media (max-width: 768px) {
-            .guarantees-main-grid {
-              gap: 1.25rem !important;
-            }
-            
-            .guarantee-card {
-              padding: 1.5rem !important;
-            }
-
-            .additional-guarantees {
-              padding: 1.5rem !important;
-            }
-
-            .guarantee-feature {
-              padding: 10px !important;
-            }
-          }
-
-          @media (max-width: 480px) {
-            .section-header {
-              margin-bottom: 2.5rem !important;
-            }
-
-            .guarantees-main-grid {
-              gap: 1rem !important;
-            }
-
-            .guarantee-card {
-              padding: 1.25rem !important;
-              border-radius: 16px !important;
-            }
-
-            .additional-guarantees {
-              padding: 1.25rem !important;
-              border-radius: 16px !important;
-            }
-
-            .guarantee-feature {
-              padding: 8px !important;
-              flex-direction: row;
-            }
-
-            h2 {
-              line-height: 1.2 !important;
-            }
-
-            h3 {
-              line-height: 1.25 !important;
-            }
-          }
-
-          .guarantee-card,
-          .guarantee-feature {
-            will-change: transform;
-            transform: translateZ(0);
-            backface-visibility: hidden;
-          }
-        </style>
+      <!-- Important Note -->
+      <section class="section important-note">
+        <div class="container container--narrow">
+          <div class="info-card info-card--warning">
+            <div class="info-card__icon">⚠️</div>
+            <div class="info-card__content">
+              <h3 class="info-card__title">Важная информация</h3>
+              <p class="info-card__text">
+                <strong>Вклад защищен на 100%</strong> — возврат средств гарантирован в любом случае. 
+                <strong>Прибыль не гарантирована</strong> — форс-мажоры влияют только на доходность.
+              </p>
+              <p class="info-card__subtext">
+                При форс-мажоре возврат осуществляется токенами PLEX по текущему курсу или USDT по наличию
+              </p>
+            </div>
+          </div>
+        </div>
       </section>
 
       <!-- Risk Management -->
-      <section class="section section-alt">
+      <section class="section section-alt risk-management">
         <div class="container">
-          <div class="section-header">
-            <span class="overline">Управление рисками</span>
-            <h2>🛡️ Как мы защищаем ваши инвестиции</h2>
+          <div class="section-intro">
+            <span class="section-overline">Управление рисками</span>
+            <h2 class="section-title">Как мы минимизируем риски</h2>
+            <p class="section-description">
+              4-уровневая система защиты от непредвиденных ситуаций
+            </p>
           </div>
 
-          <div class="timeline">
-            <div class="timeline-item">
-              <span class="badge">1</span>
-              <h3>Страховой фонд</h3>
-              <p>
-                <strong>20% от всех инвестиций</strong> резервируется в страховом фонде для покрытия
-                любых непредвиденных расходов и гарантии выплат.
-              </p>
+          <div class="risk-timeline">
+            <div class="risk-item">
+              <div class="risk-item__badge">
+                <span class="risk-item__icon">🏥</span>
+              </div>
+              <div class="risk-item__content">
+                <h3 class="risk-item__title">Ветеринарный контроль</h3>
+                <p class="risk-item__text">
+                  Ежедневный осмотр ветеринаром, вакцинация по международным стандартам,
+                  профилактика заболеваний
+                </p>
+                <div class="risk-item__stats">
+                  <span class="risk-stat">
+                    <strong>24/7</strong> мониторинг
+                  </span>
+                  <span class="risk-stat">
+                    <strong>100%</strong> вакцинация
+                  </span>
+                </div>
+              </div>
             </div>
 
-            <div class="timeline-item">
-              <span class="badge">2</span>
-              <h3>Диверсификация</h3>
-              <p>
-                Разведение разных пород кроликов минимизирует риски.
-                <strong>Не менее 5 различных породных линий</strong> на ферме.
-              </p>
+            <div class="risk-item">
+              <div class="risk-item__badge">
+                <span class="risk-item__icon">🎯</span>
+              </div>
+              <div class="risk-item__content">
+                <h3 class="risk-item__title">Диверсификация пород</h3>
+                <p class="risk-item__text">
+                  Минимум 5 различных породных линий снижают влияние болезней
+                  и рыночных колебаний
+                </p>
+                <div class="risk-item__stats">
+                  <span class="risk-stat">
+                    <strong>5+</strong> породных линий
+                  </span>
+                  <span class="risk-stat">
+                    <strong>3</strong> направления сбыта
+                  </span>
+                </div>
+              </div>
             </div>
 
-            <div class="timeline-item">
-              <span class="badge">3</span>
-              <h3>Ветеринарный контроль</h3>
-              <p>
-                <strong>Ежедневный осмотр</strong> ветеринаром. Вакцинация и профилактика по
-                международным стандартам.
-              </p>
+            <div class="risk-item">
+              <div class="risk-item__badge">
+                <span class="risk-item__icon">📹</span>
+              </div>
+              <div class="risk-item__content">
+                <h3 class="risk-item__title">Постоянный мониторинг</h3>
+                <p class="risk-item__text">
+                  Автоматизированный контроль микроклимата, видеонаблюдение с доступом
+                  для инвесторов
+                </p>
+                <div class="risk-item__stats">
+                  <span class="risk-stat">
+                    <strong>24/7</strong> видео
+                  </span>
+                  <span class="risk-stat">
+                    <strong>2 раза</strong> в день отчеты
+                  </span>
+                </div>
+              </div>
             </div>
 
-            <div class="timeline-item">
-              <span class="badge">4</span>
-              <h3>Технологическая защита</h3>
-              <p>
-                Автоматизированные системы контроля микроклимата.
-                <strong>24/7 видеонаблюдение</strong> с доступом для инвесторов.
-              </p>
+            <div class="risk-item">
+              <div class="risk-item__badge">
+                <span class="risk-item__icon">💼</span>
+              </div>
+              <div class="risk-item__content">
+                <h3 class="risk-item__title">Страховые резервы</h3>
+                <p class="risk-item__text">
+                  15% от оборота резервируется специально для покрытия
+                  непредвиденных расходов
+                </p>
+                <div class="risk-item__stats">
+                  <span class="risk-stat">
+                    <strong>15%</strong> резерв
+                  </span>
+                  <span class="risk-stat">
+                    <strong>100%</strong> покрытие вклада
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Obligations -->
-      <section class="section">
+      <!-- Rights & Obligations -->
+      <section class="section rights-obligations">
         <div class="container">
-          <div class="section-header">
-            <span class="overline">Наши обязательства</span>
-            <h2>📝 Что мы гарантируем инвесторам</h2>
+          <div class="section-intro">
+            <span class="section-overline">Права и обязанности</span>
+            <h2 class="section-title">Что гарантируем мы,<br>что получаете вы</h2>
           </div>
 
-          <div class="card">
-            <h3>✅ Обязательства фермера</h3>
-            <div class="grid" style="margin-top: 2rem">
-              <div>
-                <h4>Уход за животными:</h4>
-                <ul class="checklist">
+          <div class="rights-grid">
+            <!-- Обязательства фермера -->
+            <div class="rights-card rights-card--obligations">
+              <div class="rights-card__header">
+                <h3 class="rights-card__title">
+                  <span class="rights-card__icon">✅</span>
+                  Наши обязательства
+                </h3>
+              </div>
+              
+              <div class="rights-card__group">
+                <h4 class="rights-card__subtitle">Уход за животными</h4>
+                <ul class="rights-list">
                   <li>Качественное питание по графику</li>
-                  <li>Чистота и гигиена помещений</li>
+                  <li>Поддержание чистоты и гигиены</li>
                   <li>Ветеринарное обслуживание</li>
                   <li>Комфортные условия содержания</li>
-                  <li>Гуманное обращение</li>
+                  <li>Гуманное обращение с животными</li>
                 </ul>
               </div>
 
-              <div>
-                <h4>Отчетность и прозрачность:</h4>
-                <ul class="checklist">
+              <div class="rights-card__group">
+                <h4 class="rights-card__subtitle">Прозрачность</h4>
+                <ul class="rights-list">
                   <li>Видеотрансляции 2 раза в день</li>
                   <li>Еженедельные отчеты о состоянии</li>
                   <li>Фото и видео по запросу</li>
                   <li>Доступ к ветеринарным картам</li>
-                  <li>Финансовая отчетность</li>
+                  <li>Полная финансовая отчетность</li>
                 </ul>
               </div>
             </div>
-          </div>
 
-          <div class="card">
-            <h3>💎 Права инвестора</h3>
-            <div class="grid" style="margin-top: 2rem">
-              <div>
-                <h4>Контроль и управление:</h4>
-                <ul class="checklist">
+            <!-- Права инвестора -->
+            <div class="rights-card rights-card--rights">
+              <div class="rights-card__header">
+                <h3 class="rights-card__title">
+                  <span class="rights-card__icon">💎</span>
+                  Ваши права
+                </h3>
+              </div>
+              
+              <div class="rights-card__group">
+                <h4 class="rights-card__subtitle">Контроль</h4>
+                <ul class="rights-list">
                   <li>Выбор конкретного кролика</li>
                   <li>Присвоение имени животному</li>
                   <li>Участие в принятии решений</li>
@@ -599,9 +567,9 @@
                 </ul>
               </div>
 
-              <div>
-                <h4>Финансовые права:</h4>
-                <ul class="checklist">
+              <div class="rights-card__group">
+                <h4 class="rights-card__subtitle">Финансы</h4>
+                <ul class="rights-list">
                   <li>Получение прибыли от продаж</li>
                   <li>Ежедневные PLEX токены</li>
                   <li>Выкуп кролика в собственность</li>
@@ -615,160 +583,286 @@
       </section>
 
       <!-- Force Majeure -->
-      <section class="section section-alt">
+      <section class="section section-alt force-majeure">
         <div class="container">
-          <div class="section-header">
-            <span class="overline">Форс-мажор</span>
-            <h2>⚠️ Покрытие рисков</h2>
+          <div class="section-intro">
+            <span class="section-overline">Форс-мажорные обстоятельства</span>
+            <h2 class="section-title">Защита от непредвиденных ситуаций</h2>
+            <p class="section-description">
+              Даже в критических ситуациях ваш вклад защищен
+            </p>
           </div>
 
-          <div class="alert alert-warning">
-            <strong>Важно!</strong> Форс-мажорные обстоятельства касаются только прибыли. Основная
-            сумма инвестиции защищена в любом случае.
+          <div class="info-card info-card--notice">
+            <div class="info-card__icon">💡</div>
+            <div class="info-card__content">
+              <p class="info-card__text">
+                <strong>Важно понимать:</strong> форс-мажор влияет только на прибыль, 
+                не на основную сумму вложений. Ваши средства защищены в любом случае.
+              </p>
+            </div>
           </div>
 
-          <div class="grid" style="margin-top: 2rem">
-            <div class="card">
-              <h4>🌪️ Природные катастрофы</h4>
-              <p>При стихийных бедствиях:</p>
-              <ul>
-                <li>Активация страхового покрытия</li>
-                <li>Возврат средств из резервного фонда</li>
-                <li>Компенсация токенами PLEX</li>
-              </ul>
+          <div class="force-grid">
+            <div class="force-card">
+              <div class="force-card__icon">🌪️</div>
+              <h3 class="force-card__title">Природные катастрофы</h3>
+              <p class="force-card__desc">
+                Стихийные бедствия, погодные катаклизмы
+              </p>
+              <div class="force-card__solution">
+                <strong>Решение:</strong>
+                <ul>
+                  <li>Активация страхового покрытия</li>
+                  <li>Возврат из резервного фонда</li>
+                  <li>Компенсация токенами PLEX</li>
+                </ul>
+              </div>
             </div>
 
-            <div class="card">
-              <h4>🏥 Эпидемии</h4>
-              <p>При заболеваниях животных:</p>
-              <ul>
-                <li>Ветеринарное страхование</li>
-                <li>Замена поголовья</li>
-                <li>Продление инвестиционного цикла</li>
-              </ul>
+            <div class="force-card">
+              <div class="force-card__icon">🏥</div>
+              <h3 class="force-card__title">Эпидемии животных</h3>
+              <p class="force-card__desc">
+                Массовые заболевания, карантин
+              </p>
+              <div class="force-card__solution">
+                <strong>Решение:</strong>
+                <ul>
+                  <li>Ветеринарное страхование</li>
+                  <li>Замена поголовья</li>
+                  <li>Продление инвестиционного цикла</li>
+                </ul>
+              </div>
             </div>
 
-            <div class="card">
-              <h4>📉 Рыночные риски</h4>
-              <p>При падении цен:</p>
-              <ul>
-                <li>Минимальная гарантированная цена</li>
-                <li>Компенсация через PLEX</li>
-                <li>Альтернативные каналы сбыта</li>
-              </ul>
+            <div class="force-card">
+              <div class="force-card__icon">📉</div>
+              <h3 class="force-card__title">Рыночные колебания</h3>
+              <p class="force-card__desc">
+                Резкое падение цен на продукцию
+              </p>
+              <div class="force-card__solution">
+                <strong>Решение:</strong>
+                <ul>
+                  <li>Минимальная гарантированная цена</li>
+                  <li>Альтернативные каналы сбыта</li>
+                  <li>Компенсация через PLEX токены</li>
+                </ul>
+              </div>
             </div>
 
-            <div class="card">
-              <h4>⚖️ Правовые изменения</h4>
-              <p>При изменении законодательства:</p>
-              <ul>
-                <li>Адаптация под новые требования</li>
-                <li>Перерегистрация в другой юрисдикции</li>
-                <li>Полный возврат средств</li>
-              </ul>
+            <div class="force-card">
+              <div class="force-card__icon">⚖️</div>
+              <h3 class="force-card__title">Правовые изменения</h3>
+              <p class="force-card__desc">
+                Изменение законодательства
+              </p>
+              <div class="force-card__solution">
+                <strong>Решение:</strong>
+                <ul>
+                  <li>Адаптация под новые требования</li>
+                  <li>Перерегистрация в другой стране</li>
+                  <li>Полный возврат средств инвесторам</li>
+                </ul>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <!-- Legal Documents -->
-      <section class="section">
+      <!-- Documents -->
+      <section class="section documents-section">
         <div class="container">
-          <div class="section-header">
-            <span class="overline">Документы</span>
-            <h2>📄 Правовая база</h2>
+          <div class="section-intro">
+            <span class="section-overline">Юридическая база</span>
+            <h2 class="section-title">Правовые документы</h2>
+            <p class="section-description">
+              Все гарантии закреплены юридически
+            </p>
           </div>
 
-          <div class="grid">
-            <a
-              href="/docs/investment-agreement.pdf"
-              class="card hover-lift"
-              style="text-decoration: none"
-            >
-              <div class="card-icon">📑</div>
-              <h3>Инвестиционный договор</h3>
-              <p>Полный текст договора с инвестором</p>
-              <span class="btn btn-sm">Скачать PDF</span>
+          <div class="documents-grid">
+            <a href="/docs/investment-agreement.pdf" class="document-card" target="_blank">
+              <div class="document-card__icon">📑</div>
+              <div class="document-card__content">
+                <h3 class="document-card__title">Инвестиционный договор</h3>
+                <p class="document-card__desc">Полный текст договора с инвестором</p>
+              </div>
+              <span class="document-card__action">
+                <span>Скачать</span>
+                <span class="document-card__arrow">→</span>
+              </span>
             </a>
 
-            <a
-              href="/docs/guarantee-letter.pdf"
-              class="card hover-lift"
-              style="text-decoration: none"
-            >
-              <div class="card-icon">🔏</div>
-              <h3>Гарантийное письмо</h3>
-              <p>Официальные гарантии от руководства</p>
-              <span class="btn btn-sm">Скачать PDF</span>
+            <a href="/docs/guarantee-letter.pdf" class="document-card" target="_blank">
+              <div class="document-card__icon">🔏</div>
+              <div class="document-card__content">
+                <h3 class="document-card__title">Гарантийное письмо</h3>
+                <p class="document-card__desc">Официальные гарантии от руководства</p>
+              </div>
+              <span class="document-card__action">
+                <span>Скачать</span>
+                <span class="document-card__arrow">→</span>
+              </span>
             </a>
 
-            <a
-              href="/docs/insurance-policy.pdf"
-              class="card hover-lift"
-              style="text-decoration: none"
-            >
-              <div class="card-icon">🛡️</div>
-              <h3>Страховой полис</h3>
-              <p>Страхование инвестиций и рисков</p>
-              <span class="btn btn-sm">Скачать PDF</span>
+            <a href="/docs/insurance-policy.pdf" class="document-card" target="_blank">
+              <div class="document-card__icon">🛡️</div>
+              <div class="document-card__content">
+                <h3 class="document-card__title">Страховой полис</h3>
+                <p class="document-card__desc">Страхование инвестиций и рисков</p>
+              </div>
+              <span class="document-card__action">
+                <span>Скачать</span>
+                <span class="document-card__arrow">→</span>
+              </span>
             </a>
 
-            <a
-              href="/docs/smart-contract.pdf"
-              class="card hover-lift"
-              style="text-decoration: none"
-            >
-              <div class="card-icon">⛓️</div>
-              <h3>Смарт-контракт</h3>
-              <p>Техническая документация контракта</p>
-              <span class="btn btn-sm">Скачать PDF</span>
+            <a href="/docs/smart-contract.pdf" class="document-card" target="_blank">
+              <div class="document-card__icon">⛓️</div>
+              <div class="document-card__content">
+                <h3 class="document-card__title">Смарт-контракт</h3>
+                <p class="document-card__desc">Техническая документация контракта</p>
+              </div>
+              <span class="document-card__action">
+                <span>Скачать</span>
+                <span class="document-card__arrow">→</span>
+              </span>
             </a>
+          </div>
+
+          <div class="documents-note">
+            <p>
+              💼 Все документы доступны для скачивания. При возникновении вопросов 
+              <a href="/contacts.html">свяжитесь с нами</a>
+            </p>
           </div>
         </div>
       </section>
 
       <!-- FAQ -->
-      <section class="section section-alt">
-        <div class="container">
-          <div class="section-header">
-            <span class="overline">Частые вопросы</span>
-            <h2>❓ Вопросы о гарантиях</h2>
+      <section class="section section-alt faq-section">
+        <div class="container container--narrow">
+          <div class="section-intro">
+            <span class="section-overline">Часто задаваемые вопросы</span>
+            <h2 class="section-title">Ответы на ваши вопросы</h2>
           </div>
 
-          <div class="faq-grid">
-            <div class="card">
-              <h4>Что если кролик заболеет или умрет?</h4>
-              <p>
-                Риски здоровья животных покрываются ветеринарным страхованием. В случае гибели
-                животного инвестору предоставляется замена из резервного поголовья или полная
-                компенсация стоимости.
-              </p>
-            </div>
+          <div class="faq-list">
+            <details class="faq-item" open>
+              <summary class="faq-question">
+                <span class="faq-icon">❓</span>
+                <span class="faq-text">Что если кролик заболеет или умрет?</span>
+                <span class="faq-toggle">+</span>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Здоровье каждого животного застраховано. В случае болезни предоставляется 
+                  полное ветеринарное лечение. Если животное погибло — вы получаете замену 
+                  из резервного поголовья или полную компенсацию стоимости.
+                </p>
+                <p><strong>Ваши инвестиции защищены в любом случае.</strong></p>
+              </div>
+            </details>
 
-            <div class="card">
-              <h4>Есть ли минимальная гарантированная доходность?</h4>
-              <p>
-                Доходность от продажи потомства составляет <strong>от 500% до 1300%</strong> за 120 дней. 
-                Дополнительно вы получаете PLEX токены ежедневно (0.2 PLEX за каждый $1).
-              </p>
-            </div>
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-icon">❓</span>
+                <span class="faq-text">Какая минимальная доходность гарантирована?</span>
+                <span class="faq-toggle">+</span>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  <strong>100% возврат вложений гарантирован</strong> в любом случае. 
+                  Прибыль от продажи потомства составляет от 500% до 1300% за 120 дней.
+                </p>
+                <p>
+                  Дополнительно вы ежедневно получаете токены PLEX (0.2 PLEX за каждый $1 вложений), 
+                  которые можно продать или использовать в экосистеме.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-icon">❓</span>
+                <span class="faq-text">Как быстро я могу вывести средства?</span>
+                <span class="faq-toggle">+</span>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Досрочный вывод возможен в любой момент. Возврат основной суммы 
+                  осуществляется в течение <strong>3 рабочих дней</strong>.
+                </p>
+                <p>
+                  Вы можете выбрать валюту возврата: USDT или PLEX токены по текущему курсу.
+                  Никаких штрафов за досрочный вывод не предусмотрено.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-icon">❓</span>
+                <span class="faq-text">Что происходит с прибылью при форс-мажоре?</span>
+                <span class="faq-toggle">+</span>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  При форс-мажоре (стихийные бедствия, эпидемии, изменение законодательства) 
+                  <strong>основная сумма возвращается полностью</strong>.
+                </p>
+                <p>
+                  Прибыль может быть уменьшена или заменена компенсацией в токенах PLEX. 
+                  В страховом фонде зарезервировано 15% от оборота для таких случаев.
+                </p>
+              </div>
+            </details>
+
+            <details class="faq-item">
+              <summary class="faq-question">
+                <span class="faq-icon">❓</span>
+                <span class="faq-text">Могу ли я посетить ферму и увидеть своих кроликов?</span>
+                <span class="faq-toggle">+</span>
+              </summary>
+              <div class="faq-answer">
+                <p>
+                  Да! Посещение фермы возможно по предварительной договоренности. 
+                  Визит оплачивается токенами PLEX.
+                </p>
+                <p>
+                  Также у вас есть круглосуточный доступ к видеонаблюдению за фермой, 
+                  и вы получаете видеоотчеты 2 раза в день.
+                </p>
+              </div>
+            </details>
           </div>
         </div>
       </section>
 
       <!-- CTA Section -->
-      <section class="section">
-        <div class="container">
-          <div class="cta-block">
-            <h2>🚀 Инвестируйте с уверенностью</h2>
-            <p>Полная защита ваших инвестиций через блокчейн, страхование и юридические гарантии</p>
-            <div class="cta-buttons">
-              <a href="https://t.me/dexrabbit_bot" class="btn btn-primary">
-                💰 Начать инвестировать
-              </a>
-              <a href="/docs/guarantee-package.pdf" class="btn btn-outline">
-                📥 Скачать все документы
-              </a>
+      <section class="section cta-section">
+        <div class="container container--narrow">
+          <div class="cta-banner">
+            <div class="cta-content">
+              <h2 class="cta-title">Готовы инвестировать с полной защитой?</h2>
+              <p class="cta-description">
+                Блокчейн, страхование и юридические гарантии на страже ваших инвестиций
+              </p>
+              <div class="cta-actions">
+                <a href="https://t.me/dexrabbit_bot" class="btn btn-primary btn-lg" target="_blank">
+                  <span class="btn-icon">💰</span>
+                  <span>Начать инвестировать</span>
+                </a>
+                <a href="/docs/guarantee-package.pdf" class="btn btn-outline btn-lg" target="_blank">
+                  <span class="btn-icon">📥</span>
+                  <span>Скачать документы</span>
+                </a>
+              </div>
+            </div>
+            <div class="cta-decoration">
+              <div class="cta-shield">🛡️</div>
             </div>
           </div>
         </div>
@@ -879,8 +973,10 @@
     </footer>
 
     <link rel="stylesheet" href="/assets/css/footer.css">
+    <link rel="stylesheet" href="/assets/css/guarantees-page.css">
 
     <script src="/sw.js"></script>
     <script src="/assets/js/responsive-utils.js"></script>
+    <script src="/assets/js/guarantees-interactions.js"></script>
   </body>
 </html>
