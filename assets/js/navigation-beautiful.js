@@ -1,9 +1,43 @@
 // ========== КРАСИВАЯ НАВИГАЦИЯ - JAVASCRIPT ========== //
-// Версия: 2025-10-03-dr001-fix
+// Версия: 2025-10-03-dr001-ultimate-fix
 
 (function() {
   'use strict';
 
+  // ========== КРИТИЧЕСКИЙ FIX DR-001: Полный сброс состояния ========== //
+  function resetAllMenuState() {
+    const nav = document.querySelector('.nav-beautiful');
+    if (!nav) return;
+
+    const dropdownWrappers = nav.querySelectorAll('.nav-beautiful__dropdown-wrapper');
+    
+    // Убрать все классы открытия
+    dropdownWrappers.forEach(wrapper => {
+      wrapper.classList.remove('is-open', 'open');
+    });
+    nav.classList.remove('open');
+    
+    // Принудительно отключить pointer-events на 500ms (увеличено!)
+    nav.style.pointerEvents = 'none';
+    setTimeout(() => {
+      nav.style.pointerEvents = '';
+    }, 500);
+  }
+
+  // НЕМЕДЛЕННЫЙ сброс ДО загрузки DOM
+  if (document.readyState === 'loading') {
+    resetAllMenuState();
+  }
+
+  // Сброс при загрузке И при возврате назад
+  window.addEventListener('pageshow', resetAllMenuState);
+  window.addEventListener('load', resetAllMenuState);
+  document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState === 'visible') {
+      resetAllMenuState();
+    }
+  });
+  
   document.addEventListener('DOMContentLoaded', function() {
     const nav = document.querySelector('.nav-beautiful');
     if (!nav) return;
@@ -11,11 +45,8 @@
     const mobileToggle = nav.querySelector('.nav-beautiful__mobile-toggle');
     const dropdownWrappers = nav.querySelectorAll('.nav-beautiful__dropdown-wrapper');
 
-    // ========== СБРОС СОСТОЯНИЯ ПРИ ЗАГРУЗКЕ СТРАНИЦЫ (DR-001 FIX) ========== //
-    dropdownWrappers.forEach(wrapper => {
-      wrapper.classList.remove('is-open', 'open');
-    });
-    nav.classList.remove('open');
+    // Немедленный сброс
+    resetAllMenuState();
 
     // ========== МОБИЛЬНОЕ МЕНЮ ========== //
     if (mobileToggle) {
@@ -34,7 +65,7 @@
     // ========== DROPDOWN С ЗАДЕРЖКОЙ (DESKTOP) ========== //
     if (window.innerWidth > 768) {
       let closeTimer = null;
-      const CLOSE_DELAY = 300; // 300ms задержка перед закрытием
+      const CLOSE_DELAY = 200; // 200ms задержка перед закрытием (было 300)
 
       dropdownWrappers.forEach(wrapper => {
         const dropdown = wrapper.querySelector('.nav-beautiful__dropdown');
@@ -90,17 +121,35 @@
     // ========== ЗАКРЫТИЕ МЕНЮ ПРИ КЛИКЕ НА ССЫЛКУ (DR-001 FIX) ========== //
     const dropdownLinks = nav.querySelectorAll('.nav-beautiful__dropdown-item');
     dropdownLinks.forEach(link => {
-      link.addEventListener('click', function() {
-        // Закрыть все dropdown
+      link.addEventListener('click', function(e) {
+        // НЕМЕДЛЕННО закрыть все dropdown
         dropdownWrappers.forEach(wrapper => {
           wrapper.classList.remove('is-open', 'open');
         });
         // Закрыть мобильное меню
         nav.classList.remove('open');
+        
+        // КРИТИЧНО: Отключить pointer-events перед переходом
+        nav.style.pointerEvents = 'none';
+        
+        // Если это внутренняя ссылка - дать время на переход
+        if (!link.target || link.target === '_self') {
+          e.preventDefault();
+          const href = link.getAttribute('href');
+          setTimeout(() => {
+            window.location.href = href;
+          }, 50);
+        }
       });
     });
+    
+    // ========== ДОПОЛНИТЕЛЬНЫЙ FIX: Отключить hover при уходе со страницы ========== //
+    window.addEventListener('beforeunload', function() {
+      nav.style.pointerEvents = 'none';
+      resetAllMenuState();
+    });
 
-    console.log('✅ Beautiful Navigation с задержкой 300ms инициализирована');
+    console.log('✅ Beautiful Navigation DR-001 Ultimate Fix инициализирована');
   });
 })();
 

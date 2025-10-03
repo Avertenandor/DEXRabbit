@@ -138,11 +138,27 @@
         font-size: 1.5rem;
       }
 
+      /* DR-005 FIX: Фиксированная сетка 3x2 для равномерного отображения */
       .therapy-process {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
         margin: 2rem 0;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+      
+      @media (max-width: 768px) {
+        .therapy-process {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .therapy-process {
+          grid-template-columns: 1fr;
+        }
       }
 
       .process-step {
@@ -227,18 +243,39 @@
         font-size: 1.5rem;
       }
 
-      /* DR-003 FIX: Центрирование последней карточки */
+      /* DR-003 FIX: Фиксированная сетка 3x2 с центрированием */
       .age-groups {
         display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        grid-template-columns: repeat(3, 1fr);
         gap: 1.5rem;
         margin: 2rem 0;
-        justify-items: center;
+        max-width: 900px;
+        margin-left: auto;
+        margin-right: auto;
       }
       
-      .age-groups .age-card {
-        width: 100%;
-        max-width: 300px;
+      /* Центрирование последнего ряда (2 карточки) */
+      .age-groups .age-card:nth-child(5) {
+        grid-column: 1 / 2;
+      }
+      .age-groups .age-card:nth-child(6) {
+        grid-column: 2 / 3;
+      }
+      
+      @media (max-width: 768px) {
+        .age-groups {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .age-groups .age-card:nth-child(5),
+        .age-groups .age-card:nth-child(6) {
+          grid-column: auto;
+        }
+      }
+      
+      @media (max-width: 480px) {
+        .age-groups {
+          grid-template-columns: 1fr;
+        }
       }
 
       .age-card {

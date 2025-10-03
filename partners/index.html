@@ -25,6 +25,28 @@
     <link rel="stylesheet" href="/assets/css/footer.css" />
 
     <script defer src="/assets/js/navigation-beautiful.js?v=20251001-stable-hover"></script>
+    
+    <!-- DR-007 FIX: Равная высота карточек -->
+    <style>
+      .contact-cards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 24px;
+      }
+      
+      .contact-cards-grid .card,
+      .contact-cards-grid a {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        min-height: 260px;
+      }
+      
+      .contact-cards-grid .card > *:last-child,
+      .contact-cards-grid a > div > *:last-child {
+        margin-top: auto;
+      }
+    </style>
   </head>
   <body>
 <nav class="nav-beautiful">
@@ -269,7 +291,8 @@
             <h2>💬 Основные каналы связи</h2>
           </div>
 
-          <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
+          <!-- DR-007 FIX: Применён класс для равной высоты -->
+          <div class="contact-cards-grid">
             <!-- Telegram Bot -->
             <div class="card" style="background: linear-gradient(135deg, rgba(0, 136, 204, 0.15), rgba(0, 136, 204, 0.05)); border: 2px solid rgba(0, 136, 204, 0.4);">
               <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
@@ -319,7 +342,7 @@
             </div>
 
             <!-- Email (DR-006 FIX: Вся карточка кликабельна) -->
-            <a href="mailto:kupitkrolika@gmail.com" style="text-decoration: none; color: inherit; display: block;">
+            <a href="mailto:kupitkrolika@gmail.com" style="text-decoration: none; color: inherit;">
               <div class="card" style="background: linear-gradient(135deg, rgba(250, 204, 21, 0.15), rgba(250, 204, 21, 0.05)); border: 2px solid rgba(250, 204, 21, 0.4); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='rgba(250, 204, 21, 0.6)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(250, 204, 21, 0.4)'; this.style.transform='translateY(0)'">
                 <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
                   <div style="width: 56px; height: 56px; background: linear-gradient(135deg, #facc15, #f59e0b); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 32px;">📧</div>
