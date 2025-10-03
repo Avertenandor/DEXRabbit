@@ -1,0 +1,85 @@
+/* FAQ Accordion Styles для partnership.html */
+.faq-accordion {
+  display: grid;
+  gap: 1rem;
+  margin: 3rem 0;
+}
+
+.faq-accordion-item {
+  background: rgba(124, 140, 255, 0.05);
+  border: 1px solid rgba(124, 140, 255, 0.2);
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.faq-accordion-item:hover {
+  border-color: rgba(124, 140, 255, 0.4);
+  box-shadow: 0 4px 15px rgba(124, 140, 255, 0.1);
+}
+
+.faq-accordion-item.active {
+  border-color: #7c8cff;
+  background: rgba(124, 140, 255, 0.08);
+}
+
+.faq-accordion-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.5rem;
+  cursor: pointer;
+  user-select: none;
+}
+
+.faq-accordion-header:hover {
+  background: rgba(124, 140, 255, 0.05);
+}
+
+.faq-accordion-question {
+  flex: 1;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--color-text);
+  margin: 0;
+}
+
+.faq-accordion-icon {
+  width: 24px;
+  height: 24px;
+  flex-shrink: 0;
+  color: #7c8cff;
+  transition: transform 0.3s ease;
+}
+
+.faq-accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.3s ease, padding 0.3s ease;
+  padding: 0 1.5rem;
+}
+
+.faq-accordion-content p {
+  margin: 0;
+  line-height: 1.7;
+  opacity: 0.9;
+}
+
+.faq-accordion-content strong {
+  color: #4ade80;
+}
+
+@media (max-width: 768px) {
+  .faq-accordion-header {
+    padding: 1.25rem;
+  }
+  
+  .faq-accordion-question {
+    font-size: 1rem;
+  }
+  
+  .faq-accordion-icon {
+    width: 20px;
+    height: 20px;
+  }
+}
