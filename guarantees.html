@@ -20,69 +20,44 @@
     <meta property="og:type" content="website" />
 
     <!-- Styles -->
-        <link rel="stylesheet" href="/assets/css/main.css" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/css/animations.css" />
     <link rel="stylesheet" href="/assets/css/print.css" media="print" />
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="manifest" href="/manifest.webmanifest" />
-          <!-- Performance Optimizations - 0 layout thrashing -->
     <link rel="stylesheet" href="/assets/css/performance.css" />
-    
-    
-    
-    
-    
-    
-    <!-- Investor Cards Styles -->
     <link rel="stylesheet" href="/assets/css/investor-cards.css" />
-    <!-- Copy Button Styles -->
     <link rel="stylesheet" href="/assets/css/copy-button.css" />
-    <!-- Copy Contract Styles -->
     <link rel="stylesheet" href="/assets/css/copy-contract.css" />
-    <!-- Buttons Effects (Live Buttons) -->
     <link rel="stylesheet" href="/assets/css/buttons-effects.css?v=20251002-live" />
-    <!-- Spacing Normalize (Best Practices) -->
     <link rel="stylesheet" href="/assets/css/spacing-normalize.css?v=20251002-spacing" />
-    <!-- Enhanced Sections Styles -->
     <link rel="stylesheet" href="/assets/css/sections-enhanced.css?v=20251002-enhanced" />
-    <!-- Avatars CSS -->
     <link rel="stylesheet" href="/assets/css/avatars.css" />
-    <!-- Responsive Extreme -->
     <link rel="stylesheet" href="/assets/css/responsive-extreme.css" />
-    <!-- Footer Styles -->
     <link rel="stylesheet" href="/assets/css/footer.css" />
-    <!-- Print Styles -->
     <link rel="stylesheet" href="/assets/css/print.css" />
-    <!-- Beautiful Navigation -->
     <link rel="stylesheet" href="/assets/css/navigation-beautiful.css?v=20251001-fixed-top" />
-    <!-- Mobile Critical Fix -->
     <link rel="stylesheet" href="/assets/css/mobile-critical-fix.css?v=20251001-android-fix" />
-    <!-- Ultimate Responsive (All Devices) -->
     <link rel="stylesheet" href="/assets/css/ultimate-responsive.css?v=20251001-ultimate" />
-      <!-- Beautiful Navigation Script -->
     <script defer src="/assets/js/navigation-beautiful.js?v=20251001-stable-hover"></script>
   </head>
   <body>
     <!-- Beautiful Navigation -->
     <nav class="nav-beautiful">
       <div class="nav-beautiful__container">
-        <!-- Logo -->
         <a href="/" class="nav-beautiful__logo">
           <img src="/favicon.svg" alt="DEXRabbit" class="nav-beautiful__logo-img">
           <div class="nav-beautiful__logo-text">
             <span class="nav-beautiful__logo-title">DEXRabbit</span>
             <span class="nav-beautiful__logo-slogan">Твой пассивный доход на кроликах</span>
-              </div>
-            </a>
+          </div>
+        </a>
 
-        <!-- Mobile Toggle -->
         <button class="nav-beautiful__mobile-toggle" aria-label="Меню">
           <span class="nav-beautiful__mobile-icon"></span>
         </button>
 
-        <!-- Menu -->
         <div class="nav-beautiful__menu">
-          <!-- Инвестиции -->
           <div class="nav-beautiful__dropdown-wrapper">
             <button class="nav-beautiful__btn">
               Инвестиции
@@ -122,7 +97,6 @@
             </div>
           </div>
 
-          <!-- Партнёрство -->
           <div class="nav-beautiful__dropdown-wrapper">
             <button class="nav-beautiful__btn">
               Партнёрство
@@ -162,7 +136,6 @@
             </div>
           </div>
 
-          <!-- Услуги -->
           <div class="nav-beautiful__dropdown-wrapper">
             <button class="nav-beautiful__btn">
               Услуги
@@ -202,7 +175,6 @@
             </div>
           </div>
 
-          <!-- Породы -->
           <div class="nav-beautiful__dropdown-wrapper">
             <button class="nav-beautiful__btn">
               Породы
@@ -242,7 +214,6 @@
             </div>
           </div>
 
-          <!-- О нас -->
           <div class="nav-beautiful__dropdown-wrapper">
             <button class="nav-beautiful__btn">
               О нас
@@ -276,7 +247,6 @@
           </div>
         </div>
 
-        <!-- CTA -->
         <a href="https://t.me/dexrabbit_bot" target="_blank" class="nav-beautiful__cta">
           <span>🤖</span>
           <span>Открыть бот</span>
@@ -284,19 +254,14 @@
       </div>
     </nav>
 
-
-    
-    
-    <!-- Header -->
-    <!-- Main Content -->
     <main>
-      <!-- Hero Section -->
-      <section class="hero-section">
-        <div class="container">
-          <div class="hero-content">
-            <span class="overline animate-fadeIn">Защита инвестиций</span>
-            <h1 class="animate-fadeInUp">🛡️ Гарантии и обязательства</h1>
-            <p class="lead animate-fadeInUp">
+      <!-- Hero Section - ИСПРАВЛЕНО: добавлен padding для предотвращения обрезания -->
+      <section class="hero-section" style="padding: 8rem 0 4rem; overflow: visible;">
+        <div class="container" style="overflow: visible;">
+          <div class="hero-content" style="overflow: visible;">
+            <span class="overline animate-fadeIn" style="display: inline-block; padding: 8px 20px; margin-bottom: 16px; white-space: nowrap;">Защита инвестиций</span>
+            <h1 class="animate-fadeInUp" style="margin-bottom: 20px;">🛡️ Гарантии и обязательства</h1>
+            <p class="lead animate-fadeInUp" style="max-width: 700px; margin: 0 auto;">
               Полная защита ваших инвестиций через смарт-контракты, страхование и юридические
               гарантии
             </p>
@@ -304,47 +269,237 @@
         </div>
       </section>
 
-      <!-- Main Guarantees -->
-      <section class="section">
-        <div class="container">
-          <div class="section-header">
-            <span class="overline">Основные гарантии</span>
-            <h2>💯 100% защита инвестора</h2>
+      <!-- Main Guarantees - УЛУЧШЕННАЯ ВЕРСИЯ -->
+      <section class="section" id="guarantees" style="padding: 5rem 0;">
+        <div class="container" style="max-width: 1400px; margin: 0 auto; padding: 0 20px;">
+          <!-- Заголовок секции -->
+          <div class="section-header" style="text-align: center; margin-bottom: 4rem;">
+            <span class="overline" style="display: inline-block; padding: 8px 20px; background: linear-gradient(135deg, #7c8cff, #4cc9f0); border-radius: 20px; font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 16px; box-shadow: 0 6px 20px rgba(124, 140, 255, 0.4);">БЕЗОПАСНОСТЬ</span>
+            <h2 style="font-size: clamp(32px, 5vw, 48px); margin-bottom: 16px; background: linear-gradient(135deg, #7c8cff, #4cc9f0); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">ОСНОВНЫЕ ГАРАНТИИ</h2>
+            <p style="font-size: clamp(16px, 2.5vw, 20px); max-width: 700px; margin: 0 auto; opacity: 0.9; line-height: 1.6;">100% защита инвестора</p>
           </div>
 
-          <div class="grid">
-            <div class="card hover-lift">
-              <div class="card-icon">💰</div>
-              <h3>Гарантия возврата вложений</h3>
-              <p>
-                <strong>100% возврат основной суммы</strong> гарантирован вне зависимости от
-                результатов. В случае форс-мажора возврат осуществляется токенами PLEX по текущему
-                курсу или USDT.
+          <!-- Две основные карточки гарантий -->
+          <div class="guarantees-main-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 400px), 1fr)); gap: 2rem; margin-bottom: 3rem;">
+            
+            <!-- Гарантия возврата вложений -->
+            <div class="guarantee-card" style="background: linear-gradient(135deg, rgba(124, 140, 255, 0.12), rgba(76, 201, 240, 0.08)); border: 2px solid rgba(124, 140, 255, 0.35); border-radius: 24px; padding: clamp(1.5rem, 4vw, 2.5rem); position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
+              
+              <!-- Иконка -->
+              <div style="width: clamp(56px, 10vw, 72px); height: clamp(56px, 10vw, 72px); background: linear-gradient(135deg, #7c8cff, #4cc9f0); border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: clamp(28px, 5vw, 36px); margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(124, 140, 255, 0.4); animation: floatIcon 3s ease-in-out infinite;">
+                💰
+              </div>
+
+              <!-- Заголовок -->
+              <h3 style="font-size: clamp(20px, 3vw, 28px); font-weight: 700; margin-bottom: 1.25rem; color: #fff; line-height: 1.3;">
+                Гарантия возврата вложений
+              </h3>
+
+              <!-- Описание -->
+              <p style="font-size: clamp(14px, 2vw, 16px); line-height: 1.7; opacity: 0.95; margin-bottom: 1.5rem; color: rgba(255, 255, 255, 0.9);">
+                100% возврат основной суммы гарантирован вне зависимости от результатов. В случае форс-мажора возврат осуществляется токенами PLEX по текущему курсу или USDT.
               </p>
-              <ul class="checklist">
-                <li>Возврат в течение 3 рабочих дней</li>
-                <li>Выбор валюты возврата (USDT/PLEX)</li>
-                <li>Без скрытых комиссий</li>
-              </ul>
+
+              <!-- Список преимуществ -->
+              <div class="guarantee-features">
+                <div class="guarantee-feature" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: rgba(124, 140, 255, 0.08); border-radius: 12px; margin-bottom: 10px; transition: all 0.3s ease;">
+                  <span style="font-size: 20px; flex-shrink: 0;">✅</span>
+                  <span style="font-size: clamp(13px, 1.8vw, 15px); line-height: 1.6;">Возврат в течение 3 рабочих дней</span>
+                </div>
+                
+                <div class="guarantee-feature" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: rgba(124, 140, 255, 0.08); border-radius: 12px; margin-bottom: 10px; transition: all 0.3s ease;">
+                  <span style="font-size: 20px; flex-shrink: 0;">✅</span>
+                  <span style="font-size: clamp(13px, 1.8vw, 15px); line-height: 1.6;">Выбор валюты возврата (USDT/PLEX)</span>
+                </div>
+                
+                <div class="guarantee-feature" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: rgba(124, 140, 255, 0.08); border-radius: 12px; margin-bottom: 10px; transition: all 0.3s ease;">
+                  <span style="font-size: 20px; flex-shrink: 0;">✅</span>
+                  <span style="font-size: clamp(13px, 1.8vw, 15px); line-height: 1.6;">Без скрытых комиссий</span>
+                </div>
+              </div>
+
+              <!-- Декоративный элемент -->
+              <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(124, 140, 255, 0.2), transparent); border-radius: 50%; pointer-events: none;"></div>
             </div>
 
-            <div class="card hover-lift">
-              <div class="card-icon">🔐</div>
-              <h3>Блокчейн гарантии</h3>
-              <p>
-                <strong>Смарт-контракт на BSC</strong> автоматически защищает ваши средства. Все
-                операции записываются в блокчейн и не могут быть изменены.
+            <!-- Блокчейн гарантии -->
+            <div class="guarantee-card" style="background: linear-gradient(135deg, rgba(76, 201, 240, 0.12), rgba(34, 197, 94, 0.08)); border: 2px solid rgba(76, 201, 240, 0.35); border-radius: 24px; padding: clamp(1.5rem, 4vw, 2.5rem); position: relative; overflow: hidden; transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);">
+              
+              <!-- Иконка -->
+              <div style="width: clamp(56px, 10vw, 72px); height: clamp(56px, 10vw, 72px); background: linear-gradient(135deg, #4cc9f0, #00C896); border-radius: 18px; display: flex; align-items: center; justify-content: center; font-size: clamp(28px, 5vw, 36px); margin-bottom: 1.5rem; box-shadow: 0 8px 24px rgba(76, 201, 240, 0.4); animation: floatIcon 3s ease-in-out infinite 0.5s;">
+                🔒
+              </div>
+
+              <!-- Заголовок -->
+              <h3 style="font-size: clamp(20px, 3vw, 28px); font-weight: 700; margin-bottom: 1.25rem; color: #fff; line-height: 1.3;">
+                Блокчейн гарантии
+              </h3>
+
+              <!-- Описание -->
+              <p style="font-size: clamp(14px, 2vw, 16px); line-height: 1.7; opacity: 0.95; margin-bottom: 1.5rem; color: rgba(255, 255, 255, 0.9);">
+                Смарт-контракт на BSC автоматически защищает ваши средства. Все операции записываются в блокчейн и не могут быть изменены.
               </p>
-              <ul class="checklist">
-                <li>Неизменяемые условия контракта</li>
-                <li>Публичный аудит кода</li>
-                <li>Автоматическое исполнение</li>
-              </ul>
+
+              <!-- Список преимуществ -->
+              <div class="guarantee-features">
+                <div class="guarantee-feature" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: rgba(76, 201, 240, 0.08); border-radius: 12px; margin-bottom: 10px; transition: all 0.3s ease;">
+                  <span style="font-size: 20px; flex-shrink: 0;">✅</span>
+                  <span style="font-size: clamp(13px, 1.8vw, 15px); line-height: 1.6;">Неизменяемые условия контракта</span>
+                </div>
+                
+                <div class="guarantee-feature" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: rgba(76, 201, 240, 0.08); border-radius: 12px; margin-bottom: 10px; transition: all 0.3s ease;">
+                  <span style="font-size: 20px; flex-shrink: 0;">✅</span>
+                  <span style="font-size: clamp(13px, 1.8vw, 15px); line-height: 1.6;">Публичный аудит кода</span>
+                </div>
+                
+                <div class="guarantee-feature" style="display: flex; align-items: flex-start; gap: 12px; padding: 12px; background: rgba(76, 201, 240, 0.08); border-radius: 12px; margin-bottom: 10px; transition: all 0.3s ease;">
+                  <span style="font-size: 20px; flex-shrink: 0;">✅</span>
+                  <span style="font-size: clamp(13px, 1.8vw, 15px); line-height: 1.6;">Автоматическое исполнение</span>
+                </div>
+              </div>
+
+              <!-- Декоративный элемент -->
+              <div style="position: absolute; top: -50px; right: -50px; width: 150px; height: 150px; background: radial-gradient(circle, rgba(76, 201, 240, 0.2), transparent); border-radius: 50%; pointer-events: none;"></div>
             </div>
-
-
           </div>
+
+          <!-- Блок с дополнительными гарантиями -->
+          <div class="additional-guarantees" style="background: linear-gradient(135deg, rgba(250, 204, 21, 0.08), rgba(251, 191, 36, 0.04)); border: 2px solid rgba(250, 204, 21, 0.3); border-radius: 20px; padding: clamp(1.5rem, 4vw, 2.5rem); margin-bottom: 2rem;">
+            
+            <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+              
+              <!-- Заголовок блока -->
+              <div style="text-align: center; margin-bottom: 1rem;">
+                <div style="display: inline-flex; align-items: center; gap: 12px; padding: 12px 24px; background: rgba(250, 204, 21, 0.15); border-radius: 16px; margin-bottom: 16px;">
+                  <span style="font-size: clamp(24px, 4vw, 32px);">⚠️</span>
+                  <h3 style="font-size: clamp(18px, 2.5vw, 24px); font-weight: 700; margin: 0; color: #facc15;">Важная информация</h3>
+                </div>
+              </div>
+
+              <!-- Текст информации -->
+              <p style="font-size: clamp(14px, 2vw, 17px); line-height: 1.8; text-align: center; max-width: 900px; margin: 0 auto; color: rgba(255, 255, 255, 0.95);">
+                <strong style="color: #facc15;">Каждый инвестор гарантирован по вкладу</strong>, но не по прибыли. Форс-мажоры и риски касаются <strong style="color: #fff;">только прибыли</strong>. Возврат вложений в случае любых рисков предусмотрен монетой PLEX и/или USDT по наличию.
+              </p>
+
+              <!-- Сетка с дополнительными гарантиями -->
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 280px), 1fr)); gap: 1rem; margin-top: 1rem;">
+                
+                <div style="background: rgba(74, 222, 128, 0.08); border: 1px solid rgba(74, 222, 128, 0.3); border-radius: 12px; padding: 1rem;">
+                  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                    <span style="font-size: 24px;">🛡️</span>
+                    <strong style="font-size: clamp(14px, 2vw, 16px); color: #4ade80;">Страховой фонд</strong>
+                  </div>
+                  <p style="font-size: clamp(12px, 1.8vw, 14px); opacity: 0.9; line-height: 1.6; margin: 0;">15% от оборота зарезервировано на случай форс-мажоров</p>
+                </div>
+
+                <div style="background: rgba(124, 140, 255, 0.08); border: 1px solid rgba(124, 140, 255, 0.3); border-radius: 12px; padding: 1rem;">
+                  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                    <span style="font-size: 24px;">📋</span>
+                    <strong style="font-size: clamp(14px, 2vw, 16px); color: #7c8cff;">Прозрачность</strong>
+                  </div>
+                  <p style="font-size: clamp(12px, 1.8vw, 14px); opacity: 0.9; line-height: 1.6; margin: 0;">Еженедельные отчеты о состоянии фермы и финансах</p>
+                </div>
+
+                <div style="background: rgba(76, 201, 240, 0.08); border: 1px solid rgba(76, 201, 240, 0.3); border-radius: 12px; padding: 1rem;">
+                  <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 8px;">
+                    <span style="font-size: 24px;">🏥</span>
+                    <strong style="font-size: clamp(14px, 2vw, 16px); color: #4cc9f0;">Ветконтроль</strong>
+                  </div>
+                  <p style="font-size: clamp(12px, 1.8vw, 14px); opacity: 0.9; line-height: 1.6; margin: 0;">Круглосуточный мониторинг здоровья всех животных</p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
         </div>
+
+        <!-- Стили и анимации -->
+        <style>
+          @keyframes floatIcon {
+            0%, 100% {
+              transform: translateY(0px);
+            }
+            50% {
+              transform: translateY(-10px);
+            }
+          }
+
+          .guarantee-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(124, 140, 255, 0.35);
+            border-color: rgba(124, 140, 255, 0.6);
+          }
+
+          .guarantee-feature:hover {
+            background: rgba(124, 140, 255, 0.15) !important;
+            transform: translateX(5px);
+          }
+
+          @media (max-width: 1024px) {
+            .guarantees-main-grid {
+              gap: 1.5rem !important;
+            }
+          }
+
+          @media (max-width: 768px) {
+            .guarantees-main-grid {
+              gap: 1.25rem !important;
+            }
+            
+            .guarantee-card {
+              padding: 1.5rem !important;
+            }
+
+            .additional-guarantees {
+              padding: 1.5rem !important;
+            }
+
+            .guarantee-feature {
+              padding: 10px !important;
+            }
+          }
+
+          @media (max-width: 480px) {
+            .section-header {
+              margin-bottom: 2.5rem !important;
+            }
+
+            .guarantees-main-grid {
+              gap: 1rem !important;
+            }
+
+            .guarantee-card {
+              padding: 1.25rem !important;
+              border-radius: 16px !important;
+            }
+
+            .additional-guarantees {
+              padding: 1.25rem !important;
+              border-radius: 16px !important;
+            }
+
+            .guarantee-feature {
+              padding: 8px !important;
+              flex-direction: row;
+            }
+
+            h2 {
+              line-height: 1.2 !important;
+            }
+
+            h3 {
+              line-height: 1.25 !important;
+            }
+          }
+
+          .guarantee-card,
+          .guarantee-feature {
+            will-change: transform;
+            transform: translateZ(0);
+            backface-visibility: hidden;
+          }
+        </style>
       </section>
 
       <!-- Risk Management -->
@@ -679,7 +834,6 @@
             <nav class="footer-nav">
               <a href="/breeding.html">🧬 Племенная работа</a>
               <a href="/gifts.html">🎁 Кролик в подарок</a>
-              
               <a href="/care.html">🐰 Уход за кроликами</a>
               <a href="/therapy.html">💆 Кроликотерапия</a>
               <a href="/logistics.html">🚚 Логистика</a>
@@ -726,8 +880,6 @@
 
     <link rel="stylesheet" href="/assets/css/footer.css">
 
-    <!-- Scripts -->
-        <!-- Navigation V2 Script -->
     <script src="/sw.js"></script>
     <script src="/assets/js/responsive-utils.js"></script>
   </body>
