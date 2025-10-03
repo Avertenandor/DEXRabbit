@@ -66,20 +66,24 @@
 .hero-badge {
   display: inline-flex;
   align-items: center;
-  gap: calc(var(--spacing-unit) * 2);
-  padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 3);
+  gap: calc(var(--spacing-unit) * 1.5);
+  padding: 10px 20px;
   background: var(--primary-gradient);
+  border: 2px solid rgba(124, 140, 255, 0.6);
   border-radius: 50px;
-  font-size: 14px;
+  font-size: 15px;
   font-weight: 700;
   color: var(--text-primary);
-  margin-bottom: calc(var(--spacing-unit) * 3);
-  box-shadow: 0 6px 20px rgba(124, 140, 255, 0.4);
+  margin: 0 auto calc(var(--spacing-unit) * 3);
+  box-shadow: 0 8px 32px rgba(124, 140, 255, 0.6), 
+              0 0 0 1px rgba(255, 255, 255, 0.1) inset;
   animation: floatBadge 3s ease-in-out infinite;
+  text-align: center;
+  white-space: nowrap;
 }
 
 .hero-badge__icon {
-  font-size: 20px;
+  font-size: 18px;
 }
 
 @keyframes floatBadge {
@@ -1174,8 +1178,13 @@
   }
 
   .hero-badge {
-    font-size: 12px;
-    padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 2);
+    font-size: 13px;
+    padding: 8px 16px;
+    gap: calc(var(--spacing-unit) * 1);
+  }
+
+  .hero-badge__icon {
+    font-size: 16px;
   }
 
   .hero-stats {

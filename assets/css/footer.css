@@ -1,8 +1,8 @@
 /* 🐰 DEXRabbit Footer Styles */
 
 .scroll-top-btn {
-  position: absolute;
-  top: -35px;
+  position: fixed;
+  bottom: 2rem;
   right: 2rem;
   width: 56px;
   height: 56px;
@@ -14,10 +14,12 @@
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 6px 20px rgba(124, 140, 255, 0.4), 0 3px 10px rgba(76, 201, 240, 0.3);
-  z-index: 1000;
+  z-index: 9999;
   display: flex;
   align-items: center;
   justify-content: center;
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .scroll-top-btn:hover {
@@ -107,12 +109,11 @@
   transition: color 0.3s ease, transform 0.3s ease;
   font-size: 0.95rem;
   display: inline-block;
-  will-change: transform;
 }
 
 .footer-nav a:hover {
   color: var(--color-accent, #7c8cff);
-  transform: translateX(5px);
+  transform: translateX(3px);
 }
 
 .footer-token-info {
