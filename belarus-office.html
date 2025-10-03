@@ -13,16 +13,642 @@
     <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/css/variables.css" />
     <link rel="stylesheet" href="/assets/css/performance.css" />
-    <link rel="stylesheet" href="/assets/css/investor-cards.css" /> />
+    <link rel="stylesheet" href="/assets/css/investor-cards.css" />
     <link rel="stylesheet" href="/assets/css/navigation-beautiful.css?v=20251001-fixed-top" />
     <link rel="stylesheet" href="/assets/css/mobile-critical-fix.css?v=20251001-android-fix" />
     <link rel="stylesheet" href="/assets/css/ultimate-responsive.css?v=20251001-ultimate" />
     <link rel="stylesheet" href="/assets/css/footer.css" />
 
     <script defer src="/assets/js/navigation-beautiful.js?v=20251001-stable-hover"></script>
+
+    <style>
+      /* ===== BELARUS OFFICE UX VARIABLES ===== */
+      :root {
+        --spacing-xs: 0.5rem;
+        --spacing-sm: 1rem;
+        --spacing-md: 1.5rem;
+        --spacing-lg: 2rem;
+        --spacing-xl: 3rem;
+        --spacing-xxl: 4rem;
+        
+        --radius-sm: 12px;
+        --radius-md: 16px;
+        --radius-lg: 20px;
+        --radius-xl: 24px;
+        
+        --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.1);
+        --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.15);
+        --shadow-lg: 0 8px 32px rgba(124, 140, 255, 0.2);
+        --shadow-xl: 0 12px 48px rgba(124, 140, 255, 0.3);
+        
+        --transition-fast: 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-base: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+        --transition-slow: 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      /* ===== BELARUS HERO SECTION ===== */
+      .belarus-hero {
+        position: relative;
+        padding: clamp(4rem, 10vw, 8rem) 0 clamp(3rem, 8vw, 6rem);
+        background: linear-gradient(135deg, 
+          rgba(124, 140, 255, 0.05) 0%, 
+          rgba(76, 201, 240, 0.05) 50%,
+          rgba(124, 140, 255, 0.05) 100%);
+        border-bottom: 1px solid rgba(124, 140, 255, 0.1);
+        overflow: hidden;
+      }
+
+      .belarus-hero::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        right: -20%;
+        width: 600px;
+        height: 600px;
+        background: radial-gradient(circle, rgba(124, 140, 255, 0.1) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+      }
+
+      .belarus-hero__content {
+        position: relative;
+        z-index: 1;
+        text-align: center;
+        max-width: 900px;
+        margin: 0 auto;
+        padding: 0 var(--spacing-lg);
+      }
+
+      .belarus-hero__flag {
+        font-size: clamp(3rem, 8vw, 5rem);
+        margin-bottom: var(--spacing-md);
+        display: inline-block;
+        animation: float 3s ease-in-out infinite;
+      }
+
+      @keyframes float {
+        0%, 100% { transform: translateY(0); }
+        50% { transform: translateY(-10px); }
+      }
+
+      .belarus-hero__title {
+        font-size: clamp(2rem, 5vw, 3.5rem);
+        font-weight: 800;
+        line-height: 1.2;
+        margin-bottom: var(--spacing-md);
+        background: linear-gradient(135deg, #7c8cff 0%, #4cc9f0 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+      }
+
+      .belarus-hero__subtitle {
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+        line-height: 1.6;
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: var(--spacing-xl);
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .belarus-hero__cta {
+        display: flex;
+        gap: var(--spacing-md);
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      /* ===== BELARUS KEY BENEFITS ===== */
+      .belarus-benefits {
+        padding: var(--spacing-xxl) 0;
+      }
+
+      .belarus-benefits__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: var(--spacing-lg);
+        margin-top: var(--spacing-xl);
+      }
+
+      .belarus-benefit-card {
+        position: relative;
+        padding: var(--spacing-xl);
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(124, 140, 255, 0.15);
+        border-radius: var(--radius-lg);
+        transition: all var(--transition-base);
+        cursor: pointer;
+        overflow: hidden;
+      }
+
+      .belarus-benefit-card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: linear-gradient(90deg, #7c8cff 0%, #4cc9f0 100%);
+        transform: scaleX(0);
+        transform-origin: left;
+        transition: transform var(--transition-base);
+      }
+
+      .belarus-benefit-card:hover::before {
+        transform: scaleX(1);
+      }
+
+      .belarus-benefit-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(124, 140, 255, 0.3);
+        box-shadow: var(--shadow-xl);
+        background: rgba(124, 140, 255, 0.05);
+      }
+
+      .belarus-benefit-card__icon {
+        font-size: 3rem;
+        margin-bottom: var(--spacing-md);
+        display: block;
+        text-align: center;
+      }
+
+      .belarus-benefit-card__title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: var(--spacing-sm);
+        color: #fff;
+        text-align: center;
+        text-wrap: balance;
+        hyphens: none;
+      }
+
+      .belarus-benefit-card__desc {
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.6;
+        margin-bottom: var(--spacing-md);
+        text-align: center;
+      }
+
+      .belarus-benefit-card__list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .belarus-benefit-card__list li {
+        position: relative;
+        padding-left: var(--spacing-lg);
+        margin-bottom: var(--spacing-sm);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.95rem;
+      }
+
+      .belarus-benefit-card__list li::before {
+        content: '✓';
+        position: absolute;
+        left: 0;
+        color: #4cc9f0;
+        font-weight: bold;
+      }
+
+      /* ===== BELARUS ROADMAP TABS ===== */
+      .belarus-roadmap {
+        padding: var(--spacing-xxl) 0;
+        background: linear-gradient(180deg, transparent 0%, rgba(124, 140, 255, 0.03) 100%);
+      }
+
+      .belarus-roadmap__tabs {
+        display: flex;
+        gap: var(--spacing-sm);
+        justify-content: center;
+        flex-wrap: wrap;
+        margin-bottom: var(--spacing-xl);
+      }
+
+      .belarus-roadmap__tab {
+        padding: var(--spacing-md) var(--spacing-lg);
+        background: rgba(255, 255, 255, 0.03);
+        border: 2px solid rgba(124, 140, 255, 0.2);
+        border-radius: var(--radius-md);
+        color: rgba(255, 255, 255, 0.7);
+        font-weight: 600;
+        cursor: pointer;
+        transition: all var(--transition-base);
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+      }
+
+      .belarus-roadmap__tab:hover {
+        border-color: rgba(124, 140, 255, 0.4);
+        background: rgba(124, 140, 255, 0.05);
+        transform: translateY(-2px);
+      }
+
+      .belarus-roadmap__tab.active {
+        background: linear-gradient(135deg, #7c8cff 0%, #4cc9f0 100%);
+        border-color: transparent;
+        color: #fff;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .belarus-roadmap__tab-badge {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 32px;
+        height: 32px;
+        background: rgba(255, 255, 255, 0.15);
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 0.9rem;
+      }
+
+      .belarus-roadmap__tab.active .belarus-roadmap__tab-badge {
+        background: rgba(255, 255, 255, 0.25);
+      }
+
+      .belarus-roadmap__content {
+        display: none;
+        animation: fadeInUp 0.5s ease;
+      }
+
+      .belarus-roadmap__content.active {
+        display: block;
+      }
+
+      @keyframes fadeInUp {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .belarus-roadmap__card {
+        padding: var(--spacing-xl);
+        background: rgba(255, 255, 255, 0.03);
+        border: 2px solid rgba(124, 140, 255, 0.2);
+        border-radius: var(--radius-lg);
+        position: relative;
+        overflow: hidden;
+      }
+
+      .belarus-roadmap__card::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 5px;
+        height: 100%;
+        background: linear-gradient(180deg, #7c8cff 0%, #4cc9f0 100%);
+      }
+
+      .belarus-roadmap__card-header {
+        display: flex;
+        align-items: center;
+        gap: var(--spacing-md);
+        margin-bottom: var(--spacing-lg);
+      }
+
+      .belarus-roadmap__card-quarter {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 60px;
+        height: 60px;
+        background: linear-gradient(135deg, #7c8cff 0%, #4cc9f0 100%);
+        border-radius: var(--radius-md);
+        font-size: 1.5rem;
+        font-weight: 800;
+        color: #fff;
+        box-shadow: var(--shadow-md);
+      }
+
+      .belarus-roadmap__card-title {
+        font-size: 1.75rem;
+        font-weight: 700;
+        color: #fff;
+        margin: 0;
+        text-wrap: balance;
+        hyphens: none;
+      }
+
+      .belarus-roadmap__card-list {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+        display: grid;
+        gap: var(--spacing-md);
+      }
+
+      .belarus-roadmap__card-list li {
+        position: relative;
+        padding: var(--spacing-md);
+        padding-left: 3rem;
+        background: rgba(124, 140, 255, 0.05);
+        border-radius: var(--radius-sm);
+        border: 1px solid rgba(124, 140, 255, 0.1);
+        color: rgba(255, 255, 255, 0.85);
+        transition: all var(--transition-base);
+      }
+
+      .belarus-roadmap__card-list li:hover {
+        background: rgba(124, 140, 255, 0.1);
+        border-color: rgba(124, 140, 255, 0.2);
+        transform: translateX(4px);
+      }
+
+      .belarus-roadmap__card-list li::before {
+        content: '→';
+        position: absolute;
+        left: var(--spacing-md);
+        color: #4cc9f0;
+        font-weight: bold;
+        font-size: 1.2rem;
+      }
+
+      /* ===== BELARUS PARTNERSHIP ===== */
+      .belarus-partnership {
+        padding: var(--spacing-xxl) 0;
+      }
+
+      .belarus-partnership__grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: var(--spacing-xl);
+        margin-top: var(--spacing-xl);
+      }
+
+      .belarus-partnership-card {
+        position: relative;
+        padding: var(--spacing-xl);
+        background: rgba(255, 255, 255, 0.02);
+        border: 1px solid rgba(124, 140, 255, 0.15);
+        border-radius: var(--radius-lg);
+        transition: all var(--transition-base);
+        overflow: hidden;
+      }
+
+      .belarus-partnership-card::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        right: 0;
+        width: 100px;
+        height: 100px;
+        background: radial-gradient(circle, rgba(124, 140, 255, 0.1) 0%, transparent 70%);
+        border-radius: 50%;
+        pointer-events: none;
+        transform: translate(50%, -50%);
+      }
+
+      .belarus-partnership-card:hover {
+        transform: translateY(-8px);
+        border-color: rgba(124, 140, 255, 0.3);
+        box-shadow: var(--shadow-xl);
+      }
+
+      .belarus-partnership-card:hover .belarus-partnership-card__details {
+        max-height: 500px;
+        opacity: 1;
+        margin-top: var(--spacing-md);
+      }
+
+      .belarus-partnership-card__icon {
+        font-size: 3rem;
+        margin-bottom: var(--spacing-md);
+        text-align: center;
+        display: block;
+      }
+
+      .belarus-partnership-card__title {
+        font-size: 1.5rem;
+        font-weight: 700;
+        margin-bottom: var(--spacing-sm);
+        color: #fff;
+        text-align: center;
+        text-wrap: balance;
+        hyphens: none;
+      }
+
+      .belarus-partnership-card__desc {
+        color: rgba(255, 255, 255, 0.75);
+        line-height: 1.6;
+        text-align: center;
+      }
+
+      .belarus-partnership-card__details {
+        max-height: 0;
+        opacity: 0;
+        overflow: hidden;
+        transition: all var(--transition-slow);
+        margin-top: 0;
+      }
+
+      .belarus-partnership-card__details-title {
+        font-size: 0.9rem;
+        font-weight: 600;
+        color: #7c8cff;
+        margin-bottom: var(--spacing-sm);
+      }
+
+      .belarus-partnership-card__details ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
+
+      .belarus-partnership-card__details li {
+        position: relative;
+        padding-left: var(--spacing-lg);
+        margin-bottom: var(--spacing-xs);
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 0.9rem;
+      }
+
+      .belarus-partnership-card__details li::before {
+        content: '•';
+        position: absolute;
+        left: var(--spacing-xs);
+        color: #4cc9f0;
+      }
+
+      /* ===== BELARUS CTA SECTION ===== */
+      .belarus-cta {
+        padding: var(--spacing-xxl) 0;
+        background: linear-gradient(135deg, 
+          rgba(124, 140, 255, 0.08) 0%, 
+          rgba(76, 201, 240, 0.08) 100%);
+        border-radius: var(--radius-xl);
+        margin: var(--spacing-xxl) 0;
+        text-align: center;
+      }
+
+      .belarus-cta__title {
+        font-size: clamp(1.75rem, 4vw, 2.5rem);
+        font-weight: 700;
+        margin-bottom: var(--spacing-md);
+        color: #fff;
+        text-wrap: balance;
+        hyphens: none;
+      }
+
+      .belarus-cta__subtitle {
+        font-size: clamp(1rem, 2vw, 1.25rem);
+        color: rgba(255, 255, 255, 0.85);
+        margin-bottom: var(--spacing-xl);
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .belarus-cta__buttons {
+        display: flex;
+        gap: var(--spacing-md);
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+
+      /* ===== BUTTON COMPONENTS ===== */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        gap: var(--spacing-sm);
+        padding: var(--spacing-md) var(--spacing-xl);
+        border-radius: var(--radius-lg);
+        font-size: 1rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: all var(--transition-base);
+        cursor: pointer;
+        border: 2px solid transparent;
+      }
+
+      .btn--primary {
+        background: linear-gradient(135deg, #7c8cff 0%, #4cc9f0 100%);
+        color: #fff;
+        box-shadow: var(--shadow-lg);
+      }
+
+      .btn--primary:hover {
+        transform: translateY(-2px) scale(1.02);
+        box-shadow: 0 12px 40px rgba(124, 140, 255, 0.4);
+      }
+
+      .btn--secondary {
+        background: rgba(124, 140, 255, 0.1);
+        border-color: rgba(124, 140, 255, 0.3);
+        color: #7c8cff;
+      }
+
+      .btn--secondary:hover {
+        background: rgba(124, 140, 255, 0.15);
+        border-color: rgba(124, 140, 255, 0.5);
+        transform: translateY(-2px);
+      }
+
+      .btn--tertiary {
+        background: rgba(250, 204, 21, 0.1);
+        border-color: rgba(250, 204, 21, 0.3);
+        color: #facc15;
+      }
+
+      .btn--tertiary:hover {
+        background: rgba(250, 204, 21, 0.15);
+        border-color: rgba(250, 204, 21, 0.5);
+        transform: translateY(-2px);
+      }
+
+      .btn__icon {
+        font-size: 1.5rem;
+      }
+
+      /* ===== SECTION COMPONENTS ===== */
+      .section-header {
+        text-align: center;
+        margin-bottom: var(--spacing-xl);
+      }
+
+      .section-header__overline {
+        display: block;
+        font-size: 0.875rem;
+        font-weight: 600;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        color: #4cc9f0;
+        margin-bottom: var(--spacing-sm);
+      }
+
+      .section-header__title {
+        font-size: clamp(2rem, 4vw, 3rem);
+        font-weight: 800;
+        color: #fff;
+        line-height: 1.2;
+        text-wrap: balance;
+        hyphens: none;
+      }
+
+      /* ===== RESPONSIVE ===== */
+      @media (max-width: 768px) {
+        .belarus-hero__cta {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .belarus-roadmap__tabs {
+          flex-direction: column;
+        }
+
+        .belarus-roadmap__tab {
+          justify-content: center;
+        }
+      }
+
+      @media (max-width: 576px) {
+        .belarus-benefit-card {
+          padding: var(--spacing-lg);
+        }
+
+        .belarus-roadmap__card {
+          padding: var(--spacing-lg);
+        }
+
+        .belarus-partnership-card {
+          padding: var(--spacing-lg);
+        }
+      }
+
+      /* ===== ACCESSIBILITY ===== */
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation-duration: 0.01ms !important;
+          animation-iteration-count: 1 !important;
+          transition-duration: 0.01ms !important;
+        }
+      }
+
+      /* ===== PERFORMANCE ===== */
+      .belarus-benefit-card,
+      .belarus-partnership-card,
+      .belarus-roadmap__card {
+        will-change: transform;
+        contain: layout style paint;
+      }
+
+      /* Удаляем will-change после анимации для производительности */
+      .belarus-benefit-card:not(:hover),
+      .belarus-partnership-card:not(:hover) {
+        will-change: auto;
+      }
+    </style>
   </head>
   <body>
-<nav class="nav-beautiful">
+    <nav class="nav-beautiful">
       <div class="nav-beautiful__container">
         <!-- Logo -->
         <a href="/" class="nav-beautiful__logo">
@@ -30,8 +656,8 @@
           <div class="nav-beautiful__logo-text">
             <span class="nav-beautiful__logo-title">DEXRabbit</span>
             <span class="nav-beautiful__logo-slogan">Твой пассивный доход на кроликах</span>
-              </div>
-            </a>
+          </div>
+        </a>
 
         <!-- Mobile Toggle -->
         <button class="nav-beautiful__mobile-toggle" aria-label="Меню">
@@ -243,181 +869,239 @@
     </nav>
 
     <main>
-      <section class="hero">
-        <div class="container">
-          <h1 class="hero-title">🇧🇾 Представительство в Республике Беларусь</h1>
-          <p class="hero-subtitle">
-            DEXRabbit планирует открытие представительства в Беларуси для развития кролиководческого 
-            бизнеса, поставок племенных животных и запуска франшизы токенизированных ферм.
+      <!-- ===== HERO SECTION ===== -->
+      <section class="belarus-hero">
+        <div class="belarus-hero__content">
+          <div class="belarus-hero__flag">🇧🇾</div>
+          <h1 class="belarus-hero__title">Представительство в Беларуси</h1>
+          <p class="belarus-hero__subtitle">
+            DEXRabbit расширяется в Республику Беларусь. Токенизированное кролиководство, 
+            племенные животные и франшиза для локальных фермеров.
           </p>
-
-          <div style="display: flex; gap: 16px; justify-content: center; margin: 32px 0; flex-wrap: wrap;">
-            <a href="https://t.me/dexrabbit_bot" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; background: linear-gradient(135deg, #7c8cff 0%, #4cc9f0 100%); border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 28px; color: #fff; font-size: 16px; font-weight: 700; text-decoration: none; box-shadow: 0 8px 32px rgba(124, 140, 255, 0.5);">
-              <span style="font-size: 24px;">🤖</span>
-              <span>Обсудить сотрудничество</span>
+          <div class="belarus-hero__cta">
+            <a href="https://t.me/dexrabbit_bot" target="_blank" class="btn btn--primary">
+              <span class="btn__icon">🤖</span>
+              <span>Обсудить партнёрство</span>
             </a>
-            <a href="https://t.me/DexRebbitOfficial" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; background: rgba(0, 136, 204, 0.2); border: 2px solid rgba(0, 136, 204, 0.5); border-radius: 28px; color: #0088cc; text-decoration: none; font-size: 16px; font-weight: 600;">
-              <span style="font-size: 20px;">📢</span>
+            <a href="https://t.me/DexRebbitOfficial" target="_blank" class="btn btn--secondary">
+              <span class="btn__icon">📢</span>
               <span>Telegram канал</span>
             </a>
-            <a href="https://t.me/DEXRabbitOfficialGroupInfo" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; background: rgba(0, 136, 204, 0.2); border: 2px solid rgba(0, 136, 204, 0.5); border-radius: 28px; color: #0088cc; text-decoration: none; font-size: 16px; font-weight: 600;">
-              <span style="font-size: 20px;">👥</span>
+            <a href="https://t.me/DEXRabbitOfficialGroupInfo" target="_blank" class="btn btn--tertiary">
+              <span class="btn__icon">👥</span>
               <span>Чат инвесторов</span>
             </a>
           </div>
         </div>
       </section>
 
-      <section class="section">
+      <!-- ===== KEY BENEFITS ===== -->
+      <section class="belarus-benefits">
         <div class="container">
           <div class="section-header">
-            <span class="overline">Планы развития</span>
-            <h2>🎯 Зачем нам Беларусь</h2>
+            <span class="section-header__overline">Почему Беларусь</span>
+            <h2 class="section-header__title">🎯 Три причины для&nbsp;экспансии</h2>
           </div>
 
-          <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-            <div class="card" style="background: rgba(124, 140, 255, 0.08); border: 2px solid rgba(124, 140, 255, 0.3);">
-              <h3>🌍 Расширение рынка</h3>
-              <p>Беларусь - стратегически важный рынок для развития кролиководческого бизнеса:</p>
-              <ul class="checklist" style="margin-top: 16px;">
-                <li>Близость к России (логистика)</li>
+          <div class="belarus-benefits__grid">
+            <!-- Benefit 1 -->
+            <div class="belarus-benefit-card">
+              <span class="belarus-benefit-card__icon">🌍</span>
+              <h3 class="belarus-benefit-card__title">Расширение рынка</h3>
+              <p class="belarus-benefit-card__desc">
+                Стратегическое положение для&nbsp;роста бизнеса
+              </p>
+              <ul class="belarus-benefit-card__list">
+                <li>Близость к России (простая логистика)</li>
                 <li>Развитое сельское хозяйство</li>
                 <li>Культура потребления крольчатины</li>
-                <li>Поддержка фермерства государством</li>
+                <li>Господдержка фермерства</li>
               </ul>
             </div>
 
-            <div class="card" style="background: rgba(76, 201, 240, 0.08); border: 2px solid rgba(76, 201, 240, 0.3);">
-              <h3>🐰 Поставки племенных кроликов</h3>
-              <p>Экспорт наших элитных генетических линий в Беларусь:</p>
-              <ul class="checklist" style="margin-top: 16px;">
+            <!-- Benefit 2 -->
+            <div class="belarus-benefit-card">
+              <span class="belarus-benefit-card__icon">🐰</span>
+              <h3 class="belarus-benefit-card__title">Племенные кролики</h3>
+              <p class="belarus-benefit-card__desc">
+                Экспорт элитных генетических&nbsp;линий
+              </p>
+              <ul class="belarus-benefit-card__list">
                 <li>12 чистых племенных линий</li>
-                <li>Сертификаты и ветеринарные документы</li>
+                <li>Ветеринарные сертификаты</li>
                 <li>Доставка и карантин</li>
-                <li>Консультационная поддержка</li>
+                <li>Консультации зоотехника</li>
               </ul>
             </div>
 
-            <div class="card" style="background: rgba(250, 204, 21, 0.08); border: 2px solid rgba(250, 204, 21, 0.3);">
-              <h3>🏢 Франшиза DEXRabbit</h3>
-              <p>Запуск токенизированных ферм-партнёров в РБ:</p>
-              <ul class="checklist" style="margin-top: 16px;">
+            <!-- Benefit 3 -->
+            <div class="belarus-benefit-card">
+              <span class="belarus-benefit-card__icon">🏢</span>
+              <h3 class="belarus-benefit-card__title">Франшиза DEXRabbit</h3>
+              <p class="belarus-benefit-card__desc">
+                Токенизированные фермы-партнёры
+              </p>
+              <ul class="belarus-benefit-card__list">
                 <li>Готовая бизнес-модель</li>
                 <li>Обучение и сопровождение</li>
                 <li>Единая экосистема PLEX</li>
-                <li>Общая маркетинговая поддержка</li>
+                <li>Общий маркетинг</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section section-alt">
+      <!-- ===== ROADMAP TABS ===== -->
+      <section class="belarus-roadmap">
         <div class="container">
           <div class="section-header">
-            <span class="overline">Этапы развития</span>
-            <h2>📅 Дорожная карта</h2>
+            <span class="section-header__overline">Этапы развития</span>
+            <h2 class="section-header__title">📅 Дорожная карта</h2>
           </div>
 
-          <div class="grid" style="grid-template-columns: 1fr; gap: 20px;">
-            <div class="card" style="border-left: 4px solid #7c8cff;">
-              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #7c8cff, #4cc9f0); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; color: #fff;">Q1</div>
-                <h3 style="margin: 0;">2025 Q1-Q2: Исследование рынка</h3>
+          <!-- Tabs Navigation -->
+          <div class="belarus-roadmap__tabs">
+            <button class="belarus-roadmap__tab active" data-quarter="q1">
+              <span class="belarus-roadmap__tab-badge">Q1</span>
+              <span>Исследование</span>
+            </button>
+            <button class="belarus-roadmap__tab" data-quarter="q2">
+              <span class="belarus-roadmap__tab-badge">Q2</span>
+              <span>Первые поставки</span>
+            </button>
+            <button class="belarus-roadmap__tab" data-quarter="q3">
+              <span class="belarus-roadmap__tab-badge">Q3</span>
+              <span>Открытие офиса</span>
+            </button>
+            <button class="belarus-roadmap__tab" data-quarter="q4">
+              <span class="belarus-roadmap__tab-badge">Q4</span>
+              <span>Франшиза</span>
+            </button>
+          </div>
+
+          <!-- Tab Contents -->
+          <div class="belarus-roadmap__content active" data-quarter="q1">
+            <div class="belarus-roadmap__card">
+              <div class="belarus-roadmap__card-header">
+                <div class="belarus-roadmap__card-quarter">Q1</div>
+                <h3 class="belarus-roadmap__card-title">2025 Q1-Q2: Исследование рынка</h3>
               </div>
-              <ul class="checklist">
-                <li>Анализ законодательства РБ</li>
-                <li>Поиск партнёров и дистрибьюторов</li>
-                <li>Оценка логистических маршрутов</li>
-                <li>Регистрация товарного знака</li>
+              <ul class="belarus-roadmap__card-list">
+                <li>Анализ законодательства РБ по кролиководству и экспорту</li>
+                <li>Поиск партнёров и дистрибьюторов в регионах</li>
+                <li>Оценка логистических маршрутов и таможни</li>
+                <li>Регистрация товарного знака DEXRabbit в РБ</li>
               </ul>
             </div>
+          </div>
 
-            <div class="card" style="border-left: 4px solid #4cc9f0;">
-              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #4cc9f0, #00C896); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; color: #fff;">Q2</div>
-                <h3 style="margin: 0;">2025 Q2-Q3: Первые поставки</h3>
+          <div class="belarus-roadmap__content" data-quarter="q2">
+            <div class="belarus-roadmap__card">
+              <div class="belarus-roadmap__card-header">
+                <div class="belarus-roadmap__card-quarter">Q2</div>
+                <h3 class="belarus-roadmap__card-title">2025 Q2-Q3: Первые поставки</h3>
               </div>
-              <ul class="checklist">
-                <li>Экспорт 50-100 племенных кроликов</li>
-                <li>Ветеринарное сопровождение</li>
-                <li>Обучение белорусских фермеров</li>
-                <li>Тестовые продажи крольчатины</li>
+              <ul class="belarus-roadmap__card-list">
+                <li>Экспорт 50-100 племенных кроликов элитных линий</li>
+                <li>Полное ветеринарное сопровождение и сертификация</li>
+                <li>Обучение белорусских фермеров технологиям разведения</li>
+                <li>Запуск производства кроликов в Беларуси</li>
               </ul>
             </div>
+          </div>
 
-            <div class="card" style="border-left: 4px solid #facc15;">
-              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #facc15, #f59e0b); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; color: #000;">Q3</div>
-                <h3 style="margin: 0;">2025 Q3-Q4: Открытие офиса</h3>
+          <div class="belarus-roadmap__content" data-quarter="q3">
+            <div class="belarus-roadmap__card">
+              <div class="belarus-roadmap__card-header">
+                <div class="belarus-roadmap__card-quarter">Q3</div>
+                <h3 class="belarus-roadmap__card-title">2025 Q3-Q4: Открытие офиса</h3>
               </div>
-              <ul class="checklist">
-                <li>Регистрация представительства в Минске</li>
-                <li>Найм локальной команды (3-5 человек)</li>
-                <li>Склад-хранилище для кормов</li>
-                <li>Запуск маркетинговой кампании</li>
+              <ul class="belarus-roadmap__card-list">
+                <li>Регистрация официального представительства в Минске</li>
+                <li>Найм локальной команды (менеджер, логист, зоотехник)</li>
+                <li>Склад-хранилище для кормов и оборудования</li>
+                <li>Запуск полномасштабной маркетинговой кампании</li>
               </ul>
             </div>
+          </div>
 
-            <div class="card" style="border-left: 4px solid #4ade80;">
-              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #4ade80, #22c55e); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 20px; font-weight: 700; color: #000;">Q4</div>
-                <h3 style="margin: 0;">2026: Франшиза</h3>
+          <div class="belarus-roadmap__content" data-quarter="q4">
+            <div class="belarus-roadmap__card">
+              <div class="belarus-roadmap__card-header">
+                <div class="belarus-roadmap__card-quarter">Q4</div>
+                <h3 class="belarus-roadmap__card-title">2026: Запуск франшизы</h3>
               </div>
-              <ul class="checklist">
-                <li>Запуск 2-3 ферм-партнёров</li>
-                <li>Интеграция в экосистему PLEX</li>
-                <li>Единая платформа инвестиций</li>
-                <li>Масштабирование на страны СНГ</li>
+              <ul class="belarus-roadmap__card-list">
+                <li>Запуск 2-3 ферм-партнёров по модели DEXRabbit</li>
+                <li>Интеграция в единую экосистему токена PLEX</li>
+                <li>Единая платформа для инвестиций в белорусские фермы</li>
+                <li>Подготовка к масштабированию на другие страны СНГ</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      <section class="section">
+      <!-- ===== PARTNERSHIP OPPORTUNITIES ===== -->
+      <section class="belarus-partnership">
         <div class="container">
           <div class="section-header">
-            <span class="overline">Для партнёров</span>
-            <h2>🤝 Возможности сотрудничества</h2>
+            <span class="section-header__overline">Возможности</span>
+            <h2 class="section-header__title">🤝 Варианты&nbsp;сотрудничества</h2>
           </div>
 
-          <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px;">
-            <div class="card">
-              <h3>🏢 Дистрибьюторы</h3>
-              <p>Продажа племенных кроликов, кормов, оборудования в РБ</p>
-              <div style="margin-top: 16px; padding: 16px; background: rgba(124, 140, 255, 0.1); border-radius: 12px;">
-                <p style="font-size: 14px; margin: 0;"><strong>Условия:</strong></p>
-                <ul style="font-size: 14px; margin-top: 8px; padding-left: 20px;">
+          <div class="belarus-partnership__grid">
+            <!-- Distributors Card -->
+            <div class="belarus-partnership-card">
+              <div class="belarus-partnership-card__icon">🏢</div>
+              <h3 class="belarus-partnership-card__title">Дистрибьюторы</h3>
+              <p class="belarus-partnership-card__desc">
+                Продажа племенных кроликов, кормов и&nbsp;оборудования в&nbsp;регионах&nbsp;РБ
+              </p>
+              <div class="belarus-partnership-card__details">
+                <p class="belarus-partnership-card__details-title">Условия партнёрства:</p>
+                <ul>
                   <li>Эксклюзивность в регионе</li>
                   <li>Маржа 20-35%</li>
-                  <li>Обучение и поддержка</li>
+                  <li>Обучение и маркетинговая поддержка</li>
+                  <li>Готовые продажные материалы</li>
                 </ul>
               </div>
             </div>
 
-            <div class="card">
-              <h3>🧬 Племенные фермы</h3>
-              <p>Закупка наших генетических линий для разведения</p>
-              <div style="margin-top: 16px; padding: 16px; background: rgba(76, 201, 240, 0.1); border-radius: 12px;">
-                <p style="font-size: 14px; margin: 0;"><strong>Преимущества:</strong></p>
-                <ul style="font-size: 14px; margin-top: 8px; padding-left: 20px;">
-                  <li>Проверенные линии (12 штук)</li>
-                  <li>Доходность на 30% выше</li>
-                  <li>Консультации зоотехника</li>
+            <!-- Breeding Farms Card -->
+            <div class="belarus-partnership-card">
+              <div class="belarus-partnership-card__icon">🧬</div>
+              <h3 class="belarus-partnership-card__title">Племенные фермы</h3>
+              <p class="belarus-partnership-card__desc">
+                Закупка генетических линий для&nbsp;профессионального разведения
+              </p>
+              <div class="belarus-partnership-card__details">
+                <p class="belarus-partnership-card__details-title">Преимущества работы с нами:</p>
+                <ul>
+                  <li>12 проверенных племенных линий</li>
+                  <li>Доходность на 30% выше рынка</li>
+                  <li>Консультации зоотехника онлайн 24/7</li>
+                  <li>Гарантия на генетику</li>
                 </ul>
               </div>
             </div>
 
-            <div class="card">
-              <h3>🍽️ Рестораны и HoReCa</h3>
-              <p>Поставки фермерской крольчатины в заведения РБ</p>
-              <div style="margin-top: 16px; padding: 16px; background: rgba(250, 204, 21, 0.1); border-radius: 12px;">
-                <p style="font-size: 14px; margin: 0;"><strong>Что предлагаем:</strong></p>
-                <ul style="font-size: 14px; margin-top: 8px; padding-left: 20px;">
-                  <li>Охлаждённое мясо премиум</li>
-                  <li>Регулярные поставки</li>
-                  <li>Сертификаты качества</li>
+            <!-- HoReCa Card -->
+            <div class="belarus-partnership-card">
+              <div class="belarus-partnership-card__icon">🍽️</div>
+              <h3 class="belarus-partnership-card__title">Рестораны и&nbsp;HoReCa</h3>
+              <p class="belarus-partnership-card__desc">
+                Регулярные поставки фермерской крольчатины премиум-качества
+              </p>
+              <div class="belarus-partnership-card__details">
+                <p class="belarus-partnership-card__details-title">Что предлагаем:</p>
+                <ul>
+                  <li>Охлаждённое мясо премиум-класса</li>
+                  <li>Регулярные поставки по графику</li>
+                  <li>Полный пакет сертификатов качества</li>
+                  <li>Гибкие цены для постоянных клиентов</li>
                 </ul>
               </div>
             </div>
@@ -425,41 +1109,47 @@
         </div>
       </section>
 
-      <section class="section section-alt">
-        <div class="container" style="text-align: center;">
-          <h2 style="margin-bottom: 20px;">🚀 Хотите стать партнёром в Беларуси?</h2>
-          <p style="font-size: 18px; color: rgba(255, 255, 255, 0.9); margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto;">
-            Свяжитесь с нами для обсуждения условий партнёрства и представительства
+      <!-- ===== CTA SECTION ===== -->
+      <section class="belarus-cta">
+        <div class="container">
+          <h2 class="belarus-cta__title">🚀 Готовы стать&nbsp;партнёром?</h2>
+          <p class="belarus-cta__subtitle">
+            Свяжитесь с нами для обсуждения условий партнёрства и представительства в Беларуси
           </p>
-          
-          <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-            <a href="https://t.me/dexrabbit_bot" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; padding: 18px 36px; background: linear-gradient(135deg, #7c8cff 0%, #4cc9f0 100%); border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 28px; color: #fff; font-size: 17px; font-weight: 700; text-decoration: none; box-shadow: 0 8px 32px rgba(124, 140, 255, 0.5);">
-              <span style="font-size: 26px;">🤖</span>
+          <div class="belarus-cta__buttons">
+            <a href="https://t.me/dexrabbit_bot" target="_blank" class="btn btn--primary">
+              <span class="btn__icon">🤖</span>
               <span>Написать в бот</span>
             </a>
-            
-            <a href="mailto:kupitkrolika@gmail.com" style="display: inline-flex; align-items: center; gap: 10px; padding: 18px 36px; background: rgba(250, 204, 21, 0.15); border: 2px solid rgba(250, 204, 21, 0.5); border-radius: 28px; color: #facc15; text-decoration: none; font-size: 17px; font-weight: 600;">
-              <span style="font-size: 22px;">📧</span>
-              <span>Email</span>
+            <a href="mailto:kupitkrolika@gmail.com" class="btn btn--tertiary">
+              <span class="btn__icon">📧</span>
+              <span>Email нам</span>
             </a>
           </div>
         </div>
       </section>
 
-      <div style="text-align: center; margin: 40px auto; padding: 32px; background: linear-gradient(135deg, rgba(124, 140, 255, 0.1), rgba(76, 201, 240, 0.05)); border: 1px solid rgba(124, 140, 255, 0.3); border-radius: 20px; max-width: 800px;">
-        <h3 style="margin-bottom: 16px; color: #fff; font-size: 22px;">💬 Присоединяйтесь к сообществу</h3>
-        <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap; margin-top: 20px;">
-          <a href="https://t.me/DexRebbitOfficial" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: rgba(0, 136, 204, 0.2); border: 2px solid rgba(0, 136, 204, 0.5); border-radius: 20px; color: #0088cc; text-decoration: none; font-weight: 600;">
-            <span>📢</span><span>Канал</span>
-          </a>
-          <a href="https://t.me/DEXRabbitOfficialGroupInfo" target="_blank" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: rgba(0, 136, 204, 0.2); border: 2px solid rgba(0, 136, 204, 0.5); border-radius: 20px; color: #0088cc; text-decoration: none; font-weight: 600;">
-            <span>👥</span><span>Чат</span>
-          </a>
+      <!-- ===== COMMUNITY SECTION ===== -->
+      <section class="section" style="padding: var(--spacing-xxl) 0;">
+        <div class="container" style="max-width: 800px; margin: 0 auto; text-align: center; padding: var(--spacing-xl); background: linear-gradient(135deg, rgba(124, 140, 255, 0.1), rgba(76, 201, 240, 0.05)); border: 1px solid rgba(124, 140, 255, 0.3); border-radius: var(--radius-lg);">
+          <h3 style="margin-bottom: var(--spacing-md); color: #fff; font-size: clamp(1.5rem, 3vw, 1.75rem); font-weight: 700;">
+            💬 Присоединяйтесь к сообществу
+          </h3>
+          <div style="display: flex; gap: var(--spacing-md); justify-content: center; flex-wrap: wrap; margin-top: var(--spacing-lg);">
+            <a href="https://t.me/DexRebbitOfficial" target="_blank" class="btn btn--secondary">
+              <span class="btn__icon">📢</span>
+              <span>Канал</span>
+            </a>
+            <a href="https://t.me/DEXRabbitOfficialGroupInfo" target="_blank" class="btn btn--secondary">
+              <span class="btn__icon">👥</span>
+              <span>Чат</span>
+            </a>
+          </div>
         </div>
-      </div>
+      </section>
     </main>
 
-<footer class="footer">
+    <footer class="footer">
       <div class="container">
         <!-- Кнопка "Наверх" -->
         <button 
@@ -569,419 +1259,26 @@
       </div>
     </footer>
 
-    <!-- Стили для footer -->
-    <style>
-    /* Footer Styles */
-    .footer {
-      background: linear-gradient(180deg, #0a0e16 0%, #0f1419 100%);
-      color: var(--color-text, #e0e0e0);
-      padding: 4rem 0 2rem;
-      position: relative;
-      margin-top: 4rem;
-      border-top: 1px solid rgba(124, 140, 255, 0.1);
-    }
+    <!-- Roadmap Tabs JavaScript -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const tabs = document.querySelectorAll('.belarus-roadmap__tab');
+        const contents = document.querySelectorAll('.belarus-roadmap__content');
 
-    .footer .container {
-      position: relative;
-    }
+        tabs.forEach(tab => {
+          tab.addEventListener('click', function() {
+            const quarter = this.getAttribute('data-quarter');
 
-    /* Scroll to Top Button */
-    .scroll-top-btn {
-      position: absolute;
-      top: -28px;
-      right: 2rem;
-      width: 56px;
-      height: 56px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, 
-        rgba(124, 140, 255, 0.9) 0%, 
-        rgba(76, 201, 240, 0.9) 50%,
-        rgba(124, 140, 255, 0.9) 100%);
-      border: 1px solid rgba(124, 140, 255, 0.3);
-      color: white;
-      font-size: 1.6rem;
-      cursor: pointer;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 
-        0 8px 25px rgba(124, 140, 255, 0.3),
-        0 4px 15px rgba(76, 201, 240, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(15px);
-      z-index: 10;
-      position: relative;
-      overflow: hidden;
-    }
+            // Remove active class from all tabs and contents
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
 
-    /* Эффект свечения при hover */
-    .scroll-top-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, 
-        transparent, 
-        rgba(255, 255, 255, 0.2), 
-        transparent);
-      transition: left 0.6s ease;
-    }
-
-    .scroll-top-btn:hover::before {
-      left: 100%;
-    }
-
-    .scroll-top-btn:hover {
-      background: linear-gradient(135deg, 
-        rgba(124, 140, 255, 1) 0%, 
-        rgba(76, 201, 240, 1) 50%,
-        rgba(124, 140, 255, 1) 100%);
-      border-color: rgba(124, 140, 255, 0.5);
-      transform: translateY(-4px) scale(1.05);
-      box-shadow: 
-        0 15px 35px rgba(124, 140, 255, 0.4),
-        0 8px 20px rgba(76, 201, 240, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    }
-
-    .scroll-top-btn:active {
-      transform: translateY(-2px) scale(0.98);
-      box-shadow: 
-        0 10px 25px rgba(124, 140, 255, 0.5);
-      transition: all 0.15s ease;
-    }
-
-    /* Footer Grid */
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.5fr;
-      gap: 3rem;
-      margin-bottom: 3rem;
-    }
-
-    @media (max-width: 992px) {
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-    }
-
-    /* Footer Column */
-    .footer-column {
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Footer Logo */
-    .footer-logo {
-      margin-bottom: 1rem;
-    }
-
-    .footer-logo-link {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      color: white;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.25rem;
-      transition: opacity 0.3s ease;
-    }
-
-    .footer-logo-link:hover {
-      opacity: 0.8;
-    }
-
-    .footer-logo-link img {
-      width: 40px;
-      height: 40px;
-    }
-
-    /* Footer Description */
-    .footer-description {
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      opacity: 0.8;
-      font-size: 0.95rem;
-    }
-
-    /* Footer Social */
-    .footer-social {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .footer-social a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, 
-        rgba(124, 140, 255, 0.08) 0%, 
-        rgba(76, 201, 240, 0.08) 50%,
-        rgba(124, 140, 255, 0.08) 100%);
-      border: 1px solid rgba(124, 140, 255, 0.2);
-      border-radius: 16px;
-      color: var(--color-accent, #7c8cff);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(10px);
-      box-shadow: 
-        0 4px 12px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    }
-
-    /* Эффект свечения при hover */
-    .footer-social a::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, 
-        transparent, 
-        rgba(255, 255, 255, 0.1), 
-        transparent);
-      transition: left 0.6s ease;
-    }
-
-    .footer-social a:hover::before {
-      left: 100%;
-    }
-
-    .footer-social a:hover {
-      background: linear-gradient(135deg, 
-        rgba(124, 140, 255, 0.18) 0%, 
-        rgba(76, 201, 240, 0.18) 50%,
-        rgba(124, 140, 255, 0.18) 100%);
-      border-color: rgba(124, 140, 255, 0.4);
-      color: white;
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 
-        0 12px 30px rgba(124, 140, 255, 0.25),
-        0 4px 15px rgba(76, 201, 240, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    }
-
-    .footer-social a:active {
-      transform: translateY(-1px) scale(0.98);
-      box-shadow: 
-        0 6px 20px rgba(124, 140, 255, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      transition: all 0.15s ease;
-    }
-
-    /* Footer Title */
-    .footer-title {
-      margin-bottom: 1.5rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: white;
-    }
-
-    /* Footer Navigation */
-    .footer-nav {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .footer-nav a {
-      color: var(--color-text-secondary, #a0a0a0);
-      text-decoration: none;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      font-size: 0.95rem;
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      border-radius: 12px;
-      background: rgba(124, 140, 255, 0.03);
-      border: 1px solid rgba(124, 140, 255, 0.08);
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(5px);
-    }
-
-    /* Эффект свечения при hover */
-    .footer-nav a::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, 
-        transparent, 
-        rgba(124, 140, 255, 0.1), 
-        transparent);
-      transition: left 0.6s ease;
-    }
-
-    .footer-nav a:hover::before {
-      left: 100%;
-    }
-
-    .footer-nav a:hover {
-      color: var(--color-accent, #7c8cff);
-      background: linear-gradient(135deg, 
-        rgba(124, 140, 255, 0.1) 0%, 
-        rgba(76, 201, 240, 0.05) 100%);
-      border-color: rgba(124, 140, 255, 0.3);
-      transform: translateX(8px) translateY(-2px);
-      box-shadow: 
-        0 8px 20px rgba(124, 140, 255, 0.15),
-        0 0 20px rgba(76, 201, 240, 0.1);
-    }
-
-    .footer-nav a:active {
-      transform: translateX(6px) translateY(-1px);
-      box-shadow: 
-        0 4px 15px rgba(124, 140, 255, 0.2);
-      transition: all 0.15s ease;
-    }
-
-    /* Footer Token Info */
-    .footer-token-info {
-      margin-top: 1.5rem;
-      padding: 1rem;
-      background: rgba(124, 140, 255, 0.05);
-      border-radius: 8px;
-      border: 1px solid rgba(124, 140, 255, 0.1);
-    }
-
-    .footer-token-info p {
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-    }
-
-    .footer-code {
-      display: block;
-      font-family: 'Courier New', monospace;
-      font-size: 0.85rem;
-      background: rgba(0, 0, 0, 0.3);
-      padding: 0.5rem;
-      border-radius: 4px;
-      margin: 0.5rem 0;
-      word-break: break-all;
-      color: #4cc9f0;
-    }
-
-    .footer-token-link {
-      color: var(--color-accent, #7c8cff);
-      text-decoration: none;
-      font-size: 0.9rem;
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.5rem 1rem;
-      border-radius: 12px;
-      background: rgba(124, 140, 255, 0.05);
-      border: 1px solid rgba(124, 140, 255, 0.15);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(5px);
-    }
-
-    /* Эффект свечения при hover */
-    .footer-token-link::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, 
-        transparent, 
-        rgba(124, 140, 255, 0.1), 
-        transparent);
-      transition: left 0.6s ease;
-    }
-
-    .footer-token-link:hover::before {
-      left: 100%;
-    }
-
-    .footer-token-link:hover {
-      background: linear-gradient(135deg, 
-        rgba(124, 140, 255, 0.1) 0%, 
-        rgba(76, 201, 240, 0.05) 100%);
-      border-color: rgba(124, 140, 255, 0.3);
-      transform: translateY(-2px);
-      box-shadow: 
-        0 8px 20px rgba(124, 140, 255, 0.15),
-        0 0 20px rgba(76, 201, 240, 0.1);
-    }
-
-    .footer-token-link:active {
-      transform: translateY(-1px);
-      box-shadow: 
-        0 4px 15px rgba(124, 140, 255, 0.2);
-      transition: all 0.15s ease;
-    }
-
-    /* Footer Bottom */
-    .footer-bottom {
-      padding-top: 2rem;
-      border-top: 1px solid rgba(124, 140, 255, 0.1);
-    }
-
-    .footer-bottom-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    @media (max-width: 768px) {
-      .footer-bottom-content {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-
-    .footer-copyright {
-      margin: 0;
-      opacity: 0.7;
-      font-size: 0.9rem;
-    }
-
-    .footer-legal {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 768px) {
-      .footer-legal {
-        justify-content: center;
-      }
-    }
-
-    .footer-legal a {
-      color: var(--color-text-secondary, #a0a0a0);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.3s ease;
-    }
-
-    .footer-legal a:hover {
-      color: var(--color-accent, #7c8cff);
-    }
-
-    .footer-separator {
-      opacity: 0.5;
-    }
-    </style>
+            // Add active class to clicked tab and corresponding content
+            this.classList.add('active');
+            document.querySelector(`.belarus-roadmap__content[data-quarter="${quarter}"]`).classList.add('active');
+          });
+        });
+      });
+    </script>
   </body>
 </html>
