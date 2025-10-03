@@ -18,16 +18,611 @@
     <link rel="stylesheet" href="/assets/css/main.css">
     <link rel="stylesheet" href="/assets/css/variables.css">
     <link rel="stylesheet" href="/assets/css/performance.css" />
-    <link rel="stylesheet" href="/assets/css/investor-cards.css" /> />
+    <link rel="stylesheet" href="/assets/css/investor-cards.css" />
     <link rel="stylesheet" href="/assets/css/navigation-beautiful.css?v=20251001-stable-hover-v2" />
     <link rel="stylesheet" href="/assets/css/mobile-critical-fix.css?v=20251001-android-fix" />
     <link rel="stylesheet" href="/assets/css/ultimate-responsive.css?v=20251001-ultimate" />
     <link rel="stylesheet" href="/assets/css/footer.css" />
     
     <script defer src="/assets/js/navigation-beautiful.js?v=20251001-stable-hover"></script>
+    
+    <style>
+        /* UX-оптимизированные стили для bloggers.html */
+        
+        /* Увеличенное дыхание между секциями */
+        .section {
+            padding: 80px 0;
+        }
+        
+        .section-compact {
+            padding: 60px 0;
+        }
+        
+        /* Hero с фокусом на CTA */
+        .hero-bloggers {
+            padding: 100px 0 80px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-bloggers::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: radial-gradient(circle at 50% 0%, rgba(124, 140, 255, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .hero-bloggers .container {
+            position: relative;
+            z-index: 1;
+        }
+        
+        .hero-title-large {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 800;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            background: linear-gradient(135deg, #fff 0%, #7c8cff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .hero-subtitle-concise {
+            font-size: clamp(18px, 2.5vw, 22px);
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.6;
+        }
+        
+        /* Крупные CTA кнопки */
+        .cta-group {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-top: 40px;
+        }
+        
+        .cta-primary-large {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            padding: 20px 40px;
+            background: linear-gradient(135deg, #7c8cff 0%, #4cc9f0 100%);
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 30px;
+            color: #fff;
+            font-size: 18px;
+            font-weight: 700;
+            text-decoration: none;
+            box-shadow: 0 10px 40px rgba(124, 140, 255, 0.4);
+            transition: all 0.3s ease;
+            animation: pulse-soft 3s ease-in-out infinite;
+        }
+        
+        .cta-primary-large:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 50px rgba(124, 140, 255, 0.6);
+        }
+        
+        @keyframes pulse-soft {
+            0%, 100% { box-shadow: 0 10px 40px rgba(124, 140, 255, 0.4); }
+            50% { box-shadow: 0 10px 50px rgba(124, 140, 255, 0.6); }
+        }
+        
+        .cta-secondary-large {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 20px 40px;
+            background: rgba(124, 140, 255, 0.1);
+            border: 2px solid rgba(124, 140, 255, 0.5);
+            border-radius: 30px;
+            color: rgba(255, 255, 255, 0.9);
+            font-size: 18px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+        
+        .cta-secondary-large:hover {
+            background: rgba(124, 140, 255, 0.2);
+            border-color: rgba(124, 140, 255, 0.7);
+            transform: translateY(-2px);
+        }
+        
+        /* Заголовки секций с улучшенной иерархией */
+        .section-header-centered {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+        
+        .section-overline {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(124, 140, 255, 0.1);
+            border: 1px solid rgba(124, 140, 255, 0.3);
+            border-radius: 20px;
+            color: #7c8cff;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 16px;
+        }
+        
+        .section-title-large {
+            font-size: clamp(28px, 4vw, 38px);
+            font-weight: 700;
+            margin-bottom: 16px;
+            line-height: 1.3;
+        }
+        
+        .section-description {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.8);
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.7;
+        }
+        
+        /* Карточки с улучшенным дыханием */
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 32px;
+            margin-top: 60px;
+        }
+        
+        .benefit-card {
+            background: rgba(124, 140, 255, 0.05);
+            border: 2px solid rgba(124, 140, 255, 0.2);
+            border-radius: 24px;
+            padding: 40px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .benefit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #7c8cff, #4cc9f0);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-8px);
+            background: rgba(124, 140, 255, 0.1);
+            border-color: rgba(124, 140, 255, 0.4);
+            box-shadow: 0 20px 60px rgba(124, 140, 255, 0.2);
+        }
+        
+        .benefit-card:hover::before {
+            opacity: 1;
+        }
+        
+        .benefit-icon {
+            font-size: 48px;
+            margin-bottom: 20px;
+            display: block;
+        }
+        
+        .benefit-title {
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+        
+        .benefit-text {
+            font-size: 16px;
+            line-height: 1.7;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        .benefit-highlight {
+            display: inline-block;
+            padding: 4px 12px;
+            background: rgba(76, 201, 240, 0.2);
+            border-radius: 12px;
+            font-weight: 600;
+            color: #4cc9f0;
+            margin-top: 12px;
+        }
+        
+        /* Аккордеон для вариантов сотрудничества */
+        .accordion-wrapper {
+            max-width: 900px;
+            margin: 60px auto 0;
+        }
+        
+        .accordion-item {
+            background: rgba(124, 140, 255, 0.05);
+            border: 2px solid rgba(124, 140, 255, 0.2);
+            border-radius: 20px;
+            margin-bottom: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .accordion-item:hover {
+            border-color: rgba(124, 140, 255, 0.4);
+        }
+        
+        .accordion-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 24px 32px;
+            cursor: pointer;
+            user-select: none;
+            transition: all 0.3s ease;
+        }
+        
+        .accordion-header:hover {
+            background: rgba(124, 140, 255, 0.08);
+        }
+        
+        .accordion-title {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 20px;
+            font-weight: 700;
+            color: #fff;
+        }
+        
+        .accordion-icon-left {
+            font-size: 32px;
+        }
+        
+        .accordion-chevron {
+            font-size: 24px;
+            transition: transform 0.3s ease;
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        .accordion-item.active .accordion-chevron {
+            transform: rotate(180deg);
+        }
+        
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        
+        .accordion-item.active .accordion-content {
+            max-height: 1000px;
+        }
+        
+        .accordion-body {
+            padding: 0 32px 32px;
+        }
+        
+        .accordion-list {
+            list-style: none;
+            padding: 0;
+            margin: 16px 0 0;
+        }
+        
+        .accordion-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            padding: 12px 0;
+            color: rgba(255, 255, 255, 0.85);
+            line-height: 1.6;
+        }
+        
+        .accordion-list li::before {
+            content: '✓';
+            display: inline-block;
+            width: 24px;
+            height: 24px;
+            background: rgba(76, 201, 240, 0.2);
+            border-radius: 50%;
+            text-align: center;
+            line-height: 24px;
+            color: #4cc9f0;
+            flex-shrink: 0;
+            font-weight: 700;
+        }
+        
+        /* Табы для платформ */
+        .tabs-container {
+            margin-top: 60px;
+        }
+        
+        .tabs-nav {
+            display: flex;
+            gap: 12px;
+            justify-content: center;
+            flex-wrap: wrap;
+            margin-bottom: 40px;
+        }
+        
+        .tab-button {
+            padding: 14px 28px;
+            background: rgba(124, 140, 255, 0.08);
+            border: 2px solid rgba(124, 140, 255, 0.2);
+            border-radius: 20px;
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 16px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .tab-button:hover {
+            background: rgba(124, 140, 255, 0.15);
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .tab-button.active {
+            background: linear-gradient(135deg, #7c8cff 0%, #4cc9f0 100%);
+            border-color: transparent;
+            color: #fff;
+        }
+        
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.4s ease;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .platform-content {
+            background: rgba(124, 140, 255, 0.05);
+            border: 2px solid rgba(124, 140, 255, 0.2);
+            border-radius: 24px;
+            padding: 40px;
+        }
+        
+        .content-ideas-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 24px;
+        }
+        
+        .idea-item {
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(124, 140, 255, 0.15);
+            border-radius: 16px;
+            font-size: 15px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.85);
+            transition: all 0.3s ease;
+        }
+        
+        .idea-item:hover {
+            background: rgba(255, 255, 255, 0.05);
+            border-color: rgba(124, 140, 255, 0.3);
+            transform: translateX(4px);
+        }
+        
+        /* Процесс сотрудничества (Timeline) */
+        .process-timeline {
+            max-width: 800px;
+            margin: 60px auto 0;
+            position: relative;
+        }
+        
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            left: 30px;
+            top: 20px;
+            bottom: 20px;
+            width: 3px;
+            background: linear-gradient(180deg, #7c8cff 0%, #4cc9f0 100%);
+            opacity: 0.3;
+        }
+        
+        .timeline-step {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 40px;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, #7c8cff 0%, #4cc9f0 100%);
+            border: 4px solid rgba(124, 140, 255, 0.3);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            flex-shrink: 0;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .step-content {
+            flex: 1;
+            padding-top: 8px;
+        }
+        
+        .step-title {
+            font-size: 20px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            color: #fff;
+        }
+        
+        .step-description {
+            font-size: 16px;
+            line-height: 1.6;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Финальный CTA блок */
+        .final-cta {
+            text-align: center;
+            padding: 80px 0;
+            background: radial-gradient(circle at 50% 50%, rgba(124, 140, 255, 0.1) 0%, transparent 70%);
+        }
+        
+        .final-cta-title {
+            font-size: clamp(28px, 4vw, 36px);
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+        
+        .final-cta-text {
+            font-size: 18px;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 700px;
+            margin: 0 auto 40px;
+            line-height: 1.7;
+        }
+        
+        /* Контактная карточка */
+        .contact-compact {
+            max-width: 600px;
+            margin: 40px auto 0;
+            background: rgba(124, 140, 255, 0.05);
+            border: 2px solid rgba(124, 140, 255, 0.2);
+            border-radius: 24px;
+            padding: 32px;
+        }
+        
+        .contact-methods {
+            display: grid;
+            gap: 12px;
+            margin-top: 24px;
+        }
+        
+        .contact-link {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 20px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(124, 140, 255, 0.2);
+            border-radius: 16px;
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .contact-link:hover {
+            background: rgba(124, 140, 255, 0.1);
+            border-color: rgba(124, 140, 255, 0.4);
+            transform: translateX(4px);
+        }
+        
+        .contact-icon {
+            font-size: 24px;
+        }
+        
+        /* Адаптивность */
+        @media (max-width: 768px) {
+            .hero-bloggers {
+                padding: 60px 0 40px;
+            }
+            
+            .section {
+                padding: 60px 0;
+            }
+            
+            .benefits-grid {
+                gap: 24px;
+            }
+            
+            .benefit-card {
+                padding: 28px;
+            }
+            
+            .accordion-header {
+                padding: 20px 24px;
+            }
+            
+            .accordion-body {
+                padding: 0 24px 24px;
+            }
+            
+            .tabs-nav {
+                gap: 8px;
+            }
+            
+            .tab-button {
+                padding: 12px 20px;
+                font-size: 14px;
+            }
+            
+            .platform-content {
+                padding: 28px;
+            }
+            
+            .process-timeline::before {
+                left: 20px;
+            }
+            
+            .step-number {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+            }
+            
+            .cta-group {
+                flex-direction: column;
+                align-items: stretch;
+            }
+            
+            .cta-primary-large,
+            .cta-secondary-large {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        /* Микроанимации при скролле */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s ease, transform 0.6s ease;
+        }
+        
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
 </head>
 <body>
-<nav class="nav-beautiful">
+    <nav class="nav-beautiful">
       <div class="nav-beautiful__container">
         <!-- Logo -->
         <a href="/" class="nav-beautiful__logo">
@@ -35,8 +630,8 @@
           <div class="nav-beautiful__logo-text">
             <span class="nav-beautiful__logo-title">DEXRabbit</span>
             <span class="nav-beautiful__logo-slogan">Твой пассивный доход на кроликах</span>
-              </div>
-            </a>
+          </div>
+        </a>
 
         <!-- Mobile Toggle -->
         <button class="nav-beautiful__mobile-toggle" aria-label="Меню">
@@ -248,325 +843,460 @@
     </nav>
 
     <main>
-        <section class="hero">
+        <!-- Hero Section с фокусом на CTA -->
+        <section class="hero-bloggers">
             <div class="container">
-                <h1 class="hero-title">🎥 Сотрудничество с блогерами</h1>
-                <p class="hero-subtitle">
-                    Приглашаем контент-мейкеров из YouTube, Rutube, TikTok, Telegram и других платформ 
-                    к экологичному и взаимовыгодному сотрудничеству. От микроблогеров до миллионников — 
-                    мы открыты для всех!
-                </p>
-
-                <div class="bot-cta-wrapper" style="display: flex; gap: 16px; justify-content: center; margin: 32px 0; flex-wrap: wrap;">
-                  <a href="https://t.me/dexrabbit_bot" target="_blank" class="bot-cta-primary" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; background: linear-gradient(135deg, #7c8cff 0%, #4cc9f0 100%); border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 28px; color: #fff; font-size: 16px; font-weight: 700; text-decoration: none; box-shadow: 0 8px 32px rgba(124, 140, 255, 0.5); transition: all 0.3s ease;">
-                    <span style="font-size: 24px;">🤖</span>
-                    <span>Начать сотрудничество в боте</span>
-                  </a>
-                  <a href="https://t.me/DexRebbitOfficial" target="_blank" class="cta-button cta-secondary" style="display: inline-flex; align-items: center; gap: 10px; padding: 16px 32px; background: rgba(124, 140, 255, 0.1); border: 2px solid rgba(124, 140, 255, 0.5); border-radius: 28px; color: rgba(255, 255, 255, 0.9); font-size: 16px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
-                    <span style="font-size: 20px;">📢</span>
-                    <span>Наш Telegram канал</span>
-                  </a>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <span class="overline">Наши принципы</span>
-                    <h2>🌱 Экологичность во взаимоотношениях</h2>
-                </div>
-
-                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-                    <div class="card" style="background: rgba(124, 140, 255, 0.08); border: 2px solid rgba(124, 140, 255, 0.3);">
-                        <h3>🤝 Безусловное взаимоуважение</h3>
-                        <p>Мы гарантируем уважительное отношение к труду каждого блогера. Ваш контент — ваша работа, 
-                        и мы это ценим. Никаких жёстких требований, только партнёрство на равных.</p>
-                    </div>
-
-                    <div class="card" style="background: rgba(76, 201, 240, 0.08); border: 2px solid rgba(76, 201, 240, 0.3);">
-                        <h3>📝 Индивидуальный подход</h3>
-                        <p>Каждый блогер уникален! Мы работаем на отдельных договорных условиях, 
-                        учитывая ваш стиль, аудиторию и формат. Никаких шаблонов — только персональные условия.</p>
-                    </div>
-
-                    <div class="card" style="background: rgba(250, 204, 21, 0.08); border: 2px solid rgba(250, 204, 21, 0.3);">
-                        <h3>🌍 Без границ</h3>
-                        <p>Приглашаем блогеров из России, Беларуси, Казахстана, Украины и других стран. 
-                        Мы открыты для международного сотрудничества!</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-alt">
-            <div class="container">
-                <div class="section-header">
-                    <span class="overline">Платформы</span>
-                    <h2>📱 Где вы можете создавать контент</h2>
-                </div>
-
-                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-                    <div class="card">
-                        <h3 style="color: #FF0000;">📺 YouTube</h3>
-                        <p>Видео-обзоры, влоги с фермы, истории инвесторов, образовательный контент о кроликах.</p>
-                        <p style="margin-top: 12px;"><strong>Наш канал:</strong></p>
-                        <a href="https://www.youtube.com/@DexRabbitFarm" target="_blank" style="display: inline-block; margin-top: 8px; padding: 8px 16px; background: rgba(255, 0, 0, 0.1); border: 1px solid rgba(255, 0, 0, 0.3); border-radius: 12px; color: #FF0000; text-decoration: none; font-weight: 600;">
-                            @DexRabbitFarm →
-                        </a>
-                    </div>
-
-                    <div class="card">
-                        <h3 style="color: #4cc9f0;">🎬 Rutube</h3>
-                        <p>Для российской аудитории: обзоры, туториалы, прямые эфиры с фермы, интервью.</p>
-                        <p style="margin-top: 12px; opacity: 0.7;">Скоро запустим канал!</p>
-                    </div>
-
-                    <div class="card">
-                        <h3 style="color: #000000;">🎵 TikTok</h3>
-                        <p>Короткие ролики: милые кролики, факты, behind-the-scenes, инвестиционные советы.</p>
-                        <p style="margin-top: 12px; opacity: 0.7;">Ждём ваших креативных идей!</p>
-                    </div>
-
-                    <div class="card">
-                        <h3 style="color: #0088cc;">✈️ Telegram</h3>
-                        <p>Посты, статьи, новости, аналитика рынка PLEX, отчёты с фермы.</p>
-                        <div style="margin-top: 12px;">
-                            <p><strong>Наши ресурсы:</strong></p>
-                            <a href="https://t.me/DexRebbitOfficial" target="_blank" style="display: block; margin-top: 8px; padding: 8px 16px; background: rgba(0, 136, 204, 0.1); border: 1px solid rgba(0, 136, 204, 0.3); border-radius: 12px; color: #0088cc; text-decoration: none; font-weight: 600;">
-                                📢 Канал @DexRebbitOfficial
-                            </a>
-                            <a href="https://t.me/DEXRabbitOfficialGroupInfo" target="_blank" style="display: block; margin-top: 8px; padding: 8px 16px; background: rgba(0, 136, 204, 0.1); border: 1px solid rgba(0, 136, 204, 0.3); border-radius: 12px; color: #0088cc; text-decoration: none; font-weight: 600;">
-                                👥 Чат @DEXRabbitOfficialGroupInfo
-                            </a>
-                        </div>
-                    </div>
-
-                    <div class="card">
-                        <h3>📸 Instagram / VK / OK</h3>
-                        <p>Фото-контент, сторис, рилсы, посты про lifestyle с кроликами.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>🎙️ Подкасты</h3>
-                        <p>Аудио-интервью с фермером, обсуждение криптоинвестиций, истории успеха.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <span class="overline">Условия</span>
-                    <h2>💼 Что мы предлагаем</h2>
-                </div>
-
-                <div class="card">
-                    <h3>🎁 Варианты сотрудничества</h3>
-                    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 20px;">
-                        <div>
-                            <h4>📊 Партнёрская программа</h4>
-                            <ul class="checklist">
-                                <li><strong>3 уровня в глубину</strong></li>
-                                <li>5% от вложений рефералов</li>
-                                <li>5% от прибыли рефералов</li>
-                                <li>Выплаты в PLEX или USDT</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h4>💰 Индивидуальные условия</h4>
-                            <ul class="checklist">
-                                <li>Фиксированная оплата за видео</li>
-                                <li>Процент от привлечённых инвестиций</li>
-                                <li>Бонусы в PLEX токенах</li>
-                                <li>Эксклюзивный доступ на ферму</li>
-                            </ul>
-                        </div>
-
-                        <div>
-                            <h4>🎬 Контент поддержка</h4>
-                            <ul class="checklist">
-                                <li>Доступ к материалам фермы</li>
-                                <li>Эксклюзивные видео и фото</li>
-                                <li>Интервью с фермером</li>
-                                <li>Консультации по криптовалютам</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-alt">
-            <div class="container">
-                <div class="section-header">
-                    <span class="overline">Для блогеров</span>
-                    <h2>✨ Почему с нами интересно</h2>
-                </div>
-
-                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 24px;">
-                    <div class="card">
-                        <h3>🐰 Уникальная тема</h3>
-                        <p>Кролики + криптовалюты + инвестиции = вирусный контент! Милые животные привлекают аудиторию, 
-                        а блокчейн добавляет технологичности.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>📈 Растущий проект</h3>
-                        <p>Мы только начинаем! Присоединяйтесь на старте и растите вместе с нами. 
-                        Ранние партнёры получают лучшие условия.</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>🎬 Готовый контент</h3>
-                        <p>Мы предоставляем фото, видео, статистику, инфографику. Вам остаётся только 
-                        адаптировать под свой стиль!</p>
-                    </div>
-
-                    <div class="card">
-                        <h3>💎 Реальный бизнес</h3>
-                        <p>Это не хайп и не пирамида. Реальная ферма, реальные кролики, реальная прибыль. 
-                        Ваша аудитория оценит честность!</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <span class="overline">Контакты</span>
-                    <h2>📞 Как с нами связаться</h2>
-                </div>
-
-                <div class="card" style="max-width: 800px; margin: 0 auto;">
-                    <h3>💬 Все контакты DEXRabbit</h3>
-                    
-                    <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; margin-top: 24px;">
-                        <div>
-                            <h4>🤖 Telegram Bot</h4>
-                            <a href="https://t.me/dexrabbit_bot" target="_blank" style="display: block; margin-top: 12px; padding: 12px 20px; background: linear-gradient(135deg, #7c8cff 0%, #4cc9f0 100%); border-radius: 16px; color: #fff; text-decoration: none; font-weight: 600; text-align: center;">
-                                @dexrabbit_bot →
-                            </a>
-                            <p style="margin-top: 8px; font-size: 13px; opacity: 0.8;">Основной канал связи</p>
-                        </div>
-
-                        <div>
-                            <h4>📢 Telegram Канал</h4>
-                            <a href="https://t.me/DexRebbitOfficial" target="_blank" style="display: block; margin-top: 12px; padding: 12px 20px; background: rgba(0, 136, 204, 0.2); border: 1px solid rgba(0, 136, 204, 0.5); border-radius: 16px; color: #0088cc; text-decoration: none; font-weight: 600; text-align: center;">
-                                @DexRebbitOfficial →
-                            </a>
-                            <p style="margin-top: 8px; font-size: 13px; opacity: 0.8;">Новости и анонсы</p>
-                        </div>
-
-                        <div>
-                            <h4>👥 Telegram Чат</h4>
-                            <a href="https://t.me/DEXRabbitOfficialGroupInfo" target="_blank" style="display: block; margin-top: 12px; padding: 12px 20px; background: rgba(0, 136, 204, 0.2); border: 1px solid rgba(0, 136, 204, 0.5); border-radius: 16px; color: #0088cc; text-decoration: none; font-weight: 600; text-align: center;">
-                                @DEXRabbitOfficialGroupInfo →
-                            </a>
-                            <p style="margin-top: 8px; font-size: 13px; opacity: 0.8;">Общение с инвесторами</p>
-                        </div>
-
-                        <div>
-                            <h4>📺 YouTube</h4>
-                            <a href="https://www.youtube.com/@DexRabbitFarm" target="_blank" style="display: block; margin-top: 12px; padding: 12px 20px; background: rgba(255, 0, 0, 0.2); border: 1px solid rgba(255, 0, 0, 0.5); border-radius: 16px; color: #FF0000; text-decoration: none; font-weight: 600; text-align: center;">
-                                @DexRabbitFarm →
-                            </a>
-                            <p style="margin-top: 8px; font-size: 13px; opacity: 0.8;">Видео с фермы</p>
-                        </div>
-
-                        <div>
-                            <h4>📧 Email</h4>
-                            <a href="mailto:kupitkrolika@gmail.com" style="display: block; margin-top: 12px; padding: 12px 20px; background: rgba(124, 140, 255, 0.1); border: 1px solid rgba(124, 140, 255, 0.3); border-radius: 16px; color: #7c8cff; text-decoration: none; font-weight: 600; text-align: center;">
-                                kupitkrolika@gmail.com →
-                            </a>
-                            <p style="margin-top: 8px; font-size: 13px; opacity: 0.8;">Деловые предложения</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section">
-            <div class="container">
-                <div class="section-header">
-                    <span class="overline">Форматы</span>
-                    <h2>🎬 Идеи для контента</h2>
-                </div>
-
-                <div class="grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 20px;">
-                    <div class="card">
-                        <h3>🎥 Видео</h3>
-                        <ul class="checklist">
-                            <li>Обзор платформы DEXRabbit</li>
-                            <li>Экскурсия по ферме</li>
-                            <li>Интервью с инвесторами</li>
-                            <li>Как работает токенизация</li>
-                            <li>Распаковка прибыли</li>
-                            <li>Процесс разведения кроликов</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3>📝 Статьи</h3>
-                        <ul class="checklist">
-                            <li>Гайд для новичков</li>
-                            <li>Сравнение с другими инвестициями</li>
-                            <li>История успеха инвестора</li>
-                            <li>Анализ PLEX токена</li>
-                            <li>FAQ по платформе</li>
-                        </ul>
-                    </div>
-
-                    <div class="card">
-                        <h3>📸 Визуальный контент</h3>
-                        <ul class="checklist">
-                            <li>Фотографии кроликов</li>
-                            <li>Инфографика доходности</li>
-                            <li>Скриншоты из бота</li>
-                            <li>Графики роста PLEX</li>
-                            <li>Мемы про кроликов</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="section section-alt">
-            <div class="container" style="text-align: center;">
-                <h2 style="margin-bottom: 20px;">🚀 Готовы начать сотрудничество?</h2>
-                <p style="font-size: 18px; color: rgba(255, 255, 255, 0.9); margin-bottom: 32px; max-width: 700px; margin-left: auto; margin-right: auto;">
-                    Свяжитесь с нами через бот или напишите на почту. Мы обсудим индивидуальные условия 
-                    и найдём лучший формат для вашего канала!
+                <h1 class="hero-title-large">🎥 Зарабатывай на контенте<br>с DEXRabbit</h1>
+                <p class="hero-subtitle-concise">
+                    Присоединяйся к партнёрской программе для блогеров. 
+                    <strong>5% от вложений + 5% от прибыли</strong> твоих подписчиков. 
+                    Без ограничений по количеству рефералов.
                 </p>
                 
-                <div style="display: flex; gap: 16px; justify-content: center; flex-wrap: wrap;">
-                    <a href="https://t.me/dexrabbit_bot" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; padding: 18px 36px; background: linear-gradient(135deg, #7c8cff 0%, #4cc9f0 100%); border: 2px solid rgba(255, 255, 255, 0.3); border-radius: 28px; color: #fff; font-size: 17px; font-weight: 700; text-decoration: none; box-shadow: 0 8px 32px rgba(124, 140, 255, 0.5); transition: all 0.3s ease;">
-                        <span style="font-size: 26px;">🤖</span>
+                <div class="cta-group">
+                    <a href="https://t.me/dexrabbit_bot" target="_blank" class="cta-primary-large">
+                        <span style="font-size: 28px;">🤖</span>
+                        <span>Начать сотрудничество</span>
+                    </a>
+                    <a href="https://t.me/DexRebbitOfficial" target="_blank" class="cta-secondary-large">
+                        <span style="font-size: 24px;">📢</span>
+                        <span>Наш Telegram канал</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Для кого это? -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header-centered">
+                    <span class="section-overline">Для кого</span>
+                    <h2 class="section-title-large">👥 Кто может стать партнёром?</h2>
+                    <p class="section-description">
+                        Любой контент-мейкер с активной аудиторией. От микроблогеров до миллионников.
+                    </p>
+                </div>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card fade-in-up">
+                        <span class="benefit-icon">📱</span>
+                        <h3 class="benefit-title">Микроблогеры</h3>
+                        <p class="benefit-text">
+                            Есть 500+ подписчиков в соцсетях? Этого достаточно! 
+                            Начни зарабатывать на партнёрке уже сейчас.
+                        </p>
+                        <span class="benefit-highlight">От 500 подписчиков</span>
+                    </div>
+                    
+                    <div class="benefit-card fade-in-up" style="animation-delay: 0.1s;">
+                        <span class="benefit-icon">📺</span>
+                        <h3 class="benefit-title">YouTube-блогеры</h3>
+                        <p class="benefit-text">
+                            Создавай обзоры, влоги с фермы, интервью с инвесторами. 
+                            Уникальная тема кроликов + крипты = виральный контент.
+                        </p>
+                        <span class="benefit-highlight">Любой формат видео</span>
+                    </div>
+                    
+                    <div class="benefit-card fade-in-up" style="animation-delay: 0.2s;">
+                        <span class="benefit-icon">✍️</span>
+                        <h3 class="benefit-title">Авторы статей</h3>
+                        <p class="benefit-text">
+                            Пиши обзоры, гайды, кейсы на Medium, VC, Habr. 
+                            Получи эксклюзивную информацию и материалы для статей.
+                        </p>
+                        <span class="benefit-highlight">Эксклюзивные данные</span>
+                    </div>
+                    
+                    <div class="benefit-card fade-in-up" style="animation-delay: 0.3s;">
+                        <span class="benefit-icon">🎙️</span>
+                        <h3 class="benefit-title">Подкастеры</h3>
+                        <p class="benefit-text">
+                            Аудио-интервью с фермером, обсуждение криптоинвестиций, 
+                            истории успеха инвесторов — всё для твоих выпусков.
+                        </p>
+                        <span class="benefit-highlight">Готовые герои</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Что получишь? -->
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-header-centered">
+                    <span class="section-overline">Преимущества</span>
+                    <h2 class="section-title-large">💎 Что ты получишь?</h2>
+                </div>
+                
+                <div class="benefits-grid">
+                    <div class="benefit-card fade-in-up">
+                        <span class="benefit-icon">💰</span>
+                        <h3 class="benefit-title">Двойной доход</h3>
+                        <p class="benefit-text">
+                            <strong>5% от вложений</strong> рефералов сразу при инвестиции<br>
+                            <strong>+ 5% от прибыли</strong> при выплате доходности
+                        </p>
+                        <span class="benefit-highlight">До 3 уровней в глубину</span>
+                    </div>
+                    
+                    <div class="benefit-card fade-in-up" style="animation-delay: 0.1s;">
+                        <span class="benefit-icon">🎬</span>
+                        <h3 class="benefit-title">Готовый контент</h3>
+                        <p class="benefit-text">
+                            Видео с фермы, фото кроликов, статистика, инфографика. 
+                            Всё для твоих публикаций — просто адаптируй под свой стиль.
+                        </p>
+                        <span class="benefit-highlight">Материалы каждую неделю</span>
+                    </div>
+                    
+                    <div class="benefit-card fade-in-up" style="animation-delay: 0.2s;">
+                        <span class="benefit-icon">🚀</span>
+                        <h3 class="benefit-title">Растём вместе</h3>
+                        <p class="benefit-text">
+                            Мы только начинаем! Ранние партнёры получат лучшие условия 
+                            и бонусы. Участвуй в развитии проекта.
+                        </p>
+                        <span class="benefit-highlight">Приоритет ранним</span>
+                    </div>
+                    
+                    <div class="benefit-card fade-in-up" style="animation-delay: 0.3s;">
+                        <span class="benefit-icon">🤝</span>
+                        <h3 class="benefit-title">Экологичность</h3>
+                        <p class="benefit-text">
+                            Безусловное взаимоуважение, индивидуальный подход, 
+                            никаких жёстких требований. Только партнёрство на равных.
+                        </p>
+                        <span class="benefit-highlight">Без стресса</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Как это работает? -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header-centered">
+                    <span class="section-overline">Процесс</span>
+                    <h2 class="section-title-large">⚙️ Как начать сотрудничество?</h2>
+                </div>
+                
+                <div class="process-timeline">
+                    <div class="timeline-step fade-in-up">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Свяжись с нами</h3>
+                            <p class="step-description">
+                                Напиши в бот @dexrabbit_bot или на почту kupitkrolika@gmail.com. 
+                                Расскажи о своём канале и аудитории.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-step fade-in-up" style="animation-delay: 0.1s;">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Обсудим условия</h3>
+                            <p class="step-description">
+                                Мы подберём индивидуальные условия: фикс за видео, 
+                                процент от привлечённых инвестиций, или партнёрка. Всё гибко!
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-step fade-in-up" style="animation-delay: 0.2s;">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Получи материалы</h3>
+                            <p class="step-description">
+                                Видео, фото, статистика, доступ на ферму — всё, что нужно 
+                                для качественного контента. Консультации по криптовалютам.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-step fade-in-up" style="animation-delay: 0.3s;">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h3 class="step-title">Создавай и зарабатывай</h3>
+                            <p class="step-description">
+                                Публикуй контент, привлекай подписчиков, получай выплаты 
+                                в PLEX или USDT. Отслеживай статистику в боте.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Варианты сотрудничества (Аккордеон) -->
+        <section class="section section-alt">
+            <div class="container">
+                <div class="section-header-centered">
+                    <span class="section-overline">Форматы</span>
+                    <h2 class="section-title-large">💼 Варианты сотрудничества</h2>
+                    <p class="section-description">
+                        Выбери подходящий формат или комбинируй несколько вариантов
+                    </p>
+                </div>
+                
+                <div class="accordion-wrapper">
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="accordion-title">
+                                <span class="accordion-icon-left">📊</span>
+                                <span>Партнёрская программа</span>
+                            </div>
+                            <span class="accordion-chevron">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p style="margin-bottom: 16px; color: rgba(255, 255, 255, 0.9);">
+                                    Самый популярный вариант для блогеров. Получай пассивный доход от каждого 
+                                    приведённого инвестора.
+                                </p>
+                                <ul class="accordion-list">
+                                    <li><strong>3 уровня в глубину</strong> — заработок с рефералов твоих рефералов</li>
+                                    <li><strong>5% от вложений</strong> рефералов (выплата в течение 3 дней)</li>
+                                    <li><strong>5% от прибыли</strong> рефералов (после получения дохода)</li>
+                                    <li><strong>Выплаты в PLEX или USDT</strong> по твоему выбору</li>
+                                    <li><strong>Никаких ограничений</strong> по количеству рефералов</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="accordion-title">
+                                <span class="accordion-icon-left">💰</span>
+                                <span>Фиксированная оплата</span>
+                            </div>
+                            <span class="accordion-chevron">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p style="margin-bottom: 16px; color: rgba(255, 255, 255, 0.9);">
+                                    Получай гарантированную оплату за каждое видео или публикацию. 
+                                    Подходит для блогеров с установленными расценками.
+                                </p>
+                                <ul class="accordion-list">
+                                    <li><strong>Фикс за видео-обзор</strong> на YouTube/Rutube</li>
+                                    <li><strong>Оплата за статьи</strong> на Medium, VC, Habr</li>
+                                    <li><strong>Оплата за интеграцию</strong> в подкасте</li>
+                                    <li><strong>Бонусы в PLEX токенах</strong> дополнительно</li>
+                                    <li><strong>Эксклюзивный доступ</strong> на ферму для съёмок</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="accordion-title">
+                                <span class="accordion-icon-left">🎯</span>
+                                <span>Процент от привлечённых инвестиций</span>
+                            </div>
+                            <span class="accordion-chevron">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p style="margin-bottom: 16px; color: rgba(255, 255, 255, 0.9);">
+                                    Для амбициозных блогеров, уверенных в своей аудитории. 
+                                    Чем больше привлечёшь — тем больше заработаешь.
+                                </p>
+                                <ul class="accordion-list">
+                                    <li><strong>До 10% от привлечённых</strong> инвестиций (обсуждаемо)</li>
+                                    <li><strong>Персональный трекинг</strong> через бот</li>
+                                    <li><strong>Ежемесячные выплаты</strong> в USDT или PLEX</li>
+                                    <li><strong>Аналитика в реальном времени</strong> по твоим рефералам</li>
+                                    <li><strong>Приоритет на новые возможности</strong> в проекте</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="accordion-item">
+                        <div class="accordion-header" onclick="toggleAccordion(this)">
+                            <div class="accordion-title">
+                                <span class="accordion-icon-left">🎁</span>
+                                <span>Контент-поддержка</span>
+                            </div>
+                            <span class="accordion-chevron">▼</span>
+                        </div>
+                        <div class="accordion-content">
+                            <div class="accordion-body">
+                                <p style="margin-bottom: 16px; color: rgba(255, 255, 255, 0.9);">
+                                    Мы предоставляем всё необходимое для создания качественного контента.
+                                </p>
+                                <ul class="accordion-list">
+                                    <li><strong>Доступ к эксклюзивным материалам</strong> фермы</li>
+                                    <li><strong>Видео и фото</strong> в высоком качестве еженедельно</li>
+                                    <li><strong>Интервью с фермером</strong> для твоего канала</li>
+                                    <li><strong>Консультации по криптовалютам</strong> и токенизации</li>
+                                    <li><strong>Возможность посетить ферму</strong> (оплачивается в PLEX)</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Идеи для контента (Табы) -->
+        <section class="section">
+            <div class="container">
+                <div class="section-header-centered">
+                    <span class="section-overline">Форматы контента</span>
+                    <h2 class="section-title-large">🎬 Идеи для твоего контента</h2>
+                    <p class="section-description">
+                        Выбери платформу и посмотри примеры форматов
+                    </p>
+                </div>
+                
+                <div class="tabs-container">
+                    <div class="tabs-nav">
+                        <button class="tab-button active" data-tab="youtube">
+                            <span>📺</span>
+                            <span>YouTube</span>
+                        </button>
+                        <button class="tab-button" data-tab="tiktok">
+                            <span>🎵</span>
+                            <span>TikTok</span>
+                        </button>
+                        <button class="tab-button" data-tab="telegram">
+                            <span>✈️</span>
+                            <span>Telegram</span>
+                        </button>
+                        <button class="tab-button" data-tab="articles">
+                            <span>✍️</span>
+                            <span>Статьи</span>
+                        </button>
+                    </div>
+                    
+                    <div class="tab-content active" data-content="youtube">
+                        <div class="platform-content">
+                            <h3 style="margin-bottom: 20px; font-size: 24px;">Идеи для YouTube</h3>
+                            <div class="content-ideas-list">
+                                <div class="idea-item">🎥 Полный обзор платформы DEXRabbit</div>
+                                <div class="idea-item">🐰 Экскурсия по ферме с комментариями</div>
+                                <div class="idea-item">💰 Как я заработал на кроликах (кейс)</div>
+                                <div class="idea-item">🤔 Токенизация простыми словами</div>
+                                <div class="idea-item">📊 Сравнение с другими инвестициями</div>
+                                <div class="idea-item">🎤 Интервью с фермером</div>
+                                <div class="idea-item">📈 Анализ PLEX токена</div>
+                                <div class="idea-item">⚠️ Риски и как их минимизировать</div>
+                            </div>
+                            <a href="https://www.youtube.com/@DexRabbitFarm" target="_blank" style="display: inline-block; margin-top: 24px; padding: 12px 24px; background: rgba(255, 0, 0, 0.1); border: 1px solid rgba(255, 0, 0, 0.3); border-radius: 16px; color: #FF0000; text-decoration: none; font-weight: 600;">
+                                Наш канал @DexRabbitFarm →
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" data-content="tiktok">
+                        <div class="platform-content">
+                            <h3 style="margin-bottom: 20px; font-size: 24px;">Идеи для TikTok</h3>
+                            <div class="content-ideas-list">
+                                <div class="idea-item">🐰 Милые кролики — вирусный контент!</div>
+                                <div class="idea-item">💡 Факты о кроликах (серия)</div>
+                                <div class="idea-item">🎬 Behind the scenes на ферме</div>
+                                <div class="idea-item">💰 Инвестиционные советы за 60 сек</div>
+                                <div class="idea-item">🤯 Сколько заработал за месяц?</div>
+                                <div class="idea-item">🎵 Кролики под трендовую музыку</div>
+                                <div class="idea-item">⚡ Быстрый гайд по токенизации</div>
+                                <div class="idea-item">😱 Развенчиваем мифы про кроликов</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" data-content="telegram">
+                        <div class="platform-content">
+                            <h3 style="margin-bottom: 20px; font-size: 24px;">Идеи для Telegram</h3>
+                            <div class="content-ideas-list">
+                                <div class="idea-item">📰 Новости проекта DEXRabbit</div>
+                                <div class="idea-item">📊 Аналитика рынка PLEX</div>
+                                <div class="idea-item">🎯 Отчёты с фермы (еженедельно)</div>
+                                <div class="idea-item">💬 Отзывы инвесторов</div>
+                                <div class="idea-item">🔥 Горячие инвестиционные кейсы</div>
+                                <div class="idea-item">🧠 Образовательный контент</div>
+                                <div class="idea-item">❓ FAQ и ответы на вопросы</div>
+                                <div class="idea-item">🎁 Акции и специальные предложения</div>
+                            </div>
+                            <div style="margin-top: 24px; display: flex; gap: 12px; flex-wrap: wrap;">
+                                <a href="https://t.me/DexRebbitOfficial" target="_blank" style="padding: 12px 24px; background: rgba(0, 136, 204, 0.1); border: 1px solid rgba(0, 136, 204, 0.3); border-radius: 16px; color: #0088cc; text-decoration: none; font-weight: 600;">
+                                    📢 Канал @DexRebbitOfficial
+                                </a>
+                                <a href="https://t.me/DEXRabbitOfficialGroupInfo" target="_blank" style="padding: 12px 24px; background: rgba(0, 136, 204, 0.1); border: 1px solid rgba(0, 136, 204, 0.3); border-radius: 16px; color: #0088cc; text-decoration: none; font-weight: 600;">
+                                    👥 Чат @DEXRabbitOfficialGroupInfo
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="tab-content" data-content="articles">
+                        <div class="platform-content">
+                            <h3 style="margin-bottom: 20px; font-size: 24px;">Идеи для статей</h3>
+                            <div class="content-ideas-list">
+                                <div class="idea-item">📝 Полный гайд для новичков</div>
+                                <div class="idea-item">📊 Сравнение с банковскими вкладами</div>
+                                <div class="idea-item">🎯 История успеха инвестора</div>
+                                <div class="idea-item">🔬 Глубокий анализ PLEX токена</div>
+                                <div class="idea-item">🐰 Экономика кроличьей фермы</div>
+                                <div class="idea-item">💡 Токенизация активов: будущее</div>
+                                <div class="idea-item">⚖️ Юридические аспекты</div>
+                                <div class="idea-item">🌍 Международное сотрудничество</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Финальный CTA -->
+        <section class="final-cta">
+            <div class="container">
+                <h2 class="final-cta-title">🚀 Готов начать зарабатывать?</h2>
+                <p class="final-cta-text">
+                    Свяжись с нами прямо сейчас! Обсудим индивидуальные условия и найдём 
+                    лучший формат сотрудничества для твоего канала.
+                </p>
+                
+                <div class="cta-group">
+                    <a href="https://t.me/dexrabbit_bot" target="_blank" class="cta-primary-large">
+                        <span style="font-size: 28px;">🤖</span>
                         <span>Написать в бот</span>
                     </a>
-                    
-                    <a href="mailto:kupitkrolika@gmail.com" style="display: inline-flex; align-items: center; gap: 10px; padding: 18px 36px; background: rgba(124, 140, 255, 0.1); border: 2px solid rgba(124, 140, 255, 0.5); border-radius: 28px; color: #fff; font-size: 17px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
-                        <span style="font-size: 22px;">📧</span>
+                    <a href="mailto:kupitkrolika@gmail.com" class="cta-secondary-large">
+                        <span style="font-size: 24px;">📧</span>
                         <span>Отправить email</span>
                     </a>
                 </div>
+                
+                <div class="contact-compact">
+                    <h3 style="text-align: center; margin-bottom: 8px; font-size: 20px;">💬 Все контакты DEXRabbit</h3>
+                    <p style="text-align: center; color: rgba(255, 255, 255, 0.7); font-size: 14px; margin-bottom: 20px;">
+                        Выбери удобный способ связи
+                    </p>
+                    <div class="contact-methods">
+                        <a href="https://t.me/dexrabbit_bot" target="_blank" class="contact-link">
+                            <span class="contact-icon">🤖</span>
+                            <span>Telegram Bot: @dexrabbit_bot</span>
+                        </a>
+                        <a href="https://t.me/DexRebbitOfficial" target="_blank" class="contact-link">
+                            <span class="contact-icon">📢</span>
+                            <span>Канал: @DexRebbitOfficial</span>
+                        </a>
+                        <a href="mailto:kupitkrolika@gmail.com" class="contact-link">
+                            <span class="contact-icon">📧</span>
+                            <span>Email: kupitkrolika@gmail.com</span>
+                        </a>
+                    </div>
+                </div>
             </div>
         </section>
-
-        <div class="bot-link-wrapper" style="text-align: center; margin: 40px auto; padding: 32px; background: linear-gradient(135deg, rgba(124, 140, 255, 0.1), rgba(76, 201, 240, 0.05)); border: 1px solid rgba(124, 140, 255, 0.3); border-radius: 20px; max-width: 800px;">
-          <h3 style="margin-bottom: 16px; color: #fff; font-size: 22px;">🤖 Все операции в Telegram боте</h3>
-          <p style="margin-bottom: 24px; color: rgba(255, 255, 255, 0.8); font-size: 15px;">Партнёрская программа, реферальные ссылки, статистика и выплаты</p>
-          <a href="https://t.me/dexrabbit_bot" target="_blank" style="display: inline-flex; align-items: center; gap: 10px; padding: 14px 28px; background: rgba(124, 140, 255, 0.15); border: 2px solid rgba(124, 140, 255, 0.5); border-radius: 28px; color: #fff; font-size: 15px; font-weight: 600; text-decoration: none; transition: all 0.3s ease;">
-            <span style="font-size: 20px;">💬</span>
-            <span>Перейти в бот @dexrabbit_bot</span>
-          </a>
-        </div>
     </main>
 
-<footer class="footer">
+    <footer class="footer">
       <div class="container">
         <!-- Кнопка "Наверх" -->
         <button 
@@ -675,487 +1405,86 @@
       </div>
     </footer>
 
-    <!-- Стили для footer -->
-    <style>
-    /* Footer Styles */
-    .footer {
-      background: linear-gradient(180deg, #0a0e16 0%, #0f1419 100%);
-      color: var(--color-text, #e0e0e0);
-      padding: 4rem 0 2rem;
-      position: relative;
-      margin-top: 4rem;
-      border-top: 1px solid rgba(124, 140, 255, 0.1);
-    }
-
-    .footer .container {
-      position: relative;
-    }
-
-    /* Scroll to Top Button */
-    .scroll-top-btn {
-      position: absolute;
-      top: -28px;
-      right: 2rem;
-      width: 56px;
-      height: 56px;
-      border-radius: 20px;
-      background: linear-gradient(135deg, 
-        rgba(124, 140, 255, 0.9) 0%, 
-        rgba(76, 201, 240, 0.9) 50%,
-        rgba(124, 140, 255, 0.9) 100%);
-      border: 1px solid rgba(124, 140, 255, 0.3);
-      color: white;
-      font-size: 1.6rem;
-      cursor: pointer;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 
-        0 8px 25px rgba(124, 140, 255, 0.3),
-        0 4px 15px rgba(76, 201, 240, 0.2),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-      backdrop-filter: blur(15px);
-      z-index: 10;
-      position: relative;
-      overflow: hidden;
-    }
-
-    /* Эффект свечения при hover */
-    .scroll-top-btn::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, 
-        transparent, 
-        rgba(255, 255, 255, 0.2), 
-        transparent);
-      transition: left 0.6s ease;
-    }
-
-    .scroll-top-btn:hover::before {
-      left: 100%;
-    }
-
-    .scroll-top-btn:hover {
-      background: linear-gradient(135deg, 
-        rgba(124, 140, 255, 1) 0%, 
-        rgba(76, 201, 240, 1) 50%,
-        rgba(124, 140, 255, 1) 100%);
-      border-color: rgba(124, 140, 255, 0.5);
-      transform: translateY(-4px) scale(1.05);
-      box-shadow: 
-        0 15px 35px rgba(124, 140, 255, 0.4),
-        0 8px 20px rgba(76, 201, 240, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.3);
-    }
-
-    .scroll-top-btn:active {
-      transform: translateY(-2px) scale(0.98);
-      box-shadow: 
-        0 10px 25px rgba(124, 140, 255, 0.5);
-      transition: all 0.15s ease;
-    }
-
-    /* Footer Grid */
-    .footer-grid {
-      display: grid;
-      grid-template-columns: 2fr 1fr 1fr 1.5fr;
-      gap: 3rem;
-      margin-bottom: 3rem;
-    }
-
-    @media (max-width: 992px) {
-      .footer-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 2rem;
-      }
-    }
-
-    @media (max-width: 576px) {
-      .footer-grid {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-    }
-
-    /* Footer Column */
-    .footer-column {
-      display: flex;
-      flex-direction: column;
-    }
-
-    /* Footer Logo */
-    .footer-logo {
-      margin-bottom: 1rem;
-    }
-
-    .footer-logo-link {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      color: white;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1.25rem;
-      transition: opacity 0.3s ease;
-    }
-
-    .footer-logo-link:hover {
-      opacity: 0.8;
-    }
-
-    .footer-logo-link img {
-      width: 40px;
-      height: 40px;
-    }
-
-    /* Footer Description */
-    .footer-description {
-      margin-bottom: 1.5rem;
-      line-height: 1.6;
-      opacity: 0.8;
-      font-size: 0.95rem;
-    }
-
-    /* Footer Social */
-    .footer-social {
-      display: flex;
-      gap: 1rem;
-    }
-
-    .footer-social a {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 48px;
-      height: 48px;
-      background: linear-gradient(135deg, 
-        rgba(124, 140, 255, 0.08) 0%, 
-        rgba(76, 201, 240, 0.08) 50%,
-        rgba(124, 140, 255, 0.08) 100%);
-      border: 1px solid rgba(124, 140, 255, 0.2);
-      border-radius: 16px;
-      color: var(--color-accent, #7c8cff);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(10px);
-      box-shadow: 
-        0 4px 12px rgba(0, 0, 0, 0.1),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-    }
-
-    /* Эффект свечения при hover */
-    .footer-social a::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, 
-        transparent, 
-        rgba(255, 255, 255, 0.1), 
-        transparent);
-      transition: left 0.6s ease;
-    }
-
-    .footer-social a:hover::before {
-      left: 100%;
-    }
-
-    .footer-social a:hover {
-      background: linear-gradient(135deg, 
-        rgba(124, 140, 255, 0.18) 0%, 
-        rgba(76, 201, 240, 0.18) 50%,
-        rgba(124, 140, 255, 0.18) 100%);
-      border-color: rgba(124, 140, 255, 0.4);
-      color: white;
-      transform: translateY(-3px) scale(1.05);
-      box-shadow: 
-        0 12px 30px rgba(124, 140, 255, 0.25),
-        0 4px 15px rgba(76, 201, 240, 0.15),
-        inset 0 1px 0 rgba(255, 255, 255, 0.2);
-    }
-
-    .footer-social a:active {
-      transform: translateY(-1px) scale(0.98);
-      box-shadow: 
-        0 6px 20px rgba(124, 140, 255, 0.3),
-        inset 0 1px 0 rgba(255, 255, 255, 0.1);
-      transition: all 0.15s ease;
-    }
-
-    /* Footer Title */
-    .footer-title {
-      margin-bottom: 1.5rem;
-      font-size: 1.1rem;
-      font-weight: 600;
-      color: white;
-    }
-
-    /* Footer Navigation */
-    .footer-nav {
-      display: flex;
-      flex-direction: column;
-      gap: 0.75rem;
-    }
-
-    .footer-nav a {
-      color: var(--color-text-secondary, #a0a0a0);
-      text-decoration: none;
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      font-size: 0.95rem;
-      display: inline-block;
-      padding: 0.5rem 1rem;
-      border-radius: 12px;
-      background: rgba(124, 140, 255, 0.03);
-      border: 1px solid rgba(124, 140, 255, 0.08);
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(5px);
-    }
-
-    /* Эффект свечения при hover */
-    .footer-nav a::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, 
-        transparent, 
-        rgba(124, 140, 255, 0.1), 
-        transparent);
-      transition: left 0.6s ease;
-    }
-
-    .footer-nav a:hover::before {
-      left: 100%;
-    }
-
-    .footer-nav a:hover {
-      color: var(--color-accent, #7c8cff);
-      background: linear-gradient(135deg, 
-        rgba(124, 140, 255, 0.1) 0%, 
-        rgba(76, 201, 240, 0.05) 100%);
-      border-color: rgba(124, 140, 255, 0.3);
-      transform: translateX(8px) translateY(-2px);
-      box-shadow: 
-        0 8px 20px rgba(124, 140, 255, 0.15),
-        0 0 20px rgba(76, 201, 240, 0.1);
-    }
-
-    .footer-nav a:active {
-      transform: translateX(6px) translateY(-1px);
-      box-shadow: 
-        0 4px 15px rgba(124, 140, 255, 0.2);
-      transition: all 0.15s ease;
-    }
-
-    /* Footer Token Info */
-    .footer-token-info {
-      margin-top: 1.5rem;
-      padding: 1rem;
-      background: rgba(124, 140, 255, 0.05);
-      border-radius: 8px;
-      border: 1px solid rgba(124, 140, 255, 0.1);
-    }
-
-    .footer-token-info p {
-      margin-bottom: 0.5rem;
-      font-size: 0.9rem;
-    }
-
-    .footer-code {
-      display: block;
-      font-family: 'Courier New', monospace;
-      font-size: 0.85rem;
-      background: rgba(0, 0, 0, 0.3);
-      padding: 0.5rem;
-      border-radius: 4px;
-      margin: 0.5rem 0;
-      word-break: break-all;
-      color: #4cc9f0;
-    }
-
-    .footer-token-link {
-      color: var(--color-accent, #7c8cff);
-      text-decoration: none;
-      font-size: 0.9rem;
-      display: inline-block;
-      margin-top: 0.5rem;
-      padding: 0.5rem 1rem;
-      border-radius: 12px;
-      background: rgba(124, 140, 255, 0.05);
-      border: 1px solid rgba(124, 140, 255, 0.15);
-      transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-      position: relative;
-      overflow: hidden;
-      backdrop-filter: blur(5px);
-    }
-
-    /* Эффект свечения при hover */
-    .footer-token-link::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -100%;
-      width: 100%;
-      height: 100%;
-      background: linear-gradient(90deg, 
-        transparent, 
-        rgba(124, 140, 255, 0.1), 
-        transparent);
-      transition: left 0.6s ease;
-    }
-
-    .footer-token-link:hover::before {
-      left: 100%;
-    }
-
-    .footer-token-link:hover {
-      background: linear-gradient(135deg, 
-        rgba(124, 140, 255, 0.1) 0%, 
-        rgba(76, 201, 240, 0.05) 100%);
-      border-color: rgba(124, 140, 255, 0.3);
-      transform: translateY(-2px);
-      box-shadow: 
-        0 8px 20px rgba(124, 140, 255, 0.15),
-        0 0 20px rgba(76, 201, 240, 0.1);
-    }
-
-    .footer-token-link:active {
-      transform: translateY(-1px);
-      box-shadow: 
-        0 4px 15px rgba(124, 140, 255, 0.2);
-      transition: all 0.15s ease;
-    }
-
-    /* Footer Bottom */
-    .footer-bottom {
-      padding-top: 2rem;
-      border-top: 1px solid rgba(124, 140, 255, 0.1);
-    }
-
-    .footer-bottom-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    @media (max-width: 768px) {
-      .footer-bottom-content {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-
-    .footer-copyright {
-      margin: 0;
-      opacity: 0.7;
-      font-size: 0.9rem;
-    }
-
-    .footer-legal {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-      flex-wrap: wrap;
-    }
-
-    @media (max-width: 768px) {
-      .footer-legal {
-        justify-content: center;
-      }
-    }
-
-    .footer-legal a {
-      color: var(--color-text-secondary, #a0a0a0);
-      text-decoration: none;
-      font-size: 0.9rem;
-      transition: color 0.3s ease;
-    }
-
-    .footer-legal a:hover {
-      color: var(--color-accent, #7c8cff);
-    }
-
-    .footer-separator {
-      opacity: 0.5;
-    }
-    </style>
-
     <!-- Scripts -->
     <script>
-      // Mobile menu toggle
-      function toggleMenu() {
-        const menu = document.getElementById('nav-menu');
-        const isExpanded = menu.getAttribute('aria-expanded') === 'true';
-        menu.setAttribute('aria-expanded', !isExpanded);
-      }
-
-      // Dropdown menu toggle
-      document.addEventListener('DOMContentLoaded', function () {
-        const dropdownToggle = document.querySelector('.nav-dropdown-toggle');
-        const dropdown = document.querySelector('.nav-dropdown');
-
-        if (dropdownToggle && dropdown) {
-          dropdownToggle.addEventListener('click', function (e) {
-            e.stopPropagation();
-            dropdown.classList.toggle('active');
-          });
-
-          // Close dropdown when clicking outside
-          document.addEventListener('click', function (e) {
-            if (!dropdown.contains(e.target)) {
-              dropdown.classList.remove('active');
-            }
-          });
-
-          // Close dropdown when pressing Escape
-          document.addEventListener('keydown', function (e) {
-            if (e.key === 'Escape') {
-              dropdown.classList.remove('active');
-            }
-          });
+      // Accordion functionality
+      function toggleAccordion(header) {
+        const item = header.parentElement;
+        const isActive = item.classList.contains('active');
+        
+        // Закрыть все аккордеоны
+        document.querySelectorAll('.accordion-item').forEach(i => {
+          i.classList.remove('active');
+        });
+        
+        // Открыть текущий, если он не был активным
+        if (!isActive) {
+          item.classList.add('active');
         }
+      }
+      
+      // Tabs functionality
+      document.addEventListener('DOMContentLoaded', function() {
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const tabContents = document.querySelectorAll('.tab-content');
+        
+        tabButtons.forEach(button => {
+          button.addEventListener('click', () => {
+            const tabId = button.getAttribute('data-tab');
+            
+            // Убрать активный класс со всех кнопок и контента
+            tabButtons.forEach(btn => btn.classList.remove('active'));
+            tabContents.forEach(content => content.classList.remove('active'));
+            
+            // Добавить активный класс к выбранным
+            button.classList.add('active');
+            document.querySelector(`[data-content="${tabId}"]`).classList.add('active');
+          });
+        });
       });
-
-      // Service Worker registration с автообновлением
+      
+      // Fade in animation on scroll
+      const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+      };
+      
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+          }
+        });
+      }, observerOptions);
+      
+      document.querySelectorAll('.fade-in-up').forEach(el => {
+        observer.observe(el);
+      });
+      
+      // Service Worker registration
       if ('serviceWorker' in navigator && location.hostname !== 'localhost') {
         window.addEventListener('load', async () => {
           try {
             const registration = await navigator.serviceWorker.register('/sw-optimized.js?v=20251001');
             console.log('Service Worker registered:', registration.scope);
 
-            // Проверяем обновления каждые 30 секунд
             setInterval(() => {
               registration.update();
             }, 30000);
 
-            // Обновляем страницу при смене Service Worker
             let refreshing = false;
             navigator.serviceWorker.addEventListener('controllerchange', () => {
               if (!refreshing) {
                 refreshing = true;
-                console.log('New Service Worker activated, reloading page...');
                 window.location.reload();
               }
             });
 
-            // Обработка waiting Service Worker
             registration.addEventListener('updatefound', () => {
               const newWorker = registration.installing;
               newWorker.addEventListener('statechange', () => {
                 if (newWorker.state === 'installed' && navigator.serviceWorker.controller) {
-                  // Новый Service Worker готов, показываем уведомление
-                  console.log('Доступно обновление сайта. Перезагрузите страницу.');
-                  // Можно добавить UI уведомление здесь
+                  console.log('Доступно обновление сайта.');
                 }
               });
             });
@@ -1164,43 +1493,6 @@
           }
         });
       }
-
-      // Smooth scroll for anchor links
-      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-          e.preventDefault();
-          const target = document.querySelector(this.getAttribute('href'));
-          if (target) {
-            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          }
-        });
-      });
-
-      // Simple analytics
-      console.log('🐰 Welcome to DEXRabbit - Tokenized Rabbit Farm!');
-
-      // Lightbox functionality
-      function openLightbox(element) {
-        const img = element.querySelector('img');
-        const lightbox = document.createElement('div');
-        lightbox.className = 'lightbox active';
-        lightbox.innerHTML = `
-                <span class="lightbox-close" onclick="closeLightbox(this)">&times;</span>
-                <img src="${img.src}" alt="${img.alt}">
-            `;
-        document.body.appendChild(lightbox);
-        lightbox.onclick = function (e) {
-          if (e.target === lightbox) {
-            closeLightbox(this);
-          }
-        };
-      }
-
-      function closeLightbox(element) {
-        const lightbox = element.closest ? element.closest('.lightbox') : element;
-        lightbox.remove();
-      }
     </script>
-  
-  </body>
+</body>
 </html>
