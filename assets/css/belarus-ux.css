@@ -1,0 +1,831 @@
+/* ============================================
+   BELARUS OFFICE - UX ENHANCED STYLES
+   Применение принципов визуальной иерархии,
+   дыхания контента и прогрессивного раскрытия
+   ============================================ */
+
+/* === 1. VISUAL HIERARCHY === */
+
+/* Hero Section - Максимальный визуальный вес */
+.hero-belarus {
+  position: relative;
+  padding: 120px 0 80px;
+  background: 
+    radial-gradient(circle at 20% 50%, rgba(124, 140, 255, 0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 50%, rgba(76, 201, 240, 0.15) 0%, transparent 50%),
+    linear-gradient(180deg, rgba(15, 20, 25, 0.95) 0%, rgba(10, 14, 22, 1) 100%);
+  overflow: hidden;
+}
+
+.hero-belarus::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 25% 25%, rgba(124, 140, 255, 0.03) 0%, transparent 30%),
+    radial-gradient(circle at 75% 75%, rgba(76, 201, 240, 0.03) 0%, transparent 30%);
+  animation: heroFloat 20s ease-in-out infinite;
+  pointer-events: none;
+}
+
+@keyframes heroFloat {
+  0%, 100% { transform: translateY(0) scale(1); }
+  50% { transform: translateY(-20px) scale(1.02); }
+}
+
+.hero-belarus .container {
+  position: relative;
+  z-index: 1;
+  max-width: 900px;
+}
+
+.hero-title-belarus {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 800;
+  line-height: 1.15;
+  margin-bottom: 1.5rem;
+  background: linear-gradient(135deg, #fff 0%, #7c8cff 50%, #4cc9f0 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  text-align: center;
+  animation: titleFadeIn 0.8s ease-out;
+}
+
+@keyframes titleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-subtitle-belarus {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.85);
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 2.5rem;
+  animation: subtitleFadeIn 0.8s ease-out 0.2s both;
+}
+
+@keyframes subtitleFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Country Badge */
+.country-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 50px;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1rem;
+  backdrop-filter: blur(10px);
+}
+
+/* === 2. BREATHING SPACE === */
+
+/* Секции с увеличенными отступами */
+.section-belarus {
+  padding: 120px 0;
+  position: relative;
+}
+
+.section-belarus:nth-child(even) {
+  background: linear-gradient(180deg, 
+    rgba(124, 140, 255, 0.02) 0%, 
+    transparent 50%,
+    rgba(76, 201, 240, 0.02) 100%
+  );
+}
+
+/* Внутренние отступы контейнеров */
+.section-belarus .container {
+  max-width: 1200px;
+  padding: 0 2rem;
+}
+
+/* Заголовки секций с большими отступами */
+.section-header-belarus {
+  text-align: center;
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.section-overline {
+  display: inline-block;
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: #7c8cff;
+  margin-bottom: 16px;
+  padding: 6px 16px;
+  background: rgba(124, 140, 255, 0.1);
+  border-radius: 20px;
+  border: 1px solid rgba(124, 140, 255, 0.2);
+}
+
+.section-title-belarus {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.section-description {
+  font-size: 1.1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+/* === 3. SCANNABLE CONTENT === */
+
+/* Карточки с улучшенной сканируемостью */
+.card-belarus {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 24px;
+  padding: 40px;
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.card-belarus::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, #7c8cff 0%, #4cc9f0 100%);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card-belarus:hover::before {
+  opacity: 1;
+}
+
+.card-belarus:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(124, 140, 255, 0.3);
+  transform: translateY(-8px);
+  box-shadow: 
+    0 20px 60px rgba(0, 0, 0, 0.3),
+    0 0 0 1px rgba(124, 140, 255, 0.1);
+}
+
+/* Иконки в карточках */
+.card-icon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  background: linear-gradient(135deg, 
+    rgba(124, 140, 255, 0.15) 0%, 
+    rgba(76, 201, 240, 0.15) 100%
+  );
+  border-radius: 16px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(124, 140, 255, 0.2);
+}
+
+.card-belarus h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.card-belarus p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 24px;
+}
+
+/* Списки с улучшенной читаемостью */
+.checklist-belarus {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.checklist-belarus li {
+  position: relative;
+  padding: 12px 0 12px 36px;
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.8);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.checklist-belarus li:last-child {
+  border-bottom: none;
+}
+
+.checklist-belarus li::before {
+  content: '✓';
+  position: absolute;
+  left: 0;
+  top: 12px;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(124, 140, 255, 0.15);
+  color: #7c8cff;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.85rem;
+}
+
+/* === 4. PROGRESSIVE DISCLOSURE === */
+
+/* Аккордеоны для деталей */
+.accordion-belarus {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 16px;
+  margin-bottom: 16px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.accordion-belarus:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(124, 140, 255, 0.2);
+}
+
+.accordion-header {
+  padding: 24px 28px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  user-select: none;
+  transition: all 0.3s ease;
+}
+
+.accordion-header:hover {
+  background: rgba(124, 140, 255, 0.05);
+}
+
+.accordion-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+}
+
+.accordion-icon {
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  color: #7c8cff;
+  transition: transform 0.3s ease;
+}
+
+.accordion-belarus.active .accordion-icon {
+  transform: rotate(180deg);
+}
+
+.accordion-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-belarus.active .accordion-content {
+  max-height: 1000px;
+}
+
+.accordion-body {
+  padding: 0 28px 28px;
+}
+
+/* Expandable details */
+.details-belarus {
+  background: rgba(124, 140, 255, 0.05);
+  border-radius: 12px;
+  padding: 20px;
+  margin-top: 16px;
+}
+
+.details-belarus h4 {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #fff;
+  margin-bottom: 12px;
+}
+
+.details-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.details-list li {
+  padding: 6px 0 6px 24px;
+  position: relative;
+}
+
+.details-list li::before {
+  content: '•';
+  position: absolute;
+  left: 8px;
+  color: #7c8cff;
+  font-weight: 700;
+}
+
+/* === 5. ROADMAP VISUAL === */
+
+/* Визуальная дорожная карта */
+.roadmap-belarus {
+  position: relative;
+  padding: 40px 0;
+}
+
+.roadmap-line {
+  position: absolute;
+  left: 24px;
+  top: 80px;
+  bottom: 80px;
+  width: 4px;
+  background: linear-gradient(180deg, 
+    #7c8cff 0%, 
+    #4cc9f0 50%, 
+    rgba(76, 201, 240, 0.3) 100%
+  );
+  border-radius: 2px;
+}
+
+.roadmap-item {
+  position: relative;
+  padding-left: 80px;
+  margin-bottom: 60px;
+  animation: roadmapFadeIn 0.6s ease-out backwards;
+}
+
+.roadmap-item:nth-child(1) { animation-delay: 0.1s; }
+.roadmap-item:nth-child(2) { animation-delay: 0.2s; }
+.roadmap-item:nth-child(3) { animation-delay: 0.3s; }
+.roadmap-item:nth-child(4) { animation-delay: 0.4s; }
+
+@keyframes roadmapFadeIn {
+  from {
+    opacity: 0;
+    transform: translateX(-30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+.roadmap-marker {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.3rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #7c8cff 0%, #4cc9f0 100%);
+  color: #fff;
+  border-radius: 16px;
+  box-shadow: 
+    0 8px 24px rgba(124, 140, 255, 0.4),
+    0 0 0 4px rgba(15, 20, 25, 1),
+    0 0 0 6px rgba(124, 140, 255, 0.3);
+  z-index: 2;
+}
+
+.roadmap-item:nth-child(2) .roadmap-marker {
+  background: linear-gradient(135deg, #4cc9f0 0%, #00C896 100%);
+}
+
+.roadmap-item:nth-child(3) .roadmap-marker {
+  background: linear-gradient(135deg, #facc15 0%, #f59e0b 100%);
+  color: #000;
+}
+
+.roadmap-item:nth-child(4) .roadmap-marker {
+  background: linear-gradient(135deg, #4ade80 0%, #22c55e 100%);
+  color: #000;
+}
+
+.roadmap-card {
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 32px;
+  transition: all 0.4s ease;
+  position: relative;
+}
+
+.roadmap-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 4px;
+  height: 100%;
+  background: linear-gradient(180deg, #7c8cff 0%, #4cc9f0 100%);
+  border-radius: 20px 0 0 20px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.roadmap-card:hover::before {
+  opacity: 1;
+}
+
+.roadmap-card:hover {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(124, 140, 255, 0.3);
+  transform: translateX(12px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+}
+
+.roadmap-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.roadmap-title {
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: #fff;
+  margin: 0;
+}
+
+.roadmap-status {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px 12px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 12px;
+  background: rgba(124, 140, 255, 0.15);
+  color: #7c8cff;
+  border: 1px solid rgba(124, 140, 255, 0.3);
+}
+
+.roadmap-status.active {
+  background: rgba(76, 201, 240, 0.15);
+  color: #4cc9f0;
+  border-color: rgba(76, 201, 240, 0.3);
+  animation: pulse 2s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    box-shadow: 0 0 0 0 rgba(76, 201, 240, 0.4);
+  }
+  50% {
+    box-shadow: 0 0 0 8px rgba(76, 201, 240, 0);
+  }
+}
+
+/* === 6. CTA BUTTONS === */
+
+/* Primary CTA */
+.cta-primary-belarus {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 18px 36px;
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #fff;
+  background: linear-gradient(135deg, #7c8cff 0%, #4cc9f0 100%);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 
+    0 12px 40px rgba(124, 140, 255, 0.4),
+    0 4px 15px rgba(76, 201, 240, 0.3);
+  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.cta-primary-belarus::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, 
+    transparent, 
+    rgba(255, 255, 255, 0.2), 
+    transparent
+  );
+  transition: left 0.6s ease;
+}
+
+.cta-primary-belarus:hover::before {
+  left: 100%;
+}
+
+.cta-primary-belarus:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 
+    0 20px 60px rgba(124, 140, 255, 0.5),
+    0 8px 25px rgba(76, 201, 240, 0.4);
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
+.cta-primary-belarus:active {
+  transform: translateY(-2px) scale(0.98);
+}
+
+/* Secondary CTA */
+.cta-secondary-belarus {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 32px;
+  font-size: 1rem;
+  font-weight: 600;
+  color: #7c8cff;
+  background: rgba(124, 140, 255, 0.08);
+  border: 2px solid rgba(124, 140, 255, 0.3);
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.cta-secondary-belarus:hover {
+  background: rgba(124, 140, 255, 0.15);
+  border-color: rgba(124, 140, 255, 0.5);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(124, 140, 255, 0.2);
+}
+
+/* CTA Group */
+.cta-group-belarus {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: 48px 0;
+}
+
+/* === 7. RESPONSIVE === */
+
+@media (max-width: 992px) {
+  .hero-belarus {
+    padding: 80px 0 60px;
+  }
+  
+  .section-belarus {
+    padding: 80px 0;
+  }
+  
+  .section-header-belarus {
+    margin-bottom: 60px;
+  }
+  
+  .card-belarus {
+    padding: 32px;
+  }
+  
+  .roadmap-line {
+    left: 16px;
+  }
+  
+  .roadmap-item {
+    padding-left: 64px;
+  }
+  
+  .roadmap-marker {
+    width: 48px;
+    height: 48px;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-belarus {
+    padding: 60px 0 40px;
+  }
+  
+  .section-belarus {
+    padding: 60px 0;
+  }
+  
+  .section-header-belarus {
+    margin-bottom: 40px;
+  }
+  
+  .card-belarus {
+    padding: 24px;
+  }
+  
+  .cta-primary-belarus,
+  .cta-secondary-belarus {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .cta-group-belarus {
+    flex-direction: column;
+  }
+  
+  .accordion-header {
+    padding: 20px;
+  }
+  
+  .accordion-body {
+    padding: 0 20px 20px;
+  }
+}
+
+/* === 8. ACCESSIBILITY === */
+
+/* Focus states */
+.cta-primary-belarus:focus,
+.cta-secondary-belarus:focus,
+.accordion-header:focus {
+  outline: 2px solid #7c8cff;
+  outline-offset: 4px;
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* === 9. GRID SYSTEM === */
+
+.grid-belarus {
+  display: grid;
+  gap: 32px;
+}
+
+.grid-belarus-2 {
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+}
+
+.grid-belarus-3 {
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+}
+
+@media (max-width: 768px) {
+  .grid-belarus {
+    gap: 24px;
+  }
+  
+  .grid-belarus-2,
+  .grid-belarus-3 {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* === 10. FINAL SECTION === */
+
+.final-cta-section {
+  text-align: center;
+  padding: 100px 0;
+  background: 
+    radial-gradient(circle at center, rgba(124, 140, 255, 0.1) 0%, transparent 70%),
+    linear-gradient(180deg, transparent 0%, rgba(10, 14, 22, 1) 100%);
+  position: relative;
+}
+
+.final-cta-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 1px;
+  height: 100%;
+  background: linear-gradient(180deg, 
+    transparent 0%,
+    rgba(124, 140, 255, 0.5) 50%,
+    transparent 100%
+  );
+}
+
+.final-cta-title {
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 800;
+  margin-bottom: 20px;
+  background: linear-gradient(135deg, #fff 0%, #7c8cff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.final-cta-text {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 700px;
+  margin: 0 auto 48px;
+}
+
+/* Community box */
+.community-box {
+  margin: 80px auto 0;
+  padding: 48px;
+  max-width: 800px;
+  background: linear-gradient(135deg, 
+    rgba(124, 140, 255, 0.08) 0%, 
+    rgba(76, 201, 240, 0.05) 100%
+  );
+  border: 1px solid rgba(124, 140, 255, 0.2);
+  border-radius: 24px;
+  backdrop-filter: blur(20px);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.community-box h3 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  margin-bottom: 24px;
+}
+
+.community-links {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.community-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 28px;
+  background: rgba(0, 136, 204, 0.15);
+  border: 2px solid rgba(0, 136, 204, 0.4);
+  border-radius: 50px;
+  color: #0088cc;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease;
+}
+
+.community-link:hover {
+  background: rgba(0, 136, 204, 0.25);
+  border-color: rgba(0, 136, 204, 0.6);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(0, 136, 204, 0.3);
+}
