@@ -1,5 +1,5 @@
 // ========== КРАСИВАЯ НАВИГАЦИЯ - JAVASCRIPT ========== //
-// Версия: 2025-10-01-stable
+// Версия: 2025-10-03-dr001-fix
 
 (function() {
   'use strict';
@@ -10,6 +10,12 @@
 
     const mobileToggle = nav.querySelector('.nav-beautiful__mobile-toggle');
     const dropdownWrappers = nav.querySelectorAll('.nav-beautiful__dropdown-wrapper');
+
+    // ========== СБРОС СОСТОЯНИЯ ПРИ ЗАГРУЗКЕ СТРАНИЦЫ (DR-001 FIX) ========== //
+    dropdownWrappers.forEach(wrapper => {
+      wrapper.classList.remove('is-open', 'open');
+    });
+    nav.classList.remove('open');
 
     // ========== МОБИЛЬНОЕ МЕНЮ ========== //
     if (mobileToggle) {
@@ -80,6 +86,19 @@
         }
       });
     }
+
+    // ========== ЗАКРЫТИЕ МЕНЮ ПРИ КЛИКЕ НА ССЫЛКУ (DR-001 FIX) ========== //
+    const dropdownLinks = nav.querySelectorAll('.nav-beautiful__dropdown-item');
+    dropdownLinks.forEach(link => {
+      link.addEventListener('click', function() {
+        // Закрыть все dropdown
+        dropdownWrappers.forEach(wrapper => {
+          wrapper.classList.remove('is-open', 'open');
+        });
+        // Закрыть мобильное меню
+        nav.classList.remove('open');
+      });
+    });
 
     console.log('✅ Beautiful Navigation с задержкой 300ms инициализирована');
   });

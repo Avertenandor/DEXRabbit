@@ -318,21 +318,23 @@
               </a>
             </div>
 
-            <!-- Email -->
-            <div class="card" style="background: linear-gradient(135deg, rgba(250, 204, 21, 0.15), rgba(250, 204, 21, 0.05)); border: 2px solid rgba(250, 204, 21, 0.4);">
-              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-                <div style="width: 56px; height: 56px; background: linear-gradient(135deg, #facc15, #f59e0b); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 32px;">📧</div>
-                <div>
-                  <h3 style="margin: 0;">Email</h3>
-                  <p style="margin: 0; font-size: 13px; opacity: 0.8;">Деловые предложения</p>
+            <!-- Email (DR-006 FIX: Вся карточка кликабельна) -->
+            <a href="mailto:kupitkrolika@gmail.com" style="text-decoration: none; color: inherit; display: block;">
+              <div class="card" style="background: linear-gradient(135deg, rgba(250, 204, 21, 0.15), rgba(250, 204, 21, 0.05)); border: 2px solid rgba(250, 204, 21, 0.4); cursor: pointer; transition: all 0.3s ease;" onmouseover="this.style.borderColor='rgba(250, 204, 21, 0.6)'; this.style.transform='translateY(-2px)'" onmouseout="this.style.borderColor='rgba(250, 204, 21, 0.4)'; this.style.transform='translateY(0)'">
+                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
+                  <div style="width: 56px; height: 56px; background: linear-gradient(135deg, #facc15, #f59e0b); border-radius: 16px; display: flex; align-items: center; justify-content: center; font-size: 32px;">📧</div>
+                  <div>
+                    <h3 style="margin: 0;">Email</h3>
+                    <p style="margin: 0; font-size: 13px; opacity: 0.8;">Деловые предложения</p>
+                  </div>
+                </div>
+                <p style="margin-bottom: 16px; line-height: 1.6;">Для партнёрских предложений, сотрудничества с блогерами, СМИ.</p>
+                <div style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: rgba(250, 204, 21, 0.2); border: 2px solid rgba(250, 204, 21, 0.5); border-radius: 16px; color: #facc15; font-weight: 600;">
+                  <span>✉️</span>
+                  <span>kupitkrolika@gmail.com</span>
                 </div>
               </div>
-              <p style="margin-bottom: 16px; line-height: 1.6;">Для партнёрских предложений, сотрудничества с блогерами, СМИ.</p>
-              <a href="mailto:kupitkrolika@gmail.com" style="display: inline-flex; align-items: center; gap: 8px; padding: 12px 24px; background: rgba(250, 204, 21, 0.2); border: 2px solid rgba(250, 204, 21, 0.5); border-radius: 16px; color: #facc15; text-decoration: none; font-weight: 600; transition: all 0.3s ease;">
-                <span>✉️</span>
-                <span>kupitkrolika@gmail.com</span>
-              </a>
-            </div>
+            </a>
           </div>
         </div>
       </section>

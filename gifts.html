@@ -44,6 +44,21 @@
       content="https://xn--80apagbbfxgmuj4j.site/og/og-rabbit.jpg?v=20250928-05"
     />
 
+    <!-- DR-001 FIX: Сброс состояния dropdown при загрузке -->
+    <script>
+      (function() {
+        document.addEventListener('DOMContentLoaded', function() {
+          // Немедленно убрать все классы is-open и open
+          document.querySelectorAll('.nav-beautiful__dropdown-wrapper').forEach(function(el) {
+            el.classList.remove('is-open', 'open');
+          });
+          // Убрать класс open с навигации
+          var nav = document.querySelector('.nav-beautiful');
+          if (nav) nav.classList.remove('open');
+        });
+      })();
+    </script>
+    
     <!-- Styles -->
         <link rel="stylesheet" href="/assets/css/main.css" />
     <link rel="stylesheet" href="/assets/css/variables.css" />
@@ -696,21 +711,22 @@
           <div class="card" style="text-align: center">
             <h3>Как заказать подарок:</h3>
 
+            <!-- DR-002 FIX: Равномерная сетка 2x2 -->
             <div class="timeline" style="margin: 2rem 0">
-              <div style="display: flex; justify-content: space-around; flex-wrap: wrap; gap: 2rem">
-                <div>
+              <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 2rem; justify-items: center">
+                <div style="text-align: center">
                   <div style="font-size: 2rem">1️⃣</div>
                   <p>Свяжитесь с нами через Telegram Bot</p>
                 </div>
-                <div>
+                <div style="text-align: center">
                   <div style="font-size: 2rem">2️⃣</div>
                   <p>Выберите пакет и оплатите</p>
                 </div>
-                <div>
+                <div style="text-align: center">
                   <div style="font-size: 2rem">3️⃣</div>
                   <p>Получите NFT сертификат</p>
                 </div>
-                <div>
+                <div style="text-align: center">
                   <div style="font-size: 2rem">4️⃣</div>
                   <p>Вручите уникальный подарок!</p>
                 </div>

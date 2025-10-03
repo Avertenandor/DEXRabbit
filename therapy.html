@@ -227,11 +227,18 @@
         font-size: 1.5rem;
       }
 
+      /* DR-003 FIX: Центрирование последней карточки */
       .age-groups {
         display: grid;
         grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
         gap: 1.5rem;
         margin: 2rem 0;
+        justify-items: center;
+      }
+      
+      .age-groups .age-card {
+        width: 100%;
+        max-width: 300px;
       }
 
       .age-card {
