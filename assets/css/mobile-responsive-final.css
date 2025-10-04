@@ -100,12 +100,17 @@ img, video, iframe, svg {
     max-height: 0;
     overflow: hidden;
     opacity: 0;
-    transition: max-height 0.3s ease, opacity 0.3s ease;
+    visibility: hidden;
+    pointer-events: none;
+    transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s;
   }
 
   .nav-beautiful__dropdown-wrapper.open .nav-beautiful__dropdown {
     max-height: 1000px;
     opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0s linear 0s;
   }
 
   .nav-beautiful__cta {
