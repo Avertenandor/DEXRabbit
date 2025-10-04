@@ -34,7 +34,11 @@ test.describe('Dropdown функционал - Мобильное меню', () 
     
     // Кликаем на кнопку
     await firstButton.click();
-    await page.waitForTimeout(500); // Увеличено с 400 до 500ms
+    
+    // Ждем добавления класса и завершения анимации
+    await page.waitForTimeout(100); // Ждем добавления класса
+    await page.waitForSelector('.nav-beautiful__dropdown-wrapper.open', { timeout: 5000 });
+    await page.waitForTimeout(400); // Ждем завершения CSS анимации (300ms + запас)
     
     // Проверяем что dropdown открылся
     const hasOpenClass = await firstDropdown.evaluate(el => el.classList.contains('open'));
@@ -69,14 +73,14 @@ test.describe('Dropdown функционал - Мобильное меню', () 
     
     // Открываем
     await firstButton.click();
-    await page.waitForTimeout(400);
+    await page.waitForTimeout(800);
     
     let hasOpenClass = await firstDropdown.evaluate(el => el.classList.contains('open'));
     expect(hasOpenClass).toBe(true);
     
     // Закрываем
     await firstButton.click();
-    await page.waitForTimeout(400);
+    await page.waitForTimeout(800);
     
     hasOpenClass = await firstDropdown.evaluate(el => el.classList.contains('open'));
     expect(hasOpenClass).toBe(false);
@@ -89,14 +93,14 @@ test.describe('Dropdown функционал - Мобильное меню', () 
     
     // Открываем первый
     await firstButton.click();
-    await page.waitForTimeout(400);
+    await page.waitForTimeout(800);
     
     let firstHasOpen = await dropdowns.nth(0).evaluate(el => el.classList.contains('open'));
     expect(firstHasOpen).toBe(true);
     
     // Открываем второй
     await secondButton.click();
-    await page.waitForTimeout(400);
+    await page.waitForTimeout(800);
     
     // Проверяем что первый закрылся
     firstHasOpen = await dropdowns.nth(0).evaluate(el => el.classList.contains('open'));
@@ -114,7 +118,7 @@ test.describe('Dropdown функционал - Мобильное меню', () 
     
     // Открываем dropdown
     await firstButton.click();
-    await page.waitForTimeout(400);
+    await page.waitForTimeout(800);
     
     // Проверяем количество элементов
     const itemsCount = await dropdownItems.count();
@@ -140,7 +144,7 @@ test.describe('Dropdown функционал - Мобильное меню', () 
     
     // Открываем dropdown
     await firstButton.click();
-    await page.waitForTimeout(400);
+    await page.waitForTimeout(800);
     
     const dropdownItems = firstDropdown.locator('.nav-beautiful__dropdown-item');
     const itemsCount = await dropdownItems.count();
