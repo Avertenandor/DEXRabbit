@@ -434,17 +434,26 @@ body {
     width: 100%;
   }
 
+  /* Mobile: Wrapper как relative контейнер */
+  .nav-beautiful__dropdown-wrapper {
+    position: relative;
+  }
+
   .nav-beautiful__btn {
     width: 100%;
     justify-content: space-between;
+    position: relative;
+    z-index: 10; /* Кнопка ВЫШЕ dropdown */
   }
 
+  /* Mobile: Dropdown ABSOLUTE - не перекрывает кнопку! */
   .nav-beautiful__dropdown {
-    position: static !important;
-    transform: none !important;
+    position: absolute !important; /* ВНЕ потока документа! */
+    top: 100%; /* Прямо под кнопкой */
+    left: 0;
+    right: 0;
+    z-index: 5; /* НИЖЕ кнопки */
     max-width: none;
-    left: auto !important;
-    top: auto !important;
     margin-top: 8px;
     max-height: 0;
     overflow: hidden;
@@ -454,12 +463,10 @@ body {
     transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s;
   }
 
+  /* Mobile: ТОЛЬКО .open или .is-open (БЕЗ :hover!) */
   .nav-beautiful__dropdown-wrapper.open .nav-beautiful__dropdown,
-  .nav-beautiful__dropdown-wrapper:hover .nav-beautiful__dropdown,
   .nav-beautiful__dropdown-wrapper.is-open .nav-beautiful__dropdown {
-    position: static !important;
-    transform: none !important;
-    max-height: 1000px;
+    max-height: 500px; /* Уменьшено для безопасности */
     opacity: 1;
     visibility: visible;
     pointer-events: auto;

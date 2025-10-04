@@ -24,14 +24,17 @@
     }, 500);
   }
 
-  // НЕМЕДЛЕННЫЙ сброс ДО загрузки DOM
+  // НЕМЕДЛЕННЫЙ сброс ДЛЯ ТОЛЬКО при загрузке страницы
   if (document.readyState === 'loading') {
     resetAllMenuState();
   }
 
-  // Сброс при загрузке И при возврате назад
-  window.addEventListener('pageshow', resetAllMenuState);
-  window.addEventListener('load', resetAllMenuState);
+  // Сброс ТОЛЬКО при ПЕРВОЙ загрузке (не при pageshow!)
+  window.addEventListener('load', function() {
+    // Сбрасываем только ОДИН раз при загрузке
+    resetAllMenuState();
+  }, { once: true });
+  
   document.addEventListener('visibilitychange', function() {
     if (document.visibilityState === 'visible') {
       resetAllMenuState();
@@ -54,10 +57,21 @@
         nav.classList.toggle('open');
       });
 
-      // Закрыть при клике вне меню
+      // Закрыть при клике вне меню (НО НЕ на dropdown кнопки!)
       document.addEventListener('click', function(e) {
+        // Игнорируем клики на dropdown кнопки
+        if (e.target.closest('.nav-beautiful__btn')) {
+          return;
+        }
+        
+        // Закрываем меню только если клик ВНЕ nav
         if (!nav.contains(e.target)) {
           nav.classList.remove('open');
+          
+          // Также закрываем все dropdown
+          dropdownWrappers.forEach(wrapper => {
+            wrapper.classList.remove('open', 'is-open');
+          });
         }
       });
     }
