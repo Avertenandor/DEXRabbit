@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dropdown Test - DEXRabbit</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { 
+      font-family: Arial, sans-serif; 
+      background: #0a0e1a;
+      color: white;
+      padding: 20px;
+    }
+
+    .test-info {
+      background: #1a1e2a;
+      padding: 20px;
+      border-radius: 8px;
+      margin-bottom: 20px;
+    }
+
+    .nav-beautiful__dropdown-wrapper {
+      margin: 20px 0;
+      border: 2px solid #2a2e3a;
+      border-radius: 8px;
+      padding: 10px;
+    }
+
+    .nav-beautiful__btn {
+      width: 100%;
+      padding: 15px;
+      background: #2a3a5a;
+      border: none;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+      border-radius: 6px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .nav-beautiful__btn:hover {
+      background: #3a4a6a;
+    }
+
+    .nav-beautiful__arrow {
+      display: inline-block;
+      width: 0;
+      height: 0;
+      border-left: 6px solid transparent;
+      border-right: 6px solid transparent;
+      border-top: 6px solid currentColor;
+      transition: transform 0.3s ease;
+    }
+
+    .nav-beautiful__dropdown-wrapper.open .nav-beautiful__arrow {
+      transform: rotate(180deg);
+    }
+
+    .nav-beautiful__dropdown {
+      max-height: 0;
+      overflow: hidden;
+      opacity: 0;
+      visibility: hidden;
+      pointer-events: none;
+      transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s;
+      margin-top: 10px;
+      background: #1a2a3a;
+      border-radius: 6px;
+    }
+
+    .nav-beautiful__dropdown-wrapper.open .nav-beautiful__dropdown {
+      max-height: 1000px;
+      opacity: 1;
+      visibility: visible;
+      pointer-events: auto;
+      transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0s linear 0s;
+    }
+
+    .nav-beautiful__dropdown-list {
+      list-style: none;
+      padding: 10px;
+    }
+
+    .nav-beautiful__dropdown-item {
+      padding: 12px;
+      display: block;
+      color: white;
+      text-decoration: none;
+      border-radius: 4px;
+      margin: 5px 0;
+      background: #2a3a4a;
+    }
+
+    .nav-beautiful__dropdown-item:hover {
+      background: #3a4a5a;
+    }
+
+    .status {
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 4px;
+      font-family: monospace;
+    }
+
+    .status.success { background: #2a4a2a; color: #8afa8a; }
+    .status.error { background: #4a2a2a; color: #fa8a8a; }
+    .status.info { background: #2a3a4a; color: #8acafa; }
+  </style>
+</head>
+<body>
+  <div class="test-info">
+    <h1>🧪 Dropdown Test Page</h1>
+    <p>Тестирование функционала dropdown для DEXRabbit</p>
+    <div id="status"></div>
+  </div>
+
+  <!-- TEST 1: Инвестиции -->
+  <div class="nav-beautiful__dropdown-wrapper" data-test="test1">
+    <button class="nav-beautiful__btn">
+      Инвестиции
+      <span class="nav-beautiful__arrow"></span>
+    </button>
+    <div class="nav-beautiful__dropdown">
+      <ul class="nav-beautiful__dropdown-list">
+        <li><a href="#" class="nav-beautiful__dropdown-item">💰 Модель инвестирования</a></li>
+        <li><a href="#" class="nav-beautiful__dropdown-item">🚀 Стать инвестором</a></li>
+        <li><a href="#" class="nav-beautiful__dropdown-item">🛡️ Гарантии</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TEST 2: Партнёрство -->
+  <div class="nav-beautiful__dropdown-wrapper" data-test="test2">
+    <button class="nav-beautiful__btn">
+      Партнёрство
+      <span class="nav-beautiful__arrow"></span>
+    </button>
+    <div class="nav-beautiful__dropdown">
+      <ul class="nav-beautiful__dropdown-list">
+        <li><a href="#" class="nav-beautiful__dropdown-item">🤝 Стать партнёром</a></li>
+        <li><a href="#" class="nav-beautiful__dropdown-item">📍 Офис в Беларуси</a></li>
+        <li><a href="#" class="nav-beautiful__dropdown-item">📈 Блоггерам</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- TEST 3: Услуги -->
+  <div class="nav-beautiful__dropdown-wrapper" data-test="test3">
+    <button class="nav-beautiful__btn">
+      Услуги
+      <span class="nav-beautiful__arrow"></span>
+    </button>
+    <div class="nav-beautiful__dropdown">
+      <ul class="nav-beautiful__dropdown-list">
+        <li><a href="#" class="nav-beautiful__dropdown-item">🐰 Покупка кроликов</a></li>
+        <li><a href="#" class="nav-beautiful__dropdown-item">📦 Доставка</a></li>
+        <li><a href="#" class="nav-beautiful__dropdown-item">🏡 Консультации</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    const statusDiv = document.getElementById('status');
+    
+    function log(message, type = 'info') {
+      const p = document.createElement('div');
+      p.className = `status ${type}`;
+      p.textContent = `[${new Date().toLocaleTimeString()}] ${message}`;
+      statusDiv.appendChild(p);
+      console.log(message);
+    }
+
+    log('🔍 Начинаем диагностику...', 'info');
+
+    // Находим все dropdown wrappers
+    const dropdownWrappers = document.querySelectorAll('.nav-beautiful__dropdown-wrapper');
+    log(`Найдено dropdown wrappers: ${dropdownWrappers.length}`, dropdownWrappers.length > 0 ? 'success' : 'error');
+
+    // Добавляем обработчики
+    dropdownWrappers.forEach((wrapper, index) => {
+      const btn = wrapper.querySelector('.nav-beautiful__btn');
+      const dropdown = wrapper.querySelector('.nav-beautiful__dropdown');
+      const testId = wrapper.getAttribute('data-test');
+      
+      if (!btn) {
+        log(`❌ Кнопка НЕ НАЙДЕНА в wrapper ${index + 1}`, 'error');
+        return;
+      }
+      
+      if (!dropdown) {
+        log(`❌ Dropdown НЕ НАЙДЕН в wrapper ${index + 1}`, 'error');
+        return;
+      }
+
+      log(`✅ Wrapper ${index + 1} (${testId}): кнопка и dropdown найдены`, 'success');
+
+      btn.addEventListener('click', function(e) {
+        e.preventDefault();
+        e.stopPropagation();
+        
+        const wasOpen = wrapper.classList.contains('open');
+        
+        log(`🖱️ КЛИК на "${testId}": ${wasOpen ? 'ЗАКРЫВАЕМ' : 'ОТКРЫВАЕМ'}`, 'info');
+        
+        // Закрыть все другие
+        dropdownWrappers.forEach(other => {
+          if (other !== wrapper) {
+            other.classList.remove('open');
+          }
+        });
+        
+        // Переключить текущий
+        if (wasOpen) {
+          wrapper.classList.remove('open');
+          log(`📦 ${testId}: класс .open УДАЛЕН`, 'success');
+        } else {
+          wrapper.classList.add('open');
+          log(`📦 ${testId}: класс .open ДОБАВЛЕН`, 'success');
+          
+          // Проверка computed styles
+          setTimeout(() => {
+            const computedStyle = window.getComputedStyle(dropdown);
+            log(`📊 ${testId} Computed Styles:`, 'info');
+            log(`   max-height: ${computedStyle.maxHeight}`, 'info');
+            log(`   opacity: ${computedStyle.opacity}`, 'info');
+            log(`   visibility: ${computedStyle.visibility}`, 'info');
+            log(`   pointer-events: ${computedStyle.pointerEvents}`, 'info');
+            log(`   overflow: ${computedStyle.overflow}`, 'info');
+          }, 50);
+        }
+      });
+    });
+
+    log('✅ Обработчики событий установлены', 'success');
+    log('📝 Кликните на любой dropdown для тестирования', 'info');
+  </script>
+</body>
+</html>
