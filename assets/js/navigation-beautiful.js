@@ -98,25 +98,33 @@
       });
     }
 
-    // ========== DROPDOWN ДЛЯ МОБИЛЬНЫХ (CLICK) ========== //
-    if (window.innerWidth <= 768) {
-      dropdownWrappers.forEach(wrapper => {
-        const btn = wrapper.querySelector('.nav-beautiful__btn');
-        if (btn) {
-          btn.addEventListener('click', function(e) {
-            e.preventDefault();
-            wrapper.classList.toggle('open');
-            
-            // Закрыть другие
-            dropdownWrappers.forEach(other => {
-              if (other !== wrapper) {
-                other.classList.remove('open');
-              }
-            });
+    // ========== DROPDOWN ДЛЯ МОБИЛЬНЫХ (CLICK) - ВСЕГДА АКТИВНО ========== //
+    dropdownWrappers.forEach(wrapper => {
+      const btn = wrapper.querySelector('.nav-beautiful__btn');
+      if (btn) {
+        btn.addEventListener('click', function(e) {
+          e.preventDefault();
+          e.stopPropagation();
+          
+          // Переключить состояние dropdown
+          const isOpen = wrapper.classList.contains('open');
+          
+          // Закрыть все другие dropdown
+          dropdownWrappers.forEach(other => {
+            if (other !== wrapper) {
+              other.classList.remove('open');
+            }
           });
-        }
-      });
-    }
+          
+          // Переключить текущий
+          if (isOpen) {
+            wrapper.classList.remove('open');
+          } else {
+            wrapper.classList.add('open');
+          }
+        });
+      }
+    });
 
     // ========== ЗАКРЫТИЕ МЕНЮ ПРИ КЛИКЕ НА ССЫЛКУ (DR-001 FIX) ========== //
     const dropdownLinks = nav.querySelectorAll('.nav-beautiful__dropdown-item');
