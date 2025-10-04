@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>WebP Test</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 40px; }
+    .test-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 20px 0; }
+    .test-item { border: 1px solid #ddd; padding: 15px; border-radius: 8px; }
+    .test-item h3 { margin-top: 0; }
+    .status { font-size: 18px; font-weight: bold; margin: 20px 0; }
+    .green { color: green; }
+    .red { color: red; }
+  </style>
+</head>
+<body>
+  <h1>🖼️ WebP Support Test - DEXRabbit</h1>
+  
+  <div id="webp-status" class="status">Проверяем поддержку WebP...</div>
+  
+  <h2>Тестирование критичных аватаров:</h2>
+  <div class="test-grid">
+    <div class="test-item">
+      <h3>Vlad Avatar</h3>
+      <picture>
+        <source type="image/webp" srcset="assets/img/avatars/vlad.webp">
+        <img src="assets/img/avatars/vlad.png" alt="Vlad" width="200" height="200" loading="lazy">
+      </picture>
+      <p>WebP: 38KB | PNG: 100KB</p>
+    </div>
+    
+    <div class="test-item">
+      <h3>Natalia Avatar</h3>
+      <picture>
+        <source type="image/webp" srcset="assets/img/avatars/natder.webp">
+        <img src="assets/img/avatars/natder.jpg" alt="Natalia" width="200" height="200" loading="lazy">
+      </picture>
+      <p>WebP: 12KB | JPEG: 21KB</p>
+    </div>
+  </div>
+  
+  <h2>Тестирование gallery:</h2>
+  <div class="test-grid">
+    <div class="test-item">
+      <h3>Rabbit Photo 1</h3>
+      <picture>
+        <source type="image/webp" srcset="gallery/photo_1_2025-09-28_18-05-40.webp">
+        <img src="gallery/photo_1_2025-09-28_18-05-40.jpg" alt="Rabbit 1" width="200" height="150" loading="lazy">
+      </picture>
+      <p>WebP vs JPEG сравнение</p>
+    </div>
+    
+    <div class="test-item">
+      <h3>Media Test</h3>
+      <picture>
+        <source type="image/webp" srcset="assets/media/rabbit-photo-1.webp">
+        <img src="assets/media/rabbit-photo-1.jpg" alt="Media Test" width="200" height="150" loading="lazy">
+      </picture>
+      <p>Media WebP интеграция</p>
+    </div>
+  </div>
+  
+  <h2>📊 Информация о загрузке:</h2>
+  <div id="load-info">
+    <p>Откройте DevTools → Network чтобы увидеть какие файлы загружаются</p>
+    <ul>
+      <li><strong>Chrome/Firefox/Edge/Safari 14+:</strong> должны загружать .webp файлы</li>
+      <li><strong>IE11/старый Safari:</strong> должны загружать .png/.jpg файлы</li>
+    </ul>
+  </div>
+  
+  <script>
+    // Проверка поддержки WebP
+    function checkWebPSupport() {
+      return new Promise((resolve) => {
+        const webP = new Image();
+        webP.onload = webP.onerror = function () {
+          resolve(webP.height === 2);
+        };
+        webP.src = 'data:image/webp;base64,UklGRjoAAABXRUJQVlA4IC4AAACyAgCdASoCAAIALmk0mk0iIiIiIgBoSygABc6WWgAA/veff/0PP8bA//LwYAAA';
+      });
+    }
+    
+    // Проверка на загрузку страницы
+    window.addEventListener('load', async () => {
+      const isWebPSupported = await checkWebPSupport();
+      const statusEl = document.getElementById('webp-status');
+      
+      if (isWebPSupported) {
+        statusEl.innerHTML = '✅ WebP поддерживается! Загружаются оптимизированные изображения';
+        statusEl.className = 'status green';
+      } else {
+        statusEl.innerHTML = '❌ WebP не поддерживается. Используется fallback на PNG/JPEG';
+        statusEl.className = 'status red';
+      }
+      
+      // Добавляем информацию о браузере
+      const browserInfo = `
+        <p><strong>Браузер:</strong> ${navigator.userAgent}</p>
+        <p><strong>WebP поддержка:</strong> ${isWebPSupported ? 'Да' : 'Нет'}</p>
+      `;
+      document.getElementById('load-info').insertAdjacentHTML('beforeend', browserInfo);
+    });
+  </script>
+</body>
+</html>
