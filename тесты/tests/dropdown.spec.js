@@ -36,9 +36,9 @@ test.describe('Dropdown функционал - Мобильное меню', () 
     await firstButton.click();
     
     // Ждем добавления класса и завершения анимации
-    await page.waitForTimeout(100); // Ждем добавления класса
+    await page.waitForTimeout(200); // Ждем добавления класса
     await page.waitForSelector('.nav-beautiful__dropdown-wrapper.open', { timeout: 5000 });
-    await page.waitForTimeout(400); // Ждем завершения CSS анимации (300ms + запас)
+    await page.waitForTimeout(1000); // Ждем ПОЛНОГО завершения CSS анимации + рендеринг
     
     // Проверяем что dropdown открылся
     const hasOpenClass = await firstDropdown.evaluate(el => el.classList.contains('open'));
