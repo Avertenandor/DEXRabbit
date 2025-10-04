@@ -407,22 +407,18 @@ body {
 
   .nav-beautiful__menu {
     position: fixed;
-    top: 60px;
+    top: 70px;
     left: 0;
     right: 0;
-    width: 100%;
-    height: calc(100vh - 60px);
-    height: calc(100dvh - 60px);
+    bottom: 0;
     flex-direction: column;
     background: rgba(0, 0, 0, 0.98);
     backdrop-filter: blur(40px);
     padding: 20px;
-    gap: 12px;
     overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
     transform: translateX(-100%);
     transition: transform 0.3s ease;
-    z-index: 1000;
+    z-index: 9999;
   }
 
   .nav-beautiful.open .nav-beautiful__menu {

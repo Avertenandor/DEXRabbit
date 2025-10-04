@@ -1,0 +1,1112 @@
+﻿=== NAVIGATION CSS - ТЕКУЩЕЕ СОСТОЯНИЕ ===
+/* ========== РљР РђРЎРР’РђРЇ РќРђР’РР“РђР¦РРЇ (РљРђРљ Р’ Р¤РЈРўР•Р Р•) ========== */
+/* Р’РµСЂСЃРёСЏ: 2025-10-02-FIXED - РСЃРїСЂР°РІР»РµРЅС‹ z-index Рё hover */
+
+/* ========== РћРўРЎРўРЈРџ Р”Р›РЇ BODY ========== */
+body {
+  padding-top: 70px;
+}
+
+/* ========== РћРЎРќРћР’РќРћР™ РљРћРќРўР•Р™РќР•Р  ========== */
+.nav-beautiful {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  width: 100%;
+  background: linear-gradient(135deg, rgba(0, 0, 0, 0.95) 0%, rgba(20, 20, 30, 0.95) 100%);
+  backdrop-filter: saturate(180%) blur(30px);
+  border-bottom: 1px solid rgba(124, 140, 255, 0.2);
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  padding: 0;
+}
+
+.nav-beautiful__container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 12px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+/* ========== LOGO ========== */
+.nav-beautiful__logo {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-decoration: none;
+  transition: transform 0.3s ease;
+  z-index: 10001;
+}
+
+.nav-beautiful__logo:hover {
+  transform: translateY(-2px);
+}
+
+.nav-beautiful__logo-img {
+  width: 40px;
+  height: 40px;
+  filter: drop-shadow(0 2px 8px rgba(124, 140, 255, 0.4));
+}
+
+.nav-beautiful__logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.nav-beautiful__logo-title {
+  font-size: 20px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #fff 0%, #e0e0ff 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  line-height: 1.2;
+}
+
+.nav-beautiful__logo-slogan {
+  font-size: 10px;
+  font-weight: 500;
+  color: rgba(124, 140, 255, 0.9);
+  letter-spacing: 0.3px;
+}
+
+/* ========== РњР•РќР® ========== */
+.nav-beautiful__menu {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex: 1;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* ========== РљРќРћРџРљР РњР•РќР® (РљРђРљ Р’ Р¤РЈРўР•Р Р•) ========== */
+.nav-beautiful__btn {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 20px;
+  background: linear-gradient(135deg, rgba(124, 140, 255, 0.1), rgba(76, 201, 240, 0.05));
+  border: 1px solid rgba(124, 140, 255, 0.3);
+  border-radius: 24px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 14px;
+  font-weight: 600;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+/* Shimmer effect */
+.nav-beautiful__btn::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  transition: left 0.6s ease;
+}
+
+.nav-beautiful__btn:hover::before {
+  left: 100%;
+}
+
+.nav-beautiful__btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  background: linear-gradient(135deg, rgba(124, 140, 255, 0.2), rgba(76, 201, 240, 0.1));
+  border-color: rgba(124, 140, 255, 0.5);
+  box-shadow: 0 8px 24px rgba(124, 140, 255, 0.3),
+              0 4px 12px rgba(76, 201, 240, 0.2);
+  color: #fff;
+}
+
+.nav-beautiful__btn:active {
+  transform: translateY(-1px) scale(1.01);
+}
+
+/* РРєРѕРЅРєР° СЃС‚СЂРµР»РєРё РІРЅРёР· */
+.nav-beautiful__arrow {
+  display: inline-block;
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-top: 4px solid currentColor;
+  margin-left: 4px;
+  transition: transform 0.3s ease;
+}
+
+.nav-beautiful__dropdown-wrapper:hover .nav-beautiful__arrow,
+.nav-beautiful__dropdown-wrapper.is-open .nav-beautiful__arrow {
+
+
+=== MOBILE NAVIGATION В НОВОМ ФАЙЛЕ ===
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:52:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:53:
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:54:  .nav-beautiful__logo-img {
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:55:    width: 36px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:56:    height: 36px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:57:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:58:
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:59:  .nav-beautiful__logo-title {
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:60:    font-size: 17px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:61:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:62:
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:63:  .nav-beautiful__logo-slogan {
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:64:    font-size: 9px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:65:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:66:
+> C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:67:  .nav-beautiful__menu {
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:68:    position: fixed;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:69:    top: 60px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:70:    left: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:71:    width: 100%;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:72:    height: calc(100vh - 60px);
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:73:    height: calc(100dvh - 60px);
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:74:    background: rgba(0, 0, 0, 0.98);
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:75:    backdrop-filter: blur(40px);
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:76:    flex-direction: column;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:77:    padding: 20px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:78:    gap: 12px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:79:    overflow-y: auto;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:80:    transform: translateX(-100%);
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:81:    transition: transform 0.3s ease;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:82:    z-index: 1000;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:83:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:84:
+> C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:85:  .nav-beautiful.open .nav-beautiful__menu {
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:86:    transform: translateX(0);
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:87:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:88:
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:89:  .nav-beautiful__btn {
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:90:    width: 100%;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:91:    padding: 14px 20px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:92:    font-size: 15px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:93:    justify-content: space-between;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:94:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:95:
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:96:  .nav-beautiful__dropdown {
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:97:    position: static;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:98:    transform: none;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:99:    margin-top: 8px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:100:    max-height: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:272:
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:273:@media (min-width: 1024px) {
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:274:  .grid, .investors-grid {
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:275:    grid-template-columns: repeat(3, 1fr) !important;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:276:    gap: 24px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:277:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:278:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:279:
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:280:/* ========== SAFE AREA (вырезы на экране) ========== */
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:281:.nav-beautiful {
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:282:  padding-left: env(safe-area-inset-left);
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:283:  padding-right: env(safe-area-inset-right);
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:284:  padding-top: env(safe-area-inset-top);
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:285:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:286:
+> C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:287:.nav-beautiful__menu {
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:288:  padding-bottom: env(safe-area-inset-bottom);
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:289:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:290:
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:291:.footer {
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:292:  padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:293:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:294:
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:295:/* ========== TOUCH TARGETS (минимум 44x44px) ========== */
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:296:@media (max-width: 768px) {
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:297:  .btn, a, button, .nav-beautiful__btn {
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:298:    min-height: 44px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:299:    min-width: 44px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:300:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:301:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:302:
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:303:/* ========== ПРЕДОТВРАЩЕНИЕ ZOOM НА iOS ========== */
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:304:@media (max-width: 768px) {
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:305:  input, textarea, select {
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:306:    font-size: 16px; /* Минимум 16px чтобы iOS не зумил */
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:307:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:308:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:309:
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:310:/* ========== ЛАНДШАФТНАЯ ОРИЕНТАЦИЯ ========== */
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:311:@media (max-width: 768px) and (orientation: landscape) {
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:312:  .nav-beautiful__container {
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:313:    height: 48px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:314:    padding: 8px 12px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:315:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:316:
+> C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:317:  .nav-beautiful__menu {
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:318:    top: 48px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:319:    height: calc(100vh - 48px);
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:320:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:321:
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:322:  .hero {
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:323:    padding-top: 60px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:324:    padding-bottom: 30px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:325:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:326:
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:327:  .section {
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:328:    padding-top: 30px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:329:    padding-bottom: 30px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:330:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:331:
+  C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:332:  h1 { font-size: clamp(20px, 4vw, 28px) !important; }
+
+
+=== ПОРЯДОК ЗАГРУЗКИ CSS ===
+53: <link rel="stylesheet" href="/assets/css/mobile-responsive-final.css?v=20251004-critical" />
+57: <link rel="stylesheet" href="/assets/css/navigation-beautiful.css?v=20251001-fixed-top" />
+
+
+=== NAVIGATION JS ===
+// ========== РљР РђРЎРР’РђРЇ РќРђР’РР“РђР¦РРЇ - JAVASCRIPT ========== //
+// Р’РµСЂСЃРёСЏ: 2025-10-03-dr001-ultimate-fix
+
+(function() {
+  'use strict';
+
+  // ========== РљР РРўРР§Р•РЎРљРР™ FIX DR-001: РџРѕР»РЅС‹Р№ СЃР±СЂРѕСЃ СЃРѕСЃС‚РѕСЏРЅРёСЏ ========== //
+  function resetAllMenuState() {
+    const nav = document.querySelector('.nav-beautiful');
+    if (!nav) return;
+
+    const dropdownWrappers = nav.querySelectorAll('.nav-beautiful__dropdown-wrapper');
+    
+    // РЈР±СЂР°С‚СЊ РІСЃРµ РєР»Р°СЃСЃС‹ РѕС‚РєСЂС‹С‚РёСЏ
+    dropdownWrappers.forEach(wrapper => {
+      wrapper.classList.remove('is-open', 'open');
+    });
+    nav.classList.remove('open');
+    
+    // РџСЂРёРЅСѓРґРёС‚РµР»СЊРЅРѕ РѕС‚РєР»СЋС‡РёС‚СЊ pointer-events РЅР° 500ms (СѓРІРµР»РёС‡РµРЅРѕ!)
+    nav.style.pointerEvents = 'none';
+    setTimeout(() => {
+      nav.style.pointerEvents = '';
+    }, 500);
+  }
+
+  // РќР•РњР•Р”Р›Р•РќРќР«Р™ СЃР±СЂРѕСЃ Р”Рћ Р·Р°РіСЂСѓР·РєРё DOM
+  if (document.readyState === 'loading') {
+    resetAllMenuState();
+  }
+
+  // РЎР±СЂРѕСЃ РїСЂРё Р·Р°РіСЂСѓР·РєРµ Р РїСЂРё РІРѕР·РІСЂР°С‚Рµ РЅР°Р·Р°Рґ
+  window.addEventListener('pageshow', resetAllMenuState);
+  window.addEventListener('load', resetAllMenuState);
+  document.addEventListener('visibilitychange', function() {
+    if (document.visibilityState === 'visible') {
+      resetAllMenuState();
+    }
+  });
+  
+  document.addEventListener('DOMContentLoaded', function() {
+    const nav = document.querySelector('.nav-beautiful');
+    if (!nav) return;
+
+    const mobileToggle = nav.querySelector('.nav-beautiful__mobile-toggle');
+    const dropdownWrappers = nav.querySelectorAll('.nav-beautiful__dropdown-wrapper');
+
+    // РќРµРјРµРґР»РµРЅРЅС‹Р№ СЃР±СЂРѕСЃ
+    resetAllMenuState();
+
+    // ========== РњРћР‘РР›Р¬РќРћР• РњР•РќР® ========== //
+    if (mobileToggle) {
+      mobileToggle.addEventListener('click', function() {
+        nav.classList.toggle('open');
+      });
+
+      // Р—Р°РєСЂС‹С‚СЊ РїСЂРё РєР»РёРєРµ РІРЅРµ РјРµРЅСЋ
+      document.addEventListener('click', function(e) {
+        if (!nav.contains(e.target)) {
+          nav.classList.remove('open');
+        }
+      });
+    }
+
+    // ========== DROPDOWN РЎ Р—РђР”Р•Р Р–РљРћР™ (DESKTOP) ========== //
+    if (window.innerWidth > 768) {
+      let closeTimer = null;
+      const CLOSE_DELAY = 200; // 200ms Р·Р°РґРµСЂР¶РєР° РїРµСЂРµРґ Р·Р°РєСЂС‹С‚РёРµРј (Р±С‹Р»Рѕ 300)
+
+      dropdownWrappers.forEach(wrapper => {
+        const dropdown = wrapper.querySelector('.nav-beautiful__dropdown');
+        if (!dropdown) return;
+
+        // РџСЂРё РІС…РѕРґРµ РєСѓСЂСЃРѕСЂР° РЅР° wrapper - РѕС‚РєСЂС‹С‚СЊ
+        wrapper.addEventListener('mouseenter', function() {
+          clearTimeout(closeTimer);
+          wrapper.classList.add('is-open');
+        });
+
+        // РџСЂРё РІС‹С…РѕРґРµ РєСѓСЂСЃРѕСЂР° - Р·Р°РєСЂС‹С‚СЊ СЃ Р·Р°РґРµСЂР¶РєРѕР№
+        wrapper.addEventListener('mouseleave', function() {
+          closeTimer = setTimeout(function() {
+            wrapper.classList.remove('is-open');
+          }, CLOSE_DELAY);
+        });
+
+        // РџСЂРё РІС…РѕРґРµ РЅР° dropdown - РѕС‚РјРµРЅРёС‚СЊ Р·Р°РєСЂС‹С‚РёРµ
+        dropdown.addEventListener('mouseenter', function() {
+          clearTimeout(closeTimer);
+        });
+
+        // РџСЂРё РІС‹С…РѕРґРµ РёР· dropdown - Р·Р°РєСЂС‹С‚СЊ СЃ Р·Р°РґРµСЂР¶РєРѕР№
+        dropdown.addEventListener('mouseleave', function() {
+          closeTimer = setTimeout(function() {
+            wrapper.classList.remove('is-open');
+          }, CLOSE_DELAY);
+        });
+      });
+    }
+
+
+
+=== DROPDOWN СТИЛИ ===
+
+
+=== МОБИЛЬНОЕ МЕНЮ - ПОЛНАЯ ДИАГНОСТИКА ===
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:5:body {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:6:  padding-top: 70px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:7:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:8:
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:9:/* ========== ОСНОВНОЙ КОНТЕЙНЕР ========== */
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:10:.nav-beautiful {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:11:  position: fixed;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:12:  top: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:13:  left: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:14:  right: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:15:  z-index: 9999;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:19:  border-bottom: 1px solid rgba(124, 140, 255, 0.2);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:20:  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.3);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:21:  padding: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:22:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:23:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:24:.nav-beautiful__container {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:25:  max-width: 1280px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:26:  margin: 0 auto;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:27:  padding: 12px 20px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:28:  display: flex;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:29:  align-items: center;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:31:  gap: 20px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:32:  flex-wrap: wrap;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:33:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:34:
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:35:/* ========== LOGO ========== */
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:36:.nav-beautiful__logo {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:37:  display: flex;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:38:  align-items: center;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:39:  gap: 12px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:40:  text-decoration: none;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:41:  transition: transform 0.3s ease;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:42:  z-index: 10001;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:43:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:44:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:45:.nav-beautiful__logo:hover {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:46:  transform: translateY(-2px);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:47:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:48:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:49:.nav-beautiful__logo-img {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:50:  width: 40px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:51:  height: 40px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:52:  filter: drop-shadow(0 2px 8px rgba(124, 140, 255, 0.4));
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:53:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:54:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:55:.nav-beautiful__logo-text {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:56:  display: flex;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:57:  flex-direction: column;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:58:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:59:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:60:.nav-beautiful__logo-title {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:61:  font-size: 20px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:62:  font-weight: 700;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:63:  background: linear-gradient(135deg, #fff 0%, #e0e0ff 100%);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:64:  -webkit-background-clip: text;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:65:  -webkit-text-fill-color: transparent;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:66:  background-clip: text;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:67:  line-height: 1.2;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:68:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:69:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:70:.nav-beautiful__logo-slogan {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:71:  font-size: 10px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:72:  font-weight: 500;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:73:  color: rgba(124, 140, 255, 0.9);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:74:  letter-spacing: 0.3px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:75:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:76:
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:77:/* ========== МЕНЮ ========== */
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:78:.nav-beautiful__menu {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:79:  display: flex;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:80:  align-items: center;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:81:  gap: 12px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:82:  flex: 1;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:83:  justify-content: center;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:84:  flex-wrap: wrap;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:85:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:86:
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:87:/* ========== КНОПКИ МЕНЮ (КАК В ФУТЕРЕ) ========== */
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:88:.nav-beautiful__btn {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:89:  position: relative;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:90:  display: inline-flex;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:91:  align-items: center;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:92:  gap: 8px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:93:  padding: 10px 20px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:104:  overflow: hidden;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:105:  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:106:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:107:
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:108:/* Shimmer effect */
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:109:.nav-beautiful__btn::before {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:110:  content: '';
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:111:  position: absolute;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:112:  top: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:113:  left: -100%;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:114:  width: 100%;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:115:  height: 100%;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:116:  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15), transparent);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:117:  transition: left 0.6s ease;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:118:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:119:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:120:.nav-beautiful__btn:hover::before {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:121:  left: 100%;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:122:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:123:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:124:.nav-beautiful__btn:hover {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:125:  transform: translateY(-3px) scale(1.02);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:126:  background: linear-gradient(135deg, rgba(124, 140, 255, 0.2), rgba(76, 201, 240, 0.1));
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:127:  border-color: rgba(124, 140, 255, 0.5);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:128:  box-shadow: 0 8px 24px rgba(124, 140, 255, 0.3),
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:129:              0 4px 12px rgba(76, 201, 240, 0.2);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:130:  color: #fff;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:131:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:132:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:133:.nav-beautiful__btn:active {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:134:  transform: translateY(-1px) scale(1.01);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:135:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:136:
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:137:/* Иконка стрелки вниз */
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:138:.nav-beautiful__arrow {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:139:  display: inline-block;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:140:  width: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:141:  height: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:142:  border-left: 4px solid transparent;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:143:  border-right: 4px solid transparent;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:144:  border-top: 4px solid currentColor;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:145:  margin-left: 4px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:146:  transition: transform 0.3s ease;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:147:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:148:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:149:.nav-beautiful__dropdown-wrapper:hover .nav-beautiful__arrow,
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:150:.nav-beautiful__dropdown-wrapper.is-open .nav-beautiful__arrow {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:151:  transform: translateY(2px);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:152:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:153:
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:154:/* ========== DROPDOWN МЕНЮ ========== */
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:155:.nav-beautiful__dropdown-wrapper {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:156:  position: relative;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:157:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:158:
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:159:/* Увеличенный "мостик" между кнопкой и dropdown */
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:160:.nav-beautiful__dropdown-wrapper::after {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:161:  content: '';
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:162:  position: absolute;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:163:  top: 100%;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:164:  left: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:165:  right: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:166:  height: 20px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:167:  background: transparent;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:168:  z-index: 9998;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:169:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:170:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:171:.nav-beautiful__dropdown {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:172:  position: absolute;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:173:  top: calc(100% + 16px);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:174:  left: 50%;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:175:  transform: translateX(-50%) translateY(-10px) scale(0.98);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:176:  min-width: 320px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:188:  z-index: 10000;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:189:  border: 1px solid rgba(124, 140, 255, 0.2);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:190:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:191:
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:192:/* Открытие dropdown при наведении на wrapper */
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:193:.nav-beautiful__dropdown-wrapper:hover .nav-beautiful__dropdown,
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:194:.nav-beautiful__dropdown-wrapper:focus-within .nav-beautiful__dropdown,
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:195:.nav-beautiful__dropdown-wrapper.is-open .nav-beautiful__dropdown {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:196:  opacity: 1;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:197:  visibility: visible;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:198:  pointer-events: auto;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:199:  transform: translateX(-50%) translateY(0) scale(1);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:200:  transition: opacity 0.25s ease, visibility 0s linear 0s, transform 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:201:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:202:
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:203:/* Список в dropdown */
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:204:.nav-beautiful__dropdown-list {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:205:  list-style: none;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:206:  margin: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:207:  padding: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:208:  display: flex;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:209:  flex-direction: column;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:210:  gap: 6px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:211:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:212:
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:213:/* Элементы dropdown */
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:214:.nav-beautiful__dropdown-item {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:215:  display: flex;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:216:  align-items: center;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:217:  gap: 12px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:218:  padding: 12px 16px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:219:  border-radius: 12px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:222:  border: 1px solid transparent;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:223:  position: relative;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:224:  overflow: hidden;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:225:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:226:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:227:.nav-beautiful__dropdown-item::before {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:228:  content: '';
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:229:  position: absolute;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:230:  inset: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:231:  background: linear-gradient(135deg, rgba(124, 140, 255, 0.08), rgba(76, 201, 240, 0.08));
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:232:  border-radius: 12px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:233:  opacity: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:234:  transition: opacity 0.3s ease;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:235:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:236:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:237:.nav-beautiful__dropdown-item:hover::before {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:238:  opacity: 1;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:239:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:240:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:241:.nav-beautiful__dropdown-item:hover {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:242:  background: rgba(255, 255, 255, 0.05);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:243:  border-color: rgba(124, 140, 255, 0.4);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:244:  transform: translateX(6px);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:245:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:246:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:247:.nav-beautiful__dropdown-icon {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:248:  font-size: 20px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:249:  line-height: 1;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:250:  transition: transform 0.3s ease;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:251:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:252:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:253:.nav-beautiful__dropdown-item:hover .nav-beautiful__dropdown-icon {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:254:  transform: scale(1.15) rotate(5deg);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:255:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:256:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:257:.nav-beautiful__dropdown-text {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:258:  display: flex;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:259:  flex-direction: column;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:260:  gap: 2px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:261:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:262:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:263:.nav-beautiful__dropdown-title {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:264:  font-size: 14px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:265:  font-weight: 600;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:266:  color: #fff;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:267:  transition: color 0.2s ease;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:268:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:269:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:270:.nav-beautiful__dropdown-item:hover .nav-beautiful__dropdown-title {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:271:  color: rgba(124, 140, 255, 1);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:272:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:273:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:274:.nav-beautiful__dropdown-desc {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:275:  font-size: 12px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:276:  color: rgba(255, 255, 255, 0.65);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:277:  line-height: 1.3;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:278:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:279:
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:280:/* ========== CTA КНОПКА ========== */
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:281:.nav-beautiful__cta {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:282:  display: inline-flex;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:283:  align-items: center;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:284:  gap: 8px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:285:  padding: 12px 24px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:286:  background: linear-gradient(135deg, #7c8cff 0%, #4cc9f0 100%);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:297:  position: relative;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:298:  overflow: hidden;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:299:  z-index: 10001;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:300:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:301:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:302:.nav-beautiful__cta::before {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:303:  content: '';
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:304:  position: absolute;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:305:  top: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:306:  left: -100%;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:307:  width: 100%;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:308:  height: 100%;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:309:  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:310:  transition: left 0.6s ease;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:311:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:312:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:313:.nav-beautiful__cta:hover::before {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:314:  left: 100%;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:315:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:316:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:317:.nav-beautiful__cta:hover {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:318:  transform: translateY(-3px) scale(1.05);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:319:  box-shadow: 0 8px 32px rgba(124, 140, 255, 0.6),
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:320:              0 4px 16px rgba(76, 201, 240, 0.4),
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:321:              inset 0 1px 0 rgba(255, 255, 255, 0.3);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:322:  border-color: rgba(255, 255, 255, 0.5);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:323:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:324:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:325:.nav-beautiful__cta:active {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:326:  transform: translateY(-1px) scale(1.02);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:327:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:328:
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:329:/* ========== МОБИЛЬНОЕ МЕНЮ ========== */
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:330:.nav-beautiful__mobile-toggle {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:331:  display: none;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:332:  width: 44px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:333:  height: 44px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:334:  align-items: center;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:335:  justify-content: center;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:339:  cursor: pointer;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:340:  transition: all 0.3s ease;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:341:  z-index: 10001;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:342:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:343:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:344:.nav-beautiful__mobile-toggle:hover {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:345:  background: rgba(124, 140, 255, 0.2);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:346:  border-color: rgba(124, 140, 255, 0.5);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:347:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:348:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:349:.nav-beautiful__mobile-icon {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:350:  width: 24px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:351:  height: 2px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:352:  background: #fff;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:353:  position: relative;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:354:  transition: all 0.3s ease;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:355:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:356:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:357:.nav-beautiful__mobile-icon::before,
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:358:.nav-beautiful__mobile-icon::after {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:359:  content: '';
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:360:  position: absolute;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:361:  left: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:362:  width: 24px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:363:  height: 2px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:364:  background: #fff;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:365:  transition: all 0.3s ease;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:366:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:367:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:368:.nav-beautiful__mobile-icon::before {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:369:  top: -7px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:370:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:371:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:372:.nav-beautiful__mobile-icon::after {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:373:  top: 7px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:374:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:375:
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:376:/* Анимация бургера при открытии */
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:377:.nav-beautiful.open .nav-beautiful__mobile-icon {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:378:  background: transparent;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:379:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:380:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:381:.nav-beautiful.open .nav-beautiful__mobile-icon::before {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:382:  top: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:383:  transform: rotate(45deg);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:384:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:385:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:386:.nav-beautiful.open .nav-beautiful__mobile-icon::after {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:387:  top: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:388:  transform: rotate(-45deg);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:389:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:390:
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:391:/* ========== АДАПТИВНОСТЬ ========== */
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:392:@media (max-width: 1024px) {
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:393:  .nav-beautiful__menu {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:394:    gap: 8px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:395:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:396:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:397:  .nav-beautiful__btn {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:398:    padding: 8px 16px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:399:    font-size: 13px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:400:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:401:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:402:
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:403:@media (max-width: 768px) {
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:404:  .nav-beautiful__mobile-toggle {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:405:    display: flex;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:406:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:407:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:408:  .nav-beautiful__menu {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:409:    position: fixed;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:410:    top: 70px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:411:    left: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:412:    right: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:413:    bottom: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:419:    transform: translateX(-100%);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:420:    transition: transform 0.3s ease;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:421:    z-index: 9999;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:422:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:423:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:424:  .nav-beautiful.open .nav-beautiful__menu {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:425:    transform: translateX(0);
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:426:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:427:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:428:  .nav-beautiful__dropdown-wrapper {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:429:    width: 100%;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:430:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:431:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:432:  .nav-beautiful__btn {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:433:    width: 100%;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:434:    justify-content: space-between;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:435:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:436:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:437:  .nav-beautiful__dropdown {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:438:    position: static;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:439:    transform: none;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:440:    max-width: none;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:441:    margin-top: 8px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:442:    max-height: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:443:    overflow: hidden;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:444:    transition: max-height 0.3s ease, opacity 0.3s ease;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:445:    opacity: 0;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:446:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:447:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:448:  .nav-beautiful__dropdown-wrapper.open .nav-beautiful__dropdown {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:449:    max-height: 1000px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:450:    opacity: 1;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:451:    visibility: visible;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:452:    pointer-events: auto;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:453:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:454:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:455:  .nav-beautiful__logo-slogan {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:456:    display: none;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:457:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:458:  
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:459:  .nav-beautiful__cta {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:460:    width: 100%;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:461:    justify-content: center;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:462:    margin-top: 16px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:463:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:464:}
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:466:@media (max-width: 480px) {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:467:  body {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:468:    padding-top: 60px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:469:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:470:  
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:471:  .nav-beautiful__container {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:472:    padding: 10px 12px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:473:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:474:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:475:  .nav-beautiful__logo-img {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:476:    width: 32px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:477:    height: 32px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:478:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:479:
+> C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:480:  .nav-beautiful__logo-title {
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:481:    font-size: 16px;
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:482:  }
+  C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:483:}
+
+=== Z-INDEX И POSITIONING ===
+C:\Users\konfu\Desktop\Кролики\assets\css\mega-menu.css:180:  /* ✅ УДАЛЕНО: position: fixed - теперь управляется nav-fix.css */
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-fix.css:2:.nav-wrapper{position:relative;max-width:1200px;margin-inline:auto;padding-inline:16px}
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-fix.css:13:  padding-left: 1rem !important; /* ✅ Добавляем отступ слева */
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-fix.css:26:  margin-right: 0 !important; /* ✅ Убираем отступ справа */
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-fix.css:41:  margin-left: auto !important; /* ✅ CTA прижимается к правому краю */
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-fix.css:46:  position:absolute!important;
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-fix.css:47:  top:100%!important;
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-fix.css:48:  left:50%!important;
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-fix.css:51:  z-index:1000!important;
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-fix.css:56:  margin-top: 8px!important;
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-fix.css:61:@media (max-width:1024px){.mega-panel{left:0!important;transform:none!important;width:100%!important;border-radius:0 0 14px 14px}}
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-refactor.css:6:  position: relative;
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-refactor.css:13:  position: relative;
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-refactor.css:19:  padding-left: 1rem;
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-refactor.css:30:  margin-right: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-refactor.css:47:  margin-left: auto;
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-refactor.css:52:  position: absolute;
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-refactor.css:53:  top: 100%;
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-refactor.css:54:  left: 50%;
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-refactor.css:57:  z-index: 1000;
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-refactor.css:61:  margin-top: 8px;
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-refactor.css:78:    left: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-refactor.css:117:    padding-top: max(1rem, env(safe-area-inset-top));
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-refactor.css:177:  position: relative;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:2:/* Версия: 2025-10-02-FIXED - Исправлены z-index и hover */
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:6:  padding-top: 70px;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:11:  position: fixed;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:12:  top: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:13:  left: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:14:  right: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:15:  z-index: 9999;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:42:  z-index: 10001;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:89:  position: relative;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:111:  position: absolute;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:112:  top: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:113:  left: -100%;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:121:  left: 100%;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:142:  border-left: 4px solid transparent;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:143:  border-right: 4px solid transparent;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:144:  border-top: 4px solid currentColor;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:145:  margin-left: 4px;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:156:  position: relative;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:162:  position: absolute;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:163:  top: 100%;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:164:  left: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:165:  right: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:168:  z-index: 9998;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:172:  position: absolute;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:173:  top: calc(100% + 16px);
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:174:  left: 50%;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:188:  z-index: 10000;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:223:  position: relative;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:229:  position: absolute;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:297:  position: relative;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:299:  z-index: 10001;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:304:  position: absolute;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:305:  top: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:306:  left: -100%;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:314:  left: 100%;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:341:  z-index: 10001;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:353:  position: relative;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:360:  position: absolute;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:361:  left: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:369:  top: -7px;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:373:  top: 7px;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:382:  top: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:387:  top: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:409:    position: fixed;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:410:    top: 70px;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:411:    left: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:412:    right: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:421:    z-index: 9999;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:438:    position: static;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:441:    margin-top: 8px;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:462:    margin-top: 16px;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:468:    padding-top: 60px;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:6:  position: sticky;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:7:  top: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:8:  left: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:9:  right: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:10:  z-index: 1000;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:31:  position: relative;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:89:  position: relative;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:128:  border-left: 4px solid transparent;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:129:  border-right: 4px solid transparent;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:130:  border-top: 4px solid currentColor;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:131:  margin-left: 2px;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:142:  margin-left: auto;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:173:  position: absolute;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:174:  top: 100%;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:175:  left: 50%;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:185:  margin-top: 8px;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:293:  position: relative;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:300:  position: absolute;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:301:  left: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:309:  top: -7px;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:313:  top: 7px;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:323:  top: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:328:  top: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:363:    position: fixed;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:364:    top: 56px;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:365:    left: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:366:    right: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:399:    margin-left: auto;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:403:    position: static;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:407:    margin-top: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-v2.css:434:    margin-left: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:8:  position: sticky;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:9:  top: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:10:  z-index: 50;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:27:  position: relative;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:34:  position: relative; /* ✅ Якорь для абсолютного позиционирования мега-панелей */
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:45:  /* НЕТ margin-right: auto - не отталкиваем меню */
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:50:  /* ✅ УДАЛЕНО: margin-left: auto - используем justify-content: space-between */
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:66:  position: relative;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:97:  position: relative;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:139:  position: absolute;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:140:  top: calc(100% + 0.5rem);
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:141:  right: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:150:  z-index: 100;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:206:  /* ✅ УДАЛЕНО: margin-left: auto - не нужен для иконки */
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:252:  margin-left: 1rem;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:301:    position: fixed;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:302:    top: 70px;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:303:    right: 1rem;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:304:    left: 1rem;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:311:    z-index: 1000;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:344:    position: static;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:353:    margin-top: 0.5rem;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:365:    margin-top: 1rem;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:366:    /* ✅ УДАЛЕНО: margin-left: auto - не нужен в мобильной версии */
+
+
+=== ВЫСОТА И OVERFLOW АНАЛИЗ ===
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:51:  height: 40px;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:67:  line-height: 1.2;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:104:  overflow: hidden;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:115:  height: 100%;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:141:  height: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:166:  height: 20px;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:224:  overflow: hidden;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:249:  line-height: 1;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:277:  line-height: 1.3;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:298:  overflow: hidden;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:308:  height: 100%;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:333:  height: 44px;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:351:  height: 2px;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:363:  height: 2px;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:442:    max-height: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:443:    overflow: hidden;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:449:    max-height: 1000px;
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:477:    height: 32px;
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:24:  min-height: 100vh;
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:25:  min-height: 100dvh;
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:33:  height: auto;
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:51:    min-height: 60px;
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:56:    height: 36px;
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:72:    height: calc(100vh - 60px);
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:73:    height: calc(100dvh - 60px);
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:100:    max-height: 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:101:    overflow: hidden;
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:107:    max-height: 1000px;
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:131:  line-height: 1.2;
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:139:  line-height: 1.6;
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:206:p { font-size: clamp(14px, 3vw, 18px); line-height: 1.7; }
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:226:  line-height: 1.6;
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:239:  min-height: 48px;
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:298:    min-height: 44px;
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:313:    height: 48px;
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:319:    height: calc(100vh - 48px);
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:365:    height: 48px;
+
+=== VIEWPORT И CALC ===
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:38:  padding: calc(var(--spacing-unit) * 15) 0 calc(var(--spacing-unit) * 12);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:80:  gap: calc(var(--spacing-unit) * 1.5);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:88:  margin: 0 auto calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:109:  margin-bottom: calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:120:  margin-bottom: calc(var(--spacing-unit) * 6);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:130:  gap: calc(var(--spacing-unit) * 6);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:138:  gap: calc(var(--spacing-unit) * 1);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:162:  padding: calc(var(--spacing-unit) * 10) 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:172:  padding: 0 calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:181:  margin-bottom: calc(var(--spacing-unit) * 8);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:186:  padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:197:  margin-bottom: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:204:  margin-bottom: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:227:  gap: calc(var(--spacing-unit) * 4);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:235:  padding: calc(var(--spacing-unit) * 4);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:280:  margin-bottom: calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:318:  margin-bottom: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:326:  margin-bottom: calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:332:  margin: 0 0 calc(var(--spacing-unit) * 3) 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:338:  gap: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:339:  padding: calc(var(--spacing-unit) * 1.5);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:342:  margin-bottom: calc(var(--spacing-unit) * 1.5);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:365:  padding: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:379:  padding: calc(var(--spacing-unit) * 8) 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:384:  gap: calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:385:  padding: calc(var(--spacing-unit) * 4);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:404:  margin-bottom: calc(var(--spacing-unit) * 4);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:425:  margin-bottom: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:433:  margin-bottom: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:453:  gap: calc(var(--spacing-unit) * 4);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:471:  gap: calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:495:  padding: calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:511:  margin-bottom: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:519:  margin-bottom: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:524:  gap: calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:529:  padding: calc(var(--spacing-unit) * 1) calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:552:  gap: calc(var(--spacing-unit) * 4);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:559:  padding: calc(var(--spacing-unit) * 4);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:587:  margin-bottom: calc(var(--spacing-unit) * 4);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:588:  padding-bottom: calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:595:  gap: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:606:  margin-bottom: calc(var(--spacing-unit) * 4);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:617:  margin-bottom: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:618:  padding-left: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:634:  padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:635:  padding-left: calc(var(--spacing-unit) * 4);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:636:  margin-bottom: calc(var(--spacing-unit) * 1);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:648:  left: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:674:  gap: calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:681:  padding: calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:693:  margin-bottom: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:700:  margin-bottom: calc(var(--spacing-unit) * 1.5);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:707:  margin-bottom: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:708:  padding-bottom: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:713:  padding: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:721:  margin-bottom: calc(var(--spacing-unit) * 1);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:733:  padding-left: calc(var(--spacing-unit) * 2.5);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:734:  margin-bottom: calc(var(--spacing-unit) * 0.75);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:759:  gap: calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:760:  margin-bottom: calc(var(--spacing-unit) * 4);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:766:  gap: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:767:  padding: calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:793:  margin-bottom: calc(var(--spacing-unit) * 1);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:807:  padding: calc(var(--spacing-unit) * 1.5) calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:830:  padding: calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:860:  gap: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:879:  gap: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:880:  padding: calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:929:  padding: 0 calc(var(--spacing-unit) * 3) calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:930:  padding-left: calc(var(--spacing-unit) * 7);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:949:  margin-bottom: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:966:  padding: calc(var(--spacing-unit) * 12) 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:974:  padding: calc(var(--spacing-unit) * 6);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:984:  gap: calc(var(--spacing-unit) * 6);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:1009:  margin-bottom: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:1020:  margin-bottom: calc(var(--spacing-unit) * 4);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:1025:  gap: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:1056:  gap: calc(var(--spacing-unit) * 1.5);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:1057:  padding: calc(var(--spacing-unit) * 2) calc(var(--spacing-unit) * 4);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:1069:  padding: calc(var(--spacing-unit) * 2.5) calc(var(--spacing-unit) * 5);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:1106:    padding: calc(var(--spacing-unit) * 12) 0 calc(var(--spacing-unit) * 10);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:1111:    gap: calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:1126:    padding: calc(var(--spacing-unit) * 10) 0 calc(var(--spacing-unit) * 8);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:1130:    gap: calc(var(--spacing-unit) * 4);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:1134:    padding: calc(var(--spacing-unit) * 8) 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:1138:    margin-bottom: calc(var(--spacing-unit) * 6);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:1145:    gap: calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:1151:    padding: calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:1182:    padding-left: calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:1194:    gap: calc(var(--spacing-unit) * 1);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:1203:    gap: calc(var(--spacing-unit) * 3);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:1207:    padding: calc(var(--spacing-unit) * 6) 0;
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:1211:    padding: 0 calc(var(--spacing-unit) * 2);
+C:\Users\konfu\Desktop\Кролики\assets\css\guarantees-page.css:1218:    padding: calc(var(--spacing-unit) * 2.5);
+C:\Users\konfu\Desktop\Кролики\assets\css\main.css:325:  left: calc(-2.5rem + 1rem + 1px - 6px);
+C:\Users\konfu\Desktop\Кролики\assets\css\main.css:453:  top: calc(100% + 0.5rem);
+C:\Users\konfu\Desktop\Кролики\assets\css\mega-menu.css:399:    max-height: calc(100vh - 100px);
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-critical-fix.css:25:  min-height: 100vh;
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-critical-fix.css:26:  min-height: 100dvh; /* Dynamic viewport для мобильных */
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-critical-fix.css:94:    height: calc(100vh - 56px);
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-critical-fix.css:95:    height: calc(100dvh - 56px); /* Dynamic viewport */
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-critical-fix.css:188:    height: calc(100vh - 48px);
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-critical-fix.css:189:    height: calc(100dvh - 48px);
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-critical-fix.css:260:    height: calc(100vh - 56px);
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-critical-fix.css:261:    height: calc(100dvh - 56px);
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-critical-fix.css:290:    height: calc(100vh - 48px);
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-critical-fix.css:291:    height: calc(100dvh - 48px);
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-critical-fix.css:348:  padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:24:  min-height: 100vh;
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:25:  min-height: 100dvh;
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:72:    height: calc(100vh - 60px);
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:73:    height: calc(100dvh - 60px);
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:292:  padding-bottom: calc(2rem + env(safe-area-inset-bottom));
+C:\Users\konfu\Desktop\Кролики\assets\css\mobile-responsive-final.css:319:    height: calc(100vh - 48px);
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-fix.css:36:  max-width: calc(100% - 200px) !important; /* ✅ Ограничиваем ширину для CTA */
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-refactor.css:42:  max-width: calc(100% - 200px);
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-refactor.css:93:    max-width: calc(100% - 150px);
+C:\Users\konfu\Desktop\Кролики\assets\css\nav-refactor.css:106:    max-width: calc(100% - 120px);
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation-beautiful.css:173:  top: calc(100% + 16px);
+C:\Users\konfu\Desktop\Кролики\assets\css\navigation.css:140:  top: calc(100% + 0.5rem);
+C:\Users\konfu\Desktop\Кролики\assets\css\responsive-extreme.css:228:        min-height: 100vh;
+C:\Users\konfu\Desktop\Кролики\assets\css\responsive-extreme.css:271:        padding-top: calc(env(safe-area-inset-top) + 0.5rem);
+C:\Users\konfu\Desktop\Кролики\assets\css\ultimate-responsive.css:23:  min-height: 100vh;
+C:\Users\konfu\Desktop\Кролики\assets\css\ultimate-responsive.css:24:  min-height: 100dvh;
+C:\Users\konfu\Desktop\Кролики\assets\css\ultimate-responsive.css:153:    height: calc(100vh - 60px);
+C:\Users\konfu\Desktop\Кролики\assets\css\ultimate-responsive.css:154:    height: calc(100dvh - 60px);
