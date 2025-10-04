@@ -966,3 +966,48 @@ main {
   cursor: pointer;
   z-index: 1001;
 }
+
+/* About Cards Grid - правильное выравнивание для desktop */
+.about-cards-grid {
+  display: grid;
+  gap: 2rem;
+  align-items: start; /* Выравнивание по верху, НЕ stretch */
+}
+
+.about-cards-grid > .card {
+  height: 100%; /* Все карточки одинаковой высоты */
+}
+
+/* Mobile: 1 column */
+@media (max-width: 767px) {
+  .about-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .about-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch; /* На tablet растягиваем */
+  }
+  
+  .about-cards-grid > .card:last-child {
+    grid-column: 1 / -1;
+    max-width: 50%;
+    margin: 0 auto;
+  }
+}
+
+/* Desktop: 3 columns равной ширины */
+@media (min-width: 1024px) {
+  .about-cards-grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: stretch; /* Растягиваем все на одинаковую высоту */
+  }
+  
+  .about-cards-grid > .card {
+    display: flex;
+    flex-direction: column;
+  }
+}
