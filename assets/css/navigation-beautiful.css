@@ -439,9 +439,11 @@ body {
   }
 
   .nav-beautiful__dropdown {
-    position: static;
-    transform: none;
+    position: static !important;
+    transform: none !important;
     max-width: none;
+    left: auto !important;
+    top: auto !important;
     margin-top: 8px;
     max-height: 0;
     overflow: hidden;
@@ -451,7 +453,11 @@ body {
     transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s;
   }
 
-  .nav-beautiful__dropdown-wrapper.open .nav-beautiful__dropdown {
+  .nav-beautiful__dropdown-wrapper.open .nav-beautiful__dropdown,
+  .nav-beautiful__dropdown-wrapper:hover .nav-beautiful__dropdown,
+  .nav-beautiful__dropdown-wrapper.is-open .nav-beautiful__dropdown {
+    position: static !important;
+    transform: none !important;
     max-height: 1000px;
     opacity: 1;
     visibility: visible;

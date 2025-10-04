@@ -94,10 +94,14 @@ img, video, iframe, svg {
   }
 
   .nav-beautiful__dropdown {
-    position: static;
-    transform: none;
+    position: static !important;
+    transform: none !important;
+    left: auto !important;
+    top: auto !important;
     margin-top: 8px;
     max-height: 0;
+    max-width: none !important;
+    min-width: auto !important;
     overflow: hidden;
     opacity: 0;
     visibility: hidden;
@@ -105,7 +109,14 @@ img, video, iframe, svg {
     transition: max-height 0.3s ease, opacity 0.3s ease, visibility 0s linear 0.3s;
   }
 
-  .nav-beautiful__dropdown-wrapper.open .nav-beautiful__dropdown {
+  .nav-beautiful__dropdown-wrapper.open .nav-beautiful__dropdown,
+  .nav-beautiful__dropdown-wrapper:hover .nav-beautiful__dropdown,
+  .nav-beautiful__dropdown-wrapper.is-open .nav-beautiful__dropdown,
+  .nav-beautiful__dropdown-wrapper:focus-within .nav-beautiful__dropdown {
+    position: static !important;
+    transform: none !important;
+    left: auto !important;
+    top: auto !important;
     max-height: 1000px;
     opacity: 1;
     visibility: visible;
