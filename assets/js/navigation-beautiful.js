@@ -112,24 +112,27 @@
           
           console.log(`🖱️ DEBUG: КЛИК на dropdown ${index + 1}`);
           
-          // Переключить состояние dropdown
-          const isOpen = wrapper.classList.contains('open');
+          // Проверяем оба класса для совместимости
+          const isOpen = wrapper.classList.contains('open') || wrapper.classList.contains('is-open');
           console.log(`📦 DEBUG: Состояние БЫЛО: ${isOpen ? 'открыто' : 'закрыто'}`);
           
           // Закрыть все другие dropdown
           dropdownWrappers.forEach(other => {
             if (other !== wrapper) {
               other.classList.remove('open');
+              other.classList.remove('is-open'); // Убираем оба класса
             }
           });
           
           // Переключить текущий
           if (isOpen) {
             wrapper.classList.remove('open');
-            console.log(`📦 DEBUG: Класс .open УДАЛЕН`);
+            wrapper.classList.remove('is-open'); // Убираем оба класса
+            console.log(`📦 DEBUG: Классы .open и .is-open УДАЛЕНЫ`);
           } else {
             wrapper.classList.add('open');
-            console.log(`📦 DEBUG: Класс .open ДОБАВЛЕН`);
+            wrapper.classList.add('is-open'); // Добавляем оба класса для совместимости
+            console.log(`📦 DEBUG: Классы .open и .is-open ДОБАВЛЕНЫ`);
             
             // Проверка computed styles
             const dropdown = wrapper.querySelector('.nav-beautiful__dropdown');
