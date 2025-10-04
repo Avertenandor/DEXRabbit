@@ -1,0 +1,24 @@
+{
+  "timestamp": "2025-10-04T04:30:13.443Z",
+  "images": {
+    "original_size_mb": "10.46",
+    "optimized_size_mb": "2.37",
+    "webp_size_mb": "1.58",
+    "savings_percent": "77"
+  },
+  "lazy_loading": {
+    "coverage_percent": "100",
+    "total": 158,
+    "with_lazy": 158
+  },
+  "dimensions": {
+    "coverage_percent": "22",
+    "total": 158,
+    "with_dimensions": 35
+  },
+  "webp": {
+    "picture_elements": 58,
+    "webp_files": 33
+  },
+  "readiness_percent": "76"
+}
