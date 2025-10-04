@@ -34,8 +34,8 @@ module.exports = defineConfig({
     /* Скриншоты при падении */
     screenshot: 'only-on-failure',
     
-    /* Видео при падении */
-    video: 'retain-on-failure',
+    /* Видео отключено для скорости */
+    video: 'off',
     
     /* Trace при падении */
     trace: 'on-first-retry',
