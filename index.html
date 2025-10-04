@@ -103,7 +103,7 @@
       <div class="nav-beautiful__container">
         <!-- Logo -->
         <a href="/" class="nav-beautiful__logo">
-          <img src="/favicon.svg" alt="DEXRabbit" class="nav-beautiful__logo-img">
+          <img loading="lazy" decoding="async" src="/favicon.svg" alt="DEXRabbit" class="nav-beautiful__logo-img">
           <div class="nav-beautiful__logo-text">
             <span class="nav-beautiful__logo-title">DEXRabbit</span>
             <span class="nav-beautiful__logo-slogan">Твой пассивный доход на кроликах</span>
@@ -752,7 +752,7 @@
 
           <div class="gallery-grid">
             <div class="gallery-item" onclick="openLightbox(this)">
-              <img
+              <img decoding="async"
                 src="/gallery/photo_1_2025-09-28_18-05-40.jpg"
                 alt="Белый кролик породы Новозеландская"
                 loading="lazy"
@@ -761,7 +761,7 @@
             </div>
 
             <div class="gallery-item" onclick="openLightbox(this)">
-              <img
+              <img decoding="async"
                 src="/gallery/photo_2_2025-09-28_18-05-40.jpg"
                 alt="Серый кролик Фландр"
                 loading="lazy"
@@ -770,7 +770,7 @@
             </div>
 
             <div class="gallery-item" onclick="openLightbox(this)">
-              <img
+              <img decoding="async"
                 src="/gallery/photo_3_2025-09-28_18-07-54.jpg"
                 alt="Кролики в вольере"
                 loading="lazy"
@@ -779,7 +779,7 @@
             </div>
 
             <div class="gallery-item" onclick="openLightbox(this)">
-              <img
+              <img decoding="async"
                 src="/gallery/photo_4_2025-09-28_18-05-40.jpg"
                 alt="Калифорнийский кролик"
                 loading="lazy"
@@ -788,7 +788,7 @@
             </div>
 
             <div class="gallery-item" onclick="openLightbox(this)">
-              <img
+              <img decoding="async"
                 src="/gallery/photo_5_2025-09-28_18-07-54.jpg"
                 alt="Кормление кроликов"
                 loading="lazy"
@@ -797,12 +797,12 @@
             </div>
 
             <div class="gallery-item" onclick="openLightbox(this)">
-              <img src="/gallery/photo_6_2025-09-28_18-05-40.jpg" alt="Крольчата" loading="lazy" />
+              <img decoding="async" src="/gallery/photo_6_2025-09-28_18-05-40.jpg" alt="Крольчата" loading="lazy" />
               <div class="gallery-caption">Малыши в возрасте 3 недель</div>
             </div>
 
             <div class="gallery-item" onclick="openLightbox(this)">
-              <img
+              <img decoding="async"
                 src="/gallery/photo_7_2025-09-28_18-07-54.jpg"
                 alt="Племенной кролик"
                 loading="lazy"
@@ -811,7 +811,7 @@
             </div>
 
             <div class="gallery-item" onclick="openLightbox(this)">
-              <img
+              <img decoding="async"
                 src="/gallery/photo_8_2025-09-28_18-05-40.jpg"
                 alt="Рекс кролик"
                 loading="lazy"
@@ -1836,7 +1836,7 @@
             <div class="investor-card">
               <div class="investor-badge">VIP инвестор</div>
               <div class="avatar investor-avatar" data-investor="natder">
-                <img
+                <img decoding="async"
                   class="avatar__img"
                   src="/assets/img/avatars/natalia.jpg"
                   alt="Наталья"
@@ -1892,7 +1892,7 @@
             <div class="investor-card">
               <div class="investor-badge">VIP инвестор</div>
               <div class="avatar investor-avatar avatar--gradient" data-investor="vlad">
-                <img
+                <img decoding="async"
                   class="avatar__img"
                   src="/assets/img/avatars/vlad.png"
                   alt="Влад"
@@ -1952,7 +1952,7 @@
             <div class="investor-card">
               <div class="investor-badge">VIP инвестор</div>
               <div class="avatar investor-avatar" data-investor="alexander">
-                <img
+                <img decoding="async"
                   class="avatar__img"
                   src="/assets/img/avatars/alexander.jpg"
                   alt="Александр"
@@ -2278,7 +2278,7 @@
           <div class="footer-column">
             <div class="footer-logo">
               <a href="/" class="footer-logo-link">
-                <img src="/favicon.svg" alt="DEXRabbit" width="40" height="40">
+                <img loading="lazy" decoding="async" src="/favicon.svg" alt="DEXRabbit" width="40" height="40">
                 <span>DEXRabbit</span>
               </a>
             </div>
@@ -2884,7 +2884,7 @@
         lightbox.className = 'lightbox active';
         lightbox.innerHTML = `
                 <span class="lightbox-close" onclick="closeLightbox(this)">&times;</span>
-                <img src="${img.src}" alt="${img.alt}">
+                <img loading="lazy" decoding="async" src="${img.src}" alt="${img.alt}">
             `;
         document.body.appendChild(lightbox);
         lightbox.onclick = function (e) {
