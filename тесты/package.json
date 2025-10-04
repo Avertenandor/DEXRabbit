@@ -13,9 +13,17 @@
     "test:headed": "playwright test --headed",
     "test:debug": "playwright test --debug",
     "report": "playwright show-report",
-    "install:browsers": "playwright install"
+    "install:browsers": "playwright install",
+    
+    "_comment": "=== ПРОМЫШЛЕННЫЕ ТЕСТЫ ===",
+    "test:industrial": "playwright test tests-industrial/ --config=playwright.industrial.config.js --project=iphone-12-industrial",
+    "test:industrial:all": "playwright test tests-industrial/ --config=playwright.industrial.config.js",
+    "test:investor": "playwright test tests-industrial/user-journey-investor.spec.js --config=playwright.industrial.config.js --project=iphone-12-industrial",
+    "test:buyer": "playwright test tests-industrial/user-journey-buyer.spec.js --config=playwright.industrial.config.js --project=iphone-12-industrial",
+    "test:industrial:samsung": "playwright test tests-industrial/ --config=playwright.industrial.config.js --project=samsung-galaxy-s21-industrial",
+    "test:industrial:iphone14": "playwright test tests-industrial/ --config=playwright.industrial.config.js --project=iphone-14-pro-max-industrial"
   },
-  "keywords": ["playwright", "e2e", "mobile", "testing", "responsive"],
+  "keywords": ["playwright", "e2e", "mobile", "testing", "responsive", "industrial"],
   "author": "DEXRabbit Team",
   "license": "MIT",
   "devDependencies": {
