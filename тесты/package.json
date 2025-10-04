@@ -1,0 +1,24 @@
+{
+  "name": "dexrabbit-mobile-tests",
+  "version": "1.0.0",
+  "description": "Комплексное E2E и мобильное тестирование для DEXRabbit",
+  "scripts": {
+    "test": "playwright test",
+    "test:mobile": "playwright test tests/mobile-responsive.spec.js",
+    "test:dropdown": "playwright test tests/dropdown.spec.js",
+    "test:navigation": "playwright test tests/navigation.spec.js",
+    "test:e2e": "playwright test tests/e2e-user-journey.spec.js",
+    "test:console": "playwright test tests/console-monitor.spec.js",
+    "test:all": "playwright test --reporter=html",
+    "test:headed": "playwright test --headed",
+    "test:debug": "playwright test --debug",
+    "report": "playwright show-report",
+    "install:browsers": "playwright install"
+  },
+  "keywords": ["playwright", "e2e", "mobile", "testing", "responsive"],
+  "author": "DEXRabbit Team",
+  "license": "MIT",
+  "devDependencies": {
+    "@playwright/test": "^1.40.0"
+  }
+}
