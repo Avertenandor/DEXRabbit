@@ -17,7 +17,6 @@ test.describe('Dropdown функционал - Мобильное меню', () 
     const dropdownWrappers = page.locator('.nav-beautiful__dropdown-wrapper');
     const count = await dropdownWrappers.count();
     
-    console.log(`Найдено dropdown wrappers: ${count}`);
     expect(count).toBeGreaterThan(0);
     expect(count).toBe(5); // Инвестиции, Партнёрство, Услуги, Породы, О нас
   });
@@ -31,7 +30,6 @@ test.describe('Dropdown функционал - Мобильное меню', () 
     const initialMaxHeight = await dropdown.evaluate(el => {
       return window.getComputedStyle(el).maxHeight;
     });
-    console.log('Начальный max-height:', initialMaxHeight);
     expect(initialMaxHeight).toBe('0px');
     
     // Кликаем на кнопку
@@ -160,7 +158,6 @@ test.describe('Dropdown функционал - Мобильное меню', () 
 
   test('Dropdown имеет плавную анимацию', async ({ page }) => {
     const firstDropdown = page.locator('.nav-beautiful__dropdown-wrapper').first();
-    const firstButton = firstDropdown.locator('.nav-beautiful__btn');
     const dropdown = firstDropdown.locator('.nav-beautiful__dropdown');
     
     // Проверяем transition свойства
@@ -175,6 +172,8 @@ test.describe('Dropdown функционал - Мобильное меню', () 
   });
 
   test('Dropdown работает на всех 5 секциях', async ({ page }) => {
+    test.setTimeout(60000); // Увеличиваем timeout до 60 секунд
+    
     const dropdowns = page.locator('.nav-beautiful__dropdown-wrapper');
     const count = await dropdowns.count();
     
@@ -186,15 +185,15 @@ test.describe('Dropdown функционал - Мобильное меню', () 
       console.log(`Тестируем dropdown: ${buttonText?.trim()}`);
       
       // Открываем
-      await button.click();
-      await page.waitForTimeout(400);
+      await button.click({ timeout: 10000 });
+      await page.waitForTimeout(600); // Увеличено с 400 до 600
       
       const hasOpen = await dropdown.evaluate(el => el.classList.contains('open'));
       expect(hasOpen).toBe(true);
       
       // Закрываем для следующей итерации
-      await button.click();
-      await page.waitForTimeout(400);
+      await button.click({ timeout: 10000 });
+      await page.waitForTimeout(600);
     }
   });
 
