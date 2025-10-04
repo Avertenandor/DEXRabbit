@@ -418,6 +418,7 @@ body {
     backdrop-filter: blur(40px);
     padding: 20px;
     gap: 12px;
+    overflow-x: hidden;  /* Запрет горизонтального скролла */
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     transform: translateX(-100%);
