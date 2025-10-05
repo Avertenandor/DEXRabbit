@@ -1362,7 +1362,7 @@
             padding: 2rem 1.5rem;
             position: relative;
             transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
-            overflow: hidden;
+            overflow: visible; /* Позволяем тени и эффектам быть видимыми */
           }
 
           .step-card::before {
@@ -1396,8 +1396,8 @@
 
           .step-number {
             position: absolute;
-            top: -15px;
-            right: 20px;
+            top: 16px; /* ВНУТРИ карточки, а не снаружи */
+            right: 16px;
             width: 48px;
             height: 48px;
             background: linear-gradient(135deg, #7c8cff, #4cc9f0);
@@ -1409,7 +1409,7 @@
             font-weight: 700;
             color: white;
             box-shadow: 0 8px 20px rgba(124, 140, 255, 0.4);
-            z-index: 2;
+            z-index: 10; /* Поверх контента карточки */
           }
 
           .step-icon {

@@ -60,23 +60,26 @@
 /* === CARDS GRID === */
 .wallet-cards-grid {
   display: grid;
-  gap: clamp(24px, 4vw, 40px); /* Увеличенный gap для предотвращения перекрытия */
+  grid-template-columns: 1fr; /* ВСЕГДА одна колонка (вертикально) */
+  gap: clamp(24px, 4vw, 32px);
   margin-bottom: clamp(32px, 4vw, 48px);
   position: relative;
   z-index: 1;
 }
 
-/* Mobile: 1 column */
+/* Mobile: уже 1 column по умолчанию */
 @media (max-width: 767px) {
   .wallet-cards-grid {
-    grid-template-columns: 1fr;
+    gap: 20px; /* Меньший gap на mobile */
   }
 }
 
-/* Tablet & Desktop: 2 columns */
+/* Desktop: остаётся 1 column, но с большим gap */
 @media (min-width: 768px) {
   .wallet-cards-grid {
-    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px; /* Ограничиваем ширину для удобства чтения */
+    margin-left: auto;
+    margin-right: auto;
   }
 }
 
