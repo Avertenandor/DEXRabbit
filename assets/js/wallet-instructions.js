@@ -124,4 +124,30 @@ if (typeof module !== 'undefined' && module.exports) {
   module.exports = { copyContractAddress, showNotification };
 }
 
-console.log('✅ Wallet instructions script loaded');
+// === ИСПРАВЛЕНИЕ PASSIVE EVENT LISTENERS WARNINGS ===
+// Добавляем touch-action для предотвращения warnings
+document.addEventListener('DOMContentLoaded', () => {
+  // Находим все интерактивные элементы в виджетах
+  const interactiveElements = document.querySelectorAll(
+    '.copy-btn-mini, .wallet-card, .step-item'
+  );
+  
+  interactiveElements.forEach(element => {
+    // Добавляем CSS свойство для оптимизации touch events
+    element.style.touchAction = 'manipulation';
+  });
+  
+  console.log('✅ Wallet instructions: Touch optimization applied');
+});
+
+// Предотвращаем passive warnings для touch events
+if ('ontouchstart' in window) {
+  // Для мобильных устройств оптимизируем обработку touch
+  document.querySelectorAll('.wallet-card').forEach(card => {
+    card.addEventListener('touchstart', function() {
+      // Пустой обработчик для оптимизации
+    }, { passive: true });
+  });
+}
+
+console.log('✅ Wallet instructions script loaded (v2.0 - optimized)');

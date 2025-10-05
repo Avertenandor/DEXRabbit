@@ -2,6 +2,11 @@
  * 💼 Wallet Instructions Widget Styles
  * Красивые виджеты для инструкций по добавлению токена
  * Responsive: Mobile, Tablet, Desktop
+ * Z-INDEX HIERARCHY:
+ * - Base layer: 0 (background effects)
+ * - Content layer: 1 (cards, text)
+ * - Interactive: 2 (buttons, hover)
+ * - Notifications: 10000 (top level)
  */
 
 /* === SECTION CONTAINER === */
@@ -12,6 +17,9 @@
   border: 2px solid rgba(124, 140, 255, 0.3);
   border-radius: 24px;
   box-shadow: 0 12px 48px rgba(124, 140, 255, 0.2);
+  position: relative;
+  isolation: isolate; /* Создаём новый stacking context */
+  overflow: visible; /* Позволяем hover эффектам выходить за границы */
 }
 
 /* === HEADER === */
@@ -52,8 +60,10 @@
 /* === CARDS GRID === */
 .wallet-cards-grid {
   display: grid;
-  gap: clamp(20px, 3vw, 32px);
+  gap: clamp(24px, 4vw, 40px); /* Увеличенный gap для предотвращения перекрытия */
   margin-bottom: clamp(32px, 4vw, 48px);
+  position: relative;
+  z-index: 1;
 }
 
 /* Mobile: 1 column */
@@ -78,7 +88,9 @@
   border: 2px solid;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   position: relative;
-  overflow: hidden;
+  overflow: visible; /* Позволяем shadow выходить за границы */
+  isolation: isolate; /* Новый stacking context для карточки */
+  z-index: 1; /* Content layer */
 }
 
 /* Trust Wallet specific */
@@ -96,6 +108,7 @@
   height: 200%;
   background: radial-gradient(circle, rgba(124, 140, 255, 0.1) 0%, transparent 70%);
   pointer-events: none;
+  z-index: -1; /* Behind content */
 }
 
 /* SafePal specific */
@@ -113,6 +126,7 @@
   height: 200%;
   background: radial-gradient(circle, rgba(76, 201, 240, 0.1) 0%, transparent 70%);
   pointer-events: none;
+  z-index: -1; /* Behind content */
 }
 
 /* Hover effect */
@@ -120,11 +134,13 @@
   transform: translateY(-4px);
   box-shadow: 0 16px 40px rgba(124, 140, 255, 0.3);
   border-color: rgba(124, 140, 255, 0.5);
+  z-index: 2; /* Поднимаем выше при hover */
 }
 
 .safepal-card:hover {
   box-shadow: 0 16px 40px rgba(76, 201, 240, 0.3);
   border-color: rgba(76, 201, 240, 0.5);
+  z-index: 2; /* Поднимаем выше при hover */
 }
 
 /* === CARD HEADER === */
@@ -134,7 +150,7 @@
   gap: 16px;
   margin-bottom: clamp(24px, 3vw, 32px);
   position: relative;
-  z-index: 1;
+  z-index: 2; /* Выше background effects */
 }
 
 .wallet-icon {
@@ -177,7 +193,7 @@
 /* === STEPS === */
 .wallet-steps {
   position: relative;
-  z-index: 1;
+  z-index: 2; /* Выше background effects */
 }
 
 .step-item {
@@ -331,6 +347,7 @@
   align-items: center;
   justify-content: center;
   transition: all 0.2s ease;
+  z-index: 3; /* Интерактивный элемент - выше всего */
 }
 
 .copy-btn-mini:hover {
@@ -388,6 +405,9 @@
   border: 2px solid rgba(250, 204, 21, 0.4);
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(250, 204, 21, 0.15);
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
 }
 
 .warning-header {
@@ -422,6 +442,9 @@
   border: 2px solid rgba(74, 222, 128, 0.3);
   border-radius: 16px;
   box-shadow: 0 8px 24px rgba(74, 222, 128, 0.15);
+  position: relative;
+  z-index: 1;
+  isolation: isolate;
 }
 
 .success-header {
@@ -484,6 +507,30 @@
 
   .token-params {
     padding: 10px;
+  }
+}
+
+/* === TOUCH OPTIMIZATION === */
+/* Предотвращаем passive event listener warnings */
+.wallet-card,
+.copy-btn-mini,
+.step-item,
+.wallet-icon {
+  touch-action: manipulation; /* Оптимизация touch events */
+  -webkit-tap-highlight-color: transparent; /* Убираем highlight на iOS */
+}
+
+/* Улучшаем hit area для мобильных */
+@media (max-width: 767px) {
+  .copy-btn-mini {
+    width: 36px;
+    height: 36px;
+    right: 6px;
+  }
+  
+  .step-number {
+    min-width: 32px;
+    min-height: 32px;
   }
 }
 
