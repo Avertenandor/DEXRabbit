@@ -139,6 +139,8 @@ img, video, iframe, svg {
   text-align: center;
   padding-top: 80px;
   padding-bottom: 60px;
+  position: relative;
+  z-index: 10; /* ВЫШЕ navbar (z-index: 9999), чтобы контент НЕ перекрывался */
 }
 
 .hero-title {

@@ -296,7 +296,7 @@ body {
               inset 0 1px 0 rgba(255, 255, 255, 0.2);
   position: relative;
   overflow: hidden;
-  z-index: 10001;
+  z-index: 1; /* ПОНИЖЕН с 10001! Теперь НЕ перекрывает контент */
 }
 
 .nav-beautiful__cta::before {
