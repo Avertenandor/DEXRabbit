@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OG Image Generator - DEXRabbit</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            background: #1a1a2e;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .og-container {
+            width: 1200px;
+            height: 630px;
+            position: relative;
+            background: linear-gradient(135deg, #0a0e16 0%, #16213e 50%, #0f1419 100%);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Декоративные элементы */
+        .og-container::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 800px;
+            height: 800px;
+            background: radial-gradient(circle, rgba(124, 140, 255, 0.15) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        .og-container::after {
+            content: '';
+            position: absolute;
+            bottom: -30%;
+            left: -10%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(76, 201, 240, 0.1) 0%, transparent 70%);
+            border-radius: 50%;
+        }
+
+        /* Контент */
+        .og-content {
+            position: relative;
+            z-index: 2;
+            padding: 80px;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .og-logo {
+            font-size: 32px;
+            font-weight: 700;
+            color: #7c8cff;
+            margin-bottom: 60px;
+            text-shadow: 0 2px 10px rgba(124, 140, 255, 0.3);
+        }
+
+        .og-title {
+            font-size: 72px;
+            font-weight: 800;
+            line-height: 1.1;
+            color: #ffffff;
+            margin-bottom: 30px;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            max-width: 900px;
+        }
+
+        .og-title .highlight {
+            background: linear-gradient(135deg, #7c8cff, #4cc9f0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .og-subtitle {
+            font-size: 36px;
+            font-weight: 500;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.85);
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+
+        .og-description {
+            font-size: 32px;
+            font-weight: 500;
+            line-height: 1.4;
+            color: rgba(255, 255, 255, 0.75);
+            max-width: 800px;
+        }
+
+        /* Rabbit icon */
+        .rabbit-icon {
+            position: absolute;
+            bottom: 60px;
+            right: 80px;
+            font-size: 180px;
+            opacity: 0.3;
+            filter: drop-shadow(0 10px 30px rgba(124, 140, 255, 0.3));
+        }
+
+        /* Domain badge */
+        .domain-badge {
+            position: absolute;
+            top: 40px;
+            right: 80px;
+            background: rgba(124, 140, 255, 0.15);
+            border: 2px solid rgba(124, 140, 255, 0.3);
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-size: 20px;
+            color: #7c8cff;
+            font-weight: 600;
+        }
+
+        .instructions {
+            margin-top: 40px;
+            padding: 30px;
+            background: #2a2a3e;
+            border-radius: 12px;
+            max-width: 1200px;
+        }
+
+        .instructions h2 {
+            color: #7c8cff;
+            margin-bottom: 20px;
+            font-size: 24px;
+        }
+
+        .instructions p {
+            color: #e0e0e0;
+            line-height: 1.6;
+            margin-bottom: 10px;
+        }
+
+        .instructions ol {
+            color: #e0e0e0;
+            padding-left: 20px;
+        }
+
+        .instructions li {
+            margin: 10px 0;
+        }
+
+        .instructions code {
+            background: rgba(124, 140, 255, 0.1);
+            padding: 2px 8px;
+            border-radius: 4px;
+            color: #4cc9f0;
+        }
+    </style>
+</head>
+<body>
+    <div style="max-width: 1240px;">
+        <div class="og-container" id="ogImage">
+            <div class="domain-badge">купитькролика.site</div>
+            
+            <div class="og-content">
+                <div class="og-logo">🐰 DEXRabbit</div>
+                
+                <h1 class="og-title">
+                    DEXRabbit — это твой <span class="highlight">пассивный доход</span> от 5 до 17% в день
+                </h1>
+                
+                <p class="og-subtitle">
+                    Инвестируй в ферму на Байкале, получай доход в криптовалюте.
+                </p>
+                
+                <p class="og-description">
+                    Партнёрская программа 10% на три уровня в глубину
+                </p>
+            </div>
+            
+            <div class="rabbit-icon">🐇</div>
+        </div>
+
+        <div class="instructions">
+            <h2>📋 Инструкция по созданию OG изображения</h2>
+            <p><strong>Размер:</strong> 1200 x 630 px (стандарт Open Graph)</p>
+            
+            <h3 style="color: #4cc9f0; margin-top: 20px; margin-bottom: 10px;">Способ 1: Screenshot с помощью браузера</h3>
+            <ol>
+                <li>Откройте этот файл в браузере</li>
+                <li>Нажмите <code>F12</code> для открытия DevTools</li>
+                <li>Нажмите <code>Ctrl+Shift+P</code> (или <code>Cmd+Shift+P</code> на Mac)</li>
+                <li>Введите "screenshot" и выберите "Capture node screenshot"</li>
+                <li>Кликните на элемент с классом <code>.og-container</code></li>
+                <li>Сохраните как <code>og-rabbit.jpg</code></li>
+            </ol>
+
+            <h3 style="color: #4cc9f0; margin-top: 20px; margin-bottom: 10px;">Способ 2: Playwright (автоматически)</h3>
+            <p>Запустите в терминале из папки тесты:</p>
+            <ol>
+                <li><code>cd C:\Users\konfu\Desktop\Кролики\тесты</code></li>
+                <li><code>npx playwright screenshot og-generator.html og-rabbit.jpg --viewport-size=1200,630</code></li>
+                <li>Переместите файл в папку <code>og/</code></li>
+            </ol>
+
+            <h3 style="color: #4cc9f0; margin-top: 20px; margin-bottom: 10px;">Способ 3: Онлайн инструменты</h3>
+            <ol>
+                <li>Используйте <a href="https://www.bannerbear.com/" style="color: #4cc9f0;">bannerbear.com</a> или <a href="https://www.canva.com/" style="color: #4cc9f0;">canva.com</a></li>
+                <li>Создайте изображение 1200x630px</li>
+                <li>Скопируйте текст и стили отсюда</li>
+                <li>Сохраните как <code>og-rabbit.jpg</code></li>
+            </ol>
+
+            <h3 style="color: #ff6b6b; margin-top: 20px; margin-bottom: 10px;">⚠️ Важно:</h3>
+            <p>После создания изображения:</p>
+            <ol>
+                <li>Поместите <code>og-rabbit.jpg</code> в папку <code>C:\Users\konfu\Desktop\Кролики\og\</code></li>
+                <li>Закоммитьте и запуште изменения</li>
+                <li>Проверьте в <a href="https://www.opengraph.xyz/" style="color: #4cc9f0;">opengraph.xyz</a></li>
+            </ol>
+        </div>
+    </div>
+
+    <script>
+        console.log('%c🐰 DEXRabbit OG Image Generator', 'font-size: 20px; color: #7c8cff; font-weight: bold;');
+        console.log('%cРазмер контейнера: 1200 x 630 px', 'color: #4cc9f0;');
+        console.log('%cИспользуйте DevTools для создания screenshot', 'color: #e0e0e0;');
+    </script>
+</body>
+</html>
