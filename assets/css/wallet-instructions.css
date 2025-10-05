@@ -169,7 +169,9 @@
 }
 
 .wallet-card:hover .wallet-icon {
-  transform: scale(1.05) rotate(5deg);
+  transform: scale(1.08);
+  box-shadow: 0 12px 32px rgba(124, 140, 255, 0.4), 0 0 20px rgba(124, 140, 255, 0.3);
+  filter: brightness(1.1);
 }
 
 .wallet-info {
@@ -220,40 +222,9 @@
   background: linear-gradient(180deg, rgba(76, 201, 240, 0.3) 0%, transparent 100%);
 }
 
+/* УДАЛЕНО: Кнопки этапов больше не нужны */
 .step-number {
-  /* СКРЫТО: Убраны цифры из инструкций по запросу */
-  display: none;
-  flex-shrink: 0;
-  width: clamp(28px, 4vw, 36px);
-  height: clamp(28px, 4vw, 36px);
-  background: rgba(124, 140, 255, 0.2);
-  border: 2px solid rgba(124, 140, 255, 0.4);
-  border-radius: 50%;
-  /* display: flex; */ 
-  align-items: center;
-  justify-content: center;
-  font-size: clamp(13px, 2vw, 15px);
-  font-weight: 700;
-  color: #7c8cff;
-  transition: all 0.3s ease;
-}
-
-.safepal-card .step-number {
-  background: rgba(76, 201, 240, 0.2);
-  border-color: rgba(76, 201, 240, 0.4);
-  color: #4cc9f0;
-}
-
-.step-number.success {
-  background: linear-gradient(135deg, #4ade80, #22c55e);
-  border-color: #4ade80;
-  color: #fff;
-  box-shadow: 0 4px 16px rgba(74, 222, 128, 0.4);
-}
-
-.step-item:hover .step-number {
-  transform: scale(1.1);
-  box-shadow: 0 4px 12px rgba(124, 140, 255, 0.4);
+  display: none !important;
 }
 
 .step-content {
@@ -533,10 +504,7 @@
     right: 6px;
   }
   
-  .step-number {
-    min-width: 32px;
-    min-height: 32px;
-  }
+  /* Кнопки этапов удалены */
 }
 
 /* === ANIMATIONS === */
