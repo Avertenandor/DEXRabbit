@@ -258,7 +258,16 @@ main {
   padding: clamp(1.5rem, 2vw, 2rem);
   display: grid;
   gap: 0.75rem;
+  align-content: start; /* Выравнивание контента сверху */
+  min-height: 200px; /* Минимальная высота для desktop */
   transition: transform var(--transition-medium), border var(--transition-medium);
+}
+
+/* Mobile: убираем min-height */
+@media (max-width: 767px) {
+  .feature-card {
+    min-height: auto;
+  }
 }
 
 .feature-card:hover {
