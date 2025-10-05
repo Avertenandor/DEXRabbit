@@ -1,0 +1,520 @@
+/**
+ * 💼 Wallet Instructions Widget Styles
+ * Красивые виджеты для инструкций по добавлению токена
+ * Responsive: Mobile, Tablet, Desktop
+ */
+
+/* === SECTION CONTAINER === */
+.wallet-instructions-section {
+  margin-top: 3rem;
+  padding: clamp(24px, 4vw, 48px);
+  background: linear-gradient(135deg, rgba(124, 140, 255, 0.08), rgba(76, 201, 240, 0.05));
+  border: 2px solid rgba(124, 140, 255, 0.3);
+  border-radius: 24px;
+  box-shadow: 0 12px 48px rgba(124, 140, 255, 0.2);
+}
+
+/* === HEADER === */
+.wallet-instructions-header {
+  text-align: center;
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+
+.wallet-badge {
+  display: inline-block;
+  padding: 10px 24px;
+  background: linear-gradient(135deg, #7c8cff, #4cc9f0);
+  border-radius: 24px;
+  font-size: clamp(12px, 2vw, 14px);
+  font-weight: 700;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 16px;
+  box-shadow: 0 4px 16px rgba(124, 140, 255, 0.3);
+}
+
+.wallet-title {
+  font-size: clamp(24px, 4vw, 32px);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin-bottom: 12px;
+  line-height: 1.2;
+}
+
+.wallet-subtitle {
+  font-size: clamp(14px, 2.5vw, 17px);
+  color: rgba(255, 255, 255, 0.8);
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+/* === CARDS GRID === */
+.wallet-cards-grid {
+  display: grid;
+  gap: clamp(20px, 3vw, 32px);
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+
+/* Mobile: 1 column */
+@media (max-width: 767px) {
+  .wallet-cards-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Tablet & Desktop: 2 columns */
+@media (min-width: 768px) {
+  .wallet-cards-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* === WALLET CARD === */
+.wallet-card {
+  padding: clamp(20px, 3vw, 32px);
+  background: rgba(0, 0, 0, 0.4);
+  border-radius: 20px;
+  border: 2px solid;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Trust Wallet specific */
+.trust-wallet-card {
+  border-color: rgba(124, 140, 255, 0.3);
+  background: linear-gradient(135deg, rgba(51, 117, 187, 0.08), rgba(88, 166, 255, 0.05));
+}
+
+.trust-wallet-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(124, 140, 255, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* SafePal specific */
+.safepal-card {
+  border-color: rgba(76, 201, 240, 0.3);
+  background: linear-gradient(135deg, rgba(0, 200, 150, 0.08), rgba(76, 201, 240, 0.05));
+}
+
+.safepal-card::before {
+  content: '';
+  position: absolute;
+  top: -50%;
+  right: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(circle, rgba(76, 201, 240, 0.1) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Hover effect */
+.wallet-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 16px 40px rgba(124, 140, 255, 0.3);
+  border-color: rgba(124, 140, 255, 0.5);
+}
+
+.safepal-card:hover {
+  box-shadow: 0 16px 40px rgba(76, 201, 240, 0.3);
+  border-color: rgba(76, 201, 240, 0.5);
+}
+
+/* === CARD HEADER === */
+.wallet-card-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: clamp(24px, 3vw, 32px);
+  position: relative;
+  z-index: 1;
+}
+
+.wallet-icon {
+  flex-shrink: 0;
+  width: clamp(48px, 8vw, 64px);
+  height: clamp(48px, 8vw, 64px);
+  border-radius: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
+  transition: transform 0.3s ease;
+}
+
+.wallet-card:hover .wallet-icon {
+  transform: scale(1.05) rotate(5deg);
+}
+
+.wallet-info {
+  flex: 1;
+}
+
+.wallet-name {
+  font-size: clamp(20px, 3vw, 24px);
+  font-weight: 700;
+  color: var(--color-text-primary);
+  margin: 0 0 4px 0;
+}
+
+.wallet-platform {
+  display: inline-block;
+  padding: 4px 12px;
+  background: rgba(124, 140, 255, 0.2);
+  border-radius: 12px;
+  font-size: clamp(11px, 2vw, 13px);
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+/* === STEPS === */
+.wallet-steps {
+  position: relative;
+  z-index: 1;
+}
+
+.step-item {
+  display: flex;
+  gap: clamp(12px, 2vw, 16px);
+  margin-bottom: clamp(16px, 2.5vw, 20px);
+  position: relative;
+}
+
+.step-item:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  left: clamp(14px, 2vw, 18px);
+  top: clamp(32px, 4vw, 40px);
+  width: 2px;
+  height: calc(100% - 32px);
+  background: linear-gradient(180deg, rgba(124, 140, 255, 0.3) 0%, transparent 100%);
+}
+
+.safepal-card .step-item:not(:last-child)::after {
+  background: linear-gradient(180deg, rgba(76, 201, 240, 0.3) 0%, transparent 100%);
+}
+
+.step-number {
+  flex-shrink: 0;
+  width: clamp(28px, 4vw, 36px);
+  height: clamp(28px, 4vw, 36px);
+  background: rgba(124, 140, 255, 0.2);
+  border: 2px solid rgba(124, 140, 255, 0.4);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: clamp(13px, 2vw, 15px);
+  font-weight: 700;
+  color: #7c8cff;
+  transition: all 0.3s ease;
+}
+
+.safepal-card .step-number {
+  background: rgba(76, 201, 240, 0.2);
+  border-color: rgba(76, 201, 240, 0.4);
+  color: #4cc9f0;
+}
+
+.step-number.success {
+  background: linear-gradient(135deg, #4ade80, #22c55e);
+  border-color: #4ade80;
+  color: #fff;
+  box-shadow: 0 4px 16px rgba(74, 222, 128, 0.4);
+}
+
+.step-item:hover .step-number {
+  transform: scale(1.1);
+  box-shadow: 0 4px 12px rgba(124, 140, 255, 0.4);
+}
+
+.step-content {
+  flex: 1;
+  padding-top: 2px;
+}
+
+.step-text {
+  font-size: clamp(14px, 2.2vw, 16px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.95);
+  margin: 0 0 8px 0;
+}
+
+.step-hint {
+  font-size: clamp(12px, 2vw, 14px);
+  color: rgba(255, 255, 255, 0.6);
+  font-style: italic;
+  margin: 4px 0 0 0;
+}
+
+.final-step {
+  margin-top: clamp(16px, 2.5vw, 24px);
+  padding-top: clamp(16px, 2.5vw, 24px);
+  border-top: 1px solid rgba(124, 140, 255, 0.2);
+}
+
+.safepal-card .final-step {
+  border-top-color: rgba(76, 201, 240, 0.2);
+}
+
+/* === BADGES === */
+.icon-badge {
+  display: inline-block;
+  padding: 4px 10px;
+  background: rgba(124, 140, 255, 0.2);
+  border-radius: 8px;
+  font-size: clamp(12px, 2vw, 14px);
+  font-weight: 700;
+}
+
+.network-badge {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 12px;
+  font-size: clamp(12px, 2vw, 14px);
+  font-weight: 700;
+  margin-top: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+.bsc-badge {
+  background: linear-gradient(135deg, rgba(250, 204, 21, 0.3), rgba(251, 191, 36, 0.2));
+  color: #facc15;
+  border: 1px solid rgba(250, 204, 21, 0.5);
+}
+
+/* === CONTRACT ADDRESS === */
+.contract-address-box {
+  position: relative;
+  margin-top: 8px;
+  padding: 12px 44px 12px 12px;
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(76, 201, 240, 0.3);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.contract-address-box:hover {
+  border-color: rgba(76, 201, 240, 0.5);
+  background: rgba(0, 0, 0, 0.6);
+}
+
+.contract-address {
+  display: block;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: clamp(11px, 1.8vw, 13px);
+  color: #4cc9f0;
+  word-break: break-all;
+  line-height: 1.4;
+}
+
+.copy-btn-mini {
+  position: absolute;
+  right: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 32px;
+  height: 32px;
+  background: rgba(76, 201, 240, 0.2);
+  border: none;
+  border-radius: 8px;
+  color: #4cc9f0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.copy-btn-mini:hover {
+  background: rgba(76, 201, 240, 0.3);
+  transform: translateY(-50%) scale(1.1);
+}
+
+.copy-btn-mini:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+/* === TOKEN PARAMS === */
+.token-params {
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(0, 0, 0, 0.3);
+  border-radius: 12px;
+  border: 1px solid rgba(124, 140, 255, 0.2);
+}
+
+.param-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 6px 0;
+}
+
+.param-item:not(:last-child) {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.param-label {
+  font-size: clamp(13px, 2vw, 14px);
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.param-value {
+  font-size: clamp(14px, 2.2vw, 16px);
+  font-weight: 700;
+}
+
+.param-value.gold {
+  color: #facc15;
+}
+
+.param-value.green {
+  color: #4ade80;
+}
+
+/* === WARNING BLOCK === */
+.wallet-warning-block {
+  margin-top: clamp(24px, 3vw, 32px);
+  padding: clamp(20px, 3vw, 24px);
+  background: linear-gradient(135deg, rgba(250, 204, 21, 0.15), rgba(251, 191, 36, 0.1));
+  border: 2px solid rgba(250, 204, 21, 0.4);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(250, 204, 21, 0.15);
+}
+
+.warning-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 12px;
+}
+
+.warning-icon {
+  font-size: clamp(24px, 4vw, 32px);
+}
+
+.warning-title {
+  font-size: clamp(16px, 2.8vw, 20px);
+  color: #facc15;
+  font-weight: 700;
+}
+
+.warning-text {
+  font-size: clamp(14px, 2.2vw, 16px);
+  line-height: 1.7;
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+/* === SUCCESS BLOCK === */
+.wallet-success-block {
+  margin-top: clamp(24px, 3vw, 32px);
+  padding: clamp(24px, 3vw, 32px);
+  background: linear-gradient(135deg, rgba(74, 222, 128, 0.12), rgba(34, 197, 94, 0.08));
+  border: 2px solid rgba(74, 222, 128, 0.3);
+  border-radius: 16px;
+  box-shadow: 0 8px 24px rgba(74, 222, 128, 0.15);
+}
+
+.success-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.success-icon {
+  font-size: clamp(24px, 4vw, 32px);
+}
+
+.success-title {
+  font-size: clamp(18px, 3vw, 22px);
+  color: #4ade80;
+  font-weight: 700;
+  margin: 0;
+}
+
+.success-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.success-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 10px 0;
+  font-size: clamp(14px, 2.2vw, 16px);
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.check-icon {
+  flex-shrink: 0;
+  font-size: clamp(16px, 2.5vw, 18px);
+}
+
+/* === MOBILE OPTIMIZATIONS === */
+@media (max-width: 767px) {
+  .wallet-instructions-section {
+    border-radius: 16px;
+    padding: 20px 16px;
+  }
+
+  .wallet-card {
+    padding: 20px 16px;
+  }
+
+  .step-item {
+    gap: 12px;
+  }
+
+  .contract-address {
+    font-size: 11px;
+  }
+
+  .token-params {
+    padding: 10px;
+  }
+}
+
+/* === ANIMATIONS === */
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.wallet-badge {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* Copy success animation */
+@keyframes copySuccess {
+  0% {
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    transform: translateY(-50%) scale(1.2);
+    background: rgba(74, 222, 128, 0.4);
+  }
+  100% {
+    transform: translateY(-50%) scale(1);
+  }
+}
+
+.copy-btn-mini.copied {
+  animation: copySuccess 0.5s ease;
+}

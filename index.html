@@ -81,10 +81,14 @@
     <script defer src="/assets/js/lightbox.js"></script>
     <!-- Enhanced Sections Script -->
     <script defer src="/assets/js/sections-enhanced.js?v=20251002-enhanced"></script>
+    <!-- Wallet Instructions Script -->
+    <script defer src="/assets/js/wallet-instructions.js?v=20251005-new"></script>
     <!-- Footer Styles -->
     <link rel="stylesheet" href="/assets/css/footer.css" />
     <!-- Enhanced Sections Styles -->
     <link rel="stylesheet" href="/assets/css/sections-enhanced.css?v=20251002-enhanced" />
+    <!-- Wallet Instructions Styles -->
+    <link rel="stylesheet" href="/assets/css/wallet-instructions.css?v=20251005-new" />
     
     <!-- SEO Scripts -->
     <script defer src="/assets/seo/meta-manager.js"></script>
@@ -983,70 +987,260 @@
 
           </div>
 
-          <!-- Инструкции по добавлению токена в кошельки -->
-          <div class="card" style="margin-top: 2rem; background: linear-gradient(135deg, rgba(124, 140, 255, 0.08), rgba(76, 201, 240, 0.05)); border: 2px solid rgba(124, 140, 255, 0.3); box-shadow: 0 12px 48px rgba(124, 140, 255, 0.2);">
-            <div style="text-align: center; margin-bottom: 2rem;">
-              <span style="display: inline-block; padding: 8px 20px; background: linear-gradient(135deg, #7c8cff, #4cc9f0); border-radius: 20px; font-size: 13px; font-weight: 700; color: #fff; margin-bottom: 16px;">ПОШАГОВАЯ ИНСТРУКЦИЯ</span>
-              <h3 style="font-size: 28px; margin-bottom: 12px;">📱 Как добавить токен PLEX в кошелек</h3>
-              <p style="color: rgba(255, 255, 255, 0.8); font-size: 16px;">Простая инструкция для Trust Wallet и SafePal</p>
+          <!-- Инструкции по добавлению токена в кошельки - НОВЫЙ ДИЗАЙН -->
+          <div class="wallet-instructions-section">
+            <div class="wallet-instructions-header">
+              <span class="wallet-badge">ПОШАГОВАЯ ИНСТРУКЦИЯ</span>
+              <h3 class="wallet-title">📱 Как добавить токен PLEX в кошелек</h3>
+              <p class="wallet-subtitle">Простая инструкция для Trust Wallet и SafePal</p>
             </div>
 
-            <div class="grid wallet-instructions-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem; margin-top: 1.5rem; max-width: 1200px; margin-left: auto; margin-right: auto;">
-              <div style="padding: 24px; background: rgba(0, 0, 0, 0.3); border-radius: 16px; border: 1px solid rgba(124, 140, 255, 0.2);">
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
-                  <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #3375BB, #58A6FF); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px;">🔵</div>
-                  <h4 style="margin: 0; font-size: 20px;">Trust Wallet</h4>
+            <div class="wallet-cards-grid">
+              <!-- Trust Wallet Card -->
+              <div class="wallet-card trust-wallet-card">
+                <div class="wallet-card-header">
+                  <div class="wallet-icon trust-wallet-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                      <circle cx="16" cy="16" r="16" fill="url(#trustGradient)"/>
+                      <path d="M16 8l6 3.5v7c0 3.5-2.5 6.5-6 7.5-3.5-1-6-4-6-7.5v-7l6-3.5z" fill="white" opacity="0.9"/>
+                      <defs>
+                        <linearGradient id="trustGradient" x1="0" y1="0" x2="32" y2="32">
+                          <stop offset="0%" stop-color="#3375BB"/>
+                          <stop offset="100%" stop-color="#58A6FF"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                  <div class="wallet-info">
+                    <h4 class="wallet-name">Trust Wallet</h4>
+                    <span class="wallet-platform">iOS & Android</span>
+                  </div>
                 </div>
-                <ol style="text-align: left; line-height: 2; counter-reset: step; list-style: none; padding: 0;">
-                  <li style="padding-left: 36px; position: relative; margin-bottom: 12px;"><span style="position: absolute; left: 0; top: 0; width: 24px; height: 24px; background: rgba(124, 140, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">1</span>Откройте Trust Wallet</li>
-                  <li style="padding-left: 36px; position: relative; margin-bottom: 12px;"><span style="position: absolute; left: 0; top: 0; width: 24px; height: 24px; background: rgba(124, 140, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">2</span>Нажмите на ⚙️ в правом углу</li>
-                  <li style="padding-left: 36px; position: relative; margin-bottom: 12px;"><span style="position: absolute; left: 0; top: 0; width: 24px; height: 24px; background: rgba(124, 140, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">3</span>Выберите "Добавить токен" <strong>+</strong></li>
-                  <li style="padding-left: 36px; position: relative; margin-bottom: 12px;"><span style="position: absolute; left: 0; top: 0; width: 24px; height: 24px; background: rgba(124, 140, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">4</span>Сеть: <span style="padding: 4px 10px; background: rgba(250, 204, 21, 0.2); border-radius: 8px; font-weight: 700;">Smart Chain (BEP-20)</span></li>
-                  <li style="padding-left: 36px; position: relative; margin-bottom: 12px;"><span style="position: absolute; left: 0; top: 0; width: 24px; height: 24px; background: rgba(124, 140, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">5</span>Вставьте адрес:<br/><code style="display: block; margin-top: 8px; padding: 10px; background: rgba(0, 0, 0, 0.5); border-radius: 8px; font-size: 13px; word-break: break-all; color: #4cc9f0; border: 1px solid rgba(76, 201, 240, 0.3);">0xdf179b6cadbc61ffd86a3d2e55f6d6e083ade6c1</code></li>
-                  <li style="padding-left: 36px; position: relative; margin-bottom: 12px;"><span style="position: absolute; left: 0; top: 0; width: 24px; height: 24px; background: rgba(124, 140, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">6</span>Название: <strong style="color: #facc15;">PLEX</strong></li>
-                  <li style="padding-left: 36px; position: relative; margin-bottom: 12px;"><span style="position: absolute; left: 0; top: 0; width: 24px; height: 24px; background: rgba(124, 140, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">7</span>Символ: <strong style="color: #facc15;">PLEX</strong></li>
-                  <li style="padding-left: 36px; position: relative; margin-bottom: 12px;"><span style="position: absolute; left: 0; top: 0; width: 24px; height: 24px; background: rgba(124, 140, 255, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">8</span>Десятичные: <strong style="color: #4ade80;">9</strong></li>
-                  <li style="padding-left: 36px; position: relative;"><span style="position: absolute; left: 0; top: 0; width: 24px; height: 24px; background: rgba(76, 201, 240, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">✓</span>Нажмите "Готово"</li>
-                </ol>
-              </div>
 
-              <div style="padding: 24px; background: rgba(0, 0, 0, 0.3); border-radius: 16px; border: 1px solid rgba(76, 201, 240, 0.2);">
-                <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 20px;">
-                  <div style="width: 48px; height: 48px; background: linear-gradient(135deg, #00C896, #4cc9f0); border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 24px;">🟢</div>
-                  <h4 style="margin: 0; font-size: 20px;">SafePal</h4>
+                <div class="wallet-steps">
+                  <div class="step-item">
+                    <span class="step-number">1</span>
+                    <div class="step-content">
+                      <p class="step-text">Откройте <strong>Trust Wallet</strong></p>
+                    </div>
+                  </div>
+
+                  <div class="step-item">
+                    <span class="step-number">2</span>
+                    <div class="step-content">
+                      <p class="step-text">Нажмите на <span class="icon-badge">⚙️</span> в правом верхнем углу</p>
+                    </div>
+                  </div>
+
+                  <div class="step-item">
+                    <span class="step-number">3</span>
+                    <div class="step-content">
+                      <p class="step-text">Выберите <strong>"Добавить токен"</strong> <span class="icon-badge">+</span></p>
+                    </div>
+                  </div>
+
+                  <div class="step-item">
+                    <span class="step-number">4</span>
+                    <div class="step-content">
+                      <p class="step-text">Выберите сеть:</p>
+                      <span class="network-badge bsc-badge">Smart Chain (BEP-20)</span>
+                    </div>
+                  </div>
+
+                  <div class="step-item">
+                    <span class="step-number">5</span>
+                    <div class="step-content">
+                      <p class="step-text">Вставьте адрес контракта:</p>
+                      <div class="contract-address-box">
+                        <code class="contract-address">0xdf179b6cadbc61ffd86a3d2e55f6d6e083ade6c1</code>
+                        <button class="copy-btn-mini" onclick="copyContractAddress(this)" title="Копировать">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M4 2h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2zm0 1a1 1 0 00-1 1v8a1 1 0 001 1h8a1 1 0 001-1V4a1 1 0 00-1-1H4z"/>
+                            <path d="M6 0h6a2 2 0 012 2v1h-1V2a1 1 0 00-1-1H6a1 1 0 00-1 1v1H4V2a2 2 0 012-2z"/>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="step-item">
+                    <span class="step-number">6</span>
+                    <div class="step-content">
+                      <p class="step-text">Данные заполнятся автоматически:</p>
+                      <div class="token-params">
+                        <div class="param-item">
+                          <span class="param-label">Название:</span>
+                          <span class="param-value gold">PLEX</span>
+                        </div>
+                        <div class="param-item">
+                          <span class="param-label">Символ:</span>
+                          <span class="param-value gold">PLEX</span>
+                        </div>
+                        <div class="param-item">
+                          <span class="param-label">Десятичные:</span>
+                          <span class="param-value green">9</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="step-item final-step">
+                    <span class="step-number success">✓</span>
+                    <div class="step-content">
+                      <p class="step-text"><strong>Нажмите "Готово"</strong></p>
+                      <p class="step-hint">Токен появится в вашем кошельке!</p>
+                    </div>
+                  </div>
                 </div>
-                <ol style="text-align: left; line-height: 2; counter-reset: step; list-style: none; padding: 0;">
-                  <li style="padding-left: 36px; position: relative; margin-bottom: 12px;"><span style="position: absolute; left: 0; top: 0; width: 24px; height: 24px; background: rgba(76, 201, 240, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">1</span>Откройте SafePal Wallet</li>
-                  <li style="padding-left: 36px; position: relative; margin-bottom: 12px;"><span style="position: absolute; left: 0; top: 0; width: 24px; height: 24px; background: rgba(76, 201, 240, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">2</span>Нажмите <strong>+</strong> в списке токенов</li>
-                  <li style="padding-left: 36px; position: relative; margin-bottom: 12px;"><span style="position: absolute; left: 0; top: 0; width: 24px; height: 24px; background: rgba(76, 201, 240, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">3</span>"Добавить токен вручную"</li>
-                  <li style="padding-left: 36px; position: relative; margin-bottom: 12px;"><span style="position: absolute; left: 0; top: 0; width: 24px; height: 24px; background: rgba(76, 201, 240, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">4</span>Сеть: <span style="padding: 4px 10px; background: rgba(250, 204, 21, 0.2); border-radius: 8px; font-weight: 700;">BSC (BEP-20)</span></li>
-                  <li style="padding-left: 36px; position: relative; margin-bottom: 12px;"><span style="position: absolute; left: 0; top: 0; width: 24px; height: 24px; background: rgba(76, 201, 240, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">5</span>Вставьте адрес:<br/><code style="display: block; margin-top: 8px; padding: 10px; background: rgba(0, 0, 0, 0.5); border-radius: 8px; font-size: 13px; word-break: break-all; color: #4cc9f0; border: 1px solid rgba(76, 201, 240, 0.3);">0xdf179b6cadbc61ffd86a3d2e55f6d6e083ade6c1</code></li>
-                  <li style="padding-left: 36px; position: relative; margin-bottom: 12px;"><span style="position: absolute; left: 0; top: 0; width: 24px; height: 24px; background: rgba(76, 201, 240, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">6</span>Данные заполнятся автоматически</li>
-                  <li style="padding-left: 36px; position: relative; margin-bottom: 12px;"><span style="position: absolute; left: 0; top: 0; width: 24px; height: 24px; background: rgba(76, 201, 240, 0.2); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">7</span>Если нет: <strong style="color: #facc15;">PLEX / PLEX / 9</strong></li>
-                  <li style="padding-left: 36px; position: relative;"><span style="position: absolute; left: 0; top: 0; width: 24px; height: 24px; background: rgba(76, 201, 240, 0.3); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 12px; font-weight: 700;">✓</span>Нажмите "Добавить"</li>
-                </ol>
+              </div>
+
+              <!-- SafePal Card -->
+              <div class="wallet-card safepal-card">
+                <div class="wallet-card-header">
+                  <div class="wallet-icon safepal-icon">
+                    <svg width="32" height="32" viewBox="0 0 32 32" fill="none">
+                      <circle cx="16" cy="16" r="16" fill="url(#safepalGradient)"/>
+                      <path d="M16 8l7 4v8c0 4-3 7-7 8-4-1-7-4-7-8v-8l7-4z" fill="white" opacity="0.9"/>
+                      <circle cx="16" cy="16" r="4" fill="url(#safepalGradient)"/>
+                      <defs>
+                        <linearGradient id="safepalGradient" x1="0" y1="0" x2="32" y2="32">
+                          <stop offset="0%" stop-color="#00C896"/>
+                          <stop offset="100%" stop-color="#4cc9f0"/>
+                        </linearGradient>
+                      </defs>
+                    </svg>
+                  </div>
+                  <div class="wallet-info">
+                    <h4 class="wallet-name">SafePal</h4>
+                    <span class="wallet-platform">iOS & Android</span>
+                  </div>
+                </div>
+
+                <div class="wallet-steps">
+                  <div class="step-item">
+                    <span class="step-number">1</span>
+                    <div class="step-content">
+                      <p class="step-text">Откройте <strong>SafePal Wallet</strong></p>
+                    </div>
+                  </div>
+
+                  <div class="step-item">
+                    <span class="step-number">2</span>
+                    <div class="step-content">
+                      <p class="step-text">Нажмите <span class="icon-badge">+</span> в списке токенов</p>
+                    </div>
+                  </div>
+
+                  <div class="step-item">
+                    <span class="step-number">3</span>
+                    <div class="step-content">
+                      <p class="step-text">Выберите <strong>"Добавить токен вручную"</strong></p>
+                    </div>
+                  </div>
+
+                  <div class="step-item">
+                    <span class="step-number">4</span>
+                    <div class="step-content">
+                      <p class="step-text">Выберите сеть:</p>
+                      <span class="network-badge bsc-badge">BSC (BEP-20)</span>
+                    </div>
+                  </div>
+
+                  <div class="step-item">
+                    <span class="step-number">5</span>
+                    <div class="step-content">
+                      <p class="step-text">Вставьте адрес контракта:</p>
+                      <div class="contract-address-box">
+                        <code class="contract-address">0xdf179b6cadbc61ffd86a3d2e55f6d6e083ade6c1</code>
+                        <button class="copy-btn-mini" onclick="copyContractAddress(this)" title="Копировать">
+                          <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M4 2h8a2 2 0 012 2v8a2 2 0 01-2 2H4a2 2 0 01-2-2V4a2 2 0 012-2zm0 1a1 1 0 00-1 1v8a1 1 0 001 1h8a1 1 0 001-1V4a1 1 0 00-1-1H4z"/>
+                            <path d="M6 0h6a2 2 0 012 2v1h-1V2a1 1 0 00-1-1H6a1 1 0 00-1 1v1H4V2a2 2 0 012-2z"/>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="step-item">
+                    <span class="step-number">6</span>
+                    <div class="step-content">
+                      <p class="step-text">Данные заполнятся автоматически</p>
+                      <p class="step-hint">SafePal загрузит информацию о токене</p>
+                    </div>
+                  </div>
+
+                  <div class="step-item">
+                    <span class="step-number">7</span>
+                    <div class="step-content">
+                      <p class="step-text">Если данные не подгрузились:</p>
+                      <div class="token-params">
+                        <div class="param-item">
+                          <span class="param-label">Название:</span>
+                          <span class="param-value gold">PLEX</span>
+                        </div>
+                        <div class="param-item">
+                          <span class="param-label">Символ:</span>
+                          <span class="param-value gold">PLEX</span>
+                        </div>
+                        <div class="param-item">
+                          <span class="param-label">Десятичные:</span>
+                          <span class="param-value green">9</span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="step-item final-step">
+                    <span class="step-number success">✓</span>
+                    <div class="step-content">
+                      <p class="step-text"><strong>Нажмите "Добавить"</strong></p>
+                      <p class="step-hint">Токен появится в вашем кошельке!</p>
+                    </div>
+                  </div>
+                </div>
               </div>
             </div>
 
-            <div style="margin-top: 2rem; padding: 20px; background: linear-gradient(135deg, rgba(250, 204, 21, 0.15), rgba(251, 191, 36, 0.1)); border: 2px solid rgba(250, 204, 21, 0.4); border-radius: 16px; box-shadow: 0 8px 24px rgba(250, 204, 21, 0.15);">
-              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 12px;">
-                <span style="font-size: 28px;">⚠️</span>
-                <strong style="font-size: 18px; color: #facc15;">Важно!</strong>
+            <!-- Warning Block -->
+            <div class="wallet-warning-block">
+              <div class="warning-header">
+                <span class="warning-icon">⚠️</span>
+                <strong class="warning-title">Важно!</strong>
               </div>
-              <p style="line-height: 1.7;">Всегда проверяйте адрес контракта! Мошенники могут создавать поддельные токены с похожими названиями. Используйте <strong style="color: #facc15;">только официальный адрес</strong> с нашего сайта или бота.</p>
+              <p class="warning-text">
+                Всегда проверяйте адрес контракта! Мошенники могут создавать поддельные токены с похожими названиями. 
+                Используйте <strong>только официальный адрес</strong> с нашего сайта или бота.
+              </p>
             </div>
 
-            <div style="margin-top: 2rem; padding: 24px; background: linear-gradient(135deg, rgba(74, 222, 128, 0.12), rgba(34, 197, 94, 0.08)); border: 2px solid rgba(74, 222, 128, 0.3); border-radius: 16px; box-shadow: 0 8px 24px rgba(74, 222, 128, 0.15);">
-              <div style="display: flex; align-items: center; gap: 12px; margin-bottom: 16px;">
-                <span style="font-size: 28px;">💡</span>
-                <h4 style="margin: 0; font-size: 20px; color: #4ade80;">После добавления токена:</h4>
+            <!-- Success Tips Block -->
+            <div class="wallet-success-block">
+              <div class="success-header">
+                <span class="success-icon">💡</span>
+                <h4 class="success-title">После добавления токена:</h4>
               </div>
-              <ul class="checklist" style="margin-top: 1rem; line-height: 1.8;">
-                <li style="margin-bottom: 10px;">✅ Токен PLEX появится в вашем списке активов</li>
-                <li style="margin-bottom: 10px;">✅ Вы сможете получать и отправлять PLEX</li>
-                <li style="margin-bottom: 10px;">✅ Отслеживать баланс и историю транзакций</li>
-                <li style="margin-bottom: 10px;">✅ Обменивать на PancakeSwap</li>
-                <li style="margin-bottom: 10px;">✅ Участвовать в стейкинге и фарминге</li>
+              <ul class="success-list">
+                <li class="success-item">
+                  <span class="check-icon">✅</span>
+                  <span>Токен PLEX появится в вашем списке активов</span>
+                </li>
+                <li class="success-item">
+                  <span class="check-icon">✅</span>
+                  <span>Вы сможете получать и отправлять PLEX</span>
+                </li>
+                <li class="success-item">
+                  <span class="check-icon">✅</span>
+                  <span>Отслеживать баланс и историю транзакций</span>
+                </li>
+                <li class="success-item">
+                  <span class="check-icon">✅</span>
+                  <span>Обменивать на PancakeSwap</span>
+                </li>
+                <li class="success-item">
+                  <span class="check-icon">✅</span>
+                  <span>Участвовать в стейкинге и фарминге</span>
+                </li>
               </ul>
             </div>
           </div>
