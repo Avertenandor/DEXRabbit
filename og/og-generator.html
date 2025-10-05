@@ -92,28 +92,11 @@
         }
 
         .og-title .highlight {
-            background: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #3b82f6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-            filter: drop-shadow(0 4px 12px rgba(16, 185, 129, 0.9)) 
-                    drop-shadow(0 2px 6px rgba(6, 182, 212, 0.8)) 
-                    drop-shadow(0 8px 24px rgba(59, 130, 246, 0.6));
-            animation: gradientShift 3s ease-in-out infinite;
+            /* Убран градиент - просто белый цвет как у остального текста */
+            color: #ffffff;
         }
 
-        @keyframes gradientShift {
-            0%, 100% {
-                background: linear-gradient(135deg, #10b981 0%, #06b6d4 50%, #3b82f6 100%);
-                -webkit-background-clip: text;
-                background-clip: text;
-            }
-            50% {
-                background: linear-gradient(135deg, #06b6d4 0%, #3b82f6 50%, #10b981 100%);
-                -webkit-background-clip: text;
-                background-clip: text;
-            }
-        }
+        /* Убрана анимация градиента - больше не нужна */
 
         .og-subtitle {
             font-size: 36px;
