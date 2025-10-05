@@ -166,7 +166,7 @@ img, video, iframe, svg {
 
 @media (max-width: 768px) {
   .hero {
-    padding-top: 70px;
+    padding-top: 100px;
     padding-bottom: 50px;
   }
 
