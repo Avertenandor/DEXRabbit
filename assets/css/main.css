@@ -127,6 +127,17 @@ main {
   border: 1px solid var(--color-border);
   box-shadow: var(--shadow-soft);
   backdrop-filter: blur(18px);
+  overflow: hidden;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+.card a {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  hyphens: auto;
+  max-width: 100%;
+  display: inline-block;
 }
 
 .card::after {
