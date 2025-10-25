@@ -980,11 +980,13 @@ main {
 .about-cards-grid {
   display: grid;
   gap: 2rem;
-  align-items: start; /* Выравнивание по верху, НЕ stretch */
+  align-items: stretch; /* Растягиваем все карточки на одинаковую высоту */
 }
 
 .about-cards-grid > .card {
   height: 100%; /* Все карточки одинаковой высоты */
+  display: flex;
+  flex-direction: column;
 }
 
 /* Mobile: 1 column */
