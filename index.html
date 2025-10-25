@@ -105,12 +105,18 @@
     <script defer src="/assets/js/lightbox.js"></script>
     <!-- Enhanced Sections Script -->
     <script defer src="/assets/js/sections-enhanced.js?v=20251002-enhanced"></script>
+    <!-- YouTube Configuration -->
+    <script src="/assets/js/youtube-config.js?v=20251025-initial"></script>
+    <!-- YouTube Loader Script -->
+    <script defer src="/assets/js/youtube-loader.js?v=20251025-initial"></script>
     <!-- Wallet Instructions Script -->
     <script defer src="/assets/js/wallet-instructions.js?v=20251005-new"></script>
     <!-- Footer Styles -->
     <link rel="stylesheet" href="/assets/css/footer.css" />
     <!-- Enhanced Sections Styles -->
     <link rel="stylesheet" href="/assets/css/sections-enhanced.css?v=20251002-enhanced" />
+    <!-- YouTube Section Styles -->
+    <link rel="stylesheet" href="/assets/css/youtube-section.css?v=20251025-initial" />
     <!-- Wallet Instructions Styles -->
     <link rel="stylesheet" href="/assets/css/wallet-instructions.css?v=20251005-new" />
     
@@ -1047,6 +1053,35 @@
             <a href="#investment" class="btn" style="margin-top: 1rem"
               >Выбрать кролика для инвестирования</a
             >
+          </div>
+        </div>
+      </section>
+
+      <!-- YouTube Section -->
+      <section class="youtube-section" id="youtube">
+        <div class="container">
+          <div class="section-header">
+            <span class="overline">Мы на YouTube</span>
+            <h2>▶️ Наш видеоканал</h2>
+            <p>
+              Подписывайтесь на наш YouTube канал! Смотрите видео о жизни наших кроликов,
+              советы по уходу и последние новости с фермы
+            </p>
+          </div>
+
+          <!-- Контейнер для видео (заполняется через JavaScript) -->
+          <div id="youtube-videos-container">
+            <div class="youtube-loading">Загрузка видео с YouTube</div>
+          </div>
+
+          <!-- Кнопка перехода на канал -->
+          <div class="youtube-channel-cta">
+            <a href="https://www.youtube.com/@DexRabbitFarm/videos"
+               target="_blank"
+               rel="noopener noreferrer"
+               class="youtube-channel-btn">
+              Смотреть все видео на YouTube
+            </a>
           </div>
         </div>
       </section>
