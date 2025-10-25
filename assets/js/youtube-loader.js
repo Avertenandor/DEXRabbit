@@ -275,24 +275,31 @@
     },
 
     /**
-     * Fallback метод - встроенный плейлист YouTube
+     * Fallback метод - карточка с призывом посетить канал
      * Используется если API не настроен или не работает
      */
     renderFallbackPlaylist(container) {
-      const channelName = YOUTUBE_CONFIG.CHANNEL_HANDLE.replace('@', '');
-
       container.innerHTML = `
-        <div style="max-width: 100%; margin: 0 auto;">
-          <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
-            <iframe
-              style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-              src="https://www.youtube.com/embed?listType=user_uploads&list=${channelName}"
-              frameborder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowfullscreen
-              loading="lazy"
-              title="YouTube видео ${YOUTUBE_CONFIG.CHANNEL_HANDLE}"
-            ></iframe>
+        <div style="display: flex; justify-content: center; align-items: center; min-height: 300px;">
+          <div style="text-align: center; max-width: 600px; padding: 3rem 2rem; background: linear-gradient(135deg, rgba(255, 0, 0, 0.1), rgba(255, 100, 100, 0.05)); border: 2px solid rgba(255, 0, 0, 0.3); border-radius: 20px; box-shadow: 0 10px 40px rgba(0,0,0,0.3);">
+            <div style="font-size: 4rem; margin-bottom: 1.5rem; filter: drop-shadow(0 4px 8px rgba(0,0,0,0.3));">📺</div>
+            <h3 style="font-size: 1.8rem; margin-bottom: 1rem; background: linear-gradient(135deg, #ff0000, #ff6b6b); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;">
+              Смотрите нас на YouTube!
+            </h3>
+            <p style="color: rgba(255, 255, 255, 0.8); margin-bottom: 2rem; font-size: 1.1rem; line-height: 1.6;">
+              Подписывайтесь на наш канал <strong>${YOUTUBE_CONFIG.CHANNEL_HANDLE}</strong><br>
+              чтобы не пропустить новые видео о жизни фермы!
+            </p>
+            <a
+              href="https://www.youtube.com/${YOUTUBE_CONFIG.CHANNEL_HANDLE}"
+              target="_blank"
+              rel="noopener noreferrer"
+              style="display: inline-block; padding: 1rem 3rem; background: linear-gradient(135deg, #ff0000, #cc0000); color: white; text-decoration: none; border-radius: 50px; font-weight: bold; font-size: 1.1rem; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(255, 0, 0, 0.4);"
+              onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='0 6px 20px rgba(255, 0, 0, 0.6)';"
+              onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='0 4px 15px rgba(255, 0, 0, 0.4)';"
+            >
+              🎬 Перейти на канал
+            </a>
           </div>
         </div>
       `;
