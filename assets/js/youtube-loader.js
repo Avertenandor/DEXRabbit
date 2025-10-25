@@ -23,25 +23,42 @@
     cacheTime: null,
 
     /**
+     * Проверить валидность API ключа
+     */
+    isApiKeyValid() {
+      return YOUTUBE_CONFIG.API_KEY &&
+             YOUTUBE_CONFIG.API_KEY !== '' &&
+             YOUTUBE_CONFIG.API_KEY !== 'YOUR_YOUTUBE_API_KEY_HERE';
+    },
+
+    /**
      * Получить ID канала по handle
      */
     async getChannelId(handle) {
+      if (!this.isApiKeyValid()) {
+        return null;
+      }
+
       const cleanHandle = handle.replace('@', '');
-      const url = `https://www.youtube.com/@${cleanHandle}`;
 
       try {
         // Попытка получить ID через API поиска
         const searchUrl = `https://www.googleapis.com/youtube/v3/search?part=snippet&type=channel&q=${cleanHandle}&key=${YOUTUBE_CONFIG.API_KEY}`;
         const response = await fetch(searchUrl);
+
+        if (!response.ok) {
+          throw new Error(`API request failed: ${response.status}`);
+        }
+
         const data = await response.json();
 
         if (data.items && data.items.length > 0) {
           return data.items[0].snippet.channelId;
         }
 
-        throw new Error('Channel not found');
+        return null;
       } catch (error) {
-        console.error('Error getting channel ID:', error);
+        console.warn('Could not fetch channel ID from YouTube API:', error.message);
         return null;
       }
     },
@@ -211,8 +228,15 @@
         return;
       }
 
+      // Проверяем API ключ ДО попытки загрузки
+      if (!this.isApiKeyValid()) {
+        console.log('YouTube API key not configured. Using fallback embedded playlist.');
+        this.renderFallbackPlaylist(container);
+        return;
+      }
+
       // Показываем индикатор загрузки
-      container.innerHTML = '<div class="youtube-loading">Загрузка видео с YouTube</div>';
+      container.innerHTML = '<div class="youtube-loading">Загрузка видео с YouTube...</div>';
 
       try {
         // Получаем ID канала если его нет
@@ -245,23 +269,8 @@
 
         console.log(`✅ Loaded ${videos.length} YouTube videos`);
       } catch (error) {
-        console.error('Error rendering YouTube videos:', error);
-
-        // Проверяем, возможно проблема с API ключом
-        if (!YOUTUBE_CONFIG.API_KEY || YOUTUBE_CONFIG.API_KEY === 'YOUR_YOUTUBE_API_KEY_HERE') {
-          console.warn('YouTube API key not configured. Using fallback embedded playlist.');
-          this.renderFallbackPlaylist(container);
-        } else {
-          // Показываем ошибку
-          container.innerHTML = `
-            <div class="youtube-error">
-              <p>⚠️ Не удалось загрузить видео с YouTube</p>
-              <p style="font-size: 0.9rem; margin-top: 0.5rem;">
-                Проверьте настройки API или попробуйте позже
-              </p>
-            </div>
-          `;
-        }
+        console.warn('Failed to load YouTube videos via API, using fallback:', error.message);
+        this.renderFallbackPlaylist(container);
       }
     },
 
@@ -270,29 +279,23 @@
      * Используется если API не настроен или не работает
      */
     renderFallbackPlaylist(container) {
+      const channelName = YOUTUBE_CONFIG.CHANNEL_HANDLE.replace('@', '');
+
       container.innerHTML = `
-        <div class="youtube-fallback-message" style="text-align: center; margin-bottom: 2rem; padding: 1rem; background: rgba(255, 200, 0, 0.1); border: 2px solid rgba(255, 200, 0, 0.3); border-radius: 12px;">
-          <p style="margin: 0; color: rgba(255, 200, 0, 0.9);">
-            ℹ️ YouTube API не настроен. Показываем встроенный плейлист.
-          </p>
-          <p style="margin: 0.5rem 0 0 0; font-size: 0.85rem; color: rgba(255, 255, 255, 0.6);">
-            Для автоматической загрузки видео настройте API ключ в файле youtube-config.js
-          </p>
-        </div>
         <div style="max-width: 100%; margin: 0 auto;">
           <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; border-radius: 12px; box-shadow: 0 10px 40px rgba(0,0,0,0.5);">
             <iframe
               style="position: absolute; top: 0; left: 0; width: 100%; height: 100%;"
-              src="https://www.youtube.com/embed?listType=user_uploads&list=${YOUTUBE_CONFIG.CHANNEL_HANDLE.replace('@', '')}"
+              src="https://www.youtube.com/embed?listType=user_uploads&list=${channelName}"
               frameborder="0"
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
               allowfullscreen
               loading="lazy"
+              title="YouTube видео ${YOUTUBE_CONFIG.CHANNEL_HANDLE}"
             ></iframe>
           </div>
         </div>
       `;
-      console.log('Using fallback embedded YouTube playlist');
     },
 
     /**
