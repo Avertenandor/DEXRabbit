@@ -133,15 +133,15 @@ function initInvestorCardAnimations() {
   const cards = document.querySelectorAll('.investor-card');
 
   cards.forEach((card, index) => {
-    // Анимация появления с задержкой
+    // Деловая анимация появления с минимальной задержкой
     card.style.opacity = '0';
-    card.style.transform = 'translateY(20px)';
+    card.style.transform = 'translateY(10px)';
 
     setTimeout(() => {
-      card.style.transition = 'opacity 0.5s ease, transform 0.5s ease';
+      card.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
       card.style.opacity = '1';
       card.style.transform = 'translateY(0)';
-    }, index * 100);
+    }, index * 50);
   });
 }
 
