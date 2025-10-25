@@ -1,0 +1,353 @@
+/* ==================== */
+/* YOUTUBE SECTION */
+/* ==================== */
+
+.youtube-section {
+  position: relative;
+  overflow: hidden;
+  padding: 4rem 0;
+}
+
+/* Параллакс фон для YouTube раздела */
+.youtube-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background:
+    radial-gradient(ellipse at top, rgba(255, 0, 0, 0.08) 0%, transparent 50%),
+    radial-gradient(ellipse at bottom, rgba(255, 87, 34, 0.06) 0%, transparent 50%);
+  animation: youtubeParallaxPulse 15s ease-in-out infinite;
+  z-index: 0;
+}
+
+@keyframes youtubeParallaxPulse {
+  0%, 100% { opacity: 0.5; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.05); }
+}
+
+.youtube-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+  margin-top: 3rem;
+}
+
+/* YouTube видео карточки */
+.youtube-video-card {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, rgba(18, 18, 18, 0.95), rgba(33, 33, 33, 0.9));
+  border: 2px solid rgba(255, 0, 0, 0.2);
+  border-radius: 16px;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+}
+
+.youtube-video-card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(135deg, rgba(255, 0, 0, 0.3), rgba(255, 87, 34, 0.3));
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  z-index: 1;
+  pointer-events: none;
+}
+
+.youtube-video-card:hover::before {
+  opacity: 1;
+}
+
+.youtube-video-card:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow:
+    0 25px 50px rgba(255, 0, 0, 0.3),
+    0 0 30px rgba(255, 87, 34, 0.2);
+  border-color: rgba(255, 0, 0, 0.6);
+}
+
+/* Thumbnail контейнер */
+.youtube-thumbnail {
+  position: relative;
+  width: 100%;
+  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+  overflow: hidden;
+  background: #000;
+}
+
+.youtube-thumbnail img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.youtube-video-card:hover .youtube-thumbnail img {
+  transform: scale(1.15);
+  filter: brightness(0.8);
+}
+
+/* YouTube play button overlay */
+.youtube-play-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 0, 0, 0.9);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  z-index: 2;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+}
+
+.youtube-play-overlay::after {
+  content: '';
+  width: 0;
+  height: 0;
+  border-left: 25px solid white;
+  border-top: 15px solid transparent;
+  border-bottom: 15px solid transparent;
+  margin-left: 5px;
+}
+
+.youtube-video-card:hover .youtube-play-overlay {
+  transform: translate(-50%, -50%) scale(1.2);
+  background: rgba(255, 0, 0, 1);
+}
+
+/* Duration badge */
+.youtube-duration {
+  position: absolute;
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.9);
+  color: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  z-index: 2;
+}
+
+/* Информация о видео */
+.youtube-video-info {
+  padding: 1.25rem;
+  position: relative;
+  z-index: 2;
+}
+
+.youtube-video-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #fff;
+  margin: 0 0 0.75rem 0;
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  min-height: 2.8em;
+}
+
+.youtube-video-meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 0.9rem;
+}
+
+.youtube-video-views,
+.youtube-video-date {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.youtube-video-views::before {
+  content: '👁';
+  font-size: 1rem;
+}
+
+.youtube-video-date::before {
+  content: '📅';
+  font-size: 1rem;
+}
+
+/* CTA кнопка для канала */
+.youtube-channel-cta {
+  margin-top: 2rem;
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.youtube-channel-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 2rem;
+  background: linear-gradient(135deg, #ff0000, #ff5722);
+  color: white;
+  text-decoration: none;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 20px rgba(255, 0, 0, 0.3);
+}
+
+.youtube-channel-btn:hover {
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 6px 30px rgba(255, 0, 0, 0.5);
+  background: linear-gradient(135deg, #ff5722, #ff0000);
+}
+
+.youtube-channel-btn::before {
+  content: '▶';
+  font-size: 1.2rem;
+  animation: playPulse 2s ease-in-out infinite;
+}
+
+@keyframes playPulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Loading state */
+.youtube-loading {
+  text-align: center;
+  padding: 3rem;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.1rem;
+}
+
+.youtube-loading::after {
+  content: '...';
+  animation: loadingDots 1.5s infinite;
+}
+
+@keyframes loadingDots {
+  0%, 20% { content: '.'; }
+  40% { content: '..'; }
+  60%, 100% { content: '...'; }
+}
+
+/* Error state */
+.youtube-error {
+  text-align: center;
+  padding: 3rem;
+  color: rgba(255, 100, 100, 0.9);
+  font-size: 1rem;
+  background: rgba(255, 0, 0, 0.1);
+  border: 2px solid rgba(255, 0, 0, 0.3);
+  border-radius: 12px;
+}
+
+/* ==================== */
+/* MOBILE RESPONSIVE */
+/* ==================== */
+
+@media (max-width: 768px) {
+  .youtube-section {
+    padding: 3rem 0;
+  }
+
+  .youtube-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+    margin-top: 2rem;
+  }
+
+  .youtube-video-card {
+    border-radius: 12px;
+  }
+
+  .youtube-play-overlay {
+    width: 60px;
+    height: 60px;
+  }
+
+  .youtube-play-overlay::after {
+    border-left: 18px solid white;
+    border-top: 11px solid transparent;
+    border-bottom: 11px solid transparent;
+  }
+
+  .youtube-video-title {
+    font-size: 1rem;
+  }
+
+  .youtube-video-meta {
+    font-size: 0.85rem;
+    flex-wrap: wrap;
+  }
+
+  .youtube-channel-btn {
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .youtube-section {
+    padding: 2rem 0;
+  }
+
+  .youtube-grid {
+    gap: 1rem;
+  }
+
+  .youtube-video-info {
+    padding: 1rem;
+  }
+
+  .youtube-video-title {
+    font-size: 0.95rem;
+  }
+
+  .youtube-play-overlay {
+    width: 50px;
+    height: 50px;
+  }
+
+  .youtube-play-overlay::after {
+    border-left: 15px solid white;
+    border-top: 9px solid transparent;
+    border-bottom: 9px solid transparent;
+  }
+}
+
+/* Tablet landscape */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .youtube-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.75rem;
+  }
+}
+
+/* Large screens */
+@media (min-width: 1025px) {
+  .youtube-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+  }
+}
