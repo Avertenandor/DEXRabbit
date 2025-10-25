@@ -68,14 +68,14 @@
 }
 
 /* Mobile: уже 1 column по умолчанию */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .wallet-cards-grid {
     gap: 20px; /* Меньший gap на mobile */
   }
 }
 
 /* Desktop: остаётся 1 column, но с большим gap */
-@media (min-width: 768px) {
+@media (min-width: 769px) {
   .wallet-cards-grid {
     max-width: 800px; /* Ограничиваем ширину для удобства чтения */
     margin-left: auto;
@@ -463,7 +463,7 @@
 }
 
 /* === MOBILE OPTIMIZATIONS === */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .wallet-instructions-section {
     border-radius: 16px;
     padding: 20px 16px;
@@ -497,7 +497,7 @@
 }
 
 /* Улучшаем hit area для мобильных */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .copy-btn-mini {
     width: 36px;
     height: 36px;

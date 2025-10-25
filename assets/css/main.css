@@ -264,7 +264,7 @@ main {
 }
 
 /* Mobile: убираем min-height */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .feature-card {
     min-height: auto;
   }
@@ -988,14 +988,14 @@ main {
 }
 
 /* Mobile: 1 column */
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .about-cards-grid {
     grid-template-columns: 1fr;
   }
 }
 
 /* Tablet: 2 columns */
-@media (min-width: 768px) and (max-width: 1023px) {
+@media (min-width: 769px) and (max-width: 1023px) {
   .about-cards-grid {
     grid-template-columns: repeat(2, 1fr);
     align-items: stretch; /* На tablet растягиваем */
