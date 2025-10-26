@@ -141,7 +141,6 @@
             id: videoId,
             title: title,
             publishedAt: published,
-            thumbnail: this.getThumbnailUrl(videoId),
           });
         }
       });
@@ -177,16 +176,23 @@
     },
 
     /**
-     * Получить URL превью с fallback
+     * Получить URL превью с каскадным fallback
+     * Возвращает массив URL для попытки загрузки
      */
-    getThumbnailUrl(videoId) {
-      // YouTube имеет несколько форматов превью:
+    getThumbnailUrls(videoId) {
+      // YouTube имеет несколько форматов превью (в порядке качества):
       // - maxresdefault.jpg (1280x720) - не всегда доступно
-      // - sddefault.jpg (640x480) - почти всегда доступно
-      // - hqdefault.jpg (480x360) - всегда доступно
+      // - sddefault.jpg (640x480) - часто доступно
+      // - hqdefault.jpg (480x360) - почти всегда доступно
+      // - mqdefault.jpg (320x180) - всегда доступно
+      // - default.jpg (120x90) - всегда доступно
 
-      // Используем sddefault как основной - хорошее качество и почти всегда доступен
-      return `https://img.youtube.com/vi/${videoId}/sddefault.jpg`;
+      return [
+        `https://img.youtube.com/vi/${videoId}/sddefault.jpg`,
+        `https://img.youtube.com/vi/${videoId}/hqdefault.jpg`,
+        `https://img.youtube.com/vi/${videoId}/mqdefault.jpg`,
+        `https://img.youtube.com/vi/${videoId}/default.jpg`
+      ];
     },
 
     /**
@@ -199,10 +205,15 @@
       card.rel = 'noopener noreferrer';
       card.className = 'youtube-video-card';
 
-      const thumbnailUrl = this.getThumbnailUrl(video.id);
+      // Получаем все возможные URL превью для fallback
+      const thumbnailUrls = this.getThumbnailUrls(video.id);
+
+      // Используем CSS подход с несколькими background-image
+      // Браузер автоматически попробует следующий если первый не загрузится
+      const backgroundImages = thumbnailUrls.map(url => `url('${url}')`).join(', ');
 
       card.innerHTML = `
-        <div class="youtube-thumbnail" style="background-image: url('${thumbnailUrl}');">
+        <div class="youtube-thumbnail" style="background-image: ${backgroundImages};">
           <div class="youtube-play-overlay"></div>
         </div>
         <div class="youtube-video-info">
@@ -246,7 +257,6 @@
           id: v.id,
           title: v.title,
           publishedAt: new Date().toISOString(), // Для JSON у нас нет даты
-          thumbnail: this.getThumbnailUrl(v.id),
         }));
       } catch (error) {
         console.error('Error loading from JSON:', error);
