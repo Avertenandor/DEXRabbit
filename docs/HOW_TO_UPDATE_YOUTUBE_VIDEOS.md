@@ -2,6 +2,16 @@
 
 Простая инструкция по обновлению YouTube видео на главной странице сайта.
 
+## Как это работает
+
+Для каждого видео создается карточка с:
+- **Превью-картинкой** от YouTube (автоматически)
+- **Названием** видео
+- **Кнопкой Play** поверх
+- **Ссылкой** на видео на YouTube
+
+При клике пользователь переходит на YouTube и смотрит видео там.
+
 ## Шаг 1: Получите ID ваших видео
 
 1. Откройте нужное видео на YouTube
@@ -17,31 +27,47 @@
 
 1. Откройте файл `index.html`
 
-2. Найдите секцию YouTube (строка ~1072):
+2. Найдите секцию YouTube (строка ~1070):
    ```html
    <!-- Сетка YouTube видео -->
    <div class="youtube-grid">
    ```
 
-3. Замените `VIDEO_ID_1`, `VIDEO_ID_2` и т.д. на реальные ID ваших видео:
+3. Замените `VIDEO_ID_X` на реальные ID **В ТРЕХ местах** для каждого видео:
 
    **Было:**
    ```html
-   <iframe
-     src="https://www.youtube.com/embed/VIDEO_ID_1"
-     ...
-   ></iframe>
+   <a href="https://www.youtube.com/watch?v=VIDEO_ID_1"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="youtube-video-card">
+     <div class="youtube-thumbnail" style="background-image: url('https://img.youtube.com/vi/VIDEO_ID_1/maxresdefault.jpg');">
+       <div class="youtube-play-overlay"></div>
+     </div>
+     <div class="youtube-video-info">
+       <h3 class="youtube-video-title">Название видео 1</h3>
+     </div>
+   </a>
    ```
 
    **Стало:**
    ```html
-   <iframe
-     src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-     ...
-   ></iframe>
+   <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="youtube-video-card">
+     <div class="youtube-thumbnail" style="background-image: url('https://img.youtube.com/vi/dQw4w9WgXcQ/maxresdefault.jpg');">
+       <div class="youtube-play-overlay"></div>
+     </div>
+     <div class="youtube-video-info">
+       <h3 class="youtube-video-title">Жизнь кроликов на ферме</h3>
+     </div>
+   </a>
    ```
 
-4. Обновите все 6 видео
+4. **Важно:** Замените также название видео на реальное
+
+5. Повторите для всех 6 видео
 
 ## Шаг 3: Сохраните и деплойте
 
@@ -119,14 +145,17 @@ git push
 
 Просто удалите весь блок от `<!-- Видео X -->` до `</div>`.
 
-## Что НЕ нужно:
+## Преимущества этого подхода:
 
-- ❌ YouTube API ключ
-- ❌ Сложная настройка
-- ❌ JavaScript код
-- ❌ База данных
+- ✅ **Не нужен YouTube API ключ**
+- ✅ **Нет квот и лимитов**
+- ✅ **Превью от YouTube автоматически**
+- ✅ **Быстрая загрузка страницы**
+- ✅ **Работает всегда**
+- ✅ **Просто обновлять**
 
-Просто меняете ID в HTML - и все!
+Превью-картинки берутся напрямую от YouTube по стандартному URL.
+При клике пользователь переходит на YouTube и смотрит там.
 
 ## Troubleshooting
 
