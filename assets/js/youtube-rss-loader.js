@@ -141,9 +141,7 @@
             id: videoId,
             title: title,
             publishedAt: published,
-            // YouTube RSS использует формат превью: https://i.ytimg.com/vi/{VIDEO_ID}/hqdefault.jpg
-            // Мы используем maxresdefault для лучшего качества
-            thumbnail: `https://img.youtube.com/vi/${videoId}/maxresdefault.jpg`,
+            thumbnail: this.getThumbnailUrl(videoId),
           });
         }
       });
@@ -179,6 +177,19 @@
     },
 
     /**
+     * Получить URL превью с fallback
+     */
+    getThumbnailUrl(videoId) {
+      // YouTube имеет несколько форматов превью:
+      // - maxresdefault.jpg (1280x720) - не всегда доступно
+      // - sddefault.jpg (640x480) - почти всегда доступно
+      // - hqdefault.jpg (480x360) - всегда доступно
+
+      // Используем sddefault как основной - хорошее качество и почти всегда доступен
+      return `https://img.youtube.com/vi/${videoId}/sddefault.jpg`;
+    },
+
+    /**
      * Создать HTML карточку видео
      */
     createVideoCard(video) {
@@ -188,8 +199,10 @@
       card.rel = 'noopener noreferrer';
       card.className = 'youtube-video-card';
 
+      const thumbnailUrl = this.getThumbnailUrl(video.id);
+
       card.innerHTML = `
-        <div class="youtube-thumbnail" style="background-image: url('${video.thumbnail}');">
+        <div class="youtube-thumbnail" style="background-image: url('${thumbnailUrl}');">
           <div class="youtube-play-overlay"></div>
         </div>
         <div class="youtube-video-info">
@@ -233,7 +246,7 @@
           id: v.id,
           title: v.title,
           publishedAt: new Date().toISOString(), // Для JSON у нас нет даты
-          thumbnail: `https://img.youtube.com/vi/${v.id}/maxresdefault.jpg`,
+          thumbnail: this.getThumbnailUrl(v.id),
         }));
       } catch (error) {
         console.error('Error loading from JSON:', error);
