@@ -40,32 +40,15 @@
 /* YouTube видео карточки */
 .youtube-video-card {
   position: relative;
+  display: block;
   overflow: hidden;
   background: linear-gradient(135deg, rgba(18, 18, 18, 0.95), rgba(33, 33, 33, 0.9));
   border: 2px solid rgba(255, 0, 0, 0.2);
   border-radius: 16px;
   transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
-}
-
-/* YouTube embed wrapper */
-.youtube-embed-wrapper {
-  position: relative;
-  width: 100%;
-  padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
-  overflow: hidden;
-  background: #000;
-  border-radius: 14px;
-}
-
-.youtube-embed-wrapper iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  border: none;
-  border-radius: 14px;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 .youtube-video-card:hover {
@@ -83,20 +66,14 @@
   padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
   overflow: hidden;
   background: #000;
-}
-
-.youtube-thumbnail img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
   transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.youtube-video-card:hover .youtube-thumbnail img {
-  transform: scale(1.15);
+.youtube-video-card:hover .youtube-thumbnail {
+  transform: scale(1.05);
   filter: brightness(0.8);
 }
 
